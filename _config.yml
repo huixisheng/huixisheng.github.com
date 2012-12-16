@@ -9,14 +9,16 @@ pygments: true
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title : 悔惜晟 Web前端
-tagline: Site Tagline
+title : 悔惜晟-Web前端
+tagline: 前端开发，JavaSscript，HTML，CSS，Ajax，Seajs.Nodejs
 author :
-  name : Name Lastname
-  email : blah@email.test
+  name : 悔惜晟
+  email : huixisheng@gmail.com
   github : huixisheng
   twitter : huixisheng
   feedburner : feedname
+  keywords : 悔惜晟，前端开发，前端架构，HTML5，css3，Ajax，Web，JavaScript
+  description: 悔惜晟在前端开发工作中的总结，记录和分享前端生活。
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt 
@@ -70,6 +72,7 @@ JB :
   # These paths are to the main pages Jekyll-Bootstrap ships with.
   # Some JB helpers refer to these paths; change theme here if needed.
   #
+  index_path : /index.html
   archive_path: /archive.html
   categories_path : /categories.html
   tags_path : /tags.html

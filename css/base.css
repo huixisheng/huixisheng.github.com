@@ -1,0 +1,39 @@
+@charset "utf-8";
+body,h1,h2,h3,h4,ul,ol,li,form,fieldset,legend,button,input,textarea,p,dd,dt,dl{margin:0;padding:0;border:0 none}
+ul,ol{list-style:none}
+a{text-decoration:none;outline:none;color:#0764a5}
+a:hover{text-decoration:underline}
+img{display:block;border:0}
+h1,h2,h3,button,input,select,textarea{font-size:100%;font-weight:normal}
+input, button, textarea,select{ outline:none;}
+input,select{font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;}
+textarea{ resize:none}
+table{border-collapse:collapse}
+em, th, var, optgroup {font-style: normal;font-weight: normal;}
+:focus {outline: 0;}
+::-moz-focus-inner{ border-color:transparent;}
+html{-webkit-text-size-adjust:none}
+
+/*common css*/
+.center { margin:0 auto;}
+.fwb{ font-weight:bold;}
+.nowrap{ white-space:nowrap;}
+.fl{float:left; display:inline}
+.fr{float:right; display:inline}
+.tl{text-align:left}
+.tr{ text-align:right;}
+.clearfix:before, .clearfix:after { content: '.'; display: block; height: 0; visibility: hidden; } .clearfix:after {clear: both;} .clearfix {zoom: 1;} /* IE < 8 */
+.cb{ clear:both;height:0;overflow:hidden; font-size:0;}
+.none{ display:none;}
+.mt10{ margin-top:10px;}
+.mt15{ margin-top:15px;}
+.mt20{margin-top:20px;}
+.mt25{ margin-top:25px;}
+.mt30{ margin-top:30px;}
+.ml10{margin-left:10px;}
+.ml15{margin-left:15px;}
+.ml20{margin-left:20px;}
+.f14{ font-size:14px;}
+.f18{ font-size:18px;}
+body{font:12px/1.5 SimSun,arial,tahoma,sans-serif;}
+
