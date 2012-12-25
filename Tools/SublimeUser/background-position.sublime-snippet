@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[background-position:${10}px ${2:20}px;]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>bgp</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+	<description>background-position缩写</description>
+</snippet>

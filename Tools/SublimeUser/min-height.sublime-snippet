@@ -1,0 +1,9 @@
+<snippet>
+	<content>
+<![CDATA[min-height: ${1:500}px; height:auto !important; _height: ${1:500}px;]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>minh</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+	<description>min-height兼容IE6</description>
+</snippet>

@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[text-algin:left;]]></content>
+	<tabTrigger>tal</tabTrigger>
+    <description>左对齐</description>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

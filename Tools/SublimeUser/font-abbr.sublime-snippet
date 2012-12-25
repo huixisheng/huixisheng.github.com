@@ -1,0 +1,9 @@
+<snippet>
+	<content>
+<![CDATA[font:700 ${1:14}px/${2:20}px Arial,\5FAE\8F6F\96C5\9ED1;]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>fb</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+	<description>标题常用字体缩写</description>
+</snippet>

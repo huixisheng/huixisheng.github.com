@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[filter: alpha(opacity=${1:5}0); -khtml-opacity: 0.${1:5}; -moz-opacity: 0.${1:5}; opacity: 0.${1:5};]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>opacity</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+	<description>opacity兼容IE678</description>
+</snippet>

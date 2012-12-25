@@ -1,0 +1,9 @@
+<snippet>
+	<content>
+<![CDATA[max-width: ${1:300}px; _width: expression(this.clientWidth >= ${1:300} ? '${1:300}px' : 'auto');]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>maxw</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+	<description>max-width兼容IE6</description>
+</snippet>

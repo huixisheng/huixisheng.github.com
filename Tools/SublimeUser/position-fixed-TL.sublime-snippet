@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[${1:*html,*html body{background-image:url(about:blank);background-attachment:fixed;}}
+position: fixed; _position: absolute; top:0; _top: expression(eval(document.documentElement.scrollTop)); left:0; _left:expression(eval(document.documentElement.scrollLeft));]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>pftl</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+	<description>position: fixed;TL缩写</description>
+</snippet>

@@ -1,0 +1,12 @@
+<snippet>
+	<content>
+<![CDATA[.${1:dib-wrap}{ font-size:0;/* 所有浏览器 */ *word-spacing:-1px;/* IE6、7 */ }
+.${1:dib-wrap} .${2:dib}{ font-size: 12px; letter-spacing: normal; word-spacing: normal; vertical-align:top;}
+@media screen and (-webkit-min-device-pixel-ratio:0){ /* firefox 中 letter-spacing 会导致脱离普通流的元素水平位移 */ .${1:dib-wrap}{ letter-spacing:-5px;/* Safari 等不支持字体大小为 0 的浏览器, N 根据父级字体调节*/ }}
+.${2:dib} { display: inline-block; *display:inline; *zoom:1; }]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>dibgrid</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+	<description>inline-block处理浏览器兼容性</description>
+</snippet>

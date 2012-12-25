@@ -1,0 +1,15 @@
+<snippet>
+	<content>
+<![CDATA[
+<!--[if IE 6]>
+    <script${1: type="text/javascript}">
+        document.execCommand("BackgroundImageCache",false,true);
+    </script>
+<![endif]-->
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>ie6imgload</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+	<description>IE6 Spirit重复加载</description>
+</snippet>

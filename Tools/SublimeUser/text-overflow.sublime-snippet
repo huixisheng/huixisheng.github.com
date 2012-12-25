@@ -1,0 +1,9 @@
+<snippet>
+	<content>
+<![CDATA[-o-text-overflow: ellipsis; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; width:${1:200}px;]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>text-overflow</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+	<description>超出一行省略号显示...</description>
+</snippet>

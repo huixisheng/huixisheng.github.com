@@ -1,0 +1,9 @@
+<snippet>
+	<content>
+<![CDATA[max-height:${1:300}px； _height: expression(this.scrollHeight >= ${1:300} ? '${1:300}px' : 'auto');]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>maxh</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+	<description>max-height兼容IE6</description>
+</snippet>

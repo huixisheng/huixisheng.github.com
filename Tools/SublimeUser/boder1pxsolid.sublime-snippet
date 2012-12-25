@@ -1,0 +1,6 @@
+<snippet>
+	<content><![CDATA[ border:${1:1}px solid #${2:f00};]]></content>
+	<tabTrigger>bs1px</tabTrigger>
+    <description>实线边框1px</description>
+    <scope>source.css, source.less, source.scss, source.stylus, source.htm, source.html</scope>
+</snippet>

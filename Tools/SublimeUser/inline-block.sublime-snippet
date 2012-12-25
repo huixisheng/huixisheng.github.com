@@ -1,0 +1,6 @@
+<snippet>
+	<content><![CDATA[display: inline-block; *display: inline; zoom: 1;]]></content>
+	<tabTrigger>dib</tabTrigger>
+    <description>CSS - display: inline-block;</description>
+    <scope>source.css, source.less, source.scss, source.stylus, source.htm, source.html</scope>
+</snippet>

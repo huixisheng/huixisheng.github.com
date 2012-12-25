@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[text-algin:center;]]></content>
+	<tabTrigger>tac</tabTrigger>
+    <description>居中对齐</description>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

@@ -1,0 +1,6 @@
+<snippet>
+	<content><![CDATA[display: block; width: ${1:20}px; height: ${2:20}px; line-height: ${2:20}px; text-align: center;]]></content>
+	<tabTrigger>boxbtn</tabTrigger>
+    <description>行内元素当按钮</description>
+    <scope>source.css, source.less, source.scss, source.stylus, source.htm, source.html</scope>
+</snippet>

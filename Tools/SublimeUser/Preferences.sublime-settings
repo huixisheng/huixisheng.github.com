@@ -1,0 +1,14 @@
+{
+	"auto_complete_delay": 1,
+	"auto_complete_with_fields": true,
+	"draw_centered": false,
+	"draw_minimap_border": false,
+	"font_size": 14.0,
+	"gutter": true,
+	"highlight_line": true,
+	"scroll_past_end": false,
+	"spell_check": false,
+	"theme": "Default.sublime-theme",
+	"word_wrap": true,
+	"wrap_width": 0
+}

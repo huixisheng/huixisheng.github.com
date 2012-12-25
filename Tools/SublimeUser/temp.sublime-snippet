@@ -1,0 +1,34 @@
+<snippet>
+	<content><![CDATA[
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="keywords" content="huixisheng" />
+	<meta name="description" content="huixisheng" />
+	<meta name="author" content="huixisheng" />
+	<meta name="copyright" content="https://github.com/huixisheng" />
+	<!--方便IE6 的调试-->
+	<!--[if IE 6]>
+	<meta http-equiv="refresh"content="1;url=html5.html">
+	<![endif]-->
+	<title>悔惜晟${1:this}</title>
+	<link rel="stylesheet" href="../css/base.css"  />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+	<script>!window.jQuery && document.write('<script src="js/lib/jquery/jquery-last.min.js"><\/script>');</script>
+	<!--[if lte IE 9]>
+	<script src="js/plugins/ie/html5.js"></script>
+	<![endif]-->
+</head>
+<body>
+<header>${2:snippet}</header>
+
+</body>
+</html>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>temp</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+	<description>简单的网页模板</description>
+</snippet>

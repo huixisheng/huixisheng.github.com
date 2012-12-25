@@ -1,0 +1,39 @@
+<snippet>
+	<content><![CDATA[
+pre {
+	background: none repeat scroll 0 0 #FEFBF3;
+	border-left: 5px solid #1684C8;
+	color: #195F91;
+	font-family: Monaco,"Bitstream Vera Sans Mono","Lucida Consol","Courier New",Courier,monospace;
+	font-size: 12px;
+	margin: 0 0 15px 0px;
+	padding: 10px;
+	width: 95%;
+	white-space: pre-wrap;
+	white-space: -moz-pre-wrap !important;
+	white-space: -pre-wrap;
+	white-space: -o-pre-wrap;
+	word-wrap: break-word;
+}
+
+.finally-solve {
+	letter-spacing: -4px;/*根据不同字体字号或许需要做一定的调整*/
+	word-spacing: -4px;
+	font-size: 0;
+}
+.finally-solve li {
+	font-size: 16px;
+	letter-spacing: normal;
+	word-spacing: normal;
+	display:inline-block;
+	*display: inline;
+	zoom:1;
+}
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>csscode</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+	<description>csscode解决方法</description>
+</snippet>

@@ -1,0 +1,6 @@
+<snippet>
+	<content><![CDATA[vertical-align: middle; margin: -${1:4}px ${2:5}px 0 0; _margin: ${1:4}px ${2:5}px ${1:4}px 0;]]></content>
+	<tabTrigger>vmimg</tabTrigger>
+    <description>小图标垂直居中兼容IE6</description>
+    <scope>source.css, source.less, source.scss, source.stylus, source.htm, source.html</scope>
+</snippet>

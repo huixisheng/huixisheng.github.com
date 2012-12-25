@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[background:url(../images/${1:test}.png) no-repeat;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/${1:test}.png");
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>ie6png24</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+	<description>ie6png24滤镜解决方案</description>
+</snippet>
