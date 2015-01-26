@@ -1,0 +1,515 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-tc-verification" content="9c20a8ce9bed186c456749fe575d90b0" />
+  
+  <title>git命令简单介绍 | 悔惜晟</title>
+  <meta name="author" content="huixisheng">
+  
+  <meta name="description" content="Web前端">
+  
+  
+  <meta property="og:title" content="git命令简单介绍"/>
+  <meta property="og:site_name" content="悔惜晟"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+   <link rel="apple-touch-icon" href="/icon.png" />
+   <link rel="shortcut icon" href="/favicon.png" >
+   <link rel="alternate" href="/atom.xml" title="悔惜晟" type="application/atom+xml">
+
+
+    <link rel="stylesheet" href="/css/amazeui.min.css?v=i569khen">
+    <link rel="stylesheet" href="/css/amaze.min.css?v=i569khen">
+    <!--[if (gte IE 9)|!(IE)]><!-->
+    <script src="/js/jquery.min.js"></script>
+    <!--<![endif]-->
+    <!--[if lt IE 9]><script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+    <script src="/js/polyfill/rem.min.js"></script>
+    <script src="/js/polyfill/respond.min.js"></script>
+    <script src="/js/amazeui.legacy.js"></script><![endif]-->
+    <!--[if (gte IE 9)|!(IE)]><!-->
+    <script src="/js/amazeui.min.js?v=i569khen"></script>
+    <!--<![endif]-->
+
+</head>
+
+<style type="text/css">
+article.post {
+  background: #f5f5f5;
+}
+article.link .icon:before {
+  content: '\f0c1';
+}
+article.link .title a:after {
+  content: '\f08e';
+  color: #d00;
+  font: 12px FontAwesome;
+  padding-left: 10px;
+  vertical-align: super;
+}
+article .post-content {
+  background-color: #fff;
+  padding: 20px 20px 15px 20px;
+  border: 1px solid #e3e3e5;
+  margin-bottom: 30px;
+  position: relative;
+}
+article .post-content:hover{ border-color: #f40;}
+article .gallery{ display: none;}
+#amz-header h1 a, .amz-footer .amz-fd a{ background: none; text-indent: 0; }
+
+.tagcloud .am-panel-bd a{ display: inline-block; margin: 0 5px 3px 0;      /* IE 5+ */
+  }
+.amz-footer .amz-fd a{ width: auto; }
+@media only screen and (min-width: 641px){
+  [class*=am-u-]{
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+}
+.am-panel > .am-list > li:nth-child(1){ border-top: 0; }
+.toc-child{ list-style: none; }
+.toc{ list-style: none; padding: 0; }
+</style>
+
+
+<body>
+  <!--[if lte IE 9 ]><div class="am-alert am-alert-danger ie-warning" data-am-alert>
+<button type="button" class="am-close">&times;</button>
+<div class="am-container">
+365 安全卫士提醒：你的浏览器太古董了，妹子无爱，<a
+href="http://browsehappy.com/" target="_blank">还不速速换一个</a>！</div></div><![endif]-->
+<header id="amz-header">
+    <div class="amz-container am-cf">
+        <h1><a href="/">悔惜晟</a> <!-- <span class="am-badge am-badge-danger">2.0</span> --></h1>
+        <button class="am-btn am-btn-primary am-show-sm-only" data-am-collapse="{target: '.amz-header-nav'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span>
+        </button>
+
+
+        <nav>
+            <ul class="amz-header-nav am-collapse">
+                
+                <li><a href="/">首页</a>
+                </li>
+                
+                <li><a href="/archives/">归档</a>
+                </li>
+                
+                <li class="amz-cse">
+                    <form action="//google.com/search" method="get" target="_blank" class="cse-form" accept-charset="utf-8">
+                        <input type="text" name="q" results="0" placeholder="search" autocomplete="off">
+                        <input type="hidden" name="q" value="site:huixisheng.github.io">
+
+                        <button><span class="am-icon-search"></span>
+                        </button>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+  <section id="amz-main">
+      <div class="am-g am-g-fixed">
+          <div class="col-md-9 am-u-md-9 doc-content">
+              
+
+<article class="post">
+
+  
+<div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+
+
+  <div class="post-content">
+    <header>
+
+        
+
+
+          
+  
+    <h1 class="title">
+
+        git命令简单介绍
+    </h1>
+  
+
+
+          <div class="am-cf">
+              <div class="am-fl">
+                <span>作者:</span>huixisheng
+                <span>发布日期:</span>
+                  <time datetime="2015-01-21T08:38:23.000Z"><a href="/git/">2015-01-21</a></time>
+              </div>
+              <div class="am-fr">
+                
+  
+  <div class="am-icon-folder-o">
+    <a href="/categories//">开发工具</a>
+  </div>
+
+                
+  
+  <div class="am-icon-tags" style="margin: 0 0 10px">
+    <a href="/tags/git/">git</a>
+  </div>
+
+              </div>
+
+          </div>
+
+
+
+
+        
+    </header>
+    <hr>
+    <div class="entry">
+
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#git简介"><span class="toc-number">1.</span> <span class="toc-text">git简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git常用命令"><span class="toc-number">2.</span> <span class="toc-text">git常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git超级实用命令"><span class="toc-number">3.</span> <span class="toc-text">git超级实用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git常见问题解决方案"><span class="toc-number">4.</span> <span class="toc-text">git常见问题解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用git_pull文件时和本地文件冲突怎么办"><span class="toc-number">4.1.</span> <span class="toc-text">使用git pull文件时和本地文件冲突怎么办</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git_恢复单个文件的历史版本"><span class="toc-number">5.</span> <span class="toc-text">git 恢复单个文件的历史版本</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#如何更新自己Fork的代码"><span class="toc-number">5.1.</span> <span class="toc-text">如何更新自己Fork的代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#提交github不用输入用户名和密码"><span class="toc-number">5.2.</span> <span class="toc-text">提交github不用输入用户名和密码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#无法删除远程分支"><span class="toc-number">5.3.</span> <span class="toc-text">无法删除远程分支</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#超级丰富的git教程列表"><span class="toc-number">6.</span> <span class="toc-text">超级丰富的git教程列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在线git代码托管平台"><span class="toc-number">7.</span> <span class="toc-text">在线git代码托管平台</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git客户端"><span class="toc-number">8.</span> <span class="toc-text">git客户端</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">9.</span> <span class="toc-text">参考</span></a></li></ol>
+
+      
+        <p>本文内容</p>
+<pre><code>-<span class="ruby"> git简介
+</span>-<span class="ruby"> git常用命令
+</span>-<span class="ruby"> git超级实用命令
+</span>-<span class="ruby"> git常见问题解决方案
+</span>-<span class="ruby"> 超级丰富的git教程列表
+</span>-<span class="ruby"> 在线git代码托管平台
+</span>-<span class="ruby"> git客户端</span>
+</code></pre><a id="more"></a>
+
+<h2 id="git简介">git简介</h2><p><a href="http://baike.baidu.com/link?url=UYMd9W0XHTgdJBxme3gqKo2ClfetB3Gs80jxnQYlutmdsCzpgxH93YiWn5UpKoyEOF_celoV1XiyTG5iy0mlLYibww4uSPmlXemtoBJdODy" target="_blank" rel="external">git</a>是一款免费、开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。是目前最流行的版本管理系统，学会git几乎成了开发者的必备技能。<a href="http://baike.baidu.com/link?url=UYMd9W0XHTgdJBxme3gqKo2ClfetB3Gs80jxnQYlutmdsCzpgxH93YiWn5UpKoyEOF_celoV1XiyTG5iy0mlLYibww4uSPmlXemtoBJdODy" target="_blank" rel="external">git</a>是 <code>Linus Torvalds</code> 为了帮助管理 <code>Linux</code>内核开发而开发的一个开放源码的版本控制软件。</p>
+<h2 id="git常用命令">git常用命令</h2><p>对于这方面的介绍网上都有很全很详细。我就不班门弄斧了。介绍一个比较有用的命令 <code>`git help 命令例如:pull</code>。这么多的命令如果都要全部记住，怎么可能。还是学会查手册来的靠谱。</p>
+<p>以下几篇文章都对git常用的命令做了详细说明：</p>
+<ul>
+<li><a href="http://www.cnblogs.com/welfear/archive/2010/05/24/1742614.html" target="_blank" rel="external">git使用说明</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2014/06/git_remote.html" target="_blank" rel="external">Git远程操作详解</a></li>
+<li><a href="http://www.samirchen.com/git-commands/" target="_blank" rel="external">git命令详解</a></li>
+<li><a href="https://gitcafe.com/restkuan/git/blob/master/Git%E5%B0%8F%E7%BB%93.xmind" target="_blank" rel="external">学习git过程中做的xmin</a></li>
+</ul>
+<h2 id="git超级实用命令">git超级实用命令</h2><pre><code>git help branch <span class="comment">// 查看详细的参数</span>
+git config -l 查看配置信息
+git clone git@github<span class="class">.com</span>:huixisheng/huixisheng<span class="class">.github</span><span class="class">.com</span><span class="class">.git</span>
+git commit -C head -<span class="tag">a</span> --amend <span class="comment">//不会产生新的提交历史记录，复用HEAD留言，增补提交，而不增加提交记录</span>
+git branch -d feature_x <span class="comment">// 删除feature_x分支</span>
+git checkout -<span class="tag">b</span> master2 <span class="comment">// 切换并新建master2分支</span>
+</code></pre><p><code>git stash</code>  本地修改暂时存储起来，用于改到一半暂时不想<code>commit</code>和<code>pull</code>有冲突。更多<a href="http://wongyouth.com/blog/2014/03/28/solve-conflict-caused-by-git-stash/" target="_blank" rel="external">参考解决Git stash冲突问题</a></p>
+<p>使用Sublime Text 可以安装 <a href="https://github.com/kemayo/sublime-text-git" target="_blank" rel="external">sublime-text-git</a>，超级赞</p>
+<p><a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank" rel="external">如何创建 ssh key</a>。配置好后 ‘ssh -T git@github.com’ 测试配置是否成功。多个ssh key怎要么办？<code>vi ~/.ssh/config</code>。配置以下信息</p>
+<pre><code>Host github<span class="class">.com</span>
+    HostName github<span class="class">.com</span>
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/github_rsa
+    User git
+
+Host coding<span class="class">.net</span>
+    HostName coding<span class="class">.net</span>
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/codingnet_rsa
+    User git
+</code></pre><p><a href="http://macshuo.com/?p=676" target="_blank" rel="external">安装zsh</a>。就可以使用以下缩写命令，通过 <code>alias</code>查看命令别名。</p>
+<pre><code><span class="comment">// 添加自定义的命令</span>
+vi ~/<span class="class">.zshrc</span>
+source ~/<span class="class">.zshrc</span>
+
+ggpull
+ggpush
+</code></pre><h2 id="git常见问题解决方案">git常见问题解决方案</h2><h3 id="使用git_pull文件时和本地文件冲突怎么办">使用git pull文件时和本地文件冲突怎么办</h3><pre><code>git stash <span class="comment">// 本地修改暂时存储起来</span>
+git pull
+git stash <span class="keyword">pop</span>
+</code></pre><p><a href="http://wongyouth.com/blog/2014/03/28/solve-conflict-caused-by-git-stash/" target="_blank" rel="external">参考解决Git stash冲突问题</a></p>
+<h2 id="git_恢复单个文件的历史版本">git 恢复单个文件的历史版本</h2><blockquote>
+<p>首先查看该文件的历史版本信息：git log Default@2x.png<br>记录下需要恢复的commit版本号：如 9aa51d89799716aa68cff3f30c26f8815408e926<br>恢复该文件：git reset 9aa51d89799716aa68cff3f30c26f8815408e926 Default@2x.png</p>
+<p>还需要执行git checkout xxxxx(文件名)</p>
+<p>提交git:git commit -m “revert old file”</p>
+</blockquote>
+<p>直接用 git-checkout 即可。理解起来稍微有点奇怪就是了。</p>
+<pre><code>$ git checkout ${commit} /path/<span class="keyword">to</span>/<span class="type">file</span>
+</code></pre><p><a href="http://segmentfault.com/q/1010000002464973" target="_blank" rel="external">git 如何还原某个文件</a></p>
+<h3 id="如何更新自己Fork的代码">如何更新自己Fork的代码</h3><p><a href="https://github.com/iModule" target="_blank" rel="external">iModule</a>Fork了开源代码。<code>clone</code>到本地了，如何保证代码同最初的源码保持一致呢？</p>
+<pre><code>git clone git@github<span class="class">.com</span>:iModule/zepto<span class="class">.git</span>
+cd zepto
+git remote add zepto  git@github<span class="class">.com</span>:madrobby/zepto<span class="class">.git</span>
+git remote -v 查看是否多出了zepto分支
+git fetch zepto   git pull zepto master
+git merge zepto/master
+git push origin master
+</code></pre><h3 id="提交github不用输入用户名和密码">提交github不用输入用户名和密码</h3><blockquote>
+<p>　　在用git提交时代码至github上时每次都要输入用户名和密码，当提交操作较为频繁时非常不方便，可以按下文中的介绍，设置成提交时不用输入用户名和密码：<br>1、在当前库下，已经运行过 git remote add origin <a href="https://github.com/***/***.git" target="_blank" rel="external">https://github.com/***/***.git</a> 命令，则先运行如下命令：　<br>   git remote rm origin　　<br>   若以前没有运行过  git remote add origin <a href="https://github.com/***/***.git命令，直接跳到2步骤；" target="_blank" rel="external">https://github.com/***/***.git命令，直接跳到2步骤；</a><br>2、运行如下命令：<br>   git remote add origin git@github.com:username/test.git</p>
+</blockquote>
+<h3 id="无法删除远程分支">无法删除远程分支</h3><p>error: unable to delete ‘test-branch’: remote ref does not exist<br>error: failed to push some refs to ‘git@github.com:huixisheng/huixisheng.github.com.git’</p>
+<pre><code>git push origin <span class="symbol">:test-branch</span>
+git remote update --prune
+</code></pre><h2 id="超级丰富的git教程列表">超级丰富的git教程列表</h2><ul>
+<li><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">廖雪峰-Git教程</a></li>
+<li><a href="http://www.html-js.com/article/2021" target="_blank" rel="external">Git速成班: git rebase</a></li>
+<li><a href="http://photo.weibo.com/1621464661/wbphotos/large/mid/3801446388375272/pid/60a59655jw1eoh3732h52j21cv2fu4qp" target="_blank" rel="external">Git 命令整理</a></li>
+<li><a href="http://rogerdudler.github.io/git-guide/index.zh.html" target="_blank" rel="external">git - 简明指南</a></li>
+<li><a href="http://pcottle.github.io/learnGitBranching/" target="_blank" rel="external">在线Git命令行学习</a></li>
+<li><a href="http://www.worldhello.net/gotgithub/" target="_blank" rel="external">GotGitHub</a></li>
+<li><a href="http://git-scm.com/book/zh/v1/%E8%B5%B7%E6%AD%A5" target="_blank" rel="external">git-scm</a></li>
+<li><a href="https://ruby-china.org/topics/17590" target="_blank" rel="external">学习，使用 git 过程中做的思维导图</a></li>
+<li><a href="http://gitbook.liuhui998.com/index.html" target="_blank" rel="external">Git Community Book 中文版</a></li>
+</ul>
+<h2 id="在线git代码托管平台">在线git代码托管平台</h2><ul>
+<li><a href="https://github.com/" target="_blank" rel="external">github</a></li>
+<li><a href="https://coding.net/" target="_blank" rel="external">coding</a></li>
+<li><a href="https://gitcafe.com/" target="_blank" rel="external">GitCafe</a></li>
+<li><a href="https://code.csdn.net/" target="_blank" rel="external">csdn-code</a></li>
+<li><a href="http://git.oschina.net/" target="_blank" rel="external">开源中国</a></li>
+</ul>
+<h2 id="git客户端">git客户端</h2><ul>
+<li><a href="https://github.com/kemayo/sublime-text-git" target="_blank" rel="external">sublime-text-git</a></li>
+<li><a href="https://github.com/jisaacks/GitGutter" target="_blank" rel="external">Sublime Text 插件 GitGutter 更好的帮助开发者查看文件之前的改动和差异，提升开发效率</a></li>
+<li><a href="https://mac.github.com/" target="_blank" rel="external">GitHub</a></li>
+<li><a href="http://gitx.frim.nl/" target="_blank" rel="external">GitX</a></li>
+<li><a href="http://www.sourcetreeapp.com/" target="_blank" rel="external">SourceTree</a></li>
+</ul>
+<h2 id="参考">参考</h2><ul>
+<li><a href="http://diao.it/blog/2012/10/13/why-is-git-always-asking-for-my-password/" target="_blank" rel="external">Git 每次提交时的用户名和密码设置</a></li>
+<li><a href="http://blog.csdn.net/fyh2003/article/details/7528157" target="_blank" rel="external">git创建与管理远程分支</a></li>
+<li><a href="https://github.com/ysc/APDPlat/wiki/%E5%A6%82%E4%BD%95%E6%9B%B4%E6%96%B0%E8%87%AA%E5%B7%B1Fork%E7%9A%84%E4%BB%A3%E7%A0%81" target="_blank" rel="external">如何更新自己Fork的代码</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2014/06/git_remote.html" target="_blank" rel="external">Git远程操作详解</a></li>
+</ul>
+<p>最后欢迎补充</p>
+	       
+	         <p style="margin:20px 0; color:#9f9f9f; font-size:12px; text-align: right;">
+    <span style="line-height:13px;">如需转载，请注明： 本文来自 <a style="color:#9f9f9f;" href="http://huixisheng.github.io"><strong>悔惜晟</strong></a></span>
+</p>
+       	 
+      
+    </div>
+    <footer class="clearfix">
+      
+	         
+     		     
+<!-- JiaThis Button BEGIN -->
+<div class="jiathis_style addthis addthis_toolbox addthis_default_style" style="color: black; overflow: hidden;">
+	<span class="jiathis_txt"></span>
+	<a class="jiathis_button_tools_1"></a>
+	<a class="jiathis_button_tools_2"></a>
+	<a class="jiathis_button_tools_3"></a>
+	<a class="jiathis_button_tools_4"></a>
+	<a href="http://www.jiathis.com/share?uid=1784645" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+	<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config = {data_track_clickback:'true'};
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1505697" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+
+       	    
+      
+
+
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+
+
+<!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="git/" data-title="git命令简单介绍" data-url="http://huixisheng.github.io/git/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"huixisheng"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.unstable.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+<!-- 多说公共JS代码 end -->
+
+
+
+
+
+          </div>
+          <div class="col-md-3 am-u-md-3">
+              
+  
+<a href="/atom.xml" class="am-btn am-btn-secondary am-btn-block" style="margin-bottom: 20px;">
+    <i class="am-icon-rss"></i>订阅
+</a>
+
+
+  
+<div class="widget weibo">
+    <iframe width="100%" height="120" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=120&fansRow=2&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=1777890595&verifier=e659651a&dpc=1"></iframe>
+</div>
+
+
+  
+<section class="am-panel am-panel-default">
+  <header class="am-panel-hd">
+    <h3 class="am-panel-title">分类目录</h3>
+  </header>
+  <ul class="am-list">
+    
+        <li><a href="/categories/MacOSX/">MacOSX(2)</a></li>
+    
+        <li><a href="/categories/developTool/">developTool(3)</a></li>
+    
+        <li><a href="/categories//">前端开发(7)</a></li>
+    
+        <li><a href="/categories//">开发工具(3)</a></li>
+    
+  </ul>
+</section>
+
+
+  
+<section class="am-panel am-panel-default tagcloud">
+  <header class="am-panel-hd">
+    <h3 class="am-panel-title">标签云</h3>
+  </header>
+  <div class="am-panel-bd">
+      <a href="/tags/JavaScript/" style="font-size: 20px; color: #f37b1d">JavaScript</a><a href="/tags/MacOSX/" style="font-size: 15px; color: #e86635">MacOSX</a><a href="/tags/Software/" style="font-size: 10px; color: #dd514c">Software</a><a href="/tags/SublimeText/" style="font-size: 10px; color: #dd514c">SublimeText</a><a href="/tags/Web/" style="font-size: 10px; color: #dd514c">Web前端</a><a href="/tags/cdn/" style="font-size: 10px; color: #dd514c">cdn</a><a href="/tags/css/" style="font-size: 15px; color: #e86635">css</a><a href="/tags/git/" style="font-size: 10px; color: #dd514c">git</a><a href="/tags/jQuery/" style="font-size: 10px; color: #dd514c">jQuery</a><a href="/tags/markdown/" style="font-size: 10px; color: #dd514c">markdown</a><a href="/tags/mysql/" style="font-size: 10px; color: #dd514c">mysql</a><a href="/tags//" style="font-size: 10px; color: #dd514c">兼容性</a><a href="/tags//" style="font-size: 10px; color: #dd514c">前端工具</a><a href="/tags//" style="font-size: 10px; color: #dd514c">在线工具</a><a href="/tags//" style="font-size: 15px; color: #e86635">总结</a><a href="/tags//" style="font-size: 10px; color: #dd514c">收藏夹</a>
+  </div>
+</section>
+
+
+  
+<section class="am-panel am-panel-default">
+  <header class="am-panel-hd">
+    <h3 class="am-panel-title">最近发布</h3>
+  </header>
+  <ul class="am-list">
+    
+      <li>
+        <a href="/front-end-articles-collected/">前端精彩文章收集</a>
+      </li>
+    
+      <li>
+        <a href="/git/">git命令简单介绍</a>
+      </li>
+    
+      <li>
+        <a href="/MacOSX-powerboot/">MacOSX 开机启动</a>
+      </li>
+    
+      <li>
+        <a href="/MacOSX-mysql/">MacOSX下Mysql折腾记</a>
+      </li>
+    
+      <li>
+        <a href="/web-front-end-tools/">前端开发工具收集和整理</a>
+      </li>
+    
+      <li>
+        <a href="/excellent-software-recommended/">致那些我使用过的优秀软件</a>
+      </li>
+    
+      <li>
+        <a href="/markdown-test/">mardowm语法简单测试</a>
+      </li>
+    
+      <li>
+        <a href="/cdn/">静态文件存储</a>
+      </li>
+    
+      <li>
+        <a href="/jquery-plugin-develop/">jQuery 插件开发</a>
+      </li>
+    
+      <li>
+        <a href="/cross-domain/">跨域</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+
+          </div>
+      </div>
+  </section>
+
+
+  <!-- <a href="#amz-offcanvas" class="am-icon-btn am-icon-bars am-show-sm-only amz-sidebar-toggle" data-am-offcanvas><span class="am-sr-only">侧栏导航</span></a> -->
+
+  <div class="amz-toolbar" id="amz-toolbar">
+    <a href="#top" title="回到顶部" class="am-icon-btn am-icon-arrow-up" id="amz-go-top"></a>
+</div>
+
+
+
+<div style="position:relative; bottom: 23px; display: none;">
+  <script src="http://s95.cnzz.com/stat.php?id=4858512&web_id=4858512&show=pic1">
+  </script>
+</div>
+
+
+
+<footer class="amz-footer">
+    <div class="am-g am-g-fixed">
+        <div class="col-md-4 col-md-push-8 am-u-md-4 am-u-md-push-8">
+            <ul class="amz-social">
+                
+                <li><a href="http://weibo.com/1777890595" title="huixisheng微博" target="_blank"><span class="am-icon-weibo"></span></a>
+                </li>
+                
+                
+                <li><a href="https://github.com/huixisheng/" title="github" data-am-modal=""><span class="am-icon-github"></span></a>
+                </li>
+                
+            </ul>
+        </div>
+        <div class="col-md-8 col-md-pull-4 am-u-md-8 am-u-md-pull-4">
+            <h2 class="amz-fd"><a href="https://github.com/huixisheng/hexo-theme-amazeui" target="_blank">英雄妹子主题</a></h2>
+            <ul class="amz-links">
+            </ul>
+            <div class="amz-cp">
+              
+              &copy; 2015 <a href="http://github.com/huixisheng/">huixisheng</a>
+              
+              感谢 <a href="https://github.com/hexojs/hexo">hexo</a>
+              感谢 <a href="http://amazeui.org/">amazeui</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="/js/ZeroClipboard.min.js"></script>
+<!--<![endif]-->
+<script src="/js/handlebars.min.js"></script>
+<script src="/js/main.min.js"></script>
+
+
+</body>
+</html>

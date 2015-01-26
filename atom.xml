@@ -1,0 +1,1277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[悔惜晟]]></title>
+  <subtitle><![CDATA[Web前端]]></subtitle>
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://huixisheng.github.io/"/>
+  <updated>2015-01-26T15:16:17.000Z</updated>
+  <id>http://huixisheng.github.io/</id>
+  
+  <author>
+    <name><![CDATA[huixisheng]]></name>
+    <email><![CDATA[huxisheng[AT]gmail.com]]></email>
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[前端精彩文章收集]]></title>
+    <link href="http://huixisheng.github.io/front-end-articles-collected/"/>
+    <id>http://huixisheng.github.io/front-end-articles-collected/</id>
+    <published>2015-01-21T08:42:53.000Z</published>
+    <updated>2015-01-26T15:16:17.000Z</updated>
+    <content type="html"><![CDATA[<p>本文内容</p>
+<pre><code><span class="variable">Web</span>前端常用参考手册
+优秀的前端技术博客
+<span class="variable">CSS3</span>系列
+<span class="variable">Web</span>前端问答社区
+<span class="variable">Web</span>前端网址导航
+前端框架系列
+前端性能系列
+.....
+</code></pre><p>有些本文收集并整理看过的精彩的文章和优秀的前端技术博客。一直持续更新，如果您有好的文章推荐，可以留言或者发邮件<code>huixisheng[AT]gmail.com</code>给我。thx</p>
+<a id="more"></a>
+
+<h2 id="Web前端常用参考手册">Web前端常用参考手册</h2><ol>
+<li><a href="http://w3help.org/" title="w3chelp" target="_blank" rel="external">w3chelp</a>W3help.org是由国内多家关注Web标准的公司、团体、标准组织，及科研单位等共同创立的Web标准推广网站。</li>
+<li><a href="http://css.doyoe.com/" target="_blank" rel="external">CSS3参考手册</a></li>
+<li><a href="http://caniuse.com/#search=border" target="_blank" rel="external">caniuse</a> <a href="http://www.browsersupport.net/" target="_blank" rel="external">browsersupport</a>非常霸气，输入css属性可以查看该属性在各种浏览器下面的兼容性问题。</li>
+<li><a href="http://overapi.com/" target="_blank" rel="external">overapi</a> 超全Cheat Sheet网站，涵盖几乎所有主流开发语言及框架API与常用命令，工程师必备。</li>
+<li><a href="http://wowubuntu.com/markdown/" target="_blank" rel="external">Markdown 语法说明</a></li>
+<li><a href="http://ecmascript.cn/" target="_blank" rel="external">ECMAScript 5.1中文版</a></li>
+</ol>
+<h2 id="优秀的前端技术博客">优秀的前端技术博客</h2><ol>
+<li><a href="http://www.w3cplus.com/" target="_blank" rel="external">w3cplus</a>这是我经常去的一个Blog，感觉站长和其他维护改Blog的成员分享的技术和写的精彩文章，在这里我学到了很多，开拓了视野。在此感谢w3cplus。</li>
+<li><a href="http://www.zhangxinxu.com/wordpress/" target="_blank" rel="external">张鑫旭BLOG</a>张爷，就这么称呼吧。虽然未识其庐山正面目。但是风趣的写作风格和精彩的文章，对知识的探索和执着，都给人留下了深刻的影响。</li>
+<li><a href="http://www.cnblogs.com/lhb25" target="_blank" rel="external">梦想天空</a>这个博客应该是前端程序员门的资源宝藏吧。</li>
+<li><a href="http://www.cnblogs.com/TomXu/" target="_blank" rel="external">汤姆大叔的博客</a>这是搜牛的同事推荐的。之前知道有这么一号牛人，只是其文章都没有好好地阅读过。就单单看了下首页，在这里肯定能学到很多js方面的知识。有空一定要好好读下。</li>
+<li><a href="http://www.cnblogs.com/rubylouvre/" target="_blank" rel="external">司徒正美</a>感觉博主在业界很低调，但是他写的博文，特别是js方面的文章真的好高调。就目前为止我印象最深了就是博主写的mass框架和博文</li>
+<li><a href="http://www.cnblogs.com/rubylouvre/archive/2010/03/09/1681222.html" target="_blank" rel="external">javascript正则表达式</a>。当然肯定是我关注的太少了，里面肯定有很多很多的干货的。</li>
+<li><a href="http://www.cn-cuckoo.com/" target="_blank" rel="external">为之漫笔（李松峰）</a>为之漫笔（李松峰），本博客专注于Web前后端技术、移动平台开发技术、交互设计和技术翻译。js圣经-《JavaScript高级程序设计》译者。</li>
+<li><a href="http://zp.zuixiami.com/" target="_blank" rel="external">鬼群作品秀</a></li>
+</ol>
+<h2 id="CSS3系列">CSS3系列</h2><ol>
+<li><a href="http://css3lib.alloyteam.com/" target="_blank" rel="external">CSS3 UI 库</a></li>
+<li><a href="http://www.w3cplus.com/resources/css3-tutorial-and-case" target="_blank" rel="external">CSS3 属性详解</a>学习CSS3很好的资源。w3cplus是一个致力于推广国内前端行业的技术博客。它以探索为己任，不断活跃在行业技术最前沿，努力提供高质量前端技术博文；其文章范围广泛，主要以css3、html5、Javascript和各类demo为主。</li>
+</ol>
+<h2 id="Web前端问答社区">Web前端问答社区</h2><p>项目中碰到了问题，该去哪，谷歌、度娘不行的话，不妨试试以下网址，或许你就可以找到解决问题的办法。</p>
+<ol>
+<li><a href="http://ask.w3cplus.com/" target="_blank" rel="external">Ask.W3CPLUS社区！</a>Ask.W3cplus社区是由W3CPLUS全体成员创建，主要目的为前端爱好者提供一个交流平台，欢迎大家在此提问和回复！</li>
+<li><a href="http://stackoverflow.com/" target="_blank" rel="external">stackoverflow</a>是全球IT界最受欢迎的技术问答网站（更为准确的说，stackoverflow Stack Overflow 现在只是 Stack Exchange network 的子站点而已）之一，目前，其每月不重复的访问用户超过1600万；每月网页浏览量（PV）增长了近6倍，达到9500万。</li>
+<li><a href="http://www.dewen.org/" target="_blank" rel="external">德问</a>尊德性，道问学，以致知。德问，编程领域的社交问答。帮您解答各类编程问题，交流与扩展专业知识及技能。</li>
+<li><a href="http://www.zhihu.com/" target="_blank" rel="external">知乎</a>知乎是一个真实的网络问答社区，社区氛围友好、理性、认真，连接了各行各业的精英。他们分享着彼此的专业知识、经验、见解，为中文互联网源源不断地提供高质量的信息。“在这里，发现更大的世界。”</li>
+<li><a href="http://segmentfault.com/" target="_blank" rel="external">segmentfault</a>这是一个专业面向开发者的技术问答社区，你可以在这里提出任何与开发相关的问题，并得到同行的解答和评价。</li>
+<li><a href="http://www.w3cfuns.com/" target="_blank" rel="external">w3cfuns</a>是一个专注于web前端开发行业的综合性门户网站，以”互联网标准化”为目标，致力于推动前端开发在互联网的发展，通过众多专业的服 务形式，服务于中国互联网产业，以推动web标准在中国的发展。自创建以来吸引了众多web前端开发工程师的加盟，引领着中国互联网的标准化潮流。</li>
+<li><a href="http://fp.labs.lugir.com/" target="_blank" rel="external">传送之门</a>这个网站应该还是在开发中。程序员专属于学习、休闲社区。收藏网页链接，轻松珍藏优秀资源,制作资源特辑，整理和分享精彩内容,发现兴趣爱好，生活远不只是编码</li>
+<li><a href="http://cnodejs.org/" target="_blank" rel="external">CNode：Node.js专业中文社区</a></li>
+<li><a href="http://stackoverflow.com/" target="_blank" rel="external">stack overflow</a>是全球IT界最受欢迎的技术问答网站（更为准确的说，Stack Overflow 现在只是 Stack Exchange network 的子站点而已）之一，目前，其每月不重复的访问用户超过1600万；每月网页浏览量（PV）增长了近6倍，达到9500万。</li>
+<li><a href="https://www.quora.com/" target="_blank" rel="external">quora</a> 国外的知乎</li>
+</ol>
+<h2 id="Web前端网址导航">Web前端网址导航</h2><ol>
+<li><a href="http://uedfans.cn/" target="_blank" rel="external">UED网址导航</a></li>
+<li><a href="http://www.ux265.net/" target="_blank" rel="external">web前端开发联盟</a></li>
+<li><a href="http://sentsin.com/daohang/" target="_blank" rel="external">贤心-前端圈</a></li>
+<li><a href="http://uxd123.com/" target="_blank" rel="external">uxd123-前端设计导航</a></li>
+<li><a href="http://hao.uisdc.com/goods/" target="_blank" rel="external">设计师网站导航</a>优设网设计师网址导航为设计师提供ps教程、UI设计、素材下载、高清图库、配色方案、用户体验、网页设计等全方位设计师网站导航指引。每周更新及时，是优秀网页设计联盟（SDC）旗下最实用、最专业、最全面、最好用的设计师导航！</li>
+<li><a href="http://123.jser.us/" target="_blank" rel="external">123.jser.us/</a></li>
+<li><a href="http://www.daqianduan.com/nav/" target="_blank" rel="external">前端网址导航</a></li>
+</ol>
+<h2 id="前端框架系列">前端框架系列</h2><ol>
+<li><a href="http://twitter.github.com/bootstrap/" target="_blank" rel="external">bootstrap</a>大名鼎鼎!!!Twitter推出的一个用于前端开发的开源工具包。它由Twitter的设计师Mark Otto和Jacob Thornton合作开发,是一个CSS/HTML框架。</li>
+<li><a href="http://www.bootcss.com/" target="_blank" rel="external">Bootstrap中文网</a>翻译bootsrap，当然不仅仅只是bootstrap，还有其他优秀的前端框架。</li>
+<li><a href="http://www.w3cplus.com/solution/index/index.html" target="_blank" rel="external">css解决方案</a>这是<a href="http://www.w3cplus.com/content/643.html" target="_blank" rel="external">为之</a>将把项目中经常碰到的前端的问题整理成一套解决方案。非常实用。</li>
+<li><a href="http://aliceui.org/" target="_blank" rel="external">支付宝的Alice</a>Alice是漫游仙境的童话女神，是支付宝的样式解决方案，是一套精选的基于 CMD 生态圈的样式模块集合，是 Arale 的子集，也是一套模块化的样式命名和组织规范，是写 CSS 的更好方式。</li>
+<li><a href="http://www.alloyteam.com/2012/05/the-javascript-framework-list/" target="_blank" rel="external">国内优秀Web前端Javascript框架库汇总列表(会长期更新)</a></li>
+<li><a href="http://nec.netease.com/" target="_blank" rel="external">NEC : 更好的CSS样式解决方案</a></li>
+<li><a href="https://github.com/polymer/polymer" target="_blank" rel="external">Google Polymer Webui</a></li>
+<li><a href="http://www.keqie.com/" target="_blank" rel="external">渴切-获取轻量级 响应css框架</a></li>
+</ol>
+<h2 id="前端性能系列">前端性能系列</h2><ol>
+<li><a href="http://www.kuqin.com/web/20121209/333935.html" target="_blank" rel="external">浏览器的工作原理：新式网络浏览器幕后揭秘</a></li>
+<li><a href="http://www.iyunlu.com/view/Front-end/60.html" target="_blank" rel="external">PNG的秘密—— 一淘前端分享会</a></li>
+</ol>
+<h2 id="前端规范系列">前端规范系列</h2><ol>
+<li><a href="http://alloyteam.github.com/JX/doc/specification/google-javascript.xml" target="_blank" rel="external">Google Javascript编程规范</a></li>
+<li><a href="http://udc.weibo.com/2012/02/%E6%8F%AD%E7%A7%98wdl-%E5%BE%AE%E5%8D%9A%E4%BA%A4%E4%BA%92%E8%A7%84%E8%8C%83%E7%9A%84%E6%88%90%E9%95%BF%E5%8E%86%E7%A8%8B/" target="_blank" rel="external">揭秘wdl-微博交互规范的成长历程</a></li>
+</ol>
+<h2 id="前端兼容性系列">前端兼容性系列</h2><ol>
+<li><a href="http://www.w3cfuns.com/thread-297-1-1.html" target="_blank" rel="external">原创-IE6 PNG透明终极解决方案-打造W3Cfuns-IE6PNG最强帖</a></li>
+<li><a href="http://www.iyunlu.com/view/css-xhtml/64.html" target="_blank" rel="external">inline-block 前世今生</a></li>
+<li><a href="http://www.iyunlu.com/view/css-xhtml/55.html" target="_blank" rel="external">那些年我们一起清除过的浮动</a></li>
+<li><a href="http://www.cnblogs.com/hooray/archive/2011/05/20/2052269.html" target="_blank" rel="external">完美解决IE6不支持position:fixed的bug</a></li>
+<li><a href="http://www.cnblogs.com/wdq1103/archive/2010/06/12/1757321.html" target="_blank" rel="external">CSS的盒子模型（Box Model）</a></li>
+</ol>
+<h2 id="CSS系列">CSS系列</h2><ol>
+<li><a href="http://www.iyunlu.com/view/css-xhtml/62.html" target="_blank" rel="external">可用性更好的CSS隐藏文字技术(CSS图片替换文字)</a></li>
+<li><a href="http://www.w3cplus.com/solution/index/index.html" target="_blank" rel="external">css解决方案</a></li>
+<li><a href="http://www.w3cplus.com/framework/index.php" target="_blank" rel="external">html常用结构</a></li>
+</ol>
+<h2 id="JavaScript系列">JavaScript系列</h2><ol>
+<li><a href="http://www.laruence.com/2009/05/28/863.html" target="_blank" rel="external">Javascript作用域原理</a></li>
+<li><a href="http://www.zhangxinxu.com/wordpress/2011/06/javascript%E6%9C%89%E5%85%B3%E7%9A%8410%E4%B8%AA%E6%80%AA%E7%99%96%E5%92%8C%E7%A7%98%E5%AF%86/" target="_blank" rel="external">javascript有关的10个怪癖和秘密</a></li>
+<li><a href="http://bonsaiden.github.com/JavaScript-Garden/zh/" target="_blank" rel="external">JavaScript 秘密花园</a></li>
+<li><a href="http://www.cn-cuckoo.com/deconstructed/" target="_blank" rel="external">JavaScript库 解构</a> 深入JavaScript库源代码，条分缕析，顿悟最优秀JavaScript库的核心机制</li>
+</ol>
+<h2 id="不可错过的网站推荐系列">不可错过的网站推荐系列</h2><ol>
+<li><a href="http://2012.qq.com/2012_show.htm" target="_blank" rel="external">腾讯2012年伦敦奥运会设计：前端项目回顾</a></li>
+<li><a href="http://www.zensorium.com/tinke/" target="_blank" rel="external">国外的视差滚动效果</a></li>
+</ol>
+<h2 id="前端总结文章系列">前端总结文章系列</h2><ol>
+<li><a href="http://hi.baidu.com/lijing00333/item/1c28309d8b46c7d41e427118" target="_blank" rel="external">十日谈</a></li>
+<li><a href="http://julying.com/blog/how-to-become-a-good-web-front-end-engineer/" target="_blank" rel="external">如何成为一名优秀的web前端工程师（前端攻城师）？</a></li>
+</ol>
+<h2 id="其它总结">其它总结</h2><ol>
+<li><a href="https://github.com/JSBa/jsba.github.io/blob/master/main.md" target="_blank" rel="external">Web开发相关资源、网站、工具推荐</a></li>
+</ol>
+<h2 id="前端社区活动">前端社区活动</h2><ol>
+<li><a href="http://www.w3ctech.com/event" target="_blank" rel="external">w3ctech</a></li>
+<li><a href="http://fequan.com/" target="_blank" rel="external">前端圈</a></li>
+<li><a href="http://d2forum.alibaba-inc.com/" target="_blank" rel="external">D2前端技术论坛</a></li>
+<li><a href="http://www.webrebuild.org/" target="_blank" rel="external">WebRebuild</a></li>
+<li><a href="http://www.html5dw.com/" target="_blank" rel="external">HTML5梦工场</a></li>
+</ol>]]></content>
+    <summary type="html">
+    <![CDATA[有些文章看过还是需要回头细细品味的。本文收集并整理看过的精彩的文章和优秀的前端技术博客。]]>
+    
+    </summary>
+    
+      <category term="Web前端" scheme="http://huixisheng.github.io/tags/Web/"/>
+    
+      <category term="收藏夹" scheme="http://huixisheng.github.io/tags//"/>
+    
+      <category term="前端开发" scheme="http://huixisheng.github.io/categories//"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[git命令简单介绍]]></title>
+    <link href="http://huixisheng.github.io/git/"/>
+    <id>http://huixisheng.github.io/git/</id>
+    <published>2015-01-21T08:38:23.000Z</published>
+    <updated>2015-01-26T15:16:42.000Z</updated>
+    <content type="html"><![CDATA[<p>本文内容</p>
+<pre><code>-<span class="ruby"> git简介
+</span>-<span class="ruby"> git常用命令
+</span>-<span class="ruby"> git超级实用命令
+</span>-<span class="ruby"> git常见问题解决方案
+</span>-<span class="ruby"> 超级丰富的git教程列表
+</span>-<span class="ruby"> 在线git代码托管平台
+</span>-<span class="ruby"> git客户端</span>
+</code></pre><a id="more"></a>
+
+<h2 id="git简介">git简介</h2><p><a href="http://baike.baidu.com/link?url=UYMd9W0XHTgdJBxme3gqKo2ClfetB3Gs80jxnQYlutmdsCzpgxH93YiWn5UpKoyEOF_celoV1XiyTG5iy0mlLYibww4uSPmlXemtoBJdODy" target="_blank" rel="external">git</a>是一款免费、开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。是目前最流行的版本管理系统，学会git几乎成了开发者的必备技能。<a href="http://baike.baidu.com/link?url=UYMd9W0XHTgdJBxme3gqKo2ClfetB3Gs80jxnQYlutmdsCzpgxH93YiWn5UpKoyEOF_celoV1XiyTG5iy0mlLYibww4uSPmlXemtoBJdODy" target="_blank" rel="external">git</a>是 <code>Linus Torvalds</code> 为了帮助管理 <code>Linux</code>内核开发而开发的一个开放源码的版本控制软件。</p>
+<h2 id="git常用命令">git常用命令</h2><p>对于这方面的介绍网上都有很全很详细。我就不班门弄斧了。介绍一个比较有用的命令 <code>`git help 命令例如:pull</code>。这么多的命令如果都要全部记住，怎么可能。还是学会查手册来的靠谱。</p>
+<p>以下几篇文章都对git常用的命令做了详细说明：</p>
+<ul>
+<li><a href="http://www.cnblogs.com/welfear/archive/2010/05/24/1742614.html" target="_blank" rel="external">git使用说明</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2014/06/git_remote.html" target="_blank" rel="external">Git远程操作详解</a></li>
+<li><a href="http://www.samirchen.com/git-commands/" target="_blank" rel="external">git命令详解</a></li>
+<li><a href="https://gitcafe.com/restkuan/git/blob/master/Git%E5%B0%8F%E7%BB%93.xmind" target="_blank" rel="external">学习git过程中做的xmin</a></li>
+</ul>
+<h2 id="git超级实用命令">git超级实用命令</h2><pre><code>git help branch <span class="comment">// 查看详细的参数</span>
+git config -l 查看配置信息
+git clone git@github<span class="class">.com</span>:huixisheng/huixisheng<span class="class">.github</span><span class="class">.com</span><span class="class">.git</span>
+git commit -C head -<span class="tag">a</span> --amend <span class="comment">//不会产生新的提交历史记录，复用HEAD留言，增补提交，而不增加提交记录</span>
+git branch -d feature_x <span class="comment">// 删除feature_x分支</span>
+git checkout -<span class="tag">b</span> master2 <span class="comment">// 切换并新建master2分支</span>
+</code></pre><p><code>git stash</code>  本地修改暂时存储起来，用于改到一半暂时不想<code>commit</code>和<code>pull</code>有冲突。更多<a href="http://wongyouth.com/blog/2014/03/28/solve-conflict-caused-by-git-stash/" target="_blank" rel="external">参考解决Git stash冲突问题</a></p>
+<p>使用Sublime Text 可以安装 <a href="https://github.com/kemayo/sublime-text-git" target="_blank" rel="external">sublime-text-git</a>，超级赞</p>
+<p><a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank" rel="external">如何创建 ssh key</a>。配置好后 ‘ssh -T git@github.com’ 测试配置是否成功。多个ssh key怎要么办？<code>vi ~/.ssh/config</code>。配置以下信息</p>
+<pre><code>Host github<span class="class">.com</span>
+    HostName github<span class="class">.com</span>
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/github_rsa
+    User git
+
+Host coding<span class="class">.net</span>
+    HostName coding<span class="class">.net</span>
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/codingnet_rsa
+    User git
+</code></pre><p><a href="http://macshuo.com/?p=676" target="_blank" rel="external">安装zsh</a>。就可以使用以下缩写命令，通过 <code>alias</code>查看命令别名。</p>
+<pre><code><span class="comment">// 添加自定义的命令</span>
+vi ~/<span class="class">.zshrc</span>
+source ~/<span class="class">.zshrc</span>
+
+ggpull
+ggpush
+</code></pre><h2 id="git常见问题解决方案">git常见问题解决方案</h2><h3 id="使用git_pull文件时和本地文件冲突怎么办">使用git pull文件时和本地文件冲突怎么办</h3><pre><code>git stash <span class="comment">// 本地修改暂时存储起来</span>
+git pull
+git stash <span class="keyword">pop</span>
+</code></pre><p><a href="http://wongyouth.com/blog/2014/03/28/solve-conflict-caused-by-git-stash/" target="_blank" rel="external">参考解决Git stash冲突问题</a></p>
+<h2 id="git_恢复单个文件的历史版本">git 恢复单个文件的历史版本</h2><blockquote>
+<p>首先查看该文件的历史版本信息：git log Default@2x.png<br>记录下需要恢复的commit版本号：如 9aa51d89799716aa68cff3f30c26f8815408e926<br>恢复该文件：git reset 9aa51d89799716aa68cff3f30c26f8815408e926 Default@2x.png</p>
+<p>还需要执行git checkout xxxxx(文件名)</p>
+<p>提交git:git commit -m “revert old file”</p>
+</blockquote>
+<p>直接用 git-checkout 即可。理解起来稍微有点奇怪就是了。</p>
+<pre><code>$ git checkout ${commit} /path/<span class="keyword">to</span>/<span class="type">file</span>
+</code></pre><p><a href="http://segmentfault.com/q/1010000002464973" target="_blank" rel="external">git 如何还原某个文件</a></p>
+<h3 id="如何更新自己Fork的代码">如何更新自己Fork的代码</h3><p><a href="https://github.com/iModule" target="_blank" rel="external">iModule</a>Fork了开源代码。<code>clone</code>到本地了，如何保证代码同最初的源码保持一致呢？</p>
+<pre><code>git clone git@github<span class="class">.com</span>:iModule/zepto<span class="class">.git</span>
+cd zepto
+git remote add zepto  git@github<span class="class">.com</span>:madrobby/zepto<span class="class">.git</span>
+git remote -v 查看是否多出了zepto分支
+git fetch zepto   git pull zepto master
+git merge zepto/master
+git push origin master
+</code></pre><h3 id="提交github不用输入用户名和密码">提交github不用输入用户名和密码</h3><blockquote>
+<p>　　在用git提交时代码至github上时每次都要输入用户名和密码，当提交操作较为频繁时非常不方便，可以按下文中的介绍，设置成提交时不用输入用户名和密码：<br>1、在当前库下，已经运行过 git remote add origin <a href="https://github.com/***/***.git" target="_blank" rel="external">https://github.com/***/***.git</a> 命令，则先运行如下命令：　<br>   git remote rm origin　　<br>   若以前没有运行过  git remote add origin <a href="https://github.com/***/***.git命令，直接跳到2步骤；" target="_blank" rel="external">https://github.com/***/***.git命令，直接跳到2步骤；</a><br>2、运行如下命令：<br>   git remote add origin git@github.com:username/test.git</p>
+</blockquote>
+<h3 id="无法删除远程分支">无法删除远程分支</h3><p>error: unable to delete ‘test-branch’: remote ref does not exist<br>error: failed to push some refs to ‘git@github.com:huixisheng/huixisheng.github.com.git’</p>
+<pre><code>git push origin <span class="symbol">:test-branch</span>
+git remote update --prune
+</code></pre><h2 id="超级丰富的git教程列表">超级丰富的git教程列表</h2><ul>
+<li><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">廖雪峰-Git教程</a></li>
+<li><a href="http://www.html-js.com/article/2021" target="_blank" rel="external">Git速成班: git rebase</a></li>
+<li><a href="http://photo.weibo.com/1621464661/wbphotos/large/mid/3801446388375272/pid/60a59655jw1eoh3732h52j21cv2fu4qp" target="_blank" rel="external">Git 命令整理</a></li>
+<li><a href="http://rogerdudler.github.io/git-guide/index.zh.html" target="_blank" rel="external">git - 简明指南</a></li>
+<li><a href="http://pcottle.github.io/learnGitBranching/" target="_blank" rel="external">在线Git命令行学习</a></li>
+<li><a href="http://www.worldhello.net/gotgithub/" target="_blank" rel="external">GotGitHub</a></li>
+<li><a href="http://git-scm.com/book/zh/v1/%E8%B5%B7%E6%AD%A5" target="_blank" rel="external">git-scm</a></li>
+<li><a href="https://ruby-china.org/topics/17590" target="_blank" rel="external">学习，使用 git 过程中做的思维导图</a></li>
+<li><a href="http://gitbook.liuhui998.com/index.html" target="_blank" rel="external">Git Community Book 中文版</a></li>
+</ul>
+<h2 id="在线git代码托管平台">在线git代码托管平台</h2><ul>
+<li><a href="https://github.com/" target="_blank" rel="external">github</a></li>
+<li><a href="https://coding.net/" target="_blank" rel="external">coding</a></li>
+<li><a href="https://gitcafe.com/" target="_blank" rel="external">GitCafe</a></li>
+<li><a href="https://code.csdn.net/" target="_blank" rel="external">csdn-code</a></li>
+<li><a href="http://git.oschina.net/" target="_blank" rel="external">开源中国</a></li>
+</ul>
+<h2 id="git客户端">git客户端</h2><ul>
+<li><a href="https://github.com/kemayo/sublime-text-git" target="_blank" rel="external">sublime-text-git</a></li>
+<li><a href="https://github.com/jisaacks/GitGutter" target="_blank" rel="external">Sublime Text 插件 GitGutter 更好的帮助开发者查看文件之前的改动和差异，提升开发效率</a></li>
+<li><a href="https://mac.github.com/" target="_blank" rel="external">GitHub</a></li>
+<li><a href="http://gitx.frim.nl/" target="_blank" rel="external">GitX</a></li>
+<li><a href="http://www.sourcetreeapp.com/" target="_blank" rel="external">SourceTree</a></li>
+</ul>
+<h2 id="参考">参考</h2><ul>
+<li><a href="http://diao.it/blog/2012/10/13/why-is-git-always-asking-for-my-password/" target="_blank" rel="external">Git 每次提交时的用户名和密码设置</a></li>
+<li><a href="http://blog.csdn.net/fyh2003/article/details/7528157" target="_blank" rel="external">git创建与管理远程分支</a></li>
+<li><a href="https://github.com/ysc/APDPlat/wiki/%E5%A6%82%E4%BD%95%E6%9B%B4%E6%96%B0%E8%87%AA%E5%B7%B1Fork%E7%9A%84%E4%BB%A3%E7%A0%81" target="_blank" rel="external">如何更新自己Fork的代码</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2014/06/git_remote.html" target="_blank" rel="external">Git远程操作详解</a></li>
+</ul>
+<p>最后欢迎补充</p>]]></content>
+    <summary type="html">
+    <![CDATA[<p>本文内容</p>
+<pre><code>-<span class="ruby"> git简介
+</span>-<span class="ruby"> git常用命令
+</span>-<span class="ruby"> git超级实用命令
+</span>-<span class="ruby"> git常见问题解决方案
+</span>-<span class="ruby"> 超级丰富的git教程列表
+</span>-<span class="ruby"> 在线git代码托管平台
+</span>-<span class="ruby"> git客户端</span>
+</code></pre>]]>
+    
+    </summary>
+    
+      <category term="git" scheme="http://huixisheng.github.io/tags/git/"/>
+    
+      <category term="开发工具" scheme="http://huixisheng.github.io/categories//"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[MacOSX 开机启动]]></title>
+    <link href="http://huixisheng.github.io/MacOSX-powerboot/"/>
+    <id>http://huixisheng.github.io/MacOSX-powerboot/</id>
+    <published>2014-10-25T00:53:16.000Z</published>
+    <updated>2015-01-26T15:18:56.000Z</updated>
+    <content type="html"><![CDATA[<p>相比较<code>Windows</code>和<code>linux</code>，MacOSX的开机启动下略显麻烦，可是要经常捣鼓本地服务器的开发者而言，本地开发环境有<code>php-fpm</code>、<code>nginx</code>、<code>mysql</code>、<code>Mongodb</code>、<code>nodejs</code>、<code>Memcache</code>等，如果每次开机都要重启这些服务，会不会是要疯掉。只是不知服务开多了会不会影响系统的系能。本文简单介绍Yosemite 10.10开机启动<code>Mysql</code>，<a href="http://tengine.taobao.org/" target="_blank" rel="external"><code>Tengine</code></a>。</p>
+<a id="more"></a>
+
+<h2 id="MacOSX_开机启动">MacOSX 开机启动</h2><h3 id="Unix系统级别的启动脚本">Unix系统级别的启动脚本</h3><pre><code><span class="regexp">/etc/mach_init.d/</span>
+<span class="regexp">/etc/mach_init_per_user.d/</span>
+<span class="regexp">/etc/mach_init_per_login_session.d/</span>
+</code></pre><p>在这3个目录下面的启动脚本将在系统初始化阶段执行。</p>
+<h2 id="OSX级别启动脚本">OSX级别启动脚本</h2><pre><code><span class="regexp">/System/</span>Library<span class="regexp">/StartupItems/</span>  Yosemite <span class="number">10.10</span>没内容
+~<span class="regexp">/Library/</span>StartupItems<span class="regexp">/</span>
+</code></pre><h2 id="OSX级别启动后台进程">OSX级别启动后台进程</h2><pre><code>~/Library/LaunchAgents         Per-user agents <span class="keyword">provided</span> <span class="keyword">by</span> the user.
+ /Library/LaunchAgents          Per-user agents <span class="keyword">provided</span> <span class="keyword">by</span> the administrator.
+ /Library/LaunchDaemons         System-wide daemons <span class="keyword">provided</span> <span class="keyword">by</span> the administrator.
+ /System/Library/LaunchAgents   Per-user agents <span class="keyword">provided</span> <span class="keyword">by</span> Mac OS X.
+ /System/Library/LaunchDaemons  System-wide daemons <span class="keyword">provided</span> <span class="keyword">by</span> Mac OS X.
+</code></pre><p>例如用<code>brew</code>安装的<code>nginx</code>:</p>
+<pre><code>mkdir -<span class="tag">p</span> ~/Library/LaunchAgents
+cp /usr/local/Cellar/nginx/<span class="number">1.4</span>.<span class="number">1</span>/homebrew<span class="class">.mxcl</span><span class="class">.nginx</span><span class="class">.plist</span> ~/Library/LaunchAgents/
+launchctl load -w ~/Library/LaunchAgents/homebrew<span class="class">.mxcl</span><span class="class">.nginx</span><span class="class">.plist</span>
+</code></pre><h3 id="添加开机启动项">添加开机启动项</h3><h4 id="sudo_vi_com-tengine-plist">sudo vi com.tengine.plist</h4><pre><code><span class="doctype">&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;</span>
+<span class="tag">&lt;<span class="title">plist</span> <span class="attribute">version</span>=<span class="value">"1.0"</span>&gt;</span>
+<span class="tag">&lt;<span class="title">dict</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">key</span>&gt;</span>Label<span class="tag">&lt;/<span class="title">key</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">string</span>&gt;</span>com.tengine<span class="tag">&lt;/<span class="title">string</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">key</span>&gt;</span>Program<span class="tag">&lt;/<span class="title">key</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">string</span>&gt;</span>/usr/local/tengine/sbin/nginx<span class="tag">&lt;/<span class="title">string</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">key</span>&gt;</span>RunAtLoad<span class="tag">&lt;/<span class="title">key</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">true</span>/&gt;</span>
+    <span class="tag">&lt;<span class="title">key</span>&gt;</span>KeepAlive<span class="tag">&lt;/<span class="title">key</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">true</span>/&gt;</span>
+<span class="tag">&lt;/<span class="title">dict</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">plist</span>&gt;</span>
+</code></pre><p>不知为何设置了<code>&lt;key&gt;ProgramArguments&lt;/key&gt;</code>就是无法开机启动。写好的<code>.plist</code>可以通过以下命令查看格式是否正确。</p>
+<pre><code>sudo plutil -lint com<span class="class">.tengine</span><span class="class">.plist</span>
+</code></pre><p><a href="https://developer.apple.com/library/Mac/documentation/Darwin/Reference/ManPages/man5/launchd.plist.5.html#//apple_ref/doc/man/5/launchd.plist" target="_blank" rel="external">plist相关的参数配置</a></p>
+<blockquote>
+<p>不过试了一下，不是超级用户登陆，而是普通用户登陆，并且监听的端口在1024以下的（例如把默认的8080端口改为了80端口），nginx 开机是启动不了。因此，要 nginx 开机启动的话，需要给予它管理员权限：</p>
+</blockquote>
+<pre><code>sudo chown <span class="string">root:</span>wheel <span class="regexp">/usr/</span>local<span class="regexp">/Cellar/</span>nginx<span class="regexp">/1.2.6/</span>sbin/nginx
+sudo chmod u+s <span class="regexp">/usr/</span>local<span class="regexp">/Cellar/</span>nginx<span class="regexp">/1.2.6/</span>sbin/nginx
+</code></pre><h4 id="最后调用一下launchctl命令，加载这个plist,">最后调用一下launchctl命令，加载这个plist,</h4><p>开机启动</p>
+<pre><code>launchctl load -w com<span class="class">.tengine</span><span class="class">.plist</span>
+</code></pre><p>可以通过查看下命令是否生效。这些命令都是用到才去查下，什么时候要好好恶补下。</p>
+<pre><code><span class="keyword">ps</span> aux | <span class="keyword">grep</span> tengine
+</code></pre><p>开机不启动</p>
+<pre><code>launchctl unload -w com<span class="class">.tengine</span><span class="class">.plist</span>
+</code></pre><p>例如让Adobe的更新程序开机不启动</p>
+<pre><code>sudo launchctl unload -w /Library/LaunchDaemons/com<span class="class">.adobe</span><span class="class">.fpsaud</span><span class="class">.plist</span>
+</code></pre><h2 id="用户级别启动程序">用户级别启动程序</h2><p>系统偏好设置 -&gt; 帐户 -&gt; 登录项</p>
+<h2 id="Linux的开机启动">Linux的开机启动</h2><pre><code>/etc/rc.<span class="keyword">local</span>
+</code></pre><p><a href="http://www.zhihu.com/question/20126189" target="_blank" rel="external">Linux 中 rc.local、init.d、rc.x、init 这几个文件（夹）各有什么作用？启动执行的脚本应该均放在 rc.local 中吗？</a></p>
+<h2 id="参考">参考</h2><ul>
+<li><a href="http://apple.group.iteye.com/group/wiki/1394-osx-boot-automatically-activated-control-procedures-script" target="_blank" rel="external">OSX开机自动启动程序的控制脚本</a></li>
+<li><a href="http://wiki.nginx.org/OSX_launchd" target="_blank" rel="external">OSX launchd</a></li>
+<li><a href="https://developer.apple.com/library/Mac/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLaunchdJobs.html" target="_blank" rel="external">Creating Launch Daemons and Agents</a></li>
+<li><a href="http://www.tanhao.me/talk/1287.html" target="_blank" rel="external">Mac OSX的开机启动配置</a></li>
+<li><a href="http://dhq.me/mac-install-nginx-mysql-php-fpm" target="_blank" rel="external">Mac 下 Nginx、MySQL、PHP-FPM 的安装配置</a></li>
+</ul>]]></content>
+    <summary type="html">
+    <![CDATA[<p>相比较<code>Windows</code>和<code>linux</code>，MacOSX的开机启动下略显麻烦，可是要经常捣鼓本地服务器的开发者而言，本地开发环境有<code>php-fpm</code>、<code>nginx</code>、<code>mysql</code>、<code>Mongodb</code>、<code>nodejs</code>、<code>Memcache</code>等，如果每次开机都要重启这些服务，会不会是要疯掉。只是不知服务开多了会不会影响系统的系能。本文简单介绍Yosemite 10.10开机启动<code>Mysql</code>，<a href="http://tengine.taobao.org/" target="_blank" rel="external"><code>Tengine</code></a>。</p>]]>
+    
+    </summary>
+    
+      <category term="MacOSX" scheme="http://huixisheng.github.io/tags/MacOSX/"/>
+    
+      <category term="MacOSX" scheme="http://huixisheng.github.io/categories/MacOSX/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[MacOSX下Mysql折腾记]]></title>
+    <link href="http://huixisheng.github.io/MacOSX-mysql/"/>
+    <id>http://huixisheng.github.io/MacOSX-mysql/</id>
+    <published>2014-10-24T15:16:46.000Z</published>
+    <updated>2015-01-26T15:18:35.000Z</updated>
+    <content type="html"><![CDATA[<p>本文记录在<code>MacOSX</code>下捣鼓<code>Mysql</code>,Yosemite 10.10 mysql 无法开机启动的解决办法.</p>
+<a id="more"></a>
+
+
+
+<h2 id="在MacOSX启动和停止MySQL服务的">在MacOSX启动和停止MySQL服务的</h2><p>启动MySQL服务</p>
+<pre><code>sudo <span class="regexp">/Library/</span>StartupItems<span class="regexp">/MySQLCOM/My</span>SQLCOM start
+</code></pre><p>停止MySQL服务</p>
+<pre><code>sudo <span class="regexp">/Library/</span>StartupItems<span class="regexp">/MySQLCOM/My</span>SQLCOM stop
+</code></pre><p>重启MySQL服务</p>
+<pre><code>sudo <span class="regexp">/Library/</span>StartupItems<span class="regexp">/MySQLCOM/My</span>SQLCOM restart
+</code></pre><p>或者可以安装<code>MySQL.prefPane</code>。在系统的偏好设置设置。发现在OS X Yosemite，mysql在系统偏好设置了随系统开机启动，结果无效，不怎怎么解决？？大神帮忙</p>
+<p>2014-11-16 12:23:52 更新</p>
+<p>升级到10.10后，即使勾选了 系统偏好设置-&gt;mysql-&gt;开机自动启动。mysql还是无法开机启动，不知道为何？需要开机后手动去启动或者命令行启动。</p>
+<pre><code>mysqlstart=<span class="symbol">'sudo</span> /<span class="type">Library</span>/<span class="type">StartupItems</span>/<span class="type">MySQLCOM</span>/<span class="type">MySQLCOM</span> restart'
+</code></pre><p>或者</p>
+<pre><code>mysql=<span class="symbol">'sudo</span> /usr/<span class="keyword">local</span>/mysql/bin/mysql'
+</code></pre><p>当然可以通过launchctl设置开机启动。可以参考<a href="http://my.oschina.net/huyuaning/blog/334584" target="_blank" rel="external">这里</a>。</p>
+<pre><code><span class="doctype">&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;</span>
+<span class="tag">&lt;<span class="title">plist</span> <span class="attribute">version</span>=<span class="value">"1.0"</span>&gt;</span>
+<span class="tag">&lt;<span class="title">dict</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">key</span>&gt;</span>Label<span class="tag">&lt;/<span class="title">key</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">string</span>&gt;</span>com.mysql<span class="tag">&lt;/<span class="title">string</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">key</span>&gt;</span>ProgramArguments<span class="tag">&lt;/<span class="title">key</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">array</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">string</span>&gt;</span>/usr/local/mysql/bin/mysqld_safe<span class="tag">&lt;/<span class="title">string</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">array</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">key</span>&gt;</span>RunAtLoad<span class="tag">&lt;/<span class="title">key</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">true</span>/&gt;</span>
+    <span class="tag">&lt;<span class="title">key</span>&gt;</span>KeepAlive<span class="tag">&lt;/<span class="title">key</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">false</span>/&gt;</span>
+<span class="tag">&lt;/<span class="title">dict</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">plist</span>&gt;</span>
+</code></pre><p>现在还没有弄明白 <code>/usr/local/mysql/bin/mysqld_safe</code> 和 <code>/usr/local/mysql/bin/mysql</code> 有什么区别？</p>
+<h2 id="MacOSX_#1045_无法登录_MySQL_服务器；忘记_root密码">MacOSX #1045 无法登录 MySQL 服务器；忘记 root密码</h2><p>报错：<br>    ERROR 1045 (28000): Access denied for user ‘root’@’localhost’ (using password: YES)</p>
+<p>1、先在系统偏好设置中关闭MySQL服务；<br>2、在终端中输入</p>
+<pre><code><span class="comment">sudo</span> <span class="comment">su</span>
+<span class="string">.</span><span class="comment">/mysqld_safe</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">skip</span><span class="literal">-</span><span class="comment">grant</span><span class="literal">-</span><span class="comment">tables</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">skip</span><span class="literal">-</span><span class="comment">networking</span> <span class="comment">&amp;</span>
+</code></pre><p>这时便能越过权限表，直接登陆MySQL了。<br>3、新建一个终端，输入</p>
+<pre><code><span class="title">mysql</span> -u root
+</code></pre><p>4、 在MySQL中修改root用户密码即可：</p>
+<pre><code>mysql<span class="subst">&gt;</span> UPDATE mysql<span class="built_in">.</span>user <span class="built_in">SET</span> password<span class="subst">=</span>PASSWORD(<span class="string">'新密码'</span>) <span class="keyword">WHERE</span> User<span class="subst">=</span><span class="string">'root'</span>;
+mysql<span class="subst">&gt;</span> FLUSH PRIVILEGES;
+</code></pre><h2 id="导入数据库">导入数据库</h2><p>如果是很大的sql的备份文件，用 <a href="http://www.phpmyadmin.net/home_page/index.php" target="_blank" rel="external">phpmyadmin</a>导入的话是会有问题。可以使用 mysqldump。</p>
+<ul>
+<li><a href="http://www.blogjava.net/alpha/archive/2007/08/10/135694.html" target="_blank" rel="external">MySQL的mysqldump工具的基本用法</a></li>
+</ul>
+<h2 id="推荐mysql相关的软件">推荐mysql相关的软件</h2><ul>
+<li><a href="http://www.phpmyadmin.net/home_page/index.php" target="_blank" rel="external">phpmyadmin</a></li>
+<li><a href="http://www.navicat.com.cn/products/navicat-premium" target="_blank" rel="external">Navicat Premium</a></li>
+</ul>
+<h2 id="参考">参考</h2><ul>
+<li><a href="http://blog.afantree.com/sql/the-mysql-root-password-forget-or-permissions-error-solution.html" target="_blank" rel="external">mysql root密码忘记或权限错误的解决办法</a></li>
+<li><a href="http://www.euryugasaki.com/archives/853" target="_blank" rel="external">Mac下新安装的MySQL无法登陆root用户解决方法</a></li>
+<li><a href="http://www.cnblogs.com/macro-cheng/archive/2011/10/25/mysql-001.html" target="_blank" rel="external">MAC下安装与配置MySQL</a></li>
+<li><a href="http://blog.csdn.net/loseleo/article/details/8703408" target="_blank" rel="external">~~Mac上MySQL root 密码忘记或权限错误的解决办法~</a> 找不到用户权限表</li>
+<li><a href="http://dev.mysql.com/downloads/file.php?id=454017" target="_blank" rel="external">Download mysql</a></li>
+</ul>]]></content>
+    <summary type="html">
+    <![CDATA[<p>本文记录在<code>MacOSX</code>下捣鼓<code>Mysql</code>,Yosemite 10.10 mysql 无法开机启动的解决办法.</p>]]>
+    
+    </summary>
+    
+      <category term="mysql" scheme="http://huixisheng.github.io/tags/mysql/"/>
+    
+      <category term="MacOSX" scheme="http://huixisheng.github.io/tags/MacOSX/"/>
+    
+      <category term="MacOSX" scheme="http://huixisheng.github.io/categories/MacOSX/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[前端开发工具收集和整理]]></title>
+    <link href="http://huixisheng.github.io/web-front-end-tools/"/>
+    <id>http://huixisheng.github.io/web-front-end-tools/</id>
+    <published>2014-08-04T14:09:45.000Z</published>
+    <updated>2015-01-26T15:30:31.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="在线兼容性测试">在线兼容性测试</h2><ul>
+<li><a href="http://www.modern.ie/zh-cn" target="_blank" rel="external">在线跨浏览器测试微软官方提供</a></li>
+</ul>
+<h2 id="浏览器开发工具">浏览器开发工具</h2><ul>
+<li><a href="http://www.cnblogs.com/ambar/archive/2011/11/09/25-secrets-of-the-browser-developer-tools-in-chinese.html#top" target="_blank" rel="external">【翻译】25个浏览器开发工具的秘密</a></li>
+<li><a href="http://ued.taobao.com/blog/2012/06/debug-with-chrome-dev-tool/" target="_blank" rel="external">chrome developer tool 调试技巧</a></li>
+</ul>
+<h2 id="在线压缩">在线压缩</h2><ul>
+<li><a href="http://www.smushit.com/ysmush.it/" target="_blank" rel="external">在线图片压缩</a></li>
+</ul>
+<h2 id="在线性能测试">在线性能测试</h2><ul>
+<li><a href="http://www.alibench.com/" target="_blank" rel="external">阿里测</a></li>
+<li><a href="http://www.jiankongmf.com/" target="_blank" rel="external">监控魔方</a></li>
+<li><a href="http://www.browserstack.com/" target="_blank" rel="external">Live, Web-Based Browser Testing</a></li>
+</ul>
+<h2 id="在线编辑器">在线编辑器</h2><ul>
+<li><a href="http://codepen.io/" target="_blank" rel="external">codepen</a></li>
+<li><a href="http://jsbin.com/" target="_blank" rel="external">jsbin</a></li>
+<li><a href="http://runjs.cn/" target="_blank" rel="external">runjs</a></li>
+</ul>
+<h2 id="常用的在线工具">常用的在线工具</h2><ul>
+<li><a href="http://cli.im/url/2014071515?ECNl3" target="_blank" rel="external">在线二维码</a></li>
+<li><a href="http://tool.oschina.net/" target="_blank" rel="external">比较全的在线工具-开源中国社区</a></li>
+</ul>]]></content>
+    <summary type="html">
+    <![CDATA[对平时工作中使用过的工具总结，高效工作，持续学习]]>
+    
+    </summary>
+    
+      <category term="在线工具" scheme="http://huixisheng.github.io/tags//"/>
+    
+      <category term="developTool" scheme="http://huixisheng.github.io/categories/developTool/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[致那些我使用过的优秀软件]]></title>
+    <link href="http://huixisheng.github.io/excellent-software-recommended/"/>
+    <id>http://huixisheng.github.io/excellent-software-recommended/</id>
+    <published>2014-08-04T13:43:41.000Z</published>
+    <updated>2015-01-26T15:15:15.000Z</updated>
+    <content type="html"><![CDATA[<p>工欲善必先利其器，好软件不仅会使你的开发效率提升，而且可以让你平时电脑的操作健步如飞。当然这不是绝对。本文推荐我使用过觉得不错的软件。希望可以让你更快更方便地工作。</p>
+<a id="more"></a>
+
+<h2 id="浏览器">浏览器</h2><h3 id="谷歌浏览器">谷歌浏览器</h3><ol>
+<li>书签、插件同步功能</li>
+<li>开发者工具，前端开发必备</li>
+<li>插件丰富，只有你想不到</li>
+<li>速度快</li>
+</ol>
+<h2 id="开发工具">开发工具</h2><ul>
+<li><a href="http://www.sublimetext.com/" target="_blank" rel="external">Sublime Text</a>轻量、简洁、高效、跨平台的编辑器，丰富的插件，方便的配色以及兼容vim快捷键等各种优点博得了很多前端开发人员的喜爱，目前我最钟爱的开发编辑器。<a href="http://huixisheng.github.io/something-about-sublime/" target="_blank" rel="external">相关的插件可以参考这里</a></li>
+<li><a href="http://markdownpad.com/" target="_blank" rel="external">MarkdwonPad</a>  windows的<a href="http://huixisheng.github.io/markdown-test/" target="_blank" rel="external">markdown</a>编辑器，实时预览，方便的快捷键，可以导出html,pdf，可以自定义样式。</li>
+<li><a href="http://mouapp.com/" target="_blank" rel="external">Mou</a> Mac 上的 Markdown 编辑器，两栏界面，直观清爽，功能简洁到位。</li>
+<li><a href="https://github.com/rhiokim/haroopad" target="_blank" rel="external">haroopad</a>跨平台的不错的<a href="http://huixisheng.github.io/markdown-test/" target="_blank" rel="external">markdown</a>编辑器</li>
+<li><a href="http://winmerge.org/" target="_blank" rel="external">WinMerge</a>是一款运行于Windows系统下的免费开源的文件比较/合并工具，使用它可以非常方便地比较多个文档内容甚至是文件夹与文件夹之间的文件差异。可以集成在小乌龟中</li>
+<li><a href="https://atom.io/" target="_blank" rel="external">Atom</a>按照 Github 的说法，这是一款非同一般的编辑器，是 21 世纪的创新产品，他们希望将来“从菜鸟到黑客都在使用 Atom 编写代码”。</li>
+</ul>
+<h2 id="常用软件">常用软件</h2><ul>
+<li><a href="https://www.dropbox.com/" target="_blank" rel="external">Dropbox</a></li>
+<li><a href="http://www.wiz.cn/" target="_blank" rel="external">Wiz笔记</a></li>
+<li><a href="http://www.yinxiang.com/" target="_blank" rel="external">印象笔记</a>为你记住每一点灵感、每一份心情和每一个梦想，<br>随时随地找到，让记忆永存。</li>
+</ul>
+<h2 id="window软件">window软件</h2><ul>
+<li><a href="http://www.stardock.com/products/fences/" target="_blank" rel="external">Fences</a> 桌面图标整理和自动分类软件，由 Stardock 出品，Fences 即桌面栅栏，是指桌面上有阴影的图标分组，它的目的是帮助您非常有条理地管理您的桌面。</li>
+<li><a href="http://www.voidtools.com/downloads/" target="_blank" rel="external">Everything</a>速度最快的文件名搜索工具.是voidtools开发的一款文件搜索工具，官网描述为“基于名称实时定位文件和目录（Locate files and folders by name instantly）”。它体积小巧，界面简洁易用，快速建立索引，快速搜索，同时占用极低的系统资源，实时跟踪文件变化，并且还可以通过http或ftp形式分享搜索。<br>-<a href="http://www.launchy.net/" target="_blank" rel="external">Launchy</a> 经典实用的免费键盘快速启动工具，桌面图标一个都不用。类似的mac的<a href="http://www.alfredapp.com/" target="_blank" rel="external">Alfred</a>,可以让你免去在桌面和开始菜单里费劲地找图标，敲击几下键盘，就能打开你想要打开的程序或者文件，是不是会让你感觉不错呢，Launchy 就是这样一款能够满足你这需求的软件，它能实实在在地提高你的工作效率。</li>
+</ul>
+<h2 id="Mac">Mac</h2><ul>
+<li><a href="http://www.alfredapp.com/" target="_blank" rel="external">Alfred</a>Mac下最好的快速启动工具。<a href="http://www.cnbeta.com/articles/203640.htm Alfred：Mac下最好的快速启动工具" target="_blank" rel="external">推荐阅读</a></li>
+<li><a href="https://github.com/b4winckler/macvim" target="_blank" rel="external">Macvim</a>  Mac开发利器之程序员编辑器。vi太高端大气上档次，表示驾驭不了。用的好的确实是一款神器。</li>
+<li><a href="http://www.cheatsheetapp.com/CheatSheet/" target="_blank" rel="external">CheatSheet</a> 显示当前程序快捷键列表</li>
+</ul>
+<h2 id="软件相关网址">软件相关网址</h2><ol>
+<li><a href="http://bbs.pcbeta.com/" target="_blank" rel="external">远景</a></li>
+<li><a href="http://www.iplaysoft.com/" target="_blank" rel="external">异次元</a></li>
+<li><a href="http://www.appinn.com/" target="_blank" rel="external">小众软件</a></li>
+<li><a href="http://xbeta.info/" target="_blank" rel="external">善用佳软</a></li>
+<li><a href="http://www.softjie.cn/" target="_blank" rel="external">软件街</a></li>
+</ol>]]></content>
+    <summary type="html">
+    <![CDATA[工欲善必先利其器，好软件不仅会使你的开发效率提升，而且可以让你平时电脑的操作健步如飞。]]>
+    
+    </summary>
+    
+      <category term="Software" scheme="http://huixisheng.github.io/tags/Software/"/>
+    
+      <category term="开发工具" scheme="http://huixisheng.github.io/categories//"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[mardowm语法简单测试]]></title>
+    <link href="http://huixisheng.github.io/markdown-test/"/>
+    <id>http://huixisheng.github.io/markdown-test/</id>
+    <published>2014-08-02T16:21:29.000Z</published>
+    <updated>2015-01-26T15:19:34.000Z</updated>
+    <content type="html"><![CDATA[<p>本文是学习markdown语法做的一些简单测试。引用<strong>MarkDown 团队统一书写规范 v1.0</strong></p>
+<a id="more"></a>
+
+<p>一个回车或者大于等于2个空格是一个段落。</p>
+<h1 id="1个#号可以生成h1">1个#号可以生成h1</h1><h2 id="2个#号可以生成h2">2个#号可以生成h2</h2><h3 id="3个#号可以生成h3">3个#号可以生成h3</h3><p>下面以此类推到h6</p>
+<p>一个Tab可以生成code BlockS</p>
+<pre><code><span class="tag">&lt;<span class="title">html</span>&gt;</span>
+<span class="tag">&lt;<span class="title">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css">
+        <span class="class">.clas</span><span class="rules">{ <span class="rule"><span class="attribute">font-size</span>:<span class="value"><span class="number">12px</span></span></span>;<span class="rule">}</span></span>
+    </span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+<span class="tag">&lt;<span class="title">body</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"page"</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</code></pre><p>在一个段落前面加<code>&gt;</code>可以生成一个 blockquotes</p>
+<blockquote>
+<p>我是用<code>&gt;</code>生成的blockquote</p>
+</blockquote>
+<p>数字<code>1. 2.</code>生成有序列表</p>
+<ol>
+<li>我是有序列表第1个<code>li</code></li>
+<li>我是有序列表第2个<code>li</code></li>
+<li>我是有序列表第3个<code>li</code></li>
+</ol>
+<hr>
+<h2 id="长的有序列表测试">长的有序列表测试</h2><ol>
+<li>工作中碰到的困难只是暂时的，不管是怎样的困难，</li>
+<li>项目开始前，必须对项目的架构做可行性、</li>
+<li>不要停下你学习脚步，不管你在现在在做的项目中有没有碰到困难，都要及时地给自己充电，拓宽自己的知识面和提高自己的技能</li>
+</ol>
+<p>字符<code>*、+、-</code>生成无序列表</p>
+<ul>
+<li>我是无序列表第1个<code>li</code></li>
+<li>我是无序列表第2个<code>li</code></li>
+<li>我是无序列表第3个<code>li</code></li>
+</ul>
+<p><strong>PS:每个列表的末尾需要4个空格或者tab</strong></p>
+<p>链接和图片生成的方法</p>
+<pre><code>[<span class="link_label">链接名称</span>](<span class="link_url">链接</span>)
+![<span class="link_label">图片名称</span>](<span class="link_url">链接</span>)
+</code></pre><p><a href="https://github.com/huixisheng/huixisheng.github.com/generated_pages/new" target="_blank" rel="external">链接测试</a></p>
+<p><img src="http://huixisheng.github.com/assets/themes/twitter/bootstrap/img/glyphicons-halflings.png" alt="测试图片"></p>
+<p>我是code<code>code</code>,我是<strong>加粗</strong>，我是<strong>斜体</strong>,我是<del>删除</del></p>
+<p><code>***</code>可以生成hr</p>
+<hr>
+<p>单纯的链接根式<code>&lt;链接&gt;</code><br><a href="http://huixisheng.github.com/" target="_blank" rel="external">http://huixisheng.github.com/</a></p>
+<p>特殊的字符需要转义， _ *</p>
+<hr>
+<h2 id="—————">—————</h2><p>引用开始</p>
+<h1 id="MarkDown_团队统一书写规范_v1-0">MarkDown 团队统一书写规范 v1.0</h1><p>由于 MarkDown 语法在细节的书写方式很多，为了让不同个体的文档传产出结构一致，提炼出此规范。<br>该规范遵循 <a href="http://daringfireball.net/projects/markdown/" target="_blank" rel="external">MarkDown 官方语法</a> 以及 <a href="https://github.com/mojombo/github-flavored-markdown/issues/1" target="_blank" rel="external">GitHub MakDown 语法</a>，旨在统一书写格式和代码风格，将多种写法统一。</p>
+<p><em>注：本文档符合自身规范，可视作demo，参看源码</em></p>
+<p>大家可以 <code>fork</code> 后形成自己团队的规范版本</p>
+<h2 id="1-1全局规范">1.1全局规范</h2><p><a name="top"></a></p>
+<ul>
+<li>MarkDown 文件均使用<code>.md</code>作为后缀 (<strong>小写字母</strong>)</li>
+<li>普通文本换行，使用行末尾<code>2空格</code>触发</li>
+</ul>
+<h2 id="格式规范">格式规范</h2><h3 id="标题结构格式">标题结构格式</h3><ol>
+<li>标题与紧贴的<code>上下正文</code>使用<code>1整行换行</code>隔开</li>
+<li><code>#</code>号和文字之间<code>1个空格</code>连接</li>
+<li>标题层级如下，最多6级</li>
+</ol>
+<pre><code><span class="preprocessor"># 顶级标题 等价于 title 和 <span class="title">&lt;h1&gt;</span></span>
+<span class="preprocessor">## 次级标题 等价于 <span class="title">&lt;h2&gt;</span></span>
+<span class="preprocessor">### 3级标题 等价于 <span class="title">&lt;h3&gt;</span></span>
+<span class="preprocessor">#### 4级标题 等价于 <span class="title">&lt;h4&gt;</span></span>
+<span class="preprocessor">##### 5级标题 等价于 <span class="title">&lt;h5&gt;</span></span>
+<span class="preprocessor">###### 6级标题 等价于 <span class="title">&lt;h6&gt;</span></span>
+<span class="preprocessor">####### 注：此行错误，标题层级最多6级 没有<span class="title">&lt;h7&gt;</span>标签</span>
+</code></pre><h3 id="加强和强调规范">加强和强调规范</h3><p>以下两种写法都是正确的，请统一为<strong>第一种</strong>，即一律使用 <code>**加强</code> <code>*强调</code></p>
+<pre><code><span class="keyword">*</span>emphasize<span class="keyword">*</span>   <span class="keyword">*</span><span class="keyword">*</span>strong<span class="keyword">*</span><span class="keyword">*</span> 相当于<span class="variable">&lt;strong&gt;</span>标签和<span class="variable">&lt;em&gt;</span>标签
+_emphasize_   __strong__
+</code></pre><h3 id="代码块规范">代码块规范</h3><ul>
+<li>行内代码使用<code>1对波浪号</code> 如： `hello world!`</li>
+<li>块级代码使用<code>3个波浪号</code> 或 <code>整体4空格缩进</code>，且上下均用<code>整行隔开</code>，如下:  (<strong>占用7行</strong>)</li>
+</ul>
+<pre><code><span class="php"><span class="preprocessor">&lt;?php</span>
+   <span class="keyword">echo</span> <span class="string">'看我源码 - 3个波浪号'</span>;
+<span class="preprocessor">?&gt;</span></span>
+</code></pre><pre><code><span class="php"><span class="preprocessor">&lt;?php</span>
+    <span class="keyword">echo</span> <span class="string">'看我源码 - 4空格缩进'</span>;
+<span class="preprocessor">?&gt;</span></span>
+</code></pre><h3 id="列表写法">列表写法</h3><ul>
+<li>列号<code>1.</code> 或者<code>*</code>后其后内容<code>空格</code>隔开</li>
+<li>列表块前后<code>整行隔开</code> 如下：</li>
+</ul>
+<pre><code><span class="bullet">1. </span>Windows
+<span class="bullet">2. </span>Mac
+<span class="bullet">3. </span>iOS
+<span class="code">    * iPhone</span>
+<span class="code">    * iPad</span>
+<span class="bullet">4. </span>Android
+</code></pre><p><strong>实际预览：</strong></p>
+<ol>
+<li>Windows</li>
+<li>Mac</li>
+<li>iOS<ul>
+<li>iPhone</li>
+<li>iPad</li>
+</ul>
+</li>
+<li>Android</li>
+</ol>
+<pre><code><span class="bullet">* </span>Windows
+<span class="bullet">*  </span>Mac
+<span class="bullet">*  </span>iOS
+<span class="bullet">*  </span>Android
+<span class="code">    1. v3.2</span>
+<span class="code">    2. v4.1</span>
+</code></pre><p><strong>实际预览：</strong></p>
+<ul>
+<li>Windows</li>
+<li>Mac</li>
+<li>iOS</li>
+<li>Android<ol>
+<li>v3.2</li>
+<li>v4.1</li>
+</ol>
+</li>
+</ul>
+<h3 id="其他标签规范">其他标签规范</h3><p>链接和Email<br>Inline:</p>
+<pre><code>An [<span class="link_label">example</span>](<span class="link_url">http://url.com/ "Title"</span>)
+</code></pre><p>引用样式标签 (titles are optional):</p>
+<pre><code>An [<span class="link_label">example</span>][<span class="link_reference">id</span>]. Then, anywhere
+else in the doc, define the link:
+
+[<span class="link_reference">id</span>]:<span class="link_url"> http://example.com/  "Title"</span>
+</code></pre><p>Email:</p>
+<pre><code><span class="title">An</span> email &lt;example<span class="variable">@example</span>.com&gt; link.
+</code></pre><p>插图<br>Inline (titles are optional):</p>
+<pre><code>![<span class="link_label">alt text</span>](<span class="link_url">/path/img.jpg "Title"</span>)
+</code></pre><p>引用式插图:</p>
+<pre><code>![<span class="link_label">alt text</span>][<span class="link_reference">id</span>]
+
+[<span class="link_reference">id</span>]:<span class="link_url"> /url/to/img.jpg "Title"</span>
+</code></pre><p>引用块及嵌套</p>
+<blockquote>
+<p>Email-style angle brackets<br>are used for blockquotes.</p>
+<blockquote>
+<p>And, they can be nested.</p>
+</blockquote>
+<h4 id="Headers_in_blockquotes">Headers in blockquotes</h4><ul>
+<li>You can quote a list.</li>
+<li>Etc.</li>
+</ul>
+</blockquote>
+<p>内联代码</p>
+<p><code>&lt;code&gt;</code> 段落中的用法</p>
+<p>也可以 <code>`代码中包含波浪号` </code>.<br>代码块</p>
+<p>Indent every line of a code block by at least 4 spaces or 1 tab.<br>代码的每行都最少用4个空格或者一个制表符(tab)</p>
+<p>我是普通文本块</p>
+<pre><code>我是一个预格式化的
+代码块.
+</code></pre><p>水平分割线<br>三个<code>连字符-</code>:</p>
+<hr>
+<h3 id="表格规范">表格规范</h3><p>一个简单的表格看起来如下：</p>
+<table>
+<thead>
+<tr>
+<th>第一个头部</th>
+<th>第二个头部</th>
+<th>第三个头部</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>内容格子</td>
+<td>内容格子</td>
+<td>内容格子</td>
+</tr>
+<tr>
+<td>内容格子</td>
+<td>内容格子</td>
+<td>内容格子</td>
+</tr>
+</tbody>
+</table>
+<p>每列的对齐可以通过在分割线上添加冒号来实现：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">第一个头部</th>
+<th style="text-align:center">第二个头部</th>
+<th style="text-align:right">第三个头部</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">左对齐</td>
+<td style="text-align:center">居中</td>
+<td style="text-align:right">右对齐</td>
+</tr>
+<tr>
+<td style="text-align:left">左对齐</td>
+<td style="text-align:center">居中</td>
+<td style="text-align:right">右对齐</td>
+</tr>
+</tbody>
+</table>
+<h3 id="页内锚标记">页内锚标记</h3><ul>
+<li><a href="#11全局规范">点我跳转到顶部</a>   // 利用 <code>#</code>,<code>##</code> 生成 <code>id</code> 锚标签</li>
+<li><a href="#top">另一种锚标记</a> // 利用 <code>&lt;a name=&quot;top&quot;&gt;&lt;/a&gt;</code></li>
+</ul>
+<hr>
+<p>附：参考 Hello-World.md 源码，<em>注意换行的使用</em></p>
+<pre><code><span class="header"># Hello-World</span>
+
+这是一个范例文件格式
+我是普通换行
+
+<span class="header">## 我是&lt;h2&gt;标题</span>
+
+我是<span class="code">`&lt;h2&gt;`</span>的内容
+
+<span class="header">## 我是&lt;h3&gt;标题</span>
+
+<span class="bullet">* </span>Windows
+<span class="bullet">*  </span>Mac
+<span class="bullet">*  </span>iOS
+<span class="bullet">*  </span>Android
+</code></pre><p>注：引用范例请参看源码底部</p>
+<h4 id="License">License</h4><p>Released under <a href="http://rem.mit-license.org/" target="_blank" rel="external">MIT</a> LICENSE</p>
+<h2 id="引用结束">引用结束</h2><hr>
+<h2 id="参考">参考</h2><ol>
+<li><a href="https://github.com/hzlzh/1MarkDown" target="_blank" rel="external">MarkDown 团队统一书写规范 v1.0</a></li>
+</ol>]]></content>
+    <summary type="html">
+    <![CDATA[本文是学习markdown语法做的一些简单测试]]>
+    
+    </summary>
+    
+      <category term="markdown" scheme="http://huixisheng.github.io/tags/markdown/"/>
+    
+      <category term="开发工具" scheme="http://huixisheng.github.io/categories//"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[静态文件存储]]></title>
+    <link href="http://huixisheng.github.io/cdn/"/>
+    <id>http://huixisheng.github.io/cdn/</id>
+    <published>2014-08-02T16:15:36.000Z</published>
+    <updated>2015-01-26T15:28:54.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="什么是cdn">什么是cdn</h2><p>CDN的全称是Content Delivery Network，即内容分发网络。其基本思路是尽可能避开互联网上有可能影响数据传输速度和稳定性的瓶颈和环节，使内容传输的更快、更稳定。通过在网络各处放置节点服务器所构成的在现有的互联网基础之上的一层智能虚拟网络，CDN系统能够实时地根据网络流量和各节点的连接、负载状况以及到用户的距离和响应时间等综合信息将用户的请求重新导向离用户最近的服务节点上。其目的是使用户可就近取得所需内容，解决 Internet网络拥挤的状况，提高用户访问网站的响应速度。</p>
+<a id="more"></a>
+
+<h2 id="cdn前端库">cdn前端库</h2><ol>
+<li><a href="http://www.staticfile.org/" target="_blank" rel="external">开放静态文件</a>我们的目标是提供这样一个仓库，让它尽可能全面收录优秀的开源库，并免费为之提供 CDN 加速服务，使之有更好的访问速度和稳定的环境。同时，我们也提供开源库源接入的入口，让所有人都可以提交开源库，包括 JS、CSS、image 和 swf 等静态文件。</li>
+<li><a href="http://cdnjs.com/" target="_blank" rel="external">cdnjs</a></li>
+<li><a href="https://developers.google.com/speed/libraries/devguide?csw=1" target="_blank" rel="external">Google CDN</a></li>
+<li><a href="http://www.asp.net/ajaxlibrary/cdn.ashx" target="_blank" rel="external">微软CDN</a></li>
+<li><a href="http://lib.sinaapp.com/" target="_blank" rel="external">SeaCDN</a></li>
+<li><a href="http://libs.useso.com/" target="_blank" rel="external">360网站卫士常用前端公共库CDN服务</a></li>
+<li><a href="http://cdn.code.baidu.com/" target="_blank" rel="external">百度静态资源公共库</a></li>
+<li><a href="http://open.bootcss.com/" target="_blank" rel="external">Bootstrap中文网开放CDN服务</a></li>
+</ol>
+<h2 id="参考">参考</h2><ol>
+<li><a href="http://baike.baidu.com/view/8689800.htm?fromId=21895&amp;redirected=seachword" target="_blank" rel="external">cdn 百度百科</a></li>
+</ol>]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="什么是cdn">什么是cdn</h2><p>CDN的全称是Content Delivery Network，即内容分发网络。其基本思路是尽可能避开互联网上有可能影响数据传输速度和稳定性的瓶颈和环节，使内容传输的更快、更稳定。通过在网络各处放置节点服务器所构成的在现有的互联网基础之上的一层智能虚拟网络，CDN系统能够实时地根据网络流量和各节点的连接、负载状况以及到用户的距离和响应时间等综合信息将用户的请求重新导向离用户最近的服务节点上。其目的是使用户可就近取得所需内容，解决 Internet网络拥挤的状况，提高用户访问网站的响应速度。</p>]]>
+    
+    </summary>
+    
+      <category term="前端工具" scheme="http://huixisheng.github.io/tags//"/>
+    
+      <category term="cdn" scheme="http://huixisheng.github.io/tags/cdn/"/>
+    
+      <category term="developTool" scheme="http://huixisheng.github.io/categories/developTool/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[jQuery 插件开发]]></title>
+    <link href="http://huixisheng.github.io/jquery-plugin-develop/"/>
+    <id>http://huixisheng.github.io/jquery-plugin-develop/</id>
+    <published>2014-01-12T05:18:03.000Z</published>
+    <updated>2015-01-26T15:17:52.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="jQuery_插件开发">jQuery 插件开发</h1><p>现在做的很多项目都是基于jQuery，很多时候jQuery插件就是一个模块。本文结合jQuery的源码对jQuery插件的写法做一个简单的介绍。</p>
+<a id="more"></a>
+
+<h2 id="插件种类">插件种类</h2><h3 id="一-_类级别的插件开发">一. 类级别的插件开发</h3><p>类级别的插件开发最直接的理解就是给jQuery类添加类方法，可以理解为添加静态方法。将函数定义于jQuery的命名空间中。</p>
+<h4 id="1-1_添加一个新的全局函数">1.1 添加一个新的全局函数</h4><pre><code>jQuery.newMethod = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
+    <span class="built_in">console</span>.log(<span class="string">'我是新添加到一个方法'</span>)；
+}
+</code></pre><p>例如源码： <code>jQuery.find = Sizzle;</code></p>
+<h4 id="1-2_添加多个全局函数">1.2 添加多个全局函数</h4><pre><code>jQuery.newMethod1 = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
+    <span class="built_in">console</span>.log(<span class="string">'我是新添加到一个方法1'</span>)；
+}
+
+jQuery.newMethod2 = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
+    <span class="built_in">console</span>.log(<span class="string">'我是新添加到一个方法2'</span>)；
+}
+</code></pre><p>例如源码：</p>
+<pre><code>jQuery.<span class="variable">find =</span> Sizzle;
+jQuery.<span class="variable">expr =</span> Sizzle.selectors;
+jQuery.expr[<span class="string">":"</span>] = jQuery.expr.pseudos;
+jQuery.<span class="variable">unique =</span> Sizzle.uniqueSort;
+jQuery.<span class="variable">text =</span> Sizzle.getText;
+jQuery.<span class="variable">isXMLDoc =</span> Sizzle.isXML;
+jQuery.<span class="variable">contains =</span> Sizzle.contains;
+</code></pre><h4 id="1-3_使用_jQuery-extend(_object_)">1.3 使用 <code>jQuery.extend( object )</code></h4><p>扩展jQuery对象本身。用来在jQuery命名空间上增加新函数。例如 <code>jQuery.isFunction</code> 就是这样添加的。</p>
+<p>当 <code>1.2</code> 需要添加很多方法时将会显得有多余。更何况 <code>javasript</code> 一切皆对象。实现多个方法的继承将显得很重要。</p>
+<pre><code>jQuery.extend({
+
+    newMethod1 : <span class="keyword">function</span>(){
+        console.log(<span class="string">'我是新添加到一个方法1'</span>)；
+    },
+
+    newMethod2 : <span class="keyword">function</span>(){
+        console.log(<span class="string">'我是新添加到一个方法2'</span>)；
+    }
+    // <span class="keyword">...</span> 比较多的方法
+});
+</code></pre><p>例如源码：</p>
+<pre><code>jQuery.extend({
+
+    <span class="comment">// See test/unit/core.js for details concerning isFunction.</span>
+    <span class="comment">// Since version 1.3, DOM methods and functions like alert</span>
+    <span class="comment">// aren't supported. They return false on IE (#2968).</span>
+    isFunction: <span class="function"><span class="keyword">function</span><span class="params">( obj )</span> </span>{
+        <span class="keyword">return</span> jQuery.type(obj) === <span class="string">"function"</span>;
+    },
+
+    isArray: <span class="built_in">Array</span>.isArray || <span class="function"><span class="keyword">function</span><span class="params">( obj )</span> </span>{
+        <span class="keyword">return</span> jQuery.type(obj) === <span class="string">"array"</span>;
+    },
+
+    isWindow: <span class="function"><span class="keyword">function</span><span class="params">( obj )</span> </span>{
+        <span class="comment">/* jshint eqeqeq: false */</span>
+        <span class="keyword">return</span> obj != <span class="literal">null</span> &amp;&amp; obj == obj.window;
+    },
+
+    isNumeric: <span class="function"><span class="keyword">function</span><span class="params">( obj )</span> </span>{
+        <span class="keyword">return</span> !<span class="built_in">isNaN</span>( <span class="built_in">parseFloat</span>(obj) ) &amp;&amp; <span class="built_in">isFinite</span>( obj );
+    }
+
+});
+</code></pre><h4 id="1-4_使用命名空间">1.4 使用命名空间</h4><p>虽然在jQuery命名空间中，我们禁止使用了大量的javaScript函数名和变量。但是仍然不可避免某些函数或变量名将于其他jQuery插件冲突，特别是在团队开发，因此我们习惯将一些方法封装到另一个自定义的命名空间。</p>
+<pre><code>jQuery.myPlugin = {
+    newMethod1 : <span class="keyword">function</span>(){
+        console.log(<span class="string">'我是新添加到一个方法1。可以通过 jQuery.myPlugin.newMethod1 '</span>)；
+    },
+
+    newMethod2 : <span class="keyword">function</span>(){
+        console.log(<span class="string">'我是新添加到一个方法2。可以通过 jQuery.myPlugin.newMethod2 '</span>)；
+    }
+    // <span class="keyword">...</span> 比较多的方法
+}
+</code></pre><p>例如源码：</p>
+<pre><code><span class="comment">// 处理动画的</span>
+jQuery.fx.start = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{
+<span class="keyword">if</span> ( !timerId ) {
+    timerId = setInterval( jQuery.fx.tick, jQuery.fx.interval );
+}
+};
+
+jQuery.fx.stop = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{
+    clearInterval( timerId );
+    timerId = <span class="literal">null</span>;
+};
+
+jQuery.fx.speeds = {
+    slow: <span class="number">600</span>,
+    fast: <span class="number">200</span>,
+    <span class="comment">// Default speed</span>
+    _default: <span class="number">400</span>
+};
+</code></pre><h3 id="二、实例对象方法插件">二、实例对象方法插件</h3><p>开发能让所有的 <code>jQuery</code> 实例对象都可以调用的方法。也就是说，只要通过 <code>$()</code> 工厂获得<br>的 <code>jQuery</code> 实例对象，都可以调用我们开发的方法。很多插件都是这种类型。</p>
+<p>实现方法：<a href="javascript:;" title="展开又是一篇很长的文章，请看下回" target="_blank" rel="external">自动执行的匿名函数</a>和类级别的插件开发的组合。</p>
+<pre><code>;(<span class="function"><span class="keyword">function</span><span class="params">($)</span></span>{
+
+    $.fn.extend({
+        pluginName: <span class="function"><span class="keyword">function</span><span class="params">(options, callback)</span></span>{
+            <span class="comment">// 自定义的插件</span>
+        }
+    });
+
+    <span class="comment">// 或者</span>
+    $.fn.pluginName = <span class="function"><span class="keyword">function</span><span class="params">(options, callback)</span></span>{
+
+    }
+
+})(jQuery);
+</code></pre><p>匿名函数的形参是<code>$</code>, <code>jQuery</code> 当做实参传入，立即调用执行。目前很多<code>jQuery</code>的类库都采用这种方式，例如<code>jQuery</code>,<code>Seajs</code>等。<code>jQuery</code>插件可以放心的使用<code>$</code>,不用当心会跟其他库发生冲突，例如 <code>prototype.js</code>。</p>
+<p>推荐的插件写法：</p>
+<pre><code><span class="comment">// 创建一个闭包</span>
+;(<span class="function"><span class="keyword">function</span><span class="params">($)</span> </span>{
+    <span class="comment">// 插件的定义</span>
+    $.fn.hilight = <span class="function"><span class="keyword">function</span><span class="params">(options)</span> </span>{
+        debug(<span class="keyword">this</span>);
+        <span class="comment">// build main options before element iteration</span>
+        <span class="keyword">var</span> opts = $.extend({}, $.fn.hilight.defaults, options);
+        <span class="comment">// iterate and reformat each matched element</span>
+        <span class="keyword">return</span> <span class="keyword">this</span>.each(<span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{
+            $<span class="keyword">this</span> = $(<span class="keyword">this</span>);
+            <span class="comment">// build element specific options</span>
+            <span class="keyword">var</span> o = $.meta ? $.extend({}, opts, $<span class="keyword">this</span>.data()) : opts;
+            <span class="comment">// update element styles</span>
+            $<span class="keyword">this</span>.css({
+                backgroundColor: o.background,
+                color: o.foreground
+            });
+            <span class="keyword">var</span> markup = $<span class="keyword">this</span>.html();
+            <span class="comment">// call our format function</span>
+            markup = $.fn.hilight.format(markup);
+            $<span class="keyword">this</span>.html(markup);
+        });
+    };
+    <span class="comment">// 私有函数：debugging</span>
+
+    <span class="function"><span class="keyword">function</span> <span class="title">debug</span><span class="params">($obj)</span> </span>{
+        <span class="keyword">if</span> (<span class="built_in">window</span>.console &amp;&amp; <span class="built_in">window</span>.console.log)
+            <span class="built_in">window</span>.console.log(<span class="string">'hilight selection count: '</span> + $obj.size());
+    };
+    <span class="comment">// 定义暴露format函数</span>
+    $.fn.hilight.format = <span class="function"><span class="keyword">function</span><span class="params">(txt)</span> </span>{
+        <span class="keyword">return</span> <span class="string">'&lt;strong&gt;'</span> + txt + <span class="string">'&lt;/strong&gt;'</span>;
+    };
+    <span class="comment">// 插件的defaults</span>
+    $.fn.hilight.defaults = {
+        foreground: <span class="string">'red'</span>,
+        background: <span class="string">'yellow'</span>
+    };
+    <span class="comment">// 闭包结束</span>
+})(jQuery);
+</code></pre><p>]</p>
+<h2 id="如何将jQuery_plugin_封装成seajs模块">如何将jQuery plugin 封装成seajs模块</h2><p>Todo：</p>
+<h2 id="参考">参考</h2><ol>
+<li><a href="http://www.iteye.com/topic/545971" target="_blank" rel="external">jQuery插件开发全解析</a></li>
+<li><a href="http://plugins.jquery.com/" target="_blank" rel="external">jQuery Plugin 官网</a></li>
+<li><a href="http://hemin.cn/jq/" target="_blank" rel="external">jQuery 1.10.3 中文帮助手册</a></li>
+<li><a href="http://www.36ria.com/2822" target="_blank" rel="external">jquery插件开发规范—jquery插件开发进阶教程（1）</a></li>
+</ol>]]></content>
+    <summary type="html">
+    <![CDATA[现在做的很多项目都是基于jQuery，很多时候jQuery插件就是一个模块。本文结合jQuery的源码对jQuery插件的写法做一个简单的介绍。]]>
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="http://huixisheng.github.io/tags/JavaScript/"/>
+    
+      <category term="jQuery" scheme="http://huixisheng.github.io/tags/jQuery/"/>
+    
+      <category term="前端开发" scheme="http://huixisheng.github.io/categories//"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[跨域]]></title>
+    <link href="http://huixisheng.github.io/cross-domain/"/>
+    <id>http://huixisheng.github.io/cross-domain/</id>
+    <published>2013-10-17T04:30:19.000Z</published>
+    <updated>2015-01-26T15:14:30.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="同域父窗口和子iframe的交互">同域父窗口和子iframe的交互</h2><h3 id="父窗口获取iframe的对象">父窗口获取iframe的对象</h3><p><code>window.frames[&quot;frame1&quot;].document.getElementById(“title”).innerHTML</code>,就能获取iframe页面中一个id值为” title”的节点值</p>
+<h3 id="子窗口获取窗口对象">子窗口获取窗口对象</h3><p>window.parent.document获取到的就是父窗口的document对象</p>
+<h3 id="父窗口获取子窗口内的属性和方法调用">父窗口获取子窗口内的属性和方法调用</h3><p>window.frames[“frame1”].sayHello()这就是调用的一个名为frame1的iframe页面内的一个叫sayHello的方法</p>
+<h3 id="子窗口获取父窗口的属性和方法调用">子窗口获取父窗口的属性和方法调用</h3><p>indow.parent.frames[“frame2”]获取到一个名为frame2的iframe的window对象</p>
+<p>contentWindow contentDocument</p>
+<h2 id="参考">参考</h2><ol>
+<li><a href="http://www.zhouqicf.com/javascript/iframe-auto-height" target="_blank" rel="external">iframe自适应高度</a></li>
+<li><a href="http://www.lzlu.com/blog/?p=692&amp;cpage=1#comment-16513" target="_blank" rel="external">解决跨域iframe自适应高度</a></li>
+<li><a href="http://www.honglei.net/?p=287" target="_blank" rel="external">跨域iframe自适应高度</a></li>
+<li><a href="http://jiangzhenghua.iteye.com/blog/1221178" target="_blank" rel="external">javascript跨域解决方案(一)</a></li>
+<li><a href="http://tid.tenpay.com/?p=2002" target="_blank" rel="external">跨域，不再纠结</a></li>
+<li><a href="http://tid.tenpay.com/?p=4695" target="_blank" rel="external">父子页面之间跨域通信的方法</a></li>
+<li><a href="http://watercold.sinaapp.com/2012/09/%E8%B7%A8%E5%9F%9F%E7%AF%871%E4%B9%8Biframe%E4%BA%8C%E7%BA%A7%E8%B7%A8%E5%9F%9F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E5%8F%8A%E5%89%AF%E4%BD%9C%E7%94%A8/" target="_blank" rel="external">跨域篇(一)之iframe二级跨域解决方案及副作用</a></li>
+<li><a href="http://leechan.me/?p=703" target="_blank" rel="external">浅谈iframe</a> 介绍iframe 父子页面操作</li>
+<li><a href="http://www.nowamagic.net/librarys/veda/detail/215" target="_blank" rel="external">JavaScript对iframe的DOM操作</a></li>
+<li><a href="http://www.cnblogs.com/rainman/archive/2011/02/16/1956431.html" target="_blank" rel="external">JS操作iframe</a></li>
+<li><a href="http://www.cnblogs.com/gssajl/articles/2714908.html" target="_blank" rel="external">window.close(); 关闭浏览器窗口js代码的分析总结</a></li>
+</ol>]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="同域父窗口和子iframe的交互">同域父窗口和子iframe的交互</h2><h3 id="父窗口获取iframe的对象">父窗口获取iframe的对象</h3><p><code>window.frames[&quot;frame1&quot;].documen]]>
+    </summary>
+    
+      <category term="JavaScript" scheme="http://huixisheng.github.io/tags/JavaScript/"/>
+    
+      <category term="前端开发" scheme="http://huixisheng.github.io/categories//"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[一些处理ie的js库]]></title>
+    <link href="http://huixisheng.github.io/js-for-low-ie/"/>
+    <id>http://huixisheng.github.io/js-for-low-ie/</id>
+    <published>2013-08-23T02:25:41.000Z</published>
+    <updated>2015-01-26T15:18:12.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="html5shiv">html5shiv</h2><p><a href="http://html5shiv.googlecode.com/svn/trunk/html5.js" target="_blank" rel="external">html5shiv</a></p>
+<h2 id="css3-mediaqueries-js">css3-mediaqueries-js</h2><p><a href="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js" target="_blank" rel="external">css3-mediaqueries-js</a></p>]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="html5shiv">html5shiv</h2><p><a href="http://html5shiv.googlecode.com/svn/trunk/html5.js" target="_blank" rel="external">html5shiv</a]]>
+    </summary>
+    
+      <category term="JavaScript" scheme="http://huixisheng.github.io/tags/JavaScript/"/>
+    
+      <category term="前端开发" scheme="http://huixisheng.github.io/categories//"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Sublime Text插件介绍]]></title>
+    <link href="http://huixisheng.github.io/something-about-sublime/"/>
+    <id>http://huixisheng.github.io/something-about-sublime/</id>
+    <published>2013-08-10T14:32:38.000Z</published>
+    <updated>2015-01-26T15:30:11.000Z</updated>
+    <content type="html"><![CDATA[<p>记录Sublime Text使用过程中的点点滴滴，虽然网上关于Sublime Text介绍的文章很多，但是使用过程多少有点自己的看法或者想法。在使用IDE的路上还有漫长的故事，VS2020 - Eclipse － Dreamware - Aptana - EditPlus - Notepad++ - Sublime Text - …。中间的过程中体验过webstorm，用下来感觉最棒的还是Sublime，高亮、缩进、插件、智能提示、代码片段等，Sublime顶呱呱，哗啦啦的。</p>
+<a id="more"></a>
+
+<p>目前<a href="http://www.sublimetext.com/3" target="_blank" rel="external">Sublime Text3</a>还是beta版本，打开的速度相对2有了很大的提升，但是不足的就是插件方面有很多不兼容。<a href="https://sublime.wbond.net/" target="_blank" rel="external">查看Subliem Text3兼容的插件</a>。感觉主要的那些插件ST3还是可以使用的。</p>
+<p>还有一点就是从win系统过渡到mac系统，有很多的操作习惯和快捷键不一样，稍微有点小不适应。</p>
+<h1 id="我在使用的插件">我在使用的插件</h1><h2 id="Package_Control(不解释，神器)">Package Control(不解释，神器)</h2><p>Sublime Text2安装Package Control<br>使用<code>ctrl＋～</code>调出控制台</p>
+<pre><code>import urllib2,os; pf=<span class="string">'Package Control.sublime-package'</span>; ipp=sublime.installed_packages_path(); os.makedirs(ipp) <span class="keyword">if</span> <span class="keyword">not</span> os.path.<span class="keyword">exists</span>(ipp) <span class="keyword">else</span> None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); <span class="keyword">open</span>(os.path.<span class="keyword">join</span>(ipp,pf),<span class="string">'wb'</span>).<span class="keyword">write</span>(urllib2.urlopen(<span class="string">'http://sublime.wbond.net/'</span>+pf.replace(<span class="string">' '</span>,<span class="string">'%20'</span>)).<span class="keyword">read</span>()); <span class="keyword">print</span> <span class="string">'Please restart Sublime Text to finish installation'</span>
+</code></pre><p>Sublime Text3如何安装Package Control<br>1、先下载<a href="https://github.com/wbond/sublime_package_control" target="_blank" rel="external">https://github.com/wbond/sublime_package_control</a>中的zip文件，解压后将文件夹名更改为 Package Control <strong>PS:注意大小写</strong>。</p>
+<p>2、下载插件分支<a href="https://github.com/wbond/sublime_package_control/tree/python3" target="_blank" rel="external">https://github.com/wbond/sublime_package_control/tree/python3</a>中的zip文件，解压后覆盖到 Package Control 文件中，完成此插件API函数的更新。</p>
+<p>3、将Package Control文件夹放入Sublime Text 3\Packages中，重启sublime text 3即可生效。</p>
+<p>2013/08/22<br>今天有同事说Sublime Text3也是可以用命令的。<a href="https://sublime.wbond.net/installation" target="_blank" rel="external">猛戳这里</a></p>
+<pre><code><span class="keyword">import</span> urllib.request,os; pf = <span class="string">'Package Control.sublime-package'</span>; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.<span class="keyword">join</span>(ipp, pf), <span class="string">'wb'</span>).<span class="keyword">write</span>(urllib.request.urlopen( <span class="string">'http://sublime.wbond.net/'</span> + pf.replace(<span class="string">' '</span>,<span class="string">'%20'</span>)).<span class="keyword">read</span>())
+</code></pre><h2 id="Emment">Emment</h2><p><a href="http://docs.emmet.io/" target="_blank" rel="external">Emment书写规则</a>。ZenCoding的升级版，提高开发效率。写HTML特别爽。</p>
+<h2 id="jsFormat">jsFormat</h2><p>格式化JavaScript</p>
+<h2 id="Alignment">Alignment</h2><p>可以根据 : 和 = 对齐，满足有代码洁癖同学的需求，快捷键是 <code>Command + Control + A</code></p>
+<h2 id="BracketHighlighter">BracketHighlighter</h2><p>括号高亮</p>
+<h2 id="DocBlockr">DocBlockr</h2><p>提供 JSDoc 和 PHPDoc 的自动生成功能</p>
+<h2 id="SidebarEnhancements">SidebarEnhancements</h2><p>侧边栏增强</p>
+<h2 id="HtmlTidy">HtmlTidy</h2><p>清理与排版你的HTML代码</p>
+<h2 id="ConvertToUTF8">ConvertToUTF8</h2><p>ST2只支持utf8编码，该插件可以显示与编辑 GBK, BIG5, EUC-KR, EUC-JP, Shift_JIS 等编码的文件</p>
+<h2 id="HTML-CSS-JS_Prettify">HTML-CSS-JS Prettify</h2><p>格式化HTML、CSS、JS文件。这是我目前找到的最好的一个插件。推荐给同事，他们也说这个很不粗。</p>
+<h2 id="MarkdownEditing"><a href="https://github.com/SublimeText-Markdown/MarkdownEditing" target="_blank" rel="external">MarkdownEditing</a></h2><p>mardown 实时预览。</p>
+<h2 id="Git"><a href="https://github.com/kemayo/sublime-text-git" target="_blank" rel="external">Git</a></h2><h1 id="快捷键(CMD相当Win的Ctrl键)">快捷键(CMD相当Win的Ctrl键)</h1><ol>
+<li>同时编辑多行 CMD+Shift+L</li>
+<li>向下同时选中下一个相同的文本 反复按 CMD+D</li>
+<li>跳到指定行 CMD+G 或者 CMD+P后输入字符”:”</li>
+<li>快速列出/跳转函数就是 CMD+R</li>
+<li>可以快速跳转到当前项目中的任意文件，可进行关键词匹配 CMD+P</li>
+<li>补充中</li>
+</ol>
+<h1 id="Sublime_配置">Sublime 配置</h1><h2 id="创建可复用的代码片段">创建可复用的代码片段</h2><p>菜单上点击Tools -&gt; New Snippet，会新建一个xml文件页<br>    content 里面就是代码模版：${序号：默认值} ，序号相同的地方光标会同时停在那可以多处同时编辑。序号大小就是tabindex。在实际使用代码的时候，可以使用tab切换光标位置。<br>    tabTrigger是指输入该字符串后tab就是在光标插入content中的内容。<br>    scope是指在何种文件类型中使用</p>
+<h2 id="鼠标双击选择－、$开头的变量名">鼠标双击选择－、$开头的变量名</h2><p>添加用户自定义配置<br>    <code>&quot;word_separators&quot;: &quot;./\\()\&quot;&#39;:,.;&lt;&gt;~!@#%^&amp;*|+=[]{}</code>~?”`</p>
+<h2 id="怎样从直接Github的repository安装Sublime_Text插件">怎样从直接Github的repository安装Sublime Text插件</h2><blockquote>
+<p>首先，我们假设你在用Sublime Text和Package Control插件。 按Ctrl + Shift + P（Mac下是Shift + CMD + P）进命令选择窗口，搜索”repository”,选择”add repository” 直接输入一个Sublime Text的Github地址，如 <a href="https://github.com/ttscoff/MarkdownEditing" target="_blank" rel="external">https://github.com/ttscoff/MarkdownEditing</a> 载入完成后就可以安装了，再按Ctrl + Shift + P（Mac下是Shift + CMD + P）进命令选择窗口，选择”Install Package”,现在就可以安装刚刚添加的repository里面的插件了，按本文的例子是”MarkdownEditing”。<a href="http://www.macdrifter.com/2012/08/install-sublime-packages-from-github.html" target="_blank" rel="external">http://www.macdrifter.com/2012/08/install-sublime-packages-from-github.html</a></p>
+</blockquote>
+<p>2014-11-16 12:33:46 更新</p>
+<p>sublime.wbond.net无法访问</p>
+<p><a href="https://sublime.wbond.net/" target="_blank" rel="external">Sublime Text package manager</a>被强了。<a href="http://weibo.com/1219344334/BuJwqBH1H?type=comment" target="_blank" rel="external">详见</a></p>
+<pre><code><span class="number">50.116</span>.<span class="number">34.243</span> sublime<span class="class">.wbond</span><span class="class">.net</span>
+</code></pre><h1 id="感谢">感谢</h1><h2 id="感谢以下网站">感谢以下网站</h2><ul>
+<li><a href="http://www.veryued.org/2012/11/sublime%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6%E6%94%B6%E9%9B%86%E8%B4%B4/" target="_blank" rel="external">Sublime常用插件收集贴</a></li>
+<li><a href="http://weibo.com/finscn" target="_blank" rel="external">@大城小胖</a><a href="http://v.youku.com/v_show/id_XMzU5NzQ5ODgw.html" target="_blank" rel="external">sublime text2 简介</a></li>
+<li><a href="http://www.iplaysoft.com/sublimetext.html/comment-page-1" target="_blank" rel="external">Sublime Text 2 - 性感无比的代码编辑器！程序员必备神器！跨平台支持Win/Mac/Linux</a></li>
+<li><a href="http://www.blogjava.net/Hafeyang/archive/2012/08/17/how_to_create_code_snippet_in_subline_text_2.html" target="_blank" rel="external">sublime text 2学习(二):创建可复用的代码片段</a></li>
+<li><a href="http://hi.baidu.com/l245319872/item/afbb9734304981f5de222197" target="_blank" rel="external">Preferences.sublime-settings设置</a></li>
+<li><a href="http://ux.etao.com/posts/541" target="_blank" rel="external">sublime插件开发</a></li>
+<li><a href="http://www.sublimetext.com/" target="_blank" rel="external">Sublime Text</a></li>
+<li><a href="http://timewilltell.me/post/manually-add-sublime-package-repository" target="_blank" rel="external">怎样从直接Github的repository安装Sublime Text插件</a></li>
+<li><a href="http://dengo.org/archives/594" target="_blank" rel="external">Sublime text 3如何安装package control办法</a></li>
+<li><a href="http://ipestov.com/the-best-plugins-for-sublime-text/" target="_blank" rel="external">很全面和实用的Sublime 插件列表</a></li>
+</ul>]]></content>
+    <summary type="html">
+    <![CDATA[记录Sublime Text使用过程中的点点滴滴，虽然网上关于Sublime Text介绍的文章很多，但是使用过程多少有点自己的看法或者想法。在使用IDE的路上还有漫长的故事，VS2020 - Eclipse － Dreamware - Aptana - EditPlus - Notepad++ - Sublime Text - ...。中间的过程中体验过webstorm，用下来感觉最棒的还是Sublime，高亮、缩进、插件、智能提示、代码片段等，Sublime顶呱呱，哗啦啦的。]]>
+    
+    </summary>
+    
+      <category term="SublimeText" scheme="http://huixisheng.github.io/tags/SublimeText/"/>
+    
+      <category term="developTool" scheme="http://huixisheng.github.io/categories/developTool/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[负边距的应用的总结]]></title>
+    <link href="http://huixisheng.github.io/negative-margin-application/"/>
+    <id>http://huixisheng.github.io/negative-margin-application/</id>
+    <published>2013-04-13T14:32:38.000Z</published>
+    <updated>2015-01-26T15:20:41.000Z</updated>
+    <content type="html"><![CDATA[<p>初中的时候开始学习坐标轴，开始接触负数。不管怎么说数学中都要学习的负数，总是有积极意义的吧。谁都不想银行卡的钱是负数的，但是css中如果使用负数可以解决一些比较棘手的问题的。本文参考网络结合自身的项目对margin的负值做一个小小的总结。具体如下图：</p>
+<a id="more"></a>
+
+<p><img src="http://huixisheng.qiniudn.com/negative-margin.png" alt="负边距在项目中的应用"></p>
+<h3 id="1、定宽定高的block元素垂直居中">1、定宽定高的block元素垂直居中</h3><h3 id="2、减少后台的判断，少写一个-last或者first的css。移除列表右侧多余的间隔、移除底部多余的border">2、减少后台的判断，少写一个.last或者first的css。移除列表右侧多余的间隔、移除底部多余的border</h3><h3 id="3、tab切换中的应用">3、tab切换中的应用</h3><h3 id="4、布局中应用，右侧固定右侧自适应，左右固定中间自适应">4、布局中应用，右侧固定右侧自适应，左右固定中间自适应</h3><h3 id="5、多列等高的应用">5、多列等高的应用</h3><h3 id="参考链接">参考链接</h3><p><a href="http://www.gezii.me/?p=57" target="_blank" rel="external">margin负值的应用</a></p>
+<p><a href="http://iyunlu.com/view/CSS-XHTMl/52.html" target="_blank" rel="external">margin负值 – 一个秘密武器</a></p>
+<p><a href="http://www.hicss.net/i-know-you-do-not-know-the-negative-margin/" target="_blank" rel="external">我知道你不知道的负Margin</a></p>
+<p><a href="http://www.cnblogs.com/rubylouvre/archive/2012/04/28/2474732.html" target="_blank" rel="external">负值之美：负值在页面布局中的应用</a></p>
+<p><a href="http://udc.weibo.com/2012/09/%E5%BE%AE%E5%90%A7%E9%87%8C%E7%9A%84%E5%90%84%E7%A7%8Dmargin%E8%B4%9F%E5%80%BC/" target="_blank" rel="external">微吧里的各种margin负值</a></p>]]></content>
+    <summary type="html">
+    <![CDATA[对项目中的负边距的应用的总结]]>
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="http://huixisheng.github.io/tags/JavaScript/"/>
+    
+      <category term="css" scheme="http://huixisheng.github.io/tags/css/"/>
+    
+      <category term="总结" scheme="http://huixisheng.github.io/tags//"/>
+    
+      <category term="前端开发" scheme="http://huixisheng.github.io/categories//"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[项目中碰到的问题随笔]]></title>
+    <link href="http://huixisheng.github.io/some-problem-in-project-diary/"/>
+    <id>http://huixisheng.github.io/some-problem-in-project-diary/</id>
+    <published>2013-04-03T14:32:38.000Z</published>
+    <updated>2015-01-26T15:20:56.000Z</updated>
+    <content type="html"><![CDATA[<p>记录项目中的碰到的问题。有些问题来的太诡异。</p>
+<a id="more"></a>
+
+<h2 id="同事的一段代码直接导致浏览器奔溃，找我解决。">同事的一段代码直接导致浏览器奔溃，找我解决。</h2><pre><code>var arr<span class="number">1</span> = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];
+var arr<span class="number">2</span> = arr<span class="number">1</span>;
+for<span class="comment">(var i = 0; i &lt; arr1.length; i++ )</span>{
+    <span class="keyword">if</span><span class="comment">( arr1[i] != 1 )</span>{
+        arr<span class="number">2</span> = arr<span class="number">1.</span>splice<span class="comment">(i, 0, arr1[i])</span>;
+    }
+}
+</code></pre><p>一开始觉得不可思议，断定代码有死循环。数组、对象、函数都是引用。<a href="http://www.xiaoxiaozi.com/2009/05/22/588/" target="_blank" rel="external">参考-javascript 变量两种类型——基本类型和引用类型</a></p>
+<h2 id="自定义的Grunt插件调用异步的方法报错">自定义的Grunt插件调用异步的方法报错</h2><p>解决办法：1. 报错的信息在谷歌中查找。PS:google 被墙，真是悲剧 2. 看grunt官网的说明文档 3. github 上找类似的插件怎么写。<a href="https://github.com/huixisheng/grunt-iAuto-upload" target="_blank" rel="external">插件地址</a></p>
+<h2 id="论股堂项目碰到好几个重排一样的页面显示错位的bug">论股堂项目碰到好几个重排一样的页面显示错位的bug</h2><p>这种问题出现时是让人很头痛的，页面开始显示正常的，js操作某些dom后引起本来布局正常的结构出现错位。</p>
+<h2 id="对前端的文件添加了md5的时间戳如何保证后期的前端构建上传资源服务器是最新的文件">对前端的文件添加了md5的时间戳如何保证后期的前端构建上传资源服务器是最新的文件</h2><p>想到的解决办法：1. 通过同生成的文件对于MD5值的map文件对比，相同的文件不更新 2. 每次构建上传根据文件的生成的最新的文件 3. 通朱鹏讨论</p>
+<p>方法1是最理想的，但是当时就是担心怕实现起来很困难。其实后来才发现很简单。方法2 明显是有缺陷的。最终方法1的确定肯定是归功于方法3.</p>
+<p>碰到问题时，首先思路一定要清晰，对想到的问题的解决方法一定要去衡量它的可行性。</p>
+<h2 id="后台返回的ajax接口多一个空行，导致ie下ajax执行了error">后台返回的ajax接口多一个空行，导致ie下ajax执行了error</h2><ol>
+<li>前端定位问题慢，对ajax接口的异常的欠考虑</li>
+<li>是否可以通过设置实现客户端的Debug调试</li>
+</ol>
+<p>原因是： 接口的php文件最前面加了一个空行，伤不起的前端</p>
+<h2 id="百度编辑器的展示慢"><a href="http://ueditor.baidu.com/" target="_blank" rel="external">百度编辑器</a>的展示慢</h2><p>经排查是百度分享的js对页面会阻塞；同时百度编辑器的需要的静态资源下载很慢。</p>
+<p>目前解决方案：</p>
+<ol>
+<li>对百度分享的js后移动<a href="http://share.baidu.com/help/optimization" target="_blank" rel="external">参考这里</a></li>
+<li>添加编辑器的伪展示，使得编辑器的展示不会有抖动的效果</li>
+</ol>
+<p>未来的方案：<br>使用<a href="http://ueditor.baidu.com/website/umeditor.html" target="_blank" rel="external">UMeditor</a></p>
+<h2 id="使用了带_bom_的_utf-8_的编码文件在_nginx服务器_doctype_声明失效。">使用了带 <code>bom</code> 的 <code>utf-8</code> 的编码文件在 nginx服务器 <code>doctype</code> 声明失效。</h2><p><a href="http://www.zhihu.com/question/20167122" target="_blank" rel="external">参考「带 BOM 的 UTF-8」和「无 BOM 的 UTF-8」有什么区别？网页代码一般使用哪个？</a></p>
+<h2 id="内网缺少脚本生成的问题导致报错">内网缺少脚本生成的问题导致报错</h2><p>很多时候一碰到问题不想马上问别人，希望尝试自己去解决先。现在后台的观念是问相关的开发人员来的快。通过解决报错，可以发现后台不少后台代码问题。比如一个函数明明返回的是<code>int</code>类型的，但却返回 <code>Array</code>。前端多懂点后台绝对是好事。</p>
+<h2 id="资讯评论的无法加载">资讯评论的无法加载</h2><p>原因分析：<br>资讯对获取pid做了缓存，导致根据seq jsonp 获取pid 永远为0。<br>现在的方案：<br>如果第一次获取pid为0，第二获取添加时间戳。<br>教训：</p>
+<ol>
+<li>浏览器上如果功能可以实现，客户端里面的网页不行的话，多半是缓存的问题。公司客户端浏览器的内核好换了</li>
+<li>要敢于定位问题的所在</li>
+<li>学习更多的知识，开阔视野，跟容易定位问题</li>
+</ol>
+<h2 id="使用了_setInterval_在ajax的回调中导致火狐浏览器http请求并发数量达到最大值，页面不再发轮训请求">使用了 <code>setInterval</code> 在ajax的回调中导致火狐浏览器http请求并发数量达到最大值，页面不再发轮训请求</h2><p>本问题是同事碰到的，去排查这个问题的时候觉得不可以思议</p>
+<h2 id="UC浏览器在文本框聚焦的时候修改了hash，导致弹出的键盘有收回去">UC浏览器在文本框聚焦的时候修改了<code>hash</code>，导致弹出的键盘有收回去</h2><p>同王海波一直研究了搜狐的直播，同样的实现思路，为何他的就是在uc下有问题，后来他排查到问题是修改了hash引起的。<a href="http://testm.10jqka.com.cn/mobile/info/gsrd/ask_v2.html" target="_blank" rel="external">朱鹏提供了一个修改方案</a>，webapp的<code>fixed</code>有好多的坑</p>
+<h2 id="360安全卫士浏览器屏蔽了background-image的url中含有_ad、gg路径的背景图片。也太任性化了吧。">360安全卫士浏览器屏蔽了<code>background-image</code>的url中含有 ad、gg路径的背景图片。也太任性化了吧。</h2><p>[/images/article/360-ad-block.jpg]</p>
+<h2 id="JSON2-js_同jquery冲突">JSON2.js 同jquery冲突</h2><p><a href="http://huixisheng.github.io/lab/bug/json2-jquery-conflict.html" target="_blank" rel="external">bug还原请在ie7下运行</a></p>
+<pre><code><span class="comment">// json2.js 对原型进行重写</span>
+<span class="built_in">String</span>.prototype.toJSON =
+<span class="built_in">Number</span>.prototype.toJSON =
+<span class="built_in">Boolean</span>.prototype.toJSON = <span class="function"><span class="keyword">function</span> <span class="params">(key)</span> </span>{
+    <span class="keyword">return</span> <span class="keyword">this</span>.valueOf();
+};
+<span class="comment">// 对boolean 进行for in会让 data[i] 获取原型上 toJSON的方法</span>
+<span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">()</span></span>{
+    <span class="keyword">return</span> <span class="literal">true</span>;
+}
+<span class="comment">// 这样的写法虽然不太可能，但是 http://github.com/davgothic/AjaxFileUpload 就是出现</span>
+<span class="keyword">var</span> data = test();
+<span class="keyword">for</span>(<span class="keyword">var</span> i <span class="keyword">in</span> data){
+    $(<span class="string">'input'</span>).attr(<span class="string">'name'</span>, i).val(data[i]);
+}
+</code></pre><p>原因周六查了一天，基本找到问题所在，由于js的功底不扎实，无法更详细的解释问题</p>
+<h2 id="ie6下jsonp的callback不执行的bug">ie6下jsonp的callback不执行的bug</h2><p>jsonp解决跨域问题是常用的方法。但是给a标签加了<code>href=&quot;javascript:;&quot;</code>和     <code>href=&quot;javascript:void(0);&quot;</code> 会不执行回调的神奇bug。</p>
+<p>我的解决思路：</p>
+<ol>
+<li>alert ajax的 success的返回的参数， ie6 不执行</li>
+<li>alert ajax的 error的参数</li>
+<li>通过 fiddler 抓包，看回调函数有没有返回。有返回，但是不回调。我了个去</li>
+<li>google ie6 jsonp 不执行回调</li>
+<li>去除a 标签的href，会执行回调</li>
+<li>但是有时候需要a的手型，在给绑定的事件上加<code>return false</code>。完美解决。</li>
+</ol>
+<h2 id="ajax服务器端接收数据时”+”会丢失">ajax服务器端接收数据时”+”会丢失</h2><p>jQuery的ajax通过get的方法传参数，如果参数含有<code>+、&amp;</code>等，会导致内容丢失。<br>“+”号：JavaScript解析为字符串连接符，所以服务器端接收数据时”+”会丢失。<br>“&amp;”：JavaScript解析为变量连接符，所以服务器端接收数据时&amp;符号以后的数据都会丢失。<br>解决办法：ajax的data改为Object。以下是网上的方法：在传到服务端之前先将参数中的”+”和”&amp;”符号都编码一下</p>
+<pre><code>function <span class="built_in">filter</span>(<span class="built_in">str</span>){
+    <span class="built_in">str</span> = <span class="built_in">str</span>.replace(/\+/g,<span class="string">"%2B"</span>);
+    <span class="built_in">str</span> = <span class="built_in">str</span>.replace(/\&amp;/g,<span class="string">"%26"</span>);
+    <span class="keyword">return</span> <span class="built_in">str</span>;
+}
+</code></pre><h2 id="JavaScript编码转换">JavaScript编码转换</h2><p>常用的函数:使用<code>unescape()</code>对<code>escape()</code>编码的字符串进行解码<code>decodeURIComponent()</code>函数可对<code>encodeURIComponent()</code>函数编码的 URI 进行解码。<code>decodeURI()</code>函数可对 <code>encodeURI()</code>函数编码过的URI 进行解码。<code>encodeURIComponent</code>会对/也进行十六进制转义，而<code>encodeURI</code>不会。</p>
+<p><code>escape</code>的一个应用就是将中文转成<code>unicode</code>编码<br>    escape(“悔惜晟”).replace(/%/g, ‘\‘)</p>
+<h2 id="CSS强制英文、中文换行与不换行">CSS强制英文、中文换行与不换行</h2><p><code>white-space:nowrap;</code> 强制不换行，都起作用<br><code>white-space:pre-wrap;</code> 只对中文起作用，强制换行<br>项目中用来打散成串的英文</p>
+<p><strong> 参考 </strong><br><a href="http://zmingcx.com/css-compulsory-english-chinese-and-non-wrapping-line.html#" target="_blank" rel="external">CSS强制英文、中文换行与不换行</a></p>
+<h2 id="jQuery_ajaxFileUpload-js_插件_ie9_下bug">jQuery ajaxFileUpload.js 插件 ie9 下bug</h2><pre><code><span class="keyword">if</span>(window.ActiveXObject) {
+    <span class="keyword">if</span>(jQuery.browser.<span class="variable">version=</span>=<span class="string">"9.0"</span>){
+        var <span class="variable">io =</span> document.createElement('iframe');
+        io.<span class="variable">id =</span> frameId;
+        io.<span class="variable">name =</span> frameId;
+    }<span class="keyword">else</span> <span class="keyword">if</span>(jQuery.browser.<span class="variable">version=</span>=<span class="string">"6.0"</span> || jQuery.browser.<span class="variable">version=</span>=<span class="string">"7.0"</span> ||
+            jQuery.browser.<span class="variable">version=</span>=<span class="string">"8.0"</span>){
+         var <span class="variable">io =</span> document.createElement('&lt;iframe <span class="variable">id=</span><span class="string">"' + frameId + '"</span> <span class="variable">name=</span><span class="string">"' + frameId + '"</span> /&gt;');
+         <span class="keyword">if</span>(typeof <span class="variable">uri=</span>= 'boolean'){
+             io.<span class="variable">src =</span> 'javascript:<span class="constant">false</span>';
+         }
+         <span class="keyword">else</span> <span class="keyword">if</span>(typeof <span class="variable">uri=</span>= 'string'){
+             io.<span class="variable">src =</span> uri;
+         }
+    }
+}
+</code></pre><h2 id="textarea用jQ的html方法取不到值">textarea用jQ的html方法取不到值</h2><p>使用val();但是百度之后又发现另一个问题，只是我在项目还没有碰到。<a href="http://www.cnblogs.com/long_/archive/2010/07/28/1787124.html" target="_blank" rel="external">JQuery TextArea的取值与赋值问题</a></p>]]></content>
+    <summary type="html">
+    <![CDATA[很随便的记录项目中碰到的疑难杂症]]>
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="http://huixisheng.github.io/tags/JavaScript/"/>
+    
+      <category term="css" scheme="http://huixisheng.github.io/tags/css/"/>
+    
+      <category term="总结" scheme="http://huixisheng.github.io/tags//"/>
+    
+      <category term="前端开发" scheme="http://huixisheng.github.io/categories//"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[项目中浏览器兼容性解决方法收集]]></title>
+    <link href="http://huixisheng.github.io/compatibility-collect/"/>
+    <id>http://huixisheng.github.io/compatibility-collect/</id>
+    <published>2012-12-31T14:32:38.000Z</published>
+    <updated>2015-01-26T15:14:14.000Z</updated>
+    <content type="html"><![CDATA[<p>整理项目中碰到的浏览器兼容性问题，并提供相关解决办法。希望自己不再被浏览器兼容性问题所苦恼，也希望自己处理浏览器兼容问题时不再重复和头痛。</p>
+<a id="more"></a>
+
+<h3 id="1、_个人中心首页小发布框点击弹出发布框，在ie6下导致下面的Tabs上移，就是出现错位，点击旁边的Tabs切换就正常">1、 个人中心首页小发布框点击弹出发布框，在ie6下导致下面的Tabs上移，就是出现错位，点击旁边的Tabs切换就正常</h3><p>问题回顾：</p>
+<p><img src="http://huixisheng.qiniudn.com/ie6-jsclick-bug.jpg" alt="IE下JS交互产生的定位重叠"></p>
+<p>该问题出现当时完全想不到是为何，难道js交互也会导致CSS出现问题？为何切换了却是正常的。这个问题困恼了我好久。后来在张鑫旭大牛的博客看到一文<a href="http://www.zhangxinxu.com/wordpress/2013/01/js-paint-ie6-relative-ie8-inline-block-bug-fix/" target="_blank" rel="external">利用重绘解决IE下JS交互产生的定位重叠等棘手bug</a>,受了启发，终于改了这个bug。</p>
+<h3 id="2、_IE6_inline-block使line-height失效">2、 IE6 inline-block使line-height失效</h3><p>该问题很常见，解决的办法也很多。主要出现在左边是icon的图片，右边是文字，文字图片垂直居中。ie6解决办法：icon的margin-top  margin-bottom取（外侧容器的高度-icon的高度）/2  其他浏览器：<code>vertical-align:middle; margin-top:-3px</code></p>
+<h3 id="3、_IE6_z-index失效">3、 IE6 z-index失效</h3><p>问题回顾：</p>
+<p><img src="http://huixisheng.qiniudn.com/ie67-z-index-disable.png" alt="IE6 z-index失效"></p>
+<p>出现了好几次，印象最深的是做网站导航的统一的时候。消息的下拉框被设置了pr的下面的元素挡住了。解决办法：在你需要显示在上层的元素的含“position:relative”的父元素上添加“z-index”属性。具体参考<a href="http://www.zhangxinxu.com/wordpress/2009/12/ie6%E4%B8%8Bz-index%E7%8A%AF%E7%99%AB%E4%B8%8D%E8%B5%B7%E4%BD%9C%E7%94%A8bug%E7%9A%84%E5%88%9D%E6%AD%A5%E7%A0%94%E7%A9%B6/" target="_blank" rel="external">IE6下z-index犯癫不起作用bug的初步研究</a></p>
+<h3 id="4、_IE6下弹出框被Select穿透">4、 IE6下弹出框被Select穿透</h3><p>解决办法：1、弹出框添加iframe 2、select用js模拟</p>
+<h3 id="5、_IE6不支持最大高度最小高度最大宽度最小宽度">5、 IE6不支持最大高度最小高度最大宽度最小宽度</h3><p>解决办法：1、CSS表达式 2、js控制</p>
+<h3 id="6、IE6下背景图片不缓存问题，背景图片会闪烁">6、IE6下背景图片不缓存问题，背景图片会闪烁</h3><pre><code><span class="comment">&lt;!--[if IE 6]&gt;
+&lt;script&gt;
+    document.execCommand("BackgroundImageCache",false,true);
+&lt;/script&gt;
+&lt;![endif]--&gt;</span>
+</code></pre><h3 id="7、IE6、7设置了relative同时使用了滤镜会使得子元素绝对定位失效">7、IE6、7设置了relative同时使用了滤镜会使得子元素绝对定位失效</h3><h3 id="8、FF、OP不支持backgroud-position-x、backgroud-position-y">8、FF、OP不支持<code>backgroud-position-x、backgroud-position-y</code></h3><h3 id="9、使用swfupload多图上传插件。如果对按钮使用hide_方法。会导致getStats()方法失效。">9、使用<a href="http://demo.swfupload.org/v220/" target="_blank" rel="external">swfupload</a>多图上传插件。如果对按钮使用<code>hide</code> 方法。会导致<code>getStats()</code>方法失效。</h3><h3 id="10、input[type=”submit”]和button[type=”submit”]在IE6-7下会出现黑边。大漠解决办法。input_{_filter:chroma(color=#000000);}。但是如果给submit用filter设置了渐变，将会导致渐变丢失。一种解决办法：给submit外套个label，label设置边框。_submit_border：none。">10、input[type=”submit”]和button[type=”submit”]在IE6-7下会出现黑边。<a href="http://www.w3cplus.com/css/remove-black-border-around-input-buttons-in-ie.html" target="_blank" rel="external">大漠解决办法</a>。<code>input { filter:chroma(color=#000000);}</code>。但是如果给submit用filter设置了渐变，将会导致渐变丢失。一种解决办法：给submit外套个label，label设置边框。 submit border：none。</h3><h2 id="继续更新中">继续更新中</h2>]]></content>
+    <summary type="html">
+    <![CDATA[整理项目中碰到的浏览器兼容性问题，并提供相关解决办法。希望自己不再被浏览器兼容性问题所苦恼，也希望自己处理浏览器兼容问题时不再重复和头痛...]]>
+    
+    </summary>
+    
+      <category term="兼容性" scheme="http://huixisheng.github.io/tags//"/>
+    
+      <category term="前端开发" scheme="http://huixisheng.github.io/categories//"/>
+    
+  </entry>
+  
+</feed>
