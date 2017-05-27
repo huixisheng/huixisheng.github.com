@@ -1,0 +1,704 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="前端开发者说" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="前端开发者说" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="loader use 的加载顺序问题 webpack 打包优化 https://www.google.com.sg/search?q=webpack+%E6%89%93%E5%8C%85%E4%BC%98%E5%8C%96&amp;amp;ei=3N4bWazgC8ffvASTzqCQBQ&amp;amp;start=10&amp;amp;sa=N&amp;amp;biw=1920&amp;amp;bih=1126 https://gi">
+<meta property="og:type" content="website">
+<meta property="og:title" content="前端开发者说">
+<meta property="og:url" content="http://huixisheng.github.io/Todo/webpack.html">
+<meta property="og:site_name" content="前端开发者说">
+<meta property="og:description" content="loader use 的加载顺序问题 webpack 打包优化 https://www.google.com.sg/search?q=webpack+%E6%89%93%E5%8C%85%E4%BC%98%E5%8C%96&amp;amp;ei=3N4bWazgC8ffvASTzqCQBQ&amp;amp;start=10&amp;amp;sa=N&amp;amp;biw=1920&amp;amp;bih=1126 https://gi">
+<meta property="og:updated_time" content="2017-05-17T05:46:19.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端开发者说">
+<meta name="twitter:description" content="loader use 的加载顺序问题 webpack 打包优化 https://www.google.com.sg/search?q=webpack+%E6%89%93%E5%8C%85%E4%BC%98%E5%8C%96&amp;amp;ei=3N4bWazgC8ffvASTzqCQBQ&amp;amp;start=10&amp;amp;sa=N&amp;amp;biw=1920&amp;amp;bih=1126 https://gi">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '9599',
+      author: '悔惜晟'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://huixisheng.github.io/Todo/webpack.html"/>
+
+
+  <title>
+  
+
+  
+     | 前端开发者说
+  
+</title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left  ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">前端开发者说</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">记录开发的故事</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+    
+      <p>loader use 的加载顺序问题</p>
+<h2 id="webpack-打包优化"><a href="#webpack-打包优化" class="headerlink" title="webpack 打包优化"></a>webpack 打包优化</h2><ul>
+<li><a href="https://www.google.com.sg/search?q=webpack+%E6%89%93%E5%8C%85%E4%BC%98%E5%8C%96&amp;ei=3N4bWazgC8ffvASTzqCQBQ&amp;start=10&amp;sa=N&amp;biw=1920&amp;bih=1126" target="_blank" rel="external">https://www.google.com.sg/search?q=webpack+%E6%89%93%E5%8C%85%E4%BC%98%E5%8C%96&amp;ei=3N4bWazgC8ffvASTzqCQBQ&amp;start=10&amp;sa=N&amp;biw=1920&amp;bih=1126</a></li>
+<li><a href="https://github.com/hawx1993/tech-blog/issues/3" target="_blank" rel="external">https://github.com/hawx1993/tech-blog/issues/3</a></li>
+<li><a href="https://juejin.im/entry/57996222128fe1005411c649" target="_blank" rel="external">https://juejin.im/entry/57996222128fe1005411c649</a></li>
+<li><a href="https://github.com/youngwind/blog/issues/65" target="_blank" rel="external">https://github.com/youngwind/blog/issues/65</a></li>
+<li><a href="http://www.alloyteam.com/2016/01/webpack-use-optimization/" target="_blank" rel="external">http://www.alloyteam.com/2016/01/webpack-use-optimization/</a></li>
+<li><a href="https://github.com/lcxfs1991/blog/issues/2" target="_blank" rel="external">https://github.com/lcxfs1991/blog/issues/2</a></li>
+<li><a href="http://www.luckybird.me/webpack-%E6%89%93%E5%8C%85%E6%96%87%E4%BB%B6%E8%BF%87%E5%A4%A7%E4%BC%98%E5%8C%96.html" target="_blank" rel="external">http://www.luckybird.me/webpack-%E6%89%93%E5%8C%85%E6%96%87%E4%BB%B6%E8%BF%87%E5%A4%A7%E4%BC%98%E5%8C%96.html</a></li>
+<li><p><a href="http://imweb.io/topic/58db067b248657650f8459cd" target="_blank" rel="external">http://imweb.io/topic/58db067b248657650f8459cd</a></p>
+</li>
+<li><p><a href="https://github.com/zhengweikeng/blog/issues/9" target="_blank" rel="external">https://github.com/zhengweikeng/blog/issues/9</a></p>
+</li>
+</ul>
+<p>webpack的loader的配置是从右往左的</p>
+<ul>
+<li><a href="http://www.alloyteam.com/2016/01/webpack-loader-1/" target="_blank" rel="external">http://www.alloyteam.com/2016/01/webpack-loader-1/</a></li>
+<li><a href="https://www.bountysource.com/issues/30856621-webpack-2" target="_blank" rel="external">https://www.bountysource.com/issues/30856621-webpack-2</a></li>
+<li><a href="http://mrzhang123.github.io/2017/02/07/webpack2/" target="_blank" rel="external">http://mrzhang123.github.io/2017/02/07/webpack2/</a></li>
+<li><a href="https://llp0574.github.io/2016/11/29/getting-started-with-webpack2/" target="_blank" rel="external">https://llp0574.github.io/2016/11/29/getting-started-with-webpack2/</a> Webpack 2 入门教程</li>
+<li><a href="https://segmentfault.com/a/1190000008181955" target="_blank" rel="external">Webpack2 升级指南和特性摘要</a></li>
+<li><a href="https://github.com/kraaas/webpack-tutorial-collection" target="_blank" rel="external">https://github.com/kraaas/webpack-tutorial-collection</a></li>
+<li><a href="https://github.com/webpack-contrib/awesome-webpack" target="_blank" rel="external">https://github.com/webpack-contrib/awesome-webpack</a></li>
+<li><a href="https://github.com/zhbhun/WebpackStudyDemo" target="_blank" rel="external">https://github.com/zhbhun/WebpackStudyDemo</a></li>
+<li><a href="https://github.com/ruanyf/webpack-demos" target="_blank" rel="external">https://github.com/ruanyf/webpack-demos</a></li>
+<li><a href="https://blog.madewithenvy.com/webpack-2-postcss-cssnext-fdcd2fd7d0bd#.ovbmgrvb0" target="_blank" rel="external">https://blog.madewithenvy.com/webpack-2-postcss-cssnext-fdcd2fd7d0bd#.ovbmgrvb0</a></li>
+</ul>
+<p><a href="http://vuejs.com.cn/#/" target="_blank" rel="external">http://vuejs.com.cn/#/</a><br><a href="https://vuxjs.gitbooks.io/vux/content/" target="_blank" rel="external">https://vuxjs.gitbooks.io/vux/content/</a><br><a href="https://github.com/vum-team/vum" target="_blank" rel="external">https://github.com/vum-team/vum</a><br><a href="https://www.awesomes.cn/repo/FE-Driver/vue-beauty" target="_blank" rel="external">https://www.awesomes.cn/repo/FE-Driver/vue-beauty</a><br><a href="https://www.awesomes.cn/repo/chenz24/vue-blu" target="_blank" rel="external">https://www.awesomes.cn/repo/chenz24/vue-blu</a><br><a href="https://www.awesomes.cn/repo/aliqin/atui" target="_blank" rel="external">https://www.awesomes.cn/repo/aliqin/atui</a><br><a href="https://www.awesomes.cn/repo/fundon/vue-admin" target="_blank" rel="external">https://www.awesomes.cn/repo/fundon/vue-admin</a><br><a href="https://www.awesomes.cn/repo/vuejs/vue-validator" target="_blank" rel="external">https://www.awesomes.cn/repo/vuejs/vue-validator</a></p>
+<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><ul>
+<li><a href="https://www.npmjs.com/package/manifest-assets-webpack-plugin#configuration" target="_blank" rel="external">https://www.npmjs.com/package/manifest-assets-webpack-plugin#configuration</a></li>
+<li><a href="https://www.npmjs.com/package/webpack-shell-plugin" target="_blank" rel="external">https://www.npmjs.com/package/webpack-shell-plugin</a></li>
+<li><a href="https://www.npmjs.com/package/htmlhint-loader" target="_blank" rel="external">https://www.npmjs.com/package/htmlhint-loader</a></li>
+<li><a href="https://www.npmjs.com/package/htmllint-loader" target="_blank" rel="external">https://www.npmjs.com/package/htmllint-loader</a></li>
+<li><a href="http://tomasalabes.me/blog/_site/web-development/2016/08/26/Webpack-Series-Part-3.html" target="_blank" rel="external">http://tomasalabes.me/blog/_site/web-development/2016/08/26/Webpack-Series-Part-3.html</a></li>
+<li><a href="http://efe.baidu.com/blog/comparison-of-html-linting-tool/" target="_blank" rel="external">http://efe.baidu.com/blog/comparison-of-html-linting-tool/</a> HTML代码风格检查工具对比</li>
+<li><a href="https://www.npmjs.com/package/webpack-upload" target="_blank" rel="external">https://www.npmjs.com/package/webpack-upload</a></li>
+<li><a href="https://github.com/kossnocorp/assets-webpack-plugin" target="_blank" rel="external">https://github.com/kossnocorp/assets-webpack-plugin</a></li>
+<li><a href="https://www.npmjs.com/package/html-webpack-deploy-assets-plugin" target="_blank" rel="external">https://www.npmjs.com/package/html-webpack-deploy-assets-plugin</a></li>
+<li><a href="https://www.npmjs.com/package/qiniu-webpack-plugin" target="_blank" rel="external">https://www.npmjs.com/package/qiniu-webpack-plugin</a></li>
+</ul>
+<h2 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h2><ul>
+<li><a href="https://docute.js.org/#/zh-Hans/?id=%E8%BF%99%E5%92%8C-gitbook-%E6%9C%89%E4%BB%80%E4%B9%88%E4%B8%8D%E5%90%8C&amp;keyword=%E5%A4%9A" target="_blank" rel="external">https://docute.js.org/#/zh-Hans/?id=%E8%BF%99%E5%92%8C-gitbook-%E6%9C%89%E4%BB%80%E4%B9%88%E4%B8%8D%E5%90%8C&amp;keyword=%E5%A4%9A</a></li>
+<li><a href="https://github.com/ant-tool/atool-doc" target="_blank" rel="external">https://github.com/ant-tool/atool-doc</a></li>
+</ul>
+<blockquote>
+<p>Loaders can be chained by passing multiple loaders, which will be applied from right to left (last to first configured).</p>
+</blockquote>
+<p><a href="https://github.com/peerigon/markdown-loader" target="_blank" rel="external">https://github.com/peerigon/markdown-loader</a><br><a href="https://www.npmjs.com/package/vue-markdown-es6-loader" target="_blank" rel="external">https://www.npmjs.com/package/vue-markdown-es6-loader</a><br><a href="https://www.npmjs.com/package/vue-marked-loader" target="_blank" rel="external">https://www.npmjs.com/package/vue-marked-loader</a><br><a href="https://www.npmjs.com/package/vue-component-markdown-loader" target="_blank" rel="external">https://www.npmjs.com/package/vue-component-markdown-loader</a><br><a href="https://www.npmjs.com/package/antd-md-loader" target="_blank" rel="external">https://www.npmjs.com/package/antd-md-loader</a><br><a href="https://github.com/vuejs/vue-style-loader" target="_blank" rel="external">https://github.com/vuejs/vue-style-loader</a><br><a href="https://github.com/peerigon/markdown-loader" target="_blank" rel="external">https://github.com/peerigon/markdown-loader</a><br><a href="https://github.com/QingWei-Li/vue-markdown-loader" target="_blank" rel="external">https://github.com/QingWei-Li/vue-markdown-loader</a></p>
+<p>动画</p>
+<ul>
+<li><a href="http://www.sucaihuo.com/js/1183.html" target="_blank" rel="external">http://www.sucaihuo.com/js/1183.html</a></li>
+<li><a href="https://www.w3cplus.com/css3/twitter-fave.html" target="_blank" rel="external">https://www.w3cplus.com/css3/twitter-fave.html</a></li>
+<li><a href="http://www.htmleaf.com/css3/css3donghua/201511132778.html" target="_blank" rel="external">http://www.htmleaf.com/css3/css3donghua/201511132778.html</a></li>
+</ul>
+<p>优化</p>
+<ul>
+<li><a href="http://www.alloyteam.com/2016/01/webpack-use-optimization/" target="_blank" rel="external">http://www.alloyteam.com/2016/01/webpack-use-optimization/</a></li>
+</ul>
+<p>keyframe 在css没有使用的样式被压缩</p>
+<ul>
+<li><a href="https://github.com/zhengweikeng/blog/issues/9" target="_blank" rel="external">https://github.com/zhengweikeng/blog/issues/9</a></li>
+</ul>
+
+    
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="Todo/webpack.html"
+           data-title="" data-url="http://huixisheng.github.io/Todo/webpack.html">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="huixisheng" />
+          <p class="site-author-name" itemprop="name">huixisheng</p>
+          <p class="site-description motion-element" itemprop="description">前端路漫漫兮，吾将上下而求索</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">26</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/huixisheng" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/huixisheng" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/huixisheng" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">huixisheng</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"huixisheng"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = false;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title >= 0 || index_content >= 0 ){
+                                isMatch = true;
+								if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            } 
+							
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>

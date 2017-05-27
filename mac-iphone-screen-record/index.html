@@ -1,0 +1,824 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="MacOSX,软件," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="前端开发者说" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="gif图片可用于博客中文章demo的展示，聊天不发几个表情都不好意思去聊天。 当你做app测试的时候发现了bug，用干巴巴的文字记录，不好描述，或许你的藐视开发人员有可能不懂你在说什么。所以有图有真相，这样方便开发人员重现问题，万一他们自己的设备就是没有问题呢。有图在就不好甩锅了。 Mac系统自带的QuickTime Player可用于电脑和iphone手机的 屏幕录制导出视频，结合软件可以导出g">
+<meta name="keywords" content="MacOSX,软件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iphone屏幕录制导出gif">
+<meta property="og:url" content="http://huixisheng.github.io/mac-iphone-screen-record/index.html">
+<meta property="og:site_name" content="前端开发者说">
+<meta property="og:description" content="gif图片可用于博客中文章demo的展示，聊天不发几个表情都不好意思去聊天。 当你做app测试的时候发现了bug，用干巴巴的文字记录，不好描述，或许你的藐视开发人员有可能不懂你在说什么。所以有图有真相，这样方便开发人员重现问题，万一他们自己的设备就是没有问题呢。有图在就不好甩锅了。 Mac系统自带的QuickTime Player可用于电脑和iphone手机的 屏幕录制导出视频，结合软件可以导出g">
+<meta property="og:image" content="http://huixisheng.github.io/images/mac/screen-record-GIF%20Brewery.jpeg">
+<meta property="og:image" content="http://huixisheng.github.io/images/mac/screen-record-gif.gif">
+<meta property="og:updated_time" content="2016-11-30T14:38:19.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iphone屏幕录制导出gif">
+<meta name="twitter:description" content="gif图片可用于博客中文章demo的展示，聊天不发几个表情都不好意思去聊天。 当你做app测试的时候发现了bug，用干巴巴的文字记录，不好描述，或许你的藐视开发人员有可能不懂你在说什么。所以有图有真相，这样方便开发人员重现问题，万一他们自己的设备就是没有问题呢。有图在就不好甩锅了。 Mac系统自带的QuickTime Player可用于电脑和iphone手机的 屏幕录制导出视频，结合软件可以导出g">
+<meta name="twitter:image" content="http://huixisheng.github.io/images/mac/screen-record-GIF%20Brewery.jpeg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '9599',
+      author: '悔惜晟'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://huixisheng.github.io/mac-iphone-screen-record/"/>
+
+
+  <title> iphone屏幕录制导出gif | 前端开发者说 </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">前端开发者说</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">记录开发的故事</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                iphone屏幕录制导出gif
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-30T20:09:08+08:00" content="2016-11-30">
+              2016-11-30
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/mac-iphone-screen-record/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="mac-iphone-screen-record/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>gif图片可用于博客中文章demo的展示，聊天不发几个表情都不好意思去聊天。</p>
+<p>当你做app测试的时候发现了bug，用干巴巴的文字记录，不好描述，或许你的藐视开发人员有可能不懂你在说什么。所以有图有真相，这样方便开发人员重现问题，万一他们自己的设备就是没有问题呢。有图在就不好甩锅了。</p>
+<p>Mac系统自带的<code>QuickTime Player</code>可用于电脑和iphone手机的 屏幕录制导出视频，结合软件可以导出gif图片。</p>
+<a id="more"></a>
+<h2 id="QuickTime-Player导出视频"><a href="#QuickTime-Player导出视频" class="headerlink" title="QuickTime Player导出视频"></a><code>QuickTime Player</code>导出视频</h2><p>大致的步骤:</p>
+<ol>
+<li>打开<code>QuickTime Player</code></li>
+<li>文件-&gt;新建屏幕录制</li>
+<li>点击红色按钮/iphone的话用数据线连接到电脑</li>
+<li>点击红色按钮停止录制</li>
+<li>导出视频</li>
+</ol>
+<p>步骤截图见<a href="http://js.sunansheng.com/p/545014e51ad5?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=mobile_all_hots&amp;utm_source=recommendation" target="_blank" rel="external">Mac屏幕录制与gif图片制作教程</a></p>
+<h2 id="导出gif"><a href="#导出gif" class="headerlink" title="导出gif"></a>导出gif</h2><h3 id="GIF-Brewery"><a href="#GIF-Brewery" class="headerlink" title="GIF Brewery"></a>GIF Brewery</h3><blockquote>
+<p>近期，知名 GIF 动图制作软件 GIF Brewery 宣告其已经被动图资源托管平台 Gfycat 收购，软件调整为<strong>免费下载</strong>，正式将其产品定位选择为 Gfycat 桌面客户端，用户可将制作好的动图直接上传到 Gfycat，部分用户期待的文件保存管理工作终于得到了解决。-<a href="http://www.waerfa.com/gif-brewery-3-review" target="_blank" rel="external">http://www.waerfa.com/gif-brewery-3-review</a></p>
+</blockquote>
+<p><img src="/images/mac/screen-record-GIF Brewery.jpeg" alt=""></p>
+<p>导出的gif:<br><img src="/images/mac/screen-record-gif.gif" alt=""></p>
+<p><a href="https://itunes.apple.com/cn/app/gif-brewery-3-by-gfycat/id1081413713?mt=12" target="_blank" rel="external">下载地址</a></p>
+<h3 id="其他软件"><a href="#其他软件" class="headerlink" title="其他软件"></a>其他软件</h3><ul>
+<li><a href="https://itunes.apple.com/cn/app/picgif-lite/id844918735?mt=12" target="_blank" rel="external">PicGIF</a></li>
+<li><a href="http://www.uisdc.com/3-mac-gif-screencasts-tools" target="_blank" rel="external">MAC党看过来！3款超实用的GIF录屏软件推荐</a></li>
+<li><a href="http://s.weibo.com/weibo/gif%2520%25E5%25B1%258F%25E5%25B9%2595%25E5%25BD%2595%25E5%2588%25B6&amp;b=1&amp;page=1" target="_blank" rel="external">http://s.weibo.com/weibo/gif%2520%25E5%25B1%258F%25E5%25B9%2595%25E5%25BD%2595%25E5%2588%25B6&amp;b=1&amp;page=1</a></li>
+<li><a href="http://sspai.com/29175" target="_blank" rel="external">http://sspai.com/29175</a></li>
+<li>Vidyo</li>
+<li>GifLab</li>
+<li>Apowersoft苹果录屏王</li>
+<li><a href="http://sspai.com/33686" target="_blank" rel="external">在 iPhone 上直接录屏，又一个新选择：AirShou</a></li>
+<li><a href="https://segmentfault.com/a/1190000004461659" target="_blank" rel="external">Android分享：录制屏幕并制作GIF文件</a></li>
+<li><a href="http://www.isofts.org/?s=gif" target="_blank" rel="external">http://www.isofts.org/?s=gif</a></li>
+<li><a href="http://sspai.com/29175" target="_blank" rel="external">http://sspai.com/29175</a></li>
+<li><a href="http://recordit.co/" target="_blank" rel="external">Recordit</a></li>
+<li>licecap</li>
+<li>AirServer</li>
+<li>Reflector</li>
+<li>ScreenFlow</li>
+<li>Hype 3 强大的 HTML 5 动画制作软件</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/MacOSX/" rel="tag">#MacOSX</a>
+          
+            <a href="/tags/软件/" rel="tag">#软件</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/jenkins-email/" rel="next" title="jenkins发送自定义内容邮件">
+                <i class="fa fa-chevron-left"></i> jenkins发送自定义内容邮件
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/webapp-tips/" rel="prev" title="项目碰到的问题整理">
+                项目碰到的问题整理 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="mac-iphone-screen-record/"
+           data-title="iphone屏幕录制导出gif" data-url="http://huixisheng.github.io/mac-iphone-screen-record/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="huixisheng" />
+          <p class="site-author-name" itemprop="name">huixisheng</p>
+          <p class="site-description motion-element" itemprop="description">前端路漫漫兮，吾将上下而求索</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">26</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/huixisheng" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/huixisheng" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/huixisheng" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#QuickTime-Player导出视频"><span class="nav-number">1.</span> <span class="nav-text">QuickTime Player导出视频</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#导出gif"><span class="nav-number">2.</span> <span class="nav-text">导出gif</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#GIF-Brewery"><span class="nav-number">2.1.</span> <span class="nav-text">GIF Brewery</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他软件"><span class="nav-number">2.2.</span> <span class="nav-text">其他软件</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">huixisheng</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"huixisheng"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = false;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title >= 0 || index_content >= 0 ){
+                                isMatch = true;
+								if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            } 
+							
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>

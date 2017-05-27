@@ -1,0 +1,847 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="前端工具,前端资源,在线教程," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="前端开发者说" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="对平时工作中使用过的工具总结，高效工作，持续学习">
+<meta name="keywords" content="前端工具,前端资源,在线教程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端开发工具收集和整理">
+<meta property="og:url" content="http://huixisheng.github.io/web-front-end-tools/index.html">
+<meta property="og:site_name" content="前端开发者说">
+<meta property="og:description" content="对平时工作中使用过的工具总结，高效工作，持续学习">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/1518967/11520904/78f955f8-98e2-11e5-89eb-a01622389578.png">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/1518967/11520854/184602f6-98e2-11e5-83f1-fd17667ee7bc.png">
+<meta property="og:updated_time" content="2016-10-23T04:19:41.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端开发工具收集和整理">
+<meta name="twitter:description" content="对平时工作中使用过的工具总结，高效工作，持续学习">
+<meta name="twitter:image" content="https://cloud.githubusercontent.com/assets/1518967/11520904/78f955f8-98e2-11e5-89eb-a01622389578.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '9599',
+      author: '悔惜晟'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://huixisheng.github.io/web-front-end-tools/"/>
+
+
+  <title> 前端开发工具收集和整理 | 前端开发者说 </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">前端开发者说</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">记录开发的故事</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                前端开发工具收集和整理
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2014-08-04T22:09:45+08:00" content="2014-08-04">
+              2014-08-04
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/web-front-end-tools/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="web-front-end-tools/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>本文主要内容是对前端在线工具做整理，优秀的在线工具提高开发效率。告别编辑器，一切都是云端。只通过浏览器完成代码的编写和优化。</p>
+<a id="more"></a>
+<h2 id="JavaScript在线电子书"><a href="#JavaScript在线电子书" class="headerlink" title="JavaScript在线电子书"></a>JavaScript在线电子书</h2><ul>
+<li>ECMAScript5标准 <a href="http://www.ecma-international.org/ecma-262/5.1/index.html" target="_blank" rel="external">http://www.ecma-international.org/ecma-262/5.1/index.html</a></li>
+<li>ECMAScript6标准 <a href="http://www.ecma-international.org/ecma-262/6.0/index.html" target="_blank" rel="external">http://www.ecma-international.org/ecma-262/6.0/index.html</a></li>
+<li>promise迷你书<a href="http://liubin.org/promises-book/" target="_blank" rel="external">http://liubin.org/promises-book/</a></li>
+</ul>
+<h2 id="在线教程"><a href="#在线教程" class="headerlink" title="在线教程"></a>在线教程</h2><ul>
+<li><a href="http://javascript.ruanyifeng.com/" target="_blank" rel="external">JavaScript 标准参考教程-阮一峰</a></li>
+<li><a href="http://www.zhinengshe.com/index.html" target="_blank" rel="external">智能社</a></li>
+<li><a href="http://www.yidengxuetang.com/" target="_blank" rel="external">一灯学堂 | 国内首家web前端高端培训</a></li>
+<li><a href="http://apeclass.cn/index.html" target="_blank" rel="external">蜻蜓课堂</a></li>
+<li><a href="http://www.jdon.com/js.html" target="_blank" rel="external">JavaScript专题教程</a></li>
+<li><a href="http://ejohn.org/apps/learn/" target="_blank" rel="external">Learning Advanced JavaScript</a></li>
+</ul>
+<h2 id="以下内容整理自书签"><a href="#以下内容整理自书签" class="headerlink" title="以下内容整理自书签"></a>以下内容整理自书签</h2><ul>
+<li><a href="http://wiki.jikexueyuan.com/" target="_blank" rel="external">极客学院wiki - it 技术图文教程库</a></li>
+<li><a href="http://moyu-edu.com/" target="_blank" rel="external">墨鱼前端培训 - www.moyu-edu.com</a></li>
+<li><a href="https://www.codecademy.com/zh/" target="_blank" rel="external">学习编程 | codecademy</a></li>
+<li><a href="http://learn.shayhowe.com/advanced-html-css/" target="_blank" rel="external">an advanced guide to html &amp; css</a></li>
+<li><a href="https://developer.mozilla.org/cn/canvas_tutorial" target="_blank" rel="external">canvas教程 canvas tutorial - mdn</a></li>
+<li><a href="http://www.w3schools.com/cn/css/css_reference.asp" target="_blank" rel="external">css参考手册</a></li>
+<li><a href="http://www.devstore.cn/" target="_blank" rel="external">devstore_移动互联网企业运营解决方案整合平台</a></li>
+<li><a href="http://www.codecademy.com/courses/getting-started-v2" target="_blank" rel="external">getting started with programming | codecademy</a></li>
+<li><a href="http://www.codecademy.com/zh/tracks/javascript-original" target="_blank" rel="external">javascript (original) | codecademy</a></li>
+<li><a href="https://www.codeschool.com/" target="_blank" rel="external">learn to code by doing - code school</a></li>
+<li><a href="http://www.w3cschool.cn/" target="_blank" rel="external">w3cschool 在线教程|网站建设</a></li>
+<li><a href="http://www.w3schools.com/default.asp" target="_blank" rel="external">w3schools online web tutorials</a></li>
+</ul>
+<h2 id="在线兼容性测试"><a href="#在线兼容性测试" class="headerlink" title="在线兼容性测试"></a>在线兼容性测试</h2><ul>
+<li><a href="http://www.modern.ie/zh-cn" target="_blank" rel="external">在线跨浏览器测试微软官方提供</a></li>
+</ul>
+<h2 id="浏览器开发工具"><a href="#浏览器开发工具" class="headerlink" title="浏览器开发工具"></a>浏览器开发工具</h2><ul>
+<li><a href="http://www.cnblogs.com/ambar/archive/2011/11/09/25-secrets-of-the-browser-developer-tools-in-chinese.html#top" target="_blank" rel="external">【翻译】25个浏览器开发工具的秘密</a></li>
+<li><a href="http://ued.taobao.com/blog/2012/06/debug-with-chrome-dev-tool/" target="_blank" rel="external">chrome developer tool 调试技巧</a></li>
+</ul>
+<h2 id="在线压缩"><a href="#在线压缩" class="headerlink" title="在线压缩"></a>在线压缩</h2><ul>
+<li><a href="http://www.smushit.com/ysmush.it/" target="_blank" rel="external">在线图片压缩</a></li>
+<li><a href="https://tinyjpg.com/" target="_blank" rel="external"><img src="https://cloud.githubusercontent.com/assets/1518967/11520904/78f955f8-98e2-11e5-89eb-a01622389578.png" alt="tiny">tinyjpg压缩率非常cool</a></li>
+</ul>
+<h2 id="在线性能测试"><a href="#在线性能测试" class="headerlink" title="在线性能测试"></a>在线性能测试</h2><ul>
+<li><a href="http://www.alibench.com/" target="_blank" rel="external">阿里测</a></li>
+<li><a href="http://www.jiankongmf.com/" target="_blank" rel="external">监控魔方</a></li>
+<li><a href="http://www.browserstack.com/" target="_blank" rel="external">Live, Web-Based Browser Testing</a></li>
+</ul>
+<h2 id="在线编辑器"><a href="#在线编辑器" class="headerlink" title="在线编辑器"></a>在线编辑器</h2><ul>
+<li><a href="http://codepen.io/" target="_blank" rel="external">codepen</a></li>
+<li><a href="http://jsbin.com/" target="_blank" rel="external">jsbin</a></li>
+<li><a href="http://runjs.cn/" target="_blank" rel="external">runjs</a></li>
+</ul>
+<h2 id="常用的在线工具"><a href="#常用的在线工具" class="headerlink" title="常用的在线工具"></a>常用的在线工具</h2><ul>
+<li><a href="http://cli.im/url/2014071515?ECNl3" target="_blank" rel="external">在线二维码</a></li>
+<li><a href="http://tool.oschina.net/" target="_blank" rel="external">比较全的在线工具-开源中国社区</a></li>
+<li><a href="http://tool.lu/" target="_blank" rel="external">在线工具 - 程序员的工具箱</a> 工具很全很丰富<br><a href="(http://tool.lu/"><img src="https://cloud.githubusercontent.com/assets/1518967/11520854/184602f6-98e2-11e5-83f1-fd17667ee7bc.png" alt="5178a4b4-82d2-4d8b-a0d1-aeacbea55495"></a></li>
+</ul>
+<h2 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h2><ul>
+<li>2016-10-22 整理了<a href="https://github.com/huixisheng/lab/issues/3" target="_blank" rel="external">issue</a></li>
+<li>2016-10-23 1. 添加在线教程 2. JavaScript在线电子书</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端工具/" rel="tag">#前端工具</a>
+          
+            <a href="/tags/前端资源/" rel="tag">#前端资源</a>
+          
+            <a href="/tags/在线教程/" rel="tag">#在线教程</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/excellent-software-recommended/" rel="next" title="致那些我使用过的优秀软件">
+                <i class="fa fa-chevron-left"></i> 致那些我使用过的优秀软件
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/MacOSX-mysql/" rel="prev" title="MacOSX下Mysql折腾记">
+                MacOSX下Mysql折腾记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="web-front-end-tools/"
+           data-title="前端开发工具收集和整理" data-url="http://huixisheng.github.io/web-front-end-tools/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="huixisheng" />
+          <p class="site-author-name" itemprop="name">huixisheng</p>
+          <p class="site-description motion-element" itemprop="description">前端路漫漫兮，吾将上下而求索</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">26</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/huixisheng" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/huixisheng" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/huixisheng" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript在线电子书"><span class="nav-number">1.</span> <span class="nav-text">JavaScript在线电子书</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在线教程"><span class="nav-number">2.</span> <span class="nav-text">在线教程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#以下内容整理自书签"><span class="nav-number">3.</span> <span class="nav-text">以下内容整理自书签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在线兼容性测试"><span class="nav-number">4.</span> <span class="nav-text">在线兼容性测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浏览器开发工具"><span class="nav-number">5.</span> <span class="nav-text">浏览器开发工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在线压缩"><span class="nav-number">6.</span> <span class="nav-text">在线压缩</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在线性能测试"><span class="nav-number">7.</span> <span class="nav-text">在线性能测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在线编辑器"><span class="nav-number">8.</span> <span class="nav-text">在线编辑器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用的在线工具"><span class="nav-number">9.</span> <span class="nav-text">常用的在线工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新日志"><span class="nav-number">10.</span> <span class="nav-text">更新日志</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">huixisheng</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"huixisheng"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = false;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title >= 0 || index_content >= 0 ){
+                                isMatch = true;
+								if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            } 
+							
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>

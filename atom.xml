@@ -1,0 +1,1785 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>前端开发者说</title>
+  <subtitle>记录开发的故事</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://huixisheng.github.io/"/>
+  <updated>2017-05-26T13:47:09.000Z</updated>
+  <id>http://huixisheng.github.io/</id>
+  
+  <author>
+    <name>huixisheng</name>
+    <email>huxisheng@gmail.com</email>
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MacOSX安装多版本php</title>
+    <link href="http://huixisheng.github.io/MacOSX-php/"/>
+    <id>http://huixisheng.github.io/MacOSX-php/</id>
+    <published>2017-05-26T13:22:26.000Z</published>
+    <updated>2017-05-26T13:47:09.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>由于lavarel的环境homestead升级成了7.x,导致在外面跑<code>composer update</code>会报错，很麻烦，于是需要升级系统自带php的版本。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">➜  bin /usr/bin/php -v</div><div class="line">PHP 5.6.30 (cli) (built: Feb  7 2017 16:06:52)</div><div class="line">Copyright (c) 1997-2016 The PHP Group</div><div class="line">Zend Engine v2.6.0, Copyright (c) 1998-2016 Zend Technologies</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># 添加brew的php源</div><div class="line">brew tap homebrew/php</div><div class="line">brew tap homebrew/dupes</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># 安装php71</div><div class="line">brew install php71</div><div class="line">brew link php71</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">➜  huixisheng.github.com git:(dev) ✗ php -v</div><div class="line">PHP 7.1.5 (cli) (built: May 13 2017 13:30:32) ( NTS )</div><div class="line">Copyright (c) 1997-2017 The PHP Group</div><div class="line">Zend Engine v3.1.0, Copyright (c) 1998-2017 Zend Technologies</div></pre></td></tr></table></figure>
+<h2 id="缺少mongodb的扩展报错"><a href="#缺少mongodb的扩展报错" class="headerlink" title="缺少mongodb的扩展报错"></a>缺少mongodb的扩展报错</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Problem 1</div><div class="line">  - jenssegers/mongodb v3.2.2 requires mongodb/mongodb ^1.0.0 -&gt; satisfiable by mongodb/mongodb[1.1.2, 1.0.0, 1.0.1, 1.0.2, 1.0.3, 1.0.4, 1.0.5, 1.1.0, 1.1.1].</div><div class="line">  - jenssegers/mongodb v3.2.0 requires mongodb/mongodb ^1.0.0 -&gt; satisfiable by mongodb/mongodb[1.1.2, 1.0.0, 1.0.1, 1.0.2, 1.0.3, 1.0.4, 1.0.5, 1.1.0, 1.1.1].</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">brew search mongodb</div><div class="line">brew install php71-mongodb</div></pre></td></tr></table></figure>
+<p>居然不用手动配置<code>php.ini</code></p>
+<h2 id="删除MaxOSX自带的php"><a href="#删除MaxOSX自带的php" class="headerlink" title="删除MaxOSX自带的php"></a>删除MaxOSX自带的php</h2><blockquote>
+<p>Mac默认安装了较低版本的php，删除之，统一使用brew管理</p>
+<h1 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h1><p>$ php -v<br>PHP 5.6.25 (cli) (built: Sep 19 2016 15:45:41)<br>Copyright (c) 1997-2016 The PHP Group<br>Zend Engine v2.6.0, Copyright (c) 1998-2016 Zend Technologies</p>
+<h1 id="删除之"><a href="#删除之" class="headerlink" title="删除之"></a>删除之</h1><p>$ sudo rm -rf /private/etc/php-fpm.conf.default /private/etc/php.ini php.ini.default<br>$ sudo rm -rf /usr/bin/php /usr/bin/php-config /usr/bin/phpdoc /usr/bin/phpize<br>$ sudo rm -rf /usr/include/php<br>$ sudo rm -rf /usr/lib/php<br>$ sudo rm -rf /usr/sbin/php-fpm<br>$ sudo rm -rf /usr/share/php<br>$ sudo rm -rf /usr/share/man/man1/php-config.1 /usr/share/man/man1/php.1 /usr/share/man/man1/phpize.1<br>$ sudo rm -rf /usr/share/man/man8/php-fpm.8</p>
+</blockquote>
+<ul>
+<li>来自<a href="http://www.jianshu.com/p/81a6d5253d48" target="_blank" rel="external">http://www.jianshu.com/p/81a6d5253d48</a></li>
+</ul>
+<h2 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h2><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="http://www.jianshu.com/p/66d1d4ee172c" target="_blank" rel="external">http://www.jianshu.com/p/66d1d4ee172c</a></li>
+<li><a href="https://github.com/Homebrew/homebrew-php" target="_blank" rel="external">https://github.com/Homebrew/homebrew-php</a></li>
+<li><a href="http://nodejh.com/post/macos-sierra-apache-multiple-php-versions/" target="_blank" rel="external">http://nodejh.com/post/macos-sierra-apache-multiple-php-versions/</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;由于lavarel的环境homestead升级成了7.x,导致在外面跑&lt;code&gt;composer update&lt;/code&gt;会报错，很麻烦，于是需要升级系统自带php的版本。&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;t
+    
+    </summary>
+    
+    
+      <category term="mysql" scheme="http://huixisheng.github.io/tags/mysql/"/>
+    
+      <category term="MacOSX" scheme="http://huixisheng.github.io/tags/MacOSX/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>phpstorm相关配置</title>
+    <link href="http://huixisheng.github.io/phpstorm/"/>
+    <id>http://huixisheng.github.io/phpstorm/</id>
+    <published>2017-05-26T12:39:44.000Z</published>
+    <updated>2017-05-26T13:47:33.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="相关问题"><a href="#相关问题" class="headerlink" title="相关问题"></a>相关问题</h2><h3 id="phpstorm注释的时候的斜线位置不在缩进的位置"><a href="#phpstorm注释的时候的斜线位置不在缩进的位置" class="headerlink" title="phpstorm注释的时候的斜线位置不在缩进的位置"></a>phpstorm注释的时候的斜线位置不在缩进的位置</h3><p>phpstorm注释的代码在Sublime中打开，收起代码的时候很不友好，估计有强迫症用户更是受不了吧。</p>
+<p><code>Preferences-&gt;Editor-&gt;Code Style-&gt;PHP-&gt;Other</code> 里面取消 <code>Line comment at first column</code>之前的勾选就行了！</p>
+<p><img src="/images/tools/phpstorm.jpeg" alt=""></p>
+<h3 id="如何修改phpstorm新建文件默认模版注释"><a href="#如何修改phpstorm新建文件默认模版注释" class="headerlink" title="如何修改phpstorm新建文件默认模版注释"></a>如何修改phpstorm新建文件默认模版注释</h3><p>默认注释:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">/**</div><div class="line"> * Created by PhpStorm.</div><div class="line"> * User: huixisheng</div><div class="line"> * Date: 2017/5/26</div><div class="line"> * Time: 21:00</div><div class="line"> */</div></pre></td></tr></table></figure></p>
+<p><img src="/images/tools/phpstorm-header.jpeg" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">/**</div><div class="line"> *</div><div class="line"> * @date 2017-05-26 21:06</div><div class="line"> * @author huixisheng &lt;huixisheng@gmail.com&gt;</div><div class="line"> */</div></pre></td></tr></table></figure>
+<h3 id="配置Laravel代码跳转"><a href="#配置Laravel代码跳转" class="headerlink" title="配置Laravel代码跳转"></a>配置Laravel代码跳转</h3><p>安装<code>Laravel Plugin</code>。执行<code>php artisan ide-helper:generate</code></p>
+<ul>
+<li><a href="https://github.com/barryvdh/laravel-ide-helper" target="_blank" rel="external">https://github.com/barryvdh/laravel-ide-helper</a></li>
+</ul>
+<h2 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h2><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;相关问题&quot;&gt;&lt;a href=&quot;#相关问题&quot; class=&quot;headerlink&quot; title=&quot;相关问题&quot;&gt;&lt;/a&gt;相关问题&lt;/h2&gt;&lt;h3 id=&quot;phpstorm注释的时候的斜线位置不在缩进的位置&quot;&gt;&lt;a href=&quot;#phpstorm注释的时候的斜线位置不在
+    
+    </summary>
+    
+    
+      <category term="开发工具" scheme="http://huixisheng.github.io/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="phpstorm" scheme="http://huixisheng.github.io/tags/phpstorm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>项目碰到的问题整理</title>
+    <link href="http://huixisheng.github.io/webapp-tips/"/>
+    <id>http://huixisheng.github.io/webapp-tips/</id>
+    <published>2016-12-04T01:33:15.000Z</published>
+    <updated>2017-03-13T06:42:21.000Z</updated>
+    
+    <content type="html"><![CDATA[<ul>
+<li>兼容性</li>
+<li>项目总结</li>
+<li>webapck</li>
+<li>sticky</li>
+<li>Vue</li>
+</ul>
+<hr>
+<p>近期做的项目零零散散的问题的总结。主要是使用webpack,vue碰到的问题。</p>
+<a id="more"></a>
+<h2 id="条件判断优化"><a href="#条件判断优化" class="headerlink" title="条件判断优化"></a>条件判断优化</h2><p>当逻辑一复杂，下面的代码就会显得很懊糟，难以维护。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;button class=&quot;jfbtn jfbtn-disable jfbtn-block&quot; v-show=&quot;detail.btn_info.type == &apos;disable&apos;&quot; v-text=&quot;detail.btn_info.text&quot;&gt;&lt;/button&gt;</div><div class="line">&lt;button class=&quot;jfbtn jfbtn-disable jfbtn-block&quot; @click=&quot;btnAction&quot; v-show=&quot;detail.btn_info.type == &apos;alertable&apos;&quot; v-text=&quot;detail.btn_info.text&quot;&gt;&lt;/button&gt;</div><div class="line">&lt;button class=&quot;jfbtn jfbtn-primary jfbtn-block&quot; @click=&quot;exchangeBtn&quot; v-show=&quot;detail.btn_info.type == &apos;clickable&apos;&quot; v-text=&quot;detail.btn_info.text&quot;&gt;&lt;/button&gt;</div><div class="line">&lt;button node-type=&quot;countdown-btn&quot; class=&quot;jfbtn jfbtn-disable jfbtn-block&quot; v-show=&quot;detail.btn_info.type == &apos;countdown&apos;&quot;&gt;&lt;/button&gt;</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;button @click=&quot;btnClick&quot; :class=&quot;btnClass&quot; v-text=&quot;btn_info.text&quot;&gt;&lt;/button&gt;</div></pre></td></tr></table></figure>
+<p>绑定class配合计算属性使得代码逻辑很清新。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">computed: &#123;</div><div class="line">  btnClass () &#123;</div><div class="line">    return &#123;</div><div class="line">      &apos;jfbtn&apos;: true,</div><div class="line">      &apos;jfbtn-block&apos;: true,</div><div class="line">      &apos;jfbtn-disable&apos;: this.showBtnDisableClass,</div><div class="line">      &apos;jfbtn-primary&apos;: this.showBtnPrimaryClass</div><div class="line">    &#125;;</div><div class="line">  &#125;,</div><div class="line">  showBtnDisableClass () &#123;</div><div class="line">    const type = this.btn_info.type;</div><div class="line">    if (type === &apos;disable&apos; || type === &apos;alertable&apos;</div><div class="line">      || type === &apos;countdown&apos; || type === &apos;auth_check&apos;) &#123;</div><div class="line">      return true;</div><div class="line">    &#125;</div><div class="line">    return false;</div><div class="line">  &#125;,</div><div class="line">  showBtnPrimaryClass () &#123;</div><div class="line">    const type = this.btn_info.type;</div><div class="line">    return type === &apos;clickable&apos;;</div><div class="line">  &#125;</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
+<h2 id="vue组件-mount报错"><a href="#vue组件-mount报错" class="headerlink" title=".vue组件$mount报错"></a>.vue组件$mount报错</h2><p>按如下方式挂载组件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">import Vue from &apos;vue&apos;;</div><div class="line">import Detail from &apos;./views/detail&apos;;</div><div class="line">import &apos;./common&apos;;</div><div class="line">const cDetail = Vue.extend(Detail);</div><div class="line">new cDetail().$mount(&apos;#app&apos;);</div></pre></td></tr></table></figure></p>
+<p>报错<code>Cannot read property &#39;tagName&#39; of null</code>。跟踪代码进行调试，并没有找到问题所在。挂载组件的方式不对，还是打包配置不对，导致生成的组件有问题？尝试不同版本的<code>Vue</code>写简单的组件去挂载并没有什么问题。<code>cDetail</code>配合<code>vue-router</code>使用也是没有问题的。单独挂载就是会报错。后面发现<code>.vue</code>文件多个结构没有容器包含引起的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">&lt;div class=&quot;x1&quot;&gt;内容1&lt;/div&gt;</div><div class="line">&lt;div class=&quot;x2&quot;&gt;内容2&lt;/div&gt;</div><div class="line">&lt;/template&gt;</div><div class="line">&lt;script&gt;</div><div class="line">  ...</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<p>修改如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">&lt;div&gt;</div><div class="line">  &lt;div class=&quot;x1&quot;&gt;内容1&lt;/div&gt;</div><div class="line">  &lt;div class=&quot;x2&quot;&gt;内容2&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;/template&gt;</div><div class="line">&lt;script&gt;</div><div class="line">  ...</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<ul>
+<li><a href="https://github.com/vuejs/vue/issues/3212" target="_blank" rel="external">https://github.com/vuejs/vue/issues/3212</a></li>
+</ul>
+<h2 id="使用vue-router导致app里面的网页title无法修改"><a href="#使用vue-router导致app里面的网页title无法修改" class="headerlink" title="使用vue-router导致app里面的网页title无法修改"></a>使用vue-router导致app里面的网页title无法修改</h2><p>ios微信6.3.31测试通过,但是在美妆心得app中不行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">route: &#123;</div><div class="line">  data () &#123;</div><div class="line">    // document.title = &apos;往期秒杀&apos;;</div><div class="line">  &#125;</div><div class="line">&#125;,</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">const iframeLoad = function (src) &#123;</div><div class="line">  const iframe = document.createElement(&apos;iframe&apos;);</div><div class="line">  iframe.style.display = &apos;none&apos;;</div><div class="line">  iframe.src = src;</div><div class="line">  document.body.appendChild(iframe);</div><div class="line">  iframe.addEventListener(&apos;load&apos;, function () &#123;</div><div class="line">    setTimeout(function () &#123;</div><div class="line">      iframe.remove();</div><div class="line">    &#125;, 0);</div><div class="line">  &#125;);</div><div class="line">&#125;;</div><div class="line">router.afterEach(function (transition) &#123;</div><div class="line">  document.title = transition.to.title || &apos;积分商城&apos;;</div><div class="line">  // https://segmentfault.com/a/1190000006712234?hmsr=toutiao.io&amp;utm_medium=toutiao.io&amp;utm_source=toutiao.io</div><div class="line">  if (F.UA.cosmeapp) &#123;</div><div class="line">    iframeLoad(&apos;/favicon.ico&apos;);</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>参考</p>
+<ul>
+<li><a href="https://github.com/miaolz123/vue-helmet/issues/3" target="_blank" rel="external">https://github.com/miaolz123/vue-helmet/issues/3</a></li>
+<li><a href="http://silverd.cn/2016/05/14/vue-first-project.html" target="_blank" rel="external">http://silverd.cn/2016/05/14/vue-first-project.html</a></li>
+<li><a href="https://segmentfault.com/a/1190000006712234?hmsr=toutiao.io&amp;utm_medium=toutiao.io&amp;utm_source=toutiao.io" target="_blank" rel="external">https://segmentfault.com/a/1190000006712234?hmsr=toutiao.io&amp;utm_medium=toutiao.io&amp;utm_source=toutiao.io</a></li>
+<li><a href="https://gist.github.com/wszgxa/48eefb02650ea011ab28a116643890a9" target="_blank" rel="external">https://gist.github.com/wszgxa/48eefb02650ea011ab28a116643890a9</a></li>
+<li><a href="https://segmentfault.com/a/1190000007387556" target="_blank" rel="external">https://segmentfault.com/a/1190000007387556</a></li>
+</ul>
+<h2 id="express配置post请求接口"><a href="#express配置post请求接口" class="headerlink" title="express配置post请求接口"></a>express配置post请求接口</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">app.post(&apos;/mock/new-task-price.json&apos;, function (req, res) &#123;</div><div class="line">  res.send(&apos;&#123;&quot;status&quot;: &quot;1&quot;,&quot;msg&quot;: &quot;成功领取积分奖励, 请在积分明细中查看哦!&quot;&#125;&apos;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h2 id="webpack添加模拟请求"><a href="#webpack添加模拟请求" class="headerlink" title="webpack添加模拟请求"></a>webpack添加模拟请求</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">proxyTable: &#123;</div><div class="line">  &apos;/api/credit/index&apos;: &#123;</div><div class="line">    target: host + &apos;/mock/api_credit_index.json&apos;,</div><div class="line">    changeOrigin: true,</div><div class="line">    pathRewrite: &#123;</div><div class="line">      &apos;^/api/credit/index&apos;: &apos;&apos;</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="webpack入口页面设置标题"><a href="#webpack入口页面设置标题" class="headerlink" title="webpack入口页面设置标题"></a>webpack入口页面设置标题</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">  &lt;head&gt;</div><div class="line">    &lt;title&gt;&lt;%= htmlWebpackPlugin.options.title %&gt;&lt;/title&gt;</div><div class="line">  &lt;/head&gt;</div><div class="line">  &lt;body&gt;</div><div class="line">  &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">new HtmlWebpackPlugin(&#123;</div><div class="line">  filename: &apos;index.html&apos;,</div><div class="line">  // 必须是.ejs结尾的文件，.html的文件不会解析。或者模板的loader</div><div class="line">  template: &apos;index.ejs&apos;,</div><div class="line">  title: &apos;积分商城&apos;,</div><div class="line">&#125;),</div></pre></td></tr></table></figure>
+<ul>
+<li><a href="https://github.com/ampedandwired/html-webpack-plugin/blob/master/docs/template-option.md" target="_blank" rel="external">https://github.com/ampedandwired/html-webpack-plugin/blob/master/docs/template-option.md</a></li>
+<li><a href="http://www.html-js.com/article/shiyongzhishang-webpackduoyeyingyongjiagouxilieshierliyongwebpackshengchengHTMLputongwangyeyemianmoban%203784" target="_blank" rel="external">webpack多页应用架构系列（十二）：利用webpack生成HTML普通网页&amp;页面模板</a></li>
+</ul>
+<h2 id="webpack多页面入口配置"><a href="#webpack多页面入口配置" class="headerlink" title="webpack多页面入口配置"></a>webpack多页面入口配置</h2><p>添加多个enter<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">entry: &#123;</div><div class="line">  index: &apos;./src/index.js&apos;,</div><div class="line">  detail: &apos;./src/detail.js&apos;</div><div class="line">&#125;,</div></pre></td></tr></table></figure></p>
+<p>配置多个<code>HtmlWebpackPlugin</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">new HtmlWebpackPlugin(&#123;</div><div class="line">  filename: &apos;index.html&apos;,</div><div class="line">  template: &apos;index.ejs&apos;,</div><div class="line">  inject: true,</div><div class="line">  title: &apos;积分商城&apos;,</div><div class="line">  minify: &#123;</div><div class="line">    removeComments: true,</div><div class="line">    collapseWhitespace: true</div><div class="line">  &#125;,</div><div class="line">  chunks: [&apos;index&apos;]</div><div class="line">&#125;),</div><div class="line">new HtmlWebpackPlugin(&#123;</div><div class="line">  filename: &apos;detail.html&apos;,</div><div class="line">  template: &apos;index.ejs&apos;,</div><div class="line">  inject: true,</div><div class="line">  title: &apos;商品详情&apos;,</div><div class="line">  minify: &#123;</div><div class="line">    removeComments: false,</div><div class="line">    collapseWhitespace: false</div><div class="line">  &#125;,</div><div class="line">  chunks: [&apos;detail&apos;]</div><div class="line">&#125;),</div></pre></td></tr></table></figure></p>
+<p>入口文件和模板文件可以采用遍历的目录，这样就不要单独一个个配置。</p>
+<p>多页面配置扩展阅读</p>
+<ul>
+<li><a href="https://github.com/lpreterite/multiple-page-vue-webpack-example" target="_blank" rel="external">https://github.com/lpreterite/multiple-page-vue-webpack-example</a></li>
+<li><a href="https://github.com/yaoyao1987/vue-cli-multipage" target="_blank" rel="external">https://github.com/yaoyao1987/vue-cli-multipage</a></li>
+<li><a href="https://github.com/cnu4/Webpack-Vue-MultiplePage" target="_blank" rel="external">https://github.com/cnu4/Webpack-Vue-MultiplePage</a></li>
+<li><a href="http://xjinjin.net/2016/08/20/webpack-multiple-page-static/" target="_blank" rel="external">http://xjinjin.net/2016/08/20/webpack-multiple-page-static/</a></li>
+</ul>
+<h2 id="position-sticky失效"><a href="#position-sticky失效" class="headerlink" title="position: sticky失效"></a><code>position: sticky</code>失效</h2><p>原因是<code>html, body{ overflow: auto }</code></p>
+<p>最初是想实现滚动某个位置的时候导航滚定在顶部。给相关的滚动元素绑定<code>scroll</code>事件快速滑动的时候存在细微的抖动效果。尝试了<code>touchmove touchend</code>等事件、<code>_.throttle</code>函数节流，结果还是不顺畅。发现<a href="https://h5.m.taobao.com/app/tjb/www/index3.html?locate=icon-8&amp;spm=a215s.7406091.icons.8&amp;scm=2027.1.2.1004" target="_blank" rel="external">淘宝的淘金币页面</a>却是丝般丝般顺滑。导致是用了什么黑科技，看下源码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">var n = $(window)</div><div class="line">  , i = function o(t) &#123;</div><div class="line">    var e = $(t.el)</div><div class="line">      , i = this;</div><div class="line">    i.top = t.top || 0;</div><div class="line">    var o = &quot;static&quot;;</div><div class="line">    if (e.css(&#123;</div><div class="line">        position: &quot;-webkit-sticky&quot;,</div><div class="line">        top: i.top + &quot;px&quot;,</div><div class="line">        zIndex: 1e3</div><div class="line">    &#125;),</div><div class="line">    &quot;boolean&quot; != typeof t.isStatic || t.isStatic || (o = e.css(&quot;position&quot;)),</div><div class="line">    &quot;string&quot; == typeof t.addStickyClass &amp;&amp; (i.addStickyClass = t.addStickyClass),</div><div class="line">    e.length &gt; 0 &amp;&amp; e.css(&quot;position&quot;).indexOf(&quot;sticky&quot;) == -1) &#123;</div><div class="line">        var r, a;</div><div class="line">        !function() &#123;</div><div class="line">            var t = function s() &#123;</div><div class="line">                n.scrollTop() &gt; i.ScrollTop ? (r.show(),</div><div class="line">                i.addStickyClass &amp;&amp; e.addClass(i.addStickyClass),</div><div class="line">                e.css(&quot;position&quot;, &quot;fixed&quot;)) : (r.hide(),</div><div class="line">                i.addStickyClass &amp;&amp; e.removeClass(i.addStickyClass),</div><div class="line">                e.css(&quot;position&quot;, o))</div><div class="line">            &#125;;</div><div class="line">            i.nav = e,</div><div class="line">            i.setPlaceHolder(),</div><div class="line">            r = i.placeHolder,</div><div class="line">            i.ScrollTop = e.offset().top,</div><div class="line">            setTimeout(function() &#123;</div><div class="line">                i.ScrollTop = e.offset().top - i.top</div><div class="line">            &#125;, 10),</div><div class="line">            a = window.requestAnimationFrame || window.webkitRequestAnimationFrame || function(t) &#123;</div><div class="line">                setTimeout(t, 1 / 60 * 1e3)</div><div class="line">            &#125;</div><div class="line">            ,</div><div class="line">            n.on(&quot;scroll&quot;, function() &#123;</div><div class="line">                a(t)</div><div class="line">            &#125;)</div><div class="line">        &#125;()</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>原来顺滑用的是<code>sticky</code>。然而由于项目之前用的是<code>html,body{overflow: hidden;}</code>,改成了<code>html, body{ overflow: auto }</code>。结果我修改代码用上<code>sticky</code>就悲剧了。</p>
+<blockquote>
+<p>已知的几个问题，外层overflow设置成auto,scroll,hidden会失效。 -<a href="http://wenbinzhou.lofter.com/post/65a3d_6f55339" target="_blank" rel="external">http://wenbinzhou.lofter.com/post/65a3d_6f55339</a></p>
+</blockquote>
+<h3 id="javascript检测是否支持"><a href="#javascript检测是否支持" class="headerlink" title="javascript检测是否支持"></a>javascript检测是否支持</h3><ul>
+<li>来自<a href="https://segmentfault.com/a/1190000007183209?_ea=1288008" target="_blank" rel="external">https://segmentfault.com/a/1190000007183209?_ea=1288008</a><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">if (CSS.supports(&quot;position&quot;, &quot;sticky&quot;) || CSS.supports(&quot;position&quot;, &quot;-webkit-sticky&quot;)) &#123;</div><div class="line">    // 支持 sticky</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>或者</p>
+<ul>
+<li>来自 <a href="http://efe.baidu.com/blog/position-sticky/" target="_blank" rel="external">http://efe.baidu.com/blog/position-sticky/</a><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">function isSupportSticky() &#123;</div><div class="line">    var prefixTestList = [&apos;&apos;, &apos;-webkit-&apos;, &apos;-ms-&apos;, &apos;-moz-&apos;, &apos;-o-&apos;];</div><div class="line">    var stickyText = &apos;&apos;;</div><div class="line">    for (var i = 0; i &lt; prefixTestList.length; i++ ) &#123;</div><div class="line">        stickyText += &apos;position:&apos; + prefixTestList[i] + &apos;sticky;&apos;;</div><div class="line">    &#125;</div><div class="line">    // 创建一个dom来检查</div><div class="line">    var div = document.createElement(&apos;div&apos;);</div><div class="line">    var body = document.body;</div><div class="line">    div.style.cssText = &apos;display:none;&apos; + stickyText;</div><div class="line">    body.appendChild(div);</div><div class="line">    var isSupport = /sticky/i.test(window.getComputedStyle(div).position);</div><div class="line">    body.removeChild(div);</div><div class="line">    div = null;</div><div class="line">    return isSupport;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="绑定scroll事件在ios设备不顺畅原因"><a href="#绑定scroll事件在ios设备不顺畅原因" class="headerlink" title="绑定scroll事件在ios设备不顺畅原因"></a>绑定scroll事件在ios设备不顺畅原因</h3><ul>
+<li>来自 <a href="http://feg.netease.com/archives/377.html" target="_blank" rel="external">http://feg.netease.com/archives/377.html</a><blockquote>
+<p>上面这种方法在chrome模拟手机浏览器的表现很好，但是在移动端浏览器上粘顶的效果就没有那么平滑，尤其是在ios设备上，ios下的浏览器会在页面滚动的时候，暂停所有js的执行，直到滚动停止才会继续去执行js（注意暂停了所有js的执行，所以考虑用setTimeout或setInterval也是没有用的）。所以页面滚动时，scroll事件在iOS的浏览器下并不会持续被触发，而是在页面滚动停止后，才会去触发一次scroll事件。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="sticky满足以下条件才能生效"><a href="#sticky满足以下条件才能生效" class="headerlink" title="sticky满足以下条件才能生效"></a>sticky满足以下条件才能生效</h3><ul>
+<li>来自 <a href="http://www.ghugo.com/position-sticky-how-to-use/" target="_blank" rel="external">http://www.ghugo.com/position-sticky-how-to-use/</a><blockquote>
+<p>1、具有sticky属性的元素，其父级高度必须大于sticky元素的高度。<br>2、sticky元素的底部，不能和父级底部重叠。（这条不好表述，文后详细说明）<br>3、sticky元素的所有父级不能含有overflow:hidden 和 overflow:auto 属性<br>4、必须具有top，或 bottom 属性。<br>同时要注意，sticky元素仅在他父级容器内有效，超出容器范围则不再生效了。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="相关sticky插件"><a href="#相关sticky插件" class="headerlink" title="相关sticky插件"></a>相关<code>sticky</code>插件</h3><ul>
+<li>aralejs/sticky</li>
+<li>garand/sticky</li>
+<li>matthewp/position–sticky-</li>
+<li>filamentgroup/fixed-sticky</li>
+<li><a href="http://stickyjs.com/" target="_blank" rel="external">http://stickyjs.com/</a></li>
+<li><a href="http://kissygalleryteam.github.io/sticky/doc/guide/index.html" target="_blank" rel="external">http://kissygalleryteam.github.io/sticky/doc/guide/index.html</a><br><a href="https://github.com/search?utf8=%E2%9C%93&amp;q=position+sticky&amp;type=Repositories&amp;ref=searchresults" target="_blank" rel="external">https://github.com/search?utf8=%E2%9C%93&amp;q=position+sticky&amp;type=Repositories&amp;ref=searchresults</a></li>
+</ul>
+<h2 id="iphone屏幕录制如何导出gif"><a href="#iphone屏幕录制如何导出gif" class="headerlink" title="iphone屏幕录制如何导出gif"></a>iphone屏幕录制如何导出gif</h2><p>用Mac自带的<code>QuickTime Player</code>录制视频。用软件<code>GIF Brewery</code>导出gif。写了篇简单的<a href="https://huixisheng.github.io/mac-iphone-screen-record/">]总结文章</a></p>
+<h2 id="键盘弹起引起input-fixed定位失效"><a href="#键盘弹起引起input-fixed定位失效" class="headerlink" title="键盘弹起引起input fixed定位失效"></a>键盘弹起引起input fixed定位失效</h2><p>flex方法测试</p>
+<p>测试结果:ios10.2 在微信中，safari切换为讯飞输入法有问题，输入框会被键盘遮挡</p>
+<blockquote>
+<p>在iOS移动设备下当虚拟键盘打开打开上会导致页面内的Fixed元素出现渲染异常。有几种可以绕过这个bug的方法：为Fixed元素设置 position:absolute; 通过设置定时器focus input元素。 -<a href="https://www.dragonvally.com/2016/04/09/ios-fixed-input-bug/" target="_blank" rel="external">https://www.dragonvally.com/2016/04/09/ios-fixed-input-bug/</a>  -<a href="http://getbootstrap.com/getting-started/#virtual-keyboards" target="_blank" rel="external">http://getbootstrap.com/getting-started/#virtual-keyboards</a></p>
+</blockquote>
+<p>目前想到解决办法:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">setTimeout(function()&#123;</div><div class="line">    var $doc = $(document);</div><div class="line">    var height = $doc.height();</div><div class="line">    $doc.scrollTop(height)</div><div class="line">&#125;, 300);</div></pre></td></tr></table></figure>
+<p><a href="https://huixisheng.github.io/lab/demos/fixed-input/flex-fixed-input.html">demo地址-flex实现input fixed</a></p>
+<h2 id="border-none在ie7无效"><a href="#border-none在ie7无效" class="headerlink" title="border:none在ie7无效"></a><code>border:none</code>在ie7无效</h2><p>好久没有处理过ie的兼容问题了，在做公司官网的时候发现<code>border:none</code>在ie7无效</p>
+<p>以下内容引用在<a href="http://blog.sina.com.cn/s/blog_5ed90bcd0101l4kc.html" target="_blank" rel="external">ie6 ie7中input标签隐藏边框(border:none与border：0的异同) </a></p>
+<blockquote>
+<p>border:none;与border:0;的区别体现有两点：一是理论上的性能差异二是浏览器兼容性的差异。<br> 1.性能差异<br>【border:0;】把border设为“0”像素虽然在页面上看不见，但按border默认值理解，浏览器依然对border-width/border-color进行了渲染，即已经占用了内存值。<br>【border:none;】把border设为“none”即没有，浏览器解析“none”时将不作出渲染动作，即不会消耗内存值。<br> 2.兼容性差异<br>【border:none;】当border为“none”时对IE6/7无效边框依然存在<br>【border:0;】当border为“0”时，所有浏览器都一致把边框隐藏<br> 总结：</p>
+<ol>
+<li>对比border:0;与border:none;之间的区别在于有渲染和没渲染，感觉他们和display:none;与visibility:hidden;的关系类似，而对于border属性的渲染性能对比暂时没找测试的方法，虽然认为他们存在渲染性能上的差异但也只能说是理论上。<ol>
+<li>如何让border:none;实现全兼容？只需要在同一选择符上添加背景属性即可<br>3.对于border:0;与border:none;个人更向于使用,border:none;，因为border:none;毕竟在性能消耗没有争议，而且兼容性可用背景属性解决不足以成为障碍。</li>
+</ol>
+</li>
+</ol>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;兼容性&lt;/li&gt;
+&lt;li&gt;项目总结&lt;/li&gt;
+&lt;li&gt;webapck&lt;/li&gt;
+&lt;li&gt;sticky&lt;/li&gt;
+&lt;li&gt;Vue&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;近期做的项目零零散散的问题的总结。主要是使用webpack,vue碰到的问题。&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>iphone屏幕录制导出gif</title>
+    <link href="http://huixisheng.github.io/mac-iphone-screen-record/"/>
+    <id>http://huixisheng.github.io/mac-iphone-screen-record/</id>
+    <published>2016-11-30T12:09:08.000Z</published>
+    <updated>2016-11-30T14:38:19.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>gif图片可用于博客中文章demo的展示，聊天不发几个表情都不好意思去聊天。</p>
+<p>当你做app测试的时候发现了bug，用干巴巴的文字记录，不好描述，或许你的藐视开发人员有可能不懂你在说什么。所以有图有真相，这样方便开发人员重现问题，万一他们自己的设备就是没有问题呢。有图在就不好甩锅了。</p>
+<p>Mac系统自带的<code>QuickTime Player</code>可用于电脑和iphone手机的 屏幕录制导出视频，结合软件可以导出gif图片。</p>
+<a id="more"></a>
+<h2 id="QuickTime-Player导出视频"><a href="#QuickTime-Player导出视频" class="headerlink" title="QuickTime Player导出视频"></a><code>QuickTime Player</code>导出视频</h2><p>大致的步骤:</p>
+<ol>
+<li>打开<code>QuickTime Player</code></li>
+<li>文件-&gt;新建屏幕录制</li>
+<li>点击红色按钮/iphone的话用数据线连接到电脑</li>
+<li>点击红色按钮停止录制</li>
+<li>导出视频</li>
+</ol>
+<p>步骤截图见<a href="http://js.sunansheng.com/p/545014e51ad5?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=mobile_all_hots&amp;utm_source=recommendation" target="_blank" rel="external">Mac屏幕录制与gif图片制作教程</a></p>
+<h2 id="导出gif"><a href="#导出gif" class="headerlink" title="导出gif"></a>导出gif</h2><h3 id="GIF-Brewery"><a href="#GIF-Brewery" class="headerlink" title="GIF Brewery"></a>GIF Brewery</h3><blockquote>
+<p>近期，知名 GIF 动图制作软件 GIF Brewery 宣告其已经被动图资源托管平台 Gfycat 收购，软件调整为<strong>免费下载</strong>，正式将其产品定位选择为 Gfycat 桌面客户端，用户可将制作好的动图直接上传到 Gfycat，部分用户期待的文件保存管理工作终于得到了解决。-<a href="http://www.waerfa.com/gif-brewery-3-review" target="_blank" rel="external">http://www.waerfa.com/gif-brewery-3-review</a></p>
+</blockquote>
+<p><img src="/images/mac/screen-record-GIF Brewery.jpeg" alt=""></p>
+<p>导出的gif:<br><img src="/images/mac/screen-record-gif.gif" alt=""></p>
+<p><a href="https://itunes.apple.com/cn/app/gif-brewery-3-by-gfycat/id1081413713?mt=12" target="_blank" rel="external">下载地址</a></p>
+<h3 id="其他软件"><a href="#其他软件" class="headerlink" title="其他软件"></a>其他软件</h3><ul>
+<li><a href="https://itunes.apple.com/cn/app/picgif-lite/id844918735?mt=12" target="_blank" rel="external">PicGIF</a></li>
+<li><a href="http://www.uisdc.com/3-mac-gif-screencasts-tools" target="_blank" rel="external">MAC党看过来！3款超实用的GIF录屏软件推荐</a></li>
+<li><a href="http://s.weibo.com/weibo/gif%2520%25E5%25B1%258F%25E5%25B9%2595%25E5%25BD%2595%25E5%2588%25B6&amp;b=1&amp;page=1" target="_blank" rel="external">http://s.weibo.com/weibo/gif%2520%25E5%25B1%258F%25E5%25B9%2595%25E5%25BD%2595%25E5%2588%25B6&amp;b=1&amp;page=1</a></li>
+<li><a href="http://sspai.com/29175" target="_blank" rel="external">http://sspai.com/29175</a></li>
+<li>Vidyo</li>
+<li>GifLab</li>
+<li>Apowersoft苹果录屏王</li>
+<li><a href="http://sspai.com/33686" target="_blank" rel="external">在 iPhone 上直接录屏，又一个新选择：AirShou</a></li>
+<li><a href="https://segmentfault.com/a/1190000004461659" target="_blank" rel="external">Android分享：录制屏幕并制作GIF文件</a></li>
+<li><a href="http://www.isofts.org/?s=gif" target="_blank" rel="external">http://www.isofts.org/?s=gif</a></li>
+<li><a href="http://sspai.com/29175" target="_blank" rel="external">http://sspai.com/29175</a></li>
+<li><a href="http://recordit.co/" target="_blank" rel="external">Recordit</a></li>
+<li>licecap</li>
+<li>AirServer</li>
+<li>Reflector</li>
+<li>ScreenFlow</li>
+<li>Hype 3 强大的 HTML 5 动画制作软件</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;gif图片可用于博客中文章demo的展示，聊天不发几个表情都不好意思去聊天。&lt;/p&gt;
+&lt;p&gt;当你做app测试的时候发现了bug，用干巴巴的文字记录，不好描述，或许你的藐视开发人员有可能不懂你在说什么。所以有图有真相，这样方便开发人员重现问题，万一他们自己的设备就是没有问题呢。有图在就不好甩锅了。&lt;/p&gt;
+&lt;p&gt;Mac系统自带的&lt;code&gt;QuickTime Player&lt;/code&gt;可用于电脑和iphone手机的 屏幕录制导出视频，结合软件可以导出gif图片。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="MacOSX" scheme="http://huixisheng.github.io/tags/MacOSX/"/>
+    
+      <category term="软件" scheme="http://huixisheng.github.io/tags/%E8%BD%AF%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>jenkins发送自定义内容邮件</title>
+    <link href="http://huixisheng.github.io/jenkins-email/"/>
+    <id>http://huixisheng.github.io/jenkins-email/</id>
+    <published>2016-11-25T16:43:05.000Z</published>
+    <updated>2016-11-25T16:43:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>本文介绍了<code>groovy</code>脚本自定义构建完成后通知邮件的标题和内容。</p>
+<a id="more"></a>
+<h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><p><a href="https://wiki.jenkins-ci.org/display/JENKINS/Email-ext+plugin" target="_blank" rel="external">Email Extension Plugin</a></p>
+<h2 id="配置邮件地址"><a href="#配置邮件地址" class="headerlink" title="配置邮件地址"></a>配置邮件地址</h2><p><img src="/images/jenkins/jenkins-mail-1.jpeg" alt=""><br><img src="/images/jenkins/jenkins-mail-2.jpeg" alt=""></p>
+<p><strong>注意</strong>管理员的邮件地址要用户名邮件地址一致，不然发不了邮件</p>
+<p><img src="/images/jenkins/jenkins-mail-3.jpeg" alt=""></p>
+<h2 id="自定义邮件内容"><a href="#自定义邮件内容" class="headerlink" title="自定义邮件内容"></a>自定义邮件内容</h2><p>希望邮件的标题是含有<code>plist</code>或者<code>AndroidManifest.xml</code>的版本信息。下载地址是蒲公英的历史地址，而不是最终的固定地址。</p>
+<p><img src="/images/jenkins/jenkins-mail-4.jpeg" alt=""></p>
+<p><strong>注意设置</strong><code>Content Type:HTML(text/html)</code></p>
+<h3 id="变更记录"><a href="#变更记录" class="headerlink" title="变更记录"></a>变更记录</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;h2&gt;变更记录&lt;/h2&gt;</div><div class="line">&lt;ol&gt;</div><div class="line">$&#123;CHANGES_SINCE_LAST_SUCCESS,reverse=true, format=&quot;&quot;,showPaths=true,changesFormat=&quot;&lt;li&gt;&lt;pre&gt;[%a]&lt;br /&gt;%m&lt;/pre&gt;&lt;/li&gt;&quot;,pathFormat=&quot;    %p&quot;&#125;</div><div class="line">&lt;/ol&gt;</div><div class="line">[参考来自](http://m.blog.csdn.net/article/details?id=50595720)</div></pre></td></tr></table></figure>
+<p>通过搜索<code>CHANGES_SINCE_LAST_SUCCESS</code>找到</p>
+<blockquote>
+<p>${CHANGES_SINCE_LAST_SUCCESS} -显示上一次成功构建之后的变化。<br> reverse在顶部标示新近的构建。默认false。<br> format遍历构建信息，一个包含%X的字符串，其中%c为所有的改变，%n为构建编号。默认”Changes for Build #%n\n%c\n”。<br> showPaths,changesFormat,pathFormat分别定义如${CHANGES}的showPaths、format和pathFormat参数。<br> 来自:<a href="http://www.cnblogs.com/zz0412/p/jenkins_jj_01.html" target="_blank" rel="external">http://www.cnblogs.com/zz0412/p/jenkins_jj_01.html</a></p>
+</blockquote>
+<h3 id="项目信息"><a href="#项目信息" class="headerlink" title="项目信息"></a>项目信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;ul&gt;</div><div class="line">    &lt;li&gt;项目名称 ： $&#123;PROJECT_NAME&#125;&lt;/li&gt;</div><div class="line">    &lt;li&gt;构建编号 ： 第$&#123;BUILD_NUMBER&#125;次构建&lt;/li&gt;</div><div class="line">    &lt;li&gt;SVN 版本： $&#123;SVN_REVISION&#125;&lt;/li&gt;</div><div class="line">    &lt;li&gt;触发原因： $&#123;CAUSE&#125;&lt;/li&gt;</div><div class="line">    &lt;li&gt;构建日志： &lt;a href=&quot;$&#123;BUILD_URL&#125;console&quot;&gt;$&#123;BUILD_URL&#125;console&lt;/a&gt;&lt;/li&gt;</div><div class="line">    &lt;li&gt;构建  Url ： &lt;a href=&quot;$&#123;BUILD_URL&#125;&quot;&gt;$&#123;BUILD_URL&#125;&lt;/a&gt;&lt;/li&gt;</div><div class="line">    &lt;li&gt;工作目录 ： &lt;a href=&quot;$&#123;PROJECT_URL&#125;ws&quot;&gt;$&#123;PROJECT_URL&#125;ws&lt;/a&gt;&lt;/li&gt;</div><div class="line">    &lt;li&gt;项目  Url ： &lt;a href=&quot;$&#123;PROJECT_URL&#125;&quot;&gt;$&#123;PROJECT_URL&#125;&lt;/a&gt;&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div></pre></td></tr></table></figure>
+<h3 id="系统变量"><a href="#系统变量" class="headerlink" title="系统变量"></a>系统变量</h3><ul>
+<li><a href="https://wiki.jenkins-ci.org/display/JENKINS/Building+a+software+project" target="_blank" rel="external">https://wiki.jenkins-ci.org/display/JENKINS/Building+a+software+project</a></li>
+<li>查看jenkins相关的变量<a href="http://192.168.6.100:9999/env-vars.html/" target="_blank" rel="external">http://192.168.6.100:9999/env-vars.html/</a><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">__CF_USER_TEXT_ENCODING:0x1F5:0x19:0x34</div><div class="line">ANDROID_HOME:/Users/huixisheng/Library/Android/sdk</div><div class="line">BUILD_DISPLAY_NAME:#19</div><div class="line">BUILD_ID:19</div><div class="line">BUILD_NUMBER:19</div><div class="line">BUILD_TAG:jenkins-mail-test-19</div><div class="line">BUILD_URL:http://localhost:9999/job/mail-test/19/</div><div class="line">CLASSPATH:</div><div class="line">com.apple.java.jvmTask:CommandLine</div><div class="line">EXECUTOR_NUMBER:1</div><div class="line">GIT_BRANCH:origin/master</div><div class="line">GIT_COMMIT:869c988fd3b4124d8e7c6accc50d73df225ce4f9</div><div class="line">GIT_PREVIOUS_COMMIT:869c988fd3b4124d8e7c6accc50d73df225ce4f9</div><div class="line">GIT_PREVIOUS_SUCCESSFUL_COMMIT:869c988fd3b4124d8e7c6accc50d73df225ce4f9</div><div class="line">GIT_URL:git@git.coding.net:huixisheng/wapApp.git</div><div class="line">HOME:/Users/huixisheng</div><div class="line">HUDSON_HOME:/Users/Shared/Jenkins/Home</div><div class="line">HUDSON_SERVER_COOKIE:83752ef1802c9c47</div><div class="line">HUDSON_URL:http://localhost:9999/</div><div class="line">JAVA_ARCH:x86_64</div><div class="line">JAVA_MAIN_CLASS_64:Main</div><div class="line">JENKINS_HOME:/Users/Shared/Jenkins/Home</div><div class="line">JENKINS_SERVER_COOKIE:83752ef1802c9c47</div><div class="line">JENKINS_URL:http://localhost:9999/</div><div class="line">JOB_BASE_NAME:mail-test</div><div class="line">JOB_NAME:mail-test</div><div class="line">JOB_URL:http://localhost:9999/job/mail-test/</div><div class="line">LOGNAME:huixisheng</div><div class="line">NODE_LABELS:master</div><div class="line">NODE_NAME:master</div><div class="line">PATH:/Users/huixisheng/.rvm/gems/ruby-2.3.0/bin:/Users/huixisheng/.rvm/gems/ruby-2.3.0@global/bin:/Users/huixisheng/.rvm/rubies/ruby-2.3.0/bin:/Users/huixisheng/Library/Android/sdk/tools:/Users/huixisheng/Library/Android/sdk/platform-tools:/Users/huixisheng/.sdkman/candidates/gradle/current/bin:/Users/huixisheng/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/huixisheng/.rvm/bin:/Users/huixisheng/.rvm/bin</div><div class="line">PWD:/</div><div class="line">SHELL:/bin/zsh</div><div class="line">SHLVL:0</div><div class="line">TMPDIR:/var/folders/1f/pt5xk8yn1ybgnp9tsjhwtn4h0000gn/T/</div><div class="line">USER:huixisheng</div><div class="line">WORKSPACE:/Users/Shared/Jenkins/Home/workspace/mail-test</div><div class="line">XPC_FLAGS:0x0</div><div class="line">XPC_SERVICE_NAME:org.jenkins-ci</div><div class="line">----------FF--</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="groovy自定义邮件标题"><a href="#groovy自定义邮件标题" class="headerlink" title="groovy自定义邮件标题"></a>groovy自定义邮件标题</h3><p><code>Pre-send Script</code>添加<code>groovy</code>脚本可以设置自定义邮件标题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">import java.util.regex.Matcher</div><div class="line">import java.util.regex.Pattern</div><div class="line"></div><div class="line">def var = build.getEnvVars()</div><div class="line"></div><div class="line">def plist = var.get(&quot;JENKINS_HOME&quot;) + &apos;/workspace/app-ios/Other Sources/Info.plist&apos;</div><div class="line">def text = new File(plist).text</div><div class="line"></div><div class="line">def pattern = ~/CFBundleShortVersionString.*\n.*&lt;string&gt;(.*)&lt;\/string&gt;/</div><div class="line">assert pattern instanceof Pattern</div><div class="line"></div><div class="line">def matcher = pattern.matcher(text)</div><div class="line">def subject = msg.getSubject()</div><div class="line"></div><div class="line">// 修改邮件标题</div><div class="line">subject = &quot;#&quot; + var.get(&quot;BUILD_NUMBER&quot;) + &quot; IOS-&quot; + matcher[0][1] + &apos;测试包构建于&apos; + new Date().format(&apos;MM月dd日 HH:mm:ss&apos;)</div><div class="line"></div><div class="line">msg.setSubject(subject)</div><div class="line"></div><div class="line">// 修改邮件内容</div><div class="line">def qrfile = var.get(&quot;WORKSPACE&quot;) + &apos;/appQRCodeURL.html&apos;</div><div class="line">def qrtext = new File(qrfile).text</div><div class="line"></div><div class="line">def downurlfile = var.get(&quot;WORKSPACE&quot;) + &apos;/appDownloadPageURL.html&apos;</div><div class="line">def downurl= new File(downurlfile).text</div><div class="line"></div><div class="line">def emailContent = msg.getContent().getBodyPart(0).getContent()</div><div class="line">emailContent = emailContent.replaceAll(&apos;固定的蒲公英二维码下载地址&apos;, qrtext)</div><div class="line">emailContent = emailContent.replaceAll(&apos;固定的蒲公英下载地址&apos;, downurl)</div><div class="line">msg.setContent(emailContent, &quot;text/html; charset=utf-8&quot;);</div></pre></td></tr></table></figure>
+<p>起初想着是通过<code>groovy</code>去解析<code>plist</code>文件，结果没驾驭好这个脚本语言，实现不了。想到的办法只能通过正则去匹配，这个语言的正则跟我接触最多的<code>javascript</code>稍稍有点不一样。折腾了好久，主要的问题应该是对<code>java</code>不熟悉。</p>
+<p>以下是<code>groovy</code>相关的一些资料:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">解析plist文件相关参考文章</div><div class="line">- https://gist.github.com/vgrichina/1604592</div><div class="line">- http://stackoverflow.com/questions/7484163/how-to-parse-plist-file-in-java</div><div class="line">- https://codegists.com/code/groovy-xml-parser-slurper/</div><div class="line"></div><div class="line">开启GUI命令`groovyConsole`</div><div class="line"></div><div class="line">groovy文档</div><div class="line">- http://groovy.zeroleaf.com/</div><div class="line">- one-tab地址集合: http://www.one-tab.com/page/DI5TcLLgQJOKapjvx0FOHQ</div></pre></td></tr></table></figure></p>
+<p>后期会专门的文章去介绍<code>groovy</code>,先给自己挖个坑。</p>
+<h3 id="groovy自定义邮件内容"><a href="#groovy自定义邮件内容" class="headerlink" title="groovy自定义邮件内容"></a>groovy自定义邮件内容</h3><p>上传蒲公英是用<code>python</code>写的，上传完成接口返回的地址信息怎么给<code>groovy</code>。最初以为是设置<code>os.environ</code>，然后<code>groory</code>通过<code>build.getEnvVars()</code>去获取就可以。结果是不行的。想了折中的方法，地址写入文件然后读取。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>勉强实现了按自己的要求去自定义了<code>jenkins</code>的邮件内容。从问题的提出，找资料，苦恼，问题解决等过程中学到了很多，对<code>groovy</code>有了个简单的认识，后期的总结回顾很重要，最好的产物是输出。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li><a href="http://m.blog.csdn.net/article/details?id=50595720" target="_blank" rel="external">http://m.blog.csdn.net/article/details?id=50595720</a></li>
+<li><a href="http://www.jianshu.com/p/e4e8ec2d8504" target="_blank" rel="external">http://www.jianshu.com/p/e4e8ec2d8504</a></li>
+<li><a href="http://liuhongjiang.github.io/hexotech/2015/12/04/jenkins-send-email-after-build/" target="_blank" rel="external">配置jenkins发送邮件</a> 这篇文章对我的启发很大</li>
+<li><a href="http://www.cnblogs.com/zz0412/p/jenkins_jj_01.html" target="_blank" rel="external">http://www.cnblogs.com/zz0412/p/jenkins_jj_01.html</a></li>
+<li><a href="http://www.cnblogs.com/GGHHLL/p/jenkins.html" target="_blank" rel="external">http://www.cnblogs.com/GGHHLL/p/jenkins.html</a></li>
+<li><a href="http://wenku.baidu.com/view/a71a9281b9d528ea81c77953.html" target="_blank" rel="external">http://wenku.baidu.com/view/a71a9281b9d528ea81c77953.html</a></li>
+<li><a href="http://www.lai18.com/content/4985104.html?from=cancel" target="_blank" rel="external">http://www.lai18.com/content/4985104.html?from=cancel</a></li>
+</ol>
+<p>感谢互联网的创造作们</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文介绍了&lt;code&gt;groovy&lt;/code&gt;脚本自定义构建完成后通知邮件的标题和内容。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="持续集成" scheme="http://huixisheng.github.io/tags/%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/"/>
+    
+      <category term="jenkins" scheme="http://huixisheng.github.io/tags/jenkins/"/>
+    
+      <category term="groovy" scheme="http://huixisheng.github.io/tags/groovy/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>npm直接安装github仓库代码</title>
+    <link href="http://huixisheng.github.io/npm-install/"/>
+    <id>http://huixisheng.github.io/npm-install/</id>
+    <published>2016-10-23T06:35:01.000Z</published>
+    <updated>2016-10-23T07:48:02.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>npm是nodejs的官方包管理，有成千上万的包，方便了前端模块化开发。但有些前端库并没有发布到npm,但有时候项目又需要它。本文介绍通过npm如何安装github仓库代码。从而达到模块化开发的目的。</p>
+<a id="more"></a>
+<h2 id="初始化npm-init"><a href="#初始化npm-init" class="headerlink" title="初始化npm init"></a>初始化<code>npm init</code></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">$ npm init</div><div class="line">name: (tmp2016)</div><div class="line">version: (1.0.0)</div><div class="line">description:</div><div class="line">entry point: (index.js)</div><div class="line">test command:</div><div class="line">git repository:</div><div class="line">keywords:</div><div class="line">author:</div><div class="line">license: (ISC)</div><div class="line">About to write to /Users/huixisheng/Desktop/tmp2016/package.json:</div><div class="line"></div><div class="line">&#123;</div><div class="line">  &quot;name&quot;: &quot;tmp2016&quot;,</div><div class="line">  &quot;version&quot;: &quot;1.0.0&quot;,</div><div class="line">  &quot;description&quot;: &quot;&quot;,</div><div class="line">  &quot;main&quot;: &quot;index.js&quot;,</div><div class="line">  &quot;scripts&quot;: &#123;</div><div class="line">    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;</div><div class="line">  &#125;,</div><div class="line">  &quot;author&quot;: &quot;&quot;,</div><div class="line">  &quot;license&quot;: &quot;ISC&quot;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">Is this ok? (yes) yes</div></pre></td></tr></table></figure>
+<h2 id="安装依赖-npm-install"><a href="#安装依赖-npm-install" class="headerlink" title="安装依赖 npm install"></a>安装依赖 npm install</h2><h3 id="npm-install-lt-git-remote-url-gt"><a href="#npm-install-lt-git-remote-url-gt" class="headerlink" title="npm install &lt;git remote url&gt;"></a><code>npm install &lt;git remote url&gt;</code></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;protocol&gt;://[&lt;user&gt;[:&lt;password&gt;]@]&lt;hostname&gt;[:&lt;port&gt;][:][/]&lt;path&gt;[#&lt;commit-ish&gt;]</div><div class="line">&lt;protocol&gt; is one of git, git+ssh, git+http, git+https, or git+file. If no &lt;commit-ish&gt; is specified, then master is used.</div></pre></td></tr></table></figure>
+<p>示例:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ npm install git://git@github.com:huixisheng/zepto-lazyload.git</div><div class="line">$ npm install https://github.com/huixisheng/zepto-lazyload.git</div></pre></td></tr></table></figure></p>
+<p><code>package.json</code>配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&quot;dependencies&quot;: &#123;</div><div class="line">  &quot;zepto-lazyload&quot;: &quot;git://git@github.com:huixisheng/zepto-lazyload.git&quot;</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
+<p>定义包的版本</p>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&quot;dependencies&quot;: &#123;</div><div class="line">  &quot;package1&quot;: &quot;1.0.0&quot;,         // 只接受1.0.0的版本</div><div class="line">  &quot;package2&quot;: &quot;1.0.x&quot;,         // 接受1.0版本的bug修复或小更新</div><div class="line">  &quot;package3&quot;: &quot;*&quot;,             // 最新的版本，不推荐</div><div class="line">  &quot;package4&quot;: &quot;&gt;=1.0.0&quot;,       // 接受任何1.0.0版本后的更新</div><div class="line">  &quot;package5&quot;: &quot;&lt;1.9.0&quot;,        // 接受不超过1.9.0版本的更新</div><div class="line">  &quot;package6&quot;: &quot;~1.8.0&quot;,        // 接受 &gt;= 1.8.0 并 &lt; 1.9.0 的版本</div><div class="line">  &quot;package7&quot;: &quot;^1.1.0&quot;,        // 接受 &gt;=1.1.0 并 &lt; 2.0.0 的版本</div><div class="line">  &quot;package8&quot;: &quot;latest&quot;,        // tag name for latest version</div><div class="line">  &quot;package9&quot;: &quot;&quot;,              // 同 * 即最新版本。</div><div class="line">  &quot;packageX&quot;: &quot;&lt;1.0.0 || &gt;=2.3.1 &lt;2.4.5 || &gt;=2.5.2 &lt;3.0.0&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><a href="http://huangbingbing.com/2015/06/24/NPM-node-js%E7%9A%84%E5%8C%85%E7%AE%A1%E7%90%86/" target="_blank" rel="external">来自</a></p>
+</blockquote>
+<p>具体配置可以看官方<a href="https://docs.npmjs.com/misc/semver" target="_blank" rel="external">npm语义化文档</a></p>
+<h2 id="命令说明"><a href="#命令说明" class="headerlink" title="命令说明"></a>命令说明</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">npm install gitlab:&lt;gitlabname&gt;/&lt;gitlabrepo&gt;[#&lt;commit-ish&gt;]</div><div class="line">npm install bitbucket:&lt;bitbucketname&gt;/&lt;bitbucketrepo&gt;[#&lt;commit-ish&gt;]</div><div class="line">npm install gist:[&lt;githubname&gt;/]&lt;gistID&gt;[#&lt;commit-ish&gt;]</div><div class="line">npm install github:&lt;githubname&gt;/&lt;githubrepo&gt;[#&lt;commit-ish&gt;]</div><div class="line">npm install &lt;githubname&gt;/&lt;githubrepo&gt;[#&lt;commit-ish&gt;]</div><div class="line">npm install &lt;git remote url&gt;</div><div class="line">npm install (with no args, in package dir)</div><div class="line">npm install [&lt;@scope&gt;/]&lt;name&gt;</div><div class="line">npm install [&lt;@scope&gt;/]&lt;name&gt;@&lt;tag&gt;</div><div class="line">npm install [&lt;@scope&gt;/]&lt;name&gt;@&lt;version&gt;</div><div class="line">npm install [&lt;@scope&gt;/]&lt;name&gt;@&lt;version range&gt;</div><div class="line">npm install &lt;tarball file&gt;</div><div class="line">npm install &lt;tarball url&gt;</div><div class="line">npm install &lt;folder&gt;</div></pre></td></tr></table></figure>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><h3 id="npm-install-github仓库报错"><a href="#npm-install-github仓库报错" class="headerlink" title="npm install github仓库报错"></a>npm install github仓库报错</h3><p>执行如下命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo npm install git://github.com/theicebear/npm-basic-usage.git</div></pre></td></tr></table></figure></p>
+<p>报错:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">npm ERR! eisdir EISDIR: illegal operation on a directory, read</div><div class="line">npm ERR! eisdir This is most likely not a problem with npm itself</div><div class="line">npm ERR! eisdir and is related to npm not being able to find a package.json in</div><div class="line">npm ERR! eisdir a package you are trying to install.</div></pre></td></tr></table></figure></p>
+<p>为了解决这个报错执行了命令<a href="https://github.com/npm/npm/issues/9856" target="_blank" rel="external"><code>npm config set -g cafile</code> </a>就悲剧了。<code>npm</code>的命令全部不行了。解放办法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">vi /usr/local/etc/npmrc</div><div class="line">delete cafile = &apos;&apos; it works</div></pre></td></tr></table></figure>
+<p>解决思路</p>
+<ol>
+<li>直接通过报错<code>google</code>。尝试无果，还发生悲剧</li>
+<li>在github搜索，看了npm的相关issue</li>
+<li>期间重装过<code>nodejs</code>，删除了npm相关的缓存</li>
+<li>最后想到的办法是重置npm的配置。</li>
+</ol>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">[npm获取配置有6种方式，优先级由高到底。](http://www.cnblogs.com/huang0925/archive/2013/05/17/3083207.html)</div><div class="line">命令行参数。 --proxy http://server:port即将proxy的值设为http://server:port。</div><div class="line">环境变量。 以npm_config_为前缀的环境变量将会被认为是npm的配置属性。如设置proxy可以加入这样的环境变量npm_config_proxy=http://server:port。</div><div class="line">用户配置文件。可以通过npm config get userconfig查看文件路径。如果是mac系统的话默认路径就是$HOME/.npmrc。</div><div class="line">全局配置文件。可以通过npm config get globalconfig查看文件路径。mac系统的默认路径是/usr/local/etc/npmrc。</div><div class="line">内置配置文件。安装npm的目录下的npmrc文件。</div><div class="line">默认配置。 npm本身有默认配置参数，如果以上5条都没设置，则npm会使用默认配置参数。</div></pre></td></tr></table></figure>
+</blockquote>
+<p><a href="https://docs.npmjs.com/files/npmrc" target="_blank" rel="external">npm配置的官方说明</a></p>
+<p>报错原因:<br>github参考不包含<code>package.json</code>文件</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="http://www.cnblogs.com/huang0925/archive/2013/05/17/3083207.html" target="_blank" rel="external">http://www.cnblogs.com/huang0925/archive/2013/05/17/3083207.html</a></li>
+<li><a href="http://huangbingbing.com/2015/06/24/NPM-node-js%E7%9A%84%E5%8C%85%E7%AE%A1%E7%90%86/" target="_blank" rel="external">http://huangbingbing.com/2015/06/24/NPM-node-js%E7%9A%84%E5%8C%85%E7%AE%A1%E7%90%86/</a></li>
+<li><a href="https://github.com/ericdum/mujiang.info/issues/6" target="_blank" rel="external">https://github.com/ericdum/mujiang.info/issues/6</a></li>
+<li><a href="https://docs.npmjs.com/files/npmrc" target="_blank" rel="external">https://docs.npmjs.com/files/npmrc</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;npm是nodejs的官方包管理，有成千上万的包，方便了前端模块化开发。但有些前端库并没有发布到npm,但有时候项目又需要它。本文介绍通过npm如何安装github仓库代码。从而达到模块化开发的目的。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="npm" scheme="http://huixisheng.github.io/tags/npm/"/>
+    
+      <category term="nodejs" scheme="http://huixisheng.github.io/tags/nodejs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>spawn和exec简单介绍</title>
+    <link href="http://huixisheng.github.io/nodejs-spawn-exec/"/>
+    <id>http://huixisheng.github.io/nodejs-spawn-exec/</id>
+    <published>2016-10-22T13:02:45.000Z</published>
+    <updated>2016-10-22T13:10:37.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>谷歌搜了下网上介绍spawn和exec区别的文章还是很详细的，引用相关主要的提到的点。同时结合项目中使用过的脚步了解相关的使用方法。</p>
+<a id="more"></a>
+<h2 id="spawn"><a href="#spawn" class="headerlink" title="spawn"></a>spawn</h2><blockquote>
+<p>spawn方法创建一个子进程来执行特定命令，用法与execFile方法类似，但是没有回调函数，只能通过监听事件，来获取运行结果。它属于异步执行，适用于子进程长时间运行的情况。<a href="http://javascript.ruanyifeng.com/nodejs/child-process.html#toc3" target="_blank" rel="external">来自Child Process模块</a></p>
+</blockquote>
+<p>在<code>node v0.11.12</code>相应的同步方法。记得不支持同步方法<code>node</code>版本中有对应的模块<a href="https://www.npmjs.com/package/spawn-sync" target="_blank" rel="external">spawn-sync</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">child_process.spawnSync(command[, args][, options])</div><div class="line">Added in: v0.11.12</div></pre></td></tr></table></figure>
+<p>早期简单实现了同步读取数据</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> cp = <span class="built_in">require</span>(<span class="string">'child_process'</span>);</div><div class="line"><span class="keyword">var</span> assert = <span class="built_in">require</span>(<span class="string">'assert'</span>);</div><div class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</div><div class="line"><span class="keyword">var</span> input = &#123;</div><div class="line">    <span class="string">"prid"</span> : productId</div><div class="line">&#125;;</div><div class="line">input = <span class="built_in">JSON</span>.stringify(input);</div><div class="line">args = args || &#123;&#125;;</div><div class="line"><span class="keyword">var</span> requestPath = path.join(__dirname, <span class="string">'queryProduct.js'</span>);</div><div class="line"><span class="keyword">var</span> cmd = process.execPath;</div><div class="line"><span class="keyword">var</span> _args = [requestPath, input];</div><div class="line"><span class="keyword">var</span> res = cp.spawnSync(cmd, _args, &#123;</div><div class="line">    <span class="attr">timeout</span>: (args.timeout || <span class="number">3000</span>) + <span class="number">1000</span></div><div class="line">&#125;);</div><div class="line"><span class="comment">// console.log(res.stdout.toString('utf8'));</span></div><div class="line"><span class="keyword">return</span> <span class="built_in">JSON</span>.parse(res.stdout.toString(<span class="string">'utf8'</span>));</div></pre></td></tr></table></figure>
+<p>queryProduct.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">async.series([</div><div class="line">    function(cb)&#123;</div><div class="line">        conn.query(sql, function(err, res)&#123;</div><div class="line">            var row = res[0];</div><div class="line">            cb(null, row);</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line">], function(err, result)&#123;</div><div class="line">    if( err )&#123;</div><div class="line">        console.error(err.message);</div><div class="line">        process.exit(1);</div><div class="line">    &#125; else &#123;</div><div class="line">        console.log(JSON.stringify(result[0]));</div><div class="line">    &#125;</div><div class="line">    conn.end();</div><div class="line">    process.exit(0);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h2 id="exec"><a href="#exec" class="headerlink" title="exec"></a>exec</h2><p>有对于的同步方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">child_process.execSync(command[, options])#</div><div class="line">Added in: v0.11.12</div></pre></td></tr></table></figure></p>
+<p><code>child_process.execSync</code><br>使用实例，合并当前的操作分支到test,并推送到远程的test分支</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/env node</div><div class="line"></div><div class="line">// chmod +x</div><div class="line">var child = require(&apos;child_process&apos;);</div><div class="line">var execSync = require(&apos;child_process&apos;).execSync;</div><div class="line"></div><div class="line">// @todo</div><div class="line">var gstOutput = spawnSync(&apos;git branch&apos;, []);</div><div class="line">var currentBranch = getCurrentBranch();</div><div class="line">console.log(&apos;切换到test分支:&apos;);</div><div class="line">var gcOutput = execSync(&apos;git checkout test&apos;);</div><div class="line">console.log(&apos;合并分支&apos; + currentBranch);</div><div class="line">var megerOutPut = execSync(&apos;git merge &apos; + currentBranch);</div><div class="line">console.log(&apos;推送test分支&apos;);</div><div class="line">execSync(&apos;git pull origin test &amp;&amp; git push origin test &amp;&amp; npm run sync&apos;);</div><div class="line">console.log(&apos;切换到&apos; + currentBranch);</div><div class="line">execSync(&apos;git checkout &apos; + currentBranch);</div><div class="line"></div><div class="line">// git branch | grep &quot;*&quot;  简写</div><div class="line">function getCurrentBranch()&#123;</div><div class="line">  var execOutput = execSync(&apos;git branch&apos;, &#123;&#125;);</div><div class="line">  var outputContent = execOutput.toString();</div><div class="line">  var arr = outputContent.split(&apos;\n&apos;);</div><div class="line">  for(var i = arr.length - 1; i &gt;= 0; i--)&#123;</div><div class="line">    if( arr[i].indexOf(&apos;*&apos;) &gt;= 0 )&#123;</div><div class="line">      return arr[i].replace(&apos;*&apos;, &apos;&apos;).trim();</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  return &apos;&apos;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>exec方法用于执行bash命令，它的参数是一个命令字符串。<br>如果用户输入恶意代码，将会带来安全风险。因此，在有用户输入的情况下，最好不使用exec方法，而是使用execFile方法。</p>
+</blockquote>
+<h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><blockquote>
+<p>虽然在上面的文档用法中，spwan和exec的最终回调方式有区别，但是在node的实现中，其实两者的实现方式是一致的，exec也可以像spawn一样使用，只不过exec在触发stderr和stdout的data事件的时候，会把数据写到字符串中，到执行结束或者错误退出的时候通过回调函数传递出来，实现了exec这种便捷用法。<a href="http://deadhorse.me/nodejs/2011/12/18/nodejs%E4%B8%ADchild_process%E6%A8%A1%E5%9D%97%E7%9A%84exec%E6%96%B9%E6%B3%95%E5%92%8Cspawn%E6%96%B9%E6%B3%95.html" target="_blank" rel="external">来自exec与spawn方法的区别与陷阱</a></p>
+<p>使用exec默认最大是200k。<br>超出时会报一个错误： “Error: maxBuffer exceeded”</p>
+</blockquote>
+<p><a href="http://div.io/topic/1516" target="_blank" rel="external">使用node子进程spawn,exec踩过的坑</a> 提到exec和spawn的源码区分</p>
+<blockquote>
+<p>断点进去看后，豁然开朗，exec是对execFile的封装，execFile又是对spawn的封装。</p>
+</blockquote>
+<h3 id="exec和spawn的使用区分来自使用node子进程spawn-exec踩过的坑"><a href="#exec和spawn的使用区分来自使用node子进程spawn-exec踩过的坑" class="headerlink" title="exec和spawn的使用区分来自使用node子进程spawn,exec踩过的坑"></a>exec和spawn的使用区分<a href="http://div.io/topic/1516" target="_blank" rel="external">来自使用node子进程spawn,exec踩过的坑</a></h3><p>不过exec确实比spawn在使用上面要好很多</p>
+<p>例如我们执行一个命令</p>
+<p>使用exec</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">require(&apos;child_process&apos;).exec(&apos;edp webserver start&apos;);</div></pre></td></tr></table></figure>
+<p>使用spawn</p>
+<p>linux下这么搞</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var child = require(&apos;child_process&apos;).spawn(</div><div class="line">&apos;/bin/sh&apos;, [&apos;-c&apos;,&apos;edp webserver start&apos;], &#123; cwd: null, env: null, windowsVerbatimArguments: false &#125; );</div></pre></td></tr></table></figure>
+<p>win下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"> var child = require(&apos;child_process&apos;).spawn(</div><div class="line">&apos;cmd.exe&apos;, [&apos;/s&apos;, &apos;/c&apos;, &apos;edp webserver start&apos;], &#123; cwd: null, env: null, windowsVerbatimArguments: true &#125; );</div></pre></td></tr></table></figure>
+<p>可见spawn还是比较麻烦的。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;谷歌搜了下网上介绍spawn和exec区别的文章还是很详细的，引用相关主要的提到的点。同时结合项目中使用过的脚步了解相关的使用方法。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="nodejs" scheme="http://huixisheng.github.io/tags/nodejs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>markdown文件生成目录</title>
+    <link href="http://huixisheng.github.io/markdown-Table-of-Contents/"/>
+    <id>http://huixisheng.github.io/markdown-Table-of-Contents/</id>
+    <published>2016-10-22T13:02:45.000Z</published>
+    <updated>2016-10-22T13:17:08.000Z</updated>
+    
+    <content type="html"><![CDATA[<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<ul>
+<li><a href="#gh-md-toc">gh-md-toc</a><ul>
+<li><a href="#%E5%AE%89%E8%A3%85">安装</a></li>
+<li><a href="#%E7%94%9F%E6%88%90%E5%86%85%E5%AE%B9">生成内容</a></li>
+</ul>
+</li>
+<li><a href="#doctoc">doctoc</a><ul>
+<li><a href="#%E5%AE%89%E8%A3%85-1">安装</a></li>
+<li><a href="#%E6%8E%A7%E5%88%B6%E6%8F%92%E5%85%A5%E7%9A%84%E4%BD%8D%E7%BD%AE">控制插入的位置</a></li>
+<li><a href="#%E6%94%AF%E6%8C%81%E7%9A%84%E5%B9%B3%E5%8F%B0">支持的平台</a></li>
+</ul>
+</li>
+</ul>
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+<a id="more"></a>
+<h2 id="gh-md-toc"><a href="#gh-md-toc" class="headerlink" title="gh-md-toc"></a>gh-md-toc</h2><p><a href="https://github.com/ekalinin/github-markdown-toc#installation" target="_blank" rel="external">gh-md-toc</a></p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ wget https://raw.githubusercontent.com/ekalinin/github-markdown-toc/master/gh-md-toc</div><div class="line">$ chmod a+x gh-md-toc</div><div class="line">$ ./gh-md-toc ./issue-13.md</div></pre></td></tr></table></figure>
+<h3 id="生成内容"><a href="#生成内容" class="headerlink" title="生成内容"></a>生成内容</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">Table of Contents</div><div class="line">=================</div><div class="line"></div><div class="line">    * [gh-md-toc](#gh-md-toc)</div><div class="line">      * [安装](#安装)</div><div class="line">      * [生成内容](#生成内容)</div><div class="line">    * [doctoc](#doctoc)</div><div class="line">      * [安装](#安装-1)</div><div class="line">      * [控制插入的位置](#控制插入的位置)</div><div class="line">      * [支持的平台](#支持的平台)</div></pre></td></tr></table></figure>
+<h2 id="doctoc"><a href="#doctoc" class="headerlink" title="doctoc"></a>doctoc</h2><p><a href="https://github.com/thlorenz/doctoc" target="_blank" rel="external">doctoc</a></p>
+<h3 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ sudo npm install -g doctoc</div><div class="line">$ doctoc ./issue-13.md</div></pre></td></tr></table></figure>
+<p>生成内容见顶部</p>
+<h3 id="控制插入的位置"><a href="#控制插入的位置" class="headerlink" title="控制插入的位置"></a>控制插入的位置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;!-- START doctoc --&gt;</div><div class="line">&lt;!-- END doctoc --&gt;</div></pre></td></tr></table></figure>
+<h3 id="支持的平台"><a href="#支持的平台" class="headerlink" title="支持的平台"></a>支持的平台</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">--bitbucket bitbucket.org</div><div class="line">--nodejs    nodejs.org</div><div class="line">--github    github.com</div><div class="line">--gitlab    gitlab.com</div><div class="line">--ghost     ghost.org</div></pre></td></tr></table></figure>
+<ul>
+<li><a href="http://stackoverflow.com/questions/9721944/automatic-toc-in-github-flavoured-markdown" target="_blank" rel="external">Automatic TOC in github-flavoured-markdown</a></li>
+</ul>
+<h2 id="其他工具"><a href="#其他工具" class="headerlink" title="其他工具"></a>其他工具</h2><ul>
+<li><a href="https://github.com/jonschlinkert/markdown-toc" target="_blank" rel="external">markdown-toc</a></li>
+<li><a href="https://github.com/gajus/gitdown" target="_blank" rel="external">gitdown</a></li>
+<li><a href="https://github.com/isaacs/github/issues/215" target="_blank" rel="external">https://github.com/isaacs/github/issues/215</a></li>
+<li><a href="https://github.com/Mottie/GitHub-userscripts#installation" target="_blank" rel="external">https://github.com/Mottie/GitHub-userscripts#installation</a></li>
+<li><a href="http://doctoc.herokuapp.com/" target="_blank" rel="external">在线工具DocToc</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;!-- START doctoc generated TOC please keep comment here to allow auto update --&gt;
+&lt;!-- DON&#39;T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE --&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#gh-md-toc&quot;&gt;gh-md-toc&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#%E5%AE%89%E8%A3%85&quot;&gt;安装&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E7%94%9F%E6%88%90%E5%86%85%E5%AE%B9&quot;&gt;生成内容&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#doctoc&quot;&gt;doctoc&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#%E5%AE%89%E8%A3%85-1&quot;&gt;安装&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E6%8E%A7%E5%88%B6%E6%8F%92%E5%85%A5%E7%9A%84%E4%BD%8D%E7%BD%AE&quot;&gt;控制插入的位置&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E6%94%AF%E6%8C%81%E7%9A%84%E5%B9%B3%E5%8F%B0&quot;&gt;支持的平台&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- END doctoc generated TOC please keep comment here to allow auto update --&gt;
+    
+    </summary>
+    
+    
+      <category term="markdown" scheme="http://huixisheng.github.io/tags/markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>国内镜像源整理</title>
+    <link href="http://huixisheng.github.io/mirror/"/>
+    <id>http://huixisheng.github.io/mirror/</id>
+    <published>2016-10-22T13:02:45.000Z</published>
+    <updated>2016-11-26T02:15:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>本文对国内<code>ruby</code>、<code>npm</code>、<code>brew</code>、<code>Composer</code>等镜像源做整理，给前端开发这提供方便。<br><a id="more"></a></p>
+<h2 id="为何写这个文章"><a href="#为何写这个文章" class="headerlink" title="为何写这个文章"></a>为何写这个文章</h2><pre><code>gem install cdnjs-command
+ERROR:  Could not find a valid gem &apos;cdnjs-command&apos; (&gt;= 0), here is why:
+      Unable to download data from https://rubygems.org/ - Errno::EPIPE: Broken pipe - SSL_connect (https://rubygems.org/latest_specs.4.8.gz)
+</code></pre><h2 id="RubyGems-镜像"><a href="#RubyGems-镜像" class="headerlink" title="RubyGems 镜像"></a>RubyGems 镜像</h2><blockquote>
+<p>$ gem sources –add <a href="https://ruby.taobao.org/" target="_blank" rel="external">https://ruby.taobao.org/</a> –remove <a href="https://rubygems.org/" target="_blank" rel="external">https://rubygems.org/</a><br>  $ gem sources -l<br>   <strong><em> CURRENT SOURCES </em></strong><br><a href="https://ruby.taobao.org" target="_blank" rel="external">https://ruby.taobao.org</a></p>
+<h1 id="请确保只有-ruby-taobao-org"><a href="#请确保只有-ruby-taobao-org" class="headerlink" title="请确保只有 ruby.taobao.org"></a>请确保只有 ruby.taobao.org</h1><p>$ gem install rails</p>
+</blockquote>
+<h2 id="NPM-镜像"><a href="#NPM-镜像" class="headerlink" title="NPM 镜像"></a>NPM 镜像</h2><p>每次安装都需要指明 <code>registry</code>，很麻烦</p>
+<blockquote>
+<p>$ npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="external">https://registry.npm.taobao.org</a></p>
+</blockquote>
+<pre><code>vi ~/.npmrc
+</code></pre><p>添加。</p>
+<blockquote>
+<p>registry = <a href="http://registry.npm.taobao.org" target="_blank" rel="external">http://registry.npm.taobao.org</a></p>
+</blockquote>
+<p>或者</p>
+<blockquote>
+<p> npm config set registry “<a href="http://registry.npm.taobao.org" target="_blank" rel="external">http://registry.npm.taobao.org</a>“</p>
+</blockquote>
+<p>通过 <code>npm config ls</code> 可以查看相关配置情况</p>
+<h2 id="Brew镜像"><a href="#Brew镜像" class="headerlink" title="Brew镜像"></a>Brew镜像</h2><blockquote>
+<p>$ cd /usr/local &amp;&amp; git remote set-url origin <a href="https://git.coding.net/homebrew/homebrew.git" target="_blank" rel="external">https://git.coding.net/homebrew/homebrew.git</a><br>$ cd $home &amp;&amp; brew update</p>
+</blockquote>
+<p><a href="https://coding.net/u/cocodingding/pp/84498" target="_blank" rel="external">Brew Brew Brew !</a></p>
+<h2 id="Composer-镜像"><a href="#Composer-镜像" class="headerlink" title="Composer 镜像"></a>Composer 镜像</h2><p>方法1：</p>
+<pre><code>composer config -g repositories.packagist composer http://packagist.phpcomposer.com
+</code></pre><p>方法2：</p>
+<blockquote>
+<p>注意：为了避免安装包的时候都要执行两次查询，切记要添加禁用 packagist 的设置，如下：</p>
+</blockquote>
+<pre><code>{
+    &quot;repositories&quot;: [
+        {&quot;type&quot;: &quot;composer&quot;, &quot;url&quot;: &quot;http://packagist.phpcomposer.com&quot;},
+        {&quot;packagist&quot;: false}
+    ]
+}
+</code></pre><p><a href="http://pkg.phpcomposer.com/" target="_blank" rel="external">Packagist / Composer 中国全量镜像</a></p>
+<p>全局安装</p>
+<pre><code>$ curl -sS https://getcomposer.org/installer | php
+$ mv composer.phar /usr/local/bin/composer
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文对国内&lt;code&gt;ruby&lt;/code&gt;、&lt;code&gt;npm&lt;/code&gt;、&lt;code&gt;brew&lt;/code&gt;、&lt;code&gt;Composer&lt;/code&gt;等镜像源做整理，给前端开发这提供方便。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="镜像源" scheme="http://huixisheng.github.io/tags/%E9%95%9C%E5%83%8F%E6%BA%90/"/>
+    
+      <category term="npm" scheme="http://huixisheng.github.io/tags/npm/"/>
+    
+      <category term="ruby" scheme="http://huixisheng.github.io/tags/ruby/"/>
+    
+      <category term="Composer" scheme="http://huixisheng.github.io/tags/Composer/"/>
+    
+      <category term="brew" scheme="http://huixisheng.github.io/tags/brew/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>配置SSH公钥和git多账号配置</title>
+    <link href="http://huixisheng.github.io/git-ssh-key-setting/"/>
+    <id>http://huixisheng.github.io/git-ssh-key-setting/</id>
+    <published>2016-10-22T13:02:45.000Z</published>
+    <updated>2016-10-22T13:07:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>本文介绍如何配置<code>ssh-key</code></p>
+<a id="more"></a>
+<h2 id="生成key"><a href="#生成key" class="headerlink" title="生成key"></a>生成key</h2><p>ssh-keygen -t rsa -f ~/.ssh/git.oschina.net -C “469184346@qq.com”</p>
+<blockquote>
+<p>代码参数含义：<br>-t 指定密钥类型，默认是 rsa ，可以省略。<br>-C 设置注释文字，比如邮箱。<br>-f 指定密钥文件存储文件名。  -<a href="http://www.cnblogs.com/ayseeing/p/3572582.html" target="_blank" rel="external">来自github设置添加SSH</a></p>
+</blockquote>
+<p>直接输入回车</p>
+<pre><code>Generating public/private rsa key pair.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+</code></pre><p>如果输入了密码</p>
+<blockquote>
+<p>设置passphrase后，进行版本控制时，每次与GitHub通信都会要求输入passphrase，以避免某些“失误”</p>
+<p>将SSH 私钥增加到ssh-agent: ssh-add ~/.ssh/xyz_rsa， 这里会提示输入一次私钥的密码; -<a href="http://www.jianshu.com/p/ddd3122cb351#" target="_blank" rel="external">来自</a></p>
+</blockquote>
+<h2 id="添加密匙"><a href="#添加密匙" class="headerlink" title="添加密匙"></a>添加密匙</h2><h3 id="拷贝公钥"><a href="#拷贝公钥" class="headerlink" title="拷贝公钥"></a>拷贝公钥</h3><pre><code>pbcopy &lt;  ~/.ssh/git.oschina.net.pub
+</code></pre><p>其他平台拷贝命令<a href="http://www.jianshu.com/p/31cbbbc5f9fa/" target="_blank" rel="external">参考如何生成SSH key</a></p>
+<blockquote>
+<p>window<br>    clip &lt; ~/.ssh/id_rsa.pub</p>
+<p>linux<br>    sudo apt-get install xclip<br>    xclip -sel clip &lt; ~/.ssh/id_rsa.pub</p>
+</blockquote>
+<h3 id="登录远程git平台添加ssh-key"><a href="#登录远程git平台添加ssh-key" class="headerlink" title="登录远程git平台添加ssh key"></a>登录远程git平台添加ssh key</h3><p>粘贴刚才拷贝的内容</p>
+<ul>
+<li><a href="http://git.oschina.net/profile/sshkeys" target="_blank" rel="external">oschinaSSH公钥</a></li>
+<li><a href="https://github.com/settings/keys" target="_blank" rel="external">github SSH and GPG keys</a>点击 <code>New SSH key</code></li>
+</ul>
+<p>将新生成的key添加到ssh-agent中</p>
+<pre><code>$ eval &quot;$(ssh-agent -s)&quot;
+$ ssh-add ~/.ssh/git.oschina.net
+</code></pre><blockquote>
+<p>可以通过 ssh-add -l 来确私钥列表<br>$ ssh-add -l<br>可以通过 ssh-add -D 来清空私钥列表<br>$ ssh-add -D</p>
+</blockquote>
+<h2 id="配置config用于多个git-ssh密匙"><a href="#配置config用于多个git-ssh密匙" class="headerlink" title="配置config用于多个git ssh密匙"></a>配置config用于多个git ssh密匙</h2><pre><code>Host github.com
+    HostName github.com
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/github
+    User huixisheng
+
+Host git.coding.net
+    HostName git.coding.net
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/gitcodingnet
+    User git
+
+Host git.oschina.net
+    HostName git.oschina.net
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/git.oschina.net
+    User git
+</code></pre><blockquote>
+<p>Host，SSH 连接名<br>HostName，如上所示，可以是通配符，可以是 IP，也可以是域名等<br>User，登录的用户名<br>IdentifyFile，version 1 协议下默认是 ~/.ssh/identify，version 2 协议下，默认是依次匹配：~/.ssh/id_dsa，~/.ssh/id_ecdsa，~/.ssh/id_rsa，还有 version 2 兼容模式。<br>LocalForward 端口的内部跳转<br>Port，端口设置，默认 SSH 的端口是 22<br>Protocal，协议版本号，1 或者 2<br><a href="http://www.barretlee.com/blog/2016/03/09/config-in-ssh-after-troubling-git-connection/" target="_blank" rel="external">来自</a></p>
+</blockquote>
+<ul>
+<li><a href="http://www.cnblogs.com/ayseeing/p/4445194.html" target="_blank" rel="external">参考生成多个git ssh密钥</a></li>
+</ul>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>测试是否配置成功</p>
+<pre><code>$ ssh -T git@git.oschina.net
+Welcome to Git@OSC, huixisheng!
+</code></pre><blockquote>
+<p>-v会输出详情的信息 <a href="http://www.barretlee.com/blog/2016/03/09/config-in-ssh-after-troubling-git-connection/" target="_blank" rel="external">多SSH Key管理技巧与Git多账户登录问题</a></p>
+</blockquote>
+<h2 id="其他问题"><a href="#其他问题" class="headerlink" title="其他问题"></a>其他问题</h2><pre><code>$ ssh -T git@git.oschina.net
+The authenticity of host &apos;git.oschina.net (218.60.114.30)&apos; can&apos;t be established.
+ECDSA key fingerprint is SHA256:FQGC9Kn/eye1W8icdBgrQp+KkGYoFgbVr17bmjey0Wc.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added &apos;git.oschina.net,218.60.114.30&apos; (ECDSA) to the list of known hosts.
+Permission denied (publickey).
+
+$ eval &quot;$(ssh-agent -s)&quot;
+$ ssh-add ~/.ssh/git.oschina.net
+</code></pre><blockquote>
+<p>   如果执行ssh-add时提示”Could not open a connection to your authentication agent”，可以现执行命令：<br>    $ ssh-agent bash <a href="http://my.oschina.net/stefanzhlg/blog/529403" target="_blank" rel="external">来自</a></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo git clone git@git.coding.net:huixisheng/layout.git</div><div class="line">Cloning into &apos;layout&apos;...</div><div class="line">Permission denied (publickey).</div><div class="line">fatal: Could not read from remote repository.</div></pre></td></tr></table></figure>
+<p><code>ssh -vT git@git.coding.net</code> 是有结果返回的,看了debug信息都是正常的。</p>
+<p>执行如下（期间关闭了翻墙软件）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ssh-add ~/.ssh/gitcodingnet</div><div class="line">source ~/.ssh/config</div></pre></td></tr></table></figure></p>
+<p>再次clone又可以了。没找到为何不行的根本原因</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="http://my.oschina.net/stefanzhlg/blog/529403" target="_blank" rel="external">git 配置多个SSH-Key</a></li>
+<li><a href="https://help.github.com/articles/generating-ssh-keys" target="_blank" rel="external">https://help.github.com/articles/generating-ssh-keys</a></li>
+<li><a href="https://coding.net/help/doc/git/ssh-key.html" target="_blank" rel="external">coding配置SSH公钥</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文介绍如何配置&lt;code&gt;ssh-key&lt;/code&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="git" scheme="http://huixisheng.github.io/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>兼容性解决方案整理</title>
+    <link href="http://huixisheng.github.io/compatibility-solution/"/>
+    <id>http://huixisheng.github.io/compatibility-solution/</id>
+    <published>2016-10-22T13:02:45.000Z</published>
+    <updated>2016-12-23T03:08:06.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>移动互联网的今天，告别了ie6。</p>
+<p>以下来自原先项目<del>psc</del>。<del>psc</del>已经删除，<del>使用issues继续整理</del>。相信这是一个更好的开始。整理到博客汇总。</p>
+<a id="more"></a>
+<p>浏览器的兼容性问题是前端开发人员最头痛的，PCS 收集并整理完美兼容的解决方案。低版本浏览器添加过多的脚本或者更多的代码势必会带来性能，维护成本。其实PCS 并非是完美的解法办法，最完美的是浏览器本身符合<a href="http://baike.baidu.com/view/459077.htm?fr=wordsearch" target="_blank" rel="external">w3c标准</a>。当然这不现实，要不要所有浏览器都真的完全表现一样，其实还要视项目而定，或许我们可以选择<a href="http://baike.baidu.com/view/1172014.htm" target="_blank" rel="external">优雅降级</a>处理。凡是一切都在权衡。</p>
+<h2 id="CSS-CSS3"><a href="#CSS-CSS3" class="headerlink" title="CSS/CSS3"></a>CSS/CSS3</h2><h3 id="Respond"><a href="#Respond" class="headerlink" title="Respond"></a><a href="https://github.com/scottjehl/Respond" target="_blank" rel="external">Respond</a></h3><h2 id="inline-block"><a href="#inline-block" class="headerlink" title="inline-block"></a><a href="http://ued.taobao.org/blog/2012/08/inline-block/" target="_blank" rel="external">inline-block</a></h2><pre><code>.dib-wrap {
+    font-size:0;/* 所有浏览器 */
+    *word-spacing:-1px;/* IE6、7 */
+}
+.dib-wrap .dib{
+    font-size: 12px;
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align:top;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0){
+    /* firefox 中 letter-spacing 会导致脱离普通流的元素水平位移 */
+    .dib-wrap{
+    letter-spacing:-5px;/* Safari 等不支持字体大小为 0 的浏览器, N 根据父级字体调节*/
+    }
+}
+.dib {
+    display: inline-block;
+    *display:inline;
+    *zoom:1;
+}
+</code></pre><h2 id="css3-gradient"><a href="#css3-gradient" class="headerlink" title="css3-gradient"></a><a href="http://www.w3cplus.com/content/css3-gradient" target="_blank" rel="external">css3-gradient</a></h2><ol>
+<li><a href="http://www.colorzilla.com/gradient-editor/" target="_blank" rel="external">css3 渐变在线生成工具Ultimate CSS Gradient Generator</a></li>
+</ol>
+<h2 id="HTML-HTML5"><a href="#HTML-HTML5" class="headerlink" title="HTML/HTML5"></a>HTML/HTML5</h2><h2 id="html5shiv"><a href="#html5shiv" class="headerlink" title="html5shiv"></a>html5shiv</h2><p>The <a href="https://github.com/aFarkas/html5shiv" target="_blank" rel="external">HTML5 Shiv</a> enables use of HTML5 sectioning elements in legacy Internet Explorer and provides basic HTML5 styling for Internet Explorer 6-9, Safari 4.x (and iPhone 3.x), and Firefox 3.x.</p>
+<h2 id="html5demos"><a href="#html5demos" class="headerlink" title="html5demos"></a><a href="https://github.com/remy/html5demos" target="_blank" rel="external">html5demos</a></h2><p>A collection of HTML5 experiments I’ve created, now open source and on GitHub, so please go ahead and help me hack this resource in to a wealth of demos that other authors can learn from.</p>
+<h2 id="HTML5-History-API"><a href="#HTML5-History-API" class="headerlink" title="HTML5-History-API"></a><a href="https://github.com/remy/html5demos" target="_blank" rel="external">HTML5-History-API</a></h2><h2 id="video-js"><a href="#video-js" class="headerlink" title="video.js"></a><a href="https://github.com/videojs/video.js" target="_blank" rel="external">video.js</a></h2><h2 id="jQuery-html5-placeholder"><a href="#jQuery-html5-placeholder" class="headerlink" title=" jQuery-html5-placeholder"></a><a href="https://github.com/Topener/jQuery-html5-placeholder" target="_blank" rel="external"> jQuery-html5-placeholder</a></h2><h2 id="HTML5-Desktop-Notifications"><a href="#HTML5-Desktop-Notifications" class="headerlink" title="HTML5 Desktop Notifications"></a><a href="https://github.com/ttsvetko/HTML5-Desktop-Notifications" target="_blank" rel="external">HTML5 Desktop Notifications</a></h2><h2 id="localstorage"><a href="#localstorage" class="headerlink" title="localstorage"></a>localstorage</h2><p><a href="https://github.com/marcuswestin/store.js" target="_blank" rel="external">store.js</a> exposes a simple API for cross browser local storage</p>
+<h2 id="JavaScritp-ECMAScript"><a href="#JavaScritp-ECMAScript" class="headerlink" title="JavaScritp/ECMAScript"></a>JavaScritp/ECMAScript</h2><h2 id="es5-shim"><a href="#es5-shim" class="headerlink" title="es5-shim"></a>es5-shim</h2><p><a href="https://github.com/es-shims/es5-shim" target="_blank" rel="external"><code>es5-shim.js</code></a> and <code>es5-shim.min.js</code> monkey-patch a JavaScript context to<br>contain all EcmaScript 5 methods that can be faithfully emulated with a<br>legacy JavaScript engine.</p>
+<h2 id="IE-IE6-IE7-IE8"><a href="#IE-IE6-IE7-IE8" class="headerlink" title="IE/IE6/IE7/IE8"></a>IE/IE6/IE7/IE8</h2><h3 id="PIE"><a href="#PIE" class="headerlink" title="PIE"></a>PIE</h3><p>(PIE)(<a href="http://css3pie.com/" target="_blank" rel="external">http://css3pie.com/</a>) makes Internet Explorer 6-9 capable of rendering several of the most useful CSS3 decoration features.</p>
+<p>通过脚本可以使得ie6/7/8/9 支持css3 的 border-radius、box-shadow、linear-gradient。</p>
+<h3 id="DD-belatedPNG"><a href="#DD-belatedPNG" class="headerlink" title="DD_belatedPNG"></a><a href="http://www.dillerdesign.com/experiment/DD_belatedPNG/" target="_blank" rel="external">DD_belatedPNG</a></h3><p>This is a Javascript library that sandwiches PNG image support into IE6 without much fuss.</p>
+<p>处理ie6不支持png24。</p>
+<pre><code>DD_belatedPNG.fix(&apos;.png_bg, .png24&apos;); // argument is a CSS selector
+DD_belatedPNG.fixPng( someNode ); // argument is an HTMLDomElement
+</code></pre><h4 id="更多solution"><a href="#更多solution" class="headerlink" title="更多solution"></a>更多solution</h4><ol>
+<li><a href="http://www.w3cfuns.com/thread-297-1-1.html" target="_blank" rel="external">IE6 PNG透明终极解决方案（打造W3Cfuns-IE6PNG最强帖）</a></li>
+</ol>
+<h3 id="IE下-z-index的层级问题"><a href="#IE下-z-index的层级问题" class="headerlink" title="IE下 z-index的层级问题"></a>IE下 z-index的层级问题</h3><h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><ol>
+<li><a href="http://www.cnblogs.com/Darren_code/archive/2012/03/05/z-index.html" target="_blank" rel="external">IE下 z-index 的各种坑</a></li>
+<li><a href="http://www.zhangxinxu.com/wordpress/2009/12/ie6%E4%B8%8Bz-index%E7%8A%AF%E7%99%AB%E4%B8%8D%E8%B5%B7%E4%BD%9C%E7%94%A8bug%E7%9A%84%E5%88%9D%E6%AD%A5%E7%A0%94%E7%A9%B6/" target="_blank" rel="external">IE6下z-index犯癫不起作用bug的初步研究</a></li>
+<li><a href="http://www.w3help.org/zh-cn/causes/RM8015" target="_blank" rel="external">IE6 IE7 IE8(Q) 中定位元素 ‘z-index’ 为默认值在某些情况下会产生新的层叠上下文</a></li>
+</ol>
+<h3 id="ie6-不支持positon-fixed"><a href="#ie6-不支持positon-fixed" class="headerlink" title="ie6 不支持positon: fixed"></a>ie6 不支持<code>positon: fixed</code></h3><h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><ol>
+<li><a href="http://www.w3help.org/zh-cn/causes/RM8013" target="_blank" rel="external">RM8013: IE6 IE7(Q) IE8(Q) 不支持固定定位（position:fixed）</a></li>
+<li><a href="http://www.cnblogs.com/hooray/archive/2011/05/20/2052269.html" target="_blank" rel="external">完美解决IE6不支持position:fixed的bug</a></li>
+</ol>
+<h3 id="透明度-opacity-rgba"><a href="#透明度-opacity-rgba" class="headerlink" title="透明度 opacity/rgba"></a>透明度 opacity/rgba</h3><p>opacity设置的透明度对子元素都有影响。ie可以使用 filter 处理</p>
+<pre><code>.opacity{
+    background: rgb(255,255,0);
+    opacity: 0.4;
+    filter:alpha(opacity=40);
+}
+
+
+.rgba{
+    filter:progid:DXImageTransform.Microsoft.gradient(enabled=&apos;true&apos;,startColorstr=&apos;#7F000000&apos;, endColorstr=&apos;#7F000000&apos;);
+}
+:root  .rgba{
+    filter:none;     /*处理IE9浏览器中的滤镜效果*/
+    background-color:rgba(0,0,0,0.5);
+}
+</code></pre><ol>
+<li><a href="http://www.w3help.org/zh-cn/causes/BT9011" target="_blank" rel="external">BT9011: 只有 IE 支持 CSS Filter</a></li>
+<li><a href="http://www.w3cplus.com/content/css3-rgba" target="_blank" rel="external">CSS3 RGBA</a></li>
+<li><a href="http://www.linxz.de/css_tool/hex_color.html" target="_blank" rel="external">css3-rgba ie下可透明的背景颜色转换工具</a></li>
+</ol>
+<h3 id="ie6-max-width-max-height-min-height-min-width"><a href="#ie6-max-width-max-height-min-height-min-width" class="headerlink" title="ie6 max-width/max-height/min-height/min-width"></a>ie6 max-width/max-height/min-height/min-width</h3><pre><code>.maxh{ max-height:300px; _height: expression(this.scrollHeight &gt;= 300? &apos;300px&apos; : &apos;auto&apos;);  }
+
+.maxw{ max-width: 300px; _width: expression(this.clientWidth &gt;= 300 ? &apos;300px&apos; : &apos;auto&apos;); }
+
+.minh{ min-height: 300px; height:auto !important; _height: 300px; }
+
+.minw{ min-width: 300px; _width: expression(this.clientWidth &lt;= 300 ? &apos;300px&apos; : &apos;auto&apos;); }
+</code></pre><ol>
+<li><a href="http://ziren.org/html-css/ie6-support-min-width-and-max-width.html" target="_blank" rel="external">让IE6支持min-width和max-width的方法</a></li>
+</ol>
+<h2 id="css3-mediaqueries-js"><a href="#css3-mediaqueries-js" class="headerlink" title="css3-mediaqueries-js"></a>css3-mediaqueries-js</h2><p><a href="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js" target="_blank" rel="external">css3-mediaqueries-js</a></p>
+<h2 id="ieBetter"><a href="#ieBetter" class="headerlink" title="ieBetter"></a>ieBetter</h2><p><a href="http://www.zhangxinxu.com/wordpress/2013/12/iebetter-js-make-ie6-ie8-like-modern-browser-ie9-chrome/" target="_blank" rel="external">ieBetter.js-让IE6-IE8拥有IE9+,Chrome等浏览器特性</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;移动互联网的今天，告别了ie6。&lt;/p&gt;
+&lt;p&gt;以下来自原先项目&lt;del&gt;psc&lt;/del&gt;。&lt;del&gt;psc&lt;/del&gt;已经删除，&lt;del&gt;使用issues继续整理&lt;/del&gt;。相信这是一个更好的开始。整理到博客汇总。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="兼容性" scheme="http://huixisheng.github.io/tags/%E5%85%BC%E5%AE%B9%E6%80%A7/"/>
+    
+      <category term="前端库" scheme="http://huixisheng.github.io/tags/%E5%89%8D%E7%AB%AF%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>调试工具整理</title>
+    <link href="http://huixisheng.github.io/debugger-tool/"/>
+    <id>http://huixisheng.github.io/debugger-tool/</id>
+    <published>2016-10-22T13:02:45.000Z</published>
+    <updated>2016-12-23T02:57:09.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h2><p>2016-12-22</p>
+<ul>
+<li>[*] 文章结构修改</li>
+<li>[+] 添加远程调试在线工具</li>
+</ul>
+<p>本文收集整理了浏览器调试工具介绍，手机调试方案，nodejs调试，无线抓包。</p>
+<a id="more"></a>
+<h2 id="远程真机调试"><a href="#远程真机调试" class="headerlink" title="远程真机调试"></a>远程真机调试</h2><h3 id="阿里移动质量中心（MQC）-H5测试"><a href="#阿里移动质量中心（MQC）-H5测试" class="headerlink" title="阿里移动质量中心（MQC）-H5测试"></a><a href="https://mqc.aliyun.com/hfive.htm?spm=0.0.0.0.qn7DDr" target="_blank" rel="external">阿里移动质量中心（MQC）-H5测试</a></h3><p>会提供一个测试报告，包含页面加载时间，节点信息，资源资源类型统计，域名资源统计，优化建议,该设备各浏览器的小视频。</p>
+<h3 id="testin"><a href="#testin" class="headerlink" title="testin"></a><a href="http://remote.testin.cn/" target="_blank" rel="external">testin</a></h3><h3 id="优测"><a href="#优测" class="headerlink" title="优测"></a><a href="http://remote.utest.qq.com/deviceSearch?type=remote&amp;brand=Samsung" target="_blank" rel="external">优测</a></h3><h2 id="小程序和微信开发调试"><a href="#小程序和微信开发调试" class="headerlink" title="小程序和微信开发调试"></a>小程序和微信开发调试</h2><h2 id="实时刷新"><a href="#实时刷新" class="headerlink" title="实时刷新"></a>实时刷新</h2><h3 id="FIS"><a href="#FIS" class="headerlink" title="FIS"></a>FIS</h3><h3 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h3><h3 id="BrowserSync"><a href="#BrowserSync" class="headerlink" title="BrowserSync"></a>BrowserSync</h3><h3 id="weflow"><a href="#weflow" class="headerlink" title="weflow"></a><a href="https://weflow.io/" target="_blank" rel="external">weflow</a></h3><h3 id="puer"><a href="#puer" class="headerlink" title="puer"></a><a href="https://github.com/leeluolee/puer" target="_blank" rel="external">puer</a></h3><h3 id="F5"><a href="#F5" class="headerlink" title="F5"></a><a href="http://www.getf5.com/" target="_blank" rel="external">F5</a></h3><h2 id="开发者调试"><a href="#开发者调试" class="headerlink" title="开发者调试"></a>开发者调试</h2><h3 id="spy-debugger"><a href="#spy-debugger" class="headerlink" title="spy-debugger"></a><a href="https://github.com/wuchangming/spy-debugger" target="_blank" rel="external">spy-debugger</a></h3><h3 id="https-ant-tool-github-io-dora-html"><a href="#https-ant-tool-github-io-dora-html" class="headerlink" title="https://ant-tool.github.io/dora.html"></a><a href="https://ant-tool.github.io/dora.html" target="_blank" rel="external">https://ant-tool.github.io/dora.html</a></h3><h2 id="浏览器调试"><a href="#浏览器调试" class="headerlink" title="浏览器调试"></a>浏览器调试</h2><p><a href="http://ued.taobao.com/blog/2012/06/debug-with-chrome-dev-tool/" target="_blank" rel="external">chrome developer tool 调试技巧</a>谷歌浏览器调试比较基础的文章，期待补充和完善。</p>
+<p><a href="http://www.ueder.net/html5-Slides/slides.html#slide-1" target="_blank" rel="external">Chrome Developer Tools 功能与技巧详解</a></p>
+<p><a href="http://isux.tencent.com/chrome-workspace.html" target="_blank" rel="external">开发者调试工具Chrome Workspace</a><br>开发者工具中调试修改js或者css同时自动保存文件，能够避免开发人员在工具中调试好，再到编辑器中修改一次代码的重复操作，能够提高一定的效率</p>
+<p><a href="http://www.opera.com/dragonfly/documentation/" target="_blank" rel="external"><del>Opera Dragonfly documentation</del></a></p>
+<p><a href="https://developer.chrome.com/devtools/docs/mobile-emulation" target="_blank" rel="external">Mobile emulation</a> 模拟器</p>
+<p><a href="http://www.alloyteam.com/2014/02/browser-sync-responsive-web-development-and-debugging-tool/" target="_blank" rel="external">Browser-Sync：响应式Web开发调试利器</a></p>
+<p><a href="chrome://net-internals/#export" target="_blank" rel="external">Chrome也自带抓包功能</a></p>
+<h2 id="WebApp调试"><a href="#WebApp调试" class="headerlink" title="WebApp调试"></a>WebApp调试</h2><ul>
+<li><a href="https://github.com/WechatFE/vConsole" target="_blank" rel="external">https://github.com/WechatFE/vConsole</a></li>
+<li><a href="https://github.com/AlloyTeam/AlloyLever/" target="_blank" rel="external">https://github.com/AlloyTeam/AlloyLever/</a></li>
+</ul>
+<p><a href="http://thx.github.io/mobile/debugging-in-mobile/" target="_blank" rel="external">无线调试攻略</a><br>少年天才以外的我们，与其说是 coder,不如说是 debugger，都是一路调戏过来的，不好意思，是调试【本人口齿不清，发音不准，再发生类似事故请多多见谅】，因此当你 主动/被动 All in 了无线以后，你发现，知识的储备只是时间的积累和有意识的训练而已，可面对众多的 爱疯，案桌儿，山柴，内核不同，大小不一的设备。尼玛，没有个顺手的调试工具，简直是不能忍受的。</p>
+<p><a href="https://speakerdeck.com/paulguo/h5-mobile-kai-fa-diao-shi-shi-jian" target="_blank" rel="external">H5 Mobile 开发调试实践 by 破锣锅</a> 总结的很详细</p>
+<p><a href="http://oceanzhu.com/archives/74" target="_blank" rel="external">手机上怎么抓包调试</a><br>纳尼，手机也可以抓包，不可思议，赶紧试试吧</p>
+<p><a href="https://getfirebug.com/firebuglite" target="_blank" rel="external">Firebug Lite: doing the Firebug way, anywhere.</a><br>亲，还在为ie6的调试而苦恼吗？Firebug值得一试。</p>
+<p><a href="http://wyqbailey.diandian.com/post/2011-11-09/20511143" target="_blank" rel="external">远程调试工具-weinre</a>Web Inspector Remote（远程 Web 调试工具），功能和 Firebug、Webkit Inspector 类似，可以帮助我们在 PC 端远程调试运行在移动设备浏览器内的 Web 页面或应用，能够即时调试 DOM 元素、 CSS 样式 和 JavaScript 等。</p>
+<p><a href="https://www.imququ.com/post/remote-debugging-with-weinre.html" target="_blank" rel="external">用Weinre远程调试移动网页</a></p>
+<p><a href="http://www.cnblogs.com/lhb25/p/debug-mobile-site-and-app-with-weinre.html" target="_blank" rel="external">使用 Weinre 调试移动网站及 PhoneGap 应用</a><code>node</code>版更适合前端。</p>
+<p><a href="http://debug.build.phonegap.com/" target="_blank" rel="external">在线Weinre</a></p>
+<p><a href="https://reader.mx/p/1391" target="_blank" rel="external">浏览器远程调试</a><br>对比了 Firefox、Chrome、Opera 三大浏览器的远程调试工具</p>
+<p><a href="https://github.com/jieyou/remote_inspect_web_on_real_device" target="_blank" rel="external">真机远程调试-remote inspect web on real device</a></p>
+<p><a href="http://44ux.com/blog/2013/02/25/using-web-debugging-proxies/" target="_blank" rel="external">善用 Web 调试代理工具</a></p>
+<p><a href="http://code.tutsplus.com/tutorials/using-web-debugging-proxies--net-29828" target="_blank" rel="external">Using Web Debugging Proxies</a></p>
+<p><a href="https://developer.chrome.com/devtools/docs/remote-debugging?hl=zh-CN" target="_blank" rel="external">Remote Debugging on Android with Chrome</a> 谷歌浏览器实现安装的远程调试</p>
+<p><a href="https://github.com/CN-Chrome-DevTools/CN-Chrome-DevTools" target="_blank" rel="external">Chrome开发者工具中文手册</a></p>
+<p><a href="http://www.iunbug.com/mihtool-zh" target="_blank" rel="external">MIHTool 是前端工程师在iOS设备上调试和优化页面的得力助手</a></p>
+<p><a href="https://creative.adobe.com/zh-tw/products/inspect" target="_blank" rel="external">Edge Inspect</a>方便的跨平台同步预览工具</p>
+<p><a href="http://jsconsole.com/" target="_blank" rel="external">jsconsole</a>是一个风格和Weinre类似的工具，它更多地关注于控制台输出和代码求值。在访问JSConsole的网站的时候，用户输入“:listen”来获得带有GUID的一段JavaScript代码。这段代码需要被加入到待调试的网页中。于是，在加载网页的时候，代码将会连接到JSConsole服务器，并且根据GUID将此会话和用户的会话关联起来，于是用户浏览器中的控制台现在便已经处于待调试网页的JavaScript运行时环境中了。</p>
+<p><a href="http://blog.wpjam.com/m/ios-safari-remote-debugging/" target="_blank" rel="external">通过 Mac 远程调试 iPhone/iPad 上的网页</a></p>
+<p><a href="http://blog.segmentfault.com/humphry/1190000000313211?page=1#c-1190000000313211-1050000000349151" target="_blank" rel="external">整理：手机端网页调试方案</a></p>
+<h2 id="node-js调试"><a href="#node-js调试" class="headerlink" title="node.js调试"></a>node.js调试</h2><p><a href="http://www.cnblogs.com/dolphinX/p/3485345.html" target="_blank" rel="external">node.js调试</a><br>你还在一个个<code>console.log()</code>，那么你out啦</p>
+<h3 id="devtool"><a href="#devtool" class="headerlink" title="devtool"></a><a href="https://github.com/Jam3/devtool" target="_blank" rel="external">devtool</a></h3><p>Runs Node.js programs inside Chrome DevTools (using Electron).</p>
+<p>监测脚步变动自动重启命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">devtool scripts/parse.js --watch</div></pre></td></tr></table></figure></p>
+<p>对应有<a href="https://github.com/remy/nodemon" target="_blank" rel="external"><code>nodemon</code></a>,目前这个是最符合我需求的。还有    <code>Superviso</code> <code>node-dev</code></p>
+<h3 id="iron-node"><a href="#iron-node" class="headerlink" title="iron-node"></a>iron-node</h3><h3 id="node-inspector"><a href="#node-inspector" class="headerlink" title="node-inspector"></a>node-inspector</h3><h3 id="node-debugger"><a href="#node-debugger" class="headerlink" title="node-debugger"></a>node-debugger</h3><h3 id="WebStorm集成的调试器"><a href="#WebStorm集成的调试器" class="headerlink" title="WebStorm集成的调试器"></a>WebStorm集成的调试器</h3><h2 id="抓包工具"><a href="#抓包工具" class="headerlink" title="抓包工具"></a>抓包工具</h2><ul>
+<li><a href="http://weibo.com/ttarticle/p/show?id=2309404034831301405232&amp;mod=zwenzhang?comment=1&amp;sudaref=www.google.co.jp&amp;retcode=6102" target="_blank" rel="external">whistle</a></li>
+<li><a href="http://www.alloyteam.com/2014/07/nodejs-debug-proxy-livepool/" target="_blank" rel="external">【开源项目】LivePool：基于 NodeJs 的跨平台 Web 抓包替换工具</a></li>
+<li><a href="http://www.httpwatch.com/download/" target="_blank" rel="external">HttpWatch</a></li>
+<li><a href="http://www.ieinspector.com/" target="_blank" rel="external">HttpAnalyzerStd</a></li>
+<li><a href="http://www.tcpdump.org/" target="_blank" rel="external">tcpdump</a></li>
+<li><a href="http://www.wireshark.org/" target="_blank" rel="external">wireshark</a> 文章推荐：<a href="http://www.cnblogs.com/TankXiao/archive/2012/10/10/2711777.html" target="_blank" rel="external">Wireshark基本介绍和学习TCP三次握手</a></li>
+<li><a href="http://goddyzhao.me/nproxy/" target="_blank" rel="external">NProxy</a> 文章推荐：<a href="NProxy——Mac和Linux平台下的Fiddler">NProxy——Mac和Linux平台下的Fiddler</a></li>
+</ul>
+<h3 id="Fiddler"><a href="#Fiddler" class="headerlink" title="Fiddler"></a><a href="http://www.telerik.com/fiddler" target="_blank" rel="external">Fiddler</a></h3><ul>
+<li><a href="https://www.imququ.com/post/user-fiddler-on-macos.html" target="_blank" rel="external">如何在 Mac 下使用 Fiddler</a></li>
+<li><a href="http://www.welefen.com/fiddler-base-on-chrome-extension.html" target="_blank" rel="external">基于Chrome扩展的Fiddler</a></li>
+</ul>
+<h3 id="Mac平台"><a href="#Mac平台" class="headerlink" title="Mac平台"></a>Mac平台</h3><ul>
+<li><a href="http://zh.blog.goddyzhao.me/post/35906061908/nproxy-fiddler-in-mac-and-linux" target="_blank" rel="external">NProxy——Mac和Linux平台下的Fiddler</a></li>
+<li><a href="http://www.charlesproxy.com/" target="_blank" rel="external">Charles</a> <a href="http://www.baidufe.com/item/8a53eea855cb6289993f.html" target="_blank" rel="external">使用charles proxy for Mac来抓取手机App的网络包</a> <a href="http://www.36ria.com/6278" target="_blank" rel="external">Charles(最强大的http调试工具)详细教程（上）</a> <a href="http://www.36ria.com/6303" target="_blank" rel="external">Charles(最强大的http调试工具)详细教程（下）</a></li>
+</ul>
+<h2 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h2><ul>
+<li><a href="http://tid.tenpay.com/?p=6161" target="_blank" rel="external">远程调试(Remote Debugging)</a></li>
+<li><a href="https://github.com/jieyou/remote_inspect_web_on_real_device" target="_blank" rel="external">各种 真机远程调试 方法 汇总</a></li>
+<li><a href="http://wiki.jikexueyuan.com/project/chrome-devtools/remote-debugging-on-android.html" target="_blank" rel="external">http://wiki.jikexueyuan.com/project/chrome-devtools/remote-debugging-on-android.html</a></li>
+<li><a href="http://www.jianshu.com/p/82ab631502e1" target="_blank" rel="external">http://www.jianshu.com/p/82ab631502e1</a></li>
+<li><a href="http://yujiangshui.com/multidevice-frontend-debug/" target="_blank" rel="external">http://yujiangshui.com/multidevice-frontend-debug/</a></li>
+<li><a href="http://div.io/topic/1449" target="_blank" rel="external">http://div.io/topic/1449</a></li>
+<li><a href="http://alloyteam.github.io/Spirit/modules/Mobug/" target="_blank" rel="external">http://alloyteam.github.io/Spirit/modules/Mobug/</a></li>
+<li><a href="https://github.com/hongru/horn" target="_blank" rel="external">https://github.com/hongru/horn</a></li>
+<li><a href="https://github.com/kaiye/kaiye.github.com/issues/4" target="_blank" rel="external">https://github.com/kaiye/kaiye.github.com/issues/4</a></li>
+<li><a href="https://github.com/riskers/blog/issues/11" target="_blank" rel="external">https://github.com/riskers/blog/issues/11</a></li>
+<li><a href="https://gold.xitu.io/entry/5851e77d61ff4b006c8414dd" target="_blank" rel="external">https://gold.xitu.io/entry/5851e77d61ff4b006c8414dd</a></li>
+<li><a href="https://www.zhihu.com/question/20322475" target="_blank" rel="external">https://www.zhihu.com/question/20322475</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;更新日志&quot;&gt;&lt;a href=&quot;#更新日志&quot; class=&quot;headerlink&quot; title=&quot;更新日志&quot;&gt;&lt;/a&gt;更新日志&lt;/h2&gt;&lt;p&gt;2016-12-22&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;[*] 文章结构修改&lt;/li&gt;
+&lt;li&gt;[+] 添加远程调试在线工具&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;本文收集整理了浏览器调试工具介绍，手机调试方案，nodejs调试，无线抓包。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="前端工具" scheme="http://huixisheng.github.io/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="前端资源" scheme="http://huixisheng.github.io/tags/%E5%89%8D%E7%AB%AF%E8%B5%84%E6%BA%90/"/>
+    
+      <category term="调试" scheme="http://huixisheng.github.io/tags/%E8%B0%83%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git操作常见问题汇总</title>
+    <link href="http://huixisheng.github.io/git-problem/"/>
+    <id>http://huixisheng.github.io/git-problem/</id>
+    <published>2016-10-22T13:02:45.000Z</published>
+    <updated>2016-11-25T15:04:43.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>平常工作中常用的<code>git</code>操作命令。</p>
+<a id="more"></a>
+<h2 id="git添加空目录"><a href="#git添加空目录" class="headerlink" title="git添加空目录"></a>git添加空目录</h2><p>在空目录下建<code>.gitignore</code><br>内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># 忽略所有文件</div><div class="line">*</div><div class="line"># 除了这个文件</div><div class="line">!.gitignore</div></pre></td></tr></table></figure></p>
+<h2 id="git忽略已经被提交的文件"><a href="#git忽略已经被提交的文件" class="headerlink" title="git忽略已经被提交的文件"></a>git忽略已经被提交的文件</h2><p>直接<code>rm</code> 然后 <code>git  add .</code>本地磁盘也会被删除。我们要的是删除版本库的文件，并忽略。使用如下方法处理:</p>
+<p>忽略文件夹 <code>git rm -r --cached cache/*</code> 然后在 <code>.gitignore</code>忽略删除的文件。注意<code>git rm --cached</code> 删除的是追踪状态</p>
+<h2 id="git-忽略已经提交的文件的修改"><a href="#git-忽略已经提交的文件的修改" class="headerlink" title="git 忽略已经提交的文件的修改"></a>git 忽略已经提交的文件的修改</h2><p><code>git update-index --assume-unchanged .env</code><br>重置之前添加的忽略<br><code>git update-index --no-assume-unchanged .env</code></p>
+<h2 id="同步github-fork原作者分支的修改"><a href="#同步github-fork原作者分支的修改" class="headerlink" title="同步github fork原作者分支的修改"></a>同步<code>github</code> fork原作者分支的修改</h2><p>假设当前在fork <code>hexo-theme-amazeui</code>并<code>clone</code> <code>fork</code>后的分支的终端上：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git remote add remote-hexo https://github.com/huixisheng/hexo-theme-amazeui.git</div><div class="line">git fetch remote-hexo</div><div class="line">git merge remote-hexo/master</div></pre></td></tr></table></figure></p>
+<p>参考</p>
+<ul>
+<li><a href="http://jinlong.github.io/2015/10/12/syncing-a-fork/" target="_blank" rel="external">如何同步 Github fork 出来的分支</a></li>
+<li><a href="http://www.cnblogs.com/rubylouvre/archive/2013/01/24/2874694.html" target="_blank" rel="external">如何在github上fork一个项目来贡献代码以及同步原作者的修改</a></li>
+</ul>
+<h2 id="同步远程删除的分支"><a href="#同步远程删除的分支" class="headerlink" title="同步远程删除的分支"></a>同步远程删除的分支</h2><p>执行<code>git push origin :test-branch</code>, 远程<code>test-branch</code>已经删除了，但本地还在，<code>git branch -a</code>还可以看到<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">error: unable to delete ‘test-branch’: remote ref does not exist</div><div class="line">error: failed to push some refs to ‘git@github.com:huixisheng/huixisheng.github.com.git’</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git remote update --prune</div></pre></td></tr></table></figure>
+<h2 id="git-恢复单个文件的历史版本"><a href="#git-恢复单个文件的历史版本" class="headerlink" title="git 恢复单个文件的历史版本"></a>git 恢复单个文件的历史版本</h2><blockquote>
+<p>首先查看该文件的历史版本信息：git log Default@2x.png<br>记录下需要恢复的commit版本号：如 9aa51d89799716aa68cff3f30c26f8815408e926<br>恢复该文件：git reset 9aa51d89799716aa68cff3f30c26f8815408e926 Default@2x.png<br>还需要执行git checkout Default@2x.png<br>提交git:git commit -m “回滚Default@2x.png的历史版本”</p>
+</blockquote>
+<p><a href="https://segmentfault.com/q/1010000002464973" target="_blank" rel="external">git 如何还原某个文件</a>一文提到更加简单的方法</p>
+<blockquote>
+<p>直接用 git-checkout 即可。理解起来稍微有点奇怪就是了。<br><code>$ git checkout ${commit} /path/to/file</code></p>
+</blockquote>
+<h2 id="撤销git-add的文件的修改"><a href="#撤销git-add的文件的修改" class="headerlink" title="撤销git add的文件的修改"></a>撤销git add的文件的修改</h2><p><code>git reset HEAD README.md</code></p>
+<p>通过<code>git status</code>可以查看相关的操作</p>
+<p>参考</p>
+<ul>
+<li><a href="https://segmentfault.com/a/1190000006185954" target="_blank" rel="external">git的reset和checkout的区别</a></li>
+<li><a href="https://yhhwpp.github.io/2016/10/31/Git-%E4%B8%AD-Reset%E3%80%81Revert%E3%80%81Checkout%E7%9A%84%E5%8C%BA%E5%88%AB/" target="_blank" rel="external">Git 中 Reset、Revert、Checkout的区别</a></li>
+</ul>
+<p>结论:</p>
+<ol>
+<li><code>git reset</code>是会修改版本历史的，丢弃掉一些版本历史。</li>
+<li><code>git revert</code>是根据那个commit逆向生成一个新的commit，版本历史是不会被破坏的。</li>
+<li><code>git checkout</code>用于切换分支</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;平常工作中常用的&lt;code&gt;git&lt;/code&gt;操作命令。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="git" scheme="http://huixisheng.github.io/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>前端精彩文章收集</title>
+    <link href="http://huixisheng.github.io/front-end-articles-collected/"/>
+    <id>http://huixisheng.github.io/front-end-articles-collected/</id>
+    <published>2015-01-21T08:42:53.000Z</published>
+    <updated>2016-10-22T12:40:54.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>本文收集整理优秀的前端资源。方便随时查阅。</p>
+<h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<ul>
+<li><a href="#web%E5%89%8D%E7%AB%AF%E5%B8%B8%E7%94%A8%E5%8F%82%E8%80%83%E6%89%8B%E5%86%8C">Web前端常用参考手册</a></li>
+<li><a href="#%E4%BC%98%E7%A7%80%E7%9A%84%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2">优秀的前端技术博客</a></li>
+<li><a href="#css3%E7%B3%BB%E5%88%97">CSS3系列</a></li>
+<li><a href="#web%E5%89%8D%E7%AB%AF%E9%97%AE%E7%AD%94%E7%A4%BE%E5%8C%BA">Web前端问答社区</a></li>
+<li><a href="#web%E5%89%8D%E7%AB%AF%E7%BD%91%E5%9D%80%E5%AF%BC%E8%88%AA">Web前端网址导航</a></li>
+<li><a href="#%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6%E7%B3%BB%E5%88%97">前端框架系列</a></li>
+<li><a href="#%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E7%B3%BB%E5%88%97">前端性能系列</a></li>
+<li><a href="#%E5%89%8D%E7%AB%AF%E8%A7%84%E8%8C%83%E7%B3%BB%E5%88%97">前端规范系列</a></li>
+<li><a href="#%E5%89%8D%E7%AB%AF%E5%85%BC%E5%AE%B9%E6%80%A7%E7%B3%BB%E5%88%97">前端兼容性系列</a></li>
+<li><a href="#css%E7%B3%BB%E5%88%97">CSS系列</a></li>
+<li><a href="#javascript%E7%B3%BB%E5%88%97">JavaScript系列</a></li>
+<li><a href="#%E4%B8%8D%E5%8F%AF%E9%94%99%E8%BF%87%E7%9A%84%E7%BD%91%E7%AB%99%E6%8E%A8%E8%8D%90%E7%B3%BB%E5%88%97">不可错过的网站推荐系列</a></li>
+<li><a href="#%E5%89%8D%E7%AB%AF%E6%80%BB%E7%BB%93%E6%96%87%E7%AB%A0%E7%B3%BB%E5%88%97">前端总结文章系列</a></li>
+<li><a href="#%E5%85%B6%E5%AE%83%E6%80%BB%E7%BB%93">其它总结</a></li>
+<li><a href="#%E5%89%8D%E7%AB%AF%E7%A4%BE%E5%8C%BA%E6%B4%BB%E5%8A%A8">前端社区活动</a></li>
+<li><a href="#%E6%9B%B4%E6%96%B0%E5%8E%86%E5%8F%B2">更新历史</a></li>
+</ul>
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+<a id="more"></a>
+<h2 id="Web前端常用参考手册"><a href="#Web前端常用参考手册" class="headerlink" title="Web前端常用参考手册"></a>Web前端常用参考手册</h2><ol>
+<li><a href="http://w3help.org/" title="w3chelp" target="_blank" rel="external">w3chelp</a>W3help.org是由国内多家关注Web标准的公司、团体、标准组织，及科研单位等共同创立的Web标准推广网站。</li>
+<li><a href="http://css.doyoe.com/" target="_blank" rel="external">CSS3参考手册</a></li>
+<li><a href="http://caniuse.com/#search=border" target="_blank" rel="external">caniuse</a> <a href="http://www.browsersupport.net/" target="_blank" rel="external">browsersupport</a>非常霸气，输入css属性可以查看该属性在各种浏览器下面的兼容性问题。</li>
+<li><a href="http://overapi.com/" target="_blank" rel="external">overapi</a> 超全Cheat Sheet网站，涵盖几乎所有主流开发语言及框架API与常用命令，工程师必备。</li>
+<li><a href="http://wowubuntu.com/markdown/" target="_blank" rel="external">Markdown 语法说明</a></li>
+<li><a href="http://ecmascript.cn/" target="_blank" rel="external">ECMAScript 5.1中文版</a></li>
+</ol>
+<h2 id="优秀的前端技术博客"><a href="#优秀的前端技术博客" class="headerlink" title="优秀的前端技术博客"></a>优秀的前端技术博客</h2><ol>
+<li><a href="http://www.w3cplus.com/" target="_blank" rel="external">w3cplus</a>这是我经常去的一个Blog，感觉站长和其他维护改Blog的成员分享的技术和写的精彩文章，在这里我学到了很多，开拓了视野。在此感谢w3cplus。</li>
+<li><a href="http://www.zhangxinxu.com/wordpress/" target="_blank" rel="external">张鑫旭BLOG</a>张爷，就这么称呼吧。虽然未识其庐山正面目。但是风趣的写作风格和精彩的文章，对知识的探索和执着，都给人留下了深刻的影响。</li>
+<li><a href="http://www.cnblogs.com/lhb25" target="_blank" rel="external">梦想天空</a>这个博客应该是前端程序员门的资源宝藏吧。</li>
+<li><a href="http://www.cnblogs.com/TomXu/" target="_blank" rel="external">汤姆大叔的博客</a>这是搜牛的同事推荐的。之前知道有这么一号牛人，只是其文章都没有好好地阅读过。就单单看了下首页，在这里肯定能学到很多js方面的知识。有空一定要好好读下。</li>
+<li><a href="http://www.cnblogs.com/rubylouvre/" target="_blank" rel="external">司徒正美</a>感觉博主在业界很低调，但是他写的博文，特别是js方面的文章真的好高调。就目前为止我印象最深了就是博主写的mass框架和博文</li>
+<li><a href="http://www.cnblogs.com/rubylouvre/archive/2010/03/09/1681222.html" target="_blank" rel="external">javascript正则表达式</a>。当然肯定是我关注的太少了，里面肯定有很多很多的干货的。</li>
+<li><a href="http://www.cn-cuckoo.com/" target="_blank" rel="external">为之漫笔（李松峰）</a>为之漫笔（李松峰），本博客专注于Web前后端技术、移动平台开发技术、交互设计和技术翻译。js圣经-《JavaScript高级程序设计》译者。</li>
+<li><a href="http://zp.zuixiami.com/" target="_blank" rel="external">鬼群作品秀</a></li>
+</ol>
+<h2 id="CSS3系列"><a href="#CSS3系列" class="headerlink" title="CSS3系列"></a>CSS3系列</h2><ol>
+<li><a href="http://css3lib.alloyteam.com/" target="_blank" rel="external">CSS3 UI 库</a></li>
+<li><a href="http://www.w3cplus.com/resources/css3-tutorial-and-case" target="_blank" rel="external">CSS3 属性详解</a>学习CSS3很好的资源。w3cplus是一个致力于推广国内前端行业的技术博客。它以探索为己任，不断活跃在行业技术最前沿，努力提供高质量前端技术博文；其文章范围广泛，主要以css3、html5、Javascript和各类demo为主。</li>
+</ol>
+<h2 id="Web前端问答社区"><a href="#Web前端问答社区" class="headerlink" title="Web前端问答社区"></a>Web前端问答社区</h2><p>项目中碰到了问题，该去哪，谷歌、度娘不行的话，不妨试试以下网址，或许你就可以找到解决问题的办法。</p>
+<ol>
+<li><a href="http://ask.w3cplus.com/" target="_blank" rel="external">Ask.W3CPLUS社区！</a>Ask.W3cplus社区是由W3CPLUS全体成员创建，主要目的为前端爱好者提供一个交流平台，欢迎大家在此提问和回复！</li>
+<li><a href="http://stackoverflow.com/" target="_blank" rel="external">stackoverflow</a>是全球IT界最受欢迎的技术问答网站（更为准确的说，stackoverflow Stack Overflow 现在只是 Stack Exchange network 的子站点而已）之一，目前，其每月不重复的访问用户超过1600万；每月网页浏览量（PV）增长了近6倍，达到9500万。</li>
+<li><a href="http://www.dewen.org/" target="_blank" rel="external">德问</a>尊德性，道问学，以致知。德问，编程领域的社交问答。帮您解答各类编程问题，交流与扩展专业知识及技能。</li>
+<li><a href="http://www.zhihu.com/" target="_blank" rel="external">知乎</a>知乎是一个真实的网络问答社区，社区氛围友好、理性、认真，连接了各行各业的精英。他们分享着彼此的专业知识、经验、见解，为中文互联网源源不断地提供高质量的信息。“在这里，发现更大的世界。”</li>
+<li><a href="http://segmentfault.com/" target="_blank" rel="external">segmentfault</a>这是一个专业面向开发者的技术问答社区，你可以在这里提出任何与开发相关的问题，并得到同行的解答和评价。</li>
+<li><a href="http://www.w3cfuns.com/" target="_blank" rel="external">w3cfuns</a>是一个专注于web前端开发行业的综合性门户网站，以”互联网标准化”为目标，致力于推动前端开发在互联网的发展，通过众多专业的服 务形式，服务于中国互联网产业，以推动web标准在中国的发展。自创建以来吸引了众多web前端开发工程师的加盟，引领着中国互联网的标准化潮流。</li>
+<li><a href="http://fp.labs.lugir.com/" target="_blank" rel="external">传送之门</a>这个网站应该还是在开发中。程序员专属于学习、休闲社区。收藏网页链接，轻松珍藏优秀资源,制作资源特辑，整理和分享精彩内容,发现兴趣爱好，生活远不只是编码</li>
+<li><a href="http://cnodejs.org/" target="_blank" rel="external">CNode：Node.js专业中文社区</a></li>
+<li><a href="http://stackoverflow.com/" target="_blank" rel="external">stack overflow</a>是全球IT界最受欢迎的技术问答网站（更为准确的说，Stack Overflow 现在只是 Stack Exchange network 的子站点而已）之一，目前，其每月不重复的访问用户超过1600万；每月网页浏览量（PV）增长了近6倍，达到9500万。</li>
+<li><a href="https://www.quora.com/" target="_blank" rel="external">quora</a> 国外的知乎</li>
+</ol>
+<h2 id="Web前端网址导航"><a href="#Web前端网址导航" class="headerlink" title="Web前端网址导航"></a>Web前端网址导航</h2><ol>
+<li><a href="http://uedfans.cn/" target="_blank" rel="external">UED网址导航</a></li>
+<li><a href="http://www.ux265.net/" target="_blank" rel="external">web前端开发联盟</a></li>
+<li><a href="http://sentsin.com/daohang/" target="_blank" rel="external">贤心-前端圈</a></li>
+<li><a href="http://uxd123.com/" target="_blank" rel="external">uxd123-前端设计导航</a></li>
+<li><a href="http://hao.uisdc.com/goods/" target="_blank" rel="external">设计师网站导航</a>优设网设计师网址导航为设计师提供ps教程、UI设计、素材下载、高清图库、配色方案、用户体验、网页设计等全方位设计师网站导航指引。每周更新及时，是优秀网页设计联盟（SDC）旗下最实用、最专业、最全面、最好用的设计师导航！</li>
+<li><a href="http://123.jser.us/" target="_blank" rel="external">123.jser.us/</a></li>
+<li><a href="http://www.daqianduan.com/nav/" target="_blank" rel="external">前端网址导航</a></li>
+</ol>
+<h2 id="前端框架系列"><a href="#前端框架系列" class="headerlink" title="前端框架系列"></a>前端框架系列</h2><ol>
+<li><a href="http://twitter.github.com/bootstrap/" target="_blank" rel="external">bootstrap</a>大名鼎鼎!!!Twitter推出的一个用于前端开发的开源工具包。它由Twitter的设计师Mark Otto和Jacob Thornton合作开发,是一个CSS/HTML框架。</li>
+<li><a href="http://www.bootcss.com/" target="_blank" rel="external">Bootstrap中文网</a>翻译bootsrap，当然不仅仅只是bootstrap，还有其他优秀的前端框架。</li>
+<li><a href="http://www.w3cplus.com/solution/index/index.html" target="_blank" rel="external">css解决方案</a>这是<a href="http://www.w3cplus.com/content/643.html" target="_blank" rel="external">为之</a>将把项目中经常碰到的前端的问题整理成一套解决方案。非常实用。</li>
+<li><a href="http://aliceui.org/" target="_blank" rel="external">支付宝的Alice</a>Alice是漫游仙境的童话女神，是支付宝的样式解决方案，是一套精选的基于 CMD 生态圈的样式模块集合，是 Arale 的子集，也是一套模块化的样式命名和组织规范，是写 CSS 的更好方式。</li>
+<li><a href="http://www.alloyteam.com/2012/05/the-javascript-framework-list/" target="_blank" rel="external">国内优秀Web前端Javascript框架库汇总列表(会长期更新)</a></li>
+<li><a href="http://nec.netease.com/" target="_blank" rel="external">NEC : 更好的CSS样式解决方案</a></li>
+<li><a href="https://github.com/polymer/polymer" target="_blank" rel="external">Google Polymer Webui</a></li>
+<li><a href="http://www.keqie.com/" target="_blank" rel="external">渴切-获取轻量级 响应css框架</a></li>
+</ol>
+<h2 id="前端性能系列"><a href="#前端性能系列" class="headerlink" title="前端性能系列"></a>前端性能系列</h2><ol>
+<li><a href="http://www.kuqin.com/web/20121209/333935.html" target="_blank" rel="external">浏览器的工作原理：新式网络浏览器幕后揭秘</a></li>
+<li><a href="http://www.iyunlu.com/view/Front-end/60.html" target="_blank" rel="external">PNG的秘密—— 一淘前端分享会</a></li>
+</ol>
+<h2 id="前端规范系列"><a href="#前端规范系列" class="headerlink" title="前端规范系列"></a>前端规范系列</h2><ol>
+<li><a href="http://alloyteam.github.com/JX/doc/specification/google-javascript.xml" target="_blank" rel="external">Google Javascript编程规范</a></li>
+<li><a href="http://udc.weibo.com/2012/02/%E6%8F%AD%E7%A7%98wdl-%E5%BE%AE%E5%8D%9A%E4%BA%A4%E4%BA%92%E8%A7%84%E8%8C%83%E7%9A%84%E6%88%90%E9%95%BF%E5%8E%86%E7%A8%8B/" target="_blank" rel="external">揭秘wdl-微博交互规范的成长历程</a></li>
+</ol>
+<h2 id="前端兼容性系列"><a href="#前端兼容性系列" class="headerlink" title="前端兼容性系列"></a>前端兼容性系列</h2><ol>
+<li><a href="http://www.w3cfuns.com/thread-297-1-1.html" target="_blank" rel="external">原创-IE6 PNG透明终极解决方案-打造W3Cfuns-IE6PNG最强帖</a></li>
+<li><a href="http://www.iyunlu.com/view/css-xhtml/64.html" target="_blank" rel="external">inline-block 前世今生</a></li>
+<li><a href="http://www.iyunlu.com/view/css-xhtml/55.html" target="_blank" rel="external">那些年我们一起清除过的浮动</a></li>
+<li><a href="http://www.cnblogs.com/hooray/archive/2011/05/20/2052269.html" target="_blank" rel="external">完美解决IE6不支持position:fixed的bug</a></li>
+<li><a href="http://www.cnblogs.com/wdq1103/archive/2010/06/12/1757321.html" target="_blank" rel="external">CSS的盒子模型（Box Model）</a></li>
+</ol>
+<h2 id="CSS系列"><a href="#CSS系列" class="headerlink" title="CSS系列"></a>CSS系列</h2><ol>
+<li><a href="http://www.iyunlu.com/view/css-xhtml/62.html" target="_blank" rel="external">可用性更好的CSS隐藏文字技术(CSS图片替换文字)</a></li>
+<li><a href="http://www.w3cplus.com/solution/index/index.html" target="_blank" rel="external">css解决方案</a></li>
+<li><a href="http://www.w3cplus.com/framework/index.php" target="_blank" rel="external">html常用结构</a></li>
+</ol>
+<h2 id="JavaScript系列"><a href="#JavaScript系列" class="headerlink" title="JavaScript系列"></a>JavaScript系列</h2><ol>
+<li><a href="http://www.laruence.com/2009/05/28/863.html" target="_blank" rel="external">Javascript作用域原理</a></li>
+<li><a href="http://www.zhangxinxu.com/wordpress/2011/06/javascript%E6%9C%89%E5%85%B3%E7%9A%8410%E4%B8%AA%E6%80%AA%E7%99%96%E5%92%8C%E7%A7%98%E5%AF%86/" target="_blank" rel="external">javascript有关的10个怪癖和秘密</a></li>
+<li><a href="http://bonsaiden.github.com/JavaScript-Garden/zh/" target="_blank" rel="external">JavaScript 秘密花园</a></li>
+<li><a href="http://www.cn-cuckoo.com/deconstructed/" target="_blank" rel="external">JavaScript库 解构</a> 深入JavaScript库源代码，条分缕析，顿悟最优秀JavaScript库的核心机制</li>
+</ol>
+<h2 id="不可错过的网站推荐系列"><a href="#不可错过的网站推荐系列" class="headerlink" title="不可错过的网站推荐系列"></a>不可错过的网站推荐系列</h2><ol>
+<li><a href="http://2012.qq.com/2012_show.htm" target="_blank" rel="external">腾讯2012年伦敦奥运会设计：前端项目回顾</a></li>
+<li><a href="http://www.zensorium.com/tinke/" target="_blank" rel="external">国外的视差滚动效果</a></li>
+</ol>
+<h2 id="前端总结文章系列"><a href="#前端总结文章系列" class="headerlink" title="前端总结文章系列"></a>前端总结文章系列</h2><ol>
+<li><a href="http://hi.baidu.com/lijing00333/item/1c28309d8b46c7d41e427118" target="_blank" rel="external">十日谈</a></li>
+<li><a href="http://julying.com/blog/how-to-become-a-good-web-front-end-engineer/" target="_blank" rel="external">如何成为一名优秀的web前端工程师（前端攻城师）？</a></li>
+</ol>
+<h2 id="其它总结"><a href="#其它总结" class="headerlink" title="其它总结"></a>其它总结</h2><ol>
+<li><a href="https://github.com/JSBa/jsba.github.io/blob/master/main.md" target="_blank" rel="external">Web开发相关资源、网站、工具推荐</a></li>
+</ol>
+<h2 id="前端社区活动"><a href="#前端社区活动" class="headerlink" title="前端社区活动"></a>前端社区活动</h2><ol>
+<li><a href="http://www.w3ctech.com/event" target="_blank" rel="external">w3ctech</a></li>
+<li><a href="http://fequan.com/" target="_blank" rel="external">前端圈</a></li>
+<li><a href="http://d2forum.alibaba-inc.com/" target="_blank" rel="external">D2前端技术论坛</a></li>
+<li><a href="http://www.webrebuild.org/" target="_blank" rel="external">WebRebuild</a></li>
+<li><a href="http://www.html5dw.com/" target="_blank" rel="external">HTML5梦工场</a></li>
+</ol>
+<h2 id="更新历史"><a href="#更新历史" class="headerlink" title="更新历史"></a>更新历史</h2><p>2016-10-22</p>
+<ul>
+<li>文章简要修改</li>
+<li>添加文章目录结构</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      本文收集整理优秀的前端资源。
+    
+    </summary>
+    
+    
+      <category term="前端资源" scheme="http://huixisheng.github.io/tags/%E5%89%8D%E7%AB%AF%E8%B5%84%E6%BA%90/"/>
+    
+      <category term="收藏夹" scheme="http://huixisheng.github.io/tags/%E6%94%B6%E8%97%8F%E5%A4%B9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git命令简单介绍</title>
+    <link href="http://huixisheng.github.io/git/"/>
+    <id>http://huixisheng.github.io/git/</id>
+    <published>2015-01-21T08:38:23.000Z</published>
+    <updated>2017-03-13T06:40:34.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>开发过程中常用<code>git</code>操作很碰到的问题进行总结。</p>
+<a id="more"></a>
+<h2 id="git简介"><a href="#git简介" class="headerlink" title="git简介"></a>git简介</h2><p><a href="http://baike.baidu.com/link?url=UYMd9W0XHTgdJBxme3gqKo2ClfetB3Gs80jxnQYlutmdsCzpgxH93YiWn5UpKoyEOF_celoV1XiyTG5iy0mlLYibww4uSPmlXemtoBJdODy" target="_blank" rel="external">git</a>是一款免费、开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。是目前最流行的版本管理系统，学会git几乎成了开发者的必备技能。<a href="http://baike.baidu.com/link?url=UYMd9W0XHTgdJBxme3gqKo2ClfetB3Gs80jxnQYlutmdsCzpgxH93YiWn5UpKoyEOF_celoV1XiyTG5iy0mlLYibww4uSPmlXemtoBJdODy" target="_blank" rel="external">git</a>是 <code>Linus Torvalds</code> 为了帮助管理 <code>Linux</code>内核开发而开发的一个开放源码的版本控制软件。</p>
+<h2 id="git常用命令"><a href="#git常用命令" class="headerlink" title="git常用命令"></a>git常用命令</h2><p>对于这方面的介绍网上都有很全很详细。我就不班门弄斧了。介绍一个比较有用的命令 <code>`git help 命令例如:pull</code>。这么多的命令如果都要全部记住，怎么可能。还是学会查手册来的靠谱。</p>
+<p>以下几篇文章都对git常用的命令做了详细说明：</p>
+<ul>
+<li><a href="http://www.cnblogs.com/welfear/archive/2010/05/24/1742614.html" target="_blank" rel="external">git使用说明</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2014/06/git_remote.html" target="_blank" rel="external">Git远程操作详解</a></li>
+<li><a href="http://www.samirchen.com/git-commands/" target="_blank" rel="external">git命令详解</a></li>
+<li><a href="https://gitcafe.com/restkuan/git/blob/master/Git%E5%B0%8F%E7%BB%93.xmind" target="_blank" rel="external">学习git过程中做的xmin</a></li>
+</ul>
+<h2 id="git超级实用命令"><a href="#git超级实用命令" class="headerlink" title="git超级实用命令"></a>git超级实用命令</h2><pre><code>git help branch // 查看详细的参数
+git config -l 查看配置信息
+git clone git@github.com:huixisheng/huixisheng.github.com.git
+git commit -C head -a --amend //不会产生新的提交历史记录，复用HEAD留言，增补提交，而不增加提交记录
+git branch -d feature_x // 删除feature_x分支
+git checkout -b master2 // 切换并新建master2分支
+</code></pre><p><code>git stash</code>  本地修改暂时存储起来，用于改到一半暂时不想<code>commit</code>和<code>pull</code>有冲突。更多<a href="http://wongyouth.com/blog/2014/03/28/solve-conflict-caused-by-git-stash/" target="_blank" rel="external">参考解决Git stash冲突问题</a></p>
+<p>使用Sublime Text 可以安装 <a href="https://github.com/kemayo/sublime-text-git" target="_blank" rel="external">sublime-text-git</a>，超级赞</p>
+<p><a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank" rel="external">如何创建 ssh key</a>。配置好后 ‘ssh -T git@github.com’ 测试配置是否成功。多个ssh key怎要么办？<code>vi ~/.ssh/config</code>。配置以下信息</p>
+<pre><code>Host github.com
+    HostName github.com
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/github_rsa
+    User git
+
+Host coding.net
+    HostName coding.net
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/codingnet_rsa
+    User git
+</code></pre><p><a href="http://macshuo.com/?p=676" target="_blank" rel="external">安装zsh</a>。就可以使用以下缩写命令，通过 <code>alias</code>查看命令别名。</p>
+<pre><code>// 添加自定义的命令
+vi ~/.zshrc
+source ~/.zshrc
+
+ggpull
+ggpush
+</code></pre><h2 id="git常见问题解决方案"><a href="#git常见问题解决方案" class="headerlink" title="git常见问题解决方案"></a>git常见问题解决方案</h2><h3 id="显示提交log-tree"><a href="#显示提交log-tree" class="headerlink" title="显示提交log tree"></a>显示提交log tree</h3><pre><code>git log --pretty=format:&quot;%h %s&quot; --graph
+</code></pre><h3 id="使用git-pull文件时和本地文件冲突怎么办"><a href="#使用git-pull文件时和本地文件冲突怎么办" class="headerlink" title="使用git pull文件时和本地文件冲突怎么办"></a>使用git pull文件时和本地文件冲突怎么办</h3><pre><code>git stash // 本地修改暂时存储起来
+git pull
+git stash pop
+</code></pre><p><a href="http://wongyouth.com/blog/2014/03/28/solve-conflict-caused-by-git-stash/" target="_blank" rel="external">参考解决Git stash冲突问题</a></p>
+<h2 id="git-恢复单个文件的历史版本"><a href="#git-恢复单个文件的历史版本" class="headerlink" title="git 恢复单个文件的历史版本"></a>git 恢复单个文件的历史版本</h2><blockquote>
+<p>首先查看该文件的历史版本信息：git log Default@2x.png<br>记录下需要恢复的commit版本号：如 9aa51d89799716aa68cff3f30c26f8815408e926<br>恢复该文件：git reset 9aa51d89799716aa68cff3f30c26f8815408e926 Default@2x.png</p>
+<p>还需要执行git checkout xxxxx(文件名)</p>
+<p>提交git:git commit -m “revert old file”</p>
+</blockquote>
+<p>直接用 git-checkout 即可。理解起来稍微有点奇怪就是了。</p>
+<pre><code>$ git checkout ${commit} /path/to/file
+</code></pre><p><a href="http://segmentfault.com/q/1010000002464973" target="_blank" rel="external">git 如何还原某个文件</a></p>
+<h3 id="如何更新自己Fork的代码"><a href="#如何更新自己Fork的代码" class="headerlink" title="如何更新自己Fork的代码"></a>如何更新自己Fork的代码</h3><p><a href="https://github.com/iModule" target="_blank" rel="external">iModule</a>Fork了开源代码。<code>clone</code>到本地了，如何保证代码同最初的源码保持一致呢？</p>
+<pre><code>git clone git@github.com:iModule/zepto.git
+cd zepto
+git remote add zepto  git@github.com:madrobby/zepto.git
+git remote -v 查看是否多出了zepto分支
+git fetch zepto   git pull zepto master
+git merge zepto/master
+git push origin master
+</code></pre><h3 id="提交github不用输入用户名和密码"><a href="#提交github不用输入用户名和密码" class="headerlink" title="提交github不用输入用户名和密码"></a>提交github不用输入用户名和密码</h3><blockquote>
+<p>　　在用git提交时代码至github上时每次都要输入用户名和密码，当提交操作较为频繁时非常不方便，可以按下文中的介绍，设置成提交时不用输入用户名和密码：<br>1、在当前库下，已经运行过 git remote add origin <a href="https://github.com/***/***.git" target="_blank" rel="external">https://github.com/***/***.git</a> 命令，则先运行如下命令：　<br>   git remote rm origin　　<br>   若以前没有运行过  git remote add origin <a href="https://github.com/***/***.git命令，直接跳到2步骤；" target="_blank" rel="external">https://github.com/***/***.git命令，直接跳到2步骤；</a><br>2、运行如下命令：<br>   git remote add origin git@github.com:username/test.git</p>
+</blockquote>
+<h3 id="无法删除远程分支"><a href="#无法删除远程分支" class="headerlink" title="无法删除远程分支"></a>无法删除远程分支</h3><p>error: unable to delete ‘test-branch’: remote ref does not exist<br>error: failed to push some refs to ‘git@github.com:huixisheng/huixisheng.github.com.git’</p>
+<pre><code>git push origin :test-branch
+git remote update --prune
+</code></pre><h2 id="超级丰富的git教程列表"><a href="#超级丰富的git教程列表" class="headerlink" title="超级丰富的git教程列表"></a>超级丰富的git教程列表</h2><ul>
+<li><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">廖雪峰-Git教程</a></li>
+<li><a href="http://www.html-js.com/article/2021" target="_blank" rel="external">Git速成班: git rebase</a></li>
+<li><a href="http://photo.weibo.com/1621464661/wbphotos/large/mid/3801446388375272/pid/60a59655jw1eoh3732h52j21cv2fu4qp" target="_blank" rel="external">Git 命令整理</a></li>
+<li><a href="http://rogerdudler.github.io/git-guide/index.zh.html" target="_blank" rel="external">git - 简明指南</a></li>
+<li><a href="http://pcottle.github.io/learnGitBranching/" target="_blank" rel="external">在线Git命令行学习</a></li>
+<li><a href="http://www.worldhello.net/gotgithub/" target="_blank" rel="external">GotGitHub</a></li>
+<li><a href="http://git-scm.com/book/zh/v1/%E8%B5%B7%E6%AD%A5" target="_blank" rel="external">git-scm</a></li>
+<li><a href="https://ruby-china.org/topics/17590" target="_blank" rel="external">学习，使用 git 过程中做的思维导图</a></li>
+<li><a href="http://gitbook.liuhui998.com/index.html" target="_blank" rel="external">Git Community Book 中文版</a></li>
+</ul>
+<h2 id="在线git代码托管平台"><a href="#在线git代码托管平台" class="headerlink" title="在线git代码托管平台"></a>在线git代码托管平台</h2><ul>
+<li><a href="https://github.com/" target="_blank" rel="external">github</a></li>
+<li><a href="https://coding.net/" target="_blank" rel="external">coding</a></li>
+<li><a href="https://gitcafe.com/" target="_blank" rel="external">GitCafe</a></li>
+<li><a href="https://code.csdn.net/" target="_blank" rel="external">csdn-code</a></li>
+<li><a href="http://git.oschina.net/" target="_blank" rel="external">开源中国</a></li>
+</ul>
+<h2 id="git-rebase"><a href="#git-rebase" class="headerlink" title="git rebase"></a>git rebase</h2><ul>
+<li><a href="http://www.html-js.com/article/Week-end-column-Git-crash-course-git-rebase" target="_blank" rel="external">Git速成班: git rebase</a></li>
+<li><a href="http://codecampo.com/topics/379?comment_id=1354#comment-1354" target="_blank" rel="external">构造干净的 Git 历史线索</a></li>
+<li><a href="http://segmentfault.com/q/1010000000430041" target="_blank" rel="external">团队开发里频繁使用 git rebase 来保持树的整洁好吗?</a></li>
+<li><a href="https://ruby-china.org/topics/15729" target="_blank" rel="external">git pull 和 git fetch 有什么区别？</a></li>
+</ul>
+<h2 id="备忘清单"><a href="#备忘清单" class="headerlink" title="备忘清单"></a>备忘清单</h2><p>修改远程参考地址</p>
+<pre><code>方法1：
+ git remote set-url origin 新地址
+
+方法2：
+git remote rm origin
+git remote add origin [url]
+</code></pre><h2 id="添加submole"><a href="#添加submole" class="headerlink" title="添加submole"></a>添加submole</h2><pre><code>git submodule add git@github.com:fex-team/umeditor.git lib/umeditor
+git remote -v
+git submodule init
+git submodule update
+
+// 会生成
+.gitmodule
+
+// 更新每个submodule
+git submodule foreach git pull
+</code></pre><h2 id="删除submodule"><a href="#删除submodule" class="headerlink" title="删除submodule"></a>删除submodule</h2><pre><code>git rm —cached lib/umeditor
+rm -rf lib/umeditor
+vi .git/config  删除submodule 配置
+rm .gitmodules // 如果是多个可以选择删除
+</code></pre><h2 id="添加subtree"><a href="#添加subtree" class="headerlink" title="添加subtree"></a>添加subtree</h2><pre><code>//添加subtree
+
+git remote add umeditor git@github.com:fex-team/umeditor.git lib/umeditor
+git subtree add —prefix=app/umeditor umeditor dev
+git pull origin master
+</code></pre><ul>
+<li><a href="http://www.kafeitu.me/git/2012/03/27/git-submodule.html" target="_blank" rel="external">Git Submodule使用完整教程</a></li>
+<li><a href="http://efe.baidu.com/blog/git-submodule-vs-git-subtree/" target="_blank" rel="external">git submoudle vs git subtree</a></li>
+<li><a href="http://blog.zlxstar.me/blog/2014/07/18/git-submodule-vs-git-subtree/" target="_blank" rel="external">Git submodule 还是 Git Subtree</a></li>
+<li><a href="https://gist.github.com/kvnsmth/4688345" target="_blank" rel="external">subtree split</a></li>
+<li><a href="https://segmentfault.com/a/1190000003969060" target="_blank" rel="external">用 Git Subtree 在多个 Git 项目间双向同步子项目，附简明使用手册</a></li>
+</ul>
+<h2 id="github提示-You-have-no-permission-to-access-this-repo"><a href="#github提示-You-have-no-permission-to-access-this-repo" class="headerlink" title="github提示 You have no permission to access this repo"></a>github提示 <code>You have no permission to access this repo</code></h2><p>每次出现都是很sb，添加<code>ssh-add ~/.ssh/github</code></p>
+<p>解决方法看<a href="http://www.barretlee.com/blog/2016/03/09/config-in-ssh-after-troubling-git-connection/" target="_blank" rel="external">多 SSH Key 管理技巧与 Git 多账户登录问题</a></p>
+<h2 id="git客户端"><a href="#git客户端" class="headerlink" title="git客户端"></a>git客户端</h2><ul>
+<li><a href="https://github.com/kemayo/sublime-text-git" target="_blank" rel="external">sublime-text-git</a></li>
+<li><a href="https://github.com/jisaacks/GitGutter" target="_blank" rel="external">Sublime Text 插件 GitGutter 更好的帮助开发者查看文件之前的改动和差异，提升开发效率</a></li>
+<li><a href="https://mac.github.com/" target="_blank" rel="external">GitHub</a></li>
+<li><a href="http://gitx.frim.nl/" target="_blank" rel="external">GitX</a></li>
+<li><a href="http://www.sourcetreeapp.com/" target="_blank" rel="external">SourceTree</a></li>
+</ul>
+<h2 id="git如何强制使用远程分支"><a href="#git如何强制使用远程分支" class="headerlink" title="git如何强制使用远程分支"></a>git如何强制使用远程分支</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git fetch --all</div><div class="line">git reset --hard origin/master</div></pre></td></tr></table></figure>
+<p>或者<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git fetch origin</div><div class="line">git reset --hard origin/master</div></pre></td></tr></table></figure></p>
+<h2 id="git在提交之前撤销add操作"><a href="#git在提交之前撤销add操作" class="headerlink" title="git在提交之前撤销add操作"></a>git在提交之前撤销add操作</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git rm -r --cached .</div></pre></td></tr></table></figure>
+<p><a href="http://www.netpi.me/uncategorized/gitrevoke/" target="_blank" rel="external">扩展阅读-Git常用的撤销操作</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="http://diao.it/blog/2012/10/13/why-is-git-always-asking-for-my-password/" target="_blank" rel="external">Git 每次提交时的用户名和密码设置</a></li>
+<li><a href="http://blog.csdn.net/fyh2003/article/details/7528157" target="_blank" rel="external">git创建与管理远程分支</a></li>
+<li><a href="https://github.com/ysc/APDPlat/wiki/%E5%A6%82%E4%BD%95%E6%9B%B4%E6%96%B0%E8%87%AA%E5%B7%B1Fork%E7%9A%84%E4%BB%A3%E7%A0%81" target="_blank" rel="external">如何更新自己Fork的代码</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2014/06/git_remote.html" target="_blank" rel="external">Git远程操作详解</a></li>
+</ul>
+<p>最后欢迎补充</p>
+<h2 id="Todo"><a href="#Todo" class="headerlink" title="Todo"></a>Todo</h2><p>git fetch  没有效果研究</p>
+<p><a href="https://ruby-china.org/topics/4768" target="_blank" rel="external">https://ruby-china.org/topics/4768</a></p>
+<p><a href="https://segmentfault.com/q/1010000000464600" target="_blank" rel="external">5.4 Git钩子：自定义你的工作流</a><br><a href="https://github.com/geeeeeeeeek/git-recipes/wiki/2.6-%E5%9B%9E%E6%BB%9A%E9%94%99%E8%AF%AF%E7%9A%84%E4%BF%AE%E6%94%B9" target="_blank" rel="external">2.6 回滚错误的修改</a><br><a href="http://my.oschina.net/MinGKai/blog/144932" target="_blank" rel="external">   git revert 和reset的区别</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;开发过程中常用&lt;code&gt;git&lt;/code&gt;操作很碰到的问题进行总结。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="git" scheme="http://huixisheng.github.io/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MacOSX 开机启动</title>
+    <link href="http://huixisheng.github.io/MacOSX-powerboot/"/>
+    <id>http://huixisheng.github.io/MacOSX-powerboot/</id>
+    <published>2014-10-25T00:53:16.000Z</published>
+    <updated>2016-10-22T09:40:39.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>相比较<code>Windows</code>和<code>linux</code>，MacOSX的开机启动下略显麻烦，可是要经常捣鼓本地服务器的开发者而言，本地开发环境有<code>php-fpm</code>、<code>nginx</code>、<code>mysql</code>、<code>Mongodb</code>、<code>nodejs</code>、<code>Memcache</code>等，如果每次开机都要重启这些服务，会不会是要疯掉。只是不知服务开多了会不会影响系统的系能。本文简单介绍Yosemite 10.10开机启动<code>Mysql</code>，<a href="http://tengine.taobao.org/" target="_blank" rel="external"><code>Tengine</code></a>。</p>
+<a id="more"></a>
+<h2 id="MacOSX-开机启动"><a href="#MacOSX-开机启动" class="headerlink" title="MacOSX 开机启动"></a>MacOSX 开机启动</h2><h3 id="Unix系统级别的启动脚本"><a href="#Unix系统级别的启动脚本" class="headerlink" title="Unix系统级别的启动脚本"></a>Unix系统级别的启动脚本</h3><pre><code>/etc/mach_init.d/
+/etc/mach_init_per_user.d/
+/etc/mach_init_per_login_session.d/
+</code></pre><p>在这3个目录下面的启动脚本将在系统初始化阶段执行。</p>
+<h2 id="OSX级别启动脚本"><a href="#OSX级别启动脚本" class="headerlink" title="OSX级别启动脚本"></a>OSX级别启动脚本</h2><pre><code>/System/Library/StartupItems/  Yosemite 10.10没内容
+~/Library/StartupItems/
+</code></pre><h2 id="OSX级别启动后台进程"><a href="#OSX级别启动后台进程" class="headerlink" title="OSX级别启动后台进程"></a>OSX级别启动后台进程</h2><pre><code>~/Library/LaunchAgents         Per-user agents provided by the user.
+ /Library/LaunchAgents          Per-user agents provided by the administrator.
+ /Library/LaunchDaemons         System-wide daemons provided by the administrator.
+ /System/Library/LaunchAgents   Per-user agents provided by Mac OS X.
+ /System/Library/LaunchDaemons  System-wide daemons provided by Mac OS X.
+</code></pre><p>例如用<code>brew</code>安装的<code>nginx</code>:</p>
+<pre><code>mkdir -p ~/Library/LaunchAgents
+cp /usr/local/Cellar/nginx/1.4.1/homebrew.mxcl.nginx.plist ~/Library/LaunchAgents/
+launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist
+</code></pre><h3 id="添加开机启动项"><a href="#添加开机启动项" class="headerlink" title="添加开机启动项"></a>添加开机启动项</h3><h4 id="sudo-vi-com-tengine-plist"><a href="#sudo-vi-com-tengine-plist" class="headerlink" title="sudo vi com.tengine.plist"></a>sudo vi com.tengine.plist</h4><pre><code>&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;
+&lt;plist version=&quot;1.0&quot;&gt;
+&lt;dict&gt;
+    &lt;key&gt;Label&lt;/key&gt;
+    &lt;string&gt;com.tengine&lt;/string&gt;
+    &lt;key&gt;Program&lt;/key&gt;
+    &lt;string&gt;/usr/local/tengine/sbin/nginx&lt;/string&gt;
+    &lt;key&gt;RunAtLoad&lt;/key&gt;
+    &lt;true/&gt;
+    &lt;key&gt;KeepAlive&lt;/key&gt;
+    &lt;true/&gt;
+&lt;/dict&gt;
+&lt;/plist&gt;
+</code></pre><p>不知为何设置了<code>&lt;key&gt;ProgramArguments&lt;/key&gt;</code>就是无法开机启动。写好的<code>.plist</code>可以通过以下命令查看格式是否正确。</p>
+<pre><code>sudo plutil -lint com.tengine.plist
+</code></pre><p><a href="https://developer.apple.com/library/Mac/documentation/Darwin/Reference/ManPages/man5/launchd.plist.5.html#//apple_ref/doc/man/5/launchd.plist" target="_blank" rel="external">plist相关的参数配置</a></p>
+<blockquote>
+<p>不过试了一下，不是超级用户登陆，而是普通用户登陆，并且监听的端口在1024以下的（例如把默认的8080端口改为了80端口），nginx 开机是启动不了。因此，要 nginx 开机启动的话，需要给予它管理员权限：</p>
+</blockquote>
+<pre><code>sudo chown root:wheel /usr/local/Cellar/nginx/1.2.6/sbin/nginx
+sudo chmod u+s /usr/local/Cellar/nginx/1.2.6/sbin/nginx
+</code></pre><h4 id="最后调用一下launchctl命令，加载这个plist"><a href="#最后调用一下launchctl命令，加载这个plist" class="headerlink" title="最后调用一下launchctl命令，加载这个plist,"></a>最后调用一下launchctl命令，加载这个plist,</h4><p>开机启动</p>
+<pre><code>launchctl load -w com.tengine.plist
+</code></pre><p>可以通过查看下命令是否生效。这些命令都是用到才去查下，什么时候要好好恶补下。</p>
+<pre><code>ps aux | grep tengine
+</code></pre><p>开机不启动</p>
+<pre><code>launchctl unload -w com.tengine.plist
+</code></pre><p>例如让Adobe的更新程序开机不启动</p>
+<pre><code>sudo launchctl unload -w /Library/LaunchDaemons/com.adobe.fpsaud.plist
+</code></pre><h2 id="用户级别启动程序"><a href="#用户级别启动程序" class="headerlink" title="用户级别启动程序"></a>用户级别启动程序</h2><p>系统偏好设置 -&gt; 帐户 -&gt; 登录项</p>
+<h2 id="Linux的开机启动"><a href="#Linux的开机启动" class="headerlink" title="Linux的开机启动"></a>Linux的开机启动</h2><pre><code>/etc/rc.local
+</code></pre><p><a href="http://www.zhihu.com/question/20126189" target="_blank" rel="external">Linux 中 rc.local、init.d、rc.x、init 这几个文件（夹）各有什么作用？启动执行的脚本应该均放在 rc.local 中吗？</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="http://apple.group.iteye.com/group/wiki/1394-osx-boot-automatically-activated-control-procedures-script" target="_blank" rel="external">OSX开机自动启动程序的控制脚本</a></li>
+<li><a href="http://wiki.nginx.org/OSX_launchd" target="_blank" rel="external">OSX launchd</a></li>
+<li><a href="https://developer.apple.com/library/Mac/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLaunchdJobs.html" target="_blank" rel="external">Creating Launch Daemons and Agents</a></li>
+<li><a href="http://www.tanhao.me/talk/1287.html" target="_blank" rel="external">Mac OSX的开机启动配置</a></li>
+<li><a href="http://dhq.me/mac-install-nginx-mysql-php-fpm" target="_blank" rel="external">Mac 下 Nginx、MySQL、PHP-FPM 的安装配置</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;相比较&lt;code&gt;Windows&lt;/code&gt;和&lt;code&gt;linux&lt;/code&gt;，MacOSX的开机启动下略显麻烦，可是要经常捣鼓本地服务器的开发者而言，本地开发环境有&lt;code&gt;php-fpm&lt;/code&gt;、&lt;code&gt;nginx&lt;/code&gt;、&lt;code&gt;mysql&lt;/code&gt;、&lt;code&gt;Mongodb&lt;/code&gt;、&lt;code&gt;nodejs&lt;/code&gt;、&lt;code&gt;Memcache&lt;/code&gt;等，如果每次开机都要重启这些服务，会不会是要疯掉。只是不知服务开多了会不会影响系统的系能。本文简单介绍Yosemite 10.10开机启动&lt;code&gt;Mysql&lt;/code&gt;，&lt;a href=&quot;http://tengine.taobao.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;code&gt;Tengine&lt;/code&gt;&lt;/a&gt;。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="MacOSX" scheme="http://huixisheng.github.io/tags/MacOSX/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MacOSX下Mysql折腾记</title>
+    <link href="http://huixisheng.github.io/MacOSX-mysql/"/>
+    <id>http://huixisheng.github.io/MacOSX-mysql/</id>
+    <published>2014-10-24T15:16:46.000Z</published>
+    <updated>2016-10-22T09:40:39.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>本文记录在<code>MacOSX</code>下捣鼓<code>Mysql</code>,Yosemite 10.10 mysql 无法开机启动的解决办法.</p>
+<a id="more"></a>
+<h2 id="在MacOSX启动和停止MySQL服务的"><a href="#在MacOSX启动和停止MySQL服务的" class="headerlink" title="在MacOSX启动和停止MySQL服务的"></a>在MacOSX启动和停止MySQL服务的</h2><p>启动MySQL服务</p>
+<pre><code>sudo /Library/StartupItems/MySQLCOM/MySQLCOM start
+</code></pre><p>停止MySQL服务</p>
+<pre><code>sudo /Library/StartupItems/MySQLCOM/MySQLCOM stop
+</code></pre><p>重启MySQL服务</p>
+<pre><code>sudo /Library/StartupItems/MySQLCOM/MySQLCOM restart
+</code></pre><p>或者可以安装<code>MySQL.prefPane</code>。在系统的偏好设置设置。发现在OS X Yosemite，mysql在系统偏好设置了随系统开机启动，结果无效，不怎怎么解决？？大神帮忙</p>
+<p>2014-11-16 12:23:52 更新</p>
+<p>升级到10.10后，即使勾选了 系统偏好设置-&gt;mysql-&gt;开机自动启动。mysql还是无法开机启动，不知道为何？需要开机后手动去启动或者命令行启动。</p>
+<pre><code>mysqlstart=&apos;sudo /Library/StartupItems/MySQLCOM/MySQLCOM restart&apos;
+</code></pre><p>或者</p>
+<pre><code>mysql=&apos;sudo /usr/local/mysql/bin/mysql&apos;
+</code></pre><p>当然可以通过launchctl设置开机启动。可以参考<a href="http://my.oschina.net/huyuaning/blog/334584" target="_blank" rel="external">这里</a>。</p>
+<pre><code>&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;
+&lt;plist version=&quot;1.0&quot;&gt;
+&lt;dict&gt;
+    &lt;key&gt;Label&lt;/key&gt;
+    &lt;string&gt;com.mysql&lt;/string&gt;
+    &lt;key&gt;ProgramArguments&lt;/key&gt;
+    &lt;array&gt;
+        &lt;string&gt;/usr/local/mysql/bin/mysqld_safe&lt;/string&gt;
+    &lt;/array&gt;
+    &lt;key&gt;RunAtLoad&lt;/key&gt;
+    &lt;true/&gt;
+    &lt;key&gt;KeepAlive&lt;/key&gt;
+    &lt;false/&gt;
+&lt;/dict&gt;
+&lt;/plist&gt;
+</code></pre><p>现在还没有弄明白 <code>/usr/local/mysql/bin/mysqld_safe</code> 和 <code>/usr/local/mysql/bin/mysql</code> 有什么区别？</p>
+<h2 id="MacOSX-1045-无法登录-MySQL-服务器；忘记-root密码"><a href="#MacOSX-1045-无法登录-MySQL-服务器；忘记-root密码" class="headerlink" title="MacOSX #1045 无法登录 MySQL 服务器；忘记 root密码"></a>MacOSX #1045 无法登录 MySQL 服务器；忘记 root密码</h2><p>报错：<br>    ERROR 1045 (28000): Access denied for user ‘root’@’localhost’ (using password: YES)</p>
+<p>1、先在系统偏好设置中关闭MySQL服务；<br>2、在终端中输入</p>
+<pre><code>sudo su
+./mysqld_safe --skip-grant-tables --skip-networking &amp;
+</code></pre><p>这时便能越过权限表，直接登陆MySQL了。<br>3、新建一个终端，输入</p>
+<pre><code>mysql -u root
+</code></pre><p>4、 在MySQL中修改root用户密码即可：</p>
+<pre><code>mysql&gt; UPDATE mysql.user SET password=PASSWORD(&apos;新密码&apos;) WHERE User=&apos;root&apos;;
+mysql&gt; FLUSH PRIVILEGES;
+</code></pre><h2 id="导入数据库"><a href="#导入数据库" class="headerlink" title="导入数据库"></a>导入数据库</h2><p>如果是很大的sql的备份文件，用 <a href="http://www.phpmyadmin.net/home_page/index.php" target="_blank" rel="external">phpmyadmin</a>导入的话是会有问题。可以使用 mysqldump。</p>
+<ul>
+<li><a href="http://www.blogjava.net/alpha/archive/2007/08/10/135694.html" target="_blank" rel="external">MySQL的mysqldump工具的基本用法</a></li>
+</ul>
+<h2 id="推荐mysql相关的软件"><a href="#推荐mysql相关的软件" class="headerlink" title="推荐mysql相关的软件"></a>推荐mysql相关的软件</h2><ul>
+<li><a href="http://www.phpmyadmin.net/home_page/index.php" target="_blank" rel="external">phpmyadmin</a></li>
+<li><a href="http://www.navicat.com.cn/products/navicat-premium" target="_blank" rel="external">Navicat Premium</a></li>
+</ul>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="http://blog.afantree.com/sql/the-mysql-root-password-forget-or-permissions-error-solution.html" target="_blank" rel="external">mysql root密码忘记或权限错误的解决办法</a></li>
+<li><a href="http://www.euryugasaki.com/archives/853" target="_blank" rel="external">Mac下新安装的MySQL无法登陆root用户解决方法</a></li>
+<li><a href="http://www.cnblogs.com/macro-cheng/archive/2011/10/25/mysql-001.html" target="_blank" rel="external">MAC下安装与配置MySQL</a></li>
+<li><a href="http://blog.csdn.net/loseleo/article/details/8703408" target="_blank" rel="external">~~Mac上MySQL root 密码忘记或权限错误的解决办法~</a> 找不到用户权限表</li>
+<li><a href="http://dev.mysql.com/downloads/file.php?id=454017" target="_blank" rel="external">Download mysql</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文记录在&lt;code&gt;MacOSX&lt;/code&gt;下捣鼓&lt;code&gt;Mysql&lt;/code&gt;,Yosemite 10.10 mysql 无法开机启动的解决办法.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="mysql" scheme="http://huixisheng.github.io/tags/mysql/"/>
+    
+      <category term="MacOSX" scheme="http://huixisheng.github.io/tags/MacOSX/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>前端开发工具收集和整理</title>
+    <link href="http://huixisheng.github.io/web-front-end-tools/"/>
+    <id>http://huixisheng.github.io/web-front-end-tools/</id>
+    <published>2014-08-04T14:09:45.000Z</published>
+    <updated>2016-10-23T04:19:41.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>本文主要内容是对前端在线工具做整理，优秀的在线工具提高开发效率。告别编辑器，一切都是云端。只通过浏览器完成代码的编写和优化。</p>
+<a id="more"></a>
+<h2 id="JavaScript在线电子书"><a href="#JavaScript在线电子书" class="headerlink" title="JavaScript在线电子书"></a>JavaScript在线电子书</h2><ul>
+<li>ECMAScript5标准 <a href="http://www.ecma-international.org/ecma-262/5.1/index.html" target="_blank" rel="external">http://www.ecma-international.org/ecma-262/5.1/index.html</a></li>
+<li>ECMAScript6标准 <a href="http://www.ecma-international.org/ecma-262/6.0/index.html" target="_blank" rel="external">http://www.ecma-international.org/ecma-262/6.0/index.html</a></li>
+<li>promise迷你书<a href="http://liubin.org/promises-book/" target="_blank" rel="external">http://liubin.org/promises-book/</a></li>
+</ul>
+<h2 id="在线教程"><a href="#在线教程" class="headerlink" title="在线教程"></a>在线教程</h2><ul>
+<li><a href="http://javascript.ruanyifeng.com/" target="_blank" rel="external">JavaScript 标准参考教程-阮一峰</a></li>
+<li><a href="http://www.zhinengshe.com/index.html" target="_blank" rel="external">智能社</a></li>
+<li><a href="http://www.yidengxuetang.com/" target="_blank" rel="external">一灯学堂 | 国内首家web前端高端培训</a></li>
+<li><a href="http://apeclass.cn/index.html" target="_blank" rel="external">蜻蜓课堂</a></li>
+<li><a href="http://www.jdon.com/js.html" target="_blank" rel="external">JavaScript专题教程</a></li>
+<li><a href="http://ejohn.org/apps/learn/" target="_blank" rel="external">Learning Advanced JavaScript</a></li>
+</ul>
+<h2 id="以下内容整理自书签"><a href="#以下内容整理自书签" class="headerlink" title="以下内容整理自书签"></a>以下内容整理自书签</h2><ul>
+<li><a href="http://wiki.jikexueyuan.com/" target="_blank" rel="external">极客学院wiki - it 技术图文教程库</a></li>
+<li><a href="http://moyu-edu.com/" target="_blank" rel="external">墨鱼前端培训 - www.moyu-edu.com</a></li>
+<li><a href="https://www.codecademy.com/zh/" target="_blank" rel="external">学习编程 | codecademy</a></li>
+<li><a href="http://learn.shayhowe.com/advanced-html-css/" target="_blank" rel="external">an advanced guide to html &amp; css</a></li>
+<li><a href="https://developer.mozilla.org/cn/canvas_tutorial" target="_blank" rel="external">canvas教程 canvas tutorial - mdn</a></li>
+<li><a href="http://www.w3schools.com/cn/css/css_reference.asp" target="_blank" rel="external">css参考手册</a></li>
+<li><a href="http://www.devstore.cn/" target="_blank" rel="external">devstore_移动互联网企业运营解决方案整合平台</a></li>
+<li><a href="http://www.codecademy.com/courses/getting-started-v2" target="_blank" rel="external">getting started with programming | codecademy</a></li>
+<li><a href="http://www.codecademy.com/zh/tracks/javascript-original" target="_blank" rel="external">javascript (original) | codecademy</a></li>
+<li><a href="https://www.codeschool.com/" target="_blank" rel="external">learn to code by doing - code school</a></li>
+<li><a href="http://www.w3cschool.cn/" target="_blank" rel="external">w3cschool 在线教程|网站建设</a></li>
+<li><a href="http://www.w3schools.com/default.asp" target="_blank" rel="external">w3schools online web tutorials</a></li>
+</ul>
+<h2 id="在线兼容性测试"><a href="#在线兼容性测试" class="headerlink" title="在线兼容性测试"></a>在线兼容性测试</h2><ul>
+<li><a href="http://www.modern.ie/zh-cn" target="_blank" rel="external">在线跨浏览器测试微软官方提供</a></li>
+</ul>
+<h2 id="浏览器开发工具"><a href="#浏览器开发工具" class="headerlink" title="浏览器开发工具"></a>浏览器开发工具</h2><ul>
+<li><a href="http://www.cnblogs.com/ambar/archive/2011/11/09/25-secrets-of-the-browser-developer-tools-in-chinese.html#top" target="_blank" rel="external">【翻译】25个浏览器开发工具的秘密</a></li>
+<li><a href="http://ued.taobao.com/blog/2012/06/debug-with-chrome-dev-tool/" target="_blank" rel="external">chrome developer tool 调试技巧</a></li>
+</ul>
+<h2 id="在线压缩"><a href="#在线压缩" class="headerlink" title="在线压缩"></a>在线压缩</h2><ul>
+<li><a href="http://www.smushit.com/ysmush.it/" target="_blank" rel="external">在线图片压缩</a></li>
+<li><a href="https://tinyjpg.com/" target="_blank" rel="external"><img src="https://cloud.githubusercontent.com/assets/1518967/11520904/78f955f8-98e2-11e5-89eb-a01622389578.png" alt="tiny">tinyjpg压缩率非常cool</a></li>
+</ul>
+<h2 id="在线性能测试"><a href="#在线性能测试" class="headerlink" title="在线性能测试"></a>在线性能测试</h2><ul>
+<li><a href="http://www.alibench.com/" target="_blank" rel="external">阿里测</a></li>
+<li><a href="http://www.jiankongmf.com/" target="_blank" rel="external">监控魔方</a></li>
+<li><a href="http://www.browserstack.com/" target="_blank" rel="external">Live, Web-Based Browser Testing</a></li>
+</ul>
+<h2 id="在线编辑器"><a href="#在线编辑器" class="headerlink" title="在线编辑器"></a>在线编辑器</h2><ul>
+<li><a href="http://codepen.io/" target="_blank" rel="external">codepen</a></li>
+<li><a href="http://jsbin.com/" target="_blank" rel="external">jsbin</a></li>
+<li><a href="http://runjs.cn/" target="_blank" rel="external">runjs</a></li>
+</ul>
+<h2 id="常用的在线工具"><a href="#常用的在线工具" class="headerlink" title="常用的在线工具"></a>常用的在线工具</h2><ul>
+<li><a href="http://cli.im/url/2014071515?ECNl3" target="_blank" rel="external">在线二维码</a></li>
+<li><a href="http://tool.oschina.net/" target="_blank" rel="external">比较全的在线工具-开源中国社区</a></li>
+<li><a href="http://tool.lu/" target="_blank" rel="external">在线工具 - 程序员的工具箱</a> 工具很全很丰富<br><a href="(http://tool.lu/"><img src="https://cloud.githubusercontent.com/assets/1518967/11520854/184602f6-98e2-11e5-83f1-fd17667ee7bc.png" alt="5178a4b4-82d2-4d8b-a0d1-aeacbea55495"></a></li>
+</ul>
+<h2 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h2><ul>
+<li>2016-10-22 整理了<a href="https://github.com/huixisheng/lab/issues/3" target="_blank" rel="external">issue</a></li>
+<li>2016-10-23 1. 添加在线教程 2. JavaScript在线电子书</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      对平时工作中使用过的工具总结，高效工作，持续学习
+    
+    </summary>
+    
+    
+      <category term="前端工具" scheme="http://huixisheng.github.io/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="前端资源" scheme="http://huixisheng.github.io/tags/%E5%89%8D%E7%AB%AF%E8%B5%84%E6%BA%90/"/>
+    
+      <category term="在线教程" scheme="http://huixisheng.github.io/tags/%E5%9C%A8%E7%BA%BF%E6%95%99%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>致那些我使用过的优秀软件</title>
+    <link href="http://huixisheng.github.io/excellent-software-recommended/"/>
+    <id>http://huixisheng.github.io/excellent-software-recommended/</id>
+    <published>2014-08-04T13:43:41.000Z</published>
+    <updated>2016-10-23T07:56:27.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>工欲善必先利其器，好软件不仅会使你的开发效率提升，而且可以让你平时电脑的操作健步如飞。当然这不是绝对。本文推荐我使用过觉得不错的软件。希望可以让你更快更方便地工作。</p>
+<a id="more"></a>
+<h2 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h2><h3 id="谷歌浏览器"><a href="#谷歌浏览器" class="headerlink" title="谷歌浏览器"></a>谷歌浏览器</h3><ol>
+<li>书签、插件同步功能</li>
+<li>开发者工具，前端开发必备</li>
+<li>插件丰富，只有你想不到</li>
+<li>速度快</li>
+</ol>
+<h2 id="开发工具"><a href="#开发工具" class="headerlink" title="开发工具"></a>开发工具</h2><ul>
+<li><a href="http://www.sublimetext.com/" target="_blank" rel="external">Sublime Text</a>轻量、简洁、高效、跨平台的编辑器，丰富的插件，方便的配色以及兼容vim快捷键等各种优点博得了很多前端开发人员的喜爱，目前我最钟爱的开发编辑器。<a href="http://huixisheng.github.io/something-about-sublime/">相关的插件可以参考这里</a></li>
+<li><a href="http://markdownpad.com/" target="_blank" rel="external">MarkdwonPad</a>  windows的<a href="http://huixisheng.github.io/markdown-test/">markdown</a>编辑器，实时预览，方便的快捷键，可以导出html,pdf，可以自定义样式。</li>
+<li><a href="http://mouapp.com/" target="_blank" rel="external">Mou</a> Mac 上的 Markdown 编辑器，两栏界面，直观清爽，功能简洁到位。</li>
+<li><a href="https://github.com/rhiokim/haroopad" target="_blank" rel="external">haroopad</a>跨平台的不错的<a href="http://huixisheng.github.io/markdown-test/">markdown</a>编辑器</li>
+<li><a href="http://winmerge.org/" target="_blank" rel="external">WinMerge</a>是一款运行于Windows系统下的免费开源的文件比较/合并工具，使用它可以非常方便地比较多个文档内容甚至是文件夹与文件夹之间的文件差异。可以集成在小乌龟中</li>
+<li><a href="https://atom.io/" target="_blank" rel="external">Atom</a>按照 Github 的说法，这是一款非同一般的编辑器，是 21 世纪的创新产品，他们希望将来“从菜鸟到黑客都在使用 Atom 编写代码”。</li>
+</ul>
+<h2 id="常用软件"><a href="#常用软件" class="headerlink" title="常用软件"></a>常用软件</h2><ul>
+<li><a href="https://www.dropbox.com/" target="_blank" rel="external">Dropbox</a></li>
+<li><a href="http://www.wiz.cn/" target="_blank" rel="external">Wiz笔记</a></li>
+<li><a href="http://www.yinxiang.com/" target="_blank" rel="external">印象笔记</a>为你记住每一点灵感、每一份心情和每一个梦想，<br>随时随地找到，让记忆永存。</li>
+</ul>
+<h2 id="window软件"><a href="#window软件" class="headerlink" title="window软件"></a>window软件</h2><ul>
+<li><a href="http://www.stardock.com/products/fences/" target="_blank" rel="external">Fences</a> 桌面图标整理和自动分类软件，由 Stardock 出品，Fences 即桌面栅栏，是指桌面上有阴影的图标分组，它的目的是帮助您非常有条理地管理您的桌面。</li>
+<li><a href="http://www.voidtools.com/downloads/" target="_blank" rel="external">Everything</a>速度最快的文件名搜索工具.是voidtools开发的一款文件搜索工具，官网描述为“基于名称实时定位文件和目录（Locate files and folders by name instantly）”。它体积小巧，界面简洁易用，快速建立索引，快速搜索，同时占用极低的系统资源，实时跟踪文件变化，并且还可以通过http或ftp形式分享搜索。<br>-<a href="http://www.launchy.net/" target="_blank" rel="external">Launchy</a> 经典实用的免费键盘快速启动工具，桌面图标一个都不用。类似的mac的<a href="http://www.alfredapp.com/" target="_blank" rel="external">Alfred</a>,可以让你免去在桌面和开始菜单里费劲地找图标，敲击几下键盘，就能打开你想要打开的程序或者文件，是不是会让你感觉不错呢，Launchy 就是这样一款能够满足你这需求的软件，它能实实在在地提高你的工作效率。</li>
+</ul>
+<h2 id="Mac"><a href="#Mac" class="headerlink" title="Mac"></a>Mac</h2><ul>
+<li><a href="http://www.alfredapp.com/" target="_blank" rel="external">Alfred</a>Mac下最好的快速启动工具。<a href="http://www.cnbeta.com/articles/203640.htm Alfred：Mac下最好的快速启动工具" target="_blank" rel="external">推荐阅读</a></li>
+<li><a href="https://github.com/b4winckler/macvim" target="_blank" rel="external">Macvim</a>  Mac开发利器之程序员编辑器。vi太高端大气上档次，表示驾驭不了。用的好的确实是一款神器。</li>
+<li><a href="http://www.cheatsheetapp.com/CheatSheet/" target="_blank" rel="external">CheatSheet</a> 显示当前程序快捷键列表</li>
+</ul>
+<h2 id="软件相关网址"><a href="#软件相关网址" class="headerlink" title="软件相关网址"></a>软件相关网址</h2><ol>
+<li><a href="http://bbs.pcbeta.com/" target="_blank" rel="external">远景</a></li>
+<li><a href="http://www.iplaysoft.com/" target="_blank" rel="external">异次元</a></li>
+<li><a href="http://www.appinn.com/" target="_blank" rel="external">小众软件</a></li>
+<li><a href="http://xbeta.info/" target="_blank" rel="external">善用佳软</a></li>
+<li><a href="http://www.softjie.cn/" target="_blank" rel="external">软件街</a></li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      工欲善必先利其器，好软件不仅会使你的开发效率提升，而且可以让你平时电脑的操作健步如飞。
+    
+    </summary>
+    
+    
+      <category term="软件" scheme="http://huixisheng.github.io/tags/%E8%BD%AF%E4%BB%B6/"/>
+    
+      <category term="开发工具" scheme="http://huixisheng.github.io/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mardowm语法简单测试</title>
+    <link href="http://huixisheng.github.io/markdown-test/"/>
+    <id>http://huixisheng.github.io/markdown-test/</id>
+    <published>2014-08-02T16:21:29.000Z</published>
+    <updated>2016-10-22T09:40:39.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>本文是学习markdown语法做的一些简单测试。引用<strong>MarkDown 团队统一书写规范 v1.0</strong></p>
+<a id="more"></a>
+<p>一个回车或者大于等于2个空格是一个段落。</p>
+<h1 id="1个-号可以生成h1"><a href="#1个-号可以生成h1" class="headerlink" title="1个#号可以生成h1"></a>1个#号可以生成h1</h1><h2 id="2个-号可以生成h2"><a href="#2个-号可以生成h2" class="headerlink" title="2个#号可以生成h2"></a>2个#号可以生成h2</h2><h3 id="3个-号可以生成h3"><a href="#3个-号可以生成h3" class="headerlink" title="3个#号可以生成h3"></a>3个#号可以生成h3</h3><p>下面以此类推到h6</p>
+<p>一个Tab可以生成code BlockS</p>
+<pre><code>&lt;html&gt;
+&lt;head&gt;
+    &lt;style&gt;
+        .clas{ font-size:12px;}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;page&quot;&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>在一个段落前面加<code>&gt;</code>可以生成一个 blockquotes</p>
+<blockquote>
+<p>我是用<code>&gt;</code>生成的blockquote</p>
+</blockquote>
+<p>数字<code>1. 2.</code>生成有序列表</p>
+<ol>
+<li>我是有序列表第1个<code>li</code></li>
+<li>我是有序列表第2个<code>li</code></li>
+<li>我是有序列表第3个<code>li</code></li>
+</ol>
+<hr>
+<p>##长的有序列表测试##</p>
+<ol>
+<li>工作中碰到的困难只是暂时的，不管是怎样的困难，</li>
+<li>项目开始前，必须对项目的架构做可行性、</li>
+<li>不要停下你学习脚步，不管你在现在在做的项目中有没有碰到困难，都要及时地给自己充电，拓宽自己的知识面和提高自己的技能</li>
+</ol>
+<p>字符<code>*、+、-</code>生成无序列表</p>
+<ul>
+<li>我是无序列表第1个<code>li</code></li>
+<li>我是无序列表第2个<code>li</code></li>
+<li>我是无序列表第3个<code>li</code></li>
+</ul>
+<p><strong>PS:每个列表的末尾需要4个空格或者tab</strong></p>
+<p>链接和图片生成的方法</p>
+<pre><code>[链接名称](链接)
+![图片名称](链接)
+</code></pre><p><a href="https://github.com/huixisheng/huixisheng.github.com/generated_pages/new" target="_blank" rel="external">链接测试</a></p>
+<p><img src="http://huixisheng.github.com/assets/themes/twitter/bootstrap/img/glyphicons-halflings.png" alt="测试图片"></p>
+<p>我是code<code>code</code>,我是<strong>加粗</strong>，我是<strong>斜体</strong>,我是<del>删除</del></p>
+<p><code>***</code>可以生成hr</p>
+<hr>
+<p>单纯的链接根式<code>&lt;链接&gt;</code><br><a href="http://huixisheng.github.com/" target="_blank" rel="external">http://huixisheng.github.com/</a></p>
+<p>特殊的字符需要转义， _ *</p>
+<hr>
+<h2 id="———"><a href="#———" class="headerlink" title="———-"></a>———-</h2><p>引用开始</p>
+<h1 id="MarkDown-团队统一书写规范-v1-0"><a href="#MarkDown-团队统一书写规范-v1-0" class="headerlink" title="MarkDown 团队统一书写规范 v1.0"></a>MarkDown 团队统一书写规范 v1.0</h1><p>由于 MarkDown 语法在细节的书写方式很多，为了让不同个体的文档传产出结构一致，提炼出此规范。<br>该规范遵循 <a href="http://daringfireball.net/projects/markdown/" target="_blank" rel="external">MarkDown 官方语法</a> 以及 <a href="https://github.com/mojombo/github-flavored-markdown/issues/1" target="_blank" rel="external">GitHub MakDown 语法</a>，旨在统一书写格式和代码风格，将多种写法统一。</p>
+<p><em>注：本文档符合自身规范，可视作demo，参看源码</em></p>
+<p>大家可以 <code>fork</code> 后形成自己团队的规范版本</p>
+<h2 id="1-1全局规范"><a href="#1-1全局规范" class="headerlink" title="1.1全局规范"></a>1.1全局规范</h2><p><a name="top"></a></p>
+<ul>
+<li>MarkDown 文件均使用<code>.md</code>作为后缀 (<strong>小写字母</strong>)</li>
+<li>普通文本换行，使用行末尾<code>2空格</code>触发</li>
+</ul>
+<h2 id="格式规范"><a href="#格式规范" class="headerlink" title="格式规范"></a>格式规范</h2><h3 id="标题结构格式"><a href="#标题结构格式" class="headerlink" title="标题结构格式"></a>标题结构格式</h3><ol>
+<li>标题与紧贴的<code>上下正文</code>使用<code>1整行换行</code>隔开</li>
+<li><code>#</code>号和文字之间<code>1个空格</code>连接</li>
+<li>标题层级如下，最多6级</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"># 顶级标题 等价于 title 和 &lt;h1&gt;</div><div class="line">## 次级标题 等价于 &lt;h2&gt;</div><div class="line">### 3级标题 等价于 &lt;h3&gt;</div><div class="line">#### 4级标题 等价于 &lt;h4&gt;</div><div class="line">##### 5级标题 等价于 &lt;h5&gt;</div><div class="line">###### 6级标题 等价于 &lt;h6&gt;</div><div class="line">####### 注：此行错误，标题层级最多6级 没有&lt;h7&gt;标签</div></pre></td></tr></table></figure>
+<h3 id="加强和强调规范"><a href="#加强和强调规范" class="headerlink" title="加强和强调规范"></a>加强和强调规范</h3><p>以下两种写法都是正确的，请统一为<strong>第一种</strong>，即一律使用 <code>**加强</code> <code>*强调</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">*emphasize*   **strong** 相当于&lt;strong&gt;标签和&lt;em&gt;标签</div><div class="line">_emphasize_   __strong__</div></pre></td></tr></table></figure>
+<h3 id="代码块规范"><a href="#代码块规范" class="headerlink" title="代码块规范"></a>代码块规范</h3><ul>
+<li>行内代码使用<code>1对波浪号</code> 如： `hello world!`</li>
+<li>块级代码使用<code>3个波浪号</code> 或 <code>整体4空格缩进</code>，且上下均用<code>整行隔开</code>，如下:  (<strong>占用7行</strong>)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">   echo &apos;看我源码 - 3个波浪号&apos;;</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+<pre><code>&lt;?php
+    echo &apos;看我源码 - 4空格缩进&apos;;
+?&gt;
+</code></pre><h3 id="列表写法"><a href="#列表写法" class="headerlink" title="列表写法"></a>列表写法</h3><ul>
+<li>列号<code>1.</code> 或者<code>*</code>后其后内容<code>空格</code>隔开</li>
+<li>列表块前后<code>整行隔开</code> 如下：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">1. Windows</div><div class="line">2. Mac</div><div class="line">3. iOS</div><div class="line">    * iPhone</div><div class="line">    * iPad</div><div class="line">4. Android</div></pre></td></tr></table></figure>
+<p><strong>实际预览：</strong></p>
+<ol>
+<li>Windows</li>
+<li>Mac</li>
+<li>iOS<ul>
+<li>iPhone</li>
+<li>iPad</li>
+</ul>
+</li>
+<li>Android</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">* Windows</div><div class="line">*  Mac</div><div class="line">*  iOS</div><div class="line">*  Android</div><div class="line">    1. v3.2</div><div class="line">    2. v4.1</div></pre></td></tr></table></figure>
+<p><strong>实际预览：</strong></p>
+<ul>
+<li>Windows</li>
+<li>Mac</li>
+<li>iOS</li>
+<li>Android<ol>
+<li>v3.2</li>
+<li>v4.1</li>
+</ol>
+</li>
+</ul>
+<h3 id="其他标签规范"><a href="#其他标签规范" class="headerlink" title="其他标签规范"></a>其他标签规范</h3><p>链接和Email<br>Inline:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">An [example](http://url.com/ &quot;Title&quot;)</div></pre></td></tr></table></figure>
+<p>引用样式标签 (titles are optional):</p>
+<pre><code>An [example][id]. Then, anywhere
+else in the doc, define the link:
+
+[id]: http://example.com/  &quot;Title&quot;
+</code></pre><p>Email:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">An email &lt;example@example.com&gt; link.</div></pre></td></tr></table></figure>
+<p>插图<br>Inline (titles are optional):</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">![alt text](/path/img.jpg &quot;Title&quot;)</div></pre></td></tr></table></figure>
+<p>引用式插图:</p>
+<pre><code>![alt text][id]
+
+[id]: /url/to/img.jpg &quot;Title&quot;
+</code></pre><p>引用块及嵌套</p>
+<blockquote>
+<p>Email-style angle brackets<br>are used for blockquotes.</p>
+<blockquote>
+<p>And, they can be nested.</p>
+</blockquote>
+<h4 id="Headers-in-blockquotes"><a href="#Headers-in-blockquotes" class="headerlink" title="Headers in blockquotes"></a>Headers in blockquotes</h4><ul>
+<li>You can quote a list.</li>
+<li>Etc.</li>
+</ul>
+</blockquote>
+<p>内联代码</p>
+<p><code>&lt;code&gt;</code> 段落中的用法</p>
+<p>也可以 <code>`代码中包含波浪号` </code>.<br>代码块</p>
+<p>Indent every line of a code block by at least 4 spaces or 1 tab.<br>代码的每行都最少用4个空格或者一个制表符(tab)</p>
+<p>我是普通文本块</p>
+<pre><code>我是一个预格式化的
+代码块.
+</code></pre><p>水平分割线<br>三个<code>连字符-</code>:</p>
+<hr>
+<h3 id="表格规范"><a href="#表格规范" class="headerlink" title="表格规范"></a>表格规范</h3><p>一个简单的表格看起来如下：</p>
+<table>
+<thead>
+<tr>
+<th>第一个头部</th>
+<th>第二个头部</th>
+<th>第三个头部</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>内容格子</td>
+<td>内容格子</td>
+<td>内容格子</td>
+</tr>
+<tr>
+<td>内容格子</td>
+<td>内容格子</td>
+<td>内容格子</td>
+</tr>
+</tbody>
+</table>
+<p>每列的对齐可以通过在分割线上添加冒号来实现：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">第一个头部</th>
+<th style="text-align:center">第二个头部</th>
+<th style="text-align:right">第三个头部</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">左对齐</td>
+<td style="text-align:center">居中</td>
+<td style="text-align:right">右对齐</td>
+</tr>
+<tr>
+<td style="text-align:left">左对齐</td>
+<td style="text-align:center">居中</td>
+<td style="text-align:right">右对齐</td>
+</tr>
+</tbody>
+</table>
+<h3 id="页内锚标记"><a href="#页内锚标记" class="headerlink" title="页内锚标记"></a>页内锚标记</h3><ul>
+<li><a href="#11全局规范">点我跳转到顶部</a>   // 利用 <code>#</code>,<code>##</code> 生成 <code>id</code> 锚标签</li>
+<li><a href="#top">另一种锚标记</a> // 利用 <code>&lt;a name=&quot;top&quot;&gt;&lt;/a&gt;</code></li>
+</ul>
+<hr>
+<p>附：参考 Hello-World.md 源码，<em>注意换行的使用</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"># Hello-World</div><div class="line"></div><div class="line">这是一个范例文件格式</div><div class="line">我是普通换行</div><div class="line"></div><div class="line">## 我是&lt;h2&gt;标题</div><div class="line"></div><div class="line">我是`&lt;h2&gt;`的内容</div><div class="line"></div><div class="line">## 我是&lt;h3&gt;标题</div><div class="line"></div><div class="line">* Windows</div><div class="line">*  Mac</div><div class="line">*  iOS</div><div class="line">*  Android</div></pre></td></tr></table></figure>
+<p>注：引用范例请参看源码底部</p>
+<h4 id="License"><a href="#License" class="headerlink" title="License"></a>License</h4><p>Released under <a href="http://rem.mit-license.org/" target="_blank" rel="external">MIT</a> LICENSE</p>
+<h2 id="引用结束"><a href="#引用结束" class="headerlink" title="引用结束"></a>引用结束</h2><hr>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li><a href="https://github.com/hzlzh/1MarkDown" target="_blank" rel="external">MarkDown 团队统一书写规范 v1.0</a></li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      本文是学习markdown语法做的一些简单测试
+    
+    </summary>
+    
+    
+      <category term="markdown" scheme="http://huixisheng.github.io/tags/markdown/"/>
+    
+  </entry>
+  
+</feed>

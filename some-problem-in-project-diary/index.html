@@ -1,0 +1,877 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="css,JavaScript,总结," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="前端开发者说" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="很随便的记录项目中碰到的疑难杂症">
+<meta name="keywords" content="css,JavaScript,总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="项目中碰到的问题随笔">
+<meta property="og:url" content="http://huixisheng.github.io/some-problem-in-project-diary/index.html">
+<meta property="og:site_name" content="前端开发者说">
+<meta property="og:description" content="很随便的记录项目中碰到的疑难杂症">
+<meta property="og:updated_time" content="2016-10-22T09:40:39.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="项目中碰到的问题随笔">
+<meta name="twitter:description" content="很随便的记录项目中碰到的疑难杂症">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '9599',
+      author: '悔惜晟'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://huixisheng.github.io/some-problem-in-project-diary/"/>
+
+
+  <title> 项目中碰到的问题随笔 | 前端开发者说 </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">前端开发者说</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">记录开发的故事</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                项目中碰到的问题随笔
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2013-04-03T22:32:38+08:00" content="2013-04-03">
+              2013-04-03
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/some-problem-in-project-diary/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="some-problem-in-project-diary/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>记录项目中的碰到的问题。有些问题来的太诡异。</p>
+<a id="more"></a>
+<h2 id="同事的一段代码直接导致浏览器奔溃，找我解决。"><a href="#同事的一段代码直接导致浏览器奔溃，找我解决。" class="headerlink" title="同事的一段代码直接导致浏览器奔溃，找我解决。"></a>同事的一段代码直接导致浏览器奔溃，找我解决。</h2><pre><code>var arr1 = [0, 1, 2, 3];
+var arr2 = arr1;
+for(var i = 0; i &lt; arr1.length; i++ ){
+    if( arr1[i] != 1 ){
+        arr2 = arr1.splice(i, 0, arr1[i]);
+    }
+}
+</code></pre><p>一开始觉得不可思议，断定代码有死循环。数组、对象、函数都是引用。<a href="http://www.xiaoxiaozi.com/2009/05/22/588/" target="_blank" rel="external">参考-javascript 变量两种类型——基本类型和引用类型</a></p>
+<h2 id="自定义的Grunt插件调用异步的方法报错"><a href="#自定义的Grunt插件调用异步的方法报错" class="headerlink" title="自定义的Grunt插件调用异步的方法报错"></a>自定义的Grunt插件调用异步的方法报错</h2><p>解决办法：1. 报错的信息在谷歌中查找。PS:google 被墙，真是悲剧 2. 看grunt官网的说明文档 3. github 上找类似的插件怎么写。<a href="https://github.com/huixisheng/grunt-iAuto-upload" target="_blank" rel="external">插件地址</a></p>
+<h2 id="论股堂项目碰到好几个重排一样的页面显示错位的bug"><a href="#论股堂项目碰到好几个重排一样的页面显示错位的bug" class="headerlink" title="论股堂项目碰到好几个重排一样的页面显示错位的bug"></a>论股堂项目碰到好几个重排一样的页面显示错位的bug</h2><p>这种问题出现时是让人很头痛的，页面开始显示正常的，js操作某些dom后引起本来布局正常的结构出现错位。</p>
+<h2 id="对前端的文件添加了md5的时间戳如何保证后期的前端构建上传资源服务器是最新的文件"><a href="#对前端的文件添加了md5的时间戳如何保证后期的前端构建上传资源服务器是最新的文件" class="headerlink" title="对前端的文件添加了md5的时间戳如何保证后期的前端构建上传资源服务器是最新的文件"></a>对前端的文件添加了md5的时间戳如何保证后期的前端构建上传资源服务器是最新的文件</h2><p>想到的解决办法：1. 通过同生成的文件对于MD5值的map文件对比，相同的文件不更新 2. 每次构建上传根据文件的生成的最新的文件 3. 通朱鹏讨论</p>
+<p>方法1是最理想的，但是当时就是担心怕实现起来很困难。其实后来才发现很简单。方法2 明显是有缺陷的。最终方法1的确定肯定是归功于方法3.</p>
+<p>碰到问题时，首先思路一定要清晰，对想到的问题的解决方法一定要去衡量它的可行性。</p>
+<h2 id="后台返回的ajax接口多一个空行，导致ie下ajax执行了error"><a href="#后台返回的ajax接口多一个空行，导致ie下ajax执行了error" class="headerlink" title="后台返回的ajax接口多一个空行，导致ie下ajax执行了error"></a>后台返回的ajax接口多一个空行，导致ie下ajax执行了error</h2><ol>
+<li>前端定位问题慢，对ajax接口的异常的欠考虑</li>
+<li>是否可以通过设置实现客户端的Debug调试</li>
+</ol>
+<p>原因是： 接口的php文件最前面加了一个空行，伤不起的前端</p>
+<h2 id="百度编辑器的展示慢"><a href="#百度编辑器的展示慢" class="headerlink" title="百度编辑器的展示慢"></a><a href="http://ueditor.baidu.com/" target="_blank" rel="external">百度编辑器</a>的展示慢</h2><p>经排查是百度分享的js对页面会阻塞；同时百度编辑器的需要的静态资源下载很慢。</p>
+<p>目前解决方案：</p>
+<ol>
+<li>对百度分享的js后移动<a href="http://share.baidu.com/help/optimization" target="_blank" rel="external">参考这里</a></li>
+<li>添加编辑器的伪展示，使得编辑器的展示不会有抖动的效果</li>
+</ol>
+<p>未来的方案：<br>使用<a href="http://ueditor.baidu.com/website/umeditor.html" target="_blank" rel="external">UMeditor</a></p>
+<h2 id="使用了带-bom-的-utf-8-的编码文件在-nginx服务器-doctype-声明失效。"><a href="#使用了带-bom-的-utf-8-的编码文件在-nginx服务器-doctype-声明失效。" class="headerlink" title="使用了带 bom 的 utf-8 的编码文件在 nginx服务器 doctype 声明失效。"></a>使用了带 <code>bom</code> 的 <code>utf-8</code> 的编码文件在 nginx服务器 <code>doctype</code> 声明失效。</h2><p><a href="http://www.zhihu.com/question/20167122" target="_blank" rel="external">参考「带 BOM 的 UTF-8」和「无 BOM 的 UTF-8」有什么区别？网页代码一般使用哪个？</a></p>
+<h2 id="内网缺少脚本生成的问题导致报错"><a href="#内网缺少脚本生成的问题导致报错" class="headerlink" title="内网缺少脚本生成的问题导致报错"></a>内网缺少脚本生成的问题导致报错</h2><p>很多时候一碰到问题不想马上问别人，希望尝试自己去解决先。现在后台的观念是问相关的开发人员来的快。通过解决报错，可以发现后台不少后台代码问题。比如一个函数明明返回的是<code>int</code>类型的，但却返回 <code>Array</code>。前端多懂点后台绝对是好事。</p>
+<h2 id="资讯评论的无法加载"><a href="#资讯评论的无法加载" class="headerlink" title="资讯评论的无法加载"></a>资讯评论的无法加载</h2><p>原因分析：<br>资讯对获取pid做了缓存，导致根据seq jsonp 获取pid 永远为0。<br>现在的方案：<br>如果第一次获取pid为0，第二获取添加时间戳。<br>教训：</p>
+<ol>
+<li>浏览器上如果功能可以实现，客户端里面的网页不行的话，多半是缓存的问题。公司客户端浏览器的内核好换了</li>
+<li>要敢于定位问题的所在</li>
+<li>学习更多的知识，开阔视野，跟容易定位问题</li>
+</ol>
+<h2 id="使用了-setInterval-在ajax的回调中导致火狐浏览器http请求并发数量达到最大值，页面不再发轮训请求"><a href="#使用了-setInterval-在ajax的回调中导致火狐浏览器http请求并发数量达到最大值，页面不再发轮训请求" class="headerlink" title="使用了 setInterval 在ajax的回调中导致火狐浏览器http请求并发数量达到最大值，页面不再发轮训请求"></a>使用了 <code>setInterval</code> 在ajax的回调中导致火狐浏览器http请求并发数量达到最大值，页面不再发轮训请求</h2><p>本问题是同事碰到的，去排查这个问题的时候觉得不可以思议</p>
+<h2 id="UC浏览器在文本框聚焦的时候修改了hash，导致弹出的键盘有收回去"><a href="#UC浏览器在文本框聚焦的时候修改了hash，导致弹出的键盘有收回去" class="headerlink" title="UC浏览器在文本框聚焦的时候修改了hash，导致弹出的键盘有收回去"></a>UC浏览器在文本框聚焦的时候修改了<code>hash</code>，导致弹出的键盘有收回去</h2><p>同王海波一直研究了搜狐的直播，同样的实现思路，为何他的就是在uc下有问题，后来他排查到问题是修改了hash引起的。<a href="http://testm.10jqka.com.cn/mobile/info/gsrd/ask_v2.html" target="_blank" rel="external">朱鹏提供了一个修改方案</a>，webapp的<code>fixed</code>有好多的坑</p>
+<h2 id="360安全卫士浏览器屏蔽了background-image的url中含有-ad、gg路径的背景图片。也太任性化了吧。"><a href="#360安全卫士浏览器屏蔽了background-image的url中含有-ad、gg路径的背景图片。也太任性化了吧。" class="headerlink" title="360安全卫士浏览器屏蔽了background-image的url中含有 ad、gg路径的背景图片。也太任性化了吧。"></a>360安全卫士浏览器屏蔽了<code>background-image</code>的url中含有 ad、gg路径的背景图片。也太任性化了吧。</h2><p>[/images/article/360-ad-block.jpg]</p>
+<h2 id="JSON2-js-同jquery冲突"><a href="#JSON2-js-同jquery冲突" class="headerlink" title="JSON2.js 同jquery冲突"></a>JSON2.js 同jquery冲突</h2><p><a href="http://huixisheng.github.io/lab/bug/json2-jquery-conflict.html">bug还原请在ie7下运行</a></p>
+<pre><code>// json2.js 对原型进行重写
+String.prototype.toJSON =
+Number.prototype.toJSON =
+Boolean.prototype.toJSON = function (key) {
+    return this.valueOf();
+};
+// 对boolean 进行for in会让 data[i] 获取原型上 toJSON的方法
+function test(){
+    return true;
+}
+// 这样的写法虽然不太可能，但是 http://github.com/davgothic/AjaxFileUpload 就是出现
+var data = test();
+for(var i in data){
+    $(&apos;input&apos;).attr(&apos;name&apos;, i).val(data[i]);
+}
+</code></pre><p>原因周六查了一天，基本找到问题所在，由于js的功底不扎实，无法更详细的解释问题</p>
+<h2 id="ie6下jsonp的callback不执行的bug"><a href="#ie6下jsonp的callback不执行的bug" class="headerlink" title="ie6下jsonp的callback不执行的bug"></a>ie6下jsonp的callback不执行的bug</h2><p>jsonp解决跨域问题是常用的方法。但是给a标签加了<code>href=&quot;javascript:;&quot;</code>和     <code>href=&quot;javascript:void(0);&quot;</code> 会不执行回调的神奇bug。</p>
+<p>我的解决思路：</p>
+<ol>
+<li>alert ajax的 success的返回的参数， ie6 不执行</li>
+<li>alert ajax的 error的参数</li>
+<li>通过 fiddler 抓包，看回调函数有没有返回。有返回，但是不回调。我了个去</li>
+<li>google ie6 jsonp 不执行回调</li>
+<li>去除a 标签的href，会执行回调</li>
+<li>但是有时候需要a的手型，在给绑定的事件上加<code>return false</code>。完美解决。</li>
+</ol>
+<h2 id="ajax服务器端接收数据时”-”会丢失"><a href="#ajax服务器端接收数据时”-”会丢失" class="headerlink" title="ajax服务器端接收数据时”+”会丢失"></a>ajax服务器端接收数据时”+”会丢失</h2><p>jQuery的ajax通过get的方法传参数，如果参数含有<code>+、&amp;</code>等，会导致内容丢失。<br>“+”号：JavaScript解析为字符串连接符，所以服务器端接收数据时”+”会丢失。<br>“&amp;”：JavaScript解析为变量连接符，所以服务器端接收数据时&amp;符号以后的数据都会丢失。<br>解决办法：ajax的data改为Object。以下是网上的方法：在传到服务端之前先将参数中的”+”和”&amp;”符号都编码一下</p>
+<pre><code>function filter(str){
+    str = str.replace(/\+/g,&quot;%2B&quot;);
+    str = str.replace(/\&amp;/g,&quot;%26&quot;);
+    return str;
+}
+</code></pre><h2 id="JavaScript编码转换"><a href="#JavaScript编码转换" class="headerlink" title="JavaScript编码转换"></a>JavaScript编码转换</h2><p>常用的函数:使用<code>unescape()</code>对<code>escape()</code>编码的字符串进行解码<code>decodeURIComponent()</code>函数可对<code>encodeURIComponent()</code>函数编码的 URI 进行解码。<code>decodeURI()</code>函数可对 <code>encodeURI()</code>函数编码过的URI 进行解码。<code>encodeURIComponent</code>会对/也进行十六进制转义，而<code>encodeURI</code>不会。</p>
+<p><code>escape</code>的一个应用就是将中文转成<code>unicode</code>编码<br>    escape(“悔惜晟”).replace(/%/g, ‘\‘)</p>
+<h2 id="CSS强制英文、中文换行与不换行"><a href="#CSS强制英文、中文换行与不换行" class="headerlink" title="CSS强制英文、中文换行与不换行"></a>CSS强制英文、中文换行与不换行</h2><p><code>white-space:nowrap;</code> 强制不换行，都起作用<br><code>white-space:pre-wrap;</code> 只对中文起作用，强制换行<br>项目中用来打散成串的英文</p>
+<p><strong> 参考 </strong><br><a href="http://zmingcx.com/css-compulsory-english-chinese-and-non-wrapping-line.html#" target="_blank" rel="external">CSS强制英文、中文换行与不换行</a></p>
+<h2 id="jQuery-ajaxFileUpload-js-插件-ie9-下bug"><a href="#jQuery-ajaxFileUpload-js-插件-ie9-下bug" class="headerlink" title="jQuery ajaxFileUpload.js 插件 ie9 下bug"></a>jQuery ajaxFileUpload.js 插件 ie9 下bug</h2><pre><code>if(window.ActiveXObject) {
+    if(jQuery.browser.version==&quot;9.0&quot;){
+        var io = document.createElement(&apos;iframe&apos;);
+        io.id = frameId;
+        io.name = frameId;
+    }else if(jQuery.browser.version==&quot;6.0&quot; || jQuery.browser.version==&quot;7.0&quot; ||
+            jQuery.browser.version==&quot;8.0&quot;){
+         var io = document.createElement(&apos;&lt;iframe id=&quot;&apos; + frameId + &apos;&quot; name=&quot;&apos; + frameId + &apos;&quot; /&gt;&apos;);
+         if(typeof uri== &apos;boolean&apos;){
+             io.src = &apos;javascript:false&apos;;
+         }
+         else if(typeof uri== &apos;string&apos;){
+             io.src = uri;
+         }
+    }
+}
+</code></pre><h2 id="textarea用jQ的html方法取不到值"><a href="#textarea用jQ的html方法取不到值" class="headerlink" title="textarea用jQ的html方法取不到值"></a>textarea用jQ的html方法取不到值</h2><p>使用val();但是百度之后又发现另一个问题，只是我在项目还没有碰到。<a href="http://www.cnblogs.com/long_/archive/2010/07/28/1787124.html" target="_blank" rel="external">JQuery TextArea的取值与赋值问题</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/css/" rel="tag">#css</a>
+          
+            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
+          
+            <a href="/tags/总结/" rel="tag">#总结</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/compatibility-collect/" rel="next" title="项目中浏览器兼容性解决方法收集">
+                <i class="fa fa-chevron-left"></i> 项目中浏览器兼容性解决方法收集
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/negative-margin-application/" rel="prev" title="负边距的应用的总结">
+                负边距的应用的总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="some-problem-in-project-diary/"
+           data-title="项目中碰到的问题随笔" data-url="http://huixisheng.github.io/some-problem-in-project-diary/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="huixisheng" />
+          <p class="site-author-name" itemprop="name">huixisheng</p>
+          <p class="site-description motion-element" itemprop="description">前端路漫漫兮，吾将上下而求索</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">26</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/huixisheng" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/huixisheng" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/huixisheng" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#同事的一段代码直接导致浏览器奔溃，找我解决。"><span class="nav-number">1.</span> <span class="nav-text">同事的一段代码直接导致浏览器奔溃，找我解决。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义的Grunt插件调用异步的方法报错"><span class="nav-number">2.</span> <span class="nav-text">自定义的Grunt插件调用异步的方法报错</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#论股堂项目碰到好几个重排一样的页面显示错位的bug"><span class="nav-number">3.</span> <span class="nav-text">论股堂项目碰到好几个重排一样的页面显示错位的bug</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对前端的文件添加了md5的时间戳如何保证后期的前端构建上传资源服务器是最新的文件"><span class="nav-number">4.</span> <span class="nav-text">对前端的文件添加了md5的时间戳如何保证后期的前端构建上传资源服务器是最新的文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后台返回的ajax接口多一个空行，导致ie下ajax执行了error"><span class="nav-number">5.</span> <span class="nav-text">后台返回的ajax接口多一个空行，导致ie下ajax执行了error</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#百度编辑器的展示慢"><span class="nav-number">6.</span> <span class="nav-text">百度编辑器的展示慢</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用了带-bom-的-utf-8-的编码文件在-nginx服务器-doctype-声明失效。"><span class="nav-number">7.</span> <span class="nav-text">使用了带 bom 的 utf-8 的编码文件在 nginx服务器 doctype 声明失效。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内网缺少脚本生成的问题导致报错"><span class="nav-number">8.</span> <span class="nav-text">内网缺少脚本生成的问题导致报错</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资讯评论的无法加载"><span class="nav-number">9.</span> <span class="nav-text">资讯评论的无法加载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用了-setInterval-在ajax的回调中导致火狐浏览器http请求并发数量达到最大值，页面不再发轮训请求"><span class="nav-number">10.</span> <span class="nav-text">使用了 setInterval 在ajax的回调中导致火狐浏览器http请求并发数量达到最大值，页面不再发轮训请求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UC浏览器在文本框聚焦的时候修改了hash，导致弹出的键盘有收回去"><span class="nav-number">11.</span> <span class="nav-text">UC浏览器在文本框聚焦的时候修改了hash，导致弹出的键盘有收回去</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#360安全卫士浏览器屏蔽了background-image的url中含有-ad、gg路径的背景图片。也太任性化了吧。"><span class="nav-number">12.</span> <span class="nav-text">360安全卫士浏览器屏蔽了background-image的url中含有 ad、gg路径的背景图片。也太任性化了吧。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSON2-js-同jquery冲突"><span class="nav-number">13.</span> <span class="nav-text">JSON2.js 同jquery冲突</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ie6下jsonp的callback不执行的bug"><span class="nav-number">14.</span> <span class="nav-text">ie6下jsonp的callback不执行的bug</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ajax服务器端接收数据时”-”会丢失"><span class="nav-number">15.</span> <span class="nav-text">ajax服务器端接收数据时”+”会丢失</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript编码转换"><span class="nav-number">16.</span> <span class="nav-text">JavaScript编码转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS强制英文、中文换行与不换行"><span class="nav-number">17.</span> <span class="nav-text">CSS强制英文、中文换行与不换行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jQuery-ajaxFileUpload-js-插件-ie9-下bug"><span class="nav-number">18.</span> <span class="nav-text">jQuery ajaxFileUpload.js 插件 ie9 下bug</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#textarea用jQ的html方法取不到值"><span class="nav-number">19.</span> <span class="nav-text">textarea用jQ的html方法取不到值</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">huixisheng</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"huixisheng"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = false;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title >= 0 || index_content >= 0 ){
+                                isMatch = true;
+								if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            } 
+							
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>

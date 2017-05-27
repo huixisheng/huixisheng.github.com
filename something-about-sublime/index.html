@@ -1,0 +1,831 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="SublimeText," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="前端开发者说" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="记录Sublime Text使用过程中的点点滴滴，虽然网上关于Sublime Text介绍的文章很多，但是使用过程多少有点自己的看法或者想法。在使用IDE的路上还有漫长的故事，VS2020 - Eclipse － Dreamware - Aptana - EditPlus - Notepad++ - Sublime Text - …。中间的过程中体验过webstorm，用下来感觉最棒的还是Subl">
+<meta name="keywords" content="SublimeText">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SublimeText插件介绍">
+<meta property="og:url" content="http://huixisheng.github.io/something-about-sublime/index.html">
+<meta property="og:site_name" content="前端开发者说">
+<meta property="og:description" content="记录Sublime Text使用过程中的点点滴滴，虽然网上关于Sublime Text介绍的文章很多，但是使用过程多少有点自己的看法或者想法。在使用IDE的路上还有漫长的故事，VS2020 - Eclipse － Dreamware - Aptana - EditPlus - Notepad++ - Sublime Text - …。中间的过程中体验过webstorm，用下来感觉最棒的还是Subl">
+<meta property="og:updated_time" content="2016-10-22T09:40:39.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SublimeText插件介绍">
+<meta name="twitter:description" content="记录Sublime Text使用过程中的点点滴滴，虽然网上关于Sublime Text介绍的文章很多，但是使用过程多少有点自己的看法或者想法。在使用IDE的路上还有漫长的故事，VS2020 - Eclipse － Dreamware - Aptana - EditPlus - Notepad++ - Sublime Text - …。中间的过程中体验过webstorm，用下来感觉最棒的还是Subl">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '9599',
+      author: '悔惜晟'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://huixisheng.github.io/something-about-sublime/"/>
+
+
+  <title> SublimeText插件介绍 | 前端开发者说 </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">前端开发者说</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">记录开发的故事</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                SublimeText插件介绍
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2013-08-10T22:32:38+08:00" content="2013-08-10">
+              2013-08-10
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/something-about-sublime/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="something-about-sublime/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>记录Sublime Text使用过程中的点点滴滴，虽然网上关于Sublime Text介绍的文章很多，但是使用过程多少有点自己的看法或者想法。在使用IDE的路上还有漫长的故事，VS2020 - Eclipse － Dreamware - Aptana - EditPlus - Notepad++ - Sublime Text - …。中间的过程中体验过webstorm，用下来感觉最棒的还是Sublime，高亮、缩进、插件、智能提示、代码片段等，Sublime顶呱呱，哗啦啦的。</p>
+<a id="more"></a>
+<p>目前<a href="http://www.sublimetext.com/3" target="_blank" rel="external">Sublime Text3</a>还是beta版本，打开的速度相对2有了很大的提升，但是不足的就是插件方面有很多不兼容。<a href="https://sublime.wbond.net/" target="_blank" rel="external">查看Subliem Text3兼容的插件</a>。感觉主要的那些插件ST3还是可以使用的。</p>
+<p>还有一点就是从win系统过渡到mac系统，有很多的操作习惯和快捷键不一样，稍微有点小不适应。</p>
+<h1 id="我在使用的插件"><a href="#我在使用的插件" class="headerlink" title="我在使用的插件"></a>我在使用的插件</h1><h2 id="Package-Control-不解释，神器"><a href="#Package-Control-不解释，神器" class="headerlink" title="Package Control(不解释，神器)"></a>Package Control(不解释，神器)</h2><p>Sublime Text2安装Package Control<br>使用<code>ctrl＋～</code>调出控制台</p>
+<pre><code>import urllib2,os; pf=&apos;Package Control.sublime-package&apos;; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),&apos;wb&apos;).write(urllib2.urlopen(&apos;http://sublime.wbond.net/&apos;+pf.replace(&apos; &apos;,&apos;%20&apos;)).read()); print &apos;Please restart Sublime Text to finish installation&apos;
+</code></pre><p>Sublime Text3如何安装Package Control<br>1、先下载<a href="https://github.com/wbond/sublime_package_control" target="_blank" rel="external">https://github.com/wbond/sublime_package_control</a>中的zip文件，解压后将文件夹名更改为 Package Control <strong>PS:注意大小写</strong>。</p>
+<p>2、下载插件分支<a href="https://github.com/wbond/sublime_package_control/tree/python3" target="_blank" rel="external">https://github.com/wbond/sublime_package_control/tree/python3</a>中的zip文件，解压后覆盖到 Package Control 文件中，完成此插件API函数的更新。</p>
+<p>3、将Package Control文件夹放入Sublime Text 3\Packages中，重启sublime text 3即可生效。</p>
+<p>2013/08/22<br>今天有同事说Sublime Text3也是可以用命令的。<a href="https://sublime.wbond.net/installation" target="_blank" rel="external">猛戳这里</a></p>
+<pre><code>import urllib.request,os; pf = &apos;Package Control.sublime-package&apos;; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), &apos;wb&apos;).write(urllib.request.urlopen( &apos;http://sublime.wbond.net/&apos; + pf.replace(&apos; &apos;,&apos;%20&apos;)).read())
+</code></pre><h2 id="Emment"><a href="#Emment" class="headerlink" title="Emment"></a>Emment</h2><p><a href="http://docs.emmet.io/" target="_blank" rel="external">Emment书写规则</a>。ZenCoding的升级版，提高开发效率。写HTML特别爽。</p>
+<h2 id="jsFormat"><a href="#jsFormat" class="headerlink" title="jsFormat"></a>jsFormat</h2><p>格式化JavaScript</p>
+<h2 id="Alignment"><a href="#Alignment" class="headerlink" title="Alignment"></a>Alignment</h2><p>可以根据 : 和 = 对齐，满足有代码洁癖同学的需求，快捷键是 <code>Command + Control + A</code></p>
+<h2 id="BracketHighlighter"><a href="#BracketHighlighter" class="headerlink" title="BracketHighlighter"></a>BracketHighlighter</h2><p>括号高亮</p>
+<h2 id="DocBlockr"><a href="#DocBlockr" class="headerlink" title="DocBlockr"></a>DocBlockr</h2><p>提供 JSDoc 和 PHPDoc 的自动生成功能</p>
+<h2 id="SidebarEnhancements"><a href="#SidebarEnhancements" class="headerlink" title="SidebarEnhancements"></a>SidebarEnhancements</h2><p>侧边栏增强</p>
+<h2 id="HtmlTidy"><a href="#HtmlTidy" class="headerlink" title="HtmlTidy"></a>HtmlTidy</h2><p>清理与排版你的HTML代码</p>
+<h2 id="ConvertToUTF8"><a href="#ConvertToUTF8" class="headerlink" title="ConvertToUTF8"></a>ConvertToUTF8</h2><p>ST2只支持utf8编码，该插件可以显示与编辑 GBK, BIG5, EUC-KR, EUC-JP, Shift_JIS 等编码的文件</p>
+<h2 id="HTML-CSS-JS-Prettify"><a href="#HTML-CSS-JS-Prettify" class="headerlink" title="HTML-CSS-JS Prettify"></a>HTML-CSS-JS Prettify</h2><p>格式化HTML、CSS、JS文件。这是我目前找到的最好的一个插件。推荐给同事，他们也说这个很不粗。</p>
+<h2 id="MarkdownEditing"><a href="#MarkdownEditing" class="headerlink" title="MarkdownEditing"></a><a href="https://github.com/SublimeText-Markdown/MarkdownEditing" target="_blank" rel="external">MarkdownEditing</a></h2><p>mardown 实时预览。</p>
+<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a><a href="https://github.com/kemayo/sublime-text-git" target="_blank" rel="external">Git</a></h2><h1 id="快捷键-CMD相当Win的Ctrl键"><a href="#快捷键-CMD相当Win的Ctrl键" class="headerlink" title="快捷键(CMD相当Win的Ctrl键)"></a>快捷键(CMD相当Win的Ctrl键)</h1><ol>
+<li>同时编辑多行 CMD+Shift+L</li>
+<li>向下同时选中下一个相同的文本 反复按 CMD+D</li>
+<li>跳到指定行 CMD+G 或者 CMD+P后输入字符”:”</li>
+<li>快速列出/跳转函数就是 CMD+R</li>
+<li>可以快速跳转到当前项目中的任意文件，可进行关键词匹配 CMD+P</li>
+<li>补充中</li>
+</ol>
+<h1 id="Sublime-配置"><a href="#Sublime-配置" class="headerlink" title="Sublime 配置"></a>Sublime 配置</h1><h2 id="创建可复用的代码片段"><a href="#创建可复用的代码片段" class="headerlink" title="创建可复用的代码片段"></a>创建可复用的代码片段</h2><p>菜单上点击Tools -&gt; New Snippet，会新建一个xml文件页<br>    content 里面就是代码模版：${序号：默认值} ，序号相同的地方光标会同时停在那可以多处同时编辑。序号大小就是tabindex。在实际使用代码的时候，可以使用tab切换光标位置。<br>    tabTrigger是指输入该字符串后tab就是在光标插入content中的内容。<br>    scope是指在何种文件类型中使用</p>
+<h2 id="鼠标双击选择－、-开头的变量名"><a href="#鼠标双击选择－、-开头的变量名" class="headerlink" title="鼠标双击选择－、$开头的变量名"></a>鼠标双击选择－、$开头的变量名</h2><p>添加用户自定义配置<br>    <code>&quot;word_separators&quot;: &quot;./\\()\&quot;&#39;:,.;&lt;&gt;~!@#%^&amp;*|+=[]{}</code>~?”`</p>
+<h2 id="怎样从直接Github的repository安装Sublime-Text插件"><a href="#怎样从直接Github的repository安装Sublime-Text插件" class="headerlink" title="怎样从直接Github的repository安装Sublime Text插件"></a>怎样从直接Github的repository安装Sublime Text插件</h2><blockquote>
+<p>首先，我们假设你在用Sublime Text和Package Control插件。 按Ctrl + Shift + P（Mac下是Shift + CMD + P）进命令选择窗口，搜索”repository”,选择”add repository” 直接输入一个Sublime Text的Github地址，如 <a href="https://github.com/ttscoff/MarkdownEditing" target="_blank" rel="external">https://github.com/ttscoff/MarkdownEditing</a> 载入完成后就可以安装了，再按Ctrl + Shift + P（Mac下是Shift + CMD + P）进命令选择窗口，选择”Install Package”,现在就可以安装刚刚添加的repository里面的插件了，按本文的例子是”MarkdownEditing”。<a href="http://www.macdrifter.com/2012/08/install-sublime-packages-from-github.html" target="_blank" rel="external">http://www.macdrifter.com/2012/08/install-sublime-packages-from-github.html</a></p>
+</blockquote>
+<p>2014-11-16 12:33:46 更新</p>
+<p>sublime.wbond.net无法访问</p>
+<p><a href="https://sublime.wbond.net/" target="_blank" rel="external">Sublime Text package manager</a>被强了。<a href="http://weibo.com/1219344334/BuJwqBH1H?type=comment" target="_blank" rel="external">详见</a></p>
+<pre><code>50.116.34.243 sublime.wbond.net
+</code></pre><h1 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h1><h2 id="感谢以下网站"><a href="#感谢以下网站" class="headerlink" title="感谢以下网站"></a>感谢以下网站</h2><ul>
+<li><a href="http://www.veryued.org/2012/11/sublime%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6%E6%94%B6%E9%9B%86%E8%B4%B4/" target="_blank" rel="external">Sublime常用插件收集贴</a></li>
+<li><a href="http://weibo.com/finscn" target="_blank" rel="external">@大城小胖</a><a href="http://v.youku.com/v_show/id_XMzU5NzQ5ODgw.html" target="_blank" rel="external">sublime text2 简介</a></li>
+<li><a href="http://www.iplaysoft.com/sublimetext.html/comment-page-1" target="_blank" rel="external">Sublime Text 2 - 性感无比的代码编辑器！程序员必备神器！跨平台支持Win/Mac/Linux</a></li>
+<li><a href="http://www.blogjava.net/Hafeyang/archive/2012/08/17/how_to_create_code_snippet_in_subline_text_2.html" target="_blank" rel="external">sublime text 2学习(二):创建可复用的代码片段</a></li>
+<li><a href="http://hi.baidu.com/l245319872/item/afbb9734304981f5de222197" target="_blank" rel="external">Preferences.sublime-settings设置</a></li>
+<li><a href="http://ux.etao.com/posts/541" target="_blank" rel="external">sublime插件开发</a></li>
+<li><a href="http://www.sublimetext.com/" target="_blank" rel="external">Sublime Text</a></li>
+<li><a href="http://timewilltell.me/post/manually-add-sublime-package-repository" target="_blank" rel="external">怎样从直接Github的repository安装Sublime Text插件</a></li>
+<li><a href="http://dengo.org/archives/594" target="_blank" rel="external">Sublime text 3如何安装package control办法</a></li>
+<li><a href="http://ipestov.com/the-best-plugins-for-sublime-text/" target="_blank" rel="external">很全面和实用的Sublime 插件列表</a></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/SublimeText/" rel="tag">#SublimeText</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/negative-margin-application/" rel="next" title="负边距的应用的总结">
+                <i class="fa fa-chevron-left"></i> 负边距的应用的总结
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/jquery-plugin-develop/" rel="prev" title="jQuery 插件开发">
+                jQuery 插件开发 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="something-about-sublime/"
+           data-title="SublimeText插件介绍" data-url="http://huixisheng.github.io/something-about-sublime/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="huixisheng" />
+          <p class="site-author-name" itemprop="name">huixisheng</p>
+          <p class="site-description motion-element" itemprop="description">前端路漫漫兮，吾将上下而求索</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">26</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/huixisheng" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/huixisheng" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/huixisheng" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#我在使用的插件"><span class="nav-number">1.</span> <span class="nav-text">我在使用的插件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Package-Control-不解释，神器"><span class="nav-number">1.1.</span> <span class="nav-text">Package Control(不解释，神器)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Emment"><span class="nav-number">1.2.</span> <span class="nav-text">Emment</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jsFormat"><span class="nav-number">1.3.</span> <span class="nav-text">jsFormat</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Alignment"><span class="nav-number">1.4.</span> <span class="nav-text">Alignment</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BracketHighlighter"><span class="nav-number">1.5.</span> <span class="nav-text">BracketHighlighter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DocBlockr"><span class="nav-number">1.6.</span> <span class="nav-text">DocBlockr</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SidebarEnhancements"><span class="nav-number">1.7.</span> <span class="nav-text">SidebarEnhancements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HtmlTidy"><span class="nav-number">1.8.</span> <span class="nav-text">HtmlTidy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ConvertToUTF8"><span class="nav-number">1.9.</span> <span class="nav-text">ConvertToUTF8</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML-CSS-JS-Prettify"><span class="nav-number">1.10.</span> <span class="nav-text">HTML-CSS-JS Prettify</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MarkdownEditing"><span class="nav-number">1.11.</span> <span class="nav-text">MarkdownEditing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git"><span class="nav-number">1.12.</span> <span class="nav-text">Git</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#快捷键-CMD相当Win的Ctrl键"><span class="nav-number">2.</span> <span class="nav-text">快捷键(CMD相当Win的Ctrl键)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Sublime-配置"><span class="nav-number">3.</span> <span class="nav-text">Sublime 配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建可复用的代码片段"><span class="nav-number">3.1.</span> <span class="nav-text">创建可复用的代码片段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#鼠标双击选择－、-开头的变量名"><span class="nav-number">3.2.</span> <span class="nav-text">鼠标双击选择－、$开头的变量名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#怎样从直接Github的repository安装Sublime-Text插件"><span class="nav-number">3.3.</span> <span class="nav-text">怎样从直接Github的repository安装Sublime Text插件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#感谢"><span class="nav-number">4.</span> <span class="nav-text">感谢</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#感谢以下网站"><span class="nav-number">4.1.</span> <span class="nav-text">感谢以下网站</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">huixisheng</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"huixisheng"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = false;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title >= 0 || index_content >= 0 ){
+                                isMatch = true;
+								if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            } 
+							
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>

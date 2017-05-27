@@ -1,0 +1,879 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="前端开发者说" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="前端开发者说" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="兼容性 项目总结 webapck sticky Vue   近期做的项目零零散散的问题的总结。主要是使用webpack,vue碰到的问题。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="项目碰到的问题整理">
+<meta property="og:url" content="http://huixisheng.github.io/webapp-tips/index.html">
+<meta property="og:site_name" content="前端开发者说">
+<meta property="og:description" content="兼容性 项目总结 webapck sticky Vue   近期做的项目零零散散的问题的总结。主要是使用webpack,vue碰到的问题。">
+<meta property="og:updated_time" content="2017-03-13T06:42:21.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="项目碰到的问题整理">
+<meta name="twitter:description" content="兼容性 项目总结 webapck sticky Vue   近期做的项目零零散散的问题的总结。主要是使用webpack,vue碰到的问题。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '9599',
+      author: '悔惜晟'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://huixisheng.github.io/webapp-tips/"/>
+
+
+  <title> 项目碰到的问题整理 | 前端开发者说 </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">前端开发者说</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">记录开发的故事</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                项目碰到的问题整理
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-12-04T09:33:15+08:00" content="2016-12-04">
+              2016-12-04
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/webapp-tips/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="webapp-tips/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ul>
+<li>兼容性</li>
+<li>项目总结</li>
+<li>webapck</li>
+<li>sticky</li>
+<li>Vue</li>
+</ul>
+<hr>
+<p>近期做的项目零零散散的问题的总结。主要是使用webpack,vue碰到的问题。</p>
+<a id="more"></a>
+<h2 id="条件判断优化"><a href="#条件判断优化" class="headerlink" title="条件判断优化"></a>条件判断优化</h2><p>当逻辑一复杂，下面的代码就会显得很懊糟，难以维护。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;button class=&quot;jfbtn jfbtn-disable jfbtn-block&quot; v-show=&quot;detail.btn_info.type == &apos;disable&apos;&quot; v-text=&quot;detail.btn_info.text&quot;&gt;&lt;/button&gt;</div><div class="line">&lt;button class=&quot;jfbtn jfbtn-disable jfbtn-block&quot; @click=&quot;btnAction&quot; v-show=&quot;detail.btn_info.type == &apos;alertable&apos;&quot; v-text=&quot;detail.btn_info.text&quot;&gt;&lt;/button&gt;</div><div class="line">&lt;button class=&quot;jfbtn jfbtn-primary jfbtn-block&quot; @click=&quot;exchangeBtn&quot; v-show=&quot;detail.btn_info.type == &apos;clickable&apos;&quot; v-text=&quot;detail.btn_info.text&quot;&gt;&lt;/button&gt;</div><div class="line">&lt;button node-type=&quot;countdown-btn&quot; class=&quot;jfbtn jfbtn-disable jfbtn-block&quot; v-show=&quot;detail.btn_info.type == &apos;countdown&apos;&quot;&gt;&lt;/button&gt;</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;button @click=&quot;btnClick&quot; :class=&quot;btnClass&quot; v-text=&quot;btn_info.text&quot;&gt;&lt;/button&gt;</div></pre></td></tr></table></figure>
+<p>绑定class配合计算属性使得代码逻辑很清新。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">computed: &#123;</div><div class="line">  btnClass () &#123;</div><div class="line">    return &#123;</div><div class="line">      &apos;jfbtn&apos;: true,</div><div class="line">      &apos;jfbtn-block&apos;: true,</div><div class="line">      &apos;jfbtn-disable&apos;: this.showBtnDisableClass,</div><div class="line">      &apos;jfbtn-primary&apos;: this.showBtnPrimaryClass</div><div class="line">    &#125;;</div><div class="line">  &#125;,</div><div class="line">  showBtnDisableClass () &#123;</div><div class="line">    const type = this.btn_info.type;</div><div class="line">    if (type === &apos;disable&apos; || type === &apos;alertable&apos;</div><div class="line">      || type === &apos;countdown&apos; || type === &apos;auth_check&apos;) &#123;</div><div class="line">      return true;</div><div class="line">    &#125;</div><div class="line">    return false;</div><div class="line">  &#125;,</div><div class="line">  showBtnPrimaryClass () &#123;</div><div class="line">    const type = this.btn_info.type;</div><div class="line">    return type === &apos;clickable&apos;;</div><div class="line">  &#125;</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
+<h2 id="vue组件-mount报错"><a href="#vue组件-mount报错" class="headerlink" title=".vue组件$mount报错"></a>.vue组件$mount报错</h2><p>按如下方式挂载组件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">import Vue from &apos;vue&apos;;</div><div class="line">import Detail from &apos;./views/detail&apos;;</div><div class="line">import &apos;./common&apos;;</div><div class="line">const cDetail = Vue.extend(Detail);</div><div class="line">new cDetail().$mount(&apos;#app&apos;);</div></pre></td></tr></table></figure></p>
+<p>报错<code>Cannot read property &#39;tagName&#39; of null</code>。跟踪代码进行调试，并没有找到问题所在。挂载组件的方式不对，还是打包配置不对，导致生成的组件有问题？尝试不同版本的<code>Vue</code>写简单的组件去挂载并没有什么问题。<code>cDetail</code>配合<code>vue-router</code>使用也是没有问题的。单独挂载就是会报错。后面发现<code>.vue</code>文件多个结构没有容器包含引起的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">&lt;div class=&quot;x1&quot;&gt;内容1&lt;/div&gt;</div><div class="line">&lt;div class=&quot;x2&quot;&gt;内容2&lt;/div&gt;</div><div class="line">&lt;/template&gt;</div><div class="line">&lt;script&gt;</div><div class="line">  ...</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<p>修改如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">&lt;div&gt;</div><div class="line">  &lt;div class=&quot;x1&quot;&gt;内容1&lt;/div&gt;</div><div class="line">  &lt;div class=&quot;x2&quot;&gt;内容2&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;/template&gt;</div><div class="line">&lt;script&gt;</div><div class="line">  ...</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<ul>
+<li><a href="https://github.com/vuejs/vue/issues/3212" target="_blank" rel="external">https://github.com/vuejs/vue/issues/3212</a></li>
+</ul>
+<h2 id="使用vue-router导致app里面的网页title无法修改"><a href="#使用vue-router导致app里面的网页title无法修改" class="headerlink" title="使用vue-router导致app里面的网页title无法修改"></a>使用vue-router导致app里面的网页title无法修改</h2><p>ios微信6.3.31测试通过,但是在美妆心得app中不行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">route: &#123;</div><div class="line">  data () &#123;</div><div class="line">    // document.title = &apos;往期秒杀&apos;;</div><div class="line">  &#125;</div><div class="line">&#125;,</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">const iframeLoad = function (src) &#123;</div><div class="line">  const iframe = document.createElement(&apos;iframe&apos;);</div><div class="line">  iframe.style.display = &apos;none&apos;;</div><div class="line">  iframe.src = src;</div><div class="line">  document.body.appendChild(iframe);</div><div class="line">  iframe.addEventListener(&apos;load&apos;, function () &#123;</div><div class="line">    setTimeout(function () &#123;</div><div class="line">      iframe.remove();</div><div class="line">    &#125;, 0);</div><div class="line">  &#125;);</div><div class="line">&#125;;</div><div class="line">router.afterEach(function (transition) &#123;</div><div class="line">  document.title = transition.to.title || &apos;积分商城&apos;;</div><div class="line">  // https://segmentfault.com/a/1190000006712234?hmsr=toutiao.io&amp;utm_medium=toutiao.io&amp;utm_source=toutiao.io</div><div class="line">  if (F.UA.cosmeapp) &#123;</div><div class="line">    iframeLoad(&apos;/favicon.ico&apos;);</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>参考</p>
+<ul>
+<li><a href="https://github.com/miaolz123/vue-helmet/issues/3" target="_blank" rel="external">https://github.com/miaolz123/vue-helmet/issues/3</a></li>
+<li><a href="http://silverd.cn/2016/05/14/vue-first-project.html" target="_blank" rel="external">http://silverd.cn/2016/05/14/vue-first-project.html</a></li>
+<li><a href="https://segmentfault.com/a/1190000006712234?hmsr=toutiao.io&amp;utm_medium=toutiao.io&amp;utm_source=toutiao.io" target="_blank" rel="external">https://segmentfault.com/a/1190000006712234?hmsr=toutiao.io&amp;utm_medium=toutiao.io&amp;utm_source=toutiao.io</a></li>
+<li><a href="https://gist.github.com/wszgxa/48eefb02650ea011ab28a116643890a9" target="_blank" rel="external">https://gist.github.com/wszgxa/48eefb02650ea011ab28a116643890a9</a></li>
+<li><a href="https://segmentfault.com/a/1190000007387556" target="_blank" rel="external">https://segmentfault.com/a/1190000007387556</a></li>
+</ul>
+<h2 id="express配置post请求接口"><a href="#express配置post请求接口" class="headerlink" title="express配置post请求接口"></a>express配置post请求接口</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">app.post(&apos;/mock/new-task-price.json&apos;, function (req, res) &#123;</div><div class="line">  res.send(&apos;&#123;&quot;status&quot;: &quot;1&quot;,&quot;msg&quot;: &quot;成功领取积分奖励, 请在积分明细中查看哦!&quot;&#125;&apos;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h2 id="webpack添加模拟请求"><a href="#webpack添加模拟请求" class="headerlink" title="webpack添加模拟请求"></a>webpack添加模拟请求</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">proxyTable: &#123;</div><div class="line">  &apos;/api/credit/index&apos;: &#123;</div><div class="line">    target: host + &apos;/mock/api_credit_index.json&apos;,</div><div class="line">    changeOrigin: true,</div><div class="line">    pathRewrite: &#123;</div><div class="line">      &apos;^/api/credit/index&apos;: &apos;&apos;</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="webpack入口页面设置标题"><a href="#webpack入口页面设置标题" class="headerlink" title="webpack入口页面设置标题"></a>webpack入口页面设置标题</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">  &lt;head&gt;</div><div class="line">    &lt;title&gt;&lt;%= htmlWebpackPlugin.options.title %&gt;&lt;/title&gt;</div><div class="line">  &lt;/head&gt;</div><div class="line">  &lt;body&gt;</div><div class="line">  &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">new HtmlWebpackPlugin(&#123;</div><div class="line">  filename: &apos;index.html&apos;,</div><div class="line">  // 必须是.ejs结尾的文件，.html的文件不会解析。或者模板的loader</div><div class="line">  template: &apos;index.ejs&apos;,</div><div class="line">  title: &apos;积分商城&apos;,</div><div class="line">&#125;),</div></pre></td></tr></table></figure>
+<ul>
+<li><a href="https://github.com/ampedandwired/html-webpack-plugin/blob/master/docs/template-option.md" target="_blank" rel="external">https://github.com/ampedandwired/html-webpack-plugin/blob/master/docs/template-option.md</a></li>
+<li><a href="http://www.html-js.com/article/shiyongzhishang-webpackduoyeyingyongjiagouxilieshierliyongwebpackshengchengHTMLputongwangyeyemianmoban%203784" target="_blank" rel="external">webpack多页应用架构系列（十二）：利用webpack生成HTML普通网页&amp;页面模板</a></li>
+</ul>
+<h2 id="webpack多页面入口配置"><a href="#webpack多页面入口配置" class="headerlink" title="webpack多页面入口配置"></a>webpack多页面入口配置</h2><p>添加多个enter<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">entry: &#123;</div><div class="line">  index: &apos;./src/index.js&apos;,</div><div class="line">  detail: &apos;./src/detail.js&apos;</div><div class="line">&#125;,</div></pre></td></tr></table></figure></p>
+<p>配置多个<code>HtmlWebpackPlugin</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">new HtmlWebpackPlugin(&#123;</div><div class="line">  filename: &apos;index.html&apos;,</div><div class="line">  template: &apos;index.ejs&apos;,</div><div class="line">  inject: true,</div><div class="line">  title: &apos;积分商城&apos;,</div><div class="line">  minify: &#123;</div><div class="line">    removeComments: true,</div><div class="line">    collapseWhitespace: true</div><div class="line">  &#125;,</div><div class="line">  chunks: [&apos;index&apos;]</div><div class="line">&#125;),</div><div class="line">new HtmlWebpackPlugin(&#123;</div><div class="line">  filename: &apos;detail.html&apos;,</div><div class="line">  template: &apos;index.ejs&apos;,</div><div class="line">  inject: true,</div><div class="line">  title: &apos;商品详情&apos;,</div><div class="line">  minify: &#123;</div><div class="line">    removeComments: false,</div><div class="line">    collapseWhitespace: false</div><div class="line">  &#125;,</div><div class="line">  chunks: [&apos;detail&apos;]</div><div class="line">&#125;),</div></pre></td></tr></table></figure></p>
+<p>入口文件和模板文件可以采用遍历的目录，这样就不要单独一个个配置。</p>
+<p>多页面配置扩展阅读</p>
+<ul>
+<li><a href="https://github.com/lpreterite/multiple-page-vue-webpack-example" target="_blank" rel="external">https://github.com/lpreterite/multiple-page-vue-webpack-example</a></li>
+<li><a href="https://github.com/yaoyao1987/vue-cli-multipage" target="_blank" rel="external">https://github.com/yaoyao1987/vue-cli-multipage</a></li>
+<li><a href="https://github.com/cnu4/Webpack-Vue-MultiplePage" target="_blank" rel="external">https://github.com/cnu4/Webpack-Vue-MultiplePage</a></li>
+<li><a href="http://xjinjin.net/2016/08/20/webpack-multiple-page-static/" target="_blank" rel="external">http://xjinjin.net/2016/08/20/webpack-multiple-page-static/</a></li>
+</ul>
+<h2 id="position-sticky失效"><a href="#position-sticky失效" class="headerlink" title="position: sticky失效"></a><code>position: sticky</code>失效</h2><p>原因是<code>html, body{ overflow: auto }</code></p>
+<p>最初是想实现滚动某个位置的时候导航滚定在顶部。给相关的滚动元素绑定<code>scroll</code>事件快速滑动的时候存在细微的抖动效果。尝试了<code>touchmove touchend</code>等事件、<code>_.throttle</code>函数节流，结果还是不顺畅。发现<a href="https://h5.m.taobao.com/app/tjb/www/index3.html?locate=icon-8&amp;spm=a215s.7406091.icons.8&amp;scm=2027.1.2.1004" target="_blank" rel="external">淘宝的淘金币页面</a>却是丝般丝般顺滑。导致是用了什么黑科技，看下源码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">var n = $(window)</div><div class="line">  , i = function o(t) &#123;</div><div class="line">    var e = $(t.el)</div><div class="line">      , i = this;</div><div class="line">    i.top = t.top || 0;</div><div class="line">    var o = &quot;static&quot;;</div><div class="line">    if (e.css(&#123;</div><div class="line">        position: &quot;-webkit-sticky&quot;,</div><div class="line">        top: i.top + &quot;px&quot;,</div><div class="line">        zIndex: 1e3</div><div class="line">    &#125;),</div><div class="line">    &quot;boolean&quot; != typeof t.isStatic || t.isStatic || (o = e.css(&quot;position&quot;)),</div><div class="line">    &quot;string&quot; == typeof t.addStickyClass &amp;&amp; (i.addStickyClass = t.addStickyClass),</div><div class="line">    e.length &gt; 0 &amp;&amp; e.css(&quot;position&quot;).indexOf(&quot;sticky&quot;) == -1) &#123;</div><div class="line">        var r, a;</div><div class="line">        !function() &#123;</div><div class="line">            var t = function s() &#123;</div><div class="line">                n.scrollTop() &gt; i.ScrollTop ? (r.show(),</div><div class="line">                i.addStickyClass &amp;&amp; e.addClass(i.addStickyClass),</div><div class="line">                e.css(&quot;position&quot;, &quot;fixed&quot;)) : (r.hide(),</div><div class="line">                i.addStickyClass &amp;&amp; e.removeClass(i.addStickyClass),</div><div class="line">                e.css(&quot;position&quot;, o))</div><div class="line">            &#125;;</div><div class="line">            i.nav = e,</div><div class="line">            i.setPlaceHolder(),</div><div class="line">            r = i.placeHolder,</div><div class="line">            i.ScrollTop = e.offset().top,</div><div class="line">            setTimeout(function() &#123;</div><div class="line">                i.ScrollTop = e.offset().top - i.top</div><div class="line">            &#125;, 10),</div><div class="line">            a = window.requestAnimationFrame || window.webkitRequestAnimationFrame || function(t) &#123;</div><div class="line">                setTimeout(t, 1 / 60 * 1e3)</div><div class="line">            &#125;</div><div class="line">            ,</div><div class="line">            n.on(&quot;scroll&quot;, function() &#123;</div><div class="line">                a(t)</div><div class="line">            &#125;)</div><div class="line">        &#125;()</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>原来顺滑用的是<code>sticky</code>。然而由于项目之前用的是<code>html,body{overflow: hidden;}</code>,改成了<code>html, body{ overflow: auto }</code>。结果我修改代码用上<code>sticky</code>就悲剧了。</p>
+<blockquote>
+<p>已知的几个问题，外层overflow设置成auto,scroll,hidden会失效。 -<a href="http://wenbinzhou.lofter.com/post/65a3d_6f55339" target="_blank" rel="external">http://wenbinzhou.lofter.com/post/65a3d_6f55339</a></p>
+</blockquote>
+<h3 id="javascript检测是否支持"><a href="#javascript检测是否支持" class="headerlink" title="javascript检测是否支持"></a>javascript检测是否支持</h3><ul>
+<li>来自<a href="https://segmentfault.com/a/1190000007183209?_ea=1288008" target="_blank" rel="external">https://segmentfault.com/a/1190000007183209?_ea=1288008</a><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">if (CSS.supports(&quot;position&quot;, &quot;sticky&quot;) || CSS.supports(&quot;position&quot;, &quot;-webkit-sticky&quot;)) &#123;</div><div class="line">    // 支持 sticky</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>或者</p>
+<ul>
+<li>来自 <a href="http://efe.baidu.com/blog/position-sticky/" target="_blank" rel="external">http://efe.baidu.com/blog/position-sticky/</a><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">function isSupportSticky() &#123;</div><div class="line">    var prefixTestList = [&apos;&apos;, &apos;-webkit-&apos;, &apos;-ms-&apos;, &apos;-moz-&apos;, &apos;-o-&apos;];</div><div class="line">    var stickyText = &apos;&apos;;</div><div class="line">    for (var i = 0; i &lt; prefixTestList.length; i++ ) &#123;</div><div class="line">        stickyText += &apos;position:&apos; + prefixTestList[i] + &apos;sticky;&apos;;</div><div class="line">    &#125;</div><div class="line">    // 创建一个dom来检查</div><div class="line">    var div = document.createElement(&apos;div&apos;);</div><div class="line">    var body = document.body;</div><div class="line">    div.style.cssText = &apos;display:none;&apos; + stickyText;</div><div class="line">    body.appendChild(div);</div><div class="line">    var isSupport = /sticky/i.test(window.getComputedStyle(div).position);</div><div class="line">    body.removeChild(div);</div><div class="line">    div = null;</div><div class="line">    return isSupport;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="绑定scroll事件在ios设备不顺畅原因"><a href="#绑定scroll事件在ios设备不顺畅原因" class="headerlink" title="绑定scroll事件在ios设备不顺畅原因"></a>绑定scroll事件在ios设备不顺畅原因</h3><ul>
+<li>来自 <a href="http://feg.netease.com/archives/377.html" target="_blank" rel="external">http://feg.netease.com/archives/377.html</a><blockquote>
+<p>上面这种方法在chrome模拟手机浏览器的表现很好，但是在移动端浏览器上粘顶的效果就没有那么平滑，尤其是在ios设备上，ios下的浏览器会在页面滚动的时候，暂停所有js的执行，直到滚动停止才会继续去执行js（注意暂停了所有js的执行，所以考虑用setTimeout或setInterval也是没有用的）。所以页面滚动时，scroll事件在iOS的浏览器下并不会持续被触发，而是在页面滚动停止后，才会去触发一次scroll事件。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="sticky满足以下条件才能生效"><a href="#sticky满足以下条件才能生效" class="headerlink" title="sticky满足以下条件才能生效"></a>sticky满足以下条件才能生效</h3><ul>
+<li>来自 <a href="http://www.ghugo.com/position-sticky-how-to-use/" target="_blank" rel="external">http://www.ghugo.com/position-sticky-how-to-use/</a><blockquote>
+<p>1、具有sticky属性的元素，其父级高度必须大于sticky元素的高度。<br>2、sticky元素的底部，不能和父级底部重叠。（这条不好表述，文后详细说明）<br>3、sticky元素的所有父级不能含有overflow:hidden 和 overflow:auto 属性<br>4、必须具有top，或 bottom 属性。<br>同时要注意，sticky元素仅在他父级容器内有效，超出容器范围则不再生效了。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="相关sticky插件"><a href="#相关sticky插件" class="headerlink" title="相关sticky插件"></a>相关<code>sticky</code>插件</h3><ul>
+<li>aralejs/sticky</li>
+<li>garand/sticky</li>
+<li>matthewp/position–sticky-</li>
+<li>filamentgroup/fixed-sticky</li>
+<li><a href="http://stickyjs.com/" target="_blank" rel="external">http://stickyjs.com/</a></li>
+<li><a href="http://kissygalleryteam.github.io/sticky/doc/guide/index.html" target="_blank" rel="external">http://kissygalleryteam.github.io/sticky/doc/guide/index.html</a><br><a href="https://github.com/search?utf8=%E2%9C%93&amp;q=position+sticky&amp;type=Repositories&amp;ref=searchresults" target="_blank" rel="external">https://github.com/search?utf8=%E2%9C%93&amp;q=position+sticky&amp;type=Repositories&amp;ref=searchresults</a></li>
+</ul>
+<h2 id="iphone屏幕录制如何导出gif"><a href="#iphone屏幕录制如何导出gif" class="headerlink" title="iphone屏幕录制如何导出gif"></a>iphone屏幕录制如何导出gif</h2><p>用Mac自带的<code>QuickTime Player</code>录制视频。用软件<code>GIF Brewery</code>导出gif。写了篇简单的<a href="https://huixisheng.github.io/mac-iphone-screen-record/">]总结文章</a></p>
+<h2 id="键盘弹起引起input-fixed定位失效"><a href="#键盘弹起引起input-fixed定位失效" class="headerlink" title="键盘弹起引起input fixed定位失效"></a>键盘弹起引起input fixed定位失效</h2><p>flex方法测试</p>
+<p>测试结果:ios10.2 在微信中，safari切换为讯飞输入法有问题，输入框会被键盘遮挡</p>
+<blockquote>
+<p>在iOS移动设备下当虚拟键盘打开打开上会导致页面内的Fixed元素出现渲染异常。有几种可以绕过这个bug的方法：为Fixed元素设置 position:absolute; 通过设置定时器focus input元素。 -<a href="https://www.dragonvally.com/2016/04/09/ios-fixed-input-bug/" target="_blank" rel="external">https://www.dragonvally.com/2016/04/09/ios-fixed-input-bug/</a>  -<a href="http://getbootstrap.com/getting-started/#virtual-keyboards" target="_blank" rel="external">http://getbootstrap.com/getting-started/#virtual-keyboards</a></p>
+</blockquote>
+<p>目前想到解决办法:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">setTimeout(function()&#123;</div><div class="line">    var $doc = $(document);</div><div class="line">    var height = $doc.height();</div><div class="line">    $doc.scrollTop(height)</div><div class="line">&#125;, 300);</div></pre></td></tr></table></figure>
+<p><a href="https://huixisheng.github.io/lab/demos/fixed-input/flex-fixed-input.html">demo地址-flex实现input fixed</a></p>
+<h2 id="border-none在ie7无效"><a href="#border-none在ie7无效" class="headerlink" title="border:none在ie7无效"></a><code>border:none</code>在ie7无效</h2><p>好久没有处理过ie的兼容问题了，在做公司官网的时候发现<code>border:none</code>在ie7无效</p>
+<p>以下内容引用在<a href="http://blog.sina.com.cn/s/blog_5ed90bcd0101l4kc.html" target="_blank" rel="external">ie6 ie7中input标签隐藏边框(border:none与border：0的异同) </a></p>
+<blockquote>
+<p>border:none;与border:0;的区别体现有两点：一是理论上的性能差异二是浏览器兼容性的差异。<br> 1.性能差异<br>【border:0;】把border设为“0”像素虽然在页面上看不见，但按border默认值理解，浏览器依然对border-width/border-color进行了渲染，即已经占用了内存值。<br>【border:none;】把border设为“none”即没有，浏览器解析“none”时将不作出渲染动作，即不会消耗内存值。<br> 2.兼容性差异<br>【border:none;】当border为“none”时对IE6/7无效边框依然存在<br>【border:0;】当border为“0”时，所有浏览器都一致把边框隐藏<br> 总结：</p>
+<ol>
+<li>对比border:0;与border:none;之间的区别在于有渲染和没渲染，感觉他们和display:none;与visibility:hidden;的关系类似，而对于border属性的渲染性能对比暂时没找测试的方法，虽然认为他们存在渲染性能上的差异但也只能说是理论上。<ol>
+<li>如何让border:none;实现全兼容？只需要在同一选择符上添加背景属性即可<br>3.对于border:0;与border:none;个人更向于使用,border:none;，因为border:none;毕竟在性能消耗没有争议，而且兼容性可用背景属性解决不足以成为障碍。</li>
+</ol>
+</li>
+</ol>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/mac-iphone-screen-record/" rel="next" title="iphone屏幕录制导出gif">
+                <i class="fa fa-chevron-left"></i> iphone屏幕录制导出gif
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/phpstorm/" rel="prev" title="phpstorm相关配置">
+                phpstorm相关配置 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="webapp-tips/"
+           data-title="项目碰到的问题整理" data-url="http://huixisheng.github.io/webapp-tips/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="huixisheng" />
+          <p class="site-author-name" itemprop="name">huixisheng</p>
+          <p class="site-description motion-element" itemprop="description">前端路漫漫兮，吾将上下而求索</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">26</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/huixisheng" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/huixisheng" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/huixisheng" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#条件判断优化"><span class="nav-number">1.</span> <span class="nav-text">条件判断优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue组件-mount报错"><span class="nav-number">2.</span> <span class="nav-text">.vue组件$mount报错</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用vue-router导致app里面的网页title无法修改"><span class="nav-number">3.</span> <span class="nav-text">使用vue-router导致app里面的网页title无法修改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#express配置post请求接口"><span class="nav-number">4.</span> <span class="nav-text">express配置post请求接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#webpack添加模拟请求"><span class="nav-number">5.</span> <span class="nav-text">webpack添加模拟请求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#webpack入口页面设置标题"><span class="nav-number">6.</span> <span class="nav-text">webpack入口页面设置标题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#webpack多页面入口配置"><span class="nav-number">7.</span> <span class="nav-text">webpack多页面入口配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#position-sticky失效"><span class="nav-number">8.</span> <span class="nav-text">position: sticky失效</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#javascript检测是否支持"><span class="nav-number">8.1.</span> <span class="nav-text">javascript检测是否支持</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绑定scroll事件在ios设备不顺畅原因"><span class="nav-number">8.2.</span> <span class="nav-text">绑定scroll事件在ios设备不顺畅原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sticky满足以下条件才能生效"><span class="nav-number">8.3.</span> <span class="nav-text">sticky满足以下条件才能生效</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相关sticky插件"><span class="nav-number">8.4.</span> <span class="nav-text">相关sticky插件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#iphone屏幕录制如何导出gif"><span class="nav-number">9.</span> <span class="nav-text">iphone屏幕录制如何导出gif</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#键盘弹起引起input-fixed定位失效"><span class="nav-number">10.</span> <span class="nav-text">键盘弹起引起input fixed定位失效</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#border-none在ie7无效"><span class="nav-number">11.</span> <span class="nav-text">border:none在ie7无效</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">huixisheng</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"huixisheng"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = false;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title >= 0 || index_content >= 0 ){
+                                isMatch = true;
+								if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            } 
+							
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
