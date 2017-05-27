@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://huixisheng.github.io/"/>
-  <updated>2017-05-26T13:47:09.000Z</updated>
+  <updated>2017-05-27T16:40:10.000Z</updated>
   <id>http://huixisheng.github.io/</id>
   
   <author>
@@ -14,6 +14,57 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vue @input事件</title>
+    <link href="http://huixisheng.github.io/vue-input/"/>
+    <id>http://huixisheng.github.io/vue-input/</id>
+    <published>2017-05-27T15:30:32.000Z</published>
+    <updated>2017-05-27T16:40:10.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天有同事过来问我，给<code>el-input</code> 加了<code>@input</code>参数<code>$event</code>变成了<code>input</code>变化后的值(v-model)。大致伪代码如下:</p>
+<iframe scrolling="no" width="100%" height="300" src="//jsfiddle.net/k5uf5fa0/embedded/js,resources,html,css,result/light" frameborder="0" allowfullscreen></iframe>
+<p>对于<code>@input</code>的印象是:</p>
+<p>Vue2.x去除了<code>.sync</code>,需要双向绑定就用到了<code>@input</code> <code>.sync</code>在<a href="https://github.com/vuejs/vue/releases/tag/v2.3.0" target="_blank" rel="external">2.3.0又回来了</a></p>
+<blockquote>
+<p>所以要让组件的 v-model 生效，它必须：<br>接受一个 value 属性<br>在有新的 value 时触发 input 事件</p>
+</blockquote>
+<p>于是去看下<code>el-input</code><a href="https://github.com/ElemeFE/element/blob/d3bf30b48c66649e659c29df80844daa7992f1d9/packages/input/src/input.vue#L35-L49" target="_blank" rel="external">源码</a>，截取的伪代码:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;input ref=&quot;input&quot; @input=&quot;handleInput&quot;&gt;</div><div class="line"></div><div class="line">methods: &#123;</div><div class="line">  handleInput(event) &#123;</div><div class="line">    const value = event.target.value;</div><div class="line">    this.$emit(&apos;input&apos;, value);</div><div class="line">    this.setCurrentValue(value);</div><div class="line">    this.$emit(&apos;change&apos;, value);</div><div class="line">  &#125;,</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>可以理解<code>$event</code>为<code>v-model</code>没有问题，可是<code>handlerInput($event, index) {</code> 第一反应index的值应该没有才对。于是去<a href="https://github.com/vuejs/vue/blob/dev/dist/vue.js" target="_blank" rel="external">Vue的源码</a>找答案，Vue的源码并不是晦涩难懂，相反而是通俗易懂，当然精髓的代码还没有完全参透。接下来要抽段时间好好品味一番。@TODO</p>
+<p>打了断点，大致明白了点，不会像一开始那么迷茫。</p>
+<p><img src="/images/vue/@input1.jpeg" alt=""></p>
+<h2 id="input事件"><a href="#input事件" class="headerlink" title="input事件"></a>input事件</h2><p>参阅了下资料:</p>
+<blockquote>
+<p>当 <code>&lt;input&gt;</code> 或 <code>&lt;textarea&gt;</code> 元素的值更改时，DOM input 事件会同步触发。(对于 type = checkbox 或 type = radio 的输入元素，当用户单击控件时，输入事件不会触发，因为value属性不会更改。) 此外，当内容更改时，它会在 contenteditable 的编辑器上触发。在这种情况下，事件目标是编辑主机元素。如果有两个或多个具有 contenteditable 的元素为真，“编辑主机”是其父级不可编辑的最近的祖先元素。同样，它也会在  designMode 编辑器的根元素上触发。</p>
+</blockquote>
+<p>来自: <a href="https://developer.mozilla.org/zh-CN/docs/Web/Events/input" target="_blank" rel="external">https://developer.mozilla.org/zh-CN/docs/Web/Events/input</a></p>
+<blockquote>
+<p>最后需要注意的是：oninput 和 onpropertychange 这两个事件在 IE9 中都有个小BUG，那就是通过右键菜单菜单中的剪切和删除命令删除内容的时候不会触发，而 IE 其他版本都是正常的，目前还没有很好的解决方案。不过 oninput &amp; onpropertychange 仍然是监听输入框值变化的最佳方案，如果大家有更好的方法，欢迎参与讨论。</p>
+</blockquote>
+<p>来自: <a href="http://www.cnblogs.com/lhb25/archive/2012/11/30/oninput-and-onpropertychange-event-for-input.html" target="_blank" rel="external">http://www.cnblogs.com/lhb25/archive/2012/11/30/oninput-and-onpropertychange-event-for-input.html</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://github.com/ElemeFE/element/blob/d3bf30b48c66649e659c29df80844daa7992f1d9/packages/input/src/input.vue" target="_blank" rel="external">https://github.com/ElemeFE/element/blob/d3bf30b48c66649e659c29df80844daa7992f1d9/packages/input/src/input.vue</a></li>
+<li><a href="https://github.com/tiimgreen/github-cheat-sheet/blob/master/README.zh-cn.md#%E6%95%B4%E8%A1%8C%E9%AB%98%E4%BA%AE" target="_blank" rel="external">https://github.com/tiimgreen/github-cheat-sheet/blob/master/README.zh-cn.md#%E6%95%B4%E8%A1%8C%E9%AB%98%E4%BA%AE</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/Events/input" target="_blank" rel="external">https://developer.mozilla.org/zh-CN/docs/Web/Events/input</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天有同事过来问我，给&lt;code&gt;el-input&lt;/code&gt; 加了&lt;code&gt;@input&lt;/code&gt;参数&lt;code&gt;$event&lt;/code&gt;变成了&lt;code&gt;input&lt;/code&gt;变化后的值(v-model)。大致伪代码如下:&lt;/p&gt;
+&lt;iframe scrol
+    
+    </summary>
+    
+    
+      <category term="Vue" scheme="http://huixisheng.github.io/tags/Vue/"/>
+    
+      <category term="Event" scheme="http://huixisheng.github.io/tags/Event/"/>
+    
+      <category term="input" scheme="http://huixisheng.github.io/tags/input/"/>
+    
+  </entry>
   
   <entry>
     <title>MacOSX安装多版本php</title>
@@ -402,6 +453,439 @@
   </entry>
   
   <entry>
+    <title>兼容性解决方案整理</title>
+    <link href="http://huixisheng.github.io/compatibility-solution/"/>
+    <id>http://huixisheng.github.io/compatibility-solution/</id>
+    <published>2016-10-22T13:02:45.000Z</published>
+    <updated>2016-12-23T03:08:06.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>移动互联网的今天，告别了ie6。</p>
+<p>以下来自原先项目<del>psc</del>。<del>psc</del>已经删除，<del>使用issues继续整理</del>。相信这是一个更好的开始。整理到博客汇总。</p>
+<a id="more"></a>
+<p>浏览器的兼容性问题是前端开发人员最头痛的，PCS 收集并整理完美兼容的解决方案。低版本浏览器添加过多的脚本或者更多的代码势必会带来性能，维护成本。其实PCS 并非是完美的解法办法，最完美的是浏览器本身符合<a href="http://baike.baidu.com/view/459077.htm?fr=wordsearch" target="_blank" rel="external">w3c标准</a>。当然这不现实，要不要所有浏览器都真的完全表现一样，其实还要视项目而定，或许我们可以选择<a href="http://baike.baidu.com/view/1172014.htm" target="_blank" rel="external">优雅降级</a>处理。凡是一切都在权衡。</p>
+<h2 id="CSS-CSS3"><a href="#CSS-CSS3" class="headerlink" title="CSS/CSS3"></a>CSS/CSS3</h2><h3 id="Respond"><a href="#Respond" class="headerlink" title="Respond"></a><a href="https://github.com/scottjehl/Respond" target="_blank" rel="external">Respond</a></h3><h2 id="inline-block"><a href="#inline-block" class="headerlink" title="inline-block"></a><a href="http://ued.taobao.org/blog/2012/08/inline-block/" target="_blank" rel="external">inline-block</a></h2><pre><code>.dib-wrap {
+    font-size:0;/* 所有浏览器 */
+    *word-spacing:-1px;/* IE6、7 */
+}
+.dib-wrap .dib{
+    font-size: 12px;
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align:top;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0){
+    /* firefox 中 letter-spacing 会导致脱离普通流的元素水平位移 */
+    .dib-wrap{
+    letter-spacing:-5px;/* Safari 等不支持字体大小为 0 的浏览器, N 根据父级字体调节*/
+    }
+}
+.dib {
+    display: inline-block;
+    *display:inline;
+    *zoom:1;
+}
+</code></pre><h2 id="css3-gradient"><a href="#css3-gradient" class="headerlink" title="css3-gradient"></a><a href="http://www.w3cplus.com/content/css3-gradient" target="_blank" rel="external">css3-gradient</a></h2><ol>
+<li><a href="http://www.colorzilla.com/gradient-editor/" target="_blank" rel="external">css3 渐变在线生成工具Ultimate CSS Gradient Generator</a></li>
+</ol>
+<h2 id="HTML-HTML5"><a href="#HTML-HTML5" class="headerlink" title="HTML/HTML5"></a>HTML/HTML5</h2><h2 id="html5shiv"><a href="#html5shiv" class="headerlink" title="html5shiv"></a>html5shiv</h2><p>The <a href="https://github.com/aFarkas/html5shiv" target="_blank" rel="external">HTML5 Shiv</a> enables use of HTML5 sectioning elements in legacy Internet Explorer and provides basic HTML5 styling for Internet Explorer 6-9, Safari 4.x (and iPhone 3.x), and Firefox 3.x.</p>
+<h2 id="html5demos"><a href="#html5demos" class="headerlink" title="html5demos"></a><a href="https://github.com/remy/html5demos" target="_blank" rel="external">html5demos</a></h2><p>A collection of HTML5 experiments I’ve created, now open source and on GitHub, so please go ahead and help me hack this resource in to a wealth of demos that other authors can learn from.</p>
+<h2 id="HTML5-History-API"><a href="#HTML5-History-API" class="headerlink" title="HTML5-History-API"></a><a href="https://github.com/remy/html5demos" target="_blank" rel="external">HTML5-History-API</a></h2><h2 id="video-js"><a href="#video-js" class="headerlink" title="video.js"></a><a href="https://github.com/videojs/video.js" target="_blank" rel="external">video.js</a></h2><h2 id="jQuery-html5-placeholder"><a href="#jQuery-html5-placeholder" class="headerlink" title=" jQuery-html5-placeholder"></a><a href="https://github.com/Topener/jQuery-html5-placeholder" target="_blank" rel="external"> jQuery-html5-placeholder</a></h2><h2 id="HTML5-Desktop-Notifications"><a href="#HTML5-Desktop-Notifications" class="headerlink" title="HTML5 Desktop Notifications"></a><a href="https://github.com/ttsvetko/HTML5-Desktop-Notifications" target="_blank" rel="external">HTML5 Desktop Notifications</a></h2><h2 id="localstorage"><a href="#localstorage" class="headerlink" title="localstorage"></a>localstorage</h2><p><a href="https://github.com/marcuswestin/store.js" target="_blank" rel="external">store.js</a> exposes a simple API for cross browser local storage</p>
+<h2 id="JavaScritp-ECMAScript"><a href="#JavaScritp-ECMAScript" class="headerlink" title="JavaScritp/ECMAScript"></a>JavaScritp/ECMAScript</h2><h2 id="es5-shim"><a href="#es5-shim" class="headerlink" title="es5-shim"></a>es5-shim</h2><p><a href="https://github.com/es-shims/es5-shim" target="_blank" rel="external"><code>es5-shim.js</code></a> and <code>es5-shim.min.js</code> monkey-patch a JavaScript context to<br>contain all EcmaScript 5 methods that can be faithfully emulated with a<br>legacy JavaScript engine.</p>
+<h2 id="IE-IE6-IE7-IE8"><a href="#IE-IE6-IE7-IE8" class="headerlink" title="IE/IE6/IE7/IE8"></a>IE/IE6/IE7/IE8</h2><h3 id="PIE"><a href="#PIE" class="headerlink" title="PIE"></a>PIE</h3><p>(PIE)(<a href="http://css3pie.com/" target="_blank" rel="external">http://css3pie.com/</a>) makes Internet Explorer 6-9 capable of rendering several of the most useful CSS3 decoration features.</p>
+<p>通过脚本可以使得ie6/7/8/9 支持css3 的 border-radius、box-shadow、linear-gradient。</p>
+<h3 id="DD-belatedPNG"><a href="#DD-belatedPNG" class="headerlink" title="DD_belatedPNG"></a><a href="http://www.dillerdesign.com/experiment/DD_belatedPNG/" target="_blank" rel="external">DD_belatedPNG</a></h3><p>This is a Javascript library that sandwiches PNG image support into IE6 without much fuss.</p>
+<p>处理ie6不支持png24。</p>
+<pre><code>DD_belatedPNG.fix(&apos;.png_bg, .png24&apos;); // argument is a CSS selector
+DD_belatedPNG.fixPng( someNode ); // argument is an HTMLDomElement
+</code></pre><h4 id="更多solution"><a href="#更多solution" class="headerlink" title="更多solution"></a>更多solution</h4><ol>
+<li><a href="http://www.w3cfuns.com/thread-297-1-1.html" target="_blank" rel="external">IE6 PNG透明终极解决方案（打造W3Cfuns-IE6PNG最强帖）</a></li>
+</ol>
+<h3 id="IE下-z-index的层级问题"><a href="#IE下-z-index的层级问题" class="headerlink" title="IE下 z-index的层级问题"></a>IE下 z-index的层级问题</h3><h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><ol>
+<li><a href="http://www.cnblogs.com/Darren_code/archive/2012/03/05/z-index.html" target="_blank" rel="external">IE下 z-index 的各种坑</a></li>
+<li><a href="http://www.zhangxinxu.com/wordpress/2009/12/ie6%E4%B8%8Bz-index%E7%8A%AF%E7%99%AB%E4%B8%8D%E8%B5%B7%E4%BD%9C%E7%94%A8bug%E7%9A%84%E5%88%9D%E6%AD%A5%E7%A0%94%E7%A9%B6/" target="_blank" rel="external">IE6下z-index犯癫不起作用bug的初步研究</a></li>
+<li><a href="http://www.w3help.org/zh-cn/causes/RM8015" target="_blank" rel="external">IE6 IE7 IE8(Q) 中定位元素 ‘z-index’ 为默认值在某些情况下会产生新的层叠上下文</a></li>
+</ol>
+<h3 id="ie6-不支持positon-fixed"><a href="#ie6-不支持positon-fixed" class="headerlink" title="ie6 不支持positon: fixed"></a>ie6 不支持<code>positon: fixed</code></h3><h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><ol>
+<li><a href="http://www.w3help.org/zh-cn/causes/RM8013" target="_blank" rel="external">RM8013: IE6 IE7(Q) IE8(Q) 不支持固定定位（position:fixed）</a></li>
+<li><a href="http://www.cnblogs.com/hooray/archive/2011/05/20/2052269.html" target="_blank" rel="external">完美解决IE6不支持position:fixed的bug</a></li>
+</ol>
+<h3 id="透明度-opacity-rgba"><a href="#透明度-opacity-rgba" class="headerlink" title="透明度 opacity/rgba"></a>透明度 opacity/rgba</h3><p>opacity设置的透明度对子元素都有影响。ie可以使用 filter 处理</p>
+<pre><code>.opacity{
+    background: rgb(255,255,0);
+    opacity: 0.4;
+    filter:alpha(opacity=40);
+}
+
+
+.rgba{
+    filter:progid:DXImageTransform.Microsoft.gradient(enabled=&apos;true&apos;,startColorstr=&apos;#7F000000&apos;, endColorstr=&apos;#7F000000&apos;);
+}
+:root  .rgba{
+    filter:none;     /*处理IE9浏览器中的滤镜效果*/
+    background-color:rgba(0,0,0,0.5);
+}
+</code></pre><ol>
+<li><a href="http://www.w3help.org/zh-cn/causes/BT9011" target="_blank" rel="external">BT9011: 只有 IE 支持 CSS Filter</a></li>
+<li><a href="http://www.w3cplus.com/content/css3-rgba" target="_blank" rel="external">CSS3 RGBA</a></li>
+<li><a href="http://www.linxz.de/css_tool/hex_color.html" target="_blank" rel="external">css3-rgba ie下可透明的背景颜色转换工具</a></li>
+</ol>
+<h3 id="ie6-max-width-max-height-min-height-min-width"><a href="#ie6-max-width-max-height-min-height-min-width" class="headerlink" title="ie6 max-width/max-height/min-height/min-width"></a>ie6 max-width/max-height/min-height/min-width</h3><pre><code>.maxh{ max-height:300px; _height: expression(this.scrollHeight &gt;= 300? &apos;300px&apos; : &apos;auto&apos;);  }
+
+.maxw{ max-width: 300px; _width: expression(this.clientWidth &gt;= 300 ? &apos;300px&apos; : &apos;auto&apos;); }
+
+.minh{ min-height: 300px; height:auto !important; _height: 300px; }
+
+.minw{ min-width: 300px; _width: expression(this.clientWidth &lt;= 300 ? &apos;300px&apos; : &apos;auto&apos;); }
+</code></pre><ol>
+<li><a href="http://ziren.org/html-css/ie6-support-min-width-and-max-width.html" target="_blank" rel="external">让IE6支持min-width和max-width的方法</a></li>
+</ol>
+<h2 id="css3-mediaqueries-js"><a href="#css3-mediaqueries-js" class="headerlink" title="css3-mediaqueries-js"></a>css3-mediaqueries-js</h2><p><a href="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js" target="_blank" rel="external">css3-mediaqueries-js</a></p>
+<h2 id="ieBetter"><a href="#ieBetter" class="headerlink" title="ieBetter"></a>ieBetter</h2><p><a href="http://www.zhangxinxu.com/wordpress/2013/12/iebetter-js-make-ie6-ie8-like-modern-browser-ie9-chrome/" target="_blank" rel="external">ieBetter.js-让IE6-IE8拥有IE9+,Chrome等浏览器特性</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;移动互联网的今天，告别了ie6。&lt;/p&gt;
+&lt;p&gt;以下来自原先项目&lt;del&gt;psc&lt;/del&gt;。&lt;del&gt;psc&lt;/del&gt;已经删除，&lt;del&gt;使用issues继续整理&lt;/del&gt;。相信这是一个更好的开始。整理到博客汇总。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="兼容性" scheme="http://huixisheng.github.io/tags/%E5%85%BC%E5%AE%B9%E6%80%A7/"/>
+    
+      <category term="前端库" scheme="http://huixisheng.github.io/tags/%E5%89%8D%E7%AB%AF%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>配置SSH公钥和git多账号配置</title>
+    <link href="http://huixisheng.github.io/git-ssh-key-setting/"/>
+    <id>http://huixisheng.github.io/git-ssh-key-setting/</id>
+    <published>2016-10-22T13:02:45.000Z</published>
+    <updated>2016-10-22T13:07:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>本文介绍如何配置<code>ssh-key</code></p>
+<a id="more"></a>
+<h2 id="生成key"><a href="#生成key" class="headerlink" title="生成key"></a>生成key</h2><p>ssh-keygen -t rsa -f ~/.ssh/git.oschina.net -C “469184346@qq.com”</p>
+<blockquote>
+<p>代码参数含义：<br>-t 指定密钥类型，默认是 rsa ，可以省略。<br>-C 设置注释文字，比如邮箱。<br>-f 指定密钥文件存储文件名。  -<a href="http://www.cnblogs.com/ayseeing/p/3572582.html" target="_blank" rel="external">来自github设置添加SSH</a></p>
+</blockquote>
+<p>直接输入回车</p>
+<pre><code>Generating public/private rsa key pair.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+</code></pre><p>如果输入了密码</p>
+<blockquote>
+<p>设置passphrase后，进行版本控制时，每次与GitHub通信都会要求输入passphrase，以避免某些“失误”</p>
+<p>将SSH 私钥增加到ssh-agent: ssh-add ~/.ssh/xyz_rsa， 这里会提示输入一次私钥的密码; -<a href="http://www.jianshu.com/p/ddd3122cb351#" target="_blank" rel="external">来自</a></p>
+</blockquote>
+<h2 id="添加密匙"><a href="#添加密匙" class="headerlink" title="添加密匙"></a>添加密匙</h2><h3 id="拷贝公钥"><a href="#拷贝公钥" class="headerlink" title="拷贝公钥"></a>拷贝公钥</h3><pre><code>pbcopy &lt;  ~/.ssh/git.oschina.net.pub
+</code></pre><p>其他平台拷贝命令<a href="http://www.jianshu.com/p/31cbbbc5f9fa/" target="_blank" rel="external">参考如何生成SSH key</a></p>
+<blockquote>
+<p>window<br>    clip &lt; ~/.ssh/id_rsa.pub</p>
+<p>linux<br>    sudo apt-get install xclip<br>    xclip -sel clip &lt; ~/.ssh/id_rsa.pub</p>
+</blockquote>
+<h3 id="登录远程git平台添加ssh-key"><a href="#登录远程git平台添加ssh-key" class="headerlink" title="登录远程git平台添加ssh key"></a>登录远程git平台添加ssh key</h3><p>粘贴刚才拷贝的内容</p>
+<ul>
+<li><a href="http://git.oschina.net/profile/sshkeys" target="_blank" rel="external">oschinaSSH公钥</a></li>
+<li><a href="https://github.com/settings/keys" target="_blank" rel="external">github SSH and GPG keys</a>点击 <code>New SSH key</code></li>
+</ul>
+<p>将新生成的key添加到ssh-agent中</p>
+<pre><code>$ eval &quot;$(ssh-agent -s)&quot;
+$ ssh-add ~/.ssh/git.oschina.net
+</code></pre><blockquote>
+<p>可以通过 ssh-add -l 来确私钥列表<br>$ ssh-add -l<br>可以通过 ssh-add -D 来清空私钥列表<br>$ ssh-add -D</p>
+</blockquote>
+<h2 id="配置config用于多个git-ssh密匙"><a href="#配置config用于多个git-ssh密匙" class="headerlink" title="配置config用于多个git ssh密匙"></a>配置config用于多个git ssh密匙</h2><pre><code>Host github.com
+    HostName github.com
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/github
+    User huixisheng
+
+Host git.coding.net
+    HostName git.coding.net
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/gitcodingnet
+    User git
+
+Host git.oschina.net
+    HostName git.oschina.net
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/git.oschina.net
+    User git
+</code></pre><blockquote>
+<p>Host，SSH 连接名<br>HostName，如上所示，可以是通配符，可以是 IP，也可以是域名等<br>User，登录的用户名<br>IdentifyFile，version 1 协议下默认是 ~/.ssh/identify，version 2 协议下，默认是依次匹配：~/.ssh/id_dsa，~/.ssh/id_ecdsa，~/.ssh/id_rsa，还有 version 2 兼容模式。<br>LocalForward 端口的内部跳转<br>Port，端口设置，默认 SSH 的端口是 22<br>Protocal，协议版本号，1 或者 2<br><a href="http://www.barretlee.com/blog/2016/03/09/config-in-ssh-after-troubling-git-connection/" target="_blank" rel="external">来自</a></p>
+</blockquote>
+<ul>
+<li><a href="http://www.cnblogs.com/ayseeing/p/4445194.html" target="_blank" rel="external">参考生成多个git ssh密钥</a></li>
+</ul>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>测试是否配置成功</p>
+<pre><code>$ ssh -T git@git.oschina.net
+Welcome to Git@OSC, huixisheng!
+</code></pre><blockquote>
+<p>-v会输出详情的信息 <a href="http://www.barretlee.com/blog/2016/03/09/config-in-ssh-after-troubling-git-connection/" target="_blank" rel="external">多SSH Key管理技巧与Git多账户登录问题</a></p>
+</blockquote>
+<h2 id="其他问题"><a href="#其他问题" class="headerlink" title="其他问题"></a>其他问题</h2><pre><code>$ ssh -T git@git.oschina.net
+The authenticity of host &apos;git.oschina.net (218.60.114.30)&apos; can&apos;t be established.
+ECDSA key fingerprint is SHA256:FQGC9Kn/eye1W8icdBgrQp+KkGYoFgbVr17bmjey0Wc.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added &apos;git.oschina.net,218.60.114.30&apos; (ECDSA) to the list of known hosts.
+Permission denied (publickey).
+
+$ eval &quot;$(ssh-agent -s)&quot;
+$ ssh-add ~/.ssh/git.oschina.net
+</code></pre><blockquote>
+<p>   如果执行ssh-add时提示”Could not open a connection to your authentication agent”，可以现执行命令：<br>    $ ssh-agent bash <a href="http://my.oschina.net/stefanzhlg/blog/529403" target="_blank" rel="external">来自</a></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo git clone git@git.coding.net:huixisheng/layout.git</div><div class="line">Cloning into &apos;layout&apos;...</div><div class="line">Permission denied (publickey).</div><div class="line">fatal: Could not read from remote repository.</div></pre></td></tr></table></figure>
+<p><code>ssh -vT git@git.coding.net</code> 是有结果返回的,看了debug信息都是正常的。</p>
+<p>执行如下（期间关闭了翻墙软件）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ssh-add ~/.ssh/gitcodingnet</div><div class="line">source ~/.ssh/config</div></pre></td></tr></table></figure></p>
+<p>再次clone又可以了。没找到为何不行的根本原因</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="http://my.oschina.net/stefanzhlg/blog/529403" target="_blank" rel="external">git 配置多个SSH-Key</a></li>
+<li><a href="https://help.github.com/articles/generating-ssh-keys" target="_blank" rel="external">https://help.github.com/articles/generating-ssh-keys</a></li>
+<li><a href="https://coding.net/help/doc/git/ssh-key.html" target="_blank" rel="external">coding配置SSH公钥</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文介绍如何配置&lt;code&gt;ssh-key&lt;/code&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="git" scheme="http://huixisheng.github.io/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git操作常见问题汇总</title>
+    <link href="http://huixisheng.github.io/git-problem/"/>
+    <id>http://huixisheng.github.io/git-problem/</id>
+    <published>2016-10-22T13:02:45.000Z</published>
+    <updated>2016-11-25T15:04:43.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>平常工作中常用的<code>git</code>操作命令。</p>
+<a id="more"></a>
+<h2 id="git添加空目录"><a href="#git添加空目录" class="headerlink" title="git添加空目录"></a>git添加空目录</h2><p>在空目录下建<code>.gitignore</code><br>内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># 忽略所有文件</div><div class="line">*</div><div class="line"># 除了这个文件</div><div class="line">!.gitignore</div></pre></td></tr></table></figure></p>
+<h2 id="git忽略已经被提交的文件"><a href="#git忽略已经被提交的文件" class="headerlink" title="git忽略已经被提交的文件"></a>git忽略已经被提交的文件</h2><p>直接<code>rm</code> 然后 <code>git  add .</code>本地磁盘也会被删除。我们要的是删除版本库的文件，并忽略。使用如下方法处理:</p>
+<p>忽略文件夹 <code>git rm -r --cached cache/*</code> 然后在 <code>.gitignore</code>忽略删除的文件。注意<code>git rm --cached</code> 删除的是追踪状态</p>
+<h2 id="git-忽略已经提交的文件的修改"><a href="#git-忽略已经提交的文件的修改" class="headerlink" title="git 忽略已经提交的文件的修改"></a>git 忽略已经提交的文件的修改</h2><p><code>git update-index --assume-unchanged .env</code><br>重置之前添加的忽略<br><code>git update-index --no-assume-unchanged .env</code></p>
+<h2 id="同步github-fork原作者分支的修改"><a href="#同步github-fork原作者分支的修改" class="headerlink" title="同步github fork原作者分支的修改"></a>同步<code>github</code> fork原作者分支的修改</h2><p>假设当前在fork <code>hexo-theme-amazeui</code>并<code>clone</code> <code>fork</code>后的分支的终端上：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git remote add remote-hexo https://github.com/huixisheng/hexo-theme-amazeui.git</div><div class="line">git fetch remote-hexo</div><div class="line">git merge remote-hexo/master</div></pre></td></tr></table></figure></p>
+<p>参考</p>
+<ul>
+<li><a href="http://jinlong.github.io/2015/10/12/syncing-a-fork/" target="_blank" rel="external">如何同步 Github fork 出来的分支</a></li>
+<li><a href="http://www.cnblogs.com/rubylouvre/archive/2013/01/24/2874694.html" target="_blank" rel="external">如何在github上fork一个项目来贡献代码以及同步原作者的修改</a></li>
+</ul>
+<h2 id="同步远程删除的分支"><a href="#同步远程删除的分支" class="headerlink" title="同步远程删除的分支"></a>同步远程删除的分支</h2><p>执行<code>git push origin :test-branch</code>, 远程<code>test-branch</code>已经删除了，但本地还在，<code>git branch -a</code>还可以看到<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">error: unable to delete ‘test-branch’: remote ref does not exist</div><div class="line">error: failed to push some refs to ‘git@github.com:huixisheng/huixisheng.github.com.git’</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git remote update --prune</div></pre></td></tr></table></figure>
+<h2 id="git-恢复单个文件的历史版本"><a href="#git-恢复单个文件的历史版本" class="headerlink" title="git 恢复单个文件的历史版本"></a>git 恢复单个文件的历史版本</h2><blockquote>
+<p>首先查看该文件的历史版本信息：git log Default@2x.png<br>记录下需要恢复的commit版本号：如 9aa51d89799716aa68cff3f30c26f8815408e926<br>恢复该文件：git reset 9aa51d89799716aa68cff3f30c26f8815408e926 Default@2x.png<br>还需要执行git checkout Default@2x.png<br>提交git:git commit -m “回滚Default@2x.png的历史版本”</p>
+</blockquote>
+<p><a href="https://segmentfault.com/q/1010000002464973" target="_blank" rel="external">git 如何还原某个文件</a>一文提到更加简单的方法</p>
+<blockquote>
+<p>直接用 git-checkout 即可。理解起来稍微有点奇怪就是了。<br><code>$ git checkout ${commit} /path/to/file</code></p>
+</blockquote>
+<h2 id="撤销git-add的文件的修改"><a href="#撤销git-add的文件的修改" class="headerlink" title="撤销git add的文件的修改"></a>撤销git add的文件的修改</h2><p><code>git reset HEAD README.md</code></p>
+<p>通过<code>git status</code>可以查看相关的操作</p>
+<p>参考</p>
+<ul>
+<li><a href="https://segmentfault.com/a/1190000006185954" target="_blank" rel="external">git的reset和checkout的区别</a></li>
+<li><a href="https://yhhwpp.github.io/2016/10/31/Git-%E4%B8%AD-Reset%E3%80%81Revert%E3%80%81Checkout%E7%9A%84%E5%8C%BA%E5%88%AB/" target="_blank" rel="external">Git 中 Reset、Revert、Checkout的区别</a></li>
+</ul>
+<p>结论:</p>
+<ol>
+<li><code>git reset</code>是会修改版本历史的，丢弃掉一些版本历史。</li>
+<li><code>git revert</code>是根据那个commit逆向生成一个新的commit，版本历史是不会被破坏的。</li>
+<li><code>git checkout</code>用于切换分支</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;平常工作中常用的&lt;code&gt;git&lt;/code&gt;操作命令。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="git" scheme="http://huixisheng.github.io/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>国内镜像源整理</title>
+    <link href="http://huixisheng.github.io/mirror/"/>
+    <id>http://huixisheng.github.io/mirror/</id>
+    <published>2016-10-22T13:02:45.000Z</published>
+    <updated>2016-11-26T02:15:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>本文对国内<code>ruby</code>、<code>npm</code>、<code>brew</code>、<code>Composer</code>等镜像源做整理，给前端开发这提供方便。<br><a id="more"></a></p>
+<h2 id="为何写这个文章"><a href="#为何写这个文章" class="headerlink" title="为何写这个文章"></a>为何写这个文章</h2><pre><code>gem install cdnjs-command
+ERROR:  Could not find a valid gem &apos;cdnjs-command&apos; (&gt;= 0), here is why:
+      Unable to download data from https://rubygems.org/ - Errno::EPIPE: Broken pipe - SSL_connect (https://rubygems.org/latest_specs.4.8.gz)
+</code></pre><h2 id="RubyGems-镜像"><a href="#RubyGems-镜像" class="headerlink" title="RubyGems 镜像"></a>RubyGems 镜像</h2><blockquote>
+<p>$ gem sources –add <a href="https://ruby.taobao.org/" target="_blank" rel="external">https://ruby.taobao.org/</a> –remove <a href="https://rubygems.org/" target="_blank" rel="external">https://rubygems.org/</a><br>  $ gem sources -l<br>   <strong><em> CURRENT SOURCES </em></strong><br><a href="https://ruby.taobao.org" target="_blank" rel="external">https://ruby.taobao.org</a></p>
+<h1 id="请确保只有-ruby-taobao-org"><a href="#请确保只有-ruby-taobao-org" class="headerlink" title="请确保只有 ruby.taobao.org"></a>请确保只有 ruby.taobao.org</h1><p>$ gem install rails</p>
+</blockquote>
+<h2 id="NPM-镜像"><a href="#NPM-镜像" class="headerlink" title="NPM 镜像"></a>NPM 镜像</h2><p>每次安装都需要指明 <code>registry</code>，很麻烦</p>
+<blockquote>
+<p>$ npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="external">https://registry.npm.taobao.org</a></p>
+</blockquote>
+<pre><code>vi ~/.npmrc
+</code></pre><p>添加。</p>
+<blockquote>
+<p>registry = <a href="http://registry.npm.taobao.org" target="_blank" rel="external">http://registry.npm.taobao.org</a></p>
+</blockquote>
+<p>或者</p>
+<blockquote>
+<p> npm config set registry “<a href="http://registry.npm.taobao.org" target="_blank" rel="external">http://registry.npm.taobao.org</a>“</p>
+</blockquote>
+<p>通过 <code>npm config ls</code> 可以查看相关配置情况</p>
+<h2 id="Brew镜像"><a href="#Brew镜像" class="headerlink" title="Brew镜像"></a>Brew镜像</h2><blockquote>
+<p>$ cd /usr/local &amp;&amp; git remote set-url origin <a href="https://git.coding.net/homebrew/homebrew.git" target="_blank" rel="external">https://git.coding.net/homebrew/homebrew.git</a><br>$ cd $home &amp;&amp; brew update</p>
+</blockquote>
+<p><a href="https://coding.net/u/cocodingding/pp/84498" target="_blank" rel="external">Brew Brew Brew !</a></p>
+<h2 id="Composer-镜像"><a href="#Composer-镜像" class="headerlink" title="Composer 镜像"></a>Composer 镜像</h2><p>方法1：</p>
+<pre><code>composer config -g repositories.packagist composer http://packagist.phpcomposer.com
+</code></pre><p>方法2：</p>
+<blockquote>
+<p>注意：为了避免安装包的时候都要执行两次查询，切记要添加禁用 packagist 的设置，如下：</p>
+</blockquote>
+<pre><code>{
+    &quot;repositories&quot;: [
+        {&quot;type&quot;: &quot;composer&quot;, &quot;url&quot;: &quot;http://packagist.phpcomposer.com&quot;},
+        {&quot;packagist&quot;: false}
+    ]
+}
+</code></pre><p><a href="http://pkg.phpcomposer.com/" target="_blank" rel="external">Packagist / Composer 中国全量镜像</a></p>
+<p>全局安装</p>
+<pre><code>$ curl -sS https://getcomposer.org/installer | php
+$ mv composer.phar /usr/local/bin/composer
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文对国内&lt;code&gt;ruby&lt;/code&gt;、&lt;code&gt;npm&lt;/code&gt;、&lt;code&gt;brew&lt;/code&gt;、&lt;code&gt;Composer&lt;/code&gt;等镜像源做整理，给前端开发这提供方便。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="镜像源" scheme="http://huixisheng.github.io/tags/%E9%95%9C%E5%83%8F%E6%BA%90/"/>
+    
+      <category term="npm" scheme="http://huixisheng.github.io/tags/npm/"/>
+    
+      <category term="ruby" scheme="http://huixisheng.github.io/tags/ruby/"/>
+    
+      <category term="Composer" scheme="http://huixisheng.github.io/tags/Composer/"/>
+    
+      <category term="brew" scheme="http://huixisheng.github.io/tags/brew/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>调试工具整理</title>
+    <link href="http://huixisheng.github.io/debugger-tool/"/>
+    <id>http://huixisheng.github.io/debugger-tool/</id>
+    <published>2016-10-22T13:02:45.000Z</published>
+    <updated>2016-12-23T02:57:09.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h2><p>2016-12-22</p>
+<ul>
+<li>[*] 文章结构修改</li>
+<li>[+] 添加远程调试在线工具</li>
+</ul>
+<p>本文收集整理了浏览器调试工具介绍，手机调试方案，nodejs调试，无线抓包。</p>
+<a id="more"></a>
+<h2 id="远程真机调试"><a href="#远程真机调试" class="headerlink" title="远程真机调试"></a>远程真机调试</h2><h3 id="阿里移动质量中心（MQC）-H5测试"><a href="#阿里移动质量中心（MQC）-H5测试" class="headerlink" title="阿里移动质量中心（MQC）-H5测试"></a><a href="https://mqc.aliyun.com/hfive.htm?spm=0.0.0.0.qn7DDr" target="_blank" rel="external">阿里移动质量中心（MQC）-H5测试</a></h3><p>会提供一个测试报告，包含页面加载时间，节点信息，资源资源类型统计，域名资源统计，优化建议,该设备各浏览器的小视频。</p>
+<h3 id="testin"><a href="#testin" class="headerlink" title="testin"></a><a href="http://remote.testin.cn/" target="_blank" rel="external">testin</a></h3><h3 id="优测"><a href="#优测" class="headerlink" title="优测"></a><a href="http://remote.utest.qq.com/deviceSearch?type=remote&amp;brand=Samsung" target="_blank" rel="external">优测</a></h3><h2 id="小程序和微信开发调试"><a href="#小程序和微信开发调试" class="headerlink" title="小程序和微信开发调试"></a>小程序和微信开发调试</h2><h2 id="实时刷新"><a href="#实时刷新" class="headerlink" title="实时刷新"></a>实时刷新</h2><h3 id="FIS"><a href="#FIS" class="headerlink" title="FIS"></a>FIS</h3><h3 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h3><h3 id="BrowserSync"><a href="#BrowserSync" class="headerlink" title="BrowserSync"></a>BrowserSync</h3><h3 id="weflow"><a href="#weflow" class="headerlink" title="weflow"></a><a href="https://weflow.io/" target="_blank" rel="external">weflow</a></h3><h3 id="puer"><a href="#puer" class="headerlink" title="puer"></a><a href="https://github.com/leeluolee/puer" target="_blank" rel="external">puer</a></h3><h3 id="F5"><a href="#F5" class="headerlink" title="F5"></a><a href="http://www.getf5.com/" target="_blank" rel="external">F5</a></h3><h2 id="开发者调试"><a href="#开发者调试" class="headerlink" title="开发者调试"></a>开发者调试</h2><h3 id="spy-debugger"><a href="#spy-debugger" class="headerlink" title="spy-debugger"></a><a href="https://github.com/wuchangming/spy-debugger" target="_blank" rel="external">spy-debugger</a></h3><h3 id="https-ant-tool-github-io-dora-html"><a href="#https-ant-tool-github-io-dora-html" class="headerlink" title="https://ant-tool.github.io/dora.html"></a><a href="https://ant-tool.github.io/dora.html" target="_blank" rel="external">https://ant-tool.github.io/dora.html</a></h3><h2 id="浏览器调试"><a href="#浏览器调试" class="headerlink" title="浏览器调试"></a>浏览器调试</h2><p><a href="http://ued.taobao.com/blog/2012/06/debug-with-chrome-dev-tool/" target="_blank" rel="external">chrome developer tool 调试技巧</a>谷歌浏览器调试比较基础的文章，期待补充和完善。</p>
+<p><a href="http://www.ueder.net/html5-Slides/slides.html#slide-1" target="_blank" rel="external">Chrome Developer Tools 功能与技巧详解</a></p>
+<p><a href="http://isux.tencent.com/chrome-workspace.html" target="_blank" rel="external">开发者调试工具Chrome Workspace</a><br>开发者工具中调试修改js或者css同时自动保存文件，能够避免开发人员在工具中调试好，再到编辑器中修改一次代码的重复操作，能够提高一定的效率</p>
+<p><a href="http://www.opera.com/dragonfly/documentation/" target="_blank" rel="external"><del>Opera Dragonfly documentation</del></a></p>
+<p><a href="https://developer.chrome.com/devtools/docs/mobile-emulation" target="_blank" rel="external">Mobile emulation</a> 模拟器</p>
+<p><a href="http://www.alloyteam.com/2014/02/browser-sync-responsive-web-development-and-debugging-tool/" target="_blank" rel="external">Browser-Sync：响应式Web开发调试利器</a></p>
+<p><a href="chrome://net-internals/#export" target="_blank" rel="external">Chrome也自带抓包功能</a></p>
+<h2 id="WebApp调试"><a href="#WebApp调试" class="headerlink" title="WebApp调试"></a>WebApp调试</h2><ul>
+<li><a href="https://github.com/WechatFE/vConsole" target="_blank" rel="external">https://github.com/WechatFE/vConsole</a></li>
+<li><a href="https://github.com/AlloyTeam/AlloyLever/" target="_blank" rel="external">https://github.com/AlloyTeam/AlloyLever/</a></li>
+</ul>
+<p><a href="http://thx.github.io/mobile/debugging-in-mobile/" target="_blank" rel="external">无线调试攻略</a><br>少年天才以外的我们，与其说是 coder,不如说是 debugger，都是一路调戏过来的，不好意思，是调试【本人口齿不清，发音不准，再发生类似事故请多多见谅】，因此当你 主动/被动 All in 了无线以后，你发现，知识的储备只是时间的积累和有意识的训练而已，可面对众多的 爱疯，案桌儿，山柴，内核不同，大小不一的设备。尼玛，没有个顺手的调试工具，简直是不能忍受的。</p>
+<p><a href="https://speakerdeck.com/paulguo/h5-mobile-kai-fa-diao-shi-shi-jian" target="_blank" rel="external">H5 Mobile 开发调试实践 by 破锣锅</a> 总结的很详细</p>
+<p><a href="http://oceanzhu.com/archives/74" target="_blank" rel="external">手机上怎么抓包调试</a><br>纳尼，手机也可以抓包，不可思议，赶紧试试吧</p>
+<p><a href="https://getfirebug.com/firebuglite" target="_blank" rel="external">Firebug Lite: doing the Firebug way, anywhere.</a><br>亲，还在为ie6的调试而苦恼吗？Firebug值得一试。</p>
+<p><a href="http://wyqbailey.diandian.com/post/2011-11-09/20511143" target="_blank" rel="external">远程调试工具-weinre</a>Web Inspector Remote（远程 Web 调试工具），功能和 Firebug、Webkit Inspector 类似，可以帮助我们在 PC 端远程调试运行在移动设备浏览器内的 Web 页面或应用，能够即时调试 DOM 元素、 CSS 样式 和 JavaScript 等。</p>
+<p><a href="https://www.imququ.com/post/remote-debugging-with-weinre.html" target="_blank" rel="external">用Weinre远程调试移动网页</a></p>
+<p><a href="http://www.cnblogs.com/lhb25/p/debug-mobile-site-and-app-with-weinre.html" target="_blank" rel="external">使用 Weinre 调试移动网站及 PhoneGap 应用</a><code>node</code>版更适合前端。</p>
+<p><a href="http://debug.build.phonegap.com/" target="_blank" rel="external">在线Weinre</a></p>
+<p><a href="https://reader.mx/p/1391" target="_blank" rel="external">浏览器远程调试</a><br>对比了 Firefox、Chrome、Opera 三大浏览器的远程调试工具</p>
+<p><a href="https://github.com/jieyou/remote_inspect_web_on_real_device" target="_blank" rel="external">真机远程调试-remote inspect web on real device</a></p>
+<p><a href="http://44ux.com/blog/2013/02/25/using-web-debugging-proxies/" target="_blank" rel="external">善用 Web 调试代理工具</a></p>
+<p><a href="http://code.tutsplus.com/tutorials/using-web-debugging-proxies--net-29828" target="_blank" rel="external">Using Web Debugging Proxies</a></p>
+<p><a href="https://developer.chrome.com/devtools/docs/remote-debugging?hl=zh-CN" target="_blank" rel="external">Remote Debugging on Android with Chrome</a> 谷歌浏览器实现安装的远程调试</p>
+<p><a href="https://github.com/CN-Chrome-DevTools/CN-Chrome-DevTools" target="_blank" rel="external">Chrome开发者工具中文手册</a></p>
+<p><a href="http://www.iunbug.com/mihtool-zh" target="_blank" rel="external">MIHTool 是前端工程师在iOS设备上调试和优化页面的得力助手</a></p>
+<p><a href="https://creative.adobe.com/zh-tw/products/inspect" target="_blank" rel="external">Edge Inspect</a>方便的跨平台同步预览工具</p>
+<p><a href="http://jsconsole.com/" target="_blank" rel="external">jsconsole</a>是一个风格和Weinre类似的工具，它更多地关注于控制台输出和代码求值。在访问JSConsole的网站的时候，用户输入“:listen”来获得带有GUID的一段JavaScript代码。这段代码需要被加入到待调试的网页中。于是，在加载网页的时候，代码将会连接到JSConsole服务器，并且根据GUID将此会话和用户的会话关联起来，于是用户浏览器中的控制台现在便已经处于待调试网页的JavaScript运行时环境中了。</p>
+<p><a href="http://blog.wpjam.com/m/ios-safari-remote-debugging/" target="_blank" rel="external">通过 Mac 远程调试 iPhone/iPad 上的网页</a></p>
+<p><a href="http://blog.segmentfault.com/humphry/1190000000313211?page=1#c-1190000000313211-1050000000349151" target="_blank" rel="external">整理：手机端网页调试方案</a></p>
+<h2 id="node-js调试"><a href="#node-js调试" class="headerlink" title="node.js调试"></a>node.js调试</h2><p><a href="http://www.cnblogs.com/dolphinX/p/3485345.html" target="_blank" rel="external">node.js调试</a><br>你还在一个个<code>console.log()</code>，那么你out啦</p>
+<h3 id="devtool"><a href="#devtool" class="headerlink" title="devtool"></a><a href="https://github.com/Jam3/devtool" target="_blank" rel="external">devtool</a></h3><p>Runs Node.js programs inside Chrome DevTools (using Electron).</p>
+<p>监测脚步变动自动重启命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">devtool scripts/parse.js --watch</div></pre></td></tr></table></figure></p>
+<p>对应有<a href="https://github.com/remy/nodemon" target="_blank" rel="external"><code>nodemon</code></a>,目前这个是最符合我需求的。还有    <code>Superviso</code> <code>node-dev</code></p>
+<h3 id="iron-node"><a href="#iron-node" class="headerlink" title="iron-node"></a>iron-node</h3><h3 id="node-inspector"><a href="#node-inspector" class="headerlink" title="node-inspector"></a>node-inspector</h3><h3 id="node-debugger"><a href="#node-debugger" class="headerlink" title="node-debugger"></a>node-debugger</h3><h3 id="WebStorm集成的调试器"><a href="#WebStorm集成的调试器" class="headerlink" title="WebStorm集成的调试器"></a>WebStorm集成的调试器</h3><h2 id="抓包工具"><a href="#抓包工具" class="headerlink" title="抓包工具"></a>抓包工具</h2><ul>
+<li><a href="http://weibo.com/ttarticle/p/show?id=2309404034831301405232&amp;mod=zwenzhang?comment=1&amp;sudaref=www.google.co.jp&amp;retcode=6102" target="_blank" rel="external">whistle</a></li>
+<li><a href="http://www.alloyteam.com/2014/07/nodejs-debug-proxy-livepool/" target="_blank" rel="external">【开源项目】LivePool：基于 NodeJs 的跨平台 Web 抓包替换工具</a></li>
+<li><a href="http://www.httpwatch.com/download/" target="_blank" rel="external">HttpWatch</a></li>
+<li><a href="http://www.ieinspector.com/" target="_blank" rel="external">HttpAnalyzerStd</a></li>
+<li><a href="http://www.tcpdump.org/" target="_blank" rel="external">tcpdump</a></li>
+<li><a href="http://www.wireshark.org/" target="_blank" rel="external">wireshark</a> 文章推荐：<a href="http://www.cnblogs.com/TankXiao/archive/2012/10/10/2711777.html" target="_blank" rel="external">Wireshark基本介绍和学习TCP三次握手</a></li>
+<li><a href="http://goddyzhao.me/nproxy/" target="_blank" rel="external">NProxy</a> 文章推荐：<a href="NProxy——Mac和Linux平台下的Fiddler">NProxy——Mac和Linux平台下的Fiddler</a></li>
+</ul>
+<h3 id="Fiddler"><a href="#Fiddler" class="headerlink" title="Fiddler"></a><a href="http://www.telerik.com/fiddler" target="_blank" rel="external">Fiddler</a></h3><ul>
+<li><a href="https://www.imququ.com/post/user-fiddler-on-macos.html" target="_blank" rel="external">如何在 Mac 下使用 Fiddler</a></li>
+<li><a href="http://www.welefen.com/fiddler-base-on-chrome-extension.html" target="_blank" rel="external">基于Chrome扩展的Fiddler</a></li>
+</ul>
+<h3 id="Mac平台"><a href="#Mac平台" class="headerlink" title="Mac平台"></a>Mac平台</h3><ul>
+<li><a href="http://zh.blog.goddyzhao.me/post/35906061908/nproxy-fiddler-in-mac-and-linux" target="_blank" rel="external">NProxy——Mac和Linux平台下的Fiddler</a></li>
+<li><a href="http://www.charlesproxy.com/" target="_blank" rel="external">Charles</a> <a href="http://www.baidufe.com/item/8a53eea855cb6289993f.html" target="_blank" rel="external">使用charles proxy for Mac来抓取手机App的网络包</a> <a href="http://www.36ria.com/6278" target="_blank" rel="external">Charles(最强大的http调试工具)详细教程（上）</a> <a href="http://www.36ria.com/6303" target="_blank" rel="external">Charles(最强大的http调试工具)详细教程（下）</a></li>
+</ul>
+<h2 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h2><ul>
+<li><a href="http://tid.tenpay.com/?p=6161" target="_blank" rel="external">远程调试(Remote Debugging)</a></li>
+<li><a href="https://github.com/jieyou/remote_inspect_web_on_real_device" target="_blank" rel="external">各种 真机远程调试 方法 汇总</a></li>
+<li><a href="http://wiki.jikexueyuan.com/project/chrome-devtools/remote-debugging-on-android.html" target="_blank" rel="external">http://wiki.jikexueyuan.com/project/chrome-devtools/remote-debugging-on-android.html</a></li>
+<li><a href="http://www.jianshu.com/p/82ab631502e1" target="_blank" rel="external">http://www.jianshu.com/p/82ab631502e1</a></li>
+<li><a href="http://yujiangshui.com/multidevice-frontend-debug/" target="_blank" rel="external">http://yujiangshui.com/multidevice-frontend-debug/</a></li>
+<li><a href="http://div.io/topic/1449" target="_blank" rel="external">http://div.io/topic/1449</a></li>
+<li><a href="http://alloyteam.github.io/Spirit/modules/Mobug/" target="_blank" rel="external">http://alloyteam.github.io/Spirit/modules/Mobug/</a></li>
+<li><a href="https://github.com/hongru/horn" target="_blank" rel="external">https://github.com/hongru/horn</a></li>
+<li><a href="https://github.com/kaiye/kaiye.github.com/issues/4" target="_blank" rel="external">https://github.com/kaiye/kaiye.github.com/issues/4</a></li>
+<li><a href="https://github.com/riskers/blog/issues/11" target="_blank" rel="external">https://github.com/riskers/blog/issues/11</a></li>
+<li><a href="https://gold.xitu.io/entry/5851e77d61ff4b006c8414dd" target="_blank" rel="external">https://gold.xitu.io/entry/5851e77d61ff4b006c8414dd</a></li>
+<li><a href="https://www.zhihu.com/question/20322475" target="_blank" rel="external">https://www.zhihu.com/question/20322475</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;更新日志&quot;&gt;&lt;a href=&quot;#更新日志&quot; class=&quot;headerlink&quot; title=&quot;更新日志&quot;&gt;&lt;/a&gt;更新日志&lt;/h2&gt;&lt;p&gt;2016-12-22&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;[*] 文章结构修改&lt;/li&gt;
+&lt;li&gt;[+] 添加远程调试在线工具&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;本文收集整理了浏览器调试工具介绍，手机调试方案，nodejs调试，无线抓包。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="前端工具" scheme="http://huixisheng.github.io/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="前端资源" scheme="http://huixisheng.github.io/tags/%E5%89%8D%E7%AB%AF%E8%B5%84%E6%BA%90/"/>
+    
+      <category term="调试" scheme="http://huixisheng.github.io/tags/%E8%B0%83%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title>spawn和exec简单介绍</title>
     <link href="http://huixisheng.github.io/nodejs-spawn-exec/"/>
     <id>http://huixisheng.github.io/nodejs-spawn-exec/</id>
@@ -522,439 +1006,6 @@
     
     
       <category term="markdown" scheme="http://huixisheng.github.io/tags/markdown/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>国内镜像源整理</title>
-    <link href="http://huixisheng.github.io/mirror/"/>
-    <id>http://huixisheng.github.io/mirror/</id>
-    <published>2016-10-22T13:02:45.000Z</published>
-    <updated>2016-11-26T02:15:59.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>本文对国内<code>ruby</code>、<code>npm</code>、<code>brew</code>、<code>Composer</code>等镜像源做整理，给前端开发这提供方便。<br><a id="more"></a></p>
-<h2 id="为何写这个文章"><a href="#为何写这个文章" class="headerlink" title="为何写这个文章"></a>为何写这个文章</h2><pre><code>gem install cdnjs-command
-ERROR:  Could not find a valid gem &apos;cdnjs-command&apos; (&gt;= 0), here is why:
-      Unable to download data from https://rubygems.org/ - Errno::EPIPE: Broken pipe - SSL_connect (https://rubygems.org/latest_specs.4.8.gz)
-</code></pre><h2 id="RubyGems-镜像"><a href="#RubyGems-镜像" class="headerlink" title="RubyGems 镜像"></a>RubyGems 镜像</h2><blockquote>
-<p>$ gem sources –add <a href="https://ruby.taobao.org/" target="_blank" rel="external">https://ruby.taobao.org/</a> –remove <a href="https://rubygems.org/" target="_blank" rel="external">https://rubygems.org/</a><br>  $ gem sources -l<br>   <strong><em> CURRENT SOURCES </em></strong><br><a href="https://ruby.taobao.org" target="_blank" rel="external">https://ruby.taobao.org</a></p>
-<h1 id="请确保只有-ruby-taobao-org"><a href="#请确保只有-ruby-taobao-org" class="headerlink" title="请确保只有 ruby.taobao.org"></a>请确保只有 ruby.taobao.org</h1><p>$ gem install rails</p>
-</blockquote>
-<h2 id="NPM-镜像"><a href="#NPM-镜像" class="headerlink" title="NPM 镜像"></a>NPM 镜像</h2><p>每次安装都需要指明 <code>registry</code>，很麻烦</p>
-<blockquote>
-<p>$ npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="external">https://registry.npm.taobao.org</a></p>
-</blockquote>
-<pre><code>vi ~/.npmrc
-</code></pre><p>添加。</p>
-<blockquote>
-<p>registry = <a href="http://registry.npm.taobao.org" target="_blank" rel="external">http://registry.npm.taobao.org</a></p>
-</blockquote>
-<p>或者</p>
-<blockquote>
-<p> npm config set registry “<a href="http://registry.npm.taobao.org" target="_blank" rel="external">http://registry.npm.taobao.org</a>“</p>
-</blockquote>
-<p>通过 <code>npm config ls</code> 可以查看相关配置情况</p>
-<h2 id="Brew镜像"><a href="#Brew镜像" class="headerlink" title="Brew镜像"></a>Brew镜像</h2><blockquote>
-<p>$ cd /usr/local &amp;&amp; git remote set-url origin <a href="https://git.coding.net/homebrew/homebrew.git" target="_blank" rel="external">https://git.coding.net/homebrew/homebrew.git</a><br>$ cd $home &amp;&amp; brew update</p>
-</blockquote>
-<p><a href="https://coding.net/u/cocodingding/pp/84498" target="_blank" rel="external">Brew Brew Brew !</a></p>
-<h2 id="Composer-镜像"><a href="#Composer-镜像" class="headerlink" title="Composer 镜像"></a>Composer 镜像</h2><p>方法1：</p>
-<pre><code>composer config -g repositories.packagist composer http://packagist.phpcomposer.com
-</code></pre><p>方法2：</p>
-<blockquote>
-<p>注意：为了避免安装包的时候都要执行两次查询，切记要添加禁用 packagist 的设置，如下：</p>
-</blockquote>
-<pre><code>{
-    &quot;repositories&quot;: [
-        {&quot;type&quot;: &quot;composer&quot;, &quot;url&quot;: &quot;http://packagist.phpcomposer.com&quot;},
-        {&quot;packagist&quot;: false}
-    ]
-}
-</code></pre><p><a href="http://pkg.phpcomposer.com/" target="_blank" rel="external">Packagist / Composer 中国全量镜像</a></p>
-<p>全局安装</p>
-<pre><code>$ curl -sS https://getcomposer.org/installer | php
-$ mv composer.phar /usr/local/bin/composer
-</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;本文对国内&lt;code&gt;ruby&lt;/code&gt;、&lt;code&gt;npm&lt;/code&gt;、&lt;code&gt;brew&lt;/code&gt;、&lt;code&gt;Composer&lt;/code&gt;等镜像源做整理，给前端开发这提供方便。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="镜像源" scheme="http://huixisheng.github.io/tags/%E9%95%9C%E5%83%8F%E6%BA%90/"/>
-    
-      <category term="npm" scheme="http://huixisheng.github.io/tags/npm/"/>
-    
-      <category term="ruby" scheme="http://huixisheng.github.io/tags/ruby/"/>
-    
-      <category term="Composer" scheme="http://huixisheng.github.io/tags/Composer/"/>
-    
-      <category term="brew" scheme="http://huixisheng.github.io/tags/brew/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>配置SSH公钥和git多账号配置</title>
-    <link href="http://huixisheng.github.io/git-ssh-key-setting/"/>
-    <id>http://huixisheng.github.io/git-ssh-key-setting/</id>
-    <published>2016-10-22T13:02:45.000Z</published>
-    <updated>2016-10-22T13:07:52.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>本文介绍如何配置<code>ssh-key</code></p>
-<a id="more"></a>
-<h2 id="生成key"><a href="#生成key" class="headerlink" title="生成key"></a>生成key</h2><p>ssh-keygen -t rsa -f ~/.ssh/git.oschina.net -C “469184346@qq.com”</p>
-<blockquote>
-<p>代码参数含义：<br>-t 指定密钥类型，默认是 rsa ，可以省略。<br>-C 设置注释文字，比如邮箱。<br>-f 指定密钥文件存储文件名。  -<a href="http://www.cnblogs.com/ayseeing/p/3572582.html" target="_blank" rel="external">来自github设置添加SSH</a></p>
-</blockquote>
-<p>直接输入回车</p>
-<pre><code>Generating public/private rsa key pair.
-Enter passphrase (empty for no passphrase):
-Enter same passphrase again:
-</code></pre><p>如果输入了密码</p>
-<blockquote>
-<p>设置passphrase后，进行版本控制时，每次与GitHub通信都会要求输入passphrase，以避免某些“失误”</p>
-<p>将SSH 私钥增加到ssh-agent: ssh-add ~/.ssh/xyz_rsa， 这里会提示输入一次私钥的密码; -<a href="http://www.jianshu.com/p/ddd3122cb351#" target="_blank" rel="external">来自</a></p>
-</blockquote>
-<h2 id="添加密匙"><a href="#添加密匙" class="headerlink" title="添加密匙"></a>添加密匙</h2><h3 id="拷贝公钥"><a href="#拷贝公钥" class="headerlink" title="拷贝公钥"></a>拷贝公钥</h3><pre><code>pbcopy &lt;  ~/.ssh/git.oschina.net.pub
-</code></pre><p>其他平台拷贝命令<a href="http://www.jianshu.com/p/31cbbbc5f9fa/" target="_blank" rel="external">参考如何生成SSH key</a></p>
-<blockquote>
-<p>window<br>    clip &lt; ~/.ssh/id_rsa.pub</p>
-<p>linux<br>    sudo apt-get install xclip<br>    xclip -sel clip &lt; ~/.ssh/id_rsa.pub</p>
-</blockquote>
-<h3 id="登录远程git平台添加ssh-key"><a href="#登录远程git平台添加ssh-key" class="headerlink" title="登录远程git平台添加ssh key"></a>登录远程git平台添加ssh key</h3><p>粘贴刚才拷贝的内容</p>
-<ul>
-<li><a href="http://git.oschina.net/profile/sshkeys" target="_blank" rel="external">oschinaSSH公钥</a></li>
-<li><a href="https://github.com/settings/keys" target="_blank" rel="external">github SSH and GPG keys</a>点击 <code>New SSH key</code></li>
-</ul>
-<p>将新生成的key添加到ssh-agent中</p>
-<pre><code>$ eval &quot;$(ssh-agent -s)&quot;
-$ ssh-add ~/.ssh/git.oschina.net
-</code></pre><blockquote>
-<p>可以通过 ssh-add -l 来确私钥列表<br>$ ssh-add -l<br>可以通过 ssh-add -D 来清空私钥列表<br>$ ssh-add -D</p>
-</blockquote>
-<h2 id="配置config用于多个git-ssh密匙"><a href="#配置config用于多个git-ssh密匙" class="headerlink" title="配置config用于多个git ssh密匙"></a>配置config用于多个git ssh密匙</h2><pre><code>Host github.com
-    HostName github.com
-    PreferredAuthentications publickey
-    IdentityFile ~/.ssh/github
-    User huixisheng
-
-Host git.coding.net
-    HostName git.coding.net
-    PreferredAuthentications publickey
-    IdentityFile ~/.ssh/gitcodingnet
-    User git
-
-Host git.oschina.net
-    HostName git.oschina.net
-    PreferredAuthentications publickey
-    IdentityFile ~/.ssh/git.oschina.net
-    User git
-</code></pre><blockquote>
-<p>Host，SSH 连接名<br>HostName，如上所示，可以是通配符，可以是 IP，也可以是域名等<br>User，登录的用户名<br>IdentifyFile，version 1 协议下默认是 ~/.ssh/identify，version 2 协议下，默认是依次匹配：~/.ssh/id_dsa，~/.ssh/id_ecdsa，~/.ssh/id_rsa，还有 version 2 兼容模式。<br>LocalForward 端口的内部跳转<br>Port，端口设置，默认 SSH 的端口是 22<br>Protocal，协议版本号，1 或者 2<br><a href="http://www.barretlee.com/blog/2016/03/09/config-in-ssh-after-troubling-git-connection/" target="_blank" rel="external">来自</a></p>
-</blockquote>
-<ul>
-<li><a href="http://www.cnblogs.com/ayseeing/p/4445194.html" target="_blank" rel="external">参考生成多个git ssh密钥</a></li>
-</ul>
-<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>测试是否配置成功</p>
-<pre><code>$ ssh -T git@git.oschina.net
-Welcome to Git@OSC, huixisheng!
-</code></pre><blockquote>
-<p>-v会输出详情的信息 <a href="http://www.barretlee.com/blog/2016/03/09/config-in-ssh-after-troubling-git-connection/" target="_blank" rel="external">多SSH Key管理技巧与Git多账户登录问题</a></p>
-</blockquote>
-<h2 id="其他问题"><a href="#其他问题" class="headerlink" title="其他问题"></a>其他问题</h2><pre><code>$ ssh -T git@git.oschina.net
-The authenticity of host &apos;git.oschina.net (218.60.114.30)&apos; can&apos;t be established.
-ECDSA key fingerprint is SHA256:FQGC9Kn/eye1W8icdBgrQp+KkGYoFgbVr17bmjey0Wc.
-Are you sure you want to continue connecting (yes/no)? yes
-Warning: Permanently added &apos;git.oschina.net,218.60.114.30&apos; (ECDSA) to the list of known hosts.
-Permission denied (publickey).
-
-$ eval &quot;$(ssh-agent -s)&quot;
-$ ssh-add ~/.ssh/git.oschina.net
-</code></pre><blockquote>
-<p>   如果执行ssh-add时提示”Could not open a connection to your authentication agent”，可以现执行命令：<br>    $ ssh-agent bash <a href="http://my.oschina.net/stefanzhlg/blog/529403" target="_blank" rel="external">来自</a></p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo git clone git@git.coding.net:huixisheng/layout.git</div><div class="line">Cloning into &apos;layout&apos;...</div><div class="line">Permission denied (publickey).</div><div class="line">fatal: Could not read from remote repository.</div></pre></td></tr></table></figure>
-<p><code>ssh -vT git@git.coding.net</code> 是有结果返回的,看了debug信息都是正常的。</p>
-<p>执行如下（期间关闭了翻墙软件）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ssh-add ~/.ssh/gitcodingnet</div><div class="line">source ~/.ssh/config</div></pre></td></tr></table></figure></p>
-<p>再次clone又可以了。没找到为何不行的根本原因</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><a href="http://my.oschina.net/stefanzhlg/blog/529403" target="_blank" rel="external">git 配置多个SSH-Key</a></li>
-<li><a href="https://help.github.com/articles/generating-ssh-keys" target="_blank" rel="external">https://help.github.com/articles/generating-ssh-keys</a></li>
-<li><a href="https://coding.net/help/doc/git/ssh-key.html" target="_blank" rel="external">coding配置SSH公钥</a></li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;本文介绍如何配置&lt;code&gt;ssh-key&lt;/code&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="git" scheme="http://huixisheng.github.io/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>兼容性解决方案整理</title>
-    <link href="http://huixisheng.github.io/compatibility-solution/"/>
-    <id>http://huixisheng.github.io/compatibility-solution/</id>
-    <published>2016-10-22T13:02:45.000Z</published>
-    <updated>2016-12-23T03:08:06.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>移动互联网的今天，告别了ie6。</p>
-<p>以下来自原先项目<del>psc</del>。<del>psc</del>已经删除，<del>使用issues继续整理</del>。相信这是一个更好的开始。整理到博客汇总。</p>
-<a id="more"></a>
-<p>浏览器的兼容性问题是前端开发人员最头痛的，PCS 收集并整理完美兼容的解决方案。低版本浏览器添加过多的脚本或者更多的代码势必会带来性能，维护成本。其实PCS 并非是完美的解法办法，最完美的是浏览器本身符合<a href="http://baike.baidu.com/view/459077.htm?fr=wordsearch" target="_blank" rel="external">w3c标准</a>。当然这不现实，要不要所有浏览器都真的完全表现一样，其实还要视项目而定，或许我们可以选择<a href="http://baike.baidu.com/view/1172014.htm" target="_blank" rel="external">优雅降级</a>处理。凡是一切都在权衡。</p>
-<h2 id="CSS-CSS3"><a href="#CSS-CSS3" class="headerlink" title="CSS/CSS3"></a>CSS/CSS3</h2><h3 id="Respond"><a href="#Respond" class="headerlink" title="Respond"></a><a href="https://github.com/scottjehl/Respond" target="_blank" rel="external">Respond</a></h3><h2 id="inline-block"><a href="#inline-block" class="headerlink" title="inline-block"></a><a href="http://ued.taobao.org/blog/2012/08/inline-block/" target="_blank" rel="external">inline-block</a></h2><pre><code>.dib-wrap {
-    font-size:0;/* 所有浏览器 */
-    *word-spacing:-1px;/* IE6、7 */
-}
-.dib-wrap .dib{
-    font-size: 12px;
-    letter-spacing: normal;
-    word-spacing: normal;
-    vertical-align:top;
-}
-@media screen and (-webkit-min-device-pixel-ratio:0){
-    /* firefox 中 letter-spacing 会导致脱离普通流的元素水平位移 */
-    .dib-wrap{
-    letter-spacing:-5px;/* Safari 等不支持字体大小为 0 的浏览器, N 根据父级字体调节*/
-    }
-}
-.dib {
-    display: inline-block;
-    *display:inline;
-    *zoom:1;
-}
-</code></pre><h2 id="css3-gradient"><a href="#css3-gradient" class="headerlink" title="css3-gradient"></a><a href="http://www.w3cplus.com/content/css3-gradient" target="_blank" rel="external">css3-gradient</a></h2><ol>
-<li><a href="http://www.colorzilla.com/gradient-editor/" target="_blank" rel="external">css3 渐变在线生成工具Ultimate CSS Gradient Generator</a></li>
-</ol>
-<h2 id="HTML-HTML5"><a href="#HTML-HTML5" class="headerlink" title="HTML/HTML5"></a>HTML/HTML5</h2><h2 id="html5shiv"><a href="#html5shiv" class="headerlink" title="html5shiv"></a>html5shiv</h2><p>The <a href="https://github.com/aFarkas/html5shiv" target="_blank" rel="external">HTML5 Shiv</a> enables use of HTML5 sectioning elements in legacy Internet Explorer and provides basic HTML5 styling for Internet Explorer 6-9, Safari 4.x (and iPhone 3.x), and Firefox 3.x.</p>
-<h2 id="html5demos"><a href="#html5demos" class="headerlink" title="html5demos"></a><a href="https://github.com/remy/html5demos" target="_blank" rel="external">html5demos</a></h2><p>A collection of HTML5 experiments I’ve created, now open source and on GitHub, so please go ahead and help me hack this resource in to a wealth of demos that other authors can learn from.</p>
-<h2 id="HTML5-History-API"><a href="#HTML5-History-API" class="headerlink" title="HTML5-History-API"></a><a href="https://github.com/remy/html5demos" target="_blank" rel="external">HTML5-History-API</a></h2><h2 id="video-js"><a href="#video-js" class="headerlink" title="video.js"></a><a href="https://github.com/videojs/video.js" target="_blank" rel="external">video.js</a></h2><h2 id="jQuery-html5-placeholder"><a href="#jQuery-html5-placeholder" class="headerlink" title=" jQuery-html5-placeholder"></a><a href="https://github.com/Topener/jQuery-html5-placeholder" target="_blank" rel="external"> jQuery-html5-placeholder</a></h2><h2 id="HTML5-Desktop-Notifications"><a href="#HTML5-Desktop-Notifications" class="headerlink" title="HTML5 Desktop Notifications"></a><a href="https://github.com/ttsvetko/HTML5-Desktop-Notifications" target="_blank" rel="external">HTML5 Desktop Notifications</a></h2><h2 id="localstorage"><a href="#localstorage" class="headerlink" title="localstorage"></a>localstorage</h2><p><a href="https://github.com/marcuswestin/store.js" target="_blank" rel="external">store.js</a> exposes a simple API for cross browser local storage</p>
-<h2 id="JavaScritp-ECMAScript"><a href="#JavaScritp-ECMAScript" class="headerlink" title="JavaScritp/ECMAScript"></a>JavaScritp/ECMAScript</h2><h2 id="es5-shim"><a href="#es5-shim" class="headerlink" title="es5-shim"></a>es5-shim</h2><p><a href="https://github.com/es-shims/es5-shim" target="_blank" rel="external"><code>es5-shim.js</code></a> and <code>es5-shim.min.js</code> monkey-patch a JavaScript context to<br>contain all EcmaScript 5 methods that can be faithfully emulated with a<br>legacy JavaScript engine.</p>
-<h2 id="IE-IE6-IE7-IE8"><a href="#IE-IE6-IE7-IE8" class="headerlink" title="IE/IE6/IE7/IE8"></a>IE/IE6/IE7/IE8</h2><h3 id="PIE"><a href="#PIE" class="headerlink" title="PIE"></a>PIE</h3><p>(PIE)(<a href="http://css3pie.com/" target="_blank" rel="external">http://css3pie.com/</a>) makes Internet Explorer 6-9 capable of rendering several of the most useful CSS3 decoration features.</p>
-<p>通过脚本可以使得ie6/7/8/9 支持css3 的 border-radius、box-shadow、linear-gradient。</p>
-<h3 id="DD-belatedPNG"><a href="#DD-belatedPNG" class="headerlink" title="DD_belatedPNG"></a><a href="http://www.dillerdesign.com/experiment/DD_belatedPNG/" target="_blank" rel="external">DD_belatedPNG</a></h3><p>This is a Javascript library that sandwiches PNG image support into IE6 without much fuss.</p>
-<p>处理ie6不支持png24。</p>
-<pre><code>DD_belatedPNG.fix(&apos;.png_bg, .png24&apos;); // argument is a CSS selector
-DD_belatedPNG.fixPng( someNode ); // argument is an HTMLDomElement
-</code></pre><h4 id="更多solution"><a href="#更多solution" class="headerlink" title="更多solution"></a>更多solution</h4><ol>
-<li><a href="http://www.w3cfuns.com/thread-297-1-1.html" target="_blank" rel="external">IE6 PNG透明终极解决方案（打造W3Cfuns-IE6PNG最强帖）</a></li>
-</ol>
-<h3 id="IE下-z-index的层级问题"><a href="#IE下-z-index的层级问题" class="headerlink" title="IE下 z-index的层级问题"></a>IE下 z-index的层级问题</h3><h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><ol>
-<li><a href="http://www.cnblogs.com/Darren_code/archive/2012/03/05/z-index.html" target="_blank" rel="external">IE下 z-index 的各种坑</a></li>
-<li><a href="http://www.zhangxinxu.com/wordpress/2009/12/ie6%E4%B8%8Bz-index%E7%8A%AF%E7%99%AB%E4%B8%8D%E8%B5%B7%E4%BD%9C%E7%94%A8bug%E7%9A%84%E5%88%9D%E6%AD%A5%E7%A0%94%E7%A9%B6/" target="_blank" rel="external">IE6下z-index犯癫不起作用bug的初步研究</a></li>
-<li><a href="http://www.w3help.org/zh-cn/causes/RM8015" target="_blank" rel="external">IE6 IE7 IE8(Q) 中定位元素 ‘z-index’ 为默认值在某些情况下会产生新的层叠上下文</a></li>
-</ol>
-<h3 id="ie6-不支持positon-fixed"><a href="#ie6-不支持positon-fixed" class="headerlink" title="ie6 不支持positon: fixed"></a>ie6 不支持<code>positon: fixed</code></h3><h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><ol>
-<li><a href="http://www.w3help.org/zh-cn/causes/RM8013" target="_blank" rel="external">RM8013: IE6 IE7(Q) IE8(Q) 不支持固定定位（position:fixed）</a></li>
-<li><a href="http://www.cnblogs.com/hooray/archive/2011/05/20/2052269.html" target="_blank" rel="external">完美解决IE6不支持position:fixed的bug</a></li>
-</ol>
-<h3 id="透明度-opacity-rgba"><a href="#透明度-opacity-rgba" class="headerlink" title="透明度 opacity/rgba"></a>透明度 opacity/rgba</h3><p>opacity设置的透明度对子元素都有影响。ie可以使用 filter 处理</p>
-<pre><code>.opacity{
-    background: rgb(255,255,0);
-    opacity: 0.4;
-    filter:alpha(opacity=40);
-}
-
-
-.rgba{
-    filter:progid:DXImageTransform.Microsoft.gradient(enabled=&apos;true&apos;,startColorstr=&apos;#7F000000&apos;, endColorstr=&apos;#7F000000&apos;);
-}
-:root  .rgba{
-    filter:none;     /*处理IE9浏览器中的滤镜效果*/
-    background-color:rgba(0,0,0,0.5);
-}
-</code></pre><ol>
-<li><a href="http://www.w3help.org/zh-cn/causes/BT9011" target="_blank" rel="external">BT9011: 只有 IE 支持 CSS Filter</a></li>
-<li><a href="http://www.w3cplus.com/content/css3-rgba" target="_blank" rel="external">CSS3 RGBA</a></li>
-<li><a href="http://www.linxz.de/css_tool/hex_color.html" target="_blank" rel="external">css3-rgba ie下可透明的背景颜色转换工具</a></li>
-</ol>
-<h3 id="ie6-max-width-max-height-min-height-min-width"><a href="#ie6-max-width-max-height-min-height-min-width" class="headerlink" title="ie6 max-width/max-height/min-height/min-width"></a>ie6 max-width/max-height/min-height/min-width</h3><pre><code>.maxh{ max-height:300px; _height: expression(this.scrollHeight &gt;= 300? &apos;300px&apos; : &apos;auto&apos;);  }
-
-.maxw{ max-width: 300px; _width: expression(this.clientWidth &gt;= 300 ? &apos;300px&apos; : &apos;auto&apos;); }
-
-.minh{ min-height: 300px; height:auto !important; _height: 300px; }
-
-.minw{ min-width: 300px; _width: expression(this.clientWidth &lt;= 300 ? &apos;300px&apos; : &apos;auto&apos;); }
-</code></pre><ol>
-<li><a href="http://ziren.org/html-css/ie6-support-min-width-and-max-width.html" target="_blank" rel="external">让IE6支持min-width和max-width的方法</a></li>
-</ol>
-<h2 id="css3-mediaqueries-js"><a href="#css3-mediaqueries-js" class="headerlink" title="css3-mediaqueries-js"></a>css3-mediaqueries-js</h2><p><a href="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js" target="_blank" rel="external">css3-mediaqueries-js</a></p>
-<h2 id="ieBetter"><a href="#ieBetter" class="headerlink" title="ieBetter"></a>ieBetter</h2><p><a href="http://www.zhangxinxu.com/wordpress/2013/12/iebetter-js-make-ie6-ie8-like-modern-browser-ie9-chrome/" target="_blank" rel="external">ieBetter.js-让IE6-IE8拥有IE9+,Chrome等浏览器特性</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;移动互联网的今天，告别了ie6。&lt;/p&gt;
-&lt;p&gt;以下来自原先项目&lt;del&gt;psc&lt;/del&gt;。&lt;del&gt;psc&lt;/del&gt;已经删除，&lt;del&gt;使用issues继续整理&lt;/del&gt;。相信这是一个更好的开始。整理到博客汇总。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="兼容性" scheme="http://huixisheng.github.io/tags/%E5%85%BC%E5%AE%B9%E6%80%A7/"/>
-    
-      <category term="前端库" scheme="http://huixisheng.github.io/tags/%E5%89%8D%E7%AB%AF%E5%BA%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>调试工具整理</title>
-    <link href="http://huixisheng.github.io/debugger-tool/"/>
-    <id>http://huixisheng.github.io/debugger-tool/</id>
-    <published>2016-10-22T13:02:45.000Z</published>
-    <updated>2016-12-23T02:57:09.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h2><p>2016-12-22</p>
-<ul>
-<li>[*] 文章结构修改</li>
-<li>[+] 添加远程调试在线工具</li>
-</ul>
-<p>本文收集整理了浏览器调试工具介绍，手机调试方案，nodejs调试，无线抓包。</p>
-<a id="more"></a>
-<h2 id="远程真机调试"><a href="#远程真机调试" class="headerlink" title="远程真机调试"></a>远程真机调试</h2><h3 id="阿里移动质量中心（MQC）-H5测试"><a href="#阿里移动质量中心（MQC）-H5测试" class="headerlink" title="阿里移动质量中心（MQC）-H5测试"></a><a href="https://mqc.aliyun.com/hfive.htm?spm=0.0.0.0.qn7DDr" target="_blank" rel="external">阿里移动质量中心（MQC）-H5测试</a></h3><p>会提供一个测试报告，包含页面加载时间，节点信息，资源资源类型统计，域名资源统计，优化建议,该设备各浏览器的小视频。</p>
-<h3 id="testin"><a href="#testin" class="headerlink" title="testin"></a><a href="http://remote.testin.cn/" target="_blank" rel="external">testin</a></h3><h3 id="优测"><a href="#优测" class="headerlink" title="优测"></a><a href="http://remote.utest.qq.com/deviceSearch?type=remote&amp;brand=Samsung" target="_blank" rel="external">优测</a></h3><h2 id="小程序和微信开发调试"><a href="#小程序和微信开发调试" class="headerlink" title="小程序和微信开发调试"></a>小程序和微信开发调试</h2><h2 id="实时刷新"><a href="#实时刷新" class="headerlink" title="实时刷新"></a>实时刷新</h2><h3 id="FIS"><a href="#FIS" class="headerlink" title="FIS"></a>FIS</h3><h3 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h3><h3 id="BrowserSync"><a href="#BrowserSync" class="headerlink" title="BrowserSync"></a>BrowserSync</h3><h3 id="weflow"><a href="#weflow" class="headerlink" title="weflow"></a><a href="https://weflow.io/" target="_blank" rel="external">weflow</a></h3><h3 id="puer"><a href="#puer" class="headerlink" title="puer"></a><a href="https://github.com/leeluolee/puer" target="_blank" rel="external">puer</a></h3><h3 id="F5"><a href="#F5" class="headerlink" title="F5"></a><a href="http://www.getf5.com/" target="_blank" rel="external">F5</a></h3><h2 id="开发者调试"><a href="#开发者调试" class="headerlink" title="开发者调试"></a>开发者调试</h2><h3 id="spy-debugger"><a href="#spy-debugger" class="headerlink" title="spy-debugger"></a><a href="https://github.com/wuchangming/spy-debugger" target="_blank" rel="external">spy-debugger</a></h3><h3 id="https-ant-tool-github-io-dora-html"><a href="#https-ant-tool-github-io-dora-html" class="headerlink" title="https://ant-tool.github.io/dora.html"></a><a href="https://ant-tool.github.io/dora.html" target="_blank" rel="external">https://ant-tool.github.io/dora.html</a></h3><h2 id="浏览器调试"><a href="#浏览器调试" class="headerlink" title="浏览器调试"></a>浏览器调试</h2><p><a href="http://ued.taobao.com/blog/2012/06/debug-with-chrome-dev-tool/" target="_blank" rel="external">chrome developer tool 调试技巧</a>谷歌浏览器调试比较基础的文章，期待补充和完善。</p>
-<p><a href="http://www.ueder.net/html5-Slides/slides.html#slide-1" target="_blank" rel="external">Chrome Developer Tools 功能与技巧详解</a></p>
-<p><a href="http://isux.tencent.com/chrome-workspace.html" target="_blank" rel="external">开发者调试工具Chrome Workspace</a><br>开发者工具中调试修改js或者css同时自动保存文件，能够避免开发人员在工具中调试好，再到编辑器中修改一次代码的重复操作，能够提高一定的效率</p>
-<p><a href="http://www.opera.com/dragonfly/documentation/" target="_blank" rel="external"><del>Opera Dragonfly documentation</del></a></p>
-<p><a href="https://developer.chrome.com/devtools/docs/mobile-emulation" target="_blank" rel="external">Mobile emulation</a> 模拟器</p>
-<p><a href="http://www.alloyteam.com/2014/02/browser-sync-responsive-web-development-and-debugging-tool/" target="_blank" rel="external">Browser-Sync：响应式Web开发调试利器</a></p>
-<p><a href="chrome://net-internals/#export" target="_blank" rel="external">Chrome也自带抓包功能</a></p>
-<h2 id="WebApp调试"><a href="#WebApp调试" class="headerlink" title="WebApp调试"></a>WebApp调试</h2><ul>
-<li><a href="https://github.com/WechatFE/vConsole" target="_blank" rel="external">https://github.com/WechatFE/vConsole</a></li>
-<li><a href="https://github.com/AlloyTeam/AlloyLever/" target="_blank" rel="external">https://github.com/AlloyTeam/AlloyLever/</a></li>
-</ul>
-<p><a href="http://thx.github.io/mobile/debugging-in-mobile/" target="_blank" rel="external">无线调试攻略</a><br>少年天才以外的我们，与其说是 coder,不如说是 debugger，都是一路调戏过来的，不好意思，是调试【本人口齿不清，发音不准，再发生类似事故请多多见谅】，因此当你 主动/被动 All in 了无线以后，你发现，知识的储备只是时间的积累和有意识的训练而已，可面对众多的 爱疯，案桌儿，山柴，内核不同，大小不一的设备。尼玛，没有个顺手的调试工具，简直是不能忍受的。</p>
-<p><a href="https://speakerdeck.com/paulguo/h5-mobile-kai-fa-diao-shi-shi-jian" target="_blank" rel="external">H5 Mobile 开发调试实践 by 破锣锅</a> 总结的很详细</p>
-<p><a href="http://oceanzhu.com/archives/74" target="_blank" rel="external">手机上怎么抓包调试</a><br>纳尼，手机也可以抓包，不可思议，赶紧试试吧</p>
-<p><a href="https://getfirebug.com/firebuglite" target="_blank" rel="external">Firebug Lite: doing the Firebug way, anywhere.</a><br>亲，还在为ie6的调试而苦恼吗？Firebug值得一试。</p>
-<p><a href="http://wyqbailey.diandian.com/post/2011-11-09/20511143" target="_blank" rel="external">远程调试工具-weinre</a>Web Inspector Remote（远程 Web 调试工具），功能和 Firebug、Webkit Inspector 类似，可以帮助我们在 PC 端远程调试运行在移动设备浏览器内的 Web 页面或应用，能够即时调试 DOM 元素、 CSS 样式 和 JavaScript 等。</p>
-<p><a href="https://www.imququ.com/post/remote-debugging-with-weinre.html" target="_blank" rel="external">用Weinre远程调试移动网页</a></p>
-<p><a href="http://www.cnblogs.com/lhb25/p/debug-mobile-site-and-app-with-weinre.html" target="_blank" rel="external">使用 Weinre 调试移动网站及 PhoneGap 应用</a><code>node</code>版更适合前端。</p>
-<p><a href="http://debug.build.phonegap.com/" target="_blank" rel="external">在线Weinre</a></p>
-<p><a href="https://reader.mx/p/1391" target="_blank" rel="external">浏览器远程调试</a><br>对比了 Firefox、Chrome、Opera 三大浏览器的远程调试工具</p>
-<p><a href="https://github.com/jieyou/remote_inspect_web_on_real_device" target="_blank" rel="external">真机远程调试-remote inspect web on real device</a></p>
-<p><a href="http://44ux.com/blog/2013/02/25/using-web-debugging-proxies/" target="_blank" rel="external">善用 Web 调试代理工具</a></p>
-<p><a href="http://code.tutsplus.com/tutorials/using-web-debugging-proxies--net-29828" target="_blank" rel="external">Using Web Debugging Proxies</a></p>
-<p><a href="https://developer.chrome.com/devtools/docs/remote-debugging?hl=zh-CN" target="_blank" rel="external">Remote Debugging on Android with Chrome</a> 谷歌浏览器实现安装的远程调试</p>
-<p><a href="https://github.com/CN-Chrome-DevTools/CN-Chrome-DevTools" target="_blank" rel="external">Chrome开发者工具中文手册</a></p>
-<p><a href="http://www.iunbug.com/mihtool-zh" target="_blank" rel="external">MIHTool 是前端工程师在iOS设备上调试和优化页面的得力助手</a></p>
-<p><a href="https://creative.adobe.com/zh-tw/products/inspect" target="_blank" rel="external">Edge Inspect</a>方便的跨平台同步预览工具</p>
-<p><a href="http://jsconsole.com/" target="_blank" rel="external">jsconsole</a>是一个风格和Weinre类似的工具，它更多地关注于控制台输出和代码求值。在访问JSConsole的网站的时候，用户输入“:listen”来获得带有GUID的一段JavaScript代码。这段代码需要被加入到待调试的网页中。于是，在加载网页的时候，代码将会连接到JSConsole服务器，并且根据GUID将此会话和用户的会话关联起来，于是用户浏览器中的控制台现在便已经处于待调试网页的JavaScript运行时环境中了。</p>
-<p><a href="http://blog.wpjam.com/m/ios-safari-remote-debugging/" target="_blank" rel="external">通过 Mac 远程调试 iPhone/iPad 上的网页</a></p>
-<p><a href="http://blog.segmentfault.com/humphry/1190000000313211?page=1#c-1190000000313211-1050000000349151" target="_blank" rel="external">整理：手机端网页调试方案</a></p>
-<h2 id="node-js调试"><a href="#node-js调试" class="headerlink" title="node.js调试"></a>node.js调试</h2><p><a href="http://www.cnblogs.com/dolphinX/p/3485345.html" target="_blank" rel="external">node.js调试</a><br>你还在一个个<code>console.log()</code>，那么你out啦</p>
-<h3 id="devtool"><a href="#devtool" class="headerlink" title="devtool"></a><a href="https://github.com/Jam3/devtool" target="_blank" rel="external">devtool</a></h3><p>Runs Node.js programs inside Chrome DevTools (using Electron).</p>
-<p>监测脚步变动自动重启命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">devtool scripts/parse.js --watch</div></pre></td></tr></table></figure></p>
-<p>对应有<a href="https://github.com/remy/nodemon" target="_blank" rel="external"><code>nodemon</code></a>,目前这个是最符合我需求的。还有    <code>Superviso</code> <code>node-dev</code></p>
-<h3 id="iron-node"><a href="#iron-node" class="headerlink" title="iron-node"></a>iron-node</h3><h3 id="node-inspector"><a href="#node-inspector" class="headerlink" title="node-inspector"></a>node-inspector</h3><h3 id="node-debugger"><a href="#node-debugger" class="headerlink" title="node-debugger"></a>node-debugger</h3><h3 id="WebStorm集成的调试器"><a href="#WebStorm集成的调试器" class="headerlink" title="WebStorm集成的调试器"></a>WebStorm集成的调试器</h3><h2 id="抓包工具"><a href="#抓包工具" class="headerlink" title="抓包工具"></a>抓包工具</h2><ul>
-<li><a href="http://weibo.com/ttarticle/p/show?id=2309404034831301405232&amp;mod=zwenzhang?comment=1&amp;sudaref=www.google.co.jp&amp;retcode=6102" target="_blank" rel="external">whistle</a></li>
-<li><a href="http://www.alloyteam.com/2014/07/nodejs-debug-proxy-livepool/" target="_blank" rel="external">【开源项目】LivePool：基于 NodeJs 的跨平台 Web 抓包替换工具</a></li>
-<li><a href="http://www.httpwatch.com/download/" target="_blank" rel="external">HttpWatch</a></li>
-<li><a href="http://www.ieinspector.com/" target="_blank" rel="external">HttpAnalyzerStd</a></li>
-<li><a href="http://www.tcpdump.org/" target="_blank" rel="external">tcpdump</a></li>
-<li><a href="http://www.wireshark.org/" target="_blank" rel="external">wireshark</a> 文章推荐：<a href="http://www.cnblogs.com/TankXiao/archive/2012/10/10/2711777.html" target="_blank" rel="external">Wireshark基本介绍和学习TCP三次握手</a></li>
-<li><a href="http://goddyzhao.me/nproxy/" target="_blank" rel="external">NProxy</a> 文章推荐：<a href="NProxy——Mac和Linux平台下的Fiddler">NProxy——Mac和Linux平台下的Fiddler</a></li>
-</ul>
-<h3 id="Fiddler"><a href="#Fiddler" class="headerlink" title="Fiddler"></a><a href="http://www.telerik.com/fiddler" target="_blank" rel="external">Fiddler</a></h3><ul>
-<li><a href="https://www.imququ.com/post/user-fiddler-on-macos.html" target="_blank" rel="external">如何在 Mac 下使用 Fiddler</a></li>
-<li><a href="http://www.welefen.com/fiddler-base-on-chrome-extension.html" target="_blank" rel="external">基于Chrome扩展的Fiddler</a></li>
-</ul>
-<h3 id="Mac平台"><a href="#Mac平台" class="headerlink" title="Mac平台"></a>Mac平台</h3><ul>
-<li><a href="http://zh.blog.goddyzhao.me/post/35906061908/nproxy-fiddler-in-mac-and-linux" target="_blank" rel="external">NProxy——Mac和Linux平台下的Fiddler</a></li>
-<li><a href="http://www.charlesproxy.com/" target="_blank" rel="external">Charles</a> <a href="http://www.baidufe.com/item/8a53eea855cb6289993f.html" target="_blank" rel="external">使用charles proxy for Mac来抓取手机App的网络包</a> <a href="http://www.36ria.com/6278" target="_blank" rel="external">Charles(最强大的http调试工具)详细教程（上）</a> <a href="http://www.36ria.com/6303" target="_blank" rel="external">Charles(最强大的http调试工具)详细教程（下）</a></li>
-</ul>
-<h2 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h2><ul>
-<li><a href="http://tid.tenpay.com/?p=6161" target="_blank" rel="external">远程调试(Remote Debugging)</a></li>
-<li><a href="https://github.com/jieyou/remote_inspect_web_on_real_device" target="_blank" rel="external">各种 真机远程调试 方法 汇总</a></li>
-<li><a href="http://wiki.jikexueyuan.com/project/chrome-devtools/remote-debugging-on-android.html" target="_blank" rel="external">http://wiki.jikexueyuan.com/project/chrome-devtools/remote-debugging-on-android.html</a></li>
-<li><a href="http://www.jianshu.com/p/82ab631502e1" target="_blank" rel="external">http://www.jianshu.com/p/82ab631502e1</a></li>
-<li><a href="http://yujiangshui.com/multidevice-frontend-debug/" target="_blank" rel="external">http://yujiangshui.com/multidevice-frontend-debug/</a></li>
-<li><a href="http://div.io/topic/1449" target="_blank" rel="external">http://div.io/topic/1449</a></li>
-<li><a href="http://alloyteam.github.io/Spirit/modules/Mobug/" target="_blank" rel="external">http://alloyteam.github.io/Spirit/modules/Mobug/</a></li>
-<li><a href="https://github.com/hongru/horn" target="_blank" rel="external">https://github.com/hongru/horn</a></li>
-<li><a href="https://github.com/kaiye/kaiye.github.com/issues/4" target="_blank" rel="external">https://github.com/kaiye/kaiye.github.com/issues/4</a></li>
-<li><a href="https://github.com/riskers/blog/issues/11" target="_blank" rel="external">https://github.com/riskers/blog/issues/11</a></li>
-<li><a href="https://gold.xitu.io/entry/5851e77d61ff4b006c8414dd" target="_blank" rel="external">https://gold.xitu.io/entry/5851e77d61ff4b006c8414dd</a></li>
-<li><a href="https://www.zhihu.com/question/20322475" target="_blank" rel="external">https://www.zhihu.com/question/20322475</a></li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;更新日志&quot;&gt;&lt;a href=&quot;#更新日志&quot; class=&quot;headerlink&quot; title=&quot;更新日志&quot;&gt;&lt;/a&gt;更新日志&lt;/h2&gt;&lt;p&gt;2016-12-22&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;[*] 文章结构修改&lt;/li&gt;
-&lt;li&gt;[+] 添加远程调试在线工具&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;本文收集整理了浏览器调试工具介绍，手机调试方案，nodejs调试，无线抓包。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="前端工具" scheme="http://huixisheng.github.io/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/"/>
-    
-      <category term="前端资源" scheme="http://huixisheng.github.io/tags/%E5%89%8D%E7%AB%AF%E8%B5%84%E6%BA%90/"/>
-    
-      <category term="调试" scheme="http://huixisheng.github.io/tags/%E8%B0%83%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>git操作常见问题汇总</title>
-    <link href="http://huixisheng.github.io/git-problem/"/>
-    <id>http://huixisheng.github.io/git-problem/</id>
-    <published>2016-10-22T13:02:45.000Z</published>
-    <updated>2016-11-25T15:04:43.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>平常工作中常用的<code>git</code>操作命令。</p>
-<a id="more"></a>
-<h2 id="git添加空目录"><a href="#git添加空目录" class="headerlink" title="git添加空目录"></a>git添加空目录</h2><p>在空目录下建<code>.gitignore</code><br>内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># 忽略所有文件</div><div class="line">*</div><div class="line"># 除了这个文件</div><div class="line">!.gitignore</div></pre></td></tr></table></figure></p>
-<h2 id="git忽略已经被提交的文件"><a href="#git忽略已经被提交的文件" class="headerlink" title="git忽略已经被提交的文件"></a>git忽略已经被提交的文件</h2><p>直接<code>rm</code> 然后 <code>git  add .</code>本地磁盘也会被删除。我们要的是删除版本库的文件，并忽略。使用如下方法处理:</p>
-<p>忽略文件夹 <code>git rm -r --cached cache/*</code> 然后在 <code>.gitignore</code>忽略删除的文件。注意<code>git rm --cached</code> 删除的是追踪状态</p>
-<h2 id="git-忽略已经提交的文件的修改"><a href="#git-忽略已经提交的文件的修改" class="headerlink" title="git 忽略已经提交的文件的修改"></a>git 忽略已经提交的文件的修改</h2><p><code>git update-index --assume-unchanged .env</code><br>重置之前添加的忽略<br><code>git update-index --no-assume-unchanged .env</code></p>
-<h2 id="同步github-fork原作者分支的修改"><a href="#同步github-fork原作者分支的修改" class="headerlink" title="同步github fork原作者分支的修改"></a>同步<code>github</code> fork原作者分支的修改</h2><p>假设当前在fork <code>hexo-theme-amazeui</code>并<code>clone</code> <code>fork</code>后的分支的终端上：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git remote add remote-hexo https://github.com/huixisheng/hexo-theme-amazeui.git</div><div class="line">git fetch remote-hexo</div><div class="line">git merge remote-hexo/master</div></pre></td></tr></table></figure></p>
-<p>参考</p>
-<ul>
-<li><a href="http://jinlong.github.io/2015/10/12/syncing-a-fork/" target="_blank" rel="external">如何同步 Github fork 出来的分支</a></li>
-<li><a href="http://www.cnblogs.com/rubylouvre/archive/2013/01/24/2874694.html" target="_blank" rel="external">如何在github上fork一个项目来贡献代码以及同步原作者的修改</a></li>
-</ul>
-<h2 id="同步远程删除的分支"><a href="#同步远程删除的分支" class="headerlink" title="同步远程删除的分支"></a>同步远程删除的分支</h2><p>执行<code>git push origin :test-branch</code>, 远程<code>test-branch</code>已经删除了，但本地还在，<code>git branch -a</code>还可以看到<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">error: unable to delete ‘test-branch’: remote ref does not exist</div><div class="line">error: failed to push some refs to ‘git@github.com:huixisheng/huixisheng.github.com.git’</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git remote update --prune</div></pre></td></tr></table></figure>
-<h2 id="git-恢复单个文件的历史版本"><a href="#git-恢复单个文件的历史版本" class="headerlink" title="git 恢复单个文件的历史版本"></a>git 恢复单个文件的历史版本</h2><blockquote>
-<p>首先查看该文件的历史版本信息：git log Default@2x.png<br>记录下需要恢复的commit版本号：如 9aa51d89799716aa68cff3f30c26f8815408e926<br>恢复该文件：git reset 9aa51d89799716aa68cff3f30c26f8815408e926 Default@2x.png<br>还需要执行git checkout Default@2x.png<br>提交git:git commit -m “回滚Default@2x.png的历史版本”</p>
-</blockquote>
-<p><a href="https://segmentfault.com/q/1010000002464973" target="_blank" rel="external">git 如何还原某个文件</a>一文提到更加简单的方法</p>
-<blockquote>
-<p>直接用 git-checkout 即可。理解起来稍微有点奇怪就是了。<br><code>$ git checkout ${commit} /path/to/file</code></p>
-</blockquote>
-<h2 id="撤销git-add的文件的修改"><a href="#撤销git-add的文件的修改" class="headerlink" title="撤销git add的文件的修改"></a>撤销git add的文件的修改</h2><p><code>git reset HEAD README.md</code></p>
-<p>通过<code>git status</code>可以查看相关的操作</p>
-<p>参考</p>
-<ul>
-<li><a href="https://segmentfault.com/a/1190000006185954" target="_blank" rel="external">git的reset和checkout的区别</a></li>
-<li><a href="https://yhhwpp.github.io/2016/10/31/Git-%E4%B8%AD-Reset%E3%80%81Revert%E3%80%81Checkout%E7%9A%84%E5%8C%BA%E5%88%AB/" target="_blank" rel="external">Git 中 Reset、Revert、Checkout的区别</a></li>
-</ul>
-<p>结论:</p>
-<ol>
-<li><code>git reset</code>是会修改版本历史的，丢弃掉一些版本历史。</li>
-<li><code>git revert</code>是根据那个commit逆向生成一个新的commit，版本历史是不会被破坏的。</li>
-<li><code>git checkout</code>用于切换分支</li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;平常工作中常用的&lt;code&gt;git&lt;/code&gt;操作命令。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="git" scheme="http://huixisheng.github.io/tags/git/"/>
     
   </entry>
   
@@ -1563,222 +1614,6 @@ mysql&gt; FLUSH PRIVILEGES;
       <category term="软件" scheme="http://huixisheng.github.io/tags/%E8%BD%AF%E4%BB%B6/"/>
     
       <category term="开发工具" scheme="http://huixisheng.github.io/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>mardowm语法简单测试</title>
-    <link href="http://huixisheng.github.io/markdown-test/"/>
-    <id>http://huixisheng.github.io/markdown-test/</id>
-    <published>2014-08-02T16:21:29.000Z</published>
-    <updated>2016-10-22T09:40:39.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>本文是学习markdown语法做的一些简单测试。引用<strong>MarkDown 团队统一书写规范 v1.0</strong></p>
-<a id="more"></a>
-<p>一个回车或者大于等于2个空格是一个段落。</p>
-<h1 id="1个-号可以生成h1"><a href="#1个-号可以生成h1" class="headerlink" title="1个#号可以生成h1"></a>1个#号可以生成h1</h1><h2 id="2个-号可以生成h2"><a href="#2个-号可以生成h2" class="headerlink" title="2个#号可以生成h2"></a>2个#号可以生成h2</h2><h3 id="3个-号可以生成h3"><a href="#3个-号可以生成h3" class="headerlink" title="3个#号可以生成h3"></a>3个#号可以生成h3</h3><p>下面以此类推到h6</p>
-<p>一个Tab可以生成code BlockS</p>
-<pre><code>&lt;html&gt;
-&lt;head&gt;
-    &lt;style&gt;
-        .clas{ font-size:12px;}
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div class=&quot;page&quot;&gt;
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre><p>在一个段落前面加<code>&gt;</code>可以生成一个 blockquotes</p>
-<blockquote>
-<p>我是用<code>&gt;</code>生成的blockquote</p>
-</blockquote>
-<p>数字<code>1. 2.</code>生成有序列表</p>
-<ol>
-<li>我是有序列表第1个<code>li</code></li>
-<li>我是有序列表第2个<code>li</code></li>
-<li>我是有序列表第3个<code>li</code></li>
-</ol>
-<hr>
-<p>##长的有序列表测试##</p>
-<ol>
-<li>工作中碰到的困难只是暂时的，不管是怎样的困难，</li>
-<li>项目开始前，必须对项目的架构做可行性、</li>
-<li>不要停下你学习脚步，不管你在现在在做的项目中有没有碰到困难，都要及时地给自己充电，拓宽自己的知识面和提高自己的技能</li>
-</ol>
-<p>字符<code>*、+、-</code>生成无序列表</p>
-<ul>
-<li>我是无序列表第1个<code>li</code></li>
-<li>我是无序列表第2个<code>li</code></li>
-<li>我是无序列表第3个<code>li</code></li>
-</ul>
-<p><strong>PS:每个列表的末尾需要4个空格或者tab</strong></p>
-<p>链接和图片生成的方法</p>
-<pre><code>[链接名称](链接)
-![图片名称](链接)
-</code></pre><p><a href="https://github.com/huixisheng/huixisheng.github.com/generated_pages/new" target="_blank" rel="external">链接测试</a></p>
-<p><img src="http://huixisheng.github.com/assets/themes/twitter/bootstrap/img/glyphicons-halflings.png" alt="测试图片"></p>
-<p>我是code<code>code</code>,我是<strong>加粗</strong>，我是<strong>斜体</strong>,我是<del>删除</del></p>
-<p><code>***</code>可以生成hr</p>
-<hr>
-<p>单纯的链接根式<code>&lt;链接&gt;</code><br><a href="http://huixisheng.github.com/" target="_blank" rel="external">http://huixisheng.github.com/</a></p>
-<p>特殊的字符需要转义， _ *</p>
-<hr>
-<h2 id="———"><a href="#———" class="headerlink" title="———-"></a>———-</h2><p>引用开始</p>
-<h1 id="MarkDown-团队统一书写规范-v1-0"><a href="#MarkDown-团队统一书写规范-v1-0" class="headerlink" title="MarkDown 团队统一书写规范 v1.0"></a>MarkDown 团队统一书写规范 v1.0</h1><p>由于 MarkDown 语法在细节的书写方式很多，为了让不同个体的文档传产出结构一致，提炼出此规范。<br>该规范遵循 <a href="http://daringfireball.net/projects/markdown/" target="_blank" rel="external">MarkDown 官方语法</a> 以及 <a href="https://github.com/mojombo/github-flavored-markdown/issues/1" target="_blank" rel="external">GitHub MakDown 语法</a>，旨在统一书写格式和代码风格，将多种写法统一。</p>
-<p><em>注：本文档符合自身规范，可视作demo，参看源码</em></p>
-<p>大家可以 <code>fork</code> 后形成自己团队的规范版本</p>
-<h2 id="1-1全局规范"><a href="#1-1全局规范" class="headerlink" title="1.1全局规范"></a>1.1全局规范</h2><p><a name="top"></a></p>
-<ul>
-<li>MarkDown 文件均使用<code>.md</code>作为后缀 (<strong>小写字母</strong>)</li>
-<li>普通文本换行，使用行末尾<code>2空格</code>触发</li>
-</ul>
-<h2 id="格式规范"><a href="#格式规范" class="headerlink" title="格式规范"></a>格式规范</h2><h3 id="标题结构格式"><a href="#标题结构格式" class="headerlink" title="标题结构格式"></a>标题结构格式</h3><ol>
-<li>标题与紧贴的<code>上下正文</code>使用<code>1整行换行</code>隔开</li>
-<li><code>#</code>号和文字之间<code>1个空格</code>连接</li>
-<li>标题层级如下，最多6级</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"># 顶级标题 等价于 title 和 &lt;h1&gt;</div><div class="line">## 次级标题 等价于 &lt;h2&gt;</div><div class="line">### 3级标题 等价于 &lt;h3&gt;</div><div class="line">#### 4级标题 等价于 &lt;h4&gt;</div><div class="line">##### 5级标题 等价于 &lt;h5&gt;</div><div class="line">###### 6级标题 等价于 &lt;h6&gt;</div><div class="line">####### 注：此行错误，标题层级最多6级 没有&lt;h7&gt;标签</div></pre></td></tr></table></figure>
-<h3 id="加强和强调规范"><a href="#加强和强调规范" class="headerlink" title="加强和强调规范"></a>加强和强调规范</h3><p>以下两种写法都是正确的，请统一为<strong>第一种</strong>，即一律使用 <code>**加强</code> <code>*强调</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">*emphasize*   **strong** 相当于&lt;strong&gt;标签和&lt;em&gt;标签</div><div class="line">_emphasize_   __strong__</div></pre></td></tr></table></figure>
-<h3 id="代码块规范"><a href="#代码块规范" class="headerlink" title="代码块规范"></a>代码块规范</h3><ul>
-<li>行内代码使用<code>1对波浪号</code> 如： `hello world!`</li>
-<li>块级代码使用<code>3个波浪号</code> 或 <code>整体4空格缩进</code>，且上下均用<code>整行隔开</code>，如下:  (<strong>占用7行</strong>)</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">   echo &apos;看我源码 - 3个波浪号&apos;;</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
-<pre><code>&lt;?php
-    echo &apos;看我源码 - 4空格缩进&apos;;
-?&gt;
-</code></pre><h3 id="列表写法"><a href="#列表写法" class="headerlink" title="列表写法"></a>列表写法</h3><ul>
-<li>列号<code>1.</code> 或者<code>*</code>后其后内容<code>空格</code>隔开</li>
-<li>列表块前后<code>整行隔开</code> 如下：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">1. Windows</div><div class="line">2. Mac</div><div class="line">3. iOS</div><div class="line">    * iPhone</div><div class="line">    * iPad</div><div class="line">4. Android</div></pre></td></tr></table></figure>
-<p><strong>实际预览：</strong></p>
-<ol>
-<li>Windows</li>
-<li>Mac</li>
-<li>iOS<ul>
-<li>iPhone</li>
-<li>iPad</li>
-</ul>
-</li>
-<li>Android</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">* Windows</div><div class="line">*  Mac</div><div class="line">*  iOS</div><div class="line">*  Android</div><div class="line">    1. v3.2</div><div class="line">    2. v4.1</div></pre></td></tr></table></figure>
-<p><strong>实际预览：</strong></p>
-<ul>
-<li>Windows</li>
-<li>Mac</li>
-<li>iOS</li>
-<li>Android<ol>
-<li>v3.2</li>
-<li>v4.1</li>
-</ol>
-</li>
-</ul>
-<h3 id="其他标签规范"><a href="#其他标签规范" class="headerlink" title="其他标签规范"></a>其他标签规范</h3><p>链接和Email<br>Inline:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">An [example](http://url.com/ &quot;Title&quot;)</div></pre></td></tr></table></figure>
-<p>引用样式标签 (titles are optional):</p>
-<pre><code>An [example][id]. Then, anywhere
-else in the doc, define the link:
-
-[id]: http://example.com/  &quot;Title&quot;
-</code></pre><p>Email:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">An email &lt;example@example.com&gt; link.</div></pre></td></tr></table></figure>
-<p>插图<br>Inline (titles are optional):</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">![alt text](/path/img.jpg &quot;Title&quot;)</div></pre></td></tr></table></figure>
-<p>引用式插图:</p>
-<pre><code>![alt text][id]
-
-[id]: /url/to/img.jpg &quot;Title&quot;
-</code></pre><p>引用块及嵌套</p>
-<blockquote>
-<p>Email-style angle brackets<br>are used for blockquotes.</p>
-<blockquote>
-<p>And, they can be nested.</p>
-</blockquote>
-<h4 id="Headers-in-blockquotes"><a href="#Headers-in-blockquotes" class="headerlink" title="Headers in blockquotes"></a>Headers in blockquotes</h4><ul>
-<li>You can quote a list.</li>
-<li>Etc.</li>
-</ul>
-</blockquote>
-<p>内联代码</p>
-<p><code>&lt;code&gt;</code> 段落中的用法</p>
-<p>也可以 <code>`代码中包含波浪号` </code>.<br>代码块</p>
-<p>Indent every line of a code block by at least 4 spaces or 1 tab.<br>代码的每行都最少用4个空格或者一个制表符(tab)</p>
-<p>我是普通文本块</p>
-<pre><code>我是一个预格式化的
-代码块.
-</code></pre><p>水平分割线<br>三个<code>连字符-</code>:</p>
-<hr>
-<h3 id="表格规范"><a href="#表格规范" class="headerlink" title="表格规范"></a>表格规范</h3><p>一个简单的表格看起来如下：</p>
-<table>
-<thead>
-<tr>
-<th>第一个头部</th>
-<th>第二个头部</th>
-<th>第三个头部</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>内容格子</td>
-<td>内容格子</td>
-<td>内容格子</td>
-</tr>
-<tr>
-<td>内容格子</td>
-<td>内容格子</td>
-<td>内容格子</td>
-</tr>
-</tbody>
-</table>
-<p>每列的对齐可以通过在分割线上添加冒号来实现：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">第一个头部</th>
-<th style="text-align:center">第二个头部</th>
-<th style="text-align:right">第三个头部</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">左对齐</td>
-<td style="text-align:center">居中</td>
-<td style="text-align:right">右对齐</td>
-</tr>
-<tr>
-<td style="text-align:left">左对齐</td>
-<td style="text-align:center">居中</td>
-<td style="text-align:right">右对齐</td>
-</tr>
-</tbody>
-</table>
-<h3 id="页内锚标记"><a href="#页内锚标记" class="headerlink" title="页内锚标记"></a>页内锚标记</h3><ul>
-<li><a href="#11全局规范">点我跳转到顶部</a>   // 利用 <code>#</code>,<code>##</code> 生成 <code>id</code> 锚标签</li>
-<li><a href="#top">另一种锚标记</a> // 利用 <code>&lt;a name=&quot;top&quot;&gt;&lt;/a&gt;</code></li>
-</ul>
-<hr>
-<p>附：参考 Hello-World.md 源码，<em>注意换行的使用</em></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"># Hello-World</div><div class="line"></div><div class="line">这是一个范例文件格式</div><div class="line">我是普通换行</div><div class="line"></div><div class="line">## 我是&lt;h2&gt;标题</div><div class="line"></div><div class="line">我是`&lt;h2&gt;`的内容</div><div class="line"></div><div class="line">## 我是&lt;h3&gt;标题</div><div class="line"></div><div class="line">* Windows</div><div class="line">*  Mac</div><div class="line">*  iOS</div><div class="line">*  Android</div></pre></td></tr></table></figure>
-<p>注：引用范例请参看源码底部</p>
-<h4 id="License"><a href="#License" class="headerlink" title="License"></a>License</h4><p>Released under <a href="http://rem.mit-license.org/" target="_blank" rel="external">MIT</a> LICENSE</p>
-<h2 id="引用结束"><a href="#引用结束" class="headerlink" title="引用结束"></a>引用结束</h2><hr>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
-<li><a href="https://github.com/hzlzh/1MarkDown" target="_blank" rel="external">MarkDown 团队统一书写规范 v1.0</a></li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      本文是学习markdown语法做的一些简单测试
-    
-    </summary>
-    
-    
-      <category term="markdown" scheme="http://huixisheng.github.io/tags/markdown/"/>
     
   </entry>
   

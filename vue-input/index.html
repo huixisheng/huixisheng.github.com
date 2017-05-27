@@ -1,0 +1,809 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Vue,Event,input," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="前端开发者说" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="今天有同事过来问我，给el-input 加了@input参数$event变成了input变化后的值(v-model)。大致伪代码如下:  对于@input的印象是: Vue2.x去除了.sync,需要双向绑定就用到了@input .sync在2.3.0又回来了  所以要让组件的 v-model 生效，它必须：接受一个 value 属性在有新的 value 时触发 input 事件  于是去看下el">
+<meta name="keywords" content="Vue,Event,input">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue @input事件">
+<meta property="og:url" content="http://huixisheng.github.io/vue-input/index.html">
+<meta property="og:site_name" content="前端开发者说">
+<meta property="og:description" content="今天有同事过来问我，给el-input 加了@input参数$event变成了input变化后的值(v-model)。大致伪代码如下:  对于@input的印象是: Vue2.x去除了.sync,需要双向绑定就用到了@input .sync在2.3.0又回来了  所以要让组件的 v-model 生效，它必须：接受一个 value 属性在有新的 value 时触发 input 事件  于是去看下el">
+<meta property="og:image" content="http://huixisheng.github.io/images/vue/@input1.jpeg">
+<meta property="og:updated_time" content="2017-05-27T16:40:10.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue @input事件">
+<meta name="twitter:description" content="今天有同事过来问我，给el-input 加了@input参数$event变成了input变化后的值(v-model)。大致伪代码如下:  对于@input的印象是: Vue2.x去除了.sync,需要双向绑定就用到了@input .sync在2.3.0又回来了  所以要让组件的 v-model 生效，它必须：接受一个 value 属性在有新的 value 时触发 input 事件  于是去看下el">
+<meta name="twitter:image" content="http://huixisheng.github.io/images/vue/@input1.jpeg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '9599',
+      author: '悔惜晟'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://huixisheng.github.io/vue-input/"/>
+
+
+  <title> vue @input事件 | 前端开发者说 </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">前端开发者说</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">记录开发的故事</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                vue @input事件
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-05-27T23:30:32+08:00" content="2017-05-27">
+              2017-05-27
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/vue-input/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="vue-input/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>今天有同事过来问我，给<code>el-input</code> 加了<code>@input</code>参数<code>$event</code>变成了<code>input</code>变化后的值(v-model)。大致伪代码如下:</p>
+<iframe scrolling="no" width="100%" height="300" src="//jsfiddle.net/k5uf5fa0/embedded/js,resources,html,css,result/light" frameborder="0" allowfullscreen></iframe>
+<p>对于<code>@input</code>的印象是:</p>
+<p>Vue2.x去除了<code>.sync</code>,需要双向绑定就用到了<code>@input</code> <code>.sync</code>在<a href="https://github.com/vuejs/vue/releases/tag/v2.3.0" target="_blank" rel="external">2.3.0又回来了</a></p>
+<blockquote>
+<p>所以要让组件的 v-model 生效，它必须：<br>接受一个 value 属性<br>在有新的 value 时触发 input 事件</p>
+</blockquote>
+<p>于是去看下<code>el-input</code><a href="https://github.com/ElemeFE/element/blob/d3bf30b48c66649e659c29df80844daa7992f1d9/packages/input/src/input.vue#L35-L49" target="_blank" rel="external">源码</a>，截取的伪代码:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;input ref=&quot;input&quot; @input=&quot;handleInput&quot;&gt;</div><div class="line"></div><div class="line">methods: &#123;</div><div class="line">  handleInput(event) &#123;</div><div class="line">    const value = event.target.value;</div><div class="line">    this.$emit(&apos;input&apos;, value);</div><div class="line">    this.setCurrentValue(value);</div><div class="line">    this.$emit(&apos;change&apos;, value);</div><div class="line">  &#125;,</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>可以理解<code>$event</code>为<code>v-model</code>没有问题，可是<code>handlerInput($event, index) {</code> 第一反应index的值应该没有才对。于是去<a href="https://github.com/vuejs/vue/blob/dev/dist/vue.js" target="_blank" rel="external">Vue的源码</a>找答案，Vue的源码并不是晦涩难懂，相反而是通俗易懂，当然精髓的代码还没有完全参透。接下来要抽段时间好好品味一番。@TODO</p>
+<p>打了断点，大致明白了点，不会像一开始那么迷茫。</p>
+<p><img src="/images/vue/@input1.jpeg" alt=""></p>
+<h2 id="input事件"><a href="#input事件" class="headerlink" title="input事件"></a>input事件</h2><p>参阅了下资料:</p>
+<blockquote>
+<p>当 <code>&lt;input&gt;</code> 或 <code>&lt;textarea&gt;</code> 元素的值更改时，DOM input 事件会同步触发。(对于 type = checkbox 或 type = radio 的输入元素，当用户单击控件时，输入事件不会触发，因为value属性不会更改。) 此外，当内容更改时，它会在 contenteditable 的编辑器上触发。在这种情况下，事件目标是编辑主机元素。如果有两个或多个具有 contenteditable 的元素为真，“编辑主机”是其父级不可编辑的最近的祖先元素。同样，它也会在  designMode 编辑器的根元素上触发。</p>
+</blockquote>
+<p>来自: <a href="https://developer.mozilla.org/zh-CN/docs/Web/Events/input" target="_blank" rel="external">https://developer.mozilla.org/zh-CN/docs/Web/Events/input</a></p>
+<blockquote>
+<p>最后需要注意的是：oninput 和 onpropertychange 这两个事件在 IE9 中都有个小BUG，那就是通过右键菜单菜单中的剪切和删除命令删除内容的时候不会触发，而 IE 其他版本都是正常的，目前还没有很好的解决方案。不过 oninput &amp; onpropertychange 仍然是监听输入框值变化的最佳方案，如果大家有更好的方法，欢迎参与讨论。</p>
+</blockquote>
+<p>来自: <a href="http://www.cnblogs.com/lhb25/archive/2012/11/30/oninput-and-onpropertychange-event-for-input.html" target="_blank" rel="external">http://www.cnblogs.com/lhb25/archive/2012/11/30/oninput-and-onpropertychange-event-for-input.html</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://github.com/ElemeFE/element/blob/d3bf30b48c66649e659c29df80844daa7992f1d9/packages/input/src/input.vue" target="_blank" rel="external">https://github.com/ElemeFE/element/blob/d3bf30b48c66649e659c29df80844daa7992f1d9/packages/input/src/input.vue</a></li>
+<li><a href="https://github.com/tiimgreen/github-cheat-sheet/blob/master/README.zh-cn.md#%E6%95%B4%E8%A1%8C%E9%AB%98%E4%BA%AE" target="_blank" rel="external">https://github.com/tiimgreen/github-cheat-sheet/blob/master/README.zh-cn.md#%E6%95%B4%E8%A1%8C%E9%AB%98%E4%BA%AE</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/Events/input" target="_blank" rel="external">https://developer.mozilla.org/zh-CN/docs/Web/Events/input</a></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Vue/" rel="tag">#Vue</a>
+          
+            <a href="/tags/Event/" rel="tag">#Event</a>
+          
+            <a href="/tags/input/" rel="tag">#input</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/MacOSX-php/" rel="next" title="MacOSX安装多版本php">
+                <i class="fa fa-chevron-left"></i> MacOSX安装多版本php
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="vue-input/"
+           data-title="vue @input事件" data-url="http://huixisheng.github.io/vue-input/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="huixisheng" />
+          <p class="site-author-name" itemprop="name">huixisheng</p>
+          <p class="site-description motion-element" itemprop="description">前端路漫漫兮，吾将上下而求索</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">27</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">36</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/huixisheng" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/huixisheng" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/huixisheng" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#input事件"><span class="nav-number">1.</span> <span class="nav-text">input事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">2.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">huixisheng</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"huixisheng"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = false;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title >= 0 || index_content >= 0 ){
+                                isMatch = true;
+								if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            } 
+							
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
