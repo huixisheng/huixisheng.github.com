@@ -113,9 +113,13 @@
     <link href="http://huixisheng.github.io/phpstorm/"/>
     <id>http://huixisheng.github.io/phpstorm/</id>
     <published>2017-05-26T12:39:44.000Z</published>
-    <updated>2017-05-26T13:47:33.000Z</updated>
+    <updated>2017-05-29T13:28:26.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="相关问题"><a href="#相关问题" class="headerlink" title="相关问题"></a>相关问题</h2><h3 id="phpstorm注释的时候的斜线位置不在缩进的位置"><a href="#phpstorm注释的时候的斜线位置不在缩进的位置" class="headerlink" title="phpstorm注释的时候的斜线位置不在缩进的位置"></a>phpstorm注释的时候的斜线位置不在缩进的位置</h3><p>phpstorm注释的代码在Sublime中打开，收起代码的时候很不友好，估计有强迫症用户更是受不了吧。</p>
+    <content type="html"><![CDATA[<p>值得开心的事: <a href="https://www.jetbrains.com/phpstorm/features/html_css_js_editor.html" target="_blank" rel="external">在最新的2017.1版本中，PhpStorm/WebStorm已经对Vue.js 进行了原生支持</a></p>
+<h2 id="相关问题"><a href="#相关问题" class="headerlink" title="相关问题"></a>相关问题</h2><h3 id="PhpStorm与WebStorm关系"><a href="#PhpStorm与WebStorm关系" class="headerlink" title="PhpStorm与WebStorm关系"></a>PhpStorm与WebStorm关系</h3><p>引用官网说明:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">PhpStorm = WebStorm + PHP + DB/SQL</div><div class="line"></div><div class="line">All the features of WebStorm are included into PhpStorm, and full-fledged support for PHP and Databases/SQL support are added on top.</div></pre></td></tr></table></figure>
+<h3 id="php文件的语法高亮设置"><a href="#php文件的语法高亮设置" class="headerlink" title=".php文件的语法高亮设置"></a>.php文件的语法高亮设置</h3><p>.php 文件不高亮 <code>Editor-&gt;file types</code> 里面可以设置相同的类的代码高亮。<br>php类，可以增加：<code>php4,php5,html,phtml</code>等</p>
+<h3 id="phpstorm注释的时候的斜线位置不在缩进的位置"><a href="#phpstorm注释的时候的斜线位置不在缩进的位置" class="headerlink" title="phpstorm注释的时候的斜线位置不在缩进的位置"></a>phpstorm注释的时候的斜线位置不在缩进的位置</h3><p>phpstorm注释的代码在Sublime中打开，收起代码的时候很不友好，估计有强迫症用户更是受不了吧。</p>
 <p><code>Preferences-&gt;Editor-&gt;Code Style-&gt;PHP-&gt;Other</code> 里面取消 <code>Line comment at first column</code>之前的勾选就行了！</p>
 <p><img src="/images/tools/phpstorm.jpeg" alt=""></p>
 <h3 id="如何修改phpstorm新建文件默认模版注释"><a href="#如何修改phpstorm新建文件默认模版注释" class="headerlink" title="如何修改phpstorm新建文件默认模版注释"></a>如何修改phpstorm新建文件默认模版注释</h3><p>默认注释:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">/**</div><div class="line"> * Created by PhpStorm.</div><div class="line"> * User: huixisheng</div><div class="line"> * Date: 2017/5/26</div><div class="line"> * Time: 21:00</div><div class="line"> */</div></pre></td></tr></table></figure></p>
@@ -125,11 +129,76 @@
 <ul>
 <li><a href="https://github.com/barryvdh/laravel-ide-helper" target="_blank" rel="external">https://github.com/barryvdh/laravel-ide-helper</a></li>
 </ul>
-<h2 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h2><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2>]]></content>
+<h2 id="常用的快捷键"><a href="#常用的快捷键" class="headerlink" title="常用的快捷键"></a>常用的快捷键</h2><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>shift+command+↑</td>
+<td>代码行上移</td>
+</tr>
+<tr>
+<td>control+g</td>
+<td>选中相同单词</td>
+</tr>
+<tr>
+<td>Commond+d</td>
+<td>复制行到下一行</td>
+</tr>
+<tr>
+<td>Command+delete</td>
+<td>删除当前行</td>
+</tr>
+</tbody>
+</table>
+<p>苹果键盘修饰键</p>
+<blockquote>
+<p>Command ⌘<br>Shift ⇧<br>Option ⌥<br>Control ⌃<br>Caps Lock ⇪<br>Fn</p>
+</blockquote>
+<ul>
+<li><a href="https://support.apple.com/zh-cn/HT201236" target="_blank" rel="external">Mac 键盘快捷键</a></li>
+<li><a href="http://newping.cn/457" target="_blank" rel="external">认识Mac下的那些符号!</a></li>
+</ul>
+<h2 id="如何打特殊符号"><a href="#如何打特殊符号" class="headerlink" title="如何打特殊符号"></a>如何打特殊符号</h2><p>搜狗输入法-&gt;详情表情和符号</p>
+<h2 id="切换至ES6规范"><a href="#切换至ES6规范" class="headerlink" title="切换至ES6规范"></a>切换至ES6规范</h2><p>在项目中开启ES6 <code>Preferences-&gt;Languages &amp; Frameworks-&gt;JavaScript-&gt;JavaScript language version-&gt;ECMAScript 6</code>。 难找的话直接搜索<code>JavaScript</code></p>
+<h2 id="主题相关文章介绍"><a href="#主题相关文章介绍" class="headerlink" title="主题相关文章介绍"></a>主题相关文章介绍</h2><ul>
+<li><a href="http://chinagdg.org/2016/02/ttt2-seti-ui/" target="_blank" rel="external">http://chinagdg.org/2016/02/ttt2-seti-ui/</a></li>
+<li><a href="https://www.zhihu.com/question/37762479" target="_blank" rel="external">https://www.zhihu.com/question/37762479</a></li>
+<li><a href="https://www.zhihu.com/question/35413120" target="_blank" rel="external">https://www.zhihu.com/question/35413120</a></li>
+<li><a href="https://www.zhihu.com/question/35203203" target="_blank" rel="external">https://www.zhihu.com/question/35203203</a> mac下intellij idea 变得特别卡该如何解决？</li>
+<li><a href="http://www.webstormthemes.com/themes-list?title=&amp;field_tags_tid=All" target="_blank" rel="external">http://www.webstormthemes.com/themes-list?title=&amp;field_tags_tid=All</a></li>
+<li><a href="http://www.jianshu.com/p/10f5f0055715" target="_blank" rel="external">http://www.jianshu.com/p/10f5f0055715</a></li>
+<li><a href="https://blog.fazero.me/2015/07/25/WebStorm%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98%E5%92%8C%E4%BF%AE%E6%94%B9%E5%AD%97%E4%BD%93%E6%A0%B7%E5%BC%8F/" target="_blank" rel="external">https://blog.fazero.me/2015/07/25/WebStorm%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98%E5%92%8C%E4%BF%AE%E6%94%B9%E5%AD%97%E4%BD%93%E6%A0%B7%E5%BC%8F/</a></li>
+<li><a href="https://www.zhihu.com/question/35413120" target="_blank" rel="external">https://www.zhihu.com/question/35413120</a></li>
+<li><a href="https://plugins.jetbrains.com/plugin/8006-material-theme-ui" target="_blank" rel="external">https://plugins.jetbrains.com/plugin/8006-material-theme-ui</a></li>
+<li><a href="http://color-themes.com/?view=index&amp;layout=Generic&amp;order=popular&amp;search=&amp;page=2" target="_blank" rel="external">http://color-themes.com/?view=index&amp;layout=Generic&amp;order=popular&amp;search=&amp;page=2</a></li>
+</ul>
+<h2 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h2><ul>
+<li>新特性 <a href="https://www.jetbrains.com/webstorm/whatsnew/#v2017-1-completion-in-webpackconfigjs" target="_blank" rel="external">https://www.jetbrains.com/webstorm/whatsnew/#v2017-1-completion-in-webpackconfigjs</a></li>
+<li>jsdoc <a href="https://www.jetbrains.com/help/webstorm/2017.1/creating-jsdoc-comments.html" target="_blank" rel="external">https://www.jetbrains.com/help/webstorm/2017.1/creating-jsdoc-comments.html</a>  <a href="http://blog.lxjwlt.com/2016/09/11/jsdoc.html" target="_blank" rel="external">http://blog.lxjwlt.com/2016/09/11/jsdoc.html</a></li>
+<li><a href="http://xwartz.xyz/pupa/2016/05/my-workflow-in-sublime/" target="_blank" rel="external">http://xwartz.xyz/pupa/2016/05/my-workflow-in-sublime/</a></li>
+<li>WebStorm 有哪些过人之处？ <a href="https://www.zhihu.com/question/20936155" target="_blank" rel="external">https://www.zhihu.com/question/20936155</a></li>
+<li>eslint <a href="http://laichuanfeng.com/work/use-eslint-in-webstorm/" target="_blank" rel="external">http://laichuanfeng.com/work/use-eslint-in-webstorm/</a></li>
+<li><a href="https://plugins.jetbrains.com" target="_blank" rel="external">https://plugins.jetbrains.com</a></li>
+</ul>
+<h2 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h2><p>2017-05-28 01:02:06</p>
+<ul>
+<li>添加主题和相关介绍文章</li>
+<li>添加碰到的问题</li>
+<li>添加常用的快捷键</li>
+</ul>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="http://lightcss.com/get-vuejs-support-in-webstorm-and-phpstorm/" target="_blank" rel="external">http://lightcss.com/get-vuejs-support-in-webstorm-and-phpstorm/</a></li>
+</ul>
+]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;相关问题&quot;&gt;&lt;a href=&quot;#相关问题&quot; class=&quot;headerlink&quot; title=&quot;相关问题&quot;&gt;&lt;/a&gt;相关问题&lt;/h2&gt;&lt;h3 id=&quot;phpstorm注释的时候的斜线位置不在缩进的位置&quot;&gt;&lt;a href=&quot;#phpstorm注释的时候的斜线位置不在
+      &lt;p&gt;值得开心的事: &lt;a href=&quot;https://www.jetbrains.com/phpstorm/features/html_css_js_editor.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;在最新的2017.1版本中，PhpSto
     
     </summary>
     
@@ -453,337 +522,6 @@
   </entry>
   
   <entry>
-    <title>兼容性解决方案整理</title>
-    <link href="http://huixisheng.github.io/compatibility-solution/"/>
-    <id>http://huixisheng.github.io/compatibility-solution/</id>
-    <published>2016-10-22T13:02:45.000Z</published>
-    <updated>2016-12-23T03:08:06.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>移动互联网的今天，告别了ie6。</p>
-<p>以下来自原先项目<del>psc</del>。<del>psc</del>已经删除，<del>使用issues继续整理</del>。相信这是一个更好的开始。整理到博客汇总。</p>
-<a id="more"></a>
-<p>浏览器的兼容性问题是前端开发人员最头痛的，PCS 收集并整理完美兼容的解决方案。低版本浏览器添加过多的脚本或者更多的代码势必会带来性能，维护成本。其实PCS 并非是完美的解法办法，最完美的是浏览器本身符合<a href="http://baike.baidu.com/view/459077.htm?fr=wordsearch" target="_blank" rel="external">w3c标准</a>。当然这不现实，要不要所有浏览器都真的完全表现一样，其实还要视项目而定，或许我们可以选择<a href="http://baike.baidu.com/view/1172014.htm" target="_blank" rel="external">优雅降级</a>处理。凡是一切都在权衡。</p>
-<h2 id="CSS-CSS3"><a href="#CSS-CSS3" class="headerlink" title="CSS/CSS3"></a>CSS/CSS3</h2><h3 id="Respond"><a href="#Respond" class="headerlink" title="Respond"></a><a href="https://github.com/scottjehl/Respond" target="_blank" rel="external">Respond</a></h3><h2 id="inline-block"><a href="#inline-block" class="headerlink" title="inline-block"></a><a href="http://ued.taobao.org/blog/2012/08/inline-block/" target="_blank" rel="external">inline-block</a></h2><pre><code>.dib-wrap {
-    font-size:0;/* 所有浏览器 */
-    *word-spacing:-1px;/* IE6、7 */
-}
-.dib-wrap .dib{
-    font-size: 12px;
-    letter-spacing: normal;
-    word-spacing: normal;
-    vertical-align:top;
-}
-@media screen and (-webkit-min-device-pixel-ratio:0){
-    /* firefox 中 letter-spacing 会导致脱离普通流的元素水平位移 */
-    .dib-wrap{
-    letter-spacing:-5px;/* Safari 等不支持字体大小为 0 的浏览器, N 根据父级字体调节*/
-    }
-}
-.dib {
-    display: inline-block;
-    *display:inline;
-    *zoom:1;
-}
-</code></pre><h2 id="css3-gradient"><a href="#css3-gradient" class="headerlink" title="css3-gradient"></a><a href="http://www.w3cplus.com/content/css3-gradient" target="_blank" rel="external">css3-gradient</a></h2><ol>
-<li><a href="http://www.colorzilla.com/gradient-editor/" target="_blank" rel="external">css3 渐变在线生成工具Ultimate CSS Gradient Generator</a></li>
-</ol>
-<h2 id="HTML-HTML5"><a href="#HTML-HTML5" class="headerlink" title="HTML/HTML5"></a>HTML/HTML5</h2><h2 id="html5shiv"><a href="#html5shiv" class="headerlink" title="html5shiv"></a>html5shiv</h2><p>The <a href="https://github.com/aFarkas/html5shiv" target="_blank" rel="external">HTML5 Shiv</a> enables use of HTML5 sectioning elements in legacy Internet Explorer and provides basic HTML5 styling for Internet Explorer 6-9, Safari 4.x (and iPhone 3.x), and Firefox 3.x.</p>
-<h2 id="html5demos"><a href="#html5demos" class="headerlink" title="html5demos"></a><a href="https://github.com/remy/html5demos" target="_blank" rel="external">html5demos</a></h2><p>A collection of HTML5 experiments I’ve created, now open source and on GitHub, so please go ahead and help me hack this resource in to a wealth of demos that other authors can learn from.</p>
-<h2 id="HTML5-History-API"><a href="#HTML5-History-API" class="headerlink" title="HTML5-History-API"></a><a href="https://github.com/remy/html5demos" target="_blank" rel="external">HTML5-History-API</a></h2><h2 id="video-js"><a href="#video-js" class="headerlink" title="video.js"></a><a href="https://github.com/videojs/video.js" target="_blank" rel="external">video.js</a></h2><h2 id="jQuery-html5-placeholder"><a href="#jQuery-html5-placeholder" class="headerlink" title=" jQuery-html5-placeholder"></a><a href="https://github.com/Topener/jQuery-html5-placeholder" target="_blank" rel="external"> jQuery-html5-placeholder</a></h2><h2 id="HTML5-Desktop-Notifications"><a href="#HTML5-Desktop-Notifications" class="headerlink" title="HTML5 Desktop Notifications"></a><a href="https://github.com/ttsvetko/HTML5-Desktop-Notifications" target="_blank" rel="external">HTML5 Desktop Notifications</a></h2><h2 id="localstorage"><a href="#localstorage" class="headerlink" title="localstorage"></a>localstorage</h2><p><a href="https://github.com/marcuswestin/store.js" target="_blank" rel="external">store.js</a> exposes a simple API for cross browser local storage</p>
-<h2 id="JavaScritp-ECMAScript"><a href="#JavaScritp-ECMAScript" class="headerlink" title="JavaScritp/ECMAScript"></a>JavaScritp/ECMAScript</h2><h2 id="es5-shim"><a href="#es5-shim" class="headerlink" title="es5-shim"></a>es5-shim</h2><p><a href="https://github.com/es-shims/es5-shim" target="_blank" rel="external"><code>es5-shim.js</code></a> and <code>es5-shim.min.js</code> monkey-patch a JavaScript context to<br>contain all EcmaScript 5 methods that can be faithfully emulated with a<br>legacy JavaScript engine.</p>
-<h2 id="IE-IE6-IE7-IE8"><a href="#IE-IE6-IE7-IE8" class="headerlink" title="IE/IE6/IE7/IE8"></a>IE/IE6/IE7/IE8</h2><h3 id="PIE"><a href="#PIE" class="headerlink" title="PIE"></a>PIE</h3><p>(PIE)(<a href="http://css3pie.com/" target="_blank" rel="external">http://css3pie.com/</a>) makes Internet Explorer 6-9 capable of rendering several of the most useful CSS3 decoration features.</p>
-<p>通过脚本可以使得ie6/7/8/9 支持css3 的 border-radius、box-shadow、linear-gradient。</p>
-<h3 id="DD-belatedPNG"><a href="#DD-belatedPNG" class="headerlink" title="DD_belatedPNG"></a><a href="http://www.dillerdesign.com/experiment/DD_belatedPNG/" target="_blank" rel="external">DD_belatedPNG</a></h3><p>This is a Javascript library that sandwiches PNG image support into IE6 without much fuss.</p>
-<p>处理ie6不支持png24。</p>
-<pre><code>DD_belatedPNG.fix(&apos;.png_bg, .png24&apos;); // argument is a CSS selector
-DD_belatedPNG.fixPng( someNode ); // argument is an HTMLDomElement
-</code></pre><h4 id="更多solution"><a href="#更多solution" class="headerlink" title="更多solution"></a>更多solution</h4><ol>
-<li><a href="http://www.w3cfuns.com/thread-297-1-1.html" target="_blank" rel="external">IE6 PNG透明终极解决方案（打造W3Cfuns-IE6PNG最强帖）</a></li>
-</ol>
-<h3 id="IE下-z-index的层级问题"><a href="#IE下-z-index的层级问题" class="headerlink" title="IE下 z-index的层级问题"></a>IE下 z-index的层级问题</h3><h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><ol>
-<li><a href="http://www.cnblogs.com/Darren_code/archive/2012/03/05/z-index.html" target="_blank" rel="external">IE下 z-index 的各种坑</a></li>
-<li><a href="http://www.zhangxinxu.com/wordpress/2009/12/ie6%E4%B8%8Bz-index%E7%8A%AF%E7%99%AB%E4%B8%8D%E8%B5%B7%E4%BD%9C%E7%94%A8bug%E7%9A%84%E5%88%9D%E6%AD%A5%E7%A0%94%E7%A9%B6/" target="_blank" rel="external">IE6下z-index犯癫不起作用bug的初步研究</a></li>
-<li><a href="http://www.w3help.org/zh-cn/causes/RM8015" target="_blank" rel="external">IE6 IE7 IE8(Q) 中定位元素 ‘z-index’ 为默认值在某些情况下会产生新的层叠上下文</a></li>
-</ol>
-<h3 id="ie6-不支持positon-fixed"><a href="#ie6-不支持positon-fixed" class="headerlink" title="ie6 不支持positon: fixed"></a>ie6 不支持<code>positon: fixed</code></h3><h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><ol>
-<li><a href="http://www.w3help.org/zh-cn/causes/RM8013" target="_blank" rel="external">RM8013: IE6 IE7(Q) IE8(Q) 不支持固定定位（position:fixed）</a></li>
-<li><a href="http://www.cnblogs.com/hooray/archive/2011/05/20/2052269.html" target="_blank" rel="external">完美解决IE6不支持position:fixed的bug</a></li>
-</ol>
-<h3 id="透明度-opacity-rgba"><a href="#透明度-opacity-rgba" class="headerlink" title="透明度 opacity/rgba"></a>透明度 opacity/rgba</h3><p>opacity设置的透明度对子元素都有影响。ie可以使用 filter 处理</p>
-<pre><code>.opacity{
-    background: rgb(255,255,0);
-    opacity: 0.4;
-    filter:alpha(opacity=40);
-}
-
-
-.rgba{
-    filter:progid:DXImageTransform.Microsoft.gradient(enabled=&apos;true&apos;,startColorstr=&apos;#7F000000&apos;, endColorstr=&apos;#7F000000&apos;);
-}
-:root  .rgba{
-    filter:none;     /*处理IE9浏览器中的滤镜效果*/
-    background-color:rgba(0,0,0,0.5);
-}
-</code></pre><ol>
-<li><a href="http://www.w3help.org/zh-cn/causes/BT9011" target="_blank" rel="external">BT9011: 只有 IE 支持 CSS Filter</a></li>
-<li><a href="http://www.w3cplus.com/content/css3-rgba" target="_blank" rel="external">CSS3 RGBA</a></li>
-<li><a href="http://www.linxz.de/css_tool/hex_color.html" target="_blank" rel="external">css3-rgba ie下可透明的背景颜色转换工具</a></li>
-</ol>
-<h3 id="ie6-max-width-max-height-min-height-min-width"><a href="#ie6-max-width-max-height-min-height-min-width" class="headerlink" title="ie6 max-width/max-height/min-height/min-width"></a>ie6 max-width/max-height/min-height/min-width</h3><pre><code>.maxh{ max-height:300px; _height: expression(this.scrollHeight &gt;= 300? &apos;300px&apos; : &apos;auto&apos;);  }
-
-.maxw{ max-width: 300px; _width: expression(this.clientWidth &gt;= 300 ? &apos;300px&apos; : &apos;auto&apos;); }
-
-.minh{ min-height: 300px; height:auto !important; _height: 300px; }
-
-.minw{ min-width: 300px; _width: expression(this.clientWidth &lt;= 300 ? &apos;300px&apos; : &apos;auto&apos;); }
-</code></pre><ol>
-<li><a href="http://ziren.org/html-css/ie6-support-min-width-and-max-width.html" target="_blank" rel="external">让IE6支持min-width和max-width的方法</a></li>
-</ol>
-<h2 id="css3-mediaqueries-js"><a href="#css3-mediaqueries-js" class="headerlink" title="css3-mediaqueries-js"></a>css3-mediaqueries-js</h2><p><a href="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js" target="_blank" rel="external">css3-mediaqueries-js</a></p>
-<h2 id="ieBetter"><a href="#ieBetter" class="headerlink" title="ieBetter"></a>ieBetter</h2><p><a href="http://www.zhangxinxu.com/wordpress/2013/12/iebetter-js-make-ie6-ie8-like-modern-browser-ie9-chrome/" target="_blank" rel="external">ieBetter.js-让IE6-IE8拥有IE9+,Chrome等浏览器特性</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;移动互联网的今天，告别了ie6。&lt;/p&gt;
-&lt;p&gt;以下来自原先项目&lt;del&gt;psc&lt;/del&gt;。&lt;del&gt;psc&lt;/del&gt;已经删除，&lt;del&gt;使用issues继续整理&lt;/del&gt;。相信这是一个更好的开始。整理到博客汇总。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="兼容性" scheme="http://huixisheng.github.io/tags/%E5%85%BC%E5%AE%B9%E6%80%A7/"/>
-    
-      <category term="前端库" scheme="http://huixisheng.github.io/tags/%E5%89%8D%E7%AB%AF%E5%BA%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>配置SSH公钥和git多账号配置</title>
-    <link href="http://huixisheng.github.io/git-ssh-key-setting/"/>
-    <id>http://huixisheng.github.io/git-ssh-key-setting/</id>
-    <published>2016-10-22T13:02:45.000Z</published>
-    <updated>2016-10-22T13:07:52.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>本文介绍如何配置<code>ssh-key</code></p>
-<a id="more"></a>
-<h2 id="生成key"><a href="#生成key" class="headerlink" title="生成key"></a>生成key</h2><p>ssh-keygen -t rsa -f ~/.ssh/git.oschina.net -C “469184346@qq.com”</p>
-<blockquote>
-<p>代码参数含义：<br>-t 指定密钥类型，默认是 rsa ，可以省略。<br>-C 设置注释文字，比如邮箱。<br>-f 指定密钥文件存储文件名。  -<a href="http://www.cnblogs.com/ayseeing/p/3572582.html" target="_blank" rel="external">来自github设置添加SSH</a></p>
-</blockquote>
-<p>直接输入回车</p>
-<pre><code>Generating public/private rsa key pair.
-Enter passphrase (empty for no passphrase):
-Enter same passphrase again:
-</code></pre><p>如果输入了密码</p>
-<blockquote>
-<p>设置passphrase后，进行版本控制时，每次与GitHub通信都会要求输入passphrase，以避免某些“失误”</p>
-<p>将SSH 私钥增加到ssh-agent: ssh-add ~/.ssh/xyz_rsa， 这里会提示输入一次私钥的密码; -<a href="http://www.jianshu.com/p/ddd3122cb351#" target="_blank" rel="external">来自</a></p>
-</blockquote>
-<h2 id="添加密匙"><a href="#添加密匙" class="headerlink" title="添加密匙"></a>添加密匙</h2><h3 id="拷贝公钥"><a href="#拷贝公钥" class="headerlink" title="拷贝公钥"></a>拷贝公钥</h3><pre><code>pbcopy &lt;  ~/.ssh/git.oschina.net.pub
-</code></pre><p>其他平台拷贝命令<a href="http://www.jianshu.com/p/31cbbbc5f9fa/" target="_blank" rel="external">参考如何生成SSH key</a></p>
-<blockquote>
-<p>window<br>    clip &lt; ~/.ssh/id_rsa.pub</p>
-<p>linux<br>    sudo apt-get install xclip<br>    xclip -sel clip &lt; ~/.ssh/id_rsa.pub</p>
-</blockquote>
-<h3 id="登录远程git平台添加ssh-key"><a href="#登录远程git平台添加ssh-key" class="headerlink" title="登录远程git平台添加ssh key"></a>登录远程git平台添加ssh key</h3><p>粘贴刚才拷贝的内容</p>
-<ul>
-<li><a href="http://git.oschina.net/profile/sshkeys" target="_blank" rel="external">oschinaSSH公钥</a></li>
-<li><a href="https://github.com/settings/keys" target="_blank" rel="external">github SSH and GPG keys</a>点击 <code>New SSH key</code></li>
-</ul>
-<p>将新生成的key添加到ssh-agent中</p>
-<pre><code>$ eval &quot;$(ssh-agent -s)&quot;
-$ ssh-add ~/.ssh/git.oschina.net
-</code></pre><blockquote>
-<p>可以通过 ssh-add -l 来确私钥列表<br>$ ssh-add -l<br>可以通过 ssh-add -D 来清空私钥列表<br>$ ssh-add -D</p>
-</blockquote>
-<h2 id="配置config用于多个git-ssh密匙"><a href="#配置config用于多个git-ssh密匙" class="headerlink" title="配置config用于多个git ssh密匙"></a>配置config用于多个git ssh密匙</h2><pre><code>Host github.com
-    HostName github.com
-    PreferredAuthentications publickey
-    IdentityFile ~/.ssh/github
-    User huixisheng
-
-Host git.coding.net
-    HostName git.coding.net
-    PreferredAuthentications publickey
-    IdentityFile ~/.ssh/gitcodingnet
-    User git
-
-Host git.oschina.net
-    HostName git.oschina.net
-    PreferredAuthentications publickey
-    IdentityFile ~/.ssh/git.oschina.net
-    User git
-</code></pre><blockquote>
-<p>Host，SSH 连接名<br>HostName，如上所示，可以是通配符，可以是 IP，也可以是域名等<br>User，登录的用户名<br>IdentifyFile，version 1 协议下默认是 ~/.ssh/identify，version 2 协议下，默认是依次匹配：~/.ssh/id_dsa，~/.ssh/id_ecdsa，~/.ssh/id_rsa，还有 version 2 兼容模式。<br>LocalForward 端口的内部跳转<br>Port，端口设置，默认 SSH 的端口是 22<br>Protocal，协议版本号，1 或者 2<br><a href="http://www.barretlee.com/blog/2016/03/09/config-in-ssh-after-troubling-git-connection/" target="_blank" rel="external">来自</a></p>
-</blockquote>
-<ul>
-<li><a href="http://www.cnblogs.com/ayseeing/p/4445194.html" target="_blank" rel="external">参考生成多个git ssh密钥</a></li>
-</ul>
-<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>测试是否配置成功</p>
-<pre><code>$ ssh -T git@git.oschina.net
-Welcome to Git@OSC, huixisheng!
-</code></pre><blockquote>
-<p>-v会输出详情的信息 <a href="http://www.barretlee.com/blog/2016/03/09/config-in-ssh-after-troubling-git-connection/" target="_blank" rel="external">多SSH Key管理技巧与Git多账户登录问题</a></p>
-</blockquote>
-<h2 id="其他问题"><a href="#其他问题" class="headerlink" title="其他问题"></a>其他问题</h2><pre><code>$ ssh -T git@git.oschina.net
-The authenticity of host &apos;git.oschina.net (218.60.114.30)&apos; can&apos;t be established.
-ECDSA key fingerprint is SHA256:FQGC9Kn/eye1W8icdBgrQp+KkGYoFgbVr17bmjey0Wc.
-Are you sure you want to continue connecting (yes/no)? yes
-Warning: Permanently added &apos;git.oschina.net,218.60.114.30&apos; (ECDSA) to the list of known hosts.
-Permission denied (publickey).
-
-$ eval &quot;$(ssh-agent -s)&quot;
-$ ssh-add ~/.ssh/git.oschina.net
-</code></pre><blockquote>
-<p>   如果执行ssh-add时提示”Could not open a connection to your authentication agent”，可以现执行命令：<br>    $ ssh-agent bash <a href="http://my.oschina.net/stefanzhlg/blog/529403" target="_blank" rel="external">来自</a></p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo git clone git@git.coding.net:huixisheng/layout.git</div><div class="line">Cloning into &apos;layout&apos;...</div><div class="line">Permission denied (publickey).</div><div class="line">fatal: Could not read from remote repository.</div></pre></td></tr></table></figure>
-<p><code>ssh -vT git@git.coding.net</code> 是有结果返回的,看了debug信息都是正常的。</p>
-<p>执行如下（期间关闭了翻墙软件）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ssh-add ~/.ssh/gitcodingnet</div><div class="line">source ~/.ssh/config</div></pre></td></tr></table></figure></p>
-<p>再次clone又可以了。没找到为何不行的根本原因</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><a href="http://my.oschina.net/stefanzhlg/blog/529403" target="_blank" rel="external">git 配置多个SSH-Key</a></li>
-<li><a href="https://help.github.com/articles/generating-ssh-keys" target="_blank" rel="external">https://help.github.com/articles/generating-ssh-keys</a></li>
-<li><a href="https://coding.net/help/doc/git/ssh-key.html" target="_blank" rel="external">coding配置SSH公钥</a></li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;本文介绍如何配置&lt;code&gt;ssh-key&lt;/code&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="git" scheme="http://huixisheng.github.io/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>git操作常见问题汇总</title>
-    <link href="http://huixisheng.github.io/git-problem/"/>
-    <id>http://huixisheng.github.io/git-problem/</id>
-    <published>2016-10-22T13:02:45.000Z</published>
-    <updated>2016-11-25T15:04:43.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>平常工作中常用的<code>git</code>操作命令。</p>
-<a id="more"></a>
-<h2 id="git添加空目录"><a href="#git添加空目录" class="headerlink" title="git添加空目录"></a>git添加空目录</h2><p>在空目录下建<code>.gitignore</code><br>内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># 忽略所有文件</div><div class="line">*</div><div class="line"># 除了这个文件</div><div class="line">!.gitignore</div></pre></td></tr></table></figure></p>
-<h2 id="git忽略已经被提交的文件"><a href="#git忽略已经被提交的文件" class="headerlink" title="git忽略已经被提交的文件"></a>git忽略已经被提交的文件</h2><p>直接<code>rm</code> 然后 <code>git  add .</code>本地磁盘也会被删除。我们要的是删除版本库的文件，并忽略。使用如下方法处理:</p>
-<p>忽略文件夹 <code>git rm -r --cached cache/*</code> 然后在 <code>.gitignore</code>忽略删除的文件。注意<code>git rm --cached</code> 删除的是追踪状态</p>
-<h2 id="git-忽略已经提交的文件的修改"><a href="#git-忽略已经提交的文件的修改" class="headerlink" title="git 忽略已经提交的文件的修改"></a>git 忽略已经提交的文件的修改</h2><p><code>git update-index --assume-unchanged .env</code><br>重置之前添加的忽略<br><code>git update-index --no-assume-unchanged .env</code></p>
-<h2 id="同步github-fork原作者分支的修改"><a href="#同步github-fork原作者分支的修改" class="headerlink" title="同步github fork原作者分支的修改"></a>同步<code>github</code> fork原作者分支的修改</h2><p>假设当前在fork <code>hexo-theme-amazeui</code>并<code>clone</code> <code>fork</code>后的分支的终端上：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git remote add remote-hexo https://github.com/huixisheng/hexo-theme-amazeui.git</div><div class="line">git fetch remote-hexo</div><div class="line">git merge remote-hexo/master</div></pre></td></tr></table></figure></p>
-<p>参考</p>
-<ul>
-<li><a href="http://jinlong.github.io/2015/10/12/syncing-a-fork/" target="_blank" rel="external">如何同步 Github fork 出来的分支</a></li>
-<li><a href="http://www.cnblogs.com/rubylouvre/archive/2013/01/24/2874694.html" target="_blank" rel="external">如何在github上fork一个项目来贡献代码以及同步原作者的修改</a></li>
-</ul>
-<h2 id="同步远程删除的分支"><a href="#同步远程删除的分支" class="headerlink" title="同步远程删除的分支"></a>同步远程删除的分支</h2><p>执行<code>git push origin :test-branch</code>, 远程<code>test-branch</code>已经删除了，但本地还在，<code>git branch -a</code>还可以看到<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">error: unable to delete ‘test-branch’: remote ref does not exist</div><div class="line">error: failed to push some refs to ‘git@github.com:huixisheng/huixisheng.github.com.git’</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git remote update --prune</div></pre></td></tr></table></figure>
-<h2 id="git-恢复单个文件的历史版本"><a href="#git-恢复单个文件的历史版本" class="headerlink" title="git 恢复单个文件的历史版本"></a>git 恢复单个文件的历史版本</h2><blockquote>
-<p>首先查看该文件的历史版本信息：git log Default@2x.png<br>记录下需要恢复的commit版本号：如 9aa51d89799716aa68cff3f30c26f8815408e926<br>恢复该文件：git reset 9aa51d89799716aa68cff3f30c26f8815408e926 Default@2x.png<br>还需要执行git checkout Default@2x.png<br>提交git:git commit -m “回滚Default@2x.png的历史版本”</p>
-</blockquote>
-<p><a href="https://segmentfault.com/q/1010000002464973" target="_blank" rel="external">git 如何还原某个文件</a>一文提到更加简单的方法</p>
-<blockquote>
-<p>直接用 git-checkout 即可。理解起来稍微有点奇怪就是了。<br><code>$ git checkout ${commit} /path/to/file</code></p>
-</blockquote>
-<h2 id="撤销git-add的文件的修改"><a href="#撤销git-add的文件的修改" class="headerlink" title="撤销git add的文件的修改"></a>撤销git add的文件的修改</h2><p><code>git reset HEAD README.md</code></p>
-<p>通过<code>git status</code>可以查看相关的操作</p>
-<p>参考</p>
-<ul>
-<li><a href="https://segmentfault.com/a/1190000006185954" target="_blank" rel="external">git的reset和checkout的区别</a></li>
-<li><a href="https://yhhwpp.github.io/2016/10/31/Git-%E4%B8%AD-Reset%E3%80%81Revert%E3%80%81Checkout%E7%9A%84%E5%8C%BA%E5%88%AB/" target="_blank" rel="external">Git 中 Reset、Revert、Checkout的区别</a></li>
-</ul>
-<p>结论:</p>
-<ol>
-<li><code>git reset</code>是会修改版本历史的，丢弃掉一些版本历史。</li>
-<li><code>git revert</code>是根据那个commit逆向生成一个新的commit，版本历史是不会被破坏的。</li>
-<li><code>git checkout</code>用于切换分支</li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;平常工作中常用的&lt;code&gt;git&lt;/code&gt;操作命令。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="git" scheme="http://huixisheng.github.io/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>国内镜像源整理</title>
-    <link href="http://huixisheng.github.io/mirror/"/>
-    <id>http://huixisheng.github.io/mirror/</id>
-    <published>2016-10-22T13:02:45.000Z</published>
-    <updated>2016-11-26T02:15:59.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>本文对国内<code>ruby</code>、<code>npm</code>、<code>brew</code>、<code>Composer</code>等镜像源做整理，给前端开发这提供方便。<br><a id="more"></a></p>
-<h2 id="为何写这个文章"><a href="#为何写这个文章" class="headerlink" title="为何写这个文章"></a>为何写这个文章</h2><pre><code>gem install cdnjs-command
-ERROR:  Could not find a valid gem &apos;cdnjs-command&apos; (&gt;= 0), here is why:
-      Unable to download data from https://rubygems.org/ - Errno::EPIPE: Broken pipe - SSL_connect (https://rubygems.org/latest_specs.4.8.gz)
-</code></pre><h2 id="RubyGems-镜像"><a href="#RubyGems-镜像" class="headerlink" title="RubyGems 镜像"></a>RubyGems 镜像</h2><blockquote>
-<p>$ gem sources –add <a href="https://ruby.taobao.org/" target="_blank" rel="external">https://ruby.taobao.org/</a> –remove <a href="https://rubygems.org/" target="_blank" rel="external">https://rubygems.org/</a><br>  $ gem sources -l<br>   <strong><em> CURRENT SOURCES </em></strong><br><a href="https://ruby.taobao.org" target="_blank" rel="external">https://ruby.taobao.org</a></p>
-<h1 id="请确保只有-ruby-taobao-org"><a href="#请确保只有-ruby-taobao-org" class="headerlink" title="请确保只有 ruby.taobao.org"></a>请确保只有 ruby.taobao.org</h1><p>$ gem install rails</p>
-</blockquote>
-<h2 id="NPM-镜像"><a href="#NPM-镜像" class="headerlink" title="NPM 镜像"></a>NPM 镜像</h2><p>每次安装都需要指明 <code>registry</code>，很麻烦</p>
-<blockquote>
-<p>$ npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="external">https://registry.npm.taobao.org</a></p>
-</blockquote>
-<pre><code>vi ~/.npmrc
-</code></pre><p>添加。</p>
-<blockquote>
-<p>registry = <a href="http://registry.npm.taobao.org" target="_blank" rel="external">http://registry.npm.taobao.org</a></p>
-</blockquote>
-<p>或者</p>
-<blockquote>
-<p> npm config set registry “<a href="http://registry.npm.taobao.org" target="_blank" rel="external">http://registry.npm.taobao.org</a>“</p>
-</blockquote>
-<p>通过 <code>npm config ls</code> 可以查看相关配置情况</p>
-<h2 id="Brew镜像"><a href="#Brew镜像" class="headerlink" title="Brew镜像"></a>Brew镜像</h2><blockquote>
-<p>$ cd /usr/local &amp;&amp; git remote set-url origin <a href="https://git.coding.net/homebrew/homebrew.git" target="_blank" rel="external">https://git.coding.net/homebrew/homebrew.git</a><br>$ cd $home &amp;&amp; brew update</p>
-</blockquote>
-<p><a href="https://coding.net/u/cocodingding/pp/84498" target="_blank" rel="external">Brew Brew Brew !</a></p>
-<h2 id="Composer-镜像"><a href="#Composer-镜像" class="headerlink" title="Composer 镜像"></a>Composer 镜像</h2><p>方法1：</p>
-<pre><code>composer config -g repositories.packagist composer http://packagist.phpcomposer.com
-</code></pre><p>方法2：</p>
-<blockquote>
-<p>注意：为了避免安装包的时候都要执行两次查询，切记要添加禁用 packagist 的设置，如下：</p>
-</blockquote>
-<pre><code>{
-    &quot;repositories&quot;: [
-        {&quot;type&quot;: &quot;composer&quot;, &quot;url&quot;: &quot;http://packagist.phpcomposer.com&quot;},
-        {&quot;packagist&quot;: false}
-    ]
-}
-</code></pre><p><a href="http://pkg.phpcomposer.com/" target="_blank" rel="external">Packagist / Composer 中国全量镜像</a></p>
-<p>全局安装</p>
-<pre><code>$ curl -sS https://getcomposer.org/installer | php
-$ mv composer.phar /usr/local/bin/composer
-</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;本文对国内&lt;code&gt;ruby&lt;/code&gt;、&lt;code&gt;npm&lt;/code&gt;、&lt;code&gt;brew&lt;/code&gt;、&lt;code&gt;Composer&lt;/code&gt;等镜像源做整理，给前端开发这提供方便。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="镜像源" scheme="http://huixisheng.github.io/tags/%E9%95%9C%E5%83%8F%E6%BA%90/"/>
-    
-      <category term="npm" scheme="http://huixisheng.github.io/tags/npm/"/>
-    
-      <category term="ruby" scheme="http://huixisheng.github.io/tags/ruby/"/>
-    
-      <category term="Composer" scheme="http://huixisheng.github.io/tags/Composer/"/>
-    
-      <category term="brew" scheme="http://huixisheng.github.io/tags/brew/"/>
-    
-  </entry>
-  
-  <entry>
     <title>调试工具整理</title>
     <link href="http://huixisheng.github.io/debugger-tool/"/>
     <id>http://huixisheng.github.io/debugger-tool/</id>
@@ -940,6 +678,108 @@ $ mv composer.phar /usr/local/bin/composer
   </entry>
   
   <entry>
+    <title>配置SSH公钥和git多账号配置</title>
+    <link href="http://huixisheng.github.io/git-ssh-key-setting/"/>
+    <id>http://huixisheng.github.io/git-ssh-key-setting/</id>
+    <published>2016-10-22T13:02:45.000Z</published>
+    <updated>2016-10-22T13:07:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>本文介绍如何配置<code>ssh-key</code></p>
+<a id="more"></a>
+<h2 id="生成key"><a href="#生成key" class="headerlink" title="生成key"></a>生成key</h2><p>ssh-keygen -t rsa -f ~/.ssh/git.oschina.net -C “469184346@qq.com”</p>
+<blockquote>
+<p>代码参数含义：<br>-t 指定密钥类型，默认是 rsa ，可以省略。<br>-C 设置注释文字，比如邮箱。<br>-f 指定密钥文件存储文件名。  -<a href="http://www.cnblogs.com/ayseeing/p/3572582.html" target="_blank" rel="external">来自github设置添加SSH</a></p>
+</blockquote>
+<p>直接输入回车</p>
+<pre><code>Generating public/private rsa key pair.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+</code></pre><p>如果输入了密码</p>
+<blockquote>
+<p>设置passphrase后，进行版本控制时，每次与GitHub通信都会要求输入passphrase，以避免某些“失误”</p>
+<p>将SSH 私钥增加到ssh-agent: ssh-add ~/.ssh/xyz_rsa， 这里会提示输入一次私钥的密码; -<a href="http://www.jianshu.com/p/ddd3122cb351#" target="_blank" rel="external">来自</a></p>
+</blockquote>
+<h2 id="添加密匙"><a href="#添加密匙" class="headerlink" title="添加密匙"></a>添加密匙</h2><h3 id="拷贝公钥"><a href="#拷贝公钥" class="headerlink" title="拷贝公钥"></a>拷贝公钥</h3><pre><code>pbcopy &lt;  ~/.ssh/git.oschina.net.pub
+</code></pre><p>其他平台拷贝命令<a href="http://www.jianshu.com/p/31cbbbc5f9fa/" target="_blank" rel="external">参考如何生成SSH key</a></p>
+<blockquote>
+<p>window<br>    clip &lt; ~/.ssh/id_rsa.pub</p>
+<p>linux<br>    sudo apt-get install xclip<br>    xclip -sel clip &lt; ~/.ssh/id_rsa.pub</p>
+</blockquote>
+<h3 id="登录远程git平台添加ssh-key"><a href="#登录远程git平台添加ssh-key" class="headerlink" title="登录远程git平台添加ssh key"></a>登录远程git平台添加ssh key</h3><p>粘贴刚才拷贝的内容</p>
+<ul>
+<li><a href="http://git.oschina.net/profile/sshkeys" target="_blank" rel="external">oschinaSSH公钥</a></li>
+<li><a href="https://github.com/settings/keys" target="_blank" rel="external">github SSH and GPG keys</a>点击 <code>New SSH key</code></li>
+</ul>
+<p>将新生成的key添加到ssh-agent中</p>
+<pre><code>$ eval &quot;$(ssh-agent -s)&quot;
+$ ssh-add ~/.ssh/git.oschina.net
+</code></pre><blockquote>
+<p>可以通过 ssh-add -l 来确私钥列表<br>$ ssh-add -l<br>可以通过 ssh-add -D 来清空私钥列表<br>$ ssh-add -D</p>
+</blockquote>
+<h2 id="配置config用于多个git-ssh密匙"><a href="#配置config用于多个git-ssh密匙" class="headerlink" title="配置config用于多个git ssh密匙"></a>配置config用于多个git ssh密匙</h2><pre><code>Host github.com
+    HostName github.com
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/github
+    User huixisheng
+
+Host git.coding.net
+    HostName git.coding.net
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/gitcodingnet
+    User git
+
+Host git.oschina.net
+    HostName git.oschina.net
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/git.oschina.net
+    User git
+</code></pre><blockquote>
+<p>Host，SSH 连接名<br>HostName，如上所示，可以是通配符，可以是 IP，也可以是域名等<br>User，登录的用户名<br>IdentifyFile，version 1 协议下默认是 ~/.ssh/identify，version 2 协议下，默认是依次匹配：~/.ssh/id_dsa，~/.ssh/id_ecdsa，~/.ssh/id_rsa，还有 version 2 兼容模式。<br>LocalForward 端口的内部跳转<br>Port，端口设置，默认 SSH 的端口是 22<br>Protocal，协议版本号，1 或者 2<br><a href="http://www.barretlee.com/blog/2016/03/09/config-in-ssh-after-troubling-git-connection/" target="_blank" rel="external">来自</a></p>
+</blockquote>
+<ul>
+<li><a href="http://www.cnblogs.com/ayseeing/p/4445194.html" target="_blank" rel="external">参考生成多个git ssh密钥</a></li>
+</ul>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>测试是否配置成功</p>
+<pre><code>$ ssh -T git@git.oschina.net
+Welcome to Git@OSC, huixisheng!
+</code></pre><blockquote>
+<p>-v会输出详情的信息 <a href="http://www.barretlee.com/blog/2016/03/09/config-in-ssh-after-troubling-git-connection/" target="_blank" rel="external">多SSH Key管理技巧与Git多账户登录问题</a></p>
+</blockquote>
+<h2 id="其他问题"><a href="#其他问题" class="headerlink" title="其他问题"></a>其他问题</h2><pre><code>$ ssh -T git@git.oschina.net
+The authenticity of host &apos;git.oschina.net (218.60.114.30)&apos; can&apos;t be established.
+ECDSA key fingerprint is SHA256:FQGC9Kn/eye1W8icdBgrQp+KkGYoFgbVr17bmjey0Wc.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added &apos;git.oschina.net,218.60.114.30&apos; (ECDSA) to the list of known hosts.
+Permission denied (publickey).
+
+$ eval &quot;$(ssh-agent -s)&quot;
+$ ssh-add ~/.ssh/git.oschina.net
+</code></pre><blockquote>
+<p>   如果执行ssh-add时提示”Could not open a connection to your authentication agent”，可以现执行命令：<br>    $ ssh-agent bash <a href="http://my.oschina.net/stefanzhlg/blog/529403" target="_blank" rel="external">来自</a></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo git clone git@git.coding.net:huixisheng/layout.git</div><div class="line">Cloning into &apos;layout&apos;...</div><div class="line">Permission denied (publickey).</div><div class="line">fatal: Could not read from remote repository.</div></pre></td></tr></table></figure>
+<p><code>ssh -vT git@git.coding.net</code> 是有结果返回的,看了debug信息都是正常的。</p>
+<p>执行如下（期间关闭了翻墙软件）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ssh-add ~/.ssh/gitcodingnet</div><div class="line">source ~/.ssh/config</div></pre></td></tr></table></figure></p>
+<p>再次clone又可以了。没找到为何不行的根本原因</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="http://my.oschina.net/stefanzhlg/blog/529403" target="_blank" rel="external">git 配置多个SSH-Key</a></li>
+<li><a href="https://help.github.com/articles/generating-ssh-keys" target="_blank" rel="external">https://help.github.com/articles/generating-ssh-keys</a></li>
+<li><a href="https://coding.net/help/doc/git/ssh-key.html" target="_blank" rel="external">coding配置SSH公钥</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文介绍如何配置&lt;code&gt;ssh-key&lt;/code&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="git" scheme="http://huixisheng.github.io/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
     <title>markdown文件生成目录</title>
     <link href="http://huixisheng.github.io/markdown-Table-of-Contents/"/>
     <id>http://huixisheng.github.io/markdown-Table-of-Contents/</id>
@@ -1006,6 +846,235 @@ $ mv composer.phar /usr/local/bin/composer
     
     
       <category term="markdown" scheme="http://huixisheng.github.io/tags/markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>兼容性解决方案整理</title>
+    <link href="http://huixisheng.github.io/compatibility-solution/"/>
+    <id>http://huixisheng.github.io/compatibility-solution/</id>
+    <published>2016-10-22T13:02:45.000Z</published>
+    <updated>2016-12-23T03:08:06.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>移动互联网的今天，告别了ie6。</p>
+<p>以下来自原先项目<del>psc</del>。<del>psc</del>已经删除，<del>使用issues继续整理</del>。相信这是一个更好的开始。整理到博客汇总。</p>
+<a id="more"></a>
+<p>浏览器的兼容性问题是前端开发人员最头痛的，PCS 收集并整理完美兼容的解决方案。低版本浏览器添加过多的脚本或者更多的代码势必会带来性能，维护成本。其实PCS 并非是完美的解法办法，最完美的是浏览器本身符合<a href="http://baike.baidu.com/view/459077.htm?fr=wordsearch" target="_blank" rel="external">w3c标准</a>。当然这不现实，要不要所有浏览器都真的完全表现一样，其实还要视项目而定，或许我们可以选择<a href="http://baike.baidu.com/view/1172014.htm" target="_blank" rel="external">优雅降级</a>处理。凡是一切都在权衡。</p>
+<h2 id="CSS-CSS3"><a href="#CSS-CSS3" class="headerlink" title="CSS/CSS3"></a>CSS/CSS3</h2><h3 id="Respond"><a href="#Respond" class="headerlink" title="Respond"></a><a href="https://github.com/scottjehl/Respond" target="_blank" rel="external">Respond</a></h3><h2 id="inline-block"><a href="#inline-block" class="headerlink" title="inline-block"></a><a href="http://ued.taobao.org/blog/2012/08/inline-block/" target="_blank" rel="external">inline-block</a></h2><pre><code>.dib-wrap {
+    font-size:0;/* 所有浏览器 */
+    *word-spacing:-1px;/* IE6、7 */
+}
+.dib-wrap .dib{
+    font-size: 12px;
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align:top;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0){
+    /* firefox 中 letter-spacing 会导致脱离普通流的元素水平位移 */
+    .dib-wrap{
+    letter-spacing:-5px;/* Safari 等不支持字体大小为 0 的浏览器, N 根据父级字体调节*/
+    }
+}
+.dib {
+    display: inline-block;
+    *display:inline;
+    *zoom:1;
+}
+</code></pre><h2 id="css3-gradient"><a href="#css3-gradient" class="headerlink" title="css3-gradient"></a><a href="http://www.w3cplus.com/content/css3-gradient" target="_blank" rel="external">css3-gradient</a></h2><ol>
+<li><a href="http://www.colorzilla.com/gradient-editor/" target="_blank" rel="external">css3 渐变在线生成工具Ultimate CSS Gradient Generator</a></li>
+</ol>
+<h2 id="HTML-HTML5"><a href="#HTML-HTML5" class="headerlink" title="HTML/HTML5"></a>HTML/HTML5</h2><h2 id="html5shiv"><a href="#html5shiv" class="headerlink" title="html5shiv"></a>html5shiv</h2><p>The <a href="https://github.com/aFarkas/html5shiv" target="_blank" rel="external">HTML5 Shiv</a> enables use of HTML5 sectioning elements in legacy Internet Explorer and provides basic HTML5 styling for Internet Explorer 6-9, Safari 4.x (and iPhone 3.x), and Firefox 3.x.</p>
+<h2 id="html5demos"><a href="#html5demos" class="headerlink" title="html5demos"></a><a href="https://github.com/remy/html5demos" target="_blank" rel="external">html5demos</a></h2><p>A collection of HTML5 experiments I’ve created, now open source and on GitHub, so please go ahead and help me hack this resource in to a wealth of demos that other authors can learn from.</p>
+<h2 id="HTML5-History-API"><a href="#HTML5-History-API" class="headerlink" title="HTML5-History-API"></a><a href="https://github.com/remy/html5demos" target="_blank" rel="external">HTML5-History-API</a></h2><h2 id="video-js"><a href="#video-js" class="headerlink" title="video.js"></a><a href="https://github.com/videojs/video.js" target="_blank" rel="external">video.js</a></h2><h2 id="jQuery-html5-placeholder"><a href="#jQuery-html5-placeholder" class="headerlink" title=" jQuery-html5-placeholder"></a><a href="https://github.com/Topener/jQuery-html5-placeholder" target="_blank" rel="external"> jQuery-html5-placeholder</a></h2><h2 id="HTML5-Desktop-Notifications"><a href="#HTML5-Desktop-Notifications" class="headerlink" title="HTML5 Desktop Notifications"></a><a href="https://github.com/ttsvetko/HTML5-Desktop-Notifications" target="_blank" rel="external">HTML5 Desktop Notifications</a></h2><h2 id="localstorage"><a href="#localstorage" class="headerlink" title="localstorage"></a>localstorage</h2><p><a href="https://github.com/marcuswestin/store.js" target="_blank" rel="external">store.js</a> exposes a simple API for cross browser local storage</p>
+<h2 id="JavaScritp-ECMAScript"><a href="#JavaScritp-ECMAScript" class="headerlink" title="JavaScritp/ECMAScript"></a>JavaScritp/ECMAScript</h2><h2 id="es5-shim"><a href="#es5-shim" class="headerlink" title="es5-shim"></a>es5-shim</h2><p><a href="https://github.com/es-shims/es5-shim" target="_blank" rel="external"><code>es5-shim.js</code></a> and <code>es5-shim.min.js</code> monkey-patch a JavaScript context to<br>contain all EcmaScript 5 methods that can be faithfully emulated with a<br>legacy JavaScript engine.</p>
+<h2 id="IE-IE6-IE7-IE8"><a href="#IE-IE6-IE7-IE8" class="headerlink" title="IE/IE6/IE7/IE8"></a>IE/IE6/IE7/IE8</h2><h3 id="PIE"><a href="#PIE" class="headerlink" title="PIE"></a>PIE</h3><p>(PIE)(<a href="http://css3pie.com/" target="_blank" rel="external">http://css3pie.com/</a>) makes Internet Explorer 6-9 capable of rendering several of the most useful CSS3 decoration features.</p>
+<p>通过脚本可以使得ie6/7/8/9 支持css3 的 border-radius、box-shadow、linear-gradient。</p>
+<h3 id="DD-belatedPNG"><a href="#DD-belatedPNG" class="headerlink" title="DD_belatedPNG"></a><a href="http://www.dillerdesign.com/experiment/DD_belatedPNG/" target="_blank" rel="external">DD_belatedPNG</a></h3><p>This is a Javascript library that sandwiches PNG image support into IE6 without much fuss.</p>
+<p>处理ie6不支持png24。</p>
+<pre><code>DD_belatedPNG.fix(&apos;.png_bg, .png24&apos;); // argument is a CSS selector
+DD_belatedPNG.fixPng( someNode ); // argument is an HTMLDomElement
+</code></pre><h4 id="更多solution"><a href="#更多solution" class="headerlink" title="更多solution"></a>更多solution</h4><ol>
+<li><a href="http://www.w3cfuns.com/thread-297-1-1.html" target="_blank" rel="external">IE6 PNG透明终极解决方案（打造W3Cfuns-IE6PNG最强帖）</a></li>
+</ol>
+<h3 id="IE下-z-index的层级问题"><a href="#IE下-z-index的层级问题" class="headerlink" title="IE下 z-index的层级问题"></a>IE下 z-index的层级问题</h3><h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><ol>
+<li><a href="http://www.cnblogs.com/Darren_code/archive/2012/03/05/z-index.html" target="_blank" rel="external">IE下 z-index 的各种坑</a></li>
+<li><a href="http://www.zhangxinxu.com/wordpress/2009/12/ie6%E4%B8%8Bz-index%E7%8A%AF%E7%99%AB%E4%B8%8D%E8%B5%B7%E4%BD%9C%E7%94%A8bug%E7%9A%84%E5%88%9D%E6%AD%A5%E7%A0%94%E7%A9%B6/" target="_blank" rel="external">IE6下z-index犯癫不起作用bug的初步研究</a></li>
+<li><a href="http://www.w3help.org/zh-cn/causes/RM8015" target="_blank" rel="external">IE6 IE7 IE8(Q) 中定位元素 ‘z-index’ 为默认值在某些情况下会产生新的层叠上下文</a></li>
+</ol>
+<h3 id="ie6-不支持positon-fixed"><a href="#ie6-不支持positon-fixed" class="headerlink" title="ie6 不支持positon: fixed"></a>ie6 不支持<code>positon: fixed</code></h3><h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><ol>
+<li><a href="http://www.w3help.org/zh-cn/causes/RM8013" target="_blank" rel="external">RM8013: IE6 IE7(Q) IE8(Q) 不支持固定定位（position:fixed）</a></li>
+<li><a href="http://www.cnblogs.com/hooray/archive/2011/05/20/2052269.html" target="_blank" rel="external">完美解决IE6不支持position:fixed的bug</a></li>
+</ol>
+<h3 id="透明度-opacity-rgba"><a href="#透明度-opacity-rgba" class="headerlink" title="透明度 opacity/rgba"></a>透明度 opacity/rgba</h3><p>opacity设置的透明度对子元素都有影响。ie可以使用 filter 处理</p>
+<pre><code>.opacity{
+    background: rgb(255,255,0);
+    opacity: 0.4;
+    filter:alpha(opacity=40);
+}
+
+
+.rgba{
+    filter:progid:DXImageTransform.Microsoft.gradient(enabled=&apos;true&apos;,startColorstr=&apos;#7F000000&apos;, endColorstr=&apos;#7F000000&apos;);
+}
+:root  .rgba{
+    filter:none;     /*处理IE9浏览器中的滤镜效果*/
+    background-color:rgba(0,0,0,0.5);
+}
+</code></pre><ol>
+<li><a href="http://www.w3help.org/zh-cn/causes/BT9011" target="_blank" rel="external">BT9011: 只有 IE 支持 CSS Filter</a></li>
+<li><a href="http://www.w3cplus.com/content/css3-rgba" target="_blank" rel="external">CSS3 RGBA</a></li>
+<li><a href="http://www.linxz.de/css_tool/hex_color.html" target="_blank" rel="external">css3-rgba ie下可透明的背景颜色转换工具</a></li>
+</ol>
+<h3 id="ie6-max-width-max-height-min-height-min-width"><a href="#ie6-max-width-max-height-min-height-min-width" class="headerlink" title="ie6 max-width/max-height/min-height/min-width"></a>ie6 max-width/max-height/min-height/min-width</h3><pre><code>.maxh{ max-height:300px; _height: expression(this.scrollHeight &gt;= 300? &apos;300px&apos; : &apos;auto&apos;);  }
+
+.maxw{ max-width: 300px; _width: expression(this.clientWidth &gt;= 300 ? &apos;300px&apos; : &apos;auto&apos;); }
+
+.minh{ min-height: 300px; height:auto !important; _height: 300px; }
+
+.minw{ min-width: 300px; _width: expression(this.clientWidth &lt;= 300 ? &apos;300px&apos; : &apos;auto&apos;); }
+</code></pre><ol>
+<li><a href="http://ziren.org/html-css/ie6-support-min-width-and-max-width.html" target="_blank" rel="external">让IE6支持min-width和max-width的方法</a></li>
+</ol>
+<h2 id="css3-mediaqueries-js"><a href="#css3-mediaqueries-js" class="headerlink" title="css3-mediaqueries-js"></a>css3-mediaqueries-js</h2><p><a href="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js" target="_blank" rel="external">css3-mediaqueries-js</a></p>
+<h2 id="ieBetter"><a href="#ieBetter" class="headerlink" title="ieBetter"></a>ieBetter</h2><p><a href="http://www.zhangxinxu.com/wordpress/2013/12/iebetter-js-make-ie6-ie8-like-modern-browser-ie9-chrome/" target="_blank" rel="external">ieBetter.js-让IE6-IE8拥有IE9+,Chrome等浏览器特性</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;移动互联网的今天，告别了ie6。&lt;/p&gt;
+&lt;p&gt;以下来自原先项目&lt;del&gt;psc&lt;/del&gt;。&lt;del&gt;psc&lt;/del&gt;已经删除，&lt;del&gt;使用issues继续整理&lt;/del&gt;。相信这是一个更好的开始。整理到博客汇总。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="兼容性" scheme="http://huixisheng.github.io/tags/%E5%85%BC%E5%AE%B9%E6%80%A7/"/>
+    
+      <category term="前端库" scheme="http://huixisheng.github.io/tags/%E5%89%8D%E7%AB%AF%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git操作常见问题汇总</title>
+    <link href="http://huixisheng.github.io/git-problem/"/>
+    <id>http://huixisheng.github.io/git-problem/</id>
+    <published>2016-10-22T13:02:45.000Z</published>
+    <updated>2016-11-25T15:04:43.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>平常工作中常用的<code>git</code>操作命令。</p>
+<a id="more"></a>
+<h2 id="git添加空目录"><a href="#git添加空目录" class="headerlink" title="git添加空目录"></a>git添加空目录</h2><p>在空目录下建<code>.gitignore</code><br>内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># 忽略所有文件</div><div class="line">*</div><div class="line"># 除了这个文件</div><div class="line">!.gitignore</div></pre></td></tr></table></figure></p>
+<h2 id="git忽略已经被提交的文件"><a href="#git忽略已经被提交的文件" class="headerlink" title="git忽略已经被提交的文件"></a>git忽略已经被提交的文件</h2><p>直接<code>rm</code> 然后 <code>git  add .</code>本地磁盘也会被删除。我们要的是删除版本库的文件，并忽略。使用如下方法处理:</p>
+<p>忽略文件夹 <code>git rm -r --cached cache/*</code> 然后在 <code>.gitignore</code>忽略删除的文件。注意<code>git rm --cached</code> 删除的是追踪状态</p>
+<h2 id="git-忽略已经提交的文件的修改"><a href="#git-忽略已经提交的文件的修改" class="headerlink" title="git 忽略已经提交的文件的修改"></a>git 忽略已经提交的文件的修改</h2><p><code>git update-index --assume-unchanged .env</code><br>重置之前添加的忽略<br><code>git update-index --no-assume-unchanged .env</code></p>
+<h2 id="同步github-fork原作者分支的修改"><a href="#同步github-fork原作者分支的修改" class="headerlink" title="同步github fork原作者分支的修改"></a>同步<code>github</code> fork原作者分支的修改</h2><p>假设当前在fork <code>hexo-theme-amazeui</code>并<code>clone</code> <code>fork</code>后的分支的终端上：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git remote add remote-hexo https://github.com/huixisheng/hexo-theme-amazeui.git</div><div class="line">git fetch remote-hexo</div><div class="line">git merge remote-hexo/master</div></pre></td></tr></table></figure></p>
+<p>参考</p>
+<ul>
+<li><a href="http://jinlong.github.io/2015/10/12/syncing-a-fork/" target="_blank" rel="external">如何同步 Github fork 出来的分支</a></li>
+<li><a href="http://www.cnblogs.com/rubylouvre/archive/2013/01/24/2874694.html" target="_blank" rel="external">如何在github上fork一个项目来贡献代码以及同步原作者的修改</a></li>
+</ul>
+<h2 id="同步远程删除的分支"><a href="#同步远程删除的分支" class="headerlink" title="同步远程删除的分支"></a>同步远程删除的分支</h2><p>执行<code>git push origin :test-branch</code>, 远程<code>test-branch</code>已经删除了，但本地还在，<code>git branch -a</code>还可以看到<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">error: unable to delete ‘test-branch’: remote ref does not exist</div><div class="line">error: failed to push some refs to ‘git@github.com:huixisheng/huixisheng.github.com.git’</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git remote update --prune</div></pre></td></tr></table></figure>
+<h2 id="git-恢复单个文件的历史版本"><a href="#git-恢复单个文件的历史版本" class="headerlink" title="git 恢复单个文件的历史版本"></a>git 恢复单个文件的历史版本</h2><blockquote>
+<p>首先查看该文件的历史版本信息：git log Default@2x.png<br>记录下需要恢复的commit版本号：如 9aa51d89799716aa68cff3f30c26f8815408e926<br>恢复该文件：git reset 9aa51d89799716aa68cff3f30c26f8815408e926 Default@2x.png<br>还需要执行git checkout Default@2x.png<br>提交git:git commit -m “回滚Default@2x.png的历史版本”</p>
+</blockquote>
+<p><a href="https://segmentfault.com/q/1010000002464973" target="_blank" rel="external">git 如何还原某个文件</a>一文提到更加简单的方法</p>
+<blockquote>
+<p>直接用 git-checkout 即可。理解起来稍微有点奇怪就是了。<br><code>$ git checkout ${commit} /path/to/file</code></p>
+</blockquote>
+<h2 id="撤销git-add的文件的修改"><a href="#撤销git-add的文件的修改" class="headerlink" title="撤销git add的文件的修改"></a>撤销git add的文件的修改</h2><p><code>git reset HEAD README.md</code></p>
+<p>通过<code>git status</code>可以查看相关的操作</p>
+<p>参考</p>
+<ul>
+<li><a href="https://segmentfault.com/a/1190000006185954" target="_blank" rel="external">git的reset和checkout的区别</a></li>
+<li><a href="https://yhhwpp.github.io/2016/10/31/Git-%E4%B8%AD-Reset%E3%80%81Revert%E3%80%81Checkout%E7%9A%84%E5%8C%BA%E5%88%AB/" target="_blank" rel="external">Git 中 Reset、Revert、Checkout的区别</a></li>
+</ul>
+<p>结论:</p>
+<ol>
+<li><code>git reset</code>是会修改版本历史的，丢弃掉一些版本历史。</li>
+<li><code>git revert</code>是根据那个commit逆向生成一个新的commit，版本历史是不会被破坏的。</li>
+<li><code>git checkout</code>用于切换分支</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;平常工作中常用的&lt;code&gt;git&lt;/code&gt;操作命令。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="git" scheme="http://huixisheng.github.io/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>国内镜像源整理</title>
+    <link href="http://huixisheng.github.io/mirror/"/>
+    <id>http://huixisheng.github.io/mirror/</id>
+    <published>2016-10-22T13:02:45.000Z</published>
+    <updated>2016-11-26T02:15:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>本文对国内<code>ruby</code>、<code>npm</code>、<code>brew</code>、<code>Composer</code>等镜像源做整理，给前端开发这提供方便。<br><a id="more"></a></p>
+<h2 id="为何写这个文章"><a href="#为何写这个文章" class="headerlink" title="为何写这个文章"></a>为何写这个文章</h2><pre><code>gem install cdnjs-command
+ERROR:  Could not find a valid gem &apos;cdnjs-command&apos; (&gt;= 0), here is why:
+      Unable to download data from https://rubygems.org/ - Errno::EPIPE: Broken pipe - SSL_connect (https://rubygems.org/latest_specs.4.8.gz)
+</code></pre><h2 id="RubyGems-镜像"><a href="#RubyGems-镜像" class="headerlink" title="RubyGems 镜像"></a>RubyGems 镜像</h2><blockquote>
+<p>$ gem sources –add <a href="https://ruby.taobao.org/" target="_blank" rel="external">https://ruby.taobao.org/</a> –remove <a href="https://rubygems.org/" target="_blank" rel="external">https://rubygems.org/</a><br>  $ gem sources -l<br>   <strong><em> CURRENT SOURCES </em></strong><br><a href="https://ruby.taobao.org" target="_blank" rel="external">https://ruby.taobao.org</a></p>
+<h1 id="请确保只有-ruby-taobao-org"><a href="#请确保只有-ruby-taobao-org" class="headerlink" title="请确保只有 ruby.taobao.org"></a>请确保只有 ruby.taobao.org</h1><p>$ gem install rails</p>
+</blockquote>
+<h2 id="NPM-镜像"><a href="#NPM-镜像" class="headerlink" title="NPM 镜像"></a>NPM 镜像</h2><p>每次安装都需要指明 <code>registry</code>，很麻烦</p>
+<blockquote>
+<p>$ npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="external">https://registry.npm.taobao.org</a></p>
+</blockquote>
+<pre><code>vi ~/.npmrc
+</code></pre><p>添加。</p>
+<blockquote>
+<p>registry = <a href="http://registry.npm.taobao.org" target="_blank" rel="external">http://registry.npm.taobao.org</a></p>
+</blockquote>
+<p>或者</p>
+<blockquote>
+<p> npm config set registry “<a href="http://registry.npm.taobao.org" target="_blank" rel="external">http://registry.npm.taobao.org</a>“</p>
+</blockquote>
+<p>通过 <code>npm config ls</code> 可以查看相关配置情况</p>
+<h2 id="Brew镜像"><a href="#Brew镜像" class="headerlink" title="Brew镜像"></a>Brew镜像</h2><blockquote>
+<p>$ cd /usr/local &amp;&amp; git remote set-url origin <a href="https://git.coding.net/homebrew/homebrew.git" target="_blank" rel="external">https://git.coding.net/homebrew/homebrew.git</a><br>$ cd $home &amp;&amp; brew update</p>
+</blockquote>
+<p><a href="https://coding.net/u/cocodingding/pp/84498" target="_blank" rel="external">Brew Brew Brew !</a></p>
+<h2 id="Composer-镜像"><a href="#Composer-镜像" class="headerlink" title="Composer 镜像"></a>Composer 镜像</h2><p>方法1：</p>
+<pre><code>composer config -g repositories.packagist composer http://packagist.phpcomposer.com
+</code></pre><p>方法2：</p>
+<blockquote>
+<p>注意：为了避免安装包的时候都要执行两次查询，切记要添加禁用 packagist 的设置，如下：</p>
+</blockquote>
+<pre><code>{
+    &quot;repositories&quot;: [
+        {&quot;type&quot;: &quot;composer&quot;, &quot;url&quot;: &quot;http://packagist.phpcomposer.com&quot;},
+        {&quot;packagist&quot;: false}
+    ]
+}
+</code></pre><p><a href="http://pkg.phpcomposer.com/" target="_blank" rel="external">Packagist / Composer 中国全量镜像</a></p>
+<p>全局安装</p>
+<pre><code>$ curl -sS https://getcomposer.org/installer | php
+$ mv composer.phar /usr/local/bin/composer
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文对国内&lt;code&gt;ruby&lt;/code&gt;、&lt;code&gt;npm&lt;/code&gt;、&lt;code&gt;brew&lt;/code&gt;、&lt;code&gt;Composer&lt;/code&gt;等镜像源做整理，给前端开发这提供方便。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="镜像源" scheme="http://huixisheng.github.io/tags/%E9%95%9C%E5%83%8F%E6%BA%90/"/>
+    
+      <category term="npm" scheme="http://huixisheng.github.io/tags/npm/"/>
+    
+      <category term="ruby" scheme="http://huixisheng.github.io/tags/ruby/"/>
+    
+      <category term="Composer" scheme="http://huixisheng.github.io/tags/Composer/"/>
+    
+      <category term="brew" scheme="http://huixisheng.github.io/tags/brew/"/>
     
   </entry>
   
