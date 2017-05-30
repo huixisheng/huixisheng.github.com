@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://huixisheng.github.io/"/>
-  <updated>2017-05-27T16:40:10.000Z</updated>
+  <updated>2017-05-30T12:50:05.000Z</updated>
   <id>http://huixisheng.github.io/</id>
   
   <author>
@@ -14,6 +14,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>mac相关技巧整理</title>
+    <link href="http://huixisheng.github.io/mac-skill/"/>
+    <id>http://huixisheng.github.io/mac-skill/</id>
+    <published>2017-05-30T12:00:05.000Z</published>
+    <updated>2017-05-30T12:50:05.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>整理工作中容易遗忘的小技巧和碰到的问题。</p>
+<h2 id="屏幕共享"><a href="#屏幕共享" class="headerlink" title="屏幕共享"></a>屏幕共享</h2><p>打开 系统偏好设置 -&gt; 共享 -&gt; 屏幕共享。在另外的电脑打开 Finder -&gt; 前往 -&gt; 连接服务器 -&gt; 输入 <code>vnc://ip</code> 访问。或者<code>⌘+K</code></p>
+<p>相关的远程控制s软件<a href="https://www.splashtop.com/" target="_blank" rel="external">splashtop</a>，<a href="https://www.teamviewer.com/zhCN/?pid=google.tv.teamviewer_exact_tv12.s.cn&amp;gclid=CjwKEAjwsLTJBRCvibaW9bGLtUESJAC4wKw1SIUYoaX5pTKGqwkFSR1I9L_kaccieEqLupNb_WIQ-hoCFp_w_wcB" target="_blank" rel="external">teamviewer</a></p>
+<h2 id="找回Sierra允许”任何来源”的应用"><a href="#找回Sierra允许”任何来源”的应用" class="headerlink" title="找回Sierra允许”任何来源”的应用"></a>找回Sierra允许”任何来源”的应用</h2><p><code>sudo spctl --master-disable</code></p>
+<h2 id="屏幕截图"><a href="#屏幕截图" class="headerlink" title="屏幕截图"></a>屏幕截图</h2><p><code>Command＋shift＋3</code> 全屏截图，保存截图到桌面<br><code>Command＋shift＋4</code> 鼠标选定区域截图，保存截图到桌面</p>
+<p>相关的扩展阅读:</p>
+<ul>
+<li><a href="http://irising.me/2011/11/12135/" target="_blank" rel="external">你所不知道的Mac截图的强大</a></li>
+<li><a href="https://www.zhihu.com/question/19550327" target="_blank" rel="external">OS X 系统自带的截图快捷键有哪些？</a></li>
+</ul>
+<h2 id="如何重置-Mac-上的-NVRAM"><a href="#如何重置-Mac-上的-NVRAM" class="headerlink" title="如何重置 Mac 上的 NVRAM"></a>如何重置 Mac 上的 NVRAM</h2><p>Option + Command + P + R + Power</p>
+<ul>
+<li><a href="https://support.apple.com/zh-cn/HT204063" target="_blank" rel="external">https://support.apple.com/zh-cn/HT204063</a></li>
+<li><a href="https://www.zhihu.com/question/20401972" target="_blank" rel="external">https://www.zhihu.com/question/20401972</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;整理工作中容易遗忘的小技巧和碰到的问题。&lt;/p&gt;
+&lt;h2 id=&quot;屏幕共享&quot;&gt;&lt;a href=&quot;#屏幕共享&quot; class=&quot;headerlink&quot; title=&quot;屏幕共享&quot;&gt;&lt;/a&gt;屏幕共享&lt;/h2&gt;&lt;p&gt;打开 系统偏好设置 -&amp;gt; 共享 -&amp;gt; 屏幕共享。在另外的
+    
+    </summary>
+    
+    
+      <category term="MacOSX" scheme="http://huixisheng.github.io/tags/MacOSX/"/>
+    
+  </entry>
   
   <entry>
     <title>vue @input事件</title>
@@ -113,7 +149,7 @@
     <link href="http://huixisheng.github.io/phpstorm/"/>
     <id>http://huixisheng.github.io/phpstorm/</id>
     <published>2017-05-26T12:39:44.000Z</published>
-    <updated>2017-05-29T13:28:26.000Z</updated>
+    <updated>2017-05-29T15:37:53.000Z</updated>
     
     <content type="html"><![CDATA[<p>值得开心的事: <a href="https://www.jetbrains.com/phpstorm/features/html_css_js_editor.html" target="_blank" rel="external">在最新的2017.1版本中，PhpStorm/WebStorm已经对Vue.js 进行了原生支持</a></p>
 <h2 id="相关问题"><a href="#相关问题" class="headerlink" title="相关问题"></a>相关问题</h2><h3 id="PhpStorm与WebStorm关系"><a href="#PhpStorm与WebStorm关系" class="headerlink" title="PhpStorm与WebStorm关系"></a>PhpStorm与WebStorm关系</h3><p>引用官网说明:</p>
@@ -184,6 +220,7 @@
 <li>WebStorm 有哪些过人之处？ <a href="https://www.zhihu.com/question/20936155" target="_blank" rel="external">https://www.zhihu.com/question/20936155</a></li>
 <li>eslint <a href="http://laichuanfeng.com/work/use-eslint-in-webstorm/" target="_blank" rel="external">http://laichuanfeng.com/work/use-eslint-in-webstorm/</a></li>
 <li><a href="https://plugins.jetbrains.com" target="_blank" rel="external">https://plugins.jetbrains.com</a></li>
+<li><a href="https://laravel-china.org/topics/1692/how-to-use-phpstorm-gracefully" target="_blank" rel="external">如何优雅的使用 phpStorm</a></li>
 </ul>
 <h2 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h2><p>2017-05-28 01:02:06</p>
 <ul>
@@ -522,334 +559,6 @@
   </entry>
   
   <entry>
-    <title>调试工具整理</title>
-    <link href="http://huixisheng.github.io/debugger-tool/"/>
-    <id>http://huixisheng.github.io/debugger-tool/</id>
-    <published>2016-10-22T13:02:45.000Z</published>
-    <updated>2016-12-23T02:57:09.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h2><p>2016-12-22</p>
-<ul>
-<li>[*] 文章结构修改</li>
-<li>[+] 添加远程调试在线工具</li>
-</ul>
-<p>本文收集整理了浏览器调试工具介绍，手机调试方案，nodejs调试，无线抓包。</p>
-<a id="more"></a>
-<h2 id="远程真机调试"><a href="#远程真机调试" class="headerlink" title="远程真机调试"></a>远程真机调试</h2><h3 id="阿里移动质量中心（MQC）-H5测试"><a href="#阿里移动质量中心（MQC）-H5测试" class="headerlink" title="阿里移动质量中心（MQC）-H5测试"></a><a href="https://mqc.aliyun.com/hfive.htm?spm=0.0.0.0.qn7DDr" target="_blank" rel="external">阿里移动质量中心（MQC）-H5测试</a></h3><p>会提供一个测试报告，包含页面加载时间，节点信息，资源资源类型统计，域名资源统计，优化建议,该设备各浏览器的小视频。</p>
-<h3 id="testin"><a href="#testin" class="headerlink" title="testin"></a><a href="http://remote.testin.cn/" target="_blank" rel="external">testin</a></h3><h3 id="优测"><a href="#优测" class="headerlink" title="优测"></a><a href="http://remote.utest.qq.com/deviceSearch?type=remote&amp;brand=Samsung" target="_blank" rel="external">优测</a></h3><h2 id="小程序和微信开发调试"><a href="#小程序和微信开发调试" class="headerlink" title="小程序和微信开发调试"></a>小程序和微信开发调试</h2><h2 id="实时刷新"><a href="#实时刷新" class="headerlink" title="实时刷新"></a>实时刷新</h2><h3 id="FIS"><a href="#FIS" class="headerlink" title="FIS"></a>FIS</h3><h3 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h3><h3 id="BrowserSync"><a href="#BrowserSync" class="headerlink" title="BrowserSync"></a>BrowserSync</h3><h3 id="weflow"><a href="#weflow" class="headerlink" title="weflow"></a><a href="https://weflow.io/" target="_blank" rel="external">weflow</a></h3><h3 id="puer"><a href="#puer" class="headerlink" title="puer"></a><a href="https://github.com/leeluolee/puer" target="_blank" rel="external">puer</a></h3><h3 id="F5"><a href="#F5" class="headerlink" title="F5"></a><a href="http://www.getf5.com/" target="_blank" rel="external">F5</a></h3><h2 id="开发者调试"><a href="#开发者调试" class="headerlink" title="开发者调试"></a>开发者调试</h2><h3 id="spy-debugger"><a href="#spy-debugger" class="headerlink" title="spy-debugger"></a><a href="https://github.com/wuchangming/spy-debugger" target="_blank" rel="external">spy-debugger</a></h3><h3 id="https-ant-tool-github-io-dora-html"><a href="#https-ant-tool-github-io-dora-html" class="headerlink" title="https://ant-tool.github.io/dora.html"></a><a href="https://ant-tool.github.io/dora.html" target="_blank" rel="external">https://ant-tool.github.io/dora.html</a></h3><h2 id="浏览器调试"><a href="#浏览器调试" class="headerlink" title="浏览器调试"></a>浏览器调试</h2><p><a href="http://ued.taobao.com/blog/2012/06/debug-with-chrome-dev-tool/" target="_blank" rel="external">chrome developer tool 调试技巧</a>谷歌浏览器调试比较基础的文章，期待补充和完善。</p>
-<p><a href="http://www.ueder.net/html5-Slides/slides.html#slide-1" target="_blank" rel="external">Chrome Developer Tools 功能与技巧详解</a></p>
-<p><a href="http://isux.tencent.com/chrome-workspace.html" target="_blank" rel="external">开发者调试工具Chrome Workspace</a><br>开发者工具中调试修改js或者css同时自动保存文件，能够避免开发人员在工具中调试好，再到编辑器中修改一次代码的重复操作，能够提高一定的效率</p>
-<p><a href="http://www.opera.com/dragonfly/documentation/" target="_blank" rel="external"><del>Opera Dragonfly documentation</del></a></p>
-<p><a href="https://developer.chrome.com/devtools/docs/mobile-emulation" target="_blank" rel="external">Mobile emulation</a> 模拟器</p>
-<p><a href="http://www.alloyteam.com/2014/02/browser-sync-responsive-web-development-and-debugging-tool/" target="_blank" rel="external">Browser-Sync：响应式Web开发调试利器</a></p>
-<p><a href="chrome://net-internals/#export" target="_blank" rel="external">Chrome也自带抓包功能</a></p>
-<h2 id="WebApp调试"><a href="#WebApp调试" class="headerlink" title="WebApp调试"></a>WebApp调试</h2><ul>
-<li><a href="https://github.com/WechatFE/vConsole" target="_blank" rel="external">https://github.com/WechatFE/vConsole</a></li>
-<li><a href="https://github.com/AlloyTeam/AlloyLever/" target="_blank" rel="external">https://github.com/AlloyTeam/AlloyLever/</a></li>
-</ul>
-<p><a href="http://thx.github.io/mobile/debugging-in-mobile/" target="_blank" rel="external">无线调试攻略</a><br>少年天才以外的我们，与其说是 coder,不如说是 debugger，都是一路调戏过来的，不好意思，是调试【本人口齿不清，发音不准，再发生类似事故请多多见谅】，因此当你 主动/被动 All in 了无线以后，你发现，知识的储备只是时间的积累和有意识的训练而已，可面对众多的 爱疯，案桌儿，山柴，内核不同，大小不一的设备。尼玛，没有个顺手的调试工具，简直是不能忍受的。</p>
-<p><a href="https://speakerdeck.com/paulguo/h5-mobile-kai-fa-diao-shi-shi-jian" target="_blank" rel="external">H5 Mobile 开发调试实践 by 破锣锅</a> 总结的很详细</p>
-<p><a href="http://oceanzhu.com/archives/74" target="_blank" rel="external">手机上怎么抓包调试</a><br>纳尼，手机也可以抓包，不可思议，赶紧试试吧</p>
-<p><a href="https://getfirebug.com/firebuglite" target="_blank" rel="external">Firebug Lite: doing the Firebug way, anywhere.</a><br>亲，还在为ie6的调试而苦恼吗？Firebug值得一试。</p>
-<p><a href="http://wyqbailey.diandian.com/post/2011-11-09/20511143" target="_blank" rel="external">远程调试工具-weinre</a>Web Inspector Remote（远程 Web 调试工具），功能和 Firebug、Webkit Inspector 类似，可以帮助我们在 PC 端远程调试运行在移动设备浏览器内的 Web 页面或应用，能够即时调试 DOM 元素、 CSS 样式 和 JavaScript 等。</p>
-<p><a href="https://www.imququ.com/post/remote-debugging-with-weinre.html" target="_blank" rel="external">用Weinre远程调试移动网页</a></p>
-<p><a href="http://www.cnblogs.com/lhb25/p/debug-mobile-site-and-app-with-weinre.html" target="_blank" rel="external">使用 Weinre 调试移动网站及 PhoneGap 应用</a><code>node</code>版更适合前端。</p>
-<p><a href="http://debug.build.phonegap.com/" target="_blank" rel="external">在线Weinre</a></p>
-<p><a href="https://reader.mx/p/1391" target="_blank" rel="external">浏览器远程调试</a><br>对比了 Firefox、Chrome、Opera 三大浏览器的远程调试工具</p>
-<p><a href="https://github.com/jieyou/remote_inspect_web_on_real_device" target="_blank" rel="external">真机远程调试-remote inspect web on real device</a></p>
-<p><a href="http://44ux.com/blog/2013/02/25/using-web-debugging-proxies/" target="_blank" rel="external">善用 Web 调试代理工具</a></p>
-<p><a href="http://code.tutsplus.com/tutorials/using-web-debugging-proxies--net-29828" target="_blank" rel="external">Using Web Debugging Proxies</a></p>
-<p><a href="https://developer.chrome.com/devtools/docs/remote-debugging?hl=zh-CN" target="_blank" rel="external">Remote Debugging on Android with Chrome</a> 谷歌浏览器实现安装的远程调试</p>
-<p><a href="https://github.com/CN-Chrome-DevTools/CN-Chrome-DevTools" target="_blank" rel="external">Chrome开发者工具中文手册</a></p>
-<p><a href="http://www.iunbug.com/mihtool-zh" target="_blank" rel="external">MIHTool 是前端工程师在iOS设备上调试和优化页面的得力助手</a></p>
-<p><a href="https://creative.adobe.com/zh-tw/products/inspect" target="_blank" rel="external">Edge Inspect</a>方便的跨平台同步预览工具</p>
-<p><a href="http://jsconsole.com/" target="_blank" rel="external">jsconsole</a>是一个风格和Weinre类似的工具，它更多地关注于控制台输出和代码求值。在访问JSConsole的网站的时候，用户输入“:listen”来获得带有GUID的一段JavaScript代码。这段代码需要被加入到待调试的网页中。于是，在加载网页的时候，代码将会连接到JSConsole服务器，并且根据GUID将此会话和用户的会话关联起来，于是用户浏览器中的控制台现在便已经处于待调试网页的JavaScript运行时环境中了。</p>
-<p><a href="http://blog.wpjam.com/m/ios-safari-remote-debugging/" target="_blank" rel="external">通过 Mac 远程调试 iPhone/iPad 上的网页</a></p>
-<p><a href="http://blog.segmentfault.com/humphry/1190000000313211?page=1#c-1190000000313211-1050000000349151" target="_blank" rel="external">整理：手机端网页调试方案</a></p>
-<h2 id="node-js调试"><a href="#node-js调试" class="headerlink" title="node.js调试"></a>node.js调试</h2><p><a href="http://www.cnblogs.com/dolphinX/p/3485345.html" target="_blank" rel="external">node.js调试</a><br>你还在一个个<code>console.log()</code>，那么你out啦</p>
-<h3 id="devtool"><a href="#devtool" class="headerlink" title="devtool"></a><a href="https://github.com/Jam3/devtool" target="_blank" rel="external">devtool</a></h3><p>Runs Node.js programs inside Chrome DevTools (using Electron).</p>
-<p>监测脚步变动自动重启命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">devtool scripts/parse.js --watch</div></pre></td></tr></table></figure></p>
-<p>对应有<a href="https://github.com/remy/nodemon" target="_blank" rel="external"><code>nodemon</code></a>,目前这个是最符合我需求的。还有    <code>Superviso</code> <code>node-dev</code></p>
-<h3 id="iron-node"><a href="#iron-node" class="headerlink" title="iron-node"></a>iron-node</h3><h3 id="node-inspector"><a href="#node-inspector" class="headerlink" title="node-inspector"></a>node-inspector</h3><h3 id="node-debugger"><a href="#node-debugger" class="headerlink" title="node-debugger"></a>node-debugger</h3><h3 id="WebStorm集成的调试器"><a href="#WebStorm集成的调试器" class="headerlink" title="WebStorm集成的调试器"></a>WebStorm集成的调试器</h3><h2 id="抓包工具"><a href="#抓包工具" class="headerlink" title="抓包工具"></a>抓包工具</h2><ul>
-<li><a href="http://weibo.com/ttarticle/p/show?id=2309404034831301405232&amp;mod=zwenzhang?comment=1&amp;sudaref=www.google.co.jp&amp;retcode=6102" target="_blank" rel="external">whistle</a></li>
-<li><a href="http://www.alloyteam.com/2014/07/nodejs-debug-proxy-livepool/" target="_blank" rel="external">【开源项目】LivePool：基于 NodeJs 的跨平台 Web 抓包替换工具</a></li>
-<li><a href="http://www.httpwatch.com/download/" target="_blank" rel="external">HttpWatch</a></li>
-<li><a href="http://www.ieinspector.com/" target="_blank" rel="external">HttpAnalyzerStd</a></li>
-<li><a href="http://www.tcpdump.org/" target="_blank" rel="external">tcpdump</a></li>
-<li><a href="http://www.wireshark.org/" target="_blank" rel="external">wireshark</a> 文章推荐：<a href="http://www.cnblogs.com/TankXiao/archive/2012/10/10/2711777.html" target="_blank" rel="external">Wireshark基本介绍和学习TCP三次握手</a></li>
-<li><a href="http://goddyzhao.me/nproxy/" target="_blank" rel="external">NProxy</a> 文章推荐：<a href="NProxy——Mac和Linux平台下的Fiddler">NProxy——Mac和Linux平台下的Fiddler</a></li>
-</ul>
-<h3 id="Fiddler"><a href="#Fiddler" class="headerlink" title="Fiddler"></a><a href="http://www.telerik.com/fiddler" target="_blank" rel="external">Fiddler</a></h3><ul>
-<li><a href="https://www.imququ.com/post/user-fiddler-on-macos.html" target="_blank" rel="external">如何在 Mac 下使用 Fiddler</a></li>
-<li><a href="http://www.welefen.com/fiddler-base-on-chrome-extension.html" target="_blank" rel="external">基于Chrome扩展的Fiddler</a></li>
-</ul>
-<h3 id="Mac平台"><a href="#Mac平台" class="headerlink" title="Mac平台"></a>Mac平台</h3><ul>
-<li><a href="http://zh.blog.goddyzhao.me/post/35906061908/nproxy-fiddler-in-mac-and-linux" target="_blank" rel="external">NProxy——Mac和Linux平台下的Fiddler</a></li>
-<li><a href="http://www.charlesproxy.com/" target="_blank" rel="external">Charles</a> <a href="http://www.baidufe.com/item/8a53eea855cb6289993f.html" target="_blank" rel="external">使用charles proxy for Mac来抓取手机App的网络包</a> <a href="http://www.36ria.com/6278" target="_blank" rel="external">Charles(最强大的http调试工具)详细教程（上）</a> <a href="http://www.36ria.com/6303" target="_blank" rel="external">Charles(最强大的http调试工具)详细教程（下）</a></li>
-</ul>
-<h2 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h2><ul>
-<li><a href="http://tid.tenpay.com/?p=6161" target="_blank" rel="external">远程调试(Remote Debugging)</a></li>
-<li><a href="https://github.com/jieyou/remote_inspect_web_on_real_device" target="_blank" rel="external">各种 真机远程调试 方法 汇总</a></li>
-<li><a href="http://wiki.jikexueyuan.com/project/chrome-devtools/remote-debugging-on-android.html" target="_blank" rel="external">http://wiki.jikexueyuan.com/project/chrome-devtools/remote-debugging-on-android.html</a></li>
-<li><a href="http://www.jianshu.com/p/82ab631502e1" target="_blank" rel="external">http://www.jianshu.com/p/82ab631502e1</a></li>
-<li><a href="http://yujiangshui.com/multidevice-frontend-debug/" target="_blank" rel="external">http://yujiangshui.com/multidevice-frontend-debug/</a></li>
-<li><a href="http://div.io/topic/1449" target="_blank" rel="external">http://div.io/topic/1449</a></li>
-<li><a href="http://alloyteam.github.io/Spirit/modules/Mobug/" target="_blank" rel="external">http://alloyteam.github.io/Spirit/modules/Mobug/</a></li>
-<li><a href="https://github.com/hongru/horn" target="_blank" rel="external">https://github.com/hongru/horn</a></li>
-<li><a href="https://github.com/kaiye/kaiye.github.com/issues/4" target="_blank" rel="external">https://github.com/kaiye/kaiye.github.com/issues/4</a></li>
-<li><a href="https://github.com/riskers/blog/issues/11" target="_blank" rel="external">https://github.com/riskers/blog/issues/11</a></li>
-<li><a href="https://gold.xitu.io/entry/5851e77d61ff4b006c8414dd" target="_blank" rel="external">https://gold.xitu.io/entry/5851e77d61ff4b006c8414dd</a></li>
-<li><a href="https://www.zhihu.com/question/20322475" target="_blank" rel="external">https://www.zhihu.com/question/20322475</a></li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;更新日志&quot;&gt;&lt;a href=&quot;#更新日志&quot; class=&quot;headerlink&quot; title=&quot;更新日志&quot;&gt;&lt;/a&gt;更新日志&lt;/h2&gt;&lt;p&gt;2016-12-22&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;[*] 文章结构修改&lt;/li&gt;
-&lt;li&gt;[+] 添加远程调试在线工具&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;本文收集整理了浏览器调试工具介绍，手机调试方案，nodejs调试，无线抓包。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="前端工具" scheme="http://huixisheng.github.io/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/"/>
-    
-      <category term="前端资源" scheme="http://huixisheng.github.io/tags/%E5%89%8D%E7%AB%AF%E8%B5%84%E6%BA%90/"/>
-    
-      <category term="调试" scheme="http://huixisheng.github.io/tags/%E8%B0%83%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>spawn和exec简单介绍</title>
-    <link href="http://huixisheng.github.io/nodejs-spawn-exec/"/>
-    <id>http://huixisheng.github.io/nodejs-spawn-exec/</id>
-    <published>2016-10-22T13:02:45.000Z</published>
-    <updated>2016-10-22T13:10:37.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>谷歌搜了下网上介绍spawn和exec区别的文章还是很详细的，引用相关主要的提到的点。同时结合项目中使用过的脚步了解相关的使用方法。</p>
-<a id="more"></a>
-<h2 id="spawn"><a href="#spawn" class="headerlink" title="spawn"></a>spawn</h2><blockquote>
-<p>spawn方法创建一个子进程来执行特定命令，用法与execFile方法类似，但是没有回调函数，只能通过监听事件，来获取运行结果。它属于异步执行，适用于子进程长时间运行的情况。<a href="http://javascript.ruanyifeng.com/nodejs/child-process.html#toc3" target="_blank" rel="external">来自Child Process模块</a></p>
-</blockquote>
-<p>在<code>node v0.11.12</code>相应的同步方法。记得不支持同步方法<code>node</code>版本中有对应的模块<a href="https://www.npmjs.com/package/spawn-sync" target="_blank" rel="external">spawn-sync</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">child_process.spawnSync(command[, args][, options])</div><div class="line">Added in: v0.11.12</div></pre></td></tr></table></figure>
-<p>早期简单实现了同步读取数据</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> cp = <span class="built_in">require</span>(<span class="string">'child_process'</span>);</div><div class="line"><span class="keyword">var</span> assert = <span class="built_in">require</span>(<span class="string">'assert'</span>);</div><div class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</div><div class="line"><span class="keyword">var</span> input = &#123;</div><div class="line">    <span class="string">"prid"</span> : productId</div><div class="line">&#125;;</div><div class="line">input = <span class="built_in">JSON</span>.stringify(input);</div><div class="line">args = args || &#123;&#125;;</div><div class="line"><span class="keyword">var</span> requestPath = path.join(__dirname, <span class="string">'queryProduct.js'</span>);</div><div class="line"><span class="keyword">var</span> cmd = process.execPath;</div><div class="line"><span class="keyword">var</span> _args = [requestPath, input];</div><div class="line"><span class="keyword">var</span> res = cp.spawnSync(cmd, _args, &#123;</div><div class="line">    <span class="attr">timeout</span>: (args.timeout || <span class="number">3000</span>) + <span class="number">1000</span></div><div class="line">&#125;);</div><div class="line"><span class="comment">// console.log(res.stdout.toString('utf8'));</span></div><div class="line"><span class="keyword">return</span> <span class="built_in">JSON</span>.parse(res.stdout.toString(<span class="string">'utf8'</span>));</div></pre></td></tr></table></figure>
-<p>queryProduct.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">async.series([</div><div class="line">    function(cb)&#123;</div><div class="line">        conn.query(sql, function(err, res)&#123;</div><div class="line">            var row = res[0];</div><div class="line">            cb(null, row);</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line">], function(err, result)&#123;</div><div class="line">    if( err )&#123;</div><div class="line">        console.error(err.message);</div><div class="line">        process.exit(1);</div><div class="line">    &#125; else &#123;</div><div class="line">        console.log(JSON.stringify(result[0]));</div><div class="line">    &#125;</div><div class="line">    conn.end();</div><div class="line">    process.exit(0);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<h2 id="exec"><a href="#exec" class="headerlink" title="exec"></a>exec</h2><p>有对于的同步方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">child_process.execSync(command[, options])#</div><div class="line">Added in: v0.11.12</div></pre></td></tr></table></figure></p>
-<p><code>child_process.execSync</code><br>使用实例，合并当前的操作分支到test,并推送到远程的test分支</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/env node</div><div class="line"></div><div class="line">// chmod +x</div><div class="line">var child = require(&apos;child_process&apos;);</div><div class="line">var execSync = require(&apos;child_process&apos;).execSync;</div><div class="line"></div><div class="line">// @todo</div><div class="line">var gstOutput = spawnSync(&apos;git branch&apos;, []);</div><div class="line">var currentBranch = getCurrentBranch();</div><div class="line">console.log(&apos;切换到test分支:&apos;);</div><div class="line">var gcOutput = execSync(&apos;git checkout test&apos;);</div><div class="line">console.log(&apos;合并分支&apos; + currentBranch);</div><div class="line">var megerOutPut = execSync(&apos;git merge &apos; + currentBranch);</div><div class="line">console.log(&apos;推送test分支&apos;);</div><div class="line">execSync(&apos;git pull origin test &amp;&amp; git push origin test &amp;&amp; npm run sync&apos;);</div><div class="line">console.log(&apos;切换到&apos; + currentBranch);</div><div class="line">execSync(&apos;git checkout &apos; + currentBranch);</div><div class="line"></div><div class="line">// git branch | grep &quot;*&quot;  简写</div><div class="line">function getCurrentBranch()&#123;</div><div class="line">  var execOutput = execSync(&apos;git branch&apos;, &#123;&#125;);</div><div class="line">  var outputContent = execOutput.toString();</div><div class="line">  var arr = outputContent.split(&apos;\n&apos;);</div><div class="line">  for(var i = arr.length - 1; i &gt;= 0; i--)&#123;</div><div class="line">    if( arr[i].indexOf(&apos;*&apos;) &gt;= 0 )&#123;</div><div class="line">      return arr[i].replace(&apos;*&apos;, &apos;&apos;).trim();</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  return &apos;&apos;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>exec方法用于执行bash命令，它的参数是一个命令字符串。<br>如果用户输入恶意代码，将会带来安全风险。因此，在有用户输入的情况下，最好不使用exec方法，而是使用execFile方法。</p>
-</blockquote>
-<h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><blockquote>
-<p>虽然在上面的文档用法中，spwan和exec的最终回调方式有区别，但是在node的实现中，其实两者的实现方式是一致的，exec也可以像spawn一样使用，只不过exec在触发stderr和stdout的data事件的时候，会把数据写到字符串中，到执行结束或者错误退出的时候通过回调函数传递出来，实现了exec这种便捷用法。<a href="http://deadhorse.me/nodejs/2011/12/18/nodejs%E4%B8%ADchild_process%E6%A8%A1%E5%9D%97%E7%9A%84exec%E6%96%B9%E6%B3%95%E5%92%8Cspawn%E6%96%B9%E6%B3%95.html" target="_blank" rel="external">来自exec与spawn方法的区别与陷阱</a></p>
-<p>使用exec默认最大是200k。<br>超出时会报一个错误： “Error: maxBuffer exceeded”</p>
-</blockquote>
-<p><a href="http://div.io/topic/1516" target="_blank" rel="external">使用node子进程spawn,exec踩过的坑</a> 提到exec和spawn的源码区分</p>
-<blockquote>
-<p>断点进去看后，豁然开朗，exec是对execFile的封装，execFile又是对spawn的封装。</p>
-</blockquote>
-<h3 id="exec和spawn的使用区分来自使用node子进程spawn-exec踩过的坑"><a href="#exec和spawn的使用区分来自使用node子进程spawn-exec踩过的坑" class="headerlink" title="exec和spawn的使用区分来自使用node子进程spawn,exec踩过的坑"></a>exec和spawn的使用区分<a href="http://div.io/topic/1516" target="_blank" rel="external">来自使用node子进程spawn,exec踩过的坑</a></h3><p>不过exec确实比spawn在使用上面要好很多</p>
-<p>例如我们执行一个命令</p>
-<p>使用exec</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">require(&apos;child_process&apos;).exec(&apos;edp webserver start&apos;);</div></pre></td></tr></table></figure>
-<p>使用spawn</p>
-<p>linux下这么搞</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var child = require(&apos;child_process&apos;).spawn(</div><div class="line">&apos;/bin/sh&apos;, [&apos;-c&apos;,&apos;edp webserver start&apos;], &#123; cwd: null, env: null, windowsVerbatimArguments: false &#125; );</div></pre></td></tr></table></figure>
-<p>win下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"> var child = require(&apos;child_process&apos;).spawn(</div><div class="line">&apos;cmd.exe&apos;, [&apos;/s&apos;, &apos;/c&apos;, &apos;edp webserver start&apos;], &#123; cwd: null, env: null, windowsVerbatimArguments: true &#125; );</div></pre></td></tr></table></figure>
-<p>可见spawn还是比较麻烦的。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;谷歌搜了下网上介绍spawn和exec区别的文章还是很详细的，引用相关主要的提到的点。同时结合项目中使用过的脚步了解相关的使用方法。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="nodejs" scheme="http://huixisheng.github.io/tags/nodejs/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>配置SSH公钥和git多账号配置</title>
-    <link href="http://huixisheng.github.io/git-ssh-key-setting/"/>
-    <id>http://huixisheng.github.io/git-ssh-key-setting/</id>
-    <published>2016-10-22T13:02:45.000Z</published>
-    <updated>2016-10-22T13:07:52.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>本文介绍如何配置<code>ssh-key</code></p>
-<a id="more"></a>
-<h2 id="生成key"><a href="#生成key" class="headerlink" title="生成key"></a>生成key</h2><p>ssh-keygen -t rsa -f ~/.ssh/git.oschina.net -C “469184346@qq.com”</p>
-<blockquote>
-<p>代码参数含义：<br>-t 指定密钥类型，默认是 rsa ，可以省略。<br>-C 设置注释文字，比如邮箱。<br>-f 指定密钥文件存储文件名。  -<a href="http://www.cnblogs.com/ayseeing/p/3572582.html" target="_blank" rel="external">来自github设置添加SSH</a></p>
-</blockquote>
-<p>直接输入回车</p>
-<pre><code>Generating public/private rsa key pair.
-Enter passphrase (empty for no passphrase):
-Enter same passphrase again:
-</code></pre><p>如果输入了密码</p>
-<blockquote>
-<p>设置passphrase后，进行版本控制时，每次与GitHub通信都会要求输入passphrase，以避免某些“失误”</p>
-<p>将SSH 私钥增加到ssh-agent: ssh-add ~/.ssh/xyz_rsa， 这里会提示输入一次私钥的密码; -<a href="http://www.jianshu.com/p/ddd3122cb351#" target="_blank" rel="external">来自</a></p>
-</blockquote>
-<h2 id="添加密匙"><a href="#添加密匙" class="headerlink" title="添加密匙"></a>添加密匙</h2><h3 id="拷贝公钥"><a href="#拷贝公钥" class="headerlink" title="拷贝公钥"></a>拷贝公钥</h3><pre><code>pbcopy &lt;  ~/.ssh/git.oschina.net.pub
-</code></pre><p>其他平台拷贝命令<a href="http://www.jianshu.com/p/31cbbbc5f9fa/" target="_blank" rel="external">参考如何生成SSH key</a></p>
-<blockquote>
-<p>window<br>    clip &lt; ~/.ssh/id_rsa.pub</p>
-<p>linux<br>    sudo apt-get install xclip<br>    xclip -sel clip &lt; ~/.ssh/id_rsa.pub</p>
-</blockquote>
-<h3 id="登录远程git平台添加ssh-key"><a href="#登录远程git平台添加ssh-key" class="headerlink" title="登录远程git平台添加ssh key"></a>登录远程git平台添加ssh key</h3><p>粘贴刚才拷贝的内容</p>
-<ul>
-<li><a href="http://git.oschina.net/profile/sshkeys" target="_blank" rel="external">oschinaSSH公钥</a></li>
-<li><a href="https://github.com/settings/keys" target="_blank" rel="external">github SSH and GPG keys</a>点击 <code>New SSH key</code></li>
-</ul>
-<p>将新生成的key添加到ssh-agent中</p>
-<pre><code>$ eval &quot;$(ssh-agent -s)&quot;
-$ ssh-add ~/.ssh/git.oschina.net
-</code></pre><blockquote>
-<p>可以通过 ssh-add -l 来确私钥列表<br>$ ssh-add -l<br>可以通过 ssh-add -D 来清空私钥列表<br>$ ssh-add -D</p>
-</blockquote>
-<h2 id="配置config用于多个git-ssh密匙"><a href="#配置config用于多个git-ssh密匙" class="headerlink" title="配置config用于多个git ssh密匙"></a>配置config用于多个git ssh密匙</h2><pre><code>Host github.com
-    HostName github.com
-    PreferredAuthentications publickey
-    IdentityFile ~/.ssh/github
-    User huixisheng
-
-Host git.coding.net
-    HostName git.coding.net
-    PreferredAuthentications publickey
-    IdentityFile ~/.ssh/gitcodingnet
-    User git
-
-Host git.oschina.net
-    HostName git.oschina.net
-    PreferredAuthentications publickey
-    IdentityFile ~/.ssh/git.oschina.net
-    User git
-</code></pre><blockquote>
-<p>Host，SSH 连接名<br>HostName，如上所示，可以是通配符，可以是 IP，也可以是域名等<br>User，登录的用户名<br>IdentifyFile，version 1 协议下默认是 ~/.ssh/identify，version 2 协议下，默认是依次匹配：~/.ssh/id_dsa，~/.ssh/id_ecdsa，~/.ssh/id_rsa，还有 version 2 兼容模式。<br>LocalForward 端口的内部跳转<br>Port，端口设置，默认 SSH 的端口是 22<br>Protocal，协议版本号，1 或者 2<br><a href="http://www.barretlee.com/blog/2016/03/09/config-in-ssh-after-troubling-git-connection/" target="_blank" rel="external">来自</a></p>
-</blockquote>
-<ul>
-<li><a href="http://www.cnblogs.com/ayseeing/p/4445194.html" target="_blank" rel="external">参考生成多个git ssh密钥</a></li>
-</ul>
-<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>测试是否配置成功</p>
-<pre><code>$ ssh -T git@git.oschina.net
-Welcome to Git@OSC, huixisheng!
-</code></pre><blockquote>
-<p>-v会输出详情的信息 <a href="http://www.barretlee.com/blog/2016/03/09/config-in-ssh-after-troubling-git-connection/" target="_blank" rel="external">多SSH Key管理技巧与Git多账户登录问题</a></p>
-</blockquote>
-<h2 id="其他问题"><a href="#其他问题" class="headerlink" title="其他问题"></a>其他问题</h2><pre><code>$ ssh -T git@git.oschina.net
-The authenticity of host &apos;git.oschina.net (218.60.114.30)&apos; can&apos;t be established.
-ECDSA key fingerprint is SHA256:FQGC9Kn/eye1W8icdBgrQp+KkGYoFgbVr17bmjey0Wc.
-Are you sure you want to continue connecting (yes/no)? yes
-Warning: Permanently added &apos;git.oschina.net,218.60.114.30&apos; (ECDSA) to the list of known hosts.
-Permission denied (publickey).
-
-$ eval &quot;$(ssh-agent -s)&quot;
-$ ssh-add ~/.ssh/git.oschina.net
-</code></pre><blockquote>
-<p>   如果执行ssh-add时提示”Could not open a connection to your authentication agent”，可以现执行命令：<br>    $ ssh-agent bash <a href="http://my.oschina.net/stefanzhlg/blog/529403" target="_blank" rel="external">来自</a></p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo git clone git@git.coding.net:huixisheng/layout.git</div><div class="line">Cloning into &apos;layout&apos;...</div><div class="line">Permission denied (publickey).</div><div class="line">fatal: Could not read from remote repository.</div></pre></td></tr></table></figure>
-<p><code>ssh -vT git@git.coding.net</code> 是有结果返回的,看了debug信息都是正常的。</p>
-<p>执行如下（期间关闭了翻墙软件）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ssh-add ~/.ssh/gitcodingnet</div><div class="line">source ~/.ssh/config</div></pre></td></tr></table></figure></p>
-<p>再次clone又可以了。没找到为何不行的根本原因</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><a href="http://my.oschina.net/stefanzhlg/blog/529403" target="_blank" rel="external">git 配置多个SSH-Key</a></li>
-<li><a href="https://help.github.com/articles/generating-ssh-keys" target="_blank" rel="external">https://help.github.com/articles/generating-ssh-keys</a></li>
-<li><a href="https://coding.net/help/doc/git/ssh-key.html" target="_blank" rel="external">coding配置SSH公钥</a></li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;本文介绍如何配置&lt;code&gt;ssh-key&lt;/code&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="git" scheme="http://huixisheng.github.io/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>markdown文件生成目录</title>
-    <link href="http://huixisheng.github.io/markdown-Table-of-Contents/"/>
-    <id>http://huixisheng.github.io/markdown-Table-of-Contents/</id>
-    <published>2016-10-22T13:02:45.000Z</published>
-    <updated>2016-10-22T13:17:08.000Z</updated>
-    
-    <content type="html"><![CDATA[<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-<ul>
-<li><a href="#gh-md-toc">gh-md-toc</a><ul>
-<li><a href="#%E5%AE%89%E8%A3%85">安装</a></li>
-<li><a href="#%E7%94%9F%E6%88%90%E5%86%85%E5%AE%B9">生成内容</a></li>
-</ul>
-</li>
-<li><a href="#doctoc">doctoc</a><ul>
-<li><a href="#%E5%AE%89%E8%A3%85-1">安装</a></li>
-<li><a href="#%E6%8E%A7%E5%88%B6%E6%8F%92%E5%85%A5%E7%9A%84%E4%BD%8D%E7%BD%AE">控制插入的位置</a></li>
-<li><a href="#%E6%94%AF%E6%8C%81%E7%9A%84%E5%B9%B3%E5%8F%B0">支持的平台</a></li>
-</ul>
-</li>
-</ul>
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-<a id="more"></a>
-<h2 id="gh-md-toc"><a href="#gh-md-toc" class="headerlink" title="gh-md-toc"></a>gh-md-toc</h2><p><a href="https://github.com/ekalinin/github-markdown-toc#installation" target="_blank" rel="external">gh-md-toc</a></p>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ wget https://raw.githubusercontent.com/ekalinin/github-markdown-toc/master/gh-md-toc</div><div class="line">$ chmod a+x gh-md-toc</div><div class="line">$ ./gh-md-toc ./issue-13.md</div></pre></td></tr></table></figure>
-<h3 id="生成内容"><a href="#生成内容" class="headerlink" title="生成内容"></a>生成内容</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">Table of Contents</div><div class="line">=================</div><div class="line"></div><div class="line">    * [gh-md-toc](#gh-md-toc)</div><div class="line">      * [安装](#安装)</div><div class="line">      * [生成内容](#生成内容)</div><div class="line">    * [doctoc](#doctoc)</div><div class="line">      * [安装](#安装-1)</div><div class="line">      * [控制插入的位置](#控制插入的位置)</div><div class="line">      * [支持的平台](#支持的平台)</div></pre></td></tr></table></figure>
-<h2 id="doctoc"><a href="#doctoc" class="headerlink" title="doctoc"></a>doctoc</h2><p><a href="https://github.com/thlorenz/doctoc" target="_blank" rel="external">doctoc</a></p>
-<h3 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ sudo npm install -g doctoc</div><div class="line">$ doctoc ./issue-13.md</div></pre></td></tr></table></figure>
-<p>生成内容见顶部</p>
-<h3 id="控制插入的位置"><a href="#控制插入的位置" class="headerlink" title="控制插入的位置"></a>控制插入的位置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;!-- START doctoc --&gt;</div><div class="line">&lt;!-- END doctoc --&gt;</div></pre></td></tr></table></figure>
-<h3 id="支持的平台"><a href="#支持的平台" class="headerlink" title="支持的平台"></a>支持的平台</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">--bitbucket bitbucket.org</div><div class="line">--nodejs    nodejs.org</div><div class="line">--github    github.com</div><div class="line">--gitlab    gitlab.com</div><div class="line">--ghost     ghost.org</div></pre></td></tr></table></figure>
-<ul>
-<li><a href="http://stackoverflow.com/questions/9721944/automatic-toc-in-github-flavoured-markdown" target="_blank" rel="external">Automatic TOC in github-flavoured-markdown</a></li>
-</ul>
-<h2 id="其他工具"><a href="#其他工具" class="headerlink" title="其他工具"></a>其他工具</h2><ul>
-<li><a href="https://github.com/jonschlinkert/markdown-toc" target="_blank" rel="external">markdown-toc</a></li>
-<li><a href="https://github.com/gajus/gitdown" target="_blank" rel="external">gitdown</a></li>
-<li><a href="https://github.com/isaacs/github/issues/215" target="_blank" rel="external">https://github.com/isaacs/github/issues/215</a></li>
-<li><a href="https://github.com/Mottie/GitHub-userscripts#installation" target="_blank" rel="external">https://github.com/Mottie/GitHub-userscripts#installation</a></li>
-<li><a href="http://doctoc.herokuapp.com/" target="_blank" rel="external">在线工具DocToc</a></li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;!-- START doctoc generated TOC please keep comment here to allow auto update --&gt;
-&lt;!-- DON&#39;T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE --&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#gh-md-toc&quot;&gt;gh-md-toc&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#%E5%AE%89%E8%A3%85&quot;&gt;安装&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#%E7%94%9F%E6%88%90%E5%86%85%E5%AE%B9&quot;&gt;生成内容&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#doctoc&quot;&gt;doctoc&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#%E5%AE%89%E8%A3%85-1&quot;&gt;安装&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#%E6%8E%A7%E5%88%B6%E6%8F%92%E5%85%A5%E7%9A%84%E4%BD%8D%E7%BD%AE&quot;&gt;控制插入的位置&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#%E6%94%AF%E6%8C%81%E7%9A%84%E5%B9%B3%E5%8F%B0&quot;&gt;支持的平台&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;!-- END doctoc generated TOC please keep comment here to allow auto update --&gt;
-    
-    </summary>
-    
-    
-      <category term="markdown" scheme="http://huixisheng.github.io/tags/markdown/"/>
-    
-  </entry>
-  
-  <entry>
     <title>兼容性解决方案整理</title>
     <link href="http://huixisheng.github.io/compatibility-solution/"/>
     <id>http://huixisheng.github.io/compatibility-solution/</id>
@@ -955,6 +664,232 @@ DD_belatedPNG.fixPng( someNode ); // argument is an HTMLDomElement
   </entry>
   
   <entry>
+    <title>调试工具整理</title>
+    <link href="http://huixisheng.github.io/debugger-tool/"/>
+    <id>http://huixisheng.github.io/debugger-tool/</id>
+    <published>2016-10-22T13:02:45.000Z</published>
+    <updated>2016-12-23T02:57:09.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h2><p>2016-12-22</p>
+<ul>
+<li>[*] 文章结构修改</li>
+<li>[+] 添加远程调试在线工具</li>
+</ul>
+<p>本文收集整理了浏览器调试工具介绍，手机调试方案，nodejs调试，无线抓包。</p>
+<a id="more"></a>
+<h2 id="远程真机调试"><a href="#远程真机调试" class="headerlink" title="远程真机调试"></a>远程真机调试</h2><h3 id="阿里移动质量中心（MQC）-H5测试"><a href="#阿里移动质量中心（MQC）-H5测试" class="headerlink" title="阿里移动质量中心（MQC）-H5测试"></a><a href="https://mqc.aliyun.com/hfive.htm?spm=0.0.0.0.qn7DDr" target="_blank" rel="external">阿里移动质量中心（MQC）-H5测试</a></h3><p>会提供一个测试报告，包含页面加载时间，节点信息，资源资源类型统计，域名资源统计，优化建议,该设备各浏览器的小视频。</p>
+<h3 id="testin"><a href="#testin" class="headerlink" title="testin"></a><a href="http://remote.testin.cn/" target="_blank" rel="external">testin</a></h3><h3 id="优测"><a href="#优测" class="headerlink" title="优测"></a><a href="http://remote.utest.qq.com/deviceSearch?type=remote&amp;brand=Samsung" target="_blank" rel="external">优测</a></h3><h2 id="小程序和微信开发调试"><a href="#小程序和微信开发调试" class="headerlink" title="小程序和微信开发调试"></a>小程序和微信开发调试</h2><h2 id="实时刷新"><a href="#实时刷新" class="headerlink" title="实时刷新"></a>实时刷新</h2><h3 id="FIS"><a href="#FIS" class="headerlink" title="FIS"></a>FIS</h3><h3 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h3><h3 id="BrowserSync"><a href="#BrowserSync" class="headerlink" title="BrowserSync"></a>BrowserSync</h3><h3 id="weflow"><a href="#weflow" class="headerlink" title="weflow"></a><a href="https://weflow.io/" target="_blank" rel="external">weflow</a></h3><h3 id="puer"><a href="#puer" class="headerlink" title="puer"></a><a href="https://github.com/leeluolee/puer" target="_blank" rel="external">puer</a></h3><h3 id="F5"><a href="#F5" class="headerlink" title="F5"></a><a href="http://www.getf5.com/" target="_blank" rel="external">F5</a></h3><h2 id="开发者调试"><a href="#开发者调试" class="headerlink" title="开发者调试"></a>开发者调试</h2><h3 id="spy-debugger"><a href="#spy-debugger" class="headerlink" title="spy-debugger"></a><a href="https://github.com/wuchangming/spy-debugger" target="_blank" rel="external">spy-debugger</a></h3><h3 id="https-ant-tool-github-io-dora-html"><a href="#https-ant-tool-github-io-dora-html" class="headerlink" title="https://ant-tool.github.io/dora.html"></a><a href="https://ant-tool.github.io/dora.html" target="_blank" rel="external">https://ant-tool.github.io/dora.html</a></h3><h2 id="浏览器调试"><a href="#浏览器调试" class="headerlink" title="浏览器调试"></a>浏览器调试</h2><p><a href="http://ued.taobao.com/blog/2012/06/debug-with-chrome-dev-tool/" target="_blank" rel="external">chrome developer tool 调试技巧</a>谷歌浏览器调试比较基础的文章，期待补充和完善。</p>
+<p><a href="http://www.ueder.net/html5-Slides/slides.html#slide-1" target="_blank" rel="external">Chrome Developer Tools 功能与技巧详解</a></p>
+<p><a href="http://isux.tencent.com/chrome-workspace.html" target="_blank" rel="external">开发者调试工具Chrome Workspace</a><br>开发者工具中调试修改js或者css同时自动保存文件，能够避免开发人员在工具中调试好，再到编辑器中修改一次代码的重复操作，能够提高一定的效率</p>
+<p><a href="http://www.opera.com/dragonfly/documentation/" target="_blank" rel="external"><del>Opera Dragonfly documentation</del></a></p>
+<p><a href="https://developer.chrome.com/devtools/docs/mobile-emulation" target="_blank" rel="external">Mobile emulation</a> 模拟器</p>
+<p><a href="http://www.alloyteam.com/2014/02/browser-sync-responsive-web-development-and-debugging-tool/" target="_blank" rel="external">Browser-Sync：响应式Web开发调试利器</a></p>
+<p><a href="chrome://net-internals/#export" target="_blank" rel="external">Chrome也自带抓包功能</a></p>
+<h2 id="WebApp调试"><a href="#WebApp调试" class="headerlink" title="WebApp调试"></a>WebApp调试</h2><ul>
+<li><a href="https://github.com/WechatFE/vConsole" target="_blank" rel="external">https://github.com/WechatFE/vConsole</a></li>
+<li><a href="https://github.com/AlloyTeam/AlloyLever/" target="_blank" rel="external">https://github.com/AlloyTeam/AlloyLever/</a></li>
+</ul>
+<p><a href="http://thx.github.io/mobile/debugging-in-mobile/" target="_blank" rel="external">无线调试攻略</a><br>少年天才以外的我们，与其说是 coder,不如说是 debugger，都是一路调戏过来的，不好意思，是调试【本人口齿不清，发音不准，再发生类似事故请多多见谅】，因此当你 主动/被动 All in 了无线以后，你发现，知识的储备只是时间的积累和有意识的训练而已，可面对众多的 爱疯，案桌儿，山柴，内核不同，大小不一的设备。尼玛，没有个顺手的调试工具，简直是不能忍受的。</p>
+<p><a href="https://speakerdeck.com/paulguo/h5-mobile-kai-fa-diao-shi-shi-jian" target="_blank" rel="external">H5 Mobile 开发调试实践 by 破锣锅</a> 总结的很详细</p>
+<p><a href="http://oceanzhu.com/archives/74" target="_blank" rel="external">手机上怎么抓包调试</a><br>纳尼，手机也可以抓包，不可思议，赶紧试试吧</p>
+<p><a href="https://getfirebug.com/firebuglite" target="_blank" rel="external">Firebug Lite: doing the Firebug way, anywhere.</a><br>亲，还在为ie6的调试而苦恼吗？Firebug值得一试。</p>
+<p><a href="http://wyqbailey.diandian.com/post/2011-11-09/20511143" target="_blank" rel="external">远程调试工具-weinre</a>Web Inspector Remote（远程 Web 调试工具），功能和 Firebug、Webkit Inspector 类似，可以帮助我们在 PC 端远程调试运行在移动设备浏览器内的 Web 页面或应用，能够即时调试 DOM 元素、 CSS 样式 和 JavaScript 等。</p>
+<p><a href="https://www.imququ.com/post/remote-debugging-with-weinre.html" target="_blank" rel="external">用Weinre远程调试移动网页</a></p>
+<p><a href="http://www.cnblogs.com/lhb25/p/debug-mobile-site-and-app-with-weinre.html" target="_blank" rel="external">使用 Weinre 调试移动网站及 PhoneGap 应用</a><code>node</code>版更适合前端。</p>
+<p><a href="http://debug.build.phonegap.com/" target="_blank" rel="external">在线Weinre</a></p>
+<p><a href="https://reader.mx/p/1391" target="_blank" rel="external">浏览器远程调试</a><br>对比了 Firefox、Chrome、Opera 三大浏览器的远程调试工具</p>
+<p><a href="https://github.com/jieyou/remote_inspect_web_on_real_device" target="_blank" rel="external">真机远程调试-remote inspect web on real device</a></p>
+<p><a href="http://44ux.com/blog/2013/02/25/using-web-debugging-proxies/" target="_blank" rel="external">善用 Web 调试代理工具</a></p>
+<p><a href="http://code.tutsplus.com/tutorials/using-web-debugging-proxies--net-29828" target="_blank" rel="external">Using Web Debugging Proxies</a></p>
+<p><a href="https://developer.chrome.com/devtools/docs/remote-debugging?hl=zh-CN" target="_blank" rel="external">Remote Debugging on Android with Chrome</a> 谷歌浏览器实现安装的远程调试</p>
+<p><a href="https://github.com/CN-Chrome-DevTools/CN-Chrome-DevTools" target="_blank" rel="external">Chrome开发者工具中文手册</a></p>
+<p><a href="http://www.iunbug.com/mihtool-zh" target="_blank" rel="external">MIHTool 是前端工程师在iOS设备上调试和优化页面的得力助手</a></p>
+<p><a href="https://creative.adobe.com/zh-tw/products/inspect" target="_blank" rel="external">Edge Inspect</a>方便的跨平台同步预览工具</p>
+<p><a href="http://jsconsole.com/" target="_blank" rel="external">jsconsole</a>是一个风格和Weinre类似的工具，它更多地关注于控制台输出和代码求值。在访问JSConsole的网站的时候，用户输入“:listen”来获得带有GUID的一段JavaScript代码。这段代码需要被加入到待调试的网页中。于是，在加载网页的时候，代码将会连接到JSConsole服务器，并且根据GUID将此会话和用户的会话关联起来，于是用户浏览器中的控制台现在便已经处于待调试网页的JavaScript运行时环境中了。</p>
+<p><a href="http://blog.wpjam.com/m/ios-safari-remote-debugging/" target="_blank" rel="external">通过 Mac 远程调试 iPhone/iPad 上的网页</a></p>
+<p><a href="http://blog.segmentfault.com/humphry/1190000000313211?page=1#c-1190000000313211-1050000000349151" target="_blank" rel="external">整理：手机端网页调试方案</a></p>
+<h2 id="node-js调试"><a href="#node-js调试" class="headerlink" title="node.js调试"></a>node.js调试</h2><p><a href="http://www.cnblogs.com/dolphinX/p/3485345.html" target="_blank" rel="external">node.js调试</a><br>你还在一个个<code>console.log()</code>，那么你out啦</p>
+<h3 id="devtool"><a href="#devtool" class="headerlink" title="devtool"></a><a href="https://github.com/Jam3/devtool" target="_blank" rel="external">devtool</a></h3><p>Runs Node.js programs inside Chrome DevTools (using Electron).</p>
+<p>监测脚步变动自动重启命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">devtool scripts/parse.js --watch</div></pre></td></tr></table></figure></p>
+<p>对应有<a href="https://github.com/remy/nodemon" target="_blank" rel="external"><code>nodemon</code></a>,目前这个是最符合我需求的。还有    <code>Superviso</code> <code>node-dev</code></p>
+<h3 id="iron-node"><a href="#iron-node" class="headerlink" title="iron-node"></a>iron-node</h3><h3 id="node-inspector"><a href="#node-inspector" class="headerlink" title="node-inspector"></a>node-inspector</h3><h3 id="node-debugger"><a href="#node-debugger" class="headerlink" title="node-debugger"></a>node-debugger</h3><h3 id="WebStorm集成的调试器"><a href="#WebStorm集成的调试器" class="headerlink" title="WebStorm集成的调试器"></a>WebStorm集成的调试器</h3><h2 id="抓包工具"><a href="#抓包工具" class="headerlink" title="抓包工具"></a>抓包工具</h2><ul>
+<li><a href="http://weibo.com/ttarticle/p/show?id=2309404034831301405232&amp;mod=zwenzhang?comment=1&amp;sudaref=www.google.co.jp&amp;retcode=6102" target="_blank" rel="external">whistle</a></li>
+<li><a href="http://www.alloyteam.com/2014/07/nodejs-debug-proxy-livepool/" target="_blank" rel="external">【开源项目】LivePool：基于 NodeJs 的跨平台 Web 抓包替换工具</a></li>
+<li><a href="http://www.httpwatch.com/download/" target="_blank" rel="external">HttpWatch</a></li>
+<li><a href="http://www.ieinspector.com/" target="_blank" rel="external">HttpAnalyzerStd</a></li>
+<li><a href="http://www.tcpdump.org/" target="_blank" rel="external">tcpdump</a></li>
+<li><a href="http://www.wireshark.org/" target="_blank" rel="external">wireshark</a> 文章推荐：<a href="http://www.cnblogs.com/TankXiao/archive/2012/10/10/2711777.html" target="_blank" rel="external">Wireshark基本介绍和学习TCP三次握手</a></li>
+<li><a href="http://goddyzhao.me/nproxy/" target="_blank" rel="external">NProxy</a> 文章推荐：<a href="NProxy——Mac和Linux平台下的Fiddler">NProxy——Mac和Linux平台下的Fiddler</a></li>
+</ul>
+<h3 id="Fiddler"><a href="#Fiddler" class="headerlink" title="Fiddler"></a><a href="http://www.telerik.com/fiddler" target="_blank" rel="external">Fiddler</a></h3><ul>
+<li><a href="https://www.imququ.com/post/user-fiddler-on-macos.html" target="_blank" rel="external">如何在 Mac 下使用 Fiddler</a></li>
+<li><a href="http://www.welefen.com/fiddler-base-on-chrome-extension.html" target="_blank" rel="external">基于Chrome扩展的Fiddler</a></li>
+</ul>
+<h3 id="Mac平台"><a href="#Mac平台" class="headerlink" title="Mac平台"></a>Mac平台</h3><ul>
+<li><a href="http://zh.blog.goddyzhao.me/post/35906061908/nproxy-fiddler-in-mac-and-linux" target="_blank" rel="external">NProxy——Mac和Linux平台下的Fiddler</a></li>
+<li><a href="http://www.charlesproxy.com/" target="_blank" rel="external">Charles</a> <a href="http://www.baidufe.com/item/8a53eea855cb6289993f.html" target="_blank" rel="external">使用charles proxy for Mac来抓取手机App的网络包</a> <a href="http://www.36ria.com/6278" target="_blank" rel="external">Charles(最强大的http调试工具)详细教程（上）</a> <a href="http://www.36ria.com/6303" target="_blank" rel="external">Charles(最强大的http调试工具)详细教程（下）</a></li>
+</ul>
+<h2 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h2><ul>
+<li><a href="http://tid.tenpay.com/?p=6161" target="_blank" rel="external">远程调试(Remote Debugging)</a></li>
+<li><a href="https://github.com/jieyou/remote_inspect_web_on_real_device" target="_blank" rel="external">各种 真机远程调试 方法 汇总</a></li>
+<li><a href="http://wiki.jikexueyuan.com/project/chrome-devtools/remote-debugging-on-android.html" target="_blank" rel="external">http://wiki.jikexueyuan.com/project/chrome-devtools/remote-debugging-on-android.html</a></li>
+<li><a href="http://www.jianshu.com/p/82ab631502e1" target="_blank" rel="external">http://www.jianshu.com/p/82ab631502e1</a></li>
+<li><a href="http://yujiangshui.com/multidevice-frontend-debug/" target="_blank" rel="external">http://yujiangshui.com/multidevice-frontend-debug/</a></li>
+<li><a href="http://div.io/topic/1449" target="_blank" rel="external">http://div.io/topic/1449</a></li>
+<li><a href="http://alloyteam.github.io/Spirit/modules/Mobug/" target="_blank" rel="external">http://alloyteam.github.io/Spirit/modules/Mobug/</a></li>
+<li><a href="https://github.com/hongru/horn" target="_blank" rel="external">https://github.com/hongru/horn</a></li>
+<li><a href="https://github.com/kaiye/kaiye.github.com/issues/4" target="_blank" rel="external">https://github.com/kaiye/kaiye.github.com/issues/4</a></li>
+<li><a href="https://github.com/riskers/blog/issues/11" target="_blank" rel="external">https://github.com/riskers/blog/issues/11</a></li>
+<li><a href="https://gold.xitu.io/entry/5851e77d61ff4b006c8414dd" target="_blank" rel="external">https://gold.xitu.io/entry/5851e77d61ff4b006c8414dd</a></li>
+<li><a href="https://www.zhihu.com/question/20322475" target="_blank" rel="external">https://www.zhihu.com/question/20322475</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;更新日志&quot;&gt;&lt;a href=&quot;#更新日志&quot; class=&quot;headerlink&quot; title=&quot;更新日志&quot;&gt;&lt;/a&gt;更新日志&lt;/h2&gt;&lt;p&gt;2016-12-22&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;[*] 文章结构修改&lt;/li&gt;
+&lt;li&gt;[+] 添加远程调试在线工具&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;本文收集整理了浏览器调试工具介绍，手机调试方案，nodejs调试，无线抓包。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="前端工具" scheme="http://huixisheng.github.io/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="前端资源" scheme="http://huixisheng.github.io/tags/%E5%89%8D%E7%AB%AF%E8%B5%84%E6%BA%90/"/>
+    
+      <category term="调试" scheme="http://huixisheng.github.io/tags/%E8%B0%83%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>markdown文件生成目录</title>
+    <link href="http://huixisheng.github.io/markdown-Table-of-Contents/"/>
+    <id>http://huixisheng.github.io/markdown-Table-of-Contents/</id>
+    <published>2016-10-22T13:02:45.000Z</published>
+    <updated>2016-10-22T13:17:08.000Z</updated>
+    
+    <content type="html"><![CDATA[<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<ul>
+<li><a href="#gh-md-toc">gh-md-toc</a><ul>
+<li><a href="#%E5%AE%89%E8%A3%85">安装</a></li>
+<li><a href="#%E7%94%9F%E6%88%90%E5%86%85%E5%AE%B9">生成内容</a></li>
+</ul>
+</li>
+<li><a href="#doctoc">doctoc</a><ul>
+<li><a href="#%E5%AE%89%E8%A3%85-1">安装</a></li>
+<li><a href="#%E6%8E%A7%E5%88%B6%E6%8F%92%E5%85%A5%E7%9A%84%E4%BD%8D%E7%BD%AE">控制插入的位置</a></li>
+<li><a href="#%E6%94%AF%E6%8C%81%E7%9A%84%E5%B9%B3%E5%8F%B0">支持的平台</a></li>
+</ul>
+</li>
+</ul>
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+<a id="more"></a>
+<h2 id="gh-md-toc"><a href="#gh-md-toc" class="headerlink" title="gh-md-toc"></a>gh-md-toc</h2><p><a href="https://github.com/ekalinin/github-markdown-toc#installation" target="_blank" rel="external">gh-md-toc</a></p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ wget https://raw.githubusercontent.com/ekalinin/github-markdown-toc/master/gh-md-toc</div><div class="line">$ chmod a+x gh-md-toc</div><div class="line">$ ./gh-md-toc ./issue-13.md</div></pre></td></tr></table></figure>
+<h3 id="生成内容"><a href="#生成内容" class="headerlink" title="生成内容"></a>生成内容</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">Table of Contents</div><div class="line">=================</div><div class="line"></div><div class="line">    * [gh-md-toc](#gh-md-toc)</div><div class="line">      * [安装](#安装)</div><div class="line">      * [生成内容](#生成内容)</div><div class="line">    * [doctoc](#doctoc)</div><div class="line">      * [安装](#安装-1)</div><div class="line">      * [控制插入的位置](#控制插入的位置)</div><div class="line">      * [支持的平台](#支持的平台)</div></pre></td></tr></table></figure>
+<h2 id="doctoc"><a href="#doctoc" class="headerlink" title="doctoc"></a>doctoc</h2><p><a href="https://github.com/thlorenz/doctoc" target="_blank" rel="external">doctoc</a></p>
+<h3 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ sudo npm install -g doctoc</div><div class="line">$ doctoc ./issue-13.md</div></pre></td></tr></table></figure>
+<p>生成内容见顶部</p>
+<h3 id="控制插入的位置"><a href="#控制插入的位置" class="headerlink" title="控制插入的位置"></a>控制插入的位置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;!-- START doctoc --&gt;</div><div class="line">&lt;!-- END doctoc --&gt;</div></pre></td></tr></table></figure>
+<h3 id="支持的平台"><a href="#支持的平台" class="headerlink" title="支持的平台"></a>支持的平台</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">--bitbucket bitbucket.org</div><div class="line">--nodejs    nodejs.org</div><div class="line">--github    github.com</div><div class="line">--gitlab    gitlab.com</div><div class="line">--ghost     ghost.org</div></pre></td></tr></table></figure>
+<ul>
+<li><a href="http://stackoverflow.com/questions/9721944/automatic-toc-in-github-flavoured-markdown" target="_blank" rel="external">Automatic TOC in github-flavoured-markdown</a></li>
+</ul>
+<h2 id="其他工具"><a href="#其他工具" class="headerlink" title="其他工具"></a>其他工具</h2><ul>
+<li><a href="https://github.com/jonschlinkert/markdown-toc" target="_blank" rel="external">markdown-toc</a></li>
+<li><a href="https://github.com/gajus/gitdown" target="_blank" rel="external">gitdown</a></li>
+<li><a href="https://github.com/isaacs/github/issues/215" target="_blank" rel="external">https://github.com/isaacs/github/issues/215</a></li>
+<li><a href="https://github.com/Mottie/GitHub-userscripts#installation" target="_blank" rel="external">https://github.com/Mottie/GitHub-userscripts#installation</a></li>
+<li><a href="http://doctoc.herokuapp.com/" target="_blank" rel="external">在线工具DocToc</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;!-- START doctoc generated TOC please keep comment here to allow auto update --&gt;
+&lt;!-- DON&#39;T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE --&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#gh-md-toc&quot;&gt;gh-md-toc&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#%E5%AE%89%E8%A3%85&quot;&gt;安装&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E7%94%9F%E6%88%90%E5%86%85%E5%AE%B9&quot;&gt;生成内容&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#doctoc&quot;&gt;doctoc&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#%E5%AE%89%E8%A3%85-1&quot;&gt;安装&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E6%8E%A7%E5%88%B6%E6%8F%92%E5%85%A5%E7%9A%84%E4%BD%8D%E7%BD%AE&quot;&gt;控制插入的位置&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E6%94%AF%E6%8C%81%E7%9A%84%E5%B9%B3%E5%8F%B0&quot;&gt;支持的平台&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- END doctoc generated TOC please keep comment here to allow auto update --&gt;
+    
+    </summary>
+    
+    
+      <category term="markdown" scheme="http://huixisheng.github.io/tags/markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>spawn和exec简单介绍</title>
+    <link href="http://huixisheng.github.io/nodejs-spawn-exec/"/>
+    <id>http://huixisheng.github.io/nodejs-spawn-exec/</id>
+    <published>2016-10-22T13:02:45.000Z</published>
+    <updated>2016-10-22T13:10:37.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>谷歌搜了下网上介绍spawn和exec区别的文章还是很详细的，引用相关主要的提到的点。同时结合项目中使用过的脚步了解相关的使用方法。</p>
+<a id="more"></a>
+<h2 id="spawn"><a href="#spawn" class="headerlink" title="spawn"></a>spawn</h2><blockquote>
+<p>spawn方法创建一个子进程来执行特定命令，用法与execFile方法类似，但是没有回调函数，只能通过监听事件，来获取运行结果。它属于异步执行，适用于子进程长时间运行的情况。<a href="http://javascript.ruanyifeng.com/nodejs/child-process.html#toc3" target="_blank" rel="external">来自Child Process模块</a></p>
+</blockquote>
+<p>在<code>node v0.11.12</code>相应的同步方法。记得不支持同步方法<code>node</code>版本中有对应的模块<a href="https://www.npmjs.com/package/spawn-sync" target="_blank" rel="external">spawn-sync</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">child_process.spawnSync(command[, args][, options])</div><div class="line">Added in: v0.11.12</div></pre></td></tr></table></figure>
+<p>早期简单实现了同步读取数据</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> cp = <span class="built_in">require</span>(<span class="string">'child_process'</span>);</div><div class="line"><span class="keyword">var</span> assert = <span class="built_in">require</span>(<span class="string">'assert'</span>);</div><div class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</div><div class="line"><span class="keyword">var</span> input = &#123;</div><div class="line">    <span class="string">"prid"</span> : productId</div><div class="line">&#125;;</div><div class="line">input = <span class="built_in">JSON</span>.stringify(input);</div><div class="line">args = args || &#123;&#125;;</div><div class="line"><span class="keyword">var</span> requestPath = path.join(__dirname, <span class="string">'queryProduct.js'</span>);</div><div class="line"><span class="keyword">var</span> cmd = process.execPath;</div><div class="line"><span class="keyword">var</span> _args = [requestPath, input];</div><div class="line"><span class="keyword">var</span> res = cp.spawnSync(cmd, _args, &#123;</div><div class="line">    <span class="attr">timeout</span>: (args.timeout || <span class="number">3000</span>) + <span class="number">1000</span></div><div class="line">&#125;);</div><div class="line"><span class="comment">// console.log(res.stdout.toString('utf8'));</span></div><div class="line"><span class="keyword">return</span> <span class="built_in">JSON</span>.parse(res.stdout.toString(<span class="string">'utf8'</span>));</div></pre></td></tr></table></figure>
+<p>queryProduct.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">async.series([</div><div class="line">    function(cb)&#123;</div><div class="line">        conn.query(sql, function(err, res)&#123;</div><div class="line">            var row = res[0];</div><div class="line">            cb(null, row);</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line">], function(err, result)&#123;</div><div class="line">    if( err )&#123;</div><div class="line">        console.error(err.message);</div><div class="line">        process.exit(1);</div><div class="line">    &#125; else &#123;</div><div class="line">        console.log(JSON.stringify(result[0]));</div><div class="line">    &#125;</div><div class="line">    conn.end();</div><div class="line">    process.exit(0);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h2 id="exec"><a href="#exec" class="headerlink" title="exec"></a>exec</h2><p>有对于的同步方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">child_process.execSync(command[, options])#</div><div class="line">Added in: v0.11.12</div></pre></td></tr></table></figure></p>
+<p><code>child_process.execSync</code><br>使用实例，合并当前的操作分支到test,并推送到远程的test分支</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/env node</div><div class="line"></div><div class="line">// chmod +x</div><div class="line">var child = require(&apos;child_process&apos;);</div><div class="line">var execSync = require(&apos;child_process&apos;).execSync;</div><div class="line"></div><div class="line">// @todo</div><div class="line">var gstOutput = spawnSync(&apos;git branch&apos;, []);</div><div class="line">var currentBranch = getCurrentBranch();</div><div class="line">console.log(&apos;切换到test分支:&apos;);</div><div class="line">var gcOutput = execSync(&apos;git checkout test&apos;);</div><div class="line">console.log(&apos;合并分支&apos; + currentBranch);</div><div class="line">var megerOutPut = execSync(&apos;git merge &apos; + currentBranch);</div><div class="line">console.log(&apos;推送test分支&apos;);</div><div class="line">execSync(&apos;git pull origin test &amp;&amp; git push origin test &amp;&amp; npm run sync&apos;);</div><div class="line">console.log(&apos;切换到&apos; + currentBranch);</div><div class="line">execSync(&apos;git checkout &apos; + currentBranch);</div><div class="line"></div><div class="line">// git branch | grep &quot;*&quot;  简写</div><div class="line">function getCurrentBranch()&#123;</div><div class="line">  var execOutput = execSync(&apos;git branch&apos;, &#123;&#125;);</div><div class="line">  var outputContent = execOutput.toString();</div><div class="line">  var arr = outputContent.split(&apos;\n&apos;);</div><div class="line">  for(var i = arr.length - 1; i &gt;= 0; i--)&#123;</div><div class="line">    if( arr[i].indexOf(&apos;*&apos;) &gt;= 0 )&#123;</div><div class="line">      return arr[i].replace(&apos;*&apos;, &apos;&apos;).trim();</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  return &apos;&apos;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>exec方法用于执行bash命令，它的参数是一个命令字符串。<br>如果用户输入恶意代码，将会带来安全风险。因此，在有用户输入的情况下，最好不使用exec方法，而是使用execFile方法。</p>
+</blockquote>
+<h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><blockquote>
+<p>虽然在上面的文档用法中，spwan和exec的最终回调方式有区别，但是在node的实现中，其实两者的实现方式是一致的，exec也可以像spawn一样使用，只不过exec在触发stderr和stdout的data事件的时候，会把数据写到字符串中，到执行结束或者错误退出的时候通过回调函数传递出来，实现了exec这种便捷用法。<a href="http://deadhorse.me/nodejs/2011/12/18/nodejs%E4%B8%ADchild_process%E6%A8%A1%E5%9D%97%E7%9A%84exec%E6%96%B9%E6%B3%95%E5%92%8Cspawn%E6%96%B9%E6%B3%95.html" target="_blank" rel="external">来自exec与spawn方法的区别与陷阱</a></p>
+<p>使用exec默认最大是200k。<br>超出时会报一个错误： “Error: maxBuffer exceeded”</p>
+</blockquote>
+<p><a href="http://div.io/topic/1516" target="_blank" rel="external">使用node子进程spawn,exec踩过的坑</a> 提到exec和spawn的源码区分</p>
+<blockquote>
+<p>断点进去看后，豁然开朗，exec是对execFile的封装，execFile又是对spawn的封装。</p>
+</blockquote>
+<h3 id="exec和spawn的使用区分来自使用node子进程spawn-exec踩过的坑"><a href="#exec和spawn的使用区分来自使用node子进程spawn-exec踩过的坑" class="headerlink" title="exec和spawn的使用区分来自使用node子进程spawn,exec踩过的坑"></a>exec和spawn的使用区分<a href="http://div.io/topic/1516" target="_blank" rel="external">来自使用node子进程spawn,exec踩过的坑</a></h3><p>不过exec确实比spawn在使用上面要好很多</p>
+<p>例如我们执行一个命令</p>
+<p>使用exec</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">require(&apos;child_process&apos;).exec(&apos;edp webserver start&apos;);</div></pre></td></tr></table></figure>
+<p>使用spawn</p>
+<p>linux下这么搞</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var child = require(&apos;child_process&apos;).spawn(</div><div class="line">&apos;/bin/sh&apos;, [&apos;-c&apos;,&apos;edp webserver start&apos;], &#123; cwd: null, env: null, windowsVerbatimArguments: false &#125; );</div></pre></td></tr></table></figure>
+<p>win下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"> var child = require(&apos;child_process&apos;).spawn(</div><div class="line">&apos;cmd.exe&apos;, [&apos;/s&apos;, &apos;/c&apos;, &apos;edp webserver start&apos;], &#123; cwd: null, env: null, windowsVerbatimArguments: true &#125; );</div></pre></td></tr></table></figure>
+<p>可见spawn还是比较麻烦的。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;谷歌搜了下网上介绍spawn和exec区别的文章还是很详细的，引用相关主要的提到的点。同时结合项目中使用过的脚步了解相关的使用方法。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="nodejs" scheme="http://huixisheng.github.io/tags/nodejs/"/>
+    
+  </entry>
+  
+  <entry>
     <title>git操作常见问题汇总</title>
     <link href="http://huixisheng.github.io/git-problem/"/>
     <id>http://huixisheng.github.io/git-problem/</id>
@@ -1000,6 +935,108 @@ DD_belatedPNG.fixPng( someNode ); // argument is an HTMLDomElement
     <summary type="html">
     
       &lt;p&gt;平常工作中常用的&lt;code&gt;git&lt;/code&gt;操作命令。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="git" scheme="http://huixisheng.github.io/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>配置SSH公钥和git多账号配置</title>
+    <link href="http://huixisheng.github.io/git-ssh-key-setting/"/>
+    <id>http://huixisheng.github.io/git-ssh-key-setting/</id>
+    <published>2016-10-22T13:02:45.000Z</published>
+    <updated>2016-10-22T13:07:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>本文介绍如何配置<code>ssh-key</code></p>
+<a id="more"></a>
+<h2 id="生成key"><a href="#生成key" class="headerlink" title="生成key"></a>生成key</h2><p>ssh-keygen -t rsa -f ~/.ssh/git.oschina.net -C “469184346@qq.com”</p>
+<blockquote>
+<p>代码参数含义：<br>-t 指定密钥类型，默认是 rsa ，可以省略。<br>-C 设置注释文字，比如邮箱。<br>-f 指定密钥文件存储文件名。  -<a href="http://www.cnblogs.com/ayseeing/p/3572582.html" target="_blank" rel="external">来自github设置添加SSH</a></p>
+</blockquote>
+<p>直接输入回车</p>
+<pre><code>Generating public/private rsa key pair.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+</code></pre><p>如果输入了密码</p>
+<blockquote>
+<p>设置passphrase后，进行版本控制时，每次与GitHub通信都会要求输入passphrase，以避免某些“失误”</p>
+<p>将SSH 私钥增加到ssh-agent: ssh-add ~/.ssh/xyz_rsa， 这里会提示输入一次私钥的密码; -<a href="http://www.jianshu.com/p/ddd3122cb351#" target="_blank" rel="external">来自</a></p>
+</blockquote>
+<h2 id="添加密匙"><a href="#添加密匙" class="headerlink" title="添加密匙"></a>添加密匙</h2><h3 id="拷贝公钥"><a href="#拷贝公钥" class="headerlink" title="拷贝公钥"></a>拷贝公钥</h3><pre><code>pbcopy &lt;  ~/.ssh/git.oschina.net.pub
+</code></pre><p>其他平台拷贝命令<a href="http://www.jianshu.com/p/31cbbbc5f9fa/" target="_blank" rel="external">参考如何生成SSH key</a></p>
+<blockquote>
+<p>window<br>    clip &lt; ~/.ssh/id_rsa.pub</p>
+<p>linux<br>    sudo apt-get install xclip<br>    xclip -sel clip &lt; ~/.ssh/id_rsa.pub</p>
+</blockquote>
+<h3 id="登录远程git平台添加ssh-key"><a href="#登录远程git平台添加ssh-key" class="headerlink" title="登录远程git平台添加ssh key"></a>登录远程git平台添加ssh key</h3><p>粘贴刚才拷贝的内容</p>
+<ul>
+<li><a href="http://git.oschina.net/profile/sshkeys" target="_blank" rel="external">oschinaSSH公钥</a></li>
+<li><a href="https://github.com/settings/keys" target="_blank" rel="external">github SSH and GPG keys</a>点击 <code>New SSH key</code></li>
+</ul>
+<p>将新生成的key添加到ssh-agent中</p>
+<pre><code>$ eval &quot;$(ssh-agent -s)&quot;
+$ ssh-add ~/.ssh/git.oschina.net
+</code></pre><blockquote>
+<p>可以通过 ssh-add -l 来确私钥列表<br>$ ssh-add -l<br>可以通过 ssh-add -D 来清空私钥列表<br>$ ssh-add -D</p>
+</blockquote>
+<h2 id="配置config用于多个git-ssh密匙"><a href="#配置config用于多个git-ssh密匙" class="headerlink" title="配置config用于多个git ssh密匙"></a>配置config用于多个git ssh密匙</h2><pre><code>Host github.com
+    HostName github.com
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/github
+    User huixisheng
+
+Host git.coding.net
+    HostName git.coding.net
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/gitcodingnet
+    User git
+
+Host git.oschina.net
+    HostName git.oschina.net
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/git.oschina.net
+    User git
+</code></pre><blockquote>
+<p>Host，SSH 连接名<br>HostName，如上所示，可以是通配符，可以是 IP，也可以是域名等<br>User，登录的用户名<br>IdentifyFile，version 1 协议下默认是 ~/.ssh/identify，version 2 协议下，默认是依次匹配：~/.ssh/id_dsa，~/.ssh/id_ecdsa，~/.ssh/id_rsa，还有 version 2 兼容模式。<br>LocalForward 端口的内部跳转<br>Port，端口设置，默认 SSH 的端口是 22<br>Protocal，协议版本号，1 或者 2<br><a href="http://www.barretlee.com/blog/2016/03/09/config-in-ssh-after-troubling-git-connection/" target="_blank" rel="external">来自</a></p>
+</blockquote>
+<ul>
+<li><a href="http://www.cnblogs.com/ayseeing/p/4445194.html" target="_blank" rel="external">参考生成多个git ssh密钥</a></li>
+</ul>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>测试是否配置成功</p>
+<pre><code>$ ssh -T git@git.oschina.net
+Welcome to Git@OSC, huixisheng!
+</code></pre><blockquote>
+<p>-v会输出详情的信息 <a href="http://www.barretlee.com/blog/2016/03/09/config-in-ssh-after-troubling-git-connection/" target="_blank" rel="external">多SSH Key管理技巧与Git多账户登录问题</a></p>
+</blockquote>
+<h2 id="其他问题"><a href="#其他问题" class="headerlink" title="其他问题"></a>其他问题</h2><pre><code>$ ssh -T git@git.oschina.net
+The authenticity of host &apos;git.oschina.net (218.60.114.30)&apos; can&apos;t be established.
+ECDSA key fingerprint is SHA256:FQGC9Kn/eye1W8icdBgrQp+KkGYoFgbVr17bmjey0Wc.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added &apos;git.oschina.net,218.60.114.30&apos; (ECDSA) to the list of known hosts.
+Permission denied (publickey).
+
+$ eval &quot;$(ssh-agent -s)&quot;
+$ ssh-add ~/.ssh/git.oschina.net
+</code></pre><blockquote>
+<p>   如果执行ssh-add时提示”Could not open a connection to your authentication agent”，可以现执行命令：<br>    $ ssh-agent bash <a href="http://my.oschina.net/stefanzhlg/blog/529403" target="_blank" rel="external">来自</a></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo git clone git@git.coding.net:huixisheng/layout.git</div><div class="line">Cloning into &apos;layout&apos;...</div><div class="line">Permission denied (publickey).</div><div class="line">fatal: Could not read from remote repository.</div></pre></td></tr></table></figure>
+<p><code>ssh -vT git@git.coding.net</code> 是有结果返回的,看了debug信息都是正常的。</p>
+<p>执行如下（期间关闭了翻墙软件）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ssh-add ~/.ssh/gitcodingnet</div><div class="line">source ~/.ssh/config</div></pre></td></tr></table></figure></p>
+<p>再次clone又可以了。没找到为何不行的根本原因</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="http://my.oschina.net/stefanzhlg/blog/529403" target="_blank" rel="external">git 配置多个SSH-Key</a></li>
+<li><a href="https://help.github.com/articles/generating-ssh-keys" target="_blank" rel="external">https://help.github.com/articles/generating-ssh-keys</a></li>
+<li><a href="https://coding.net/help/doc/git/ssh-key.html" target="_blank" rel="external">coding配置SSH公钥</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文介绍如何配置&lt;code&gt;ssh-key&lt;/code&gt;&lt;/p&gt;
     
     </summary>
     
@@ -1624,65 +1661,6 @@ mysql&gt; FLUSH PRIVILEGES;
       <category term="前端资源" scheme="http://huixisheng.github.io/tags/%E5%89%8D%E7%AB%AF%E8%B5%84%E6%BA%90/"/>
     
       <category term="在线教程" scheme="http://huixisheng.github.io/tags/%E5%9C%A8%E7%BA%BF%E6%95%99%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>致那些我使用过的优秀软件</title>
-    <link href="http://huixisheng.github.io/excellent-software-recommended/"/>
-    <id>http://huixisheng.github.io/excellent-software-recommended/</id>
-    <published>2014-08-04T13:43:41.000Z</published>
-    <updated>2016-10-23T07:56:27.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>工欲善必先利其器，好软件不仅会使你的开发效率提升，而且可以让你平时电脑的操作健步如飞。当然这不是绝对。本文推荐我使用过觉得不错的软件。希望可以让你更快更方便地工作。</p>
-<a id="more"></a>
-<h2 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h2><h3 id="谷歌浏览器"><a href="#谷歌浏览器" class="headerlink" title="谷歌浏览器"></a>谷歌浏览器</h3><ol>
-<li>书签、插件同步功能</li>
-<li>开发者工具，前端开发必备</li>
-<li>插件丰富，只有你想不到</li>
-<li>速度快</li>
-</ol>
-<h2 id="开发工具"><a href="#开发工具" class="headerlink" title="开发工具"></a>开发工具</h2><ul>
-<li><a href="http://www.sublimetext.com/" target="_blank" rel="external">Sublime Text</a>轻量、简洁、高效、跨平台的编辑器，丰富的插件，方便的配色以及兼容vim快捷键等各种优点博得了很多前端开发人员的喜爱，目前我最钟爱的开发编辑器。<a href="http://huixisheng.github.io/something-about-sublime/">相关的插件可以参考这里</a></li>
-<li><a href="http://markdownpad.com/" target="_blank" rel="external">MarkdwonPad</a>  windows的<a href="http://huixisheng.github.io/markdown-test/">markdown</a>编辑器，实时预览，方便的快捷键，可以导出html,pdf，可以自定义样式。</li>
-<li><a href="http://mouapp.com/" target="_blank" rel="external">Mou</a> Mac 上的 Markdown 编辑器，两栏界面，直观清爽，功能简洁到位。</li>
-<li><a href="https://github.com/rhiokim/haroopad" target="_blank" rel="external">haroopad</a>跨平台的不错的<a href="http://huixisheng.github.io/markdown-test/">markdown</a>编辑器</li>
-<li><a href="http://winmerge.org/" target="_blank" rel="external">WinMerge</a>是一款运行于Windows系统下的免费开源的文件比较/合并工具，使用它可以非常方便地比较多个文档内容甚至是文件夹与文件夹之间的文件差异。可以集成在小乌龟中</li>
-<li><a href="https://atom.io/" target="_blank" rel="external">Atom</a>按照 Github 的说法，这是一款非同一般的编辑器，是 21 世纪的创新产品，他们希望将来“从菜鸟到黑客都在使用 Atom 编写代码”。</li>
-</ul>
-<h2 id="常用软件"><a href="#常用软件" class="headerlink" title="常用软件"></a>常用软件</h2><ul>
-<li><a href="https://www.dropbox.com/" target="_blank" rel="external">Dropbox</a></li>
-<li><a href="http://www.wiz.cn/" target="_blank" rel="external">Wiz笔记</a></li>
-<li><a href="http://www.yinxiang.com/" target="_blank" rel="external">印象笔记</a>为你记住每一点灵感、每一份心情和每一个梦想，<br>随时随地找到，让记忆永存。</li>
-</ul>
-<h2 id="window软件"><a href="#window软件" class="headerlink" title="window软件"></a>window软件</h2><ul>
-<li><a href="http://www.stardock.com/products/fences/" target="_blank" rel="external">Fences</a> 桌面图标整理和自动分类软件，由 Stardock 出品，Fences 即桌面栅栏，是指桌面上有阴影的图标分组，它的目的是帮助您非常有条理地管理您的桌面。</li>
-<li><a href="http://www.voidtools.com/downloads/" target="_blank" rel="external">Everything</a>速度最快的文件名搜索工具.是voidtools开发的一款文件搜索工具，官网描述为“基于名称实时定位文件和目录（Locate files and folders by name instantly）”。它体积小巧，界面简洁易用，快速建立索引，快速搜索，同时占用极低的系统资源，实时跟踪文件变化，并且还可以通过http或ftp形式分享搜索。<br>-<a href="http://www.launchy.net/" target="_blank" rel="external">Launchy</a> 经典实用的免费键盘快速启动工具，桌面图标一个都不用。类似的mac的<a href="http://www.alfredapp.com/" target="_blank" rel="external">Alfred</a>,可以让你免去在桌面和开始菜单里费劲地找图标，敲击几下键盘，就能打开你想要打开的程序或者文件，是不是会让你感觉不错呢，Launchy 就是这样一款能够满足你这需求的软件，它能实实在在地提高你的工作效率。</li>
-</ul>
-<h2 id="Mac"><a href="#Mac" class="headerlink" title="Mac"></a>Mac</h2><ul>
-<li><a href="http://www.alfredapp.com/" target="_blank" rel="external">Alfred</a>Mac下最好的快速启动工具。<a href="http://www.cnbeta.com/articles/203640.htm Alfred：Mac下最好的快速启动工具" target="_blank" rel="external">推荐阅读</a></li>
-<li><a href="https://github.com/b4winckler/macvim" target="_blank" rel="external">Macvim</a>  Mac开发利器之程序员编辑器。vi太高端大气上档次，表示驾驭不了。用的好的确实是一款神器。</li>
-<li><a href="http://www.cheatsheetapp.com/CheatSheet/" target="_blank" rel="external">CheatSheet</a> 显示当前程序快捷键列表</li>
-</ul>
-<h2 id="软件相关网址"><a href="#软件相关网址" class="headerlink" title="软件相关网址"></a>软件相关网址</h2><ol>
-<li><a href="http://bbs.pcbeta.com/" target="_blank" rel="external">远景</a></li>
-<li><a href="http://www.iplaysoft.com/" target="_blank" rel="external">异次元</a></li>
-<li><a href="http://www.appinn.com/" target="_blank" rel="external">小众软件</a></li>
-<li><a href="http://xbeta.info/" target="_blank" rel="external">善用佳软</a></li>
-<li><a href="http://www.softjie.cn/" target="_blank" rel="external">软件街</a></li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      工欲善必先利其器，好软件不仅会使你的开发效率提升，而且可以让你平时电脑的操作健步如飞。
-    
-    </summary>
-    
-    
-      <category term="软件" scheme="http://huixisheng.github.io/tags/%E8%BD%AF%E4%BB%B6/"/>
-    
-      <category term="开发工具" scheme="http://huixisheng.github.io/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
