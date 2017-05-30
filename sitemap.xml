@@ -2,16 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://huixisheng.github.io/mac-skill/</loc>
+    <loc>http://huixisheng.github.io/Todo/todo.html</loc>
     
-    <lastmod>2017-05-30T13:27:19.000Z</lastmod>
+    <lastmod>2017-05-30T13:29:42.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://huixisheng.github.io/Todo/todo.html</loc>
+    <loc>http://huixisheng.github.io/mac-skill/</loc>
     
-    <lastmod>2017-05-30T13:25:41.000Z</lastmod>
+    <lastmod>2017-05-30T13:27:19.000Z</lastmod>
     
   </url>
   
@@ -296,6 +296,13 @@
   </url>
   
   <url>
+    <loc>http://huixisheng.github.io/MacOSX-mysql/</loc>
+    
+    <lastmod>2016-10-22T09:40:39.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://huixisheng.github.io/some-problem-in-project-diary/</loc>
     
     <lastmod>2016-10-22T09:40:39.000Z</lastmod>
@@ -310,13 +317,6 @@
   </url>
   
   <url>
-    <loc>http://huixisheng.github.io/something-about-sublime/</loc>
-    
-    <lastmod>2016-10-22T09:40:39.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://huixisheng.github.io/jquery-plugin-develop/</loc>
     
     <lastmod>2016-10-22T09:40:39.000Z</lastmod>
@@ -324,7 +324,7 @@
   </url>
   
   <url>
-    <loc>http://huixisheng.github.io/MacOSX-mysql/</loc>
+    <loc>http://huixisheng.github.io/something-about-sublime/</loc>
     
     <lastmod>2016-10-22T09:40:39.000Z</lastmod>
     

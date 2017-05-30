@@ -86,16 +86,16 @@
 
 
 
-<meta name="description" content="其他问题资源 https://devhub.io/   http://blog.flow.ci/practices-ios-automatic-build-kit/  JavaScript如何判断null 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253">
+<meta name="description" content="其他问题资源 https://devhub.io/ http://blog.flow.ci/practices-ios-automatic-build-kit/  JavaScript如何判断null 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354">
 <meta property="og:type" content="website">
 <meta property="og:title" content="前端开发者说">
 <meta property="og:url" content="http://huixisheng.github.io/Todo/todo.html">
 <meta property="og:site_name" content="前端开发者说">
-<meta property="og:description" content="其他问题资源 https://devhub.io/   http://blog.flow.ci/practices-ios-automatic-build-kit/  JavaScript如何判断null 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253">
-<meta property="og:updated_time" content="2017-05-30T13:25:41.000Z">
+<meta property="og:description" content="其他问题资源 https://devhub.io/ http://blog.flow.ci/practices-ios-automatic-build-kit/  JavaScript如何判断null 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354">
+<meta property="og:updated_time" content="2017-05-30T13:29:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端开发者说">
-<meta name="twitter:description" content="其他问题资源 https://devhub.io/   http://blog.flow.ci/practices-ios-automatic-build-kit/  JavaScript如何判断null 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253">
+<meta name="twitter:description" content="其他问题资源 https://devhub.io/ http://blog.flow.ci/practices-ios-automatic-build-kit/  JavaScript如何判断null 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354">
 
 
 
@@ -244,8 +244,6 @@
     
       <h2 id="其他问题"><a href="#其他问题" class="headerlink" title="其他问题"></a>其他问题</h2><h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><ul>
 <li><a href="https://devhub.io/" target="_blank" rel="external">https://devhub.io/</a></li>
-</ul>
-<ul>
 <li><a href="http://blog.flow.ci/practices-ios-automatic-build-kit/" target="_blank" rel="external">http://blog.flow.ci/practices-ios-automatic-build-kit/</a></li>
 </ul>
 <h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><p>如何判断null</p>
@@ -311,8 +309,11 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="Todo/todo.html"
-           data-title="" data-url="http://huixisheng.github.io/Todo/todo.html">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
       </div>
     
   </div>
@@ -529,30 +530,35 @@
 
   
 
-  
-    
-  
-
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"huixisheng"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-
-  
-    
-    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-    <script src="/js/src/hook-duoshuo.js"></script>
-  
 
 
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'huixisheng';
+      var disqus_identifier = 'Todo/todo.html';
+      var disqus_title = "";
+      var disqus_url = 'http://huixisheng.github.io/Todo/todo.html';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+    </script>
+  
 
 
 

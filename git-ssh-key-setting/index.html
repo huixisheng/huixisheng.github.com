@@ -279,7 +279,7 @@
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
                 <a href="/git-ssh-key-setting/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="git-ssh-key-setting/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="git-ssh-key-setting/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -415,16 +415,16 @@ $ ssh-add ~/.ssh/git.oschina.net
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/debugger-tool/" rel="next" title="调试工具整理">
-                <i class="fa fa-chevron-left"></i> 调试工具整理
+              <a href="/nodejs-spawn-exec/" rel="next" title="spawn和exec简单介绍">
+                <i class="fa fa-chevron-left"></i> spawn和exec简单介绍
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/markdown-Table-of-Contents/" rel="prev" title="markdown文件生成目录">
-                markdown文件生成目录 <i class="fa fa-chevron-right"></i>
+              <a href="/git-problem/" rel="prev" title="git操作常见问题汇总">
+                git操作常见问题汇总 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -451,8 +451,11 @@ $ ssh-add ~/.ssh/git.oschina.net
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="git-ssh-key-setting/"
-           data-title="配置SSH公钥和git多账号配置" data-url="http://huixisheng.github.io/git-ssh-key-setting/">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
       </div>
     
   </div>
@@ -693,30 +696,35 @@ $ ssh-add ~/.ssh/git.oschina.net
 
   
 
-  
-    
-  
-
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"huixisheng"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-
-  
-    
-    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-    <script src="/js/src/hook-duoshuo.js"></script>
-  
 
 
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'huixisheng';
+      var disqus_identifier = 'git-ssh-key-setting/';
+      var disqus_title = "配置SSH公钥和git多账号配置";
+      var disqus_url = 'http://huixisheng.github.io/git-ssh-key-setting/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+    </script>
+  
 
 
 
