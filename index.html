@@ -320,7 +320,29 @@
 <h2 id="如何重置-Mac-上的-NVRAM"><a href="#如何重置-Mac-上的-NVRAM" class="headerlink" title="如何重置 Mac 上的 NVRAM"></a>如何重置 Mac 上的 NVRAM</h2><p>Option + Command + P + R + Power</p>
 <ul>
 <li><a href="https://support.apple.com/zh-cn/HT204063" target="_blank" rel="external">https://support.apple.com/zh-cn/HT204063</a></li>
-<li><a href="https://www.zhihu.com/question/20401972" target="_blank" rel="external">https://www.zhihu.com/question/20401972</a></li>
+<li><a href="https://www.zhihu.com/question/20401972" target="_blank" rel="external">https://www.zhihu.com/question/20401972</a><br>【】<h2 id="Apache"><a href="#Apache" class="headerlink" title="Apache"></a>Apache</h2></li>
+</ul>
+<p>查看是否开启<code>apache</code>服务 <code>ps aux | grep httpd</code> 或者 <code>apachectl status</code></p>
+<p>开启Apache<code>sudo apachectl start</code></p>
+<p>相关的设置目录 <code>/etc/apache2/</code></p>
+<p>扩展阅读</p>
+<ul>
+<li><a href="https://www.zhihu.com/question/20916296" target="_blank" rel="external">Mac OS X Lion 如何删除自带的 apache php？</a></li>
+<li><a href="http://www.jianshu.com/p/d006a34a343f" target="_blank" rel="external">Mac OS X 启用 Web 服务器</a></li>
+</ul>
+<h2 id="如何查看对于窗口的程序"><a href="#如何查看对于窗口的程序" class="headerlink" title="如何查看对于窗口的程序"></a>如何查看对于窗口的程序</h2><p><code>sudo lsof -iTCP:80 | grep LISTEN</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">➜  apache2 sudo lsof -iTCP:80 | grep LISTEN</div><div class="line">httpd     48016       root    4u  IPv6 0x89923b92a98a82b9      0t0  TCP *:http (LISTEN)</div><div class="line">httpd     48040       _www    4u  IPv6 0x89923b92a98a82b9      0t0  TCP *:http (LISTEN)</div><div class="line">httpd     48506       _www    4u  IPv6 0x89923b92a98a82b9      0t0  TCP *:http (LISTEN)</div><div class="line">httpd     48507       _www    4u  IPv6 0x89923b92a98a82b9      0t0  TCP *:http (LISTEN)</div><div class="line">httpd     48508       _www    4u  IPv6 0x89923b92a98a82b9      0t0  TCP *:http (LISTEN)</div></pre></td></tr></table></figure>
+<p><code>sudo lsof -n -i4TCP:80 | grep LISTEN</code></p>
+<p>查看当前所有监听的端口以及对应的Command和PID</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">➜  apache2 sudo  lsof -nP -iTCP -sTCP:LISTEN</div><div class="line">COMMAND     PID       USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME</div><div class="line">java         76 huixisheng  160u  IPv6 0x89923b92a98a8d39      0t0  TCP *:9999 (LISTEN)</div><div class="line">java         76 huixisheng  431u  IPv6 0x89923b92b82f0d39      0t0  TCP *:49493 (LISTEN)</div><div class="line">Dash       5123 huixisheng   18u  IPv4 0x89923b92b1000c41      0t0  TCP *:50621 (LISTEN)</div><div class="line">Dash       5123 huixisheng   21u  IPv6 0x89923b92a98a87f9      0t0  TCP *:50621 (LISTEN)</div><div class="line">Shadowsoc  7093 huixisheng    4u  IPv4 0x89923b92aa812159      0t0  TCP *:8090 (LISTEN)</div><div class="line">Shadowsoc  7093 huixisheng    7u  IPv4 0x89923b92a3c75c41      0t0  TCP 127.0.0.1:1080 (LISTEN)</div><div class="line">phpstorm  10310 huixisheng  143u  IPv4 0x89923b92af530159      0t0  TCP 127.0.0.1:6942 (LISTEN)</div><div class="line">phpstorm  10310 huixisheng  336u  IPv4 0x89923b92a60cd349      0t0  TCP 127.0.0.1:63342 (LISTEN)</div><div class="line">plugin_ho 12471 huixisheng   37u  IPv4 0x89923b92aaa35a51      0t0  TCP 127.0.0.1:54000 (LISTEN)</div><div class="line">�\x9c\x89 24465 huixisheng   12u  IPv4 0x89923b92b5a30159      0t0  TCP *:32445 (LISTEN)</div><div class="line">httpd     48016       root    4u  IPv6 0x89923b92a98a82b9      0t0  TCP *:80 (LISTEN)</div><div class="line">httpd     48040       _www    4u  IPv6 0x89923b92a98a82b9      0t0  TCP *:80 (LISTEN)</div><div class="line">httpd     48506       _www    4u  IPv6 0x89923b92a98a82b9      0t0  TCP *:80 (LISTEN)</div><div class="line">httpd     48507       _www    4u  IPv6 0x89923b92a98a82b9      0t0  TCP *:80 (LISTEN)</div><div class="line">httpd     48508       _www    4u  IPv6 0x89923b92a98a82b9      0t0  TCP *:80 (LISTEN)</div></pre></td></tr></table></figure>
+<h2 id="安装nginx"><a href="#安装nginx" class="headerlink" title="安装nginx"></a>安装nginx</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">➜  desktop brew install nginx</div><div class="line">Docroot is: /usr/local/var/www</div><div class="line"></div><div class="line">The default port has been set in /usr/local/etc/nginx/nginx.conf to 8080 so that</div><div class="line">nginx can run without sudo.</div><div class="line"></div><div class="line">nginx will load all files in /usr/local/etc/nginx/servers/.</div><div class="line"></div><div class="line">To have launchd start nginx now and restart at login:</div><div class="line">  brew services start nginx</div><div class="line">Or, if you don&apos;t want/need a background service you can just run:</div><div class="line">  nginx</div><div class="line">==&gt; Summary</div><div class="line">🍺  /usr/local/Cellar/nginx/1.12.0_1: 23 files, 1MB</div><div class="line">➜  desktop which nginx</div><div class="line">/usr/local/bin/nginx</div><div class="line">➜  desktop sudo brew services start nginx</div></pre></td></tr></table></figure>
+<blockquote>
+<p>不过试了一下，不是超级用户登陆，而是普通用户登陆，并且监听的端口在1024以下的（例如把默认的8080端口改为了80端口），nginx 开机是启动不了。因此，要 nginx 开机启动的话，需要给予它管理员权限：<br>sudo chown root:wheel /usr/local/Cellar/nginx/1.2.6/sbin/nginx<br>sudo chmod u+s /usr/local/Cellar/nginx/1.2.6/sbin/nginx</p>
+</blockquote>
+<p>来自: <a href="http://dhq.me/mac-install-nginx-mysql-php-fpm" target="_blank" rel="external">http://dhq.me/mac-install-nginx-mysql-php-fpm</a></p>
+<h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><ul>
+<li><a href="http://www.ifanr.com/481651" target="_blank" rel="external">让 Mac 变成神兵利器的软件清单</a></li>
+<li><a href="http://frankorz.com/2016/10/21/new-time-tracking-app-on-macOS/" target="_blank" rel="external">macOS 上的时间跟踪软件</a></li>
 </ul>
 
           
@@ -1219,8 +1241,8 @@
             
               
                 
-                <a class="post-title-link" href="/compatibility-solution/" itemprop="url">
-                  兼容性解决方案整理
+                <a class="post-title-link" href="/markdown-Table-of-Contents/" itemprop="url">
+                  markdown文件生成目录
                 </a>
               
             
@@ -1244,8 +1266,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/compatibility-solution/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="compatibility-solution/" itemprop="commentsCount"></span>
+                <a href="/markdown-Table-of-Contents/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="markdown-Table-of-Contents/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -1269,10 +1291,127 @@
 
       
         
-          <p>移动互联网的今天，告别了ie6。</p>
-<p>以下来自原先项目<del>psc</del>。<del>psc</del>已经删除，<del>使用issues继续整理</del>。相信这是一个更好的开始。整理到博客汇总。</p>
+          <!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<ul>
+<li><a href="#gh-md-toc">gh-md-toc</a><ul>
+<li><a href="#%E5%AE%89%E8%A3%85">安装</a></li>
+<li><a href="#%E7%94%9F%E6%88%90%E5%86%85%E5%AE%B9">生成内容</a></li>
+</ul>
+</li>
+<li><a href="#doctoc">doctoc</a><ul>
+<li><a href="#%E5%AE%89%E8%A3%85-1">安装</a></li>
+<li><a href="#%E6%8E%A7%E5%88%B6%E6%8F%92%E5%85%A5%E7%9A%84%E4%BD%8D%E7%BD%AE">控制插入的位置</a></li>
+<li><a href="#%E6%94%AF%E6%8C%81%E7%9A%84%E5%B9%B3%E5%8F%B0">支持的平台</a></li>
+</ul>
+</li>
+</ul>
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
           <div class="post-more-link text-center">
-            <a class="btn" href="/compatibility-solution/#more" rel="contents">
+            <a class="btn" href="/markdown-Table-of-Contents/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/git-ssh-key-setting/" itemprop="url">
+                  配置SSH公钥和git多账号配置
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-22T21:02:45+08:00" content="2016-10-22">
+              2016-10-22
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/git-ssh-key-setting/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="git-ssh-key-setting/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>本文介绍如何配置<code>ssh-key</code></p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/git-ssh-key-setting/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1431,8 +1570,8 @@
             
               
                 
-                <a class="post-title-link" href="/markdown-Table-of-Contents/" itemprop="url">
-                  markdown文件生成目录
+                <a class="post-title-link" href="/mirror/" itemprop="url">
+                  国内镜像源整理
                 </a>
               
             
@@ -1456,8 +1595,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/markdown-Table-of-Contents/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="markdown-Table-of-Contents/" itemprop="commentsCount"></span>
+                <a href="/mirror/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="mirror/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -1481,24 +1620,113 @@
 
       
         
-          <!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-<ul>
-<li><a href="#gh-md-toc">gh-md-toc</a><ul>
-<li><a href="#%E5%AE%89%E8%A3%85">安装</a></li>
-<li><a href="#%E7%94%9F%E6%88%90%E5%86%85%E5%AE%B9">生成内容</a></li>
-</ul>
-</li>
-<li><a href="#doctoc">doctoc</a><ul>
-<li><a href="#%E5%AE%89%E8%A3%85-1">安装</a></li>
-<li><a href="#%E6%8E%A7%E5%88%B6%E6%8F%92%E5%85%A5%E7%9A%84%E4%BD%8D%E7%BD%AE">控制插入的位置</a></li>
-<li><a href="#%E6%94%AF%E6%8C%81%E7%9A%84%E5%B9%B3%E5%8F%B0">支持的平台</a></li>
-</ul>
-</li>
-</ul>
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+          <p>本文对国内<code>ruby</code>、<code>npm</code>、<code>brew</code>、<code>Composer</code>等镜像源做整理，给前端开发这提供方便。<br>
           <div class="post-more-link text-center">
-            <a class="btn" href="/markdown-Table-of-Contents/#more" rel="contents">
+            <a class="btn" href="/mirror/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/compatibility-solution/" itemprop="url">
+                  兼容性解决方案整理
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-22T21:02:45+08:00" content="2016-10-22">
+              2016-10-22
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/compatibility-solution/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="compatibility-solution/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>移动互联网的今天，告别了ie6。</p>
+<p>以下来自原先项目<del>psc</del>。<del>psc</del>已经删除，<del>使用issues继续整理</del>。相信这是一个更好的开始。整理到博客汇总。</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/compatibility-solution/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1705,212 +1933,6 @@
           <p>平常工作中常用的<code>git</code>操作命令。</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/git-problem/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/git-ssh-key-setting/" itemprop="url">
-                  配置SSH公钥和git多账号配置
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-22T21:02:45+08:00" content="2016-10-22">
-              2016-10-22
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/git-ssh-key-setting/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="git-ssh-key-setting/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>本文介绍如何配置<code>ssh-key</code></p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/git-ssh-key-setting/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/mirror/" itemprop="url">
-                  国内镜像源整理
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-22T21:02:45+08:00" content="2016-10-22">
-              2016-10-22
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/mirror/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="mirror/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>本文对国内<code>ruby</code>、<code>npm</code>、<code>brew</code>、<code>Composer</code>等镜像源做整理，给前端开发这提供方便。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/mirror/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>

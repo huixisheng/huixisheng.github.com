@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://huixisheng.github.io/"/>
-  <updated>2017-05-30T12:50:05.000Z</updated>
+  <updated>2017-05-30T13:27:19.000Z</updated>
   <id>http://huixisheng.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://huixisheng.github.io/mac-skill/"/>
     <id>http://huixisheng.github.io/mac-skill/</id>
     <published>2017-05-30T12:00:05.000Z</published>
-    <updated>2017-05-30T12:50:05.000Z</updated>
+    <updated>2017-05-30T13:27:19.000Z</updated>
     
     <content type="html"><![CDATA[<p>整理工作中容易遗忘的小技巧和碰到的问题。</p>
 <h2 id="屏幕共享"><a href="#屏幕共享" class="headerlink" title="屏幕共享"></a>屏幕共享</h2><p>打开 系统偏好设置 -&gt; 共享 -&gt; 屏幕共享。在另外的电脑打开 Finder -&gt; 前往 -&gt; 连接服务器 -&gt; 输入 <code>vnc://ip</code> 访问。或者<code>⌘+K</code></p>
@@ -35,7 +35,29 @@
 <h2 id="如何重置-Mac-上的-NVRAM"><a href="#如何重置-Mac-上的-NVRAM" class="headerlink" title="如何重置 Mac 上的 NVRAM"></a>如何重置 Mac 上的 NVRAM</h2><p>Option + Command + P + R + Power</p>
 <ul>
 <li><a href="https://support.apple.com/zh-cn/HT204063" target="_blank" rel="external">https://support.apple.com/zh-cn/HT204063</a></li>
-<li><a href="https://www.zhihu.com/question/20401972" target="_blank" rel="external">https://www.zhihu.com/question/20401972</a></li>
+<li><a href="https://www.zhihu.com/question/20401972" target="_blank" rel="external">https://www.zhihu.com/question/20401972</a><br>【】<h2 id="Apache"><a href="#Apache" class="headerlink" title="Apache"></a>Apache</h2></li>
+</ul>
+<p>查看是否开启<code>apache</code>服务 <code>ps aux | grep httpd</code> 或者 <code>apachectl status</code></p>
+<p>开启Apache<code>sudo apachectl start</code></p>
+<p>相关的设置目录 <code>/etc/apache2/</code></p>
+<p>扩展阅读</p>
+<ul>
+<li><a href="https://www.zhihu.com/question/20916296" target="_blank" rel="external">Mac OS X Lion 如何删除自带的 apache php？</a></li>
+<li><a href="http://www.jianshu.com/p/d006a34a343f" target="_blank" rel="external">Mac OS X 启用 Web 服务器</a></li>
+</ul>
+<h2 id="如何查看对于窗口的程序"><a href="#如何查看对于窗口的程序" class="headerlink" title="如何查看对于窗口的程序"></a>如何查看对于窗口的程序</h2><p><code>sudo lsof -iTCP:80 | grep LISTEN</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">➜  apache2 sudo lsof -iTCP:80 | grep LISTEN</div><div class="line">httpd     48016       root    4u  IPv6 0x89923b92a98a82b9      0t0  TCP *:http (LISTEN)</div><div class="line">httpd     48040       _www    4u  IPv6 0x89923b92a98a82b9      0t0  TCP *:http (LISTEN)</div><div class="line">httpd     48506       _www    4u  IPv6 0x89923b92a98a82b9      0t0  TCP *:http (LISTEN)</div><div class="line">httpd     48507       _www    4u  IPv6 0x89923b92a98a82b9      0t0  TCP *:http (LISTEN)</div><div class="line">httpd     48508       _www    4u  IPv6 0x89923b92a98a82b9      0t0  TCP *:http (LISTEN)</div></pre></td></tr></table></figure>
+<p><code>sudo lsof -n -i4TCP:80 | grep LISTEN</code></p>
+<p>查看当前所有监听的端口以及对应的Command和PID</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">➜  apache2 sudo  lsof -nP -iTCP -sTCP:LISTEN</div><div class="line">COMMAND     PID       USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME</div><div class="line">java         76 huixisheng  160u  IPv6 0x89923b92a98a8d39      0t0  TCP *:9999 (LISTEN)</div><div class="line">java         76 huixisheng  431u  IPv6 0x89923b92b82f0d39      0t0  TCP *:49493 (LISTEN)</div><div class="line">Dash       5123 huixisheng   18u  IPv4 0x89923b92b1000c41      0t0  TCP *:50621 (LISTEN)</div><div class="line">Dash       5123 huixisheng   21u  IPv6 0x89923b92a98a87f9      0t0  TCP *:50621 (LISTEN)</div><div class="line">Shadowsoc  7093 huixisheng    4u  IPv4 0x89923b92aa812159      0t0  TCP *:8090 (LISTEN)</div><div class="line">Shadowsoc  7093 huixisheng    7u  IPv4 0x89923b92a3c75c41      0t0  TCP 127.0.0.1:1080 (LISTEN)</div><div class="line">phpstorm  10310 huixisheng  143u  IPv4 0x89923b92af530159      0t0  TCP 127.0.0.1:6942 (LISTEN)</div><div class="line">phpstorm  10310 huixisheng  336u  IPv4 0x89923b92a60cd349      0t0  TCP 127.0.0.1:63342 (LISTEN)</div><div class="line">plugin_ho 12471 huixisheng   37u  IPv4 0x89923b92aaa35a51      0t0  TCP 127.0.0.1:54000 (LISTEN)</div><div class="line">�\x9c\x89 24465 huixisheng   12u  IPv4 0x89923b92b5a30159      0t0  TCP *:32445 (LISTEN)</div><div class="line">httpd     48016       root    4u  IPv6 0x89923b92a98a82b9      0t0  TCP *:80 (LISTEN)</div><div class="line">httpd     48040       _www    4u  IPv6 0x89923b92a98a82b9      0t0  TCP *:80 (LISTEN)</div><div class="line">httpd     48506       _www    4u  IPv6 0x89923b92a98a82b9      0t0  TCP *:80 (LISTEN)</div><div class="line">httpd     48507       _www    4u  IPv6 0x89923b92a98a82b9      0t0  TCP *:80 (LISTEN)</div><div class="line">httpd     48508       _www    4u  IPv6 0x89923b92a98a82b9      0t0  TCP *:80 (LISTEN)</div></pre></td></tr></table></figure>
+<h2 id="安装nginx"><a href="#安装nginx" class="headerlink" title="安装nginx"></a>安装nginx</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">➜  desktop brew install nginx</div><div class="line">Docroot is: /usr/local/var/www</div><div class="line"></div><div class="line">The default port has been set in /usr/local/etc/nginx/nginx.conf to 8080 so that</div><div class="line">nginx can run without sudo.</div><div class="line"></div><div class="line">nginx will load all files in /usr/local/etc/nginx/servers/.</div><div class="line"></div><div class="line">To have launchd start nginx now and restart at login:</div><div class="line">  brew services start nginx</div><div class="line">Or, if you don&apos;t want/need a background service you can just run:</div><div class="line">  nginx</div><div class="line">==&gt; Summary</div><div class="line">🍺  /usr/local/Cellar/nginx/1.12.0_1: 23 files, 1MB</div><div class="line">➜  desktop which nginx</div><div class="line">/usr/local/bin/nginx</div><div class="line">➜  desktop sudo brew services start nginx</div></pre></td></tr></table></figure>
+<blockquote>
+<p>不过试了一下，不是超级用户登陆，而是普通用户登陆，并且监听的端口在1024以下的（例如把默认的8080端口改为了80端口），nginx 开机是启动不了。因此，要 nginx 开机启动的话，需要给予它管理员权限：<br>sudo chown root:wheel /usr/local/Cellar/nginx/1.2.6/sbin/nginx<br>sudo chmod u+s /usr/local/Cellar/nginx/1.2.6/sbin/nginx</p>
+</blockquote>
+<p>来自: <a href="http://dhq.me/mac-install-nginx-mysql-php-fpm" target="_blank" rel="external">http://dhq.me/mac-install-nginx-mysql-php-fpm</a></p>
+<h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><ul>
+<li><a href="http://www.ifanr.com/481651" target="_blank" rel="external">让 Mac 变成神兵利器的软件清单</a></li>
+<li><a href="http://frankorz.com/2016/10/21/new-time-tracking-app-on-macOS/" target="_blank" rel="external">macOS 上的时间跟踪软件</a></li>
 </ul>
 ]]></content>
     
@@ -559,107 +581,174 @@
   </entry>
   
   <entry>
-    <title>兼容性解决方案整理</title>
-    <link href="http://huixisheng.github.io/compatibility-solution/"/>
-    <id>http://huixisheng.github.io/compatibility-solution/</id>
+    <title>markdown文件生成目录</title>
+    <link href="http://huixisheng.github.io/markdown-Table-of-Contents/"/>
+    <id>http://huixisheng.github.io/markdown-Table-of-Contents/</id>
     <published>2016-10-22T13:02:45.000Z</published>
-    <updated>2016-12-23T03:08:06.000Z</updated>
+    <updated>2016-10-22T13:17:08.000Z</updated>
     
-    <content type="html"><![CDATA[<p>移动互联网的今天，告别了ie6。</p>
-<p>以下来自原先项目<del>psc</del>。<del>psc</del>已经删除，<del>使用issues继续整理</del>。相信这是一个更好的开始。整理到博客汇总。</p>
+    <content type="html"><![CDATA[<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<ul>
+<li><a href="#gh-md-toc">gh-md-toc</a><ul>
+<li><a href="#%E5%AE%89%E8%A3%85">安装</a></li>
+<li><a href="#%E7%94%9F%E6%88%90%E5%86%85%E5%AE%B9">生成内容</a></li>
+</ul>
+</li>
+<li><a href="#doctoc">doctoc</a><ul>
+<li><a href="#%E5%AE%89%E8%A3%85-1">安装</a></li>
+<li><a href="#%E6%8E%A7%E5%88%B6%E6%8F%92%E5%85%A5%E7%9A%84%E4%BD%8D%E7%BD%AE">控制插入的位置</a></li>
+<li><a href="#%E6%94%AF%E6%8C%81%E7%9A%84%E5%B9%B3%E5%8F%B0">支持的平台</a></li>
+</ul>
+</li>
+</ul>
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 <a id="more"></a>
-<p>浏览器的兼容性问题是前端开发人员最头痛的，PCS 收集并整理完美兼容的解决方案。低版本浏览器添加过多的脚本或者更多的代码势必会带来性能，维护成本。其实PCS 并非是完美的解法办法，最完美的是浏览器本身符合<a href="http://baike.baidu.com/view/459077.htm?fr=wordsearch" target="_blank" rel="external">w3c标准</a>。当然这不现实，要不要所有浏览器都真的完全表现一样，其实还要视项目而定，或许我们可以选择<a href="http://baike.baidu.com/view/1172014.htm" target="_blank" rel="external">优雅降级</a>处理。凡是一切都在权衡。</p>
-<h2 id="CSS-CSS3"><a href="#CSS-CSS3" class="headerlink" title="CSS/CSS3"></a>CSS/CSS3</h2><h3 id="Respond"><a href="#Respond" class="headerlink" title="Respond"></a><a href="https://github.com/scottjehl/Respond" target="_blank" rel="external">Respond</a></h3><h2 id="inline-block"><a href="#inline-block" class="headerlink" title="inline-block"></a><a href="http://ued.taobao.org/blog/2012/08/inline-block/" target="_blank" rel="external">inline-block</a></h2><pre><code>.dib-wrap {
-    font-size:0;/* 所有浏览器 */
-    *word-spacing:-1px;/* IE6、7 */
-}
-.dib-wrap .dib{
-    font-size: 12px;
-    letter-spacing: normal;
-    word-spacing: normal;
-    vertical-align:top;
-}
-@media screen and (-webkit-min-device-pixel-ratio:0){
-    /* firefox 中 letter-spacing 会导致脱离普通流的元素水平位移 */
-    .dib-wrap{
-    letter-spacing:-5px;/* Safari 等不支持字体大小为 0 的浏览器, N 根据父级字体调节*/
-    }
-}
-.dib {
-    display: inline-block;
-    *display:inline;
-    *zoom:1;
-}
-</code></pre><h2 id="css3-gradient"><a href="#css3-gradient" class="headerlink" title="css3-gradient"></a><a href="http://www.w3cplus.com/content/css3-gradient" target="_blank" rel="external">css3-gradient</a></h2><ol>
-<li><a href="http://www.colorzilla.com/gradient-editor/" target="_blank" rel="external">css3 渐变在线生成工具Ultimate CSS Gradient Generator</a></li>
-</ol>
-<h2 id="HTML-HTML5"><a href="#HTML-HTML5" class="headerlink" title="HTML/HTML5"></a>HTML/HTML5</h2><h2 id="html5shiv"><a href="#html5shiv" class="headerlink" title="html5shiv"></a>html5shiv</h2><p>The <a href="https://github.com/aFarkas/html5shiv" target="_blank" rel="external">HTML5 Shiv</a> enables use of HTML5 sectioning elements in legacy Internet Explorer and provides basic HTML5 styling for Internet Explorer 6-9, Safari 4.x (and iPhone 3.x), and Firefox 3.x.</p>
-<h2 id="html5demos"><a href="#html5demos" class="headerlink" title="html5demos"></a><a href="https://github.com/remy/html5demos" target="_blank" rel="external">html5demos</a></h2><p>A collection of HTML5 experiments I’ve created, now open source and on GitHub, so please go ahead and help me hack this resource in to a wealth of demos that other authors can learn from.</p>
-<h2 id="HTML5-History-API"><a href="#HTML5-History-API" class="headerlink" title="HTML5-History-API"></a><a href="https://github.com/remy/html5demos" target="_blank" rel="external">HTML5-History-API</a></h2><h2 id="video-js"><a href="#video-js" class="headerlink" title="video.js"></a><a href="https://github.com/videojs/video.js" target="_blank" rel="external">video.js</a></h2><h2 id="jQuery-html5-placeholder"><a href="#jQuery-html5-placeholder" class="headerlink" title=" jQuery-html5-placeholder"></a><a href="https://github.com/Topener/jQuery-html5-placeholder" target="_blank" rel="external"> jQuery-html5-placeholder</a></h2><h2 id="HTML5-Desktop-Notifications"><a href="#HTML5-Desktop-Notifications" class="headerlink" title="HTML5 Desktop Notifications"></a><a href="https://github.com/ttsvetko/HTML5-Desktop-Notifications" target="_blank" rel="external">HTML5 Desktop Notifications</a></h2><h2 id="localstorage"><a href="#localstorage" class="headerlink" title="localstorage"></a>localstorage</h2><p><a href="https://github.com/marcuswestin/store.js" target="_blank" rel="external">store.js</a> exposes a simple API for cross browser local storage</p>
-<h2 id="JavaScritp-ECMAScript"><a href="#JavaScritp-ECMAScript" class="headerlink" title="JavaScritp/ECMAScript"></a>JavaScritp/ECMAScript</h2><h2 id="es5-shim"><a href="#es5-shim" class="headerlink" title="es5-shim"></a>es5-shim</h2><p><a href="https://github.com/es-shims/es5-shim" target="_blank" rel="external"><code>es5-shim.js</code></a> and <code>es5-shim.min.js</code> monkey-patch a JavaScript context to<br>contain all EcmaScript 5 methods that can be faithfully emulated with a<br>legacy JavaScript engine.</p>
-<h2 id="IE-IE6-IE7-IE8"><a href="#IE-IE6-IE7-IE8" class="headerlink" title="IE/IE6/IE7/IE8"></a>IE/IE6/IE7/IE8</h2><h3 id="PIE"><a href="#PIE" class="headerlink" title="PIE"></a>PIE</h3><p>(PIE)(<a href="http://css3pie.com/" target="_blank" rel="external">http://css3pie.com/</a>) makes Internet Explorer 6-9 capable of rendering several of the most useful CSS3 decoration features.</p>
-<p>通过脚本可以使得ie6/7/8/9 支持css3 的 border-radius、box-shadow、linear-gradient。</p>
-<h3 id="DD-belatedPNG"><a href="#DD-belatedPNG" class="headerlink" title="DD_belatedPNG"></a><a href="http://www.dillerdesign.com/experiment/DD_belatedPNG/" target="_blank" rel="external">DD_belatedPNG</a></h3><p>This is a Javascript library that sandwiches PNG image support into IE6 without much fuss.</p>
-<p>处理ie6不支持png24。</p>
-<pre><code>DD_belatedPNG.fix(&apos;.png_bg, .png24&apos;); // argument is a CSS selector
-DD_belatedPNG.fixPng( someNode ); // argument is an HTMLDomElement
-</code></pre><h4 id="更多solution"><a href="#更多solution" class="headerlink" title="更多solution"></a>更多solution</h4><ol>
-<li><a href="http://www.w3cfuns.com/thread-297-1-1.html" target="_blank" rel="external">IE6 PNG透明终极解决方案（打造W3Cfuns-IE6PNG最强帖）</a></li>
-</ol>
-<h3 id="IE下-z-index的层级问题"><a href="#IE下-z-index的层级问题" class="headerlink" title="IE下 z-index的层级问题"></a>IE下 z-index的层级问题</h3><h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><ol>
-<li><a href="http://www.cnblogs.com/Darren_code/archive/2012/03/05/z-index.html" target="_blank" rel="external">IE下 z-index 的各种坑</a></li>
-<li><a href="http://www.zhangxinxu.com/wordpress/2009/12/ie6%E4%B8%8Bz-index%E7%8A%AF%E7%99%AB%E4%B8%8D%E8%B5%B7%E4%BD%9C%E7%94%A8bug%E7%9A%84%E5%88%9D%E6%AD%A5%E7%A0%94%E7%A9%B6/" target="_blank" rel="external">IE6下z-index犯癫不起作用bug的初步研究</a></li>
-<li><a href="http://www.w3help.org/zh-cn/causes/RM8015" target="_blank" rel="external">IE6 IE7 IE8(Q) 中定位元素 ‘z-index’ 为默认值在某些情况下会产生新的层叠上下文</a></li>
-</ol>
-<h3 id="ie6-不支持positon-fixed"><a href="#ie6-不支持positon-fixed" class="headerlink" title="ie6 不支持positon: fixed"></a>ie6 不支持<code>positon: fixed</code></h3><h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><ol>
-<li><a href="http://www.w3help.org/zh-cn/causes/RM8013" target="_blank" rel="external">RM8013: IE6 IE7(Q) IE8(Q) 不支持固定定位（position:fixed）</a></li>
-<li><a href="http://www.cnblogs.com/hooray/archive/2011/05/20/2052269.html" target="_blank" rel="external">完美解决IE6不支持position:fixed的bug</a></li>
-</ol>
-<h3 id="透明度-opacity-rgba"><a href="#透明度-opacity-rgba" class="headerlink" title="透明度 opacity/rgba"></a>透明度 opacity/rgba</h3><p>opacity设置的透明度对子元素都有影响。ie可以使用 filter 处理</p>
-<pre><code>.opacity{
-    background: rgb(255,255,0);
-    opacity: 0.4;
-    filter:alpha(opacity=40);
-}
-
-
-.rgba{
-    filter:progid:DXImageTransform.Microsoft.gradient(enabled=&apos;true&apos;,startColorstr=&apos;#7F000000&apos;, endColorstr=&apos;#7F000000&apos;);
-}
-:root  .rgba{
-    filter:none;     /*处理IE9浏览器中的滤镜效果*/
-    background-color:rgba(0,0,0,0.5);
-}
-</code></pre><ol>
-<li><a href="http://www.w3help.org/zh-cn/causes/BT9011" target="_blank" rel="external">BT9011: 只有 IE 支持 CSS Filter</a></li>
-<li><a href="http://www.w3cplus.com/content/css3-rgba" target="_blank" rel="external">CSS3 RGBA</a></li>
-<li><a href="http://www.linxz.de/css_tool/hex_color.html" target="_blank" rel="external">css3-rgba ie下可透明的背景颜色转换工具</a></li>
-</ol>
-<h3 id="ie6-max-width-max-height-min-height-min-width"><a href="#ie6-max-width-max-height-min-height-min-width" class="headerlink" title="ie6 max-width/max-height/min-height/min-width"></a>ie6 max-width/max-height/min-height/min-width</h3><pre><code>.maxh{ max-height:300px; _height: expression(this.scrollHeight &gt;= 300? &apos;300px&apos; : &apos;auto&apos;);  }
-
-.maxw{ max-width: 300px; _width: expression(this.clientWidth &gt;= 300 ? &apos;300px&apos; : &apos;auto&apos;); }
-
-.minh{ min-height: 300px; height:auto !important; _height: 300px; }
-
-.minw{ min-width: 300px; _width: expression(this.clientWidth &lt;= 300 ? &apos;300px&apos; : &apos;auto&apos;); }
-</code></pre><ol>
-<li><a href="http://ziren.org/html-css/ie6-support-min-width-and-max-width.html" target="_blank" rel="external">让IE6支持min-width和max-width的方法</a></li>
-</ol>
-<h2 id="css3-mediaqueries-js"><a href="#css3-mediaqueries-js" class="headerlink" title="css3-mediaqueries-js"></a>css3-mediaqueries-js</h2><p><a href="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js" target="_blank" rel="external">css3-mediaqueries-js</a></p>
-<h2 id="ieBetter"><a href="#ieBetter" class="headerlink" title="ieBetter"></a>ieBetter</h2><p><a href="http://www.zhangxinxu.com/wordpress/2013/12/iebetter-js-make-ie6-ie8-like-modern-browser-ie9-chrome/" target="_blank" rel="external">ieBetter.js-让IE6-IE8拥有IE9+,Chrome等浏览器特性</a></p>
+<h2 id="gh-md-toc"><a href="#gh-md-toc" class="headerlink" title="gh-md-toc"></a>gh-md-toc</h2><p><a href="https://github.com/ekalinin/github-markdown-toc#installation" target="_blank" rel="external">gh-md-toc</a></p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ wget https://raw.githubusercontent.com/ekalinin/github-markdown-toc/master/gh-md-toc</div><div class="line">$ chmod a+x gh-md-toc</div><div class="line">$ ./gh-md-toc ./issue-13.md</div></pre></td></tr></table></figure>
+<h3 id="生成内容"><a href="#生成内容" class="headerlink" title="生成内容"></a>生成内容</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">Table of Contents</div><div class="line">=================</div><div class="line"></div><div class="line">    * [gh-md-toc](#gh-md-toc)</div><div class="line">      * [安装](#安装)</div><div class="line">      * [生成内容](#生成内容)</div><div class="line">    * [doctoc](#doctoc)</div><div class="line">      * [安装](#安装-1)</div><div class="line">      * [控制插入的位置](#控制插入的位置)</div><div class="line">      * [支持的平台](#支持的平台)</div></pre></td></tr></table></figure>
+<h2 id="doctoc"><a href="#doctoc" class="headerlink" title="doctoc"></a>doctoc</h2><p><a href="https://github.com/thlorenz/doctoc" target="_blank" rel="external">doctoc</a></p>
+<h3 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ sudo npm install -g doctoc</div><div class="line">$ doctoc ./issue-13.md</div></pre></td></tr></table></figure>
+<p>生成内容见顶部</p>
+<h3 id="控制插入的位置"><a href="#控制插入的位置" class="headerlink" title="控制插入的位置"></a>控制插入的位置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;!-- START doctoc --&gt;</div><div class="line">&lt;!-- END doctoc --&gt;</div></pre></td></tr></table></figure>
+<h3 id="支持的平台"><a href="#支持的平台" class="headerlink" title="支持的平台"></a>支持的平台</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">--bitbucket bitbucket.org</div><div class="line">--nodejs    nodejs.org</div><div class="line">--github    github.com</div><div class="line">--gitlab    gitlab.com</div><div class="line">--ghost     ghost.org</div></pre></td></tr></table></figure>
+<ul>
+<li><a href="http://stackoverflow.com/questions/9721944/automatic-toc-in-github-flavoured-markdown" target="_blank" rel="external">Automatic TOC in github-flavoured-markdown</a></li>
+</ul>
+<h2 id="其他工具"><a href="#其他工具" class="headerlink" title="其他工具"></a>其他工具</h2><ul>
+<li><a href="https://github.com/jonschlinkert/markdown-toc" target="_blank" rel="external">markdown-toc</a></li>
+<li><a href="https://github.com/gajus/gitdown" target="_blank" rel="external">gitdown</a></li>
+<li><a href="https://github.com/isaacs/github/issues/215" target="_blank" rel="external">https://github.com/isaacs/github/issues/215</a></li>
+<li><a href="https://github.com/Mottie/GitHub-userscripts#installation" target="_blank" rel="external">https://github.com/Mottie/GitHub-userscripts#installation</a></li>
+<li><a href="http://doctoc.herokuapp.com/" target="_blank" rel="external">在线工具DocToc</a></li>
+</ul>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;移动互联网的今天，告别了ie6。&lt;/p&gt;
-&lt;p&gt;以下来自原先项目&lt;del&gt;psc&lt;/del&gt;。&lt;del&gt;psc&lt;/del&gt;已经删除，&lt;del&gt;使用issues继续整理&lt;/del&gt;。相信这是一个更好的开始。整理到博客汇总。&lt;/p&gt;
+      &lt;!-- START doctoc generated TOC please keep comment here to allow auto update --&gt;
+&lt;!-- DON&#39;T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE --&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#gh-md-toc&quot;&gt;gh-md-toc&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#%E5%AE%89%E8%A3%85&quot;&gt;安装&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E7%94%9F%E6%88%90%E5%86%85%E5%AE%B9&quot;&gt;生成内容&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#doctoc&quot;&gt;doctoc&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#%E5%AE%89%E8%A3%85-1&quot;&gt;安装&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E6%8E%A7%E5%88%B6%E6%8F%92%E5%85%A5%E7%9A%84%E4%BD%8D%E7%BD%AE&quot;&gt;控制插入的位置&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E6%94%AF%E6%8C%81%E7%9A%84%E5%B9%B3%E5%8F%B0&quot;&gt;支持的平台&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- END doctoc generated TOC please keep comment here to allow auto update --&gt;
     
     </summary>
     
     
-      <category term="兼容性" scheme="http://huixisheng.github.io/tags/%E5%85%BC%E5%AE%B9%E6%80%A7/"/>
+      <category term="markdown" scheme="http://huixisheng.github.io/tags/markdown/"/>
     
-      <category term="前端库" scheme="http://huixisheng.github.io/tags/%E5%89%8D%E7%AB%AF%E5%BA%93/"/>
+  </entry>
+  
+  <entry>
+    <title>配置SSH公钥和git多账号配置</title>
+    <link href="http://huixisheng.github.io/git-ssh-key-setting/"/>
+    <id>http://huixisheng.github.io/git-ssh-key-setting/</id>
+    <published>2016-10-22T13:02:45.000Z</published>
+    <updated>2016-10-22T13:07:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>本文介绍如何配置<code>ssh-key</code></p>
+<a id="more"></a>
+<h2 id="生成key"><a href="#生成key" class="headerlink" title="生成key"></a>生成key</h2><p>ssh-keygen -t rsa -f ~/.ssh/git.oschina.net -C “469184346@qq.com”</p>
+<blockquote>
+<p>代码参数含义：<br>-t 指定密钥类型，默认是 rsa ，可以省略。<br>-C 设置注释文字，比如邮箱。<br>-f 指定密钥文件存储文件名。  -<a href="http://www.cnblogs.com/ayseeing/p/3572582.html" target="_blank" rel="external">来自github设置添加SSH</a></p>
+</blockquote>
+<p>直接输入回车</p>
+<pre><code>Generating public/private rsa key pair.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+</code></pre><p>如果输入了密码</p>
+<blockquote>
+<p>设置passphrase后，进行版本控制时，每次与GitHub通信都会要求输入passphrase，以避免某些“失误”</p>
+<p>将SSH 私钥增加到ssh-agent: ssh-add ~/.ssh/xyz_rsa， 这里会提示输入一次私钥的密码; -<a href="http://www.jianshu.com/p/ddd3122cb351#" target="_blank" rel="external">来自</a></p>
+</blockquote>
+<h2 id="添加密匙"><a href="#添加密匙" class="headerlink" title="添加密匙"></a>添加密匙</h2><h3 id="拷贝公钥"><a href="#拷贝公钥" class="headerlink" title="拷贝公钥"></a>拷贝公钥</h3><pre><code>pbcopy &lt;  ~/.ssh/git.oschina.net.pub
+</code></pre><p>其他平台拷贝命令<a href="http://www.jianshu.com/p/31cbbbc5f9fa/" target="_blank" rel="external">参考如何生成SSH key</a></p>
+<blockquote>
+<p>window<br>    clip &lt; ~/.ssh/id_rsa.pub</p>
+<p>linux<br>    sudo apt-get install xclip<br>    xclip -sel clip &lt; ~/.ssh/id_rsa.pub</p>
+</blockquote>
+<h3 id="登录远程git平台添加ssh-key"><a href="#登录远程git平台添加ssh-key" class="headerlink" title="登录远程git平台添加ssh key"></a>登录远程git平台添加ssh key</h3><p>粘贴刚才拷贝的内容</p>
+<ul>
+<li><a href="http://git.oschina.net/profile/sshkeys" target="_blank" rel="external">oschinaSSH公钥</a></li>
+<li><a href="https://github.com/settings/keys" target="_blank" rel="external">github SSH and GPG keys</a>点击 <code>New SSH key</code></li>
+</ul>
+<p>将新生成的key添加到ssh-agent中</p>
+<pre><code>$ eval &quot;$(ssh-agent -s)&quot;
+$ ssh-add ~/.ssh/git.oschina.net
+</code></pre><blockquote>
+<p>可以通过 ssh-add -l 来确私钥列表<br>$ ssh-add -l<br>可以通过 ssh-add -D 来清空私钥列表<br>$ ssh-add -D</p>
+</blockquote>
+<h2 id="配置config用于多个git-ssh密匙"><a href="#配置config用于多个git-ssh密匙" class="headerlink" title="配置config用于多个git ssh密匙"></a>配置config用于多个git ssh密匙</h2><pre><code>Host github.com
+    HostName github.com
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/github
+    User huixisheng
+
+Host git.coding.net
+    HostName git.coding.net
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/gitcodingnet
+    User git
+
+Host git.oschina.net
+    HostName git.oschina.net
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/git.oschina.net
+    User git
+</code></pre><blockquote>
+<p>Host，SSH 连接名<br>HostName，如上所示，可以是通配符，可以是 IP，也可以是域名等<br>User，登录的用户名<br>IdentifyFile，version 1 协议下默认是 ~/.ssh/identify，version 2 协议下，默认是依次匹配：~/.ssh/id_dsa，~/.ssh/id_ecdsa，~/.ssh/id_rsa，还有 version 2 兼容模式。<br>LocalForward 端口的内部跳转<br>Port，端口设置，默认 SSH 的端口是 22<br>Protocal，协议版本号，1 或者 2<br><a href="http://www.barretlee.com/blog/2016/03/09/config-in-ssh-after-troubling-git-connection/" target="_blank" rel="external">来自</a></p>
+</blockquote>
+<ul>
+<li><a href="http://www.cnblogs.com/ayseeing/p/4445194.html" target="_blank" rel="external">参考生成多个git ssh密钥</a></li>
+</ul>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>测试是否配置成功</p>
+<pre><code>$ ssh -T git@git.oschina.net
+Welcome to Git@OSC, huixisheng!
+</code></pre><blockquote>
+<p>-v会输出详情的信息 <a href="http://www.barretlee.com/blog/2016/03/09/config-in-ssh-after-troubling-git-connection/" target="_blank" rel="external">多SSH Key管理技巧与Git多账户登录问题</a></p>
+</blockquote>
+<h2 id="其他问题"><a href="#其他问题" class="headerlink" title="其他问题"></a>其他问题</h2><pre><code>$ ssh -T git@git.oschina.net
+The authenticity of host &apos;git.oschina.net (218.60.114.30)&apos; can&apos;t be established.
+ECDSA key fingerprint is SHA256:FQGC9Kn/eye1W8icdBgrQp+KkGYoFgbVr17bmjey0Wc.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added &apos;git.oschina.net,218.60.114.30&apos; (ECDSA) to the list of known hosts.
+Permission denied (publickey).
+
+$ eval &quot;$(ssh-agent -s)&quot;
+$ ssh-add ~/.ssh/git.oschina.net
+</code></pre><blockquote>
+<p>   如果执行ssh-add时提示”Could not open a connection to your authentication agent”，可以现执行命令：<br>    $ ssh-agent bash <a href="http://my.oschina.net/stefanzhlg/blog/529403" target="_blank" rel="external">来自</a></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo git clone git@git.coding.net:huixisheng/layout.git</div><div class="line">Cloning into &apos;layout&apos;...</div><div class="line">Permission denied (publickey).</div><div class="line">fatal: Could not read from remote repository.</div></pre></td></tr></table></figure>
+<p><code>ssh -vT git@git.coding.net</code> 是有结果返回的,看了debug信息都是正常的。</p>
+<p>执行如下（期间关闭了翻墙软件）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ssh-add ~/.ssh/gitcodingnet</div><div class="line">source ~/.ssh/config</div></pre></td></tr></table></figure></p>
+<p>再次clone又可以了。没找到为何不行的根本原因</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="http://my.oschina.net/stefanzhlg/blog/529403" target="_blank" rel="external">git 配置多个SSH-Key</a></li>
+<li><a href="https://help.github.com/articles/generating-ssh-keys" target="_blank" rel="external">https://help.github.com/articles/generating-ssh-keys</a></li>
+<li><a href="https://coding.net/help/doc/git/ssh-key.html" target="_blank" rel="external">coding配置SSH公钥</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文介绍如何配置&lt;code&gt;ssh-key&lt;/code&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="git" scheme="http://huixisheng.github.io/tags/git/"/>
     
   </entry>
   
@@ -766,72 +855,177 @@ DD_belatedPNG.fixPng( someNode ); // argument is an HTMLDomElement
   </entry>
   
   <entry>
-    <title>markdown文件生成目录</title>
-    <link href="http://huixisheng.github.io/markdown-Table-of-Contents/"/>
-    <id>http://huixisheng.github.io/markdown-Table-of-Contents/</id>
+    <title>国内镜像源整理</title>
+    <link href="http://huixisheng.github.io/mirror/"/>
+    <id>http://huixisheng.github.io/mirror/</id>
     <published>2016-10-22T13:02:45.000Z</published>
-    <updated>2016-10-22T13:17:08.000Z</updated>
+    <updated>2016-11-26T02:15:59.000Z</updated>
     
-    <content type="html"><![CDATA[<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-<ul>
-<li><a href="#gh-md-toc">gh-md-toc</a><ul>
-<li><a href="#%E5%AE%89%E8%A3%85">安装</a></li>
-<li><a href="#%E7%94%9F%E6%88%90%E5%86%85%E5%AE%B9">生成内容</a></li>
-</ul>
-</li>
-<li><a href="#doctoc">doctoc</a><ul>
-<li><a href="#%E5%AE%89%E8%A3%85-1">安装</a></li>
-<li><a href="#%E6%8E%A7%E5%88%B6%E6%8F%92%E5%85%A5%E7%9A%84%E4%BD%8D%E7%BD%AE">控制插入的位置</a></li>
-<li><a href="#%E6%94%AF%E6%8C%81%E7%9A%84%E5%B9%B3%E5%8F%B0">支持的平台</a></li>
-</ul>
-</li>
-</ul>
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-<a id="more"></a>
-<h2 id="gh-md-toc"><a href="#gh-md-toc" class="headerlink" title="gh-md-toc"></a>gh-md-toc</h2><p><a href="https://github.com/ekalinin/github-markdown-toc#installation" target="_blank" rel="external">gh-md-toc</a></p>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ wget https://raw.githubusercontent.com/ekalinin/github-markdown-toc/master/gh-md-toc</div><div class="line">$ chmod a+x gh-md-toc</div><div class="line">$ ./gh-md-toc ./issue-13.md</div></pre></td></tr></table></figure>
-<h3 id="生成内容"><a href="#生成内容" class="headerlink" title="生成内容"></a>生成内容</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">Table of Contents</div><div class="line">=================</div><div class="line"></div><div class="line">    * [gh-md-toc](#gh-md-toc)</div><div class="line">      * [安装](#安装)</div><div class="line">      * [生成内容](#生成内容)</div><div class="line">    * [doctoc](#doctoc)</div><div class="line">      * [安装](#安装-1)</div><div class="line">      * [控制插入的位置](#控制插入的位置)</div><div class="line">      * [支持的平台](#支持的平台)</div></pre></td></tr></table></figure>
-<h2 id="doctoc"><a href="#doctoc" class="headerlink" title="doctoc"></a>doctoc</h2><p><a href="https://github.com/thlorenz/doctoc" target="_blank" rel="external">doctoc</a></p>
-<h3 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ sudo npm install -g doctoc</div><div class="line">$ doctoc ./issue-13.md</div></pre></td></tr></table></figure>
-<p>生成内容见顶部</p>
-<h3 id="控制插入的位置"><a href="#控制插入的位置" class="headerlink" title="控制插入的位置"></a>控制插入的位置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;!-- START doctoc --&gt;</div><div class="line">&lt;!-- END doctoc --&gt;</div></pre></td></tr></table></figure>
-<h3 id="支持的平台"><a href="#支持的平台" class="headerlink" title="支持的平台"></a>支持的平台</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">--bitbucket bitbucket.org</div><div class="line">--nodejs    nodejs.org</div><div class="line">--github    github.com</div><div class="line">--gitlab    gitlab.com</div><div class="line">--ghost     ghost.org</div></pre></td></tr></table></figure>
-<ul>
-<li><a href="http://stackoverflow.com/questions/9721944/automatic-toc-in-github-flavoured-markdown" target="_blank" rel="external">Automatic TOC in github-flavoured-markdown</a></li>
-</ul>
-<h2 id="其他工具"><a href="#其他工具" class="headerlink" title="其他工具"></a>其他工具</h2><ul>
-<li><a href="https://github.com/jonschlinkert/markdown-toc" target="_blank" rel="external">markdown-toc</a></li>
-<li><a href="https://github.com/gajus/gitdown" target="_blank" rel="external">gitdown</a></li>
-<li><a href="https://github.com/isaacs/github/issues/215" target="_blank" rel="external">https://github.com/isaacs/github/issues/215</a></li>
-<li><a href="https://github.com/Mottie/GitHub-userscripts#installation" target="_blank" rel="external">https://github.com/Mottie/GitHub-userscripts#installation</a></li>
-<li><a href="http://doctoc.herokuapp.com/" target="_blank" rel="external">在线工具DocToc</a></li>
-</ul>
-]]></content>
+    <content type="html"><![CDATA[<p>本文对国内<code>ruby</code>、<code>npm</code>、<code>brew</code>、<code>Composer</code>等镜像源做整理，给前端开发这提供方便。<br><a id="more"></a></p>
+<h2 id="为何写这个文章"><a href="#为何写这个文章" class="headerlink" title="为何写这个文章"></a>为何写这个文章</h2><pre><code>gem install cdnjs-command
+ERROR:  Could not find a valid gem &apos;cdnjs-command&apos; (&gt;= 0), here is why:
+      Unable to download data from https://rubygems.org/ - Errno::EPIPE: Broken pipe - SSL_connect (https://rubygems.org/latest_specs.4.8.gz)
+</code></pre><h2 id="RubyGems-镜像"><a href="#RubyGems-镜像" class="headerlink" title="RubyGems 镜像"></a>RubyGems 镜像</h2><blockquote>
+<p>$ gem sources –add <a href="https://ruby.taobao.org/" target="_blank" rel="external">https://ruby.taobao.org/</a> –remove <a href="https://rubygems.org/" target="_blank" rel="external">https://rubygems.org/</a><br>  $ gem sources -l<br>   <strong><em> CURRENT SOURCES </em></strong><br><a href="https://ruby.taobao.org" target="_blank" rel="external">https://ruby.taobao.org</a></p>
+<h1 id="请确保只有-ruby-taobao-org"><a href="#请确保只有-ruby-taobao-org" class="headerlink" title="请确保只有 ruby.taobao.org"></a>请确保只有 ruby.taobao.org</h1><p>$ gem install rails</p>
+</blockquote>
+<h2 id="NPM-镜像"><a href="#NPM-镜像" class="headerlink" title="NPM 镜像"></a>NPM 镜像</h2><p>每次安装都需要指明 <code>registry</code>，很麻烦</p>
+<blockquote>
+<p>$ npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="external">https://registry.npm.taobao.org</a></p>
+</blockquote>
+<pre><code>vi ~/.npmrc
+</code></pre><p>添加。</p>
+<blockquote>
+<p>registry = <a href="http://registry.npm.taobao.org" target="_blank" rel="external">http://registry.npm.taobao.org</a></p>
+</blockquote>
+<p>或者</p>
+<blockquote>
+<p> npm config set registry “<a href="http://registry.npm.taobao.org" target="_blank" rel="external">http://registry.npm.taobao.org</a>“</p>
+</blockquote>
+<p>通过 <code>npm config ls</code> 可以查看相关配置情况</p>
+<h2 id="Brew镜像"><a href="#Brew镜像" class="headerlink" title="Brew镜像"></a>Brew镜像</h2><blockquote>
+<p>$ cd /usr/local &amp;&amp; git remote set-url origin <a href="https://git.coding.net/homebrew/homebrew.git" target="_blank" rel="external">https://git.coding.net/homebrew/homebrew.git</a><br>$ cd $home &amp;&amp; brew update</p>
+</blockquote>
+<p><a href="https://coding.net/u/cocodingding/pp/84498" target="_blank" rel="external">Brew Brew Brew !</a></p>
+<h2 id="Composer-镜像"><a href="#Composer-镜像" class="headerlink" title="Composer 镜像"></a>Composer 镜像</h2><p>方法1：</p>
+<pre><code>composer config -g repositories.packagist composer http://packagist.phpcomposer.com
+</code></pre><p>方法2：</p>
+<blockquote>
+<p>注意：为了避免安装包的时候都要执行两次查询，切记要添加禁用 packagist 的设置，如下：</p>
+</blockquote>
+<pre><code>{
+    &quot;repositories&quot;: [
+        {&quot;type&quot;: &quot;composer&quot;, &quot;url&quot;: &quot;http://packagist.phpcomposer.com&quot;},
+        {&quot;packagist&quot;: false}
+    ]
+}
+</code></pre><p><a href="http://pkg.phpcomposer.com/" target="_blank" rel="external">Packagist / Composer 中国全量镜像</a></p>
+<p>全局安装</p>
+<pre><code>$ curl -sS https://getcomposer.org/installer | php
+$ mv composer.phar /usr/local/bin/composer
+</code></pre>]]></content>
     
     <summary type="html">
     
-      &lt;!-- START doctoc generated TOC please keep comment here to allow auto update --&gt;
-&lt;!-- DON&#39;T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE --&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#gh-md-toc&quot;&gt;gh-md-toc&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#%E5%AE%89%E8%A3%85&quot;&gt;安装&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#%E7%94%9F%E6%88%90%E5%86%85%E5%AE%B9&quot;&gt;生成内容&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#doctoc&quot;&gt;doctoc&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#%E5%AE%89%E8%A3%85-1&quot;&gt;安装&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#%E6%8E%A7%E5%88%B6%E6%8F%92%E5%85%A5%E7%9A%84%E4%BD%8D%E7%BD%AE&quot;&gt;控制插入的位置&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#%E6%94%AF%E6%8C%81%E7%9A%84%E5%B9%B3%E5%8F%B0&quot;&gt;支持的平台&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;!-- END doctoc generated TOC please keep comment here to allow auto update --&gt;
+      &lt;p&gt;本文对国内&lt;code&gt;ruby&lt;/code&gt;、&lt;code&gt;npm&lt;/code&gt;、&lt;code&gt;brew&lt;/code&gt;、&lt;code&gt;Composer&lt;/code&gt;等镜像源做整理，给前端开发这提供方便。&lt;br&gt;
     
     </summary>
     
     
-      <category term="markdown" scheme="http://huixisheng.github.io/tags/markdown/"/>
+      <category term="镜像源" scheme="http://huixisheng.github.io/tags/%E9%95%9C%E5%83%8F%E6%BA%90/"/>
+    
+      <category term="npm" scheme="http://huixisheng.github.io/tags/npm/"/>
+    
+      <category term="ruby" scheme="http://huixisheng.github.io/tags/ruby/"/>
+    
+      <category term="Composer" scheme="http://huixisheng.github.io/tags/Composer/"/>
+    
+      <category term="brew" scheme="http://huixisheng.github.io/tags/brew/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>兼容性解决方案整理</title>
+    <link href="http://huixisheng.github.io/compatibility-solution/"/>
+    <id>http://huixisheng.github.io/compatibility-solution/</id>
+    <published>2016-10-22T13:02:45.000Z</published>
+    <updated>2016-12-23T03:08:06.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>移动互联网的今天，告别了ie6。</p>
+<p>以下来自原先项目<del>psc</del>。<del>psc</del>已经删除，<del>使用issues继续整理</del>。相信这是一个更好的开始。整理到博客汇总。</p>
+<a id="more"></a>
+<p>浏览器的兼容性问题是前端开发人员最头痛的，PCS 收集并整理完美兼容的解决方案。低版本浏览器添加过多的脚本或者更多的代码势必会带来性能，维护成本。其实PCS 并非是完美的解法办法，最完美的是浏览器本身符合<a href="http://baike.baidu.com/view/459077.htm?fr=wordsearch" target="_blank" rel="external">w3c标准</a>。当然这不现实，要不要所有浏览器都真的完全表现一样，其实还要视项目而定，或许我们可以选择<a href="http://baike.baidu.com/view/1172014.htm" target="_blank" rel="external">优雅降级</a>处理。凡是一切都在权衡。</p>
+<h2 id="CSS-CSS3"><a href="#CSS-CSS3" class="headerlink" title="CSS/CSS3"></a>CSS/CSS3</h2><h3 id="Respond"><a href="#Respond" class="headerlink" title="Respond"></a><a href="https://github.com/scottjehl/Respond" target="_blank" rel="external">Respond</a></h3><h2 id="inline-block"><a href="#inline-block" class="headerlink" title="inline-block"></a><a href="http://ued.taobao.org/blog/2012/08/inline-block/" target="_blank" rel="external">inline-block</a></h2><pre><code>.dib-wrap {
+    font-size:0;/* 所有浏览器 */
+    *word-spacing:-1px;/* IE6、7 */
+}
+.dib-wrap .dib{
+    font-size: 12px;
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align:top;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0){
+    /* firefox 中 letter-spacing 会导致脱离普通流的元素水平位移 */
+    .dib-wrap{
+    letter-spacing:-5px;/* Safari 等不支持字体大小为 0 的浏览器, N 根据父级字体调节*/
+    }
+}
+.dib {
+    display: inline-block;
+    *display:inline;
+    *zoom:1;
+}
+</code></pre><h2 id="css3-gradient"><a href="#css3-gradient" class="headerlink" title="css3-gradient"></a><a href="http://www.w3cplus.com/content/css3-gradient" target="_blank" rel="external">css3-gradient</a></h2><ol>
+<li><a href="http://www.colorzilla.com/gradient-editor/" target="_blank" rel="external">css3 渐变在线生成工具Ultimate CSS Gradient Generator</a></li>
+</ol>
+<h2 id="HTML-HTML5"><a href="#HTML-HTML5" class="headerlink" title="HTML/HTML5"></a>HTML/HTML5</h2><h2 id="html5shiv"><a href="#html5shiv" class="headerlink" title="html5shiv"></a>html5shiv</h2><p>The <a href="https://github.com/aFarkas/html5shiv" target="_blank" rel="external">HTML5 Shiv</a> enables use of HTML5 sectioning elements in legacy Internet Explorer and provides basic HTML5 styling for Internet Explorer 6-9, Safari 4.x (and iPhone 3.x), and Firefox 3.x.</p>
+<h2 id="html5demos"><a href="#html5demos" class="headerlink" title="html5demos"></a><a href="https://github.com/remy/html5demos" target="_blank" rel="external">html5demos</a></h2><p>A collection of HTML5 experiments I’ve created, now open source and on GitHub, so please go ahead and help me hack this resource in to a wealth of demos that other authors can learn from.</p>
+<h2 id="HTML5-History-API"><a href="#HTML5-History-API" class="headerlink" title="HTML5-History-API"></a><a href="https://github.com/remy/html5demos" target="_blank" rel="external">HTML5-History-API</a></h2><h2 id="video-js"><a href="#video-js" class="headerlink" title="video.js"></a><a href="https://github.com/videojs/video.js" target="_blank" rel="external">video.js</a></h2><h2 id="jQuery-html5-placeholder"><a href="#jQuery-html5-placeholder" class="headerlink" title=" jQuery-html5-placeholder"></a><a href="https://github.com/Topener/jQuery-html5-placeholder" target="_blank" rel="external"> jQuery-html5-placeholder</a></h2><h2 id="HTML5-Desktop-Notifications"><a href="#HTML5-Desktop-Notifications" class="headerlink" title="HTML5 Desktop Notifications"></a><a href="https://github.com/ttsvetko/HTML5-Desktop-Notifications" target="_blank" rel="external">HTML5 Desktop Notifications</a></h2><h2 id="localstorage"><a href="#localstorage" class="headerlink" title="localstorage"></a>localstorage</h2><p><a href="https://github.com/marcuswestin/store.js" target="_blank" rel="external">store.js</a> exposes a simple API for cross browser local storage</p>
+<h2 id="JavaScritp-ECMAScript"><a href="#JavaScritp-ECMAScript" class="headerlink" title="JavaScritp/ECMAScript"></a>JavaScritp/ECMAScript</h2><h2 id="es5-shim"><a href="#es5-shim" class="headerlink" title="es5-shim"></a>es5-shim</h2><p><a href="https://github.com/es-shims/es5-shim" target="_blank" rel="external"><code>es5-shim.js</code></a> and <code>es5-shim.min.js</code> monkey-patch a JavaScript context to<br>contain all EcmaScript 5 methods that can be faithfully emulated with a<br>legacy JavaScript engine.</p>
+<h2 id="IE-IE6-IE7-IE8"><a href="#IE-IE6-IE7-IE8" class="headerlink" title="IE/IE6/IE7/IE8"></a>IE/IE6/IE7/IE8</h2><h3 id="PIE"><a href="#PIE" class="headerlink" title="PIE"></a>PIE</h3><p>(PIE)(<a href="http://css3pie.com/" target="_blank" rel="external">http://css3pie.com/</a>) makes Internet Explorer 6-9 capable of rendering several of the most useful CSS3 decoration features.</p>
+<p>通过脚本可以使得ie6/7/8/9 支持css3 的 border-radius、box-shadow、linear-gradient。</p>
+<h3 id="DD-belatedPNG"><a href="#DD-belatedPNG" class="headerlink" title="DD_belatedPNG"></a><a href="http://www.dillerdesign.com/experiment/DD_belatedPNG/" target="_blank" rel="external">DD_belatedPNG</a></h3><p>This is a Javascript library that sandwiches PNG image support into IE6 without much fuss.</p>
+<p>处理ie6不支持png24。</p>
+<pre><code>DD_belatedPNG.fix(&apos;.png_bg, .png24&apos;); // argument is a CSS selector
+DD_belatedPNG.fixPng( someNode ); // argument is an HTMLDomElement
+</code></pre><h4 id="更多solution"><a href="#更多solution" class="headerlink" title="更多solution"></a>更多solution</h4><ol>
+<li><a href="http://www.w3cfuns.com/thread-297-1-1.html" target="_blank" rel="external">IE6 PNG透明终极解决方案（打造W3Cfuns-IE6PNG最强帖）</a></li>
+</ol>
+<h3 id="IE下-z-index的层级问题"><a href="#IE下-z-index的层级问题" class="headerlink" title="IE下 z-index的层级问题"></a>IE下 z-index的层级问题</h3><h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><ol>
+<li><a href="http://www.cnblogs.com/Darren_code/archive/2012/03/05/z-index.html" target="_blank" rel="external">IE下 z-index 的各种坑</a></li>
+<li><a href="http://www.zhangxinxu.com/wordpress/2009/12/ie6%E4%B8%8Bz-index%E7%8A%AF%E7%99%AB%E4%B8%8D%E8%B5%B7%E4%BD%9C%E7%94%A8bug%E7%9A%84%E5%88%9D%E6%AD%A5%E7%A0%94%E7%A9%B6/" target="_blank" rel="external">IE6下z-index犯癫不起作用bug的初步研究</a></li>
+<li><a href="http://www.w3help.org/zh-cn/causes/RM8015" target="_blank" rel="external">IE6 IE7 IE8(Q) 中定位元素 ‘z-index’ 为默认值在某些情况下会产生新的层叠上下文</a></li>
+</ol>
+<h3 id="ie6-不支持positon-fixed"><a href="#ie6-不支持positon-fixed" class="headerlink" title="ie6 不支持positon: fixed"></a>ie6 不支持<code>positon: fixed</code></h3><h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><ol>
+<li><a href="http://www.w3help.org/zh-cn/causes/RM8013" target="_blank" rel="external">RM8013: IE6 IE7(Q) IE8(Q) 不支持固定定位（position:fixed）</a></li>
+<li><a href="http://www.cnblogs.com/hooray/archive/2011/05/20/2052269.html" target="_blank" rel="external">完美解决IE6不支持position:fixed的bug</a></li>
+</ol>
+<h3 id="透明度-opacity-rgba"><a href="#透明度-opacity-rgba" class="headerlink" title="透明度 opacity/rgba"></a>透明度 opacity/rgba</h3><p>opacity设置的透明度对子元素都有影响。ie可以使用 filter 处理</p>
+<pre><code>.opacity{
+    background: rgb(255,255,0);
+    opacity: 0.4;
+    filter:alpha(opacity=40);
+}
+
+
+.rgba{
+    filter:progid:DXImageTransform.Microsoft.gradient(enabled=&apos;true&apos;,startColorstr=&apos;#7F000000&apos;, endColorstr=&apos;#7F000000&apos;);
+}
+:root  .rgba{
+    filter:none;     /*处理IE9浏览器中的滤镜效果*/
+    background-color:rgba(0,0,0,0.5);
+}
+</code></pre><ol>
+<li><a href="http://www.w3help.org/zh-cn/causes/BT9011" target="_blank" rel="external">BT9011: 只有 IE 支持 CSS Filter</a></li>
+<li><a href="http://www.w3cplus.com/content/css3-rgba" target="_blank" rel="external">CSS3 RGBA</a></li>
+<li><a href="http://www.linxz.de/css_tool/hex_color.html" target="_blank" rel="external">css3-rgba ie下可透明的背景颜色转换工具</a></li>
+</ol>
+<h3 id="ie6-max-width-max-height-min-height-min-width"><a href="#ie6-max-width-max-height-min-height-min-width" class="headerlink" title="ie6 max-width/max-height/min-height/min-width"></a>ie6 max-width/max-height/min-height/min-width</h3><pre><code>.maxh{ max-height:300px; _height: expression(this.scrollHeight &gt;= 300? &apos;300px&apos; : &apos;auto&apos;);  }
+
+.maxw{ max-width: 300px; _width: expression(this.clientWidth &gt;= 300 ? &apos;300px&apos; : &apos;auto&apos;); }
+
+.minh{ min-height: 300px; height:auto !important; _height: 300px; }
+
+.minw{ min-width: 300px; _width: expression(this.clientWidth &lt;= 300 ? &apos;300px&apos; : &apos;auto&apos;); }
+</code></pre><ol>
+<li><a href="http://ziren.org/html-css/ie6-support-min-width-and-max-width.html" target="_blank" rel="external">让IE6支持min-width和max-width的方法</a></li>
+</ol>
+<h2 id="css3-mediaqueries-js"><a href="#css3-mediaqueries-js" class="headerlink" title="css3-mediaqueries-js"></a>css3-mediaqueries-js</h2><p><a href="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js" target="_blank" rel="external">css3-mediaqueries-js</a></p>
+<h2 id="ieBetter"><a href="#ieBetter" class="headerlink" title="ieBetter"></a>ieBetter</h2><p><a href="http://www.zhangxinxu.com/wordpress/2013/12/iebetter-js-make-ie6-ie8-like-modern-browser-ie9-chrome/" target="_blank" rel="external">ieBetter.js-让IE6-IE8拥有IE9+,Chrome等浏览器特性</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;移动互联网的今天，告别了ie6。&lt;/p&gt;
+&lt;p&gt;以下来自原先项目&lt;del&gt;psc&lt;/del&gt;。&lt;del&gt;psc&lt;/del&gt;已经删除，&lt;del&gt;使用issues继续整理&lt;/del&gt;。相信这是一个更好的开始。整理到博客汇总。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="兼容性" scheme="http://huixisheng.github.io/tags/%E5%85%BC%E5%AE%B9%E6%80%A7/"/>
+    
+      <category term="前端库" scheme="http://huixisheng.github.io/tags/%E5%89%8D%E7%AB%AF%E5%BA%93/"/>
     
   </entry>
   
@@ -940,178 +1134,6 @@ DD_belatedPNG.fixPng( someNode ); // argument is an HTMLDomElement
     
     
       <category term="git" scheme="http://huixisheng.github.io/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>配置SSH公钥和git多账号配置</title>
-    <link href="http://huixisheng.github.io/git-ssh-key-setting/"/>
-    <id>http://huixisheng.github.io/git-ssh-key-setting/</id>
-    <published>2016-10-22T13:02:45.000Z</published>
-    <updated>2016-10-22T13:07:52.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>本文介绍如何配置<code>ssh-key</code></p>
-<a id="more"></a>
-<h2 id="生成key"><a href="#生成key" class="headerlink" title="生成key"></a>生成key</h2><p>ssh-keygen -t rsa -f ~/.ssh/git.oschina.net -C “469184346@qq.com”</p>
-<blockquote>
-<p>代码参数含义：<br>-t 指定密钥类型，默认是 rsa ，可以省略。<br>-C 设置注释文字，比如邮箱。<br>-f 指定密钥文件存储文件名。  -<a href="http://www.cnblogs.com/ayseeing/p/3572582.html" target="_blank" rel="external">来自github设置添加SSH</a></p>
-</blockquote>
-<p>直接输入回车</p>
-<pre><code>Generating public/private rsa key pair.
-Enter passphrase (empty for no passphrase):
-Enter same passphrase again:
-</code></pre><p>如果输入了密码</p>
-<blockquote>
-<p>设置passphrase后，进行版本控制时，每次与GitHub通信都会要求输入passphrase，以避免某些“失误”</p>
-<p>将SSH 私钥增加到ssh-agent: ssh-add ~/.ssh/xyz_rsa， 这里会提示输入一次私钥的密码; -<a href="http://www.jianshu.com/p/ddd3122cb351#" target="_blank" rel="external">来自</a></p>
-</blockquote>
-<h2 id="添加密匙"><a href="#添加密匙" class="headerlink" title="添加密匙"></a>添加密匙</h2><h3 id="拷贝公钥"><a href="#拷贝公钥" class="headerlink" title="拷贝公钥"></a>拷贝公钥</h3><pre><code>pbcopy &lt;  ~/.ssh/git.oschina.net.pub
-</code></pre><p>其他平台拷贝命令<a href="http://www.jianshu.com/p/31cbbbc5f9fa/" target="_blank" rel="external">参考如何生成SSH key</a></p>
-<blockquote>
-<p>window<br>    clip &lt; ~/.ssh/id_rsa.pub</p>
-<p>linux<br>    sudo apt-get install xclip<br>    xclip -sel clip &lt; ~/.ssh/id_rsa.pub</p>
-</blockquote>
-<h3 id="登录远程git平台添加ssh-key"><a href="#登录远程git平台添加ssh-key" class="headerlink" title="登录远程git平台添加ssh key"></a>登录远程git平台添加ssh key</h3><p>粘贴刚才拷贝的内容</p>
-<ul>
-<li><a href="http://git.oschina.net/profile/sshkeys" target="_blank" rel="external">oschinaSSH公钥</a></li>
-<li><a href="https://github.com/settings/keys" target="_blank" rel="external">github SSH and GPG keys</a>点击 <code>New SSH key</code></li>
-</ul>
-<p>将新生成的key添加到ssh-agent中</p>
-<pre><code>$ eval &quot;$(ssh-agent -s)&quot;
-$ ssh-add ~/.ssh/git.oschina.net
-</code></pre><blockquote>
-<p>可以通过 ssh-add -l 来确私钥列表<br>$ ssh-add -l<br>可以通过 ssh-add -D 来清空私钥列表<br>$ ssh-add -D</p>
-</blockquote>
-<h2 id="配置config用于多个git-ssh密匙"><a href="#配置config用于多个git-ssh密匙" class="headerlink" title="配置config用于多个git ssh密匙"></a>配置config用于多个git ssh密匙</h2><pre><code>Host github.com
-    HostName github.com
-    PreferredAuthentications publickey
-    IdentityFile ~/.ssh/github
-    User huixisheng
-
-Host git.coding.net
-    HostName git.coding.net
-    PreferredAuthentications publickey
-    IdentityFile ~/.ssh/gitcodingnet
-    User git
-
-Host git.oschina.net
-    HostName git.oschina.net
-    PreferredAuthentications publickey
-    IdentityFile ~/.ssh/git.oschina.net
-    User git
-</code></pre><blockquote>
-<p>Host，SSH 连接名<br>HostName，如上所示，可以是通配符，可以是 IP，也可以是域名等<br>User，登录的用户名<br>IdentifyFile，version 1 协议下默认是 ~/.ssh/identify，version 2 协议下，默认是依次匹配：~/.ssh/id_dsa，~/.ssh/id_ecdsa，~/.ssh/id_rsa，还有 version 2 兼容模式。<br>LocalForward 端口的内部跳转<br>Port，端口设置，默认 SSH 的端口是 22<br>Protocal，协议版本号，1 或者 2<br><a href="http://www.barretlee.com/blog/2016/03/09/config-in-ssh-after-troubling-git-connection/" target="_blank" rel="external">来自</a></p>
-</blockquote>
-<ul>
-<li><a href="http://www.cnblogs.com/ayseeing/p/4445194.html" target="_blank" rel="external">参考生成多个git ssh密钥</a></li>
-</ul>
-<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>测试是否配置成功</p>
-<pre><code>$ ssh -T git@git.oschina.net
-Welcome to Git@OSC, huixisheng!
-</code></pre><blockquote>
-<p>-v会输出详情的信息 <a href="http://www.barretlee.com/blog/2016/03/09/config-in-ssh-after-troubling-git-connection/" target="_blank" rel="external">多SSH Key管理技巧与Git多账户登录问题</a></p>
-</blockquote>
-<h2 id="其他问题"><a href="#其他问题" class="headerlink" title="其他问题"></a>其他问题</h2><pre><code>$ ssh -T git@git.oschina.net
-The authenticity of host &apos;git.oschina.net (218.60.114.30)&apos; can&apos;t be established.
-ECDSA key fingerprint is SHA256:FQGC9Kn/eye1W8icdBgrQp+KkGYoFgbVr17bmjey0Wc.
-Are you sure you want to continue connecting (yes/no)? yes
-Warning: Permanently added &apos;git.oschina.net,218.60.114.30&apos; (ECDSA) to the list of known hosts.
-Permission denied (publickey).
-
-$ eval &quot;$(ssh-agent -s)&quot;
-$ ssh-add ~/.ssh/git.oschina.net
-</code></pre><blockquote>
-<p>   如果执行ssh-add时提示”Could not open a connection to your authentication agent”，可以现执行命令：<br>    $ ssh-agent bash <a href="http://my.oschina.net/stefanzhlg/blog/529403" target="_blank" rel="external">来自</a></p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo git clone git@git.coding.net:huixisheng/layout.git</div><div class="line">Cloning into &apos;layout&apos;...</div><div class="line">Permission denied (publickey).</div><div class="line">fatal: Could not read from remote repository.</div></pre></td></tr></table></figure>
-<p><code>ssh -vT git@git.coding.net</code> 是有结果返回的,看了debug信息都是正常的。</p>
-<p>执行如下（期间关闭了翻墙软件）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ssh-add ~/.ssh/gitcodingnet</div><div class="line">source ~/.ssh/config</div></pre></td></tr></table></figure></p>
-<p>再次clone又可以了。没找到为何不行的根本原因</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><a href="http://my.oschina.net/stefanzhlg/blog/529403" target="_blank" rel="external">git 配置多个SSH-Key</a></li>
-<li><a href="https://help.github.com/articles/generating-ssh-keys" target="_blank" rel="external">https://help.github.com/articles/generating-ssh-keys</a></li>
-<li><a href="https://coding.net/help/doc/git/ssh-key.html" target="_blank" rel="external">coding配置SSH公钥</a></li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;本文介绍如何配置&lt;code&gt;ssh-key&lt;/code&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="git" scheme="http://huixisheng.github.io/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>国内镜像源整理</title>
-    <link href="http://huixisheng.github.io/mirror/"/>
-    <id>http://huixisheng.github.io/mirror/</id>
-    <published>2016-10-22T13:02:45.000Z</published>
-    <updated>2016-11-26T02:15:59.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>本文对国内<code>ruby</code>、<code>npm</code>、<code>brew</code>、<code>Composer</code>等镜像源做整理，给前端开发这提供方便。<br><a id="more"></a></p>
-<h2 id="为何写这个文章"><a href="#为何写这个文章" class="headerlink" title="为何写这个文章"></a>为何写这个文章</h2><pre><code>gem install cdnjs-command
-ERROR:  Could not find a valid gem &apos;cdnjs-command&apos; (&gt;= 0), here is why:
-      Unable to download data from https://rubygems.org/ - Errno::EPIPE: Broken pipe - SSL_connect (https://rubygems.org/latest_specs.4.8.gz)
-</code></pre><h2 id="RubyGems-镜像"><a href="#RubyGems-镜像" class="headerlink" title="RubyGems 镜像"></a>RubyGems 镜像</h2><blockquote>
-<p>$ gem sources –add <a href="https://ruby.taobao.org/" target="_blank" rel="external">https://ruby.taobao.org/</a> –remove <a href="https://rubygems.org/" target="_blank" rel="external">https://rubygems.org/</a><br>  $ gem sources -l<br>   <strong><em> CURRENT SOURCES </em></strong><br><a href="https://ruby.taobao.org" target="_blank" rel="external">https://ruby.taobao.org</a></p>
-<h1 id="请确保只有-ruby-taobao-org"><a href="#请确保只有-ruby-taobao-org" class="headerlink" title="请确保只有 ruby.taobao.org"></a>请确保只有 ruby.taobao.org</h1><p>$ gem install rails</p>
-</blockquote>
-<h2 id="NPM-镜像"><a href="#NPM-镜像" class="headerlink" title="NPM 镜像"></a>NPM 镜像</h2><p>每次安装都需要指明 <code>registry</code>，很麻烦</p>
-<blockquote>
-<p>$ npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="external">https://registry.npm.taobao.org</a></p>
-</blockquote>
-<pre><code>vi ~/.npmrc
-</code></pre><p>添加。</p>
-<blockquote>
-<p>registry = <a href="http://registry.npm.taobao.org" target="_blank" rel="external">http://registry.npm.taobao.org</a></p>
-</blockquote>
-<p>或者</p>
-<blockquote>
-<p> npm config set registry “<a href="http://registry.npm.taobao.org" target="_blank" rel="external">http://registry.npm.taobao.org</a>“</p>
-</blockquote>
-<p>通过 <code>npm config ls</code> 可以查看相关配置情况</p>
-<h2 id="Brew镜像"><a href="#Brew镜像" class="headerlink" title="Brew镜像"></a>Brew镜像</h2><blockquote>
-<p>$ cd /usr/local &amp;&amp; git remote set-url origin <a href="https://git.coding.net/homebrew/homebrew.git" target="_blank" rel="external">https://git.coding.net/homebrew/homebrew.git</a><br>$ cd $home &amp;&amp; brew update</p>
-</blockquote>
-<p><a href="https://coding.net/u/cocodingding/pp/84498" target="_blank" rel="external">Brew Brew Brew !</a></p>
-<h2 id="Composer-镜像"><a href="#Composer-镜像" class="headerlink" title="Composer 镜像"></a>Composer 镜像</h2><p>方法1：</p>
-<pre><code>composer config -g repositories.packagist composer http://packagist.phpcomposer.com
-</code></pre><p>方法2：</p>
-<blockquote>
-<p>注意：为了避免安装包的时候都要执行两次查询，切记要添加禁用 packagist 的设置，如下：</p>
-</blockquote>
-<pre><code>{
-    &quot;repositories&quot;: [
-        {&quot;type&quot;: &quot;composer&quot;, &quot;url&quot;: &quot;http://packagist.phpcomposer.com&quot;},
-        {&quot;packagist&quot;: false}
-    ]
-}
-</code></pre><p><a href="http://pkg.phpcomposer.com/" target="_blank" rel="external">Packagist / Composer 中国全量镜像</a></p>
-<p>全局安装</p>
-<pre><code>$ curl -sS https://getcomposer.org/installer | php
-$ mv composer.phar /usr/local/bin/composer
-</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;本文对国内&lt;code&gt;ruby&lt;/code&gt;、&lt;code&gt;npm&lt;/code&gt;、&lt;code&gt;brew&lt;/code&gt;、&lt;code&gt;Composer&lt;/code&gt;等镜像源做整理，给前端开发这提供方便。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="镜像源" scheme="http://huixisheng.github.io/tags/%E9%95%9C%E5%83%8F%E6%BA%90/"/>
-    
-      <category term="npm" scheme="http://huixisheng.github.io/tags/npm/"/>
-    
-      <category term="ruby" scheme="http://huixisheng.github.io/tags/ruby/"/>
-    
-      <category term="Composer" scheme="http://huixisheng.github.io/tags/Composer/"/>
-    
-      <category term="brew" scheme="http://huixisheng.github.io/tags/brew/"/>
     
   </entry>
   
