@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://huixisheng.github.io/"/>
-  <updated>2017-05-30T13:27:19.000Z</updated>
+  <updated>2017-06-04T05:36:01.000Z</updated>
   <id>http://huixisheng.github.io/</id>
   
   <author>
@@ -16,11 +16,95 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>JavaScript如何遍历Object</title>
+    <link href="http://huixisheng.github.io/object-loop/"/>
+    <id>http://huixisheng.github.io/object-loop/</id>
+    <published>2017-06-03T13:50:56.000Z</published>
+    <updated>2017-06-04T05:36:01.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>遍历对象的方法:</p>
+<ol>
+<li>for … in</li>
+<li>Object.getOwnPropertyNames</li>
+<li>Object.keys</li>
+<li>for … of ES6</li>
+<li>Object.values ES7</li>
+<li>Object.entries ES7</li>
+</ol>
+<h2 id="for-…-in"><a href="#for-…-in" class="headerlink" title="for … in"></a><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/for...in" target="_blank" rel="external">for … in</a></h2><blockquote>
+<p>for…in 循环只遍历可枚举属性。像 Array 和 Object 使用内置构造函数所创建的对象都会继承自 Object.prototype 和 String.prototype 的不可枚举属性，例如 String 的 indexOf()  方法或者 Object 的 toString 方法。循环将迭代对象的所有可枚举属性和从它的构造函数的 prototype 继承而来的（包括被覆盖的内建属性）。<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/for...in#描述" target="_blank" rel="external">来自MDN</a></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">let  o = &#123;</div><div class="line">    &apos;name&apos;: &apos;huixisheng&apos;,</div><div class="line">    &apos;mail&apos;:  &apos;huixisheng@gmial.com&apos;</div><div class="line">&#125;</div><div class="line"></div><div class="line">for(let i in o) &#123;</div><div class="line">    console.log(&apos;%s: %s&apos;, i, o[i]);</div><div class="line">    // name: huixisheng</div><div class="line">    // mail: huixisheng@gmial.com</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>仅迭代自身的属性<br>如果你只要考虑对象本身的属性，而不是它的原型，那么使用 getOwnPropertyNames() 或执行  hasOwnProperty() 来确定某属性是否是对象本身的属性 (也能使用propertyIsEnumerable)。另外，如果你知道外部不存在任何的干扰代码，你可以扩展内置原型与检查方法。 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/for...in#仅迭代自身的属性" target="_blank" rel="external">来自MDN</a></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">let  o = &#123;</div><div class="line">  &apos;name&apos;: &apos;huixisheng&apos;,</div><div class="line">  &apos;mail&apos;: &apos;huixisheng@gmial.com&apos;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">function Person() &#123;</div><div class="line">  this.city = &apos;hangzhou&apos;;</div><div class="line">&#125;</div><div class="line">Person.prototype = o;</div><div class="line"></div><div class="line">const objPerson = new Person();</div><div class="line"></div><div class="line">for (let prop in objPerson) &#123;</div><div class="line">  // propertyIsEnumerable 返回一个布尔值，表明指定的属性名是否是当前对象可枚举的自身属性。</div><div class="line">  if (objPerson.hasOwnProperty(prop)) &#123;</div><div class="line">    // objPerson.city: hangzhou</div><div class="line">    // 原型链上的属性不会显示</div><div class="line">    console.log(&apos;objPerson.%s: %s&apos;, prop, objPerson[prop]);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">for(let prop1 in objPerson)&#123;</div><div class="line">  console.log(&apos;objPerson.%s: %s&apos;, prop1, objPerson[prop1]);</div><div class="line">&#125;</div><div class="line">//objPerson.city: hangzhou</div><div class="line">//objPerson.name: huixisheng</div><div class="line">//objPerson.mail: huixisheng@gmial.com</div></pre></td></tr></table></figure>
+<h2 id="Object-getOwnPropertyNames"><a href="#Object-getOwnPropertyNames" class="headerlink" title="Object.getOwnPropertyNames()"></a><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyNames" target="_blank" rel="external">Object.getOwnPropertyNames()</a></h2><blockquote>
+<p>object.getOwnPropertyNames 返回一个数组，该数组对元素是 obj 自身拥有的枚举或不可枚举属性名称字符串。 数组中枚举属性的顺序与通过 for…in 循环（或 Object.keys）迭代该对象属性时一致。 数组中不可枚举属性的顺序未定义。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">//不可枚举属性</div><div class="line">var my_obj = Object.create(&#123;&#125;, &#123;</div><div class="line">  getFoo: &#123;</div><div class="line">    value: function() &#123; return this.foo; &#125;,</div><div class="line">    enumerable: false</div><div class="line">  &#125;</div><div class="line">&#125;);</div><div class="line">my_obj.foo = 1;</div><div class="line"></div><div class="line">console.log(Object.getOwnPropertyNames(my_obj).sort()); // [&quot;foo&quot;, &quot;getFoo&quot;]</div><div class="line">console.log(Object.keys(my_obj)); // [ &apos;foo&apos; ]</div><div class="line">for (var i in my_obj) &#123;</div><div class="line">  console.log(i, my_obj[i]); // foo 1</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">let  o = &#123;</div><div class="line">  &apos;name&apos;: &apos;huixisheng&apos;,</div><div class="line">  &apos;mail&apos;: &apos;huixisheng@gmial.com&apos;</div><div class="line">&#125;</div><div class="line"></div><div class="line">console.log(Object.getOwnPropertyNames(o)); // [ &apos;name&apos;, &apos;mail&apos; ]</div><div class="line">console.log(Object.getOwnPropertyNames(Object).join(&apos;,&apos;)); // length,name,arguments,caller,prototype,assign,create,freeze,getOwnPropertyDescriptor,getOwnPropertyNames,getOwnPropertySymbols,is,isExtensible,isFrozen,isSealed,keys,preventExtensions,seal,defineProperty,defineProperties,getPrototypeOf,setPrototypeOf</div><div class="line">console.log(Object.getOwnPropertyNames(Array).join(&apos;,&apos;)); // length,name,arguments,caller,prototype,isArray,from,of</div><div class="line">console.log(Object.getOwnPropertyNames(Function).join(&apos;,&apos;)); // length,name,arguments,caller,prototype</div><div class="line">console.log(Object.getOwnPropertyNames(Map).join(&apos;,&apos;)); // length,name,arguments,caller,prototype</div></pre></td></tr></table></figure>
+<h2 id="for-…-of"><a href="#for-…-of" class="headerlink" title="for … of"></a><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/for...of" target="_blank" rel="external">for … of</a></h2><blockquote>
+<p>for…of语句在<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/iterable" target="_blank" rel="external">可迭代对象</a>(包括 Array, Map, Set, String, TypedArray，arguments 对象等等)上创建一个迭代循环，对每个不同属性的属性值,调用一个自定义的有执行语句的迭代挂钩.</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">let iterable = new Map([[&quot;a&quot;, 1], [&quot;b&quot;, 2], [&quot;c&quot;, 3]]);</div><div class="line"></div><div class="line">for (let entry of iterable) &#123;</div><div class="line">  console.log(entry);</div><div class="line">&#125;</div><div class="line">// [a, 1]</div><div class="line">// [b, 2]</div><div class="line">// [c, 3]</div><div class="line"></div><div class="line">for (let [key, value] of iterable) &#123;</div><div class="line">  console.log(value);</div><div class="line">&#125;</div><div class="line">// 1</div><div class="line">// 2</div><div class="line">// 3</div></pre></td></tr></table></figure>
+<h2 id="Object-values-ES7"><a href="#Object-values-ES7" class="headerlink" title="Object.values() ES7"></a><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/values" target="_blank" rel="external">Object.values() ES7</a></h2><blockquote>
+<p>Object.values() 方法返回一个给定对象自己的所有可枚举属性值的数组，值的顺序与使用for…in循环的顺序相同 ( 区别在于for-in循环枚举原型链中的属性 )。<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/values#描述" target="_blank" rel="external">来自MDN</a></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">let  o = &#123;</div><div class="line">  &apos;name&apos;: &apos;huixisheng&apos;,</div><div class="line">  &apos;mail&apos;: &apos;huixisheng@gmial.com&apos;</div><div class="line">&#125;;</div><div class="line">Object.values(o); // [&apos;huixisheng&apos;, &apos;huixisheng@gmial.com&apos;]</div></pre></td></tr></table></figure>
+<p>兼容性:</p>
+<ul>
+<li><a href="http://node.green/#ES2017-features-Object-static-methods-Object-values" target="_blank" rel="external">http://node.green/#ES2017-features-Object-static-methods-Object-values</a></li>
+<li><a href="http://kangax.github.io/compat-table/es2016plus/#test-Object_static_methods" target="_blank" rel="external">http://kangax.github.io/compat-table/es2016plus/#test-Object_static_methods</a></li>
+<li><a href="http://www.webbrowsercompatibility.com/" target="_blank" rel="external">http://www.webbrowsercompatibility.com/</a></li>
+</ul>
+<p>Polyfill :</p>
+<ul>
+<li><a href="https://github.com/es-shims/Object.values/blob/18562676e8aa606a47116753c323dd28619dea50/implementation.js" target="_blank" rel="external">shims/Object.values  </a></li>
+<li><a href="https://github.com/tc39/proposal-object-values-entries/blob/master/polyfill.js" target="_blank" rel="external">tc39/proposal-object-values-entries</a></li>
+</ul>
+<h2 id="Object-entries-ES7"><a href="#Object-entries-ES7" class="headerlink" title="Object.entries  ES7"></a><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/entries" target="_blank" rel="external">Object.entries  ES7</a></h2><p>兼容性</p>
+<ul>
+<li><a href="http://node.green/#ES2017-features-Object-static-methods-Object-entries" target="_blank" rel="external">http://node.green/#ES2017-features-Object-static-methods-Object-entries</a></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">let  o = &#123;</div><div class="line">  &apos;name&apos;: &apos;huixisheng&apos;,</div><div class="line">  &apos;mail&apos;: &apos;huixisheng@gmial.com&apos;</div><div class="line">&#125;</div><div class="line"></div><div class="line">for(let [key, value] of Object.entries(o)) &#123;</div><div class="line">  console.log(key, value);</div><div class="line">&#125;</div><div class="line">// name huixisheng</div><div class="line">// mail huixisheng@gmial.com</div></pre></td></tr></table></figure>
+<h2 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h2><ol>
+<li><a href="https://segmentfault.com/q/1010000004580095" target="_blank" rel="external">Object.keys()与 for…in 遍历对象，输出的结果为什么是顺序的</a></li>
+<li><a href="http://www.cnblogs.com/ZSG-DoBestMe/p/5279045.html" target="_blank" rel="external">ES6之6种遍历对象属性的方法</a></li>
+<li><a href="https://www.w3cplus.com/javascript/how-do-i-enumerate-the-properties-of-a-javascript-object.html" target="_blank" rel="external">JavaScript学习笔记：对象属性的枚举</a></li>
+<li><a href="http://huangtengfei.com/2015/03/the-standard-library-of-javascript/" target="_blank" rel="external">JavaScript 学习系列二：Object 对象</a></li>
+<li><a href="https://juejin.im/entry/586a418e61ff4b006bc6a0de" target="_blank" rel="external">Object 对象和 Array 对象</a></li>
+<li><a href="http://yanhaijing.com/javascript/2015/05/09/diff-between-keys-getOwnPropertyNames-forin/" target="_blank" rel="external">详解forin，Object.keys和Object.getOwnPropertyNames的区别</a></li>
+<li><a href="https://imququ.com/post/set-map-weakmap-in-es6.html" target="_blank" rel="external">ES6 中的 Set、Map 和 WeakMap</a></li>
+<li><a href="http://yanhaijing.com/javascript/2015/05/08/member-of-object/" target="_blank" rel="external">http://yanhaijing.com/javascript/2015/05/08/member-of-object/</a></li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;遍历对象的方法:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;for … in&lt;/li&gt;
+&lt;li&gt;Object.getOwnPropertyNames&lt;/li&gt;
+&lt;li&gt;Object.keys&lt;/li&gt;
+&lt;li&gt;for … of ES6&lt;/li&gt;
+&lt;li&gt;Object.values ES7&lt;
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="http://huixisheng.github.io/tags/JavaScript/"/>
+    
+      <category term="Object" scheme="http://huixisheng.github.io/tags/Object/"/>
+    
+  </entry>
+  
+  <entry>
     <title>mac相关技巧整理</title>
     <link href="http://huixisheng.github.io/mac-skill/"/>
     <id>http://huixisheng.github.io/mac-skill/</id>
     <published>2017-05-30T12:00:05.000Z</published>
-    <updated>2017-05-30T13:27:19.000Z</updated>
+    <updated>2017-05-30T14:21:51.000Z</updated>
     
     <content type="html"><![CDATA[<p>整理工作中容易遗忘的小技巧和碰到的问题。</p>
 <h2 id="屏幕共享"><a href="#屏幕共享" class="headerlink" title="屏幕共享"></a>屏幕共享</h2><p>打开 系统偏好设置 -&gt; 共享 -&gt; 屏幕共享。在另外的电脑打开 Finder -&gt; 前往 -&gt; 连接服务器 -&gt; 输入 <code>vnc://ip</code> 访问。或者<code>⌘+K</code></p>
@@ -35,9 +119,9 @@
 <h2 id="如何重置-Mac-上的-NVRAM"><a href="#如何重置-Mac-上的-NVRAM" class="headerlink" title="如何重置 Mac 上的 NVRAM"></a>如何重置 Mac 上的 NVRAM</h2><p>Option + Command + P + R + Power</p>
 <ul>
 <li><a href="https://support.apple.com/zh-cn/HT204063" target="_blank" rel="external">https://support.apple.com/zh-cn/HT204063</a></li>
-<li><a href="https://www.zhihu.com/question/20401972" target="_blank" rel="external">https://www.zhihu.com/question/20401972</a><br>【】<h2 id="Apache"><a href="#Apache" class="headerlink" title="Apache"></a>Apache</h2></li>
+<li><a href="https://www.zhihu.com/question/20401972" target="_blank" rel="external">https://www.zhihu.com/question/20401972</a></li>
 </ul>
-<p>查看是否开启<code>apache</code>服务 <code>ps aux | grep httpd</code> 或者 <code>apachectl status</code></p>
+<h2 id="Apache"><a href="#Apache" class="headerlink" title="Apache"></a>Apache</h2><p>查看是否开启<code>apache</code>服务 <code>ps aux | grep httpd</code> 或者 <code>apachectl status</code></p>
 <p>开启Apache<code>sudo apachectl start</code></p>
 <p>相关的设置目录 <code>/etc/apache2/</code></p>
 <p>扩展阅读</p>
@@ -581,158 +665,56 @@
   </entry>
   
   <entry>
-    <title>调试工具整理</title>
-    <link href="http://huixisheng.github.io/debugger-tool/"/>
-    <id>http://huixisheng.github.io/debugger-tool/</id>
+    <title>spawn和exec简单介绍</title>
+    <link href="http://huixisheng.github.io/nodejs-spawn-exec/"/>
+    <id>http://huixisheng.github.io/nodejs-spawn-exec/</id>
     <published>2016-10-22T13:02:45.000Z</published>
-    <updated>2016-12-23T02:57:09.000Z</updated>
+    <updated>2016-10-22T13:10:37.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h2><p>2016-12-22</p>
-<ul>
-<li>[*] 文章结构修改</li>
-<li>[+] 添加远程调试在线工具</li>
-</ul>
-<p>本文收集整理了浏览器调试工具介绍，手机调试方案，nodejs调试，无线抓包。</p>
+    <content type="html"><![CDATA[<p>谷歌搜了下网上介绍spawn和exec区别的文章还是很详细的，引用相关主要的提到的点。同时结合项目中使用过的脚步了解相关的使用方法。</p>
 <a id="more"></a>
-<h2 id="远程真机调试"><a href="#远程真机调试" class="headerlink" title="远程真机调试"></a>远程真机调试</h2><h3 id="阿里移动质量中心（MQC）-H5测试"><a href="#阿里移动质量中心（MQC）-H5测试" class="headerlink" title="阿里移动质量中心（MQC）-H5测试"></a><a href="https://mqc.aliyun.com/hfive.htm?spm=0.0.0.0.qn7DDr" target="_blank" rel="external">阿里移动质量中心（MQC）-H5测试</a></h3><p>会提供一个测试报告，包含页面加载时间，节点信息，资源资源类型统计，域名资源统计，优化建议,该设备各浏览器的小视频。</p>
-<h3 id="testin"><a href="#testin" class="headerlink" title="testin"></a><a href="http://remote.testin.cn/" target="_blank" rel="external">testin</a></h3><h3 id="优测"><a href="#优测" class="headerlink" title="优测"></a><a href="http://remote.utest.qq.com/deviceSearch?type=remote&amp;brand=Samsung" target="_blank" rel="external">优测</a></h3><h2 id="小程序和微信开发调试"><a href="#小程序和微信开发调试" class="headerlink" title="小程序和微信开发调试"></a>小程序和微信开发调试</h2><h2 id="实时刷新"><a href="#实时刷新" class="headerlink" title="实时刷新"></a>实时刷新</h2><h3 id="FIS"><a href="#FIS" class="headerlink" title="FIS"></a>FIS</h3><h3 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h3><h3 id="BrowserSync"><a href="#BrowserSync" class="headerlink" title="BrowserSync"></a>BrowserSync</h3><h3 id="weflow"><a href="#weflow" class="headerlink" title="weflow"></a><a href="https://weflow.io/" target="_blank" rel="external">weflow</a></h3><h3 id="puer"><a href="#puer" class="headerlink" title="puer"></a><a href="https://github.com/leeluolee/puer" target="_blank" rel="external">puer</a></h3><h3 id="F5"><a href="#F5" class="headerlink" title="F5"></a><a href="http://www.getf5.com/" target="_blank" rel="external">F5</a></h3><h2 id="开发者调试"><a href="#开发者调试" class="headerlink" title="开发者调试"></a>开发者调试</h2><h3 id="spy-debugger"><a href="#spy-debugger" class="headerlink" title="spy-debugger"></a><a href="https://github.com/wuchangming/spy-debugger" target="_blank" rel="external">spy-debugger</a></h3><h3 id="https-ant-tool-github-io-dora-html"><a href="#https-ant-tool-github-io-dora-html" class="headerlink" title="https://ant-tool.github.io/dora.html"></a><a href="https://ant-tool.github.io/dora.html" target="_blank" rel="external">https://ant-tool.github.io/dora.html</a></h3><h2 id="浏览器调试"><a href="#浏览器调试" class="headerlink" title="浏览器调试"></a>浏览器调试</h2><p><a href="http://ued.taobao.com/blog/2012/06/debug-with-chrome-dev-tool/" target="_blank" rel="external">chrome developer tool 调试技巧</a>谷歌浏览器调试比较基础的文章，期待补充和完善。</p>
-<p><a href="http://www.ueder.net/html5-Slides/slides.html#slide-1" target="_blank" rel="external">Chrome Developer Tools 功能与技巧详解</a></p>
-<p><a href="http://isux.tencent.com/chrome-workspace.html" target="_blank" rel="external">开发者调试工具Chrome Workspace</a><br>开发者工具中调试修改js或者css同时自动保存文件，能够避免开发人员在工具中调试好，再到编辑器中修改一次代码的重复操作，能够提高一定的效率</p>
-<p><a href="http://www.opera.com/dragonfly/documentation/" target="_blank" rel="external"><del>Opera Dragonfly documentation</del></a></p>
-<p><a href="https://developer.chrome.com/devtools/docs/mobile-emulation" target="_blank" rel="external">Mobile emulation</a> 模拟器</p>
-<p><a href="http://www.alloyteam.com/2014/02/browser-sync-responsive-web-development-and-debugging-tool/" target="_blank" rel="external">Browser-Sync：响应式Web开发调试利器</a></p>
-<p><a href="chrome://net-internals/#export" target="_blank" rel="external">Chrome也自带抓包功能</a></p>
-<h2 id="WebApp调试"><a href="#WebApp调试" class="headerlink" title="WebApp调试"></a>WebApp调试</h2><ul>
-<li><a href="https://github.com/WechatFE/vConsole" target="_blank" rel="external">https://github.com/WechatFE/vConsole</a></li>
-<li><a href="https://github.com/AlloyTeam/AlloyLever/" target="_blank" rel="external">https://github.com/AlloyTeam/AlloyLever/</a></li>
-</ul>
-<p><a href="http://thx.github.io/mobile/debugging-in-mobile/" target="_blank" rel="external">无线调试攻略</a><br>少年天才以外的我们，与其说是 coder,不如说是 debugger，都是一路调戏过来的，不好意思，是调试【本人口齿不清，发音不准，再发生类似事故请多多见谅】，因此当你 主动/被动 All in 了无线以后，你发现，知识的储备只是时间的积累和有意识的训练而已，可面对众多的 爱疯，案桌儿，山柴，内核不同，大小不一的设备。尼玛，没有个顺手的调试工具，简直是不能忍受的。</p>
-<p><a href="https://speakerdeck.com/paulguo/h5-mobile-kai-fa-diao-shi-shi-jian" target="_blank" rel="external">H5 Mobile 开发调试实践 by 破锣锅</a> 总结的很详细</p>
-<p><a href="http://oceanzhu.com/archives/74" target="_blank" rel="external">手机上怎么抓包调试</a><br>纳尼，手机也可以抓包，不可思议，赶紧试试吧</p>
-<p><a href="https://getfirebug.com/firebuglite" target="_blank" rel="external">Firebug Lite: doing the Firebug way, anywhere.</a><br>亲，还在为ie6的调试而苦恼吗？Firebug值得一试。</p>
-<p><a href="http://wyqbailey.diandian.com/post/2011-11-09/20511143" target="_blank" rel="external">远程调试工具-weinre</a>Web Inspector Remote（远程 Web 调试工具），功能和 Firebug、Webkit Inspector 类似，可以帮助我们在 PC 端远程调试运行在移动设备浏览器内的 Web 页面或应用，能够即时调试 DOM 元素、 CSS 样式 和 JavaScript 等。</p>
-<p><a href="https://www.imququ.com/post/remote-debugging-with-weinre.html" target="_blank" rel="external">用Weinre远程调试移动网页</a></p>
-<p><a href="http://www.cnblogs.com/lhb25/p/debug-mobile-site-and-app-with-weinre.html" target="_blank" rel="external">使用 Weinre 调试移动网站及 PhoneGap 应用</a><code>node</code>版更适合前端。</p>
-<p><a href="http://debug.build.phonegap.com/" target="_blank" rel="external">在线Weinre</a></p>
-<p><a href="https://reader.mx/p/1391" target="_blank" rel="external">浏览器远程调试</a><br>对比了 Firefox、Chrome、Opera 三大浏览器的远程调试工具</p>
-<p><a href="https://github.com/jieyou/remote_inspect_web_on_real_device" target="_blank" rel="external">真机远程调试-remote inspect web on real device</a></p>
-<p><a href="http://44ux.com/blog/2013/02/25/using-web-debugging-proxies/" target="_blank" rel="external">善用 Web 调试代理工具</a></p>
-<p><a href="http://code.tutsplus.com/tutorials/using-web-debugging-proxies--net-29828" target="_blank" rel="external">Using Web Debugging Proxies</a></p>
-<p><a href="https://developer.chrome.com/devtools/docs/remote-debugging?hl=zh-CN" target="_blank" rel="external">Remote Debugging on Android with Chrome</a> 谷歌浏览器实现安装的远程调试</p>
-<p><a href="https://github.com/CN-Chrome-DevTools/CN-Chrome-DevTools" target="_blank" rel="external">Chrome开发者工具中文手册</a></p>
-<p><a href="http://www.iunbug.com/mihtool-zh" target="_blank" rel="external">MIHTool 是前端工程师在iOS设备上调试和优化页面的得力助手</a></p>
-<p><a href="https://creative.adobe.com/zh-tw/products/inspect" target="_blank" rel="external">Edge Inspect</a>方便的跨平台同步预览工具</p>
-<p><a href="http://jsconsole.com/" target="_blank" rel="external">jsconsole</a>是一个风格和Weinre类似的工具，它更多地关注于控制台输出和代码求值。在访问JSConsole的网站的时候，用户输入“:listen”来获得带有GUID的一段JavaScript代码。这段代码需要被加入到待调试的网页中。于是，在加载网页的时候，代码将会连接到JSConsole服务器，并且根据GUID将此会话和用户的会话关联起来，于是用户浏览器中的控制台现在便已经处于待调试网页的JavaScript运行时环境中了。</p>
-<p><a href="http://blog.wpjam.com/m/ios-safari-remote-debugging/" target="_blank" rel="external">通过 Mac 远程调试 iPhone/iPad 上的网页</a></p>
-<p><a href="http://blog.segmentfault.com/humphry/1190000000313211?page=1#c-1190000000313211-1050000000349151" target="_blank" rel="external">整理：手机端网页调试方案</a></p>
-<h2 id="node-js调试"><a href="#node-js调试" class="headerlink" title="node.js调试"></a>node.js调试</h2><p><a href="http://www.cnblogs.com/dolphinX/p/3485345.html" target="_blank" rel="external">node.js调试</a><br>你还在一个个<code>console.log()</code>，那么你out啦</p>
-<h3 id="devtool"><a href="#devtool" class="headerlink" title="devtool"></a><a href="https://github.com/Jam3/devtool" target="_blank" rel="external">devtool</a></h3><p>Runs Node.js programs inside Chrome DevTools (using Electron).</p>
-<p>监测脚步变动自动重启命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">devtool scripts/parse.js --watch</div></pre></td></tr></table></figure></p>
-<p>对应有<a href="https://github.com/remy/nodemon" target="_blank" rel="external"><code>nodemon</code></a>,目前这个是最符合我需求的。还有    <code>Superviso</code> <code>node-dev</code></p>
-<h3 id="iron-node"><a href="#iron-node" class="headerlink" title="iron-node"></a>iron-node</h3><h3 id="node-inspector"><a href="#node-inspector" class="headerlink" title="node-inspector"></a>node-inspector</h3><h3 id="node-debugger"><a href="#node-debugger" class="headerlink" title="node-debugger"></a>node-debugger</h3><h3 id="WebStorm集成的调试器"><a href="#WebStorm集成的调试器" class="headerlink" title="WebStorm集成的调试器"></a>WebStorm集成的调试器</h3><h2 id="抓包工具"><a href="#抓包工具" class="headerlink" title="抓包工具"></a>抓包工具</h2><ul>
-<li><a href="http://weibo.com/ttarticle/p/show?id=2309404034831301405232&amp;mod=zwenzhang?comment=1&amp;sudaref=www.google.co.jp&amp;retcode=6102" target="_blank" rel="external">whistle</a></li>
-<li><a href="http://www.alloyteam.com/2014/07/nodejs-debug-proxy-livepool/" target="_blank" rel="external">【开源项目】LivePool：基于 NodeJs 的跨平台 Web 抓包替换工具</a></li>
-<li><a href="http://www.httpwatch.com/download/" target="_blank" rel="external">HttpWatch</a></li>
-<li><a href="http://www.ieinspector.com/" target="_blank" rel="external">HttpAnalyzerStd</a></li>
-<li><a href="http://www.tcpdump.org/" target="_blank" rel="external">tcpdump</a></li>
-<li><a href="http://www.wireshark.org/" target="_blank" rel="external">wireshark</a> 文章推荐：<a href="http://www.cnblogs.com/TankXiao/archive/2012/10/10/2711777.html" target="_blank" rel="external">Wireshark基本介绍和学习TCP三次握手</a></li>
-<li><a href="http://goddyzhao.me/nproxy/" target="_blank" rel="external">NProxy</a> 文章推荐：<a href="NProxy——Mac和Linux平台下的Fiddler">NProxy——Mac和Linux平台下的Fiddler</a></li>
-</ul>
-<h3 id="Fiddler"><a href="#Fiddler" class="headerlink" title="Fiddler"></a><a href="http://www.telerik.com/fiddler" target="_blank" rel="external">Fiddler</a></h3><ul>
-<li><a href="https://www.imququ.com/post/user-fiddler-on-macos.html" target="_blank" rel="external">如何在 Mac 下使用 Fiddler</a></li>
-<li><a href="http://www.welefen.com/fiddler-base-on-chrome-extension.html" target="_blank" rel="external">基于Chrome扩展的Fiddler</a></li>
-</ul>
-<h3 id="Mac平台"><a href="#Mac平台" class="headerlink" title="Mac平台"></a>Mac平台</h3><ul>
-<li><a href="http://zh.blog.goddyzhao.me/post/35906061908/nproxy-fiddler-in-mac-and-linux" target="_blank" rel="external">NProxy——Mac和Linux平台下的Fiddler</a></li>
-<li><a href="http://www.charlesproxy.com/" target="_blank" rel="external">Charles</a> <a href="http://www.baidufe.com/item/8a53eea855cb6289993f.html" target="_blank" rel="external">使用charles proxy for Mac来抓取手机App的网络包</a> <a href="http://www.36ria.com/6278" target="_blank" rel="external">Charles(最强大的http调试工具)详细教程（上）</a> <a href="http://www.36ria.com/6303" target="_blank" rel="external">Charles(最强大的http调试工具)详细教程（下）</a></li>
-</ul>
-<h2 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h2><ul>
-<li><a href="http://tid.tenpay.com/?p=6161" target="_blank" rel="external">远程调试(Remote Debugging)</a></li>
-<li><a href="https://github.com/jieyou/remote_inspect_web_on_real_device" target="_blank" rel="external">各种 真机远程调试 方法 汇总</a></li>
-<li><a href="http://wiki.jikexueyuan.com/project/chrome-devtools/remote-debugging-on-android.html" target="_blank" rel="external">http://wiki.jikexueyuan.com/project/chrome-devtools/remote-debugging-on-android.html</a></li>
-<li><a href="http://www.jianshu.com/p/82ab631502e1" target="_blank" rel="external">http://www.jianshu.com/p/82ab631502e1</a></li>
-<li><a href="http://yujiangshui.com/multidevice-frontend-debug/" target="_blank" rel="external">http://yujiangshui.com/multidevice-frontend-debug/</a></li>
-<li><a href="http://div.io/topic/1449" target="_blank" rel="external">http://div.io/topic/1449</a></li>
-<li><a href="http://alloyteam.github.io/Spirit/modules/Mobug/" target="_blank" rel="external">http://alloyteam.github.io/Spirit/modules/Mobug/</a></li>
-<li><a href="https://github.com/hongru/horn" target="_blank" rel="external">https://github.com/hongru/horn</a></li>
-<li><a href="https://github.com/kaiye/kaiye.github.com/issues/4" target="_blank" rel="external">https://github.com/kaiye/kaiye.github.com/issues/4</a></li>
-<li><a href="https://github.com/riskers/blog/issues/11" target="_blank" rel="external">https://github.com/riskers/blog/issues/11</a></li>
-<li><a href="https://gold.xitu.io/entry/5851e77d61ff4b006c8414dd" target="_blank" rel="external">https://gold.xitu.io/entry/5851e77d61ff4b006c8414dd</a></li>
-<li><a href="https://www.zhihu.com/question/20322475" target="_blank" rel="external">https://www.zhihu.com/question/20322475</a></li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;更新日志&quot;&gt;&lt;a href=&quot;#更新日志&quot; class=&quot;headerlink&quot; title=&quot;更新日志&quot;&gt;&lt;/a&gt;更新日志&lt;/h2&gt;&lt;p&gt;2016-12-22&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;[*] 文章结构修改&lt;/li&gt;
-&lt;li&gt;[+] 添加远程调试在线工具&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;本文收集整理了浏览器调试工具介绍，手机调试方案，nodejs调试，无线抓包。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="前端工具" scheme="http://huixisheng.github.io/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/"/>
-    
-      <category term="前端资源" scheme="http://huixisheng.github.io/tags/%E5%89%8D%E7%AB%AF%E8%B5%84%E6%BA%90/"/>
-    
-      <category term="调试" scheme="http://huixisheng.github.io/tags/%E8%B0%83%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>git操作常见问题汇总</title>
-    <link href="http://huixisheng.github.io/git-problem/"/>
-    <id>http://huixisheng.github.io/git-problem/</id>
-    <published>2016-10-22T13:02:45.000Z</published>
-    <updated>2016-11-25T15:04:43.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>平常工作中常用的<code>git</code>操作命令。</p>
-<a id="more"></a>
-<h2 id="git添加空目录"><a href="#git添加空目录" class="headerlink" title="git添加空目录"></a>git添加空目录</h2><p>在空目录下建<code>.gitignore</code><br>内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># 忽略所有文件</div><div class="line">*</div><div class="line"># 除了这个文件</div><div class="line">!.gitignore</div></pre></td></tr></table></figure></p>
-<h2 id="git忽略已经被提交的文件"><a href="#git忽略已经被提交的文件" class="headerlink" title="git忽略已经被提交的文件"></a>git忽略已经被提交的文件</h2><p>直接<code>rm</code> 然后 <code>git  add .</code>本地磁盘也会被删除。我们要的是删除版本库的文件，并忽略。使用如下方法处理:</p>
-<p>忽略文件夹 <code>git rm -r --cached cache/*</code> 然后在 <code>.gitignore</code>忽略删除的文件。注意<code>git rm --cached</code> 删除的是追踪状态</p>
-<h2 id="git-忽略已经提交的文件的修改"><a href="#git-忽略已经提交的文件的修改" class="headerlink" title="git 忽略已经提交的文件的修改"></a>git 忽略已经提交的文件的修改</h2><p><code>git update-index --assume-unchanged .env</code><br>重置之前添加的忽略<br><code>git update-index --no-assume-unchanged .env</code></p>
-<h2 id="同步github-fork原作者分支的修改"><a href="#同步github-fork原作者分支的修改" class="headerlink" title="同步github fork原作者分支的修改"></a>同步<code>github</code> fork原作者分支的修改</h2><p>假设当前在fork <code>hexo-theme-amazeui</code>并<code>clone</code> <code>fork</code>后的分支的终端上：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git remote add remote-hexo https://github.com/huixisheng/hexo-theme-amazeui.git</div><div class="line">git fetch remote-hexo</div><div class="line">git merge remote-hexo/master</div></pre></td></tr></table></figure></p>
-<p>参考</p>
-<ul>
-<li><a href="http://jinlong.github.io/2015/10/12/syncing-a-fork/" target="_blank" rel="external">如何同步 Github fork 出来的分支</a></li>
-<li><a href="http://www.cnblogs.com/rubylouvre/archive/2013/01/24/2874694.html" target="_blank" rel="external">如何在github上fork一个项目来贡献代码以及同步原作者的修改</a></li>
-</ul>
-<h2 id="同步远程删除的分支"><a href="#同步远程删除的分支" class="headerlink" title="同步远程删除的分支"></a>同步远程删除的分支</h2><p>执行<code>git push origin :test-branch</code>, 远程<code>test-branch</code>已经删除了，但本地还在，<code>git branch -a</code>还可以看到<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">error: unable to delete ‘test-branch’: remote ref does not exist</div><div class="line">error: failed to push some refs to ‘git@github.com:huixisheng/huixisheng.github.com.git’</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git remote update --prune</div></pre></td></tr></table></figure>
-<h2 id="git-恢复单个文件的历史版本"><a href="#git-恢复单个文件的历史版本" class="headerlink" title="git 恢复单个文件的历史版本"></a>git 恢复单个文件的历史版本</h2><blockquote>
-<p>首先查看该文件的历史版本信息：git log Default@2x.png<br>记录下需要恢复的commit版本号：如 9aa51d89799716aa68cff3f30c26f8815408e926<br>恢复该文件：git reset 9aa51d89799716aa68cff3f30c26f8815408e926 Default@2x.png<br>还需要执行git checkout Default@2x.png<br>提交git:git commit -m “回滚Default@2x.png的历史版本”</p>
+<h2 id="spawn"><a href="#spawn" class="headerlink" title="spawn"></a>spawn</h2><blockquote>
+<p>spawn方法创建一个子进程来执行特定命令，用法与execFile方法类似，但是没有回调函数，只能通过监听事件，来获取运行结果。它属于异步执行，适用于子进程长时间运行的情况。<a href="http://javascript.ruanyifeng.com/nodejs/child-process.html#toc3" target="_blank" rel="external">来自Child Process模块</a></p>
 </blockquote>
-<p><a href="https://segmentfault.com/q/1010000002464973" target="_blank" rel="external">git 如何还原某个文件</a>一文提到更加简单的方法</p>
+<p>在<code>node v0.11.12</code>相应的同步方法。记得不支持同步方法<code>node</code>版本中有对应的模块<a href="https://www.npmjs.com/package/spawn-sync" target="_blank" rel="external">spawn-sync</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">child_process.spawnSync(command[, args][, options])</div><div class="line">Added in: v0.11.12</div></pre></td></tr></table></figure>
+<p>早期简单实现了同步读取数据</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> cp = <span class="built_in">require</span>(<span class="string">'child_process'</span>);</div><div class="line"><span class="keyword">var</span> assert = <span class="built_in">require</span>(<span class="string">'assert'</span>);</div><div class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</div><div class="line"><span class="keyword">var</span> input = &#123;</div><div class="line">    <span class="string">"prid"</span> : productId</div><div class="line">&#125;;</div><div class="line">input = <span class="built_in">JSON</span>.stringify(input);</div><div class="line">args = args || &#123;&#125;;</div><div class="line"><span class="keyword">var</span> requestPath = path.join(__dirname, <span class="string">'queryProduct.js'</span>);</div><div class="line"><span class="keyword">var</span> cmd = process.execPath;</div><div class="line"><span class="keyword">var</span> _args = [requestPath, input];</div><div class="line"><span class="keyword">var</span> res = cp.spawnSync(cmd, _args, &#123;</div><div class="line">    <span class="attr">timeout</span>: (args.timeout || <span class="number">3000</span>) + <span class="number">1000</span></div><div class="line">&#125;);</div><div class="line"><span class="comment">// console.log(res.stdout.toString('utf8'));</span></div><div class="line"><span class="keyword">return</span> <span class="built_in">JSON</span>.parse(res.stdout.toString(<span class="string">'utf8'</span>));</div></pre></td></tr></table></figure>
+<p>queryProduct.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">async.series([</div><div class="line">    function(cb)&#123;</div><div class="line">        conn.query(sql, function(err, res)&#123;</div><div class="line">            var row = res[0];</div><div class="line">            cb(null, row);</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line">], function(err, result)&#123;</div><div class="line">    if( err )&#123;</div><div class="line">        console.error(err.message);</div><div class="line">        process.exit(1);</div><div class="line">    &#125; else &#123;</div><div class="line">        console.log(JSON.stringify(result[0]));</div><div class="line">    &#125;</div><div class="line">    conn.end();</div><div class="line">    process.exit(0);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h2 id="exec"><a href="#exec" class="headerlink" title="exec"></a>exec</h2><p>有对于的同步方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">child_process.execSync(command[, options])#</div><div class="line">Added in: v0.11.12</div></pre></td></tr></table></figure></p>
+<p><code>child_process.execSync</code><br>使用实例，合并当前的操作分支到test,并推送到远程的test分支</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/env node</div><div class="line"></div><div class="line">// chmod +x</div><div class="line">var child = require(&apos;child_process&apos;);</div><div class="line">var execSync = require(&apos;child_process&apos;).execSync;</div><div class="line"></div><div class="line">// @todo</div><div class="line">var gstOutput = spawnSync(&apos;git branch&apos;, []);</div><div class="line">var currentBranch = getCurrentBranch();</div><div class="line">console.log(&apos;切换到test分支:&apos;);</div><div class="line">var gcOutput = execSync(&apos;git checkout test&apos;);</div><div class="line">console.log(&apos;合并分支&apos; + currentBranch);</div><div class="line">var megerOutPut = execSync(&apos;git merge &apos; + currentBranch);</div><div class="line">console.log(&apos;推送test分支&apos;);</div><div class="line">execSync(&apos;git pull origin test &amp;&amp; git push origin test &amp;&amp; npm run sync&apos;);</div><div class="line">console.log(&apos;切换到&apos; + currentBranch);</div><div class="line">execSync(&apos;git checkout &apos; + currentBranch);</div><div class="line"></div><div class="line">// git branch | grep &quot;*&quot;  简写</div><div class="line">function getCurrentBranch()&#123;</div><div class="line">  var execOutput = execSync(&apos;git branch&apos;, &#123;&#125;);</div><div class="line">  var outputContent = execOutput.toString();</div><div class="line">  var arr = outputContent.split(&apos;\n&apos;);</div><div class="line">  for(var i = arr.length - 1; i &gt;= 0; i--)&#123;</div><div class="line">    if( arr[i].indexOf(&apos;*&apos;) &gt;= 0 )&#123;</div><div class="line">      return arr[i].replace(&apos;*&apos;, &apos;&apos;).trim();</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  return &apos;&apos;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <blockquote>
-<p>直接用 git-checkout 即可。理解起来稍微有点奇怪就是了。<br><code>$ git checkout ${commit} /path/to/file</code></p>
+<p>exec方法用于执行bash命令，它的参数是一个命令字符串。<br>如果用户输入恶意代码，将会带来安全风险。因此，在有用户输入的情况下，最好不使用exec方法，而是使用execFile方法。</p>
 </blockquote>
-<h2 id="撤销git-add的文件的修改"><a href="#撤销git-add的文件的修改" class="headerlink" title="撤销git add的文件的修改"></a>撤销git add的文件的修改</h2><p><code>git reset HEAD README.md</code></p>
-<p>通过<code>git status</code>可以查看相关的操作</p>
-<p>参考</p>
-<ul>
-<li><a href="https://segmentfault.com/a/1190000006185954" target="_blank" rel="external">git的reset和checkout的区别</a></li>
-<li><a href="https://yhhwpp.github.io/2016/10/31/Git-%E4%B8%AD-Reset%E3%80%81Revert%E3%80%81Checkout%E7%9A%84%E5%8C%BA%E5%88%AB/" target="_blank" rel="external">Git 中 Reset、Revert、Checkout的区别</a></li>
-</ul>
-<p>结论:</p>
-<ol>
-<li><code>git reset</code>是会修改版本历史的，丢弃掉一些版本历史。</li>
-<li><code>git revert</code>是根据那个commit逆向生成一个新的commit，版本历史是不会被破坏的。</li>
-<li><code>git checkout</code>用于切换分支</li>
-</ol>
+<h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><blockquote>
+<p>虽然在上面的文档用法中，spwan和exec的最终回调方式有区别，但是在node的实现中，其实两者的实现方式是一致的，exec也可以像spawn一样使用，只不过exec在触发stderr和stdout的data事件的时候，会把数据写到字符串中，到执行结束或者错误退出的时候通过回调函数传递出来，实现了exec这种便捷用法。<a href="http://deadhorse.me/nodejs/2011/12/18/nodejs%E4%B8%ADchild_process%E6%A8%A1%E5%9D%97%E7%9A%84exec%E6%96%B9%E6%B3%95%E5%92%8Cspawn%E6%96%B9%E6%B3%95.html" target="_blank" rel="external">来自exec与spawn方法的区别与陷阱</a></p>
+<p>使用exec默认最大是200k。<br>超出时会报一个错误： “Error: maxBuffer exceeded”</p>
+</blockquote>
+<p><a href="http://div.io/topic/1516" target="_blank" rel="external">使用node子进程spawn,exec踩过的坑</a> 提到exec和spawn的源码区分</p>
+<blockquote>
+<p>断点进去看后，豁然开朗，exec是对execFile的封装，execFile又是对spawn的封装。</p>
+</blockquote>
+<h3 id="exec和spawn的使用区分来自使用node子进程spawn-exec踩过的坑"><a href="#exec和spawn的使用区分来自使用node子进程spawn-exec踩过的坑" class="headerlink" title="exec和spawn的使用区分来自使用node子进程spawn,exec踩过的坑"></a>exec和spawn的使用区分<a href="http://div.io/topic/1516" target="_blank" rel="external">来自使用node子进程spawn,exec踩过的坑</a></h3><p>不过exec确实比spawn在使用上面要好很多</p>
+<p>例如我们执行一个命令</p>
+<p>使用exec</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">require(&apos;child_process&apos;).exec(&apos;edp webserver start&apos;);</div></pre></td></tr></table></figure>
+<p>使用spawn</p>
+<p>linux下这么搞</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var child = require(&apos;child_process&apos;).spawn(</div><div class="line">&apos;/bin/sh&apos;, [&apos;-c&apos;,&apos;edp webserver start&apos;], &#123; cwd: null, env: null, windowsVerbatimArguments: false &#125; );</div></pre></td></tr></table></figure>
+<p>win下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"> var child = require(&apos;child_process&apos;).spawn(</div><div class="line">&apos;cmd.exe&apos;, [&apos;/s&apos;, &apos;/c&apos;, &apos;edp webserver start&apos;], &#123; cwd: null, env: null, windowsVerbatimArguments: true &#125; );</div></pre></td></tr></table></figure>
+<p>可见spawn还是比较麻烦的。</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;平常工作中常用的&lt;code&gt;git&lt;/code&gt;操作命令。&lt;/p&gt;
+      &lt;p&gt;谷歌搜了下网上介绍spawn和exec区别的文章还是很详细的，引用相关主要的提到的点。同时结合项目中使用过的脚步了解相关的使用方法。&lt;/p&gt;
     
     </summary>
     
     
-      <category term="git" scheme="http://huixisheng.github.io/tags/git/"/>
+      <category term="nodejs" scheme="http://huixisheng.github.io/tags/nodejs/"/>
     
   </entry>
   
@@ -839,56 +821,228 @@ $ ssh-add ~/.ssh/git.oschina.net
   </entry>
   
   <entry>
-    <title>spawn和exec简单介绍</title>
-    <link href="http://huixisheng.github.io/nodejs-spawn-exec/"/>
-    <id>http://huixisheng.github.io/nodejs-spawn-exec/</id>
+    <title>国内镜像源整理</title>
+    <link href="http://huixisheng.github.io/mirror/"/>
+    <id>http://huixisheng.github.io/mirror/</id>
     <published>2016-10-22T13:02:45.000Z</published>
-    <updated>2016-10-22T13:10:37.000Z</updated>
+    <updated>2016-11-26T02:15:59.000Z</updated>
     
-    <content type="html"><![CDATA[<p>谷歌搜了下网上介绍spawn和exec区别的文章还是很详细的，引用相关主要的提到的点。同时结合项目中使用过的脚步了解相关的使用方法。</p>
-<a id="more"></a>
-<h2 id="spawn"><a href="#spawn" class="headerlink" title="spawn"></a>spawn</h2><blockquote>
-<p>spawn方法创建一个子进程来执行特定命令，用法与execFile方法类似，但是没有回调函数，只能通过监听事件，来获取运行结果。它属于异步执行，适用于子进程长时间运行的情况。<a href="http://javascript.ruanyifeng.com/nodejs/child-process.html#toc3" target="_blank" rel="external">来自Child Process模块</a></p>
+    <content type="html"><![CDATA[<p>本文对国内<code>ruby</code>、<code>npm</code>、<code>brew</code>、<code>Composer</code>等镜像源做整理，给前端开发这提供方便。<br><a id="more"></a></p>
+<h2 id="为何写这个文章"><a href="#为何写这个文章" class="headerlink" title="为何写这个文章"></a>为何写这个文章</h2><pre><code>gem install cdnjs-command
+ERROR:  Could not find a valid gem &apos;cdnjs-command&apos; (&gt;= 0), here is why:
+      Unable to download data from https://rubygems.org/ - Errno::EPIPE: Broken pipe - SSL_connect (https://rubygems.org/latest_specs.4.8.gz)
+</code></pre><h2 id="RubyGems-镜像"><a href="#RubyGems-镜像" class="headerlink" title="RubyGems 镜像"></a>RubyGems 镜像</h2><blockquote>
+<p>$ gem sources –add <a href="https://ruby.taobao.org/" target="_blank" rel="external">https://ruby.taobao.org/</a> –remove <a href="https://rubygems.org/" target="_blank" rel="external">https://rubygems.org/</a><br>  $ gem sources -l<br>   <strong><em> CURRENT SOURCES </em></strong><br><a href="https://ruby.taobao.org" target="_blank" rel="external">https://ruby.taobao.org</a></p>
+<h1 id="请确保只有-ruby-taobao-org"><a href="#请确保只有-ruby-taobao-org" class="headerlink" title="请确保只有 ruby.taobao.org"></a>请确保只有 ruby.taobao.org</h1><p>$ gem install rails</p>
 </blockquote>
-<p>在<code>node v0.11.12</code>相应的同步方法。记得不支持同步方法<code>node</code>版本中有对应的模块<a href="https://www.npmjs.com/package/spawn-sync" target="_blank" rel="external">spawn-sync</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">child_process.spawnSync(command[, args][, options])</div><div class="line">Added in: v0.11.12</div></pre></td></tr></table></figure>
-<p>早期简单实现了同步读取数据</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> cp = <span class="built_in">require</span>(<span class="string">'child_process'</span>);</div><div class="line"><span class="keyword">var</span> assert = <span class="built_in">require</span>(<span class="string">'assert'</span>);</div><div class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</div><div class="line"><span class="keyword">var</span> input = &#123;</div><div class="line">    <span class="string">"prid"</span> : productId</div><div class="line">&#125;;</div><div class="line">input = <span class="built_in">JSON</span>.stringify(input);</div><div class="line">args = args || &#123;&#125;;</div><div class="line"><span class="keyword">var</span> requestPath = path.join(__dirname, <span class="string">'queryProduct.js'</span>);</div><div class="line"><span class="keyword">var</span> cmd = process.execPath;</div><div class="line"><span class="keyword">var</span> _args = [requestPath, input];</div><div class="line"><span class="keyword">var</span> res = cp.spawnSync(cmd, _args, &#123;</div><div class="line">    <span class="attr">timeout</span>: (args.timeout || <span class="number">3000</span>) + <span class="number">1000</span></div><div class="line">&#125;);</div><div class="line"><span class="comment">// console.log(res.stdout.toString('utf8'));</span></div><div class="line"><span class="keyword">return</span> <span class="built_in">JSON</span>.parse(res.stdout.toString(<span class="string">'utf8'</span>));</div></pre></td></tr></table></figure>
-<p>queryProduct.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">async.series([</div><div class="line">    function(cb)&#123;</div><div class="line">        conn.query(sql, function(err, res)&#123;</div><div class="line">            var row = res[0];</div><div class="line">            cb(null, row);</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line">], function(err, result)&#123;</div><div class="line">    if( err )&#123;</div><div class="line">        console.error(err.message);</div><div class="line">        process.exit(1);</div><div class="line">    &#125; else &#123;</div><div class="line">        console.log(JSON.stringify(result[0]));</div><div class="line">    &#125;</div><div class="line">    conn.end();</div><div class="line">    process.exit(0);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<h2 id="exec"><a href="#exec" class="headerlink" title="exec"></a>exec</h2><p>有对于的同步方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">child_process.execSync(command[, options])#</div><div class="line">Added in: v0.11.12</div></pre></td></tr></table></figure></p>
-<p><code>child_process.execSync</code><br>使用实例，合并当前的操作分支到test,并推送到远程的test分支</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/env node</div><div class="line"></div><div class="line">// chmod +x</div><div class="line">var child = require(&apos;child_process&apos;);</div><div class="line">var execSync = require(&apos;child_process&apos;).execSync;</div><div class="line"></div><div class="line">// @todo</div><div class="line">var gstOutput = spawnSync(&apos;git branch&apos;, []);</div><div class="line">var currentBranch = getCurrentBranch();</div><div class="line">console.log(&apos;切换到test分支:&apos;);</div><div class="line">var gcOutput = execSync(&apos;git checkout test&apos;);</div><div class="line">console.log(&apos;合并分支&apos; + currentBranch);</div><div class="line">var megerOutPut = execSync(&apos;git merge &apos; + currentBranch);</div><div class="line">console.log(&apos;推送test分支&apos;);</div><div class="line">execSync(&apos;git pull origin test &amp;&amp; git push origin test &amp;&amp; npm run sync&apos;);</div><div class="line">console.log(&apos;切换到&apos; + currentBranch);</div><div class="line">execSync(&apos;git checkout &apos; + currentBranch);</div><div class="line"></div><div class="line">// git branch | grep &quot;*&quot;  简写</div><div class="line">function getCurrentBranch()&#123;</div><div class="line">  var execOutput = execSync(&apos;git branch&apos;, &#123;&#125;);</div><div class="line">  var outputContent = execOutput.toString();</div><div class="line">  var arr = outputContent.split(&apos;\n&apos;);</div><div class="line">  for(var i = arr.length - 1; i &gt;= 0; i--)&#123;</div><div class="line">    if( arr[i].indexOf(&apos;*&apos;) &gt;= 0 )&#123;</div><div class="line">      return arr[i].replace(&apos;*&apos;, &apos;&apos;).trim();</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  return &apos;&apos;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="NPM-镜像"><a href="#NPM-镜像" class="headerlink" title="NPM 镜像"></a>NPM 镜像</h2><p>每次安装都需要指明 <code>registry</code>，很麻烦</p>
 <blockquote>
-<p>exec方法用于执行bash命令，它的参数是一个命令字符串。<br>如果用户输入恶意代码，将会带来安全风险。因此，在有用户输入的情况下，最好不使用exec方法，而是使用execFile方法。</p>
+<p>$ npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="external">https://registry.npm.taobao.org</a></p>
 </blockquote>
-<h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><blockquote>
-<p>虽然在上面的文档用法中，spwan和exec的最终回调方式有区别，但是在node的实现中，其实两者的实现方式是一致的，exec也可以像spawn一样使用，只不过exec在触发stderr和stdout的data事件的时候，会把数据写到字符串中，到执行结束或者错误退出的时候通过回调函数传递出来，实现了exec这种便捷用法。<a href="http://deadhorse.me/nodejs/2011/12/18/nodejs%E4%B8%ADchild_process%E6%A8%A1%E5%9D%97%E7%9A%84exec%E6%96%B9%E6%B3%95%E5%92%8Cspawn%E6%96%B9%E6%B3%95.html" target="_blank" rel="external">来自exec与spawn方法的区别与陷阱</a></p>
-<p>使用exec默认最大是200k。<br>超出时会报一个错误： “Error: maxBuffer exceeded”</p>
-</blockquote>
-<p><a href="http://div.io/topic/1516" target="_blank" rel="external">使用node子进程spawn,exec踩过的坑</a> 提到exec和spawn的源码区分</p>
+<pre><code>vi ~/.npmrc
+</code></pre><p>添加。</p>
 <blockquote>
-<p>断点进去看后，豁然开朗，exec是对execFile的封装，execFile又是对spawn的封装。</p>
+<p>registry = <a href="http://registry.npm.taobao.org" target="_blank" rel="external">http://registry.npm.taobao.org</a></p>
 </blockquote>
-<h3 id="exec和spawn的使用区分来自使用node子进程spawn-exec踩过的坑"><a href="#exec和spawn的使用区分来自使用node子进程spawn-exec踩过的坑" class="headerlink" title="exec和spawn的使用区分来自使用node子进程spawn,exec踩过的坑"></a>exec和spawn的使用区分<a href="http://div.io/topic/1516" target="_blank" rel="external">来自使用node子进程spawn,exec踩过的坑</a></h3><p>不过exec确实比spawn在使用上面要好很多</p>
-<p>例如我们执行一个命令</p>
-<p>使用exec</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">require(&apos;child_process&apos;).exec(&apos;edp webserver start&apos;);</div></pre></td></tr></table></figure>
-<p>使用spawn</p>
-<p>linux下这么搞</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var child = require(&apos;child_process&apos;).spawn(</div><div class="line">&apos;/bin/sh&apos;, [&apos;-c&apos;,&apos;edp webserver start&apos;], &#123; cwd: null, env: null, windowsVerbatimArguments: false &#125; );</div></pre></td></tr></table></figure>
-<p>win下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"> var child = require(&apos;child_process&apos;).spawn(</div><div class="line">&apos;cmd.exe&apos;, [&apos;/s&apos;, &apos;/c&apos;, &apos;edp webserver start&apos;], &#123; cwd: null, env: null, windowsVerbatimArguments: true &#125; );</div></pre></td></tr></table></figure>
-<p>可见spawn还是比较麻烦的。</p>
-]]></content>
+<p>或者</p>
+<blockquote>
+<p> npm config set registry “<a href="http://registry.npm.taobao.org" target="_blank" rel="external">http://registry.npm.taobao.org</a>“</p>
+</blockquote>
+<p>通过 <code>npm config ls</code> 可以查看相关配置情况</p>
+<h2 id="Brew镜像"><a href="#Brew镜像" class="headerlink" title="Brew镜像"></a>Brew镜像</h2><blockquote>
+<p>$ cd /usr/local &amp;&amp; git remote set-url origin <a href="https://git.coding.net/homebrew/homebrew.git" target="_blank" rel="external">https://git.coding.net/homebrew/homebrew.git</a><br>$ cd $home &amp;&amp; brew update</p>
+</blockquote>
+<p><a href="https://coding.net/u/cocodingding/pp/84498" target="_blank" rel="external">Brew Brew Brew !</a></p>
+<h2 id="Composer-镜像"><a href="#Composer-镜像" class="headerlink" title="Composer 镜像"></a>Composer 镜像</h2><p>方法1：</p>
+<pre><code>composer config -g repositories.packagist composer http://packagist.phpcomposer.com
+</code></pre><p>方法2：</p>
+<blockquote>
+<p>注意：为了避免安装包的时候都要执行两次查询，切记要添加禁用 packagist 的设置，如下：</p>
+</blockquote>
+<pre><code>{
+    &quot;repositories&quot;: [
+        {&quot;type&quot;: &quot;composer&quot;, &quot;url&quot;: &quot;http://packagist.phpcomposer.com&quot;},
+        {&quot;packagist&quot;: false}
+    ]
+}
+</code></pre><p><a href="http://pkg.phpcomposer.com/" target="_blank" rel="external">Packagist / Composer 中国全量镜像</a></p>
+<p>全局安装</p>
+<pre><code>$ curl -sS https://getcomposer.org/installer | php
+$ mv composer.phar /usr/local/bin/composer
+</code></pre>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;谷歌搜了下网上介绍spawn和exec区别的文章还是很详细的，引用相关主要的提到的点。同时结合项目中使用过的脚步了解相关的使用方法。&lt;/p&gt;
+      &lt;p&gt;本文对国内&lt;code&gt;ruby&lt;/code&gt;、&lt;code&gt;npm&lt;/code&gt;、&lt;code&gt;brew&lt;/code&gt;、&lt;code&gt;Composer&lt;/code&gt;等镜像源做整理，给前端开发这提供方便。&lt;br&gt;
     
     </summary>
     
     
-      <category term="nodejs" scheme="http://huixisheng.github.io/tags/nodejs/"/>
+      <category term="镜像源" scheme="http://huixisheng.github.io/tags/%E9%95%9C%E5%83%8F%E6%BA%90/"/>
+    
+      <category term="npm" scheme="http://huixisheng.github.io/tags/npm/"/>
+    
+      <category term="ruby" scheme="http://huixisheng.github.io/tags/ruby/"/>
+    
+      <category term="Composer" scheme="http://huixisheng.github.io/tags/Composer/"/>
+    
+      <category term="brew" scheme="http://huixisheng.github.io/tags/brew/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git操作常见问题汇总</title>
+    <link href="http://huixisheng.github.io/git-problem/"/>
+    <id>http://huixisheng.github.io/git-problem/</id>
+    <published>2016-10-22T13:02:45.000Z</published>
+    <updated>2016-11-25T15:04:43.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>平常工作中常用的<code>git</code>操作命令。</p>
+<a id="more"></a>
+<h2 id="git添加空目录"><a href="#git添加空目录" class="headerlink" title="git添加空目录"></a>git添加空目录</h2><p>在空目录下建<code>.gitignore</code><br>内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># 忽略所有文件</div><div class="line">*</div><div class="line"># 除了这个文件</div><div class="line">!.gitignore</div></pre></td></tr></table></figure></p>
+<h2 id="git忽略已经被提交的文件"><a href="#git忽略已经被提交的文件" class="headerlink" title="git忽略已经被提交的文件"></a>git忽略已经被提交的文件</h2><p>直接<code>rm</code> 然后 <code>git  add .</code>本地磁盘也会被删除。我们要的是删除版本库的文件，并忽略。使用如下方法处理:</p>
+<p>忽略文件夹 <code>git rm -r --cached cache/*</code> 然后在 <code>.gitignore</code>忽略删除的文件。注意<code>git rm --cached</code> 删除的是追踪状态</p>
+<h2 id="git-忽略已经提交的文件的修改"><a href="#git-忽略已经提交的文件的修改" class="headerlink" title="git 忽略已经提交的文件的修改"></a>git 忽略已经提交的文件的修改</h2><p><code>git update-index --assume-unchanged .env</code><br>重置之前添加的忽略<br><code>git update-index --no-assume-unchanged .env</code></p>
+<h2 id="同步github-fork原作者分支的修改"><a href="#同步github-fork原作者分支的修改" class="headerlink" title="同步github fork原作者分支的修改"></a>同步<code>github</code> fork原作者分支的修改</h2><p>假设当前在fork <code>hexo-theme-amazeui</code>并<code>clone</code> <code>fork</code>后的分支的终端上：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git remote add remote-hexo https://github.com/huixisheng/hexo-theme-amazeui.git</div><div class="line">git fetch remote-hexo</div><div class="line">git merge remote-hexo/master</div></pre></td></tr></table></figure></p>
+<p>参考</p>
+<ul>
+<li><a href="http://jinlong.github.io/2015/10/12/syncing-a-fork/" target="_blank" rel="external">如何同步 Github fork 出来的分支</a></li>
+<li><a href="http://www.cnblogs.com/rubylouvre/archive/2013/01/24/2874694.html" target="_blank" rel="external">如何在github上fork一个项目来贡献代码以及同步原作者的修改</a></li>
+</ul>
+<h2 id="同步远程删除的分支"><a href="#同步远程删除的分支" class="headerlink" title="同步远程删除的分支"></a>同步远程删除的分支</h2><p>执行<code>git push origin :test-branch</code>, 远程<code>test-branch</code>已经删除了，但本地还在，<code>git branch -a</code>还可以看到<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">error: unable to delete ‘test-branch’: remote ref does not exist</div><div class="line">error: failed to push some refs to ‘git@github.com:huixisheng/huixisheng.github.com.git’</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git remote update --prune</div></pre></td></tr></table></figure>
+<h2 id="git-恢复单个文件的历史版本"><a href="#git-恢复单个文件的历史版本" class="headerlink" title="git 恢复单个文件的历史版本"></a>git 恢复单个文件的历史版本</h2><blockquote>
+<p>首先查看该文件的历史版本信息：git log Default@2x.png<br>记录下需要恢复的commit版本号：如 9aa51d89799716aa68cff3f30c26f8815408e926<br>恢复该文件：git reset 9aa51d89799716aa68cff3f30c26f8815408e926 Default@2x.png<br>还需要执行git checkout Default@2x.png<br>提交git:git commit -m “回滚Default@2x.png的历史版本”</p>
+</blockquote>
+<p><a href="https://segmentfault.com/q/1010000002464973" target="_blank" rel="external">git 如何还原某个文件</a>一文提到更加简单的方法</p>
+<blockquote>
+<p>直接用 git-checkout 即可。理解起来稍微有点奇怪就是了。<br><code>$ git checkout ${commit} /path/to/file</code></p>
+</blockquote>
+<h2 id="撤销git-add的文件的修改"><a href="#撤销git-add的文件的修改" class="headerlink" title="撤销git add的文件的修改"></a>撤销git add的文件的修改</h2><p><code>git reset HEAD README.md</code></p>
+<p>通过<code>git status</code>可以查看相关的操作</p>
+<p>参考</p>
+<ul>
+<li><a href="https://segmentfault.com/a/1190000006185954" target="_blank" rel="external">git的reset和checkout的区别</a></li>
+<li><a href="https://yhhwpp.github.io/2016/10/31/Git-%E4%B8%AD-Reset%E3%80%81Revert%E3%80%81Checkout%E7%9A%84%E5%8C%BA%E5%88%AB/" target="_blank" rel="external">Git 中 Reset、Revert、Checkout的区别</a></li>
+</ul>
+<p>结论:</p>
+<ol>
+<li><code>git reset</code>是会修改版本历史的，丢弃掉一些版本历史。</li>
+<li><code>git revert</code>是根据那个commit逆向生成一个新的commit，版本历史是不会被破坏的。</li>
+<li><code>git checkout</code>用于切换分支</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;平常工作中常用的&lt;code&gt;git&lt;/code&gt;操作命令。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="git" scheme="http://huixisheng.github.io/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>调试工具整理</title>
+    <link href="http://huixisheng.github.io/debugger-tool/"/>
+    <id>http://huixisheng.github.io/debugger-tool/</id>
+    <published>2016-10-22T13:02:45.000Z</published>
+    <updated>2016-12-23T02:57:09.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h2><p>2016-12-22</p>
+<ul>
+<li>[*] 文章结构修改</li>
+<li>[+] 添加远程调试在线工具</li>
+</ul>
+<p>本文收集整理了浏览器调试工具介绍，手机调试方案，nodejs调试，无线抓包。</p>
+<a id="more"></a>
+<h2 id="远程真机调试"><a href="#远程真机调试" class="headerlink" title="远程真机调试"></a>远程真机调试</h2><h3 id="阿里移动质量中心（MQC）-H5测试"><a href="#阿里移动质量中心（MQC）-H5测试" class="headerlink" title="阿里移动质量中心（MQC）-H5测试"></a><a href="https://mqc.aliyun.com/hfive.htm?spm=0.0.0.0.qn7DDr" target="_blank" rel="external">阿里移动质量中心（MQC）-H5测试</a></h3><p>会提供一个测试报告，包含页面加载时间，节点信息，资源资源类型统计，域名资源统计，优化建议,该设备各浏览器的小视频。</p>
+<h3 id="testin"><a href="#testin" class="headerlink" title="testin"></a><a href="http://remote.testin.cn/" target="_blank" rel="external">testin</a></h3><h3 id="优测"><a href="#优测" class="headerlink" title="优测"></a><a href="http://remote.utest.qq.com/deviceSearch?type=remote&amp;brand=Samsung" target="_blank" rel="external">优测</a></h3><h2 id="小程序和微信开发调试"><a href="#小程序和微信开发调试" class="headerlink" title="小程序和微信开发调试"></a>小程序和微信开发调试</h2><h2 id="实时刷新"><a href="#实时刷新" class="headerlink" title="实时刷新"></a>实时刷新</h2><h3 id="FIS"><a href="#FIS" class="headerlink" title="FIS"></a>FIS</h3><h3 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h3><h3 id="BrowserSync"><a href="#BrowserSync" class="headerlink" title="BrowserSync"></a>BrowserSync</h3><h3 id="weflow"><a href="#weflow" class="headerlink" title="weflow"></a><a href="https://weflow.io/" target="_blank" rel="external">weflow</a></h3><h3 id="puer"><a href="#puer" class="headerlink" title="puer"></a><a href="https://github.com/leeluolee/puer" target="_blank" rel="external">puer</a></h3><h3 id="F5"><a href="#F5" class="headerlink" title="F5"></a><a href="http://www.getf5.com/" target="_blank" rel="external">F5</a></h3><h2 id="开发者调试"><a href="#开发者调试" class="headerlink" title="开发者调试"></a>开发者调试</h2><h3 id="spy-debugger"><a href="#spy-debugger" class="headerlink" title="spy-debugger"></a><a href="https://github.com/wuchangming/spy-debugger" target="_blank" rel="external">spy-debugger</a></h3><h3 id="https-ant-tool-github-io-dora-html"><a href="#https-ant-tool-github-io-dora-html" class="headerlink" title="https://ant-tool.github.io/dora.html"></a><a href="https://ant-tool.github.io/dora.html" target="_blank" rel="external">https://ant-tool.github.io/dora.html</a></h3><h2 id="浏览器调试"><a href="#浏览器调试" class="headerlink" title="浏览器调试"></a>浏览器调试</h2><p><a href="http://ued.taobao.com/blog/2012/06/debug-with-chrome-dev-tool/" target="_blank" rel="external">chrome developer tool 调试技巧</a>谷歌浏览器调试比较基础的文章，期待补充和完善。</p>
+<p><a href="http://www.ueder.net/html5-Slides/slides.html#slide-1" target="_blank" rel="external">Chrome Developer Tools 功能与技巧详解</a></p>
+<p><a href="http://isux.tencent.com/chrome-workspace.html" target="_blank" rel="external">开发者调试工具Chrome Workspace</a><br>开发者工具中调试修改js或者css同时自动保存文件，能够避免开发人员在工具中调试好，再到编辑器中修改一次代码的重复操作，能够提高一定的效率</p>
+<p><a href="http://www.opera.com/dragonfly/documentation/" target="_blank" rel="external"><del>Opera Dragonfly documentation</del></a></p>
+<p><a href="https://developer.chrome.com/devtools/docs/mobile-emulation" target="_blank" rel="external">Mobile emulation</a> 模拟器</p>
+<p><a href="http://www.alloyteam.com/2014/02/browser-sync-responsive-web-development-and-debugging-tool/" target="_blank" rel="external">Browser-Sync：响应式Web开发调试利器</a></p>
+<p><a href="chrome://net-internals/#export" target="_blank" rel="external">Chrome也自带抓包功能</a></p>
+<h2 id="WebApp调试"><a href="#WebApp调试" class="headerlink" title="WebApp调试"></a>WebApp调试</h2><ul>
+<li><a href="https://github.com/WechatFE/vConsole" target="_blank" rel="external">https://github.com/WechatFE/vConsole</a></li>
+<li><a href="https://github.com/AlloyTeam/AlloyLever/" target="_blank" rel="external">https://github.com/AlloyTeam/AlloyLever/</a></li>
+</ul>
+<p><a href="http://thx.github.io/mobile/debugging-in-mobile/" target="_blank" rel="external">无线调试攻略</a><br>少年天才以外的我们，与其说是 coder,不如说是 debugger，都是一路调戏过来的，不好意思，是调试【本人口齿不清，发音不准，再发生类似事故请多多见谅】，因此当你 主动/被动 All in 了无线以后，你发现，知识的储备只是时间的积累和有意识的训练而已，可面对众多的 爱疯，案桌儿，山柴，内核不同，大小不一的设备。尼玛，没有个顺手的调试工具，简直是不能忍受的。</p>
+<p><a href="https://speakerdeck.com/paulguo/h5-mobile-kai-fa-diao-shi-shi-jian" target="_blank" rel="external">H5 Mobile 开发调试实践 by 破锣锅</a> 总结的很详细</p>
+<p><a href="http://oceanzhu.com/archives/74" target="_blank" rel="external">手机上怎么抓包调试</a><br>纳尼，手机也可以抓包，不可思议，赶紧试试吧</p>
+<p><a href="https://getfirebug.com/firebuglite" target="_blank" rel="external">Firebug Lite: doing the Firebug way, anywhere.</a><br>亲，还在为ie6的调试而苦恼吗？Firebug值得一试。</p>
+<p><a href="http://wyqbailey.diandian.com/post/2011-11-09/20511143" target="_blank" rel="external">远程调试工具-weinre</a>Web Inspector Remote（远程 Web 调试工具），功能和 Firebug、Webkit Inspector 类似，可以帮助我们在 PC 端远程调试运行在移动设备浏览器内的 Web 页面或应用，能够即时调试 DOM 元素、 CSS 样式 和 JavaScript 等。</p>
+<p><a href="https://www.imququ.com/post/remote-debugging-with-weinre.html" target="_blank" rel="external">用Weinre远程调试移动网页</a></p>
+<p><a href="http://www.cnblogs.com/lhb25/p/debug-mobile-site-and-app-with-weinre.html" target="_blank" rel="external">使用 Weinre 调试移动网站及 PhoneGap 应用</a><code>node</code>版更适合前端。</p>
+<p><a href="http://debug.build.phonegap.com/" target="_blank" rel="external">在线Weinre</a></p>
+<p><a href="https://reader.mx/p/1391" target="_blank" rel="external">浏览器远程调试</a><br>对比了 Firefox、Chrome、Opera 三大浏览器的远程调试工具</p>
+<p><a href="https://github.com/jieyou/remote_inspect_web_on_real_device" target="_blank" rel="external">真机远程调试-remote inspect web on real device</a></p>
+<p><a href="http://44ux.com/blog/2013/02/25/using-web-debugging-proxies/" target="_blank" rel="external">善用 Web 调试代理工具</a></p>
+<p><a href="http://code.tutsplus.com/tutorials/using-web-debugging-proxies--net-29828" target="_blank" rel="external">Using Web Debugging Proxies</a></p>
+<p><a href="https://developer.chrome.com/devtools/docs/remote-debugging?hl=zh-CN" target="_blank" rel="external">Remote Debugging on Android with Chrome</a> 谷歌浏览器实现安装的远程调试</p>
+<p><a href="https://github.com/CN-Chrome-DevTools/CN-Chrome-DevTools" target="_blank" rel="external">Chrome开发者工具中文手册</a></p>
+<p><a href="http://www.iunbug.com/mihtool-zh" target="_blank" rel="external">MIHTool 是前端工程师在iOS设备上调试和优化页面的得力助手</a></p>
+<p><a href="https://creative.adobe.com/zh-tw/products/inspect" target="_blank" rel="external">Edge Inspect</a>方便的跨平台同步预览工具</p>
+<p><a href="http://jsconsole.com/" target="_blank" rel="external">jsconsole</a>是一个风格和Weinre类似的工具，它更多地关注于控制台输出和代码求值。在访问JSConsole的网站的时候，用户输入“:listen”来获得带有GUID的一段JavaScript代码。这段代码需要被加入到待调试的网页中。于是，在加载网页的时候，代码将会连接到JSConsole服务器，并且根据GUID将此会话和用户的会话关联起来，于是用户浏览器中的控制台现在便已经处于待调试网页的JavaScript运行时环境中了。</p>
+<p><a href="http://blog.wpjam.com/m/ios-safari-remote-debugging/" target="_blank" rel="external">通过 Mac 远程调试 iPhone/iPad 上的网页</a></p>
+<p><a href="http://blog.segmentfault.com/humphry/1190000000313211?page=1#c-1190000000313211-1050000000349151" target="_blank" rel="external">整理：手机端网页调试方案</a></p>
+<h2 id="node-js调试"><a href="#node-js调试" class="headerlink" title="node.js调试"></a>node.js调试</h2><p><a href="http://www.cnblogs.com/dolphinX/p/3485345.html" target="_blank" rel="external">node.js调试</a><br>你还在一个个<code>console.log()</code>，那么你out啦</p>
+<h3 id="devtool"><a href="#devtool" class="headerlink" title="devtool"></a><a href="https://github.com/Jam3/devtool" target="_blank" rel="external">devtool</a></h3><p>Runs Node.js programs inside Chrome DevTools (using Electron).</p>
+<p>监测脚步变动自动重启命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">devtool scripts/parse.js --watch</div></pre></td></tr></table></figure></p>
+<p>对应有<a href="https://github.com/remy/nodemon" target="_blank" rel="external"><code>nodemon</code></a>,目前这个是最符合我需求的。还有    <code>Superviso</code> <code>node-dev</code></p>
+<h3 id="iron-node"><a href="#iron-node" class="headerlink" title="iron-node"></a>iron-node</h3><h3 id="node-inspector"><a href="#node-inspector" class="headerlink" title="node-inspector"></a>node-inspector</h3><h3 id="node-debugger"><a href="#node-debugger" class="headerlink" title="node-debugger"></a>node-debugger</h3><h3 id="WebStorm集成的调试器"><a href="#WebStorm集成的调试器" class="headerlink" title="WebStorm集成的调试器"></a>WebStorm集成的调试器</h3><h2 id="抓包工具"><a href="#抓包工具" class="headerlink" title="抓包工具"></a>抓包工具</h2><ul>
+<li><a href="http://weibo.com/ttarticle/p/show?id=2309404034831301405232&amp;mod=zwenzhang?comment=1&amp;sudaref=www.google.co.jp&amp;retcode=6102" target="_blank" rel="external">whistle</a></li>
+<li><a href="http://www.alloyteam.com/2014/07/nodejs-debug-proxy-livepool/" target="_blank" rel="external">【开源项目】LivePool：基于 NodeJs 的跨平台 Web 抓包替换工具</a></li>
+<li><a href="http://www.httpwatch.com/download/" target="_blank" rel="external">HttpWatch</a></li>
+<li><a href="http://www.ieinspector.com/" target="_blank" rel="external">HttpAnalyzerStd</a></li>
+<li><a href="http://www.tcpdump.org/" target="_blank" rel="external">tcpdump</a></li>
+<li><a href="http://www.wireshark.org/" target="_blank" rel="external">wireshark</a> 文章推荐：<a href="http://www.cnblogs.com/TankXiao/archive/2012/10/10/2711777.html" target="_blank" rel="external">Wireshark基本介绍和学习TCP三次握手</a></li>
+<li><a href="http://goddyzhao.me/nproxy/" target="_blank" rel="external">NProxy</a> 文章推荐：<a href="NProxy——Mac和Linux平台下的Fiddler">NProxy——Mac和Linux平台下的Fiddler</a></li>
+</ul>
+<h3 id="Fiddler"><a href="#Fiddler" class="headerlink" title="Fiddler"></a><a href="http://www.telerik.com/fiddler" target="_blank" rel="external">Fiddler</a></h3><ul>
+<li><a href="https://www.imququ.com/post/user-fiddler-on-macos.html" target="_blank" rel="external">如何在 Mac 下使用 Fiddler</a></li>
+<li><a href="http://www.welefen.com/fiddler-base-on-chrome-extension.html" target="_blank" rel="external">基于Chrome扩展的Fiddler</a></li>
+</ul>
+<h3 id="Mac平台"><a href="#Mac平台" class="headerlink" title="Mac平台"></a>Mac平台</h3><ul>
+<li><a href="http://zh.blog.goddyzhao.me/post/35906061908/nproxy-fiddler-in-mac-and-linux" target="_blank" rel="external">NProxy——Mac和Linux平台下的Fiddler</a></li>
+<li><a href="http://www.charlesproxy.com/" target="_blank" rel="external">Charles</a> <a href="http://www.baidufe.com/item/8a53eea855cb6289993f.html" target="_blank" rel="external">使用charles proxy for Mac来抓取手机App的网络包</a> <a href="http://www.36ria.com/6278" target="_blank" rel="external">Charles(最强大的http调试工具)详细教程（上）</a> <a href="http://www.36ria.com/6303" target="_blank" rel="external">Charles(最强大的http调试工具)详细教程（下）</a></li>
+</ul>
+<h2 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h2><ul>
+<li><a href="http://tid.tenpay.com/?p=6161" target="_blank" rel="external">远程调试(Remote Debugging)</a></li>
+<li><a href="https://github.com/jieyou/remote_inspect_web_on_real_device" target="_blank" rel="external">各种 真机远程调试 方法 汇总</a></li>
+<li><a href="http://wiki.jikexueyuan.com/project/chrome-devtools/remote-debugging-on-android.html" target="_blank" rel="external">http://wiki.jikexueyuan.com/project/chrome-devtools/remote-debugging-on-android.html</a></li>
+<li><a href="http://www.jianshu.com/p/82ab631502e1" target="_blank" rel="external">http://www.jianshu.com/p/82ab631502e1</a></li>
+<li><a href="http://yujiangshui.com/multidevice-frontend-debug/" target="_blank" rel="external">http://yujiangshui.com/multidevice-frontend-debug/</a></li>
+<li><a href="http://div.io/topic/1449" target="_blank" rel="external">http://div.io/topic/1449</a></li>
+<li><a href="http://alloyteam.github.io/Spirit/modules/Mobug/" target="_blank" rel="external">http://alloyteam.github.io/Spirit/modules/Mobug/</a></li>
+<li><a href="https://github.com/hongru/horn" target="_blank" rel="external">https://github.com/hongru/horn</a></li>
+<li><a href="https://github.com/kaiye/kaiye.github.com/issues/4" target="_blank" rel="external">https://github.com/kaiye/kaiye.github.com/issues/4</a></li>
+<li><a href="https://github.com/riskers/blog/issues/11" target="_blank" rel="external">https://github.com/riskers/blog/issues/11</a></li>
+<li><a href="https://gold.xitu.io/entry/5851e77d61ff4b006c8414dd" target="_blank" rel="external">https://gold.xitu.io/entry/5851e77d61ff4b006c8414dd</a></li>
+<li><a href="https://www.zhihu.com/question/20322475" target="_blank" rel="external">https://www.zhihu.com/question/20322475</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;更新日志&quot;&gt;&lt;a href=&quot;#更新日志&quot; class=&quot;headerlink&quot; title=&quot;更新日志&quot;&gt;&lt;/a&gt;更新日志&lt;/h2&gt;&lt;p&gt;2016-12-22&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;[*] 文章结构修改&lt;/li&gt;
+&lt;li&gt;[+] 添加远程调试在线工具&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;本文收集整理了浏览器调试工具介绍，手机调试方案，nodejs调试，无线抓包。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="前端工具" scheme="http://huixisheng.github.io/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="前端资源" scheme="http://huixisheng.github.io/tags/%E5%89%8D%E7%AB%AF%E8%B5%84%E6%BA%90/"/>
+    
+      <category term="调试" scheme="http://huixisheng.github.io/tags/%E8%B0%83%E8%AF%95/"/>
     
   </entry>
   
@@ -959,76 +1113,6 @@ $ ssh-add ~/.ssh/git.oschina.net
     
     
       <category term="markdown" scheme="http://huixisheng.github.io/tags/markdown/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>国内镜像源整理</title>
-    <link href="http://huixisheng.github.io/mirror/"/>
-    <id>http://huixisheng.github.io/mirror/</id>
-    <published>2016-10-22T13:02:45.000Z</published>
-    <updated>2016-11-26T02:15:59.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>本文对国内<code>ruby</code>、<code>npm</code>、<code>brew</code>、<code>Composer</code>等镜像源做整理，给前端开发这提供方便。<br><a id="more"></a></p>
-<h2 id="为何写这个文章"><a href="#为何写这个文章" class="headerlink" title="为何写这个文章"></a>为何写这个文章</h2><pre><code>gem install cdnjs-command
-ERROR:  Could not find a valid gem &apos;cdnjs-command&apos; (&gt;= 0), here is why:
-      Unable to download data from https://rubygems.org/ - Errno::EPIPE: Broken pipe - SSL_connect (https://rubygems.org/latest_specs.4.8.gz)
-</code></pre><h2 id="RubyGems-镜像"><a href="#RubyGems-镜像" class="headerlink" title="RubyGems 镜像"></a>RubyGems 镜像</h2><blockquote>
-<p>$ gem sources –add <a href="https://ruby.taobao.org/" target="_blank" rel="external">https://ruby.taobao.org/</a> –remove <a href="https://rubygems.org/" target="_blank" rel="external">https://rubygems.org/</a><br>  $ gem sources -l<br>   <strong><em> CURRENT SOURCES </em></strong><br><a href="https://ruby.taobao.org" target="_blank" rel="external">https://ruby.taobao.org</a></p>
-<h1 id="请确保只有-ruby-taobao-org"><a href="#请确保只有-ruby-taobao-org" class="headerlink" title="请确保只有 ruby.taobao.org"></a>请确保只有 ruby.taobao.org</h1><p>$ gem install rails</p>
-</blockquote>
-<h2 id="NPM-镜像"><a href="#NPM-镜像" class="headerlink" title="NPM 镜像"></a>NPM 镜像</h2><p>每次安装都需要指明 <code>registry</code>，很麻烦</p>
-<blockquote>
-<p>$ npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="external">https://registry.npm.taobao.org</a></p>
-</blockquote>
-<pre><code>vi ~/.npmrc
-</code></pre><p>添加。</p>
-<blockquote>
-<p>registry = <a href="http://registry.npm.taobao.org" target="_blank" rel="external">http://registry.npm.taobao.org</a></p>
-</blockquote>
-<p>或者</p>
-<blockquote>
-<p> npm config set registry “<a href="http://registry.npm.taobao.org" target="_blank" rel="external">http://registry.npm.taobao.org</a>“</p>
-</blockquote>
-<p>通过 <code>npm config ls</code> 可以查看相关配置情况</p>
-<h2 id="Brew镜像"><a href="#Brew镜像" class="headerlink" title="Brew镜像"></a>Brew镜像</h2><blockquote>
-<p>$ cd /usr/local &amp;&amp; git remote set-url origin <a href="https://git.coding.net/homebrew/homebrew.git" target="_blank" rel="external">https://git.coding.net/homebrew/homebrew.git</a><br>$ cd $home &amp;&amp; brew update</p>
-</blockquote>
-<p><a href="https://coding.net/u/cocodingding/pp/84498" target="_blank" rel="external">Brew Brew Brew !</a></p>
-<h2 id="Composer-镜像"><a href="#Composer-镜像" class="headerlink" title="Composer 镜像"></a>Composer 镜像</h2><p>方法1：</p>
-<pre><code>composer config -g repositories.packagist composer http://packagist.phpcomposer.com
-</code></pre><p>方法2：</p>
-<blockquote>
-<p>注意：为了避免安装包的时候都要执行两次查询，切记要添加禁用 packagist 的设置，如下：</p>
-</blockquote>
-<pre><code>{
-    &quot;repositories&quot;: [
-        {&quot;type&quot;: &quot;composer&quot;, &quot;url&quot;: &quot;http://packagist.phpcomposer.com&quot;},
-        {&quot;packagist&quot;: false}
-    ]
-}
-</code></pre><p><a href="http://pkg.phpcomposer.com/" target="_blank" rel="external">Packagist / Composer 中国全量镜像</a></p>
-<p>全局安装</p>
-<pre><code>$ curl -sS https://getcomposer.org/installer | php
-$ mv composer.phar /usr/local/bin/composer
-</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;本文对国内&lt;code&gt;ruby&lt;/code&gt;、&lt;code&gt;npm&lt;/code&gt;、&lt;code&gt;brew&lt;/code&gt;、&lt;code&gt;Composer&lt;/code&gt;等镜像源做整理，给前端开发这提供方便。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="镜像源" scheme="http://huixisheng.github.io/tags/%E9%95%9C%E5%83%8F%E6%BA%90/"/>
-    
-      <category term="npm" scheme="http://huixisheng.github.io/tags/npm/"/>
-    
-      <category term="ruby" scheme="http://huixisheng.github.io/tags/ruby/"/>
-    
-      <category term="Composer" scheme="http://huixisheng.github.io/tags/Composer/"/>
-    
-      <category term="brew" scheme="http://huixisheng.github.io/tags/brew/"/>
     
   </entry>
   
@@ -1600,89 +1684,6 @@ mysql&gt; FLUSH PRIVILEGES;
       <category term="mysql" scheme="http://huixisheng.github.io/tags/mysql/"/>
     
       <category term="MacOSX" scheme="http://huixisheng.github.io/tags/MacOSX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>前端开发工具收集和整理</title>
-    <link href="http://huixisheng.github.io/web-front-end-tools/"/>
-    <id>http://huixisheng.github.io/web-front-end-tools/</id>
-    <published>2014-08-04T14:09:45.000Z</published>
-    <updated>2016-10-23T04:19:41.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>本文主要内容是对前端在线工具做整理，优秀的在线工具提高开发效率。告别编辑器，一切都是云端。只通过浏览器完成代码的编写和优化。</p>
-<a id="more"></a>
-<h2 id="JavaScript在线电子书"><a href="#JavaScript在线电子书" class="headerlink" title="JavaScript在线电子书"></a>JavaScript在线电子书</h2><ul>
-<li>ECMAScript5标准 <a href="http://www.ecma-international.org/ecma-262/5.1/index.html" target="_blank" rel="external">http://www.ecma-international.org/ecma-262/5.1/index.html</a></li>
-<li>ECMAScript6标准 <a href="http://www.ecma-international.org/ecma-262/6.0/index.html" target="_blank" rel="external">http://www.ecma-international.org/ecma-262/6.0/index.html</a></li>
-<li>promise迷你书<a href="http://liubin.org/promises-book/" target="_blank" rel="external">http://liubin.org/promises-book/</a></li>
-</ul>
-<h2 id="在线教程"><a href="#在线教程" class="headerlink" title="在线教程"></a>在线教程</h2><ul>
-<li><a href="http://javascript.ruanyifeng.com/" target="_blank" rel="external">JavaScript 标准参考教程-阮一峰</a></li>
-<li><a href="http://www.zhinengshe.com/index.html" target="_blank" rel="external">智能社</a></li>
-<li><a href="http://www.yidengxuetang.com/" target="_blank" rel="external">一灯学堂 | 国内首家web前端高端培训</a></li>
-<li><a href="http://apeclass.cn/index.html" target="_blank" rel="external">蜻蜓课堂</a></li>
-<li><a href="http://www.jdon.com/js.html" target="_blank" rel="external">JavaScript专题教程</a></li>
-<li><a href="http://ejohn.org/apps/learn/" target="_blank" rel="external">Learning Advanced JavaScript</a></li>
-</ul>
-<h2 id="以下内容整理自书签"><a href="#以下内容整理自书签" class="headerlink" title="以下内容整理自书签"></a>以下内容整理自书签</h2><ul>
-<li><a href="http://wiki.jikexueyuan.com/" target="_blank" rel="external">极客学院wiki - it 技术图文教程库</a></li>
-<li><a href="http://moyu-edu.com/" target="_blank" rel="external">墨鱼前端培训 - www.moyu-edu.com</a></li>
-<li><a href="https://www.codecademy.com/zh/" target="_blank" rel="external">学习编程 | codecademy</a></li>
-<li><a href="http://learn.shayhowe.com/advanced-html-css/" target="_blank" rel="external">an advanced guide to html &amp; css</a></li>
-<li><a href="https://developer.mozilla.org/cn/canvas_tutorial" target="_blank" rel="external">canvas教程 canvas tutorial - mdn</a></li>
-<li><a href="http://www.w3schools.com/cn/css/css_reference.asp" target="_blank" rel="external">css参考手册</a></li>
-<li><a href="http://www.devstore.cn/" target="_blank" rel="external">devstore_移动互联网企业运营解决方案整合平台</a></li>
-<li><a href="http://www.codecademy.com/courses/getting-started-v2" target="_blank" rel="external">getting started with programming | codecademy</a></li>
-<li><a href="http://www.codecademy.com/zh/tracks/javascript-original" target="_blank" rel="external">javascript (original) | codecademy</a></li>
-<li><a href="https://www.codeschool.com/" target="_blank" rel="external">learn to code by doing - code school</a></li>
-<li><a href="http://www.w3cschool.cn/" target="_blank" rel="external">w3cschool 在线教程|网站建设</a></li>
-<li><a href="http://www.w3schools.com/default.asp" target="_blank" rel="external">w3schools online web tutorials</a></li>
-</ul>
-<h2 id="在线兼容性测试"><a href="#在线兼容性测试" class="headerlink" title="在线兼容性测试"></a>在线兼容性测试</h2><ul>
-<li><a href="http://www.modern.ie/zh-cn" target="_blank" rel="external">在线跨浏览器测试微软官方提供</a></li>
-</ul>
-<h2 id="浏览器开发工具"><a href="#浏览器开发工具" class="headerlink" title="浏览器开发工具"></a>浏览器开发工具</h2><ul>
-<li><a href="http://www.cnblogs.com/ambar/archive/2011/11/09/25-secrets-of-the-browser-developer-tools-in-chinese.html#top" target="_blank" rel="external">【翻译】25个浏览器开发工具的秘密</a></li>
-<li><a href="http://ued.taobao.com/blog/2012/06/debug-with-chrome-dev-tool/" target="_blank" rel="external">chrome developer tool 调试技巧</a></li>
-</ul>
-<h2 id="在线压缩"><a href="#在线压缩" class="headerlink" title="在线压缩"></a>在线压缩</h2><ul>
-<li><a href="http://www.smushit.com/ysmush.it/" target="_blank" rel="external">在线图片压缩</a></li>
-<li><a href="https://tinyjpg.com/" target="_blank" rel="external"><img src="https://cloud.githubusercontent.com/assets/1518967/11520904/78f955f8-98e2-11e5-89eb-a01622389578.png" alt="tiny">tinyjpg压缩率非常cool</a></li>
-</ul>
-<h2 id="在线性能测试"><a href="#在线性能测试" class="headerlink" title="在线性能测试"></a>在线性能测试</h2><ul>
-<li><a href="http://www.alibench.com/" target="_blank" rel="external">阿里测</a></li>
-<li><a href="http://www.jiankongmf.com/" target="_blank" rel="external">监控魔方</a></li>
-<li><a href="http://www.browserstack.com/" target="_blank" rel="external">Live, Web-Based Browser Testing</a></li>
-</ul>
-<h2 id="在线编辑器"><a href="#在线编辑器" class="headerlink" title="在线编辑器"></a>在线编辑器</h2><ul>
-<li><a href="http://codepen.io/" target="_blank" rel="external">codepen</a></li>
-<li><a href="http://jsbin.com/" target="_blank" rel="external">jsbin</a></li>
-<li><a href="http://runjs.cn/" target="_blank" rel="external">runjs</a></li>
-</ul>
-<h2 id="常用的在线工具"><a href="#常用的在线工具" class="headerlink" title="常用的在线工具"></a>常用的在线工具</h2><ul>
-<li><a href="http://cli.im/url/2014071515?ECNl3" target="_blank" rel="external">在线二维码</a></li>
-<li><a href="http://tool.oschina.net/" target="_blank" rel="external">比较全的在线工具-开源中国社区</a></li>
-<li><a href="http://tool.lu/" target="_blank" rel="external">在线工具 - 程序员的工具箱</a> 工具很全很丰富<br><a href="(http://tool.lu/"><img src="https://cloud.githubusercontent.com/assets/1518967/11520854/184602f6-98e2-11e5-83f1-fd17667ee7bc.png" alt="5178a4b4-82d2-4d8b-a0d1-aeacbea55495"></a></li>
-</ul>
-<h2 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h2><ul>
-<li>2016-10-22 整理了<a href="https://github.com/huixisheng/lab/issues/3" target="_blank" rel="external">issue</a></li>
-<li>2016-10-23 1. 添加在线教程 2. JavaScript在线电子书</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      对平时工作中使用过的工具总结，高效工作，持续学习
-    
-    </summary>
-    
-    
-      <category term="前端工具" scheme="http://huixisheng.github.io/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/"/>
-    
-      <category term="前端资源" scheme="http://huixisheng.github.io/tags/%E5%89%8D%E7%AB%AF%E8%B5%84%E6%BA%90/"/>
-    
-      <category term="在线教程" scheme="http://huixisheng.github.io/tags/%E5%9C%A8%E7%BA%BF%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
