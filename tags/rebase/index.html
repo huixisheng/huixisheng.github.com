@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="css,JavaScript,负边距," />
+  <meta name="keywords" content="前端开发者说" />
 
 
 
@@ -86,19 +86,15 @@
 
 
 
-<meta name="description" content="对项目中的负边距的应用的总结">
-<meta name="keywords" content="css,JavaScript,负边距">
-<meta property="og:type" content="article">
-<meta property="og:title" content="负边距的应用的总结">
-<meta property="og:url" content="http://huixisheng.github.io/negative-margin-application/index.html">
+<meta name="description" content="前端路漫漫兮，吾将上下而求索">
+<meta property="og:type" content="website">
+<meta property="og:title" content="前端开发者说">
+<meta property="og:url" content="http://huixisheng.github.io/tags/rebase/index.html">
 <meta property="og:site_name" content="前端开发者说">
-<meta property="og:description" content="对项目中的负边距的应用的总结">
-<meta property="og:image" content="http://huixisheng.qiniudn.com/negative-margin.png">
-<meta property="og:updated_time" content="2016-10-22T12:42:22.000Z">
+<meta property="og:description" content="前端路漫漫兮，吾将上下而求索">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="负边距的应用的总结">
-<meta name="twitter:description" content="对项目中的负边距的应用的总结">
-<meta name="twitter:image" content="http://huixisheng.qiniudn.com/negative-margin.png">
+<meta name="twitter:title" content="前端开发者说">
+<meta name="twitter:description" content="前端路漫漫兮，吾将上下而求索">
 
 
 
@@ -119,10 +115,10 @@
 
 
 
-  <link rel="canonical" href="http://huixisheng.github.io/negative-margin-application/"/>
+  <link rel="canonical" href="http://huixisheng.github.io/tags/rebase/"/>
 
 
-  <title> 负边距的应用的总结 | 前端开发者说 </title>
+  <title> 标签: rebase | 前端开发者说 </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -143,7 +139,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container one-collumn sidebar-position-left  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
@@ -236,149 +232,46 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+  <div id="posts" class="posts-collapse">
+    <div class="collection-title">
+      <h2 >
+        rebase
+        <small>标签</small>
+      </h2>
+    </div>
 
     
-      <header class="post-header">
+      
 
+  <article class="post post-type-normal" itemscope itemtype="//schema.org/Article">
+    <header class="post-header">
+
+      <h1 class="post-title">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
+            <a class="post-title-link" href="/git-rebase/" itemprop="url">
               
-                负边距的应用的总结
+                <span itemprop="name">git利用rebase修改历史提交记录</span>
               
-            
-          </h1>
+            </a>
         
+      </h1>
 
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2013-04-13T22:32:38+08:00" content="2013-04-13">
-              2013-04-13
-            </time>
-          </span>
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-08-27T16:45:15+08:00"
+              content="2017-08-27" >
+          08-27
+        </time>
+      </div>
 
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/negative-margin-application/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="negative-margin-application/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <p>初中的时候开始学习坐标轴，开始接触负数。不管怎么说数学中都要学习的负数，总是有积极意义的吧。谁都不想银行卡的钱是负数的，但是css中如果使用负数可以解决一些比较棘手的问题的。本文参考网络结合自身的项目对margin的负值做一个小小的总结。具体如下图：</p>
-<a id="more"></a>
-<p><img src="http://huixisheng.qiniudn.com/negative-margin.png" alt="负边距在项目中的应用"></p>
-<p>###1、定宽定高的block元素垂直居中</p>
-<p>###2、减少后台的判断，少写一个.last或者first的css。移除列表右侧多余的间隔、移除底部多余的border</p>
-<p>###3、tab切换中的应用</p>
-<p>###4、布局中应用，右侧固定右侧自适应，左右固定中间自适应</p>
-<p>###5、多列等高的应用</p>
-<p>###参考链接<br><a href="http://www.gezii.me/?p=57" target="_blank" rel="external">margin负值的应用</a></p>
-<p><a href="http://iyunlu.com/view/CSS-XHTMl/52.html" target="_blank" rel="external">margin负值 – 一个秘密武器</a></p>
-<p><a href="http://www.hicss.net/i-know-you-do-not-know-the-negative-margin/" target="_blank" rel="external">我知道你不知道的负Margin</a></p>
-<p><a href="http://www.cnblogs.com/rubylouvre/archive/2012/04/28/2474732.html" target="_blank" rel="external">负值之美：负值在页面布局中的应用</a></p>
-<p><a href="http://udc.weibo.com/2012/09/%E5%BE%AE%E5%90%A7%E9%87%8C%E7%9A%84%E5%90%84%E7%A7%8Dmargin%E8%B4%9F%E5%80%BC/" target="_blank" rel="external">微吧里的各种margin负值</a></p>
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/css/" rel="tag">#css</a>
-          
-            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
-          
-            <a href="/tags/负边距/" rel="tag">#负边距</a>
-          
-        </div>
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/some-problem-in-project-diary/" rel="next" title="项目中碰到的问题随笔">
-                <i class="fa fa-chevron-left"></i> 项目中碰到的问题随笔
-              </a>
-            
-          </div>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/something-about-sublime/" rel="prev" title="SublimeText插件介绍">
-                SublimeText插件介绍 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
+    </header>
   </article>
 
 
-
-    <div class="post-spread">
-      
-    </div>
+    
   </div>
+
+  
 
 
           </div>
@@ -386,17 +279,6 @@
 
 
           
-  <div class="comments" id="comments">
-    
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-    
-  </div>
-
 
         </div>
         
@@ -416,17 +298,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel ">
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -505,17 +378,6 @@
 
       </section>
 
-      
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-            
-              
-            
-            
-              <p class="post-toc-empty">此文章未包含目录</p>
-            
-          </div>
-        </section>
       
 
     </div>
@@ -619,10 +481,6 @@
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
-
-
 
   
 
@@ -639,9 +497,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'huixisheng';
-      var disqus_identifier = 'negative-margin-application/';
-      var disqus_title = "负边距的应用的总结";
-      var disqus_url = 'http://huixisheng.github.io/negative-margin-application/';
+      var disqus_identifier = 'tags/rebase/index.html';
+      var disqus_title = "";
+      var disqus_url = '';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
@@ -652,13 +510,6 @@
       }
 
       run_disqus_script('count.js');
-      
-        var disqus_config = function () {
-            this.page.url = disqus_url;
-            this.page.identifier = disqus_identifier;
-            this.page.title = disqus_title;
-        };
-        run_disqus_script('embed.js');
       
     </script>
   
