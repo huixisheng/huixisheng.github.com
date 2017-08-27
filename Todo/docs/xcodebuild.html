@@ -1,0 +1,763 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="前端开发者说" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="前端开发者说" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="xcodebuild123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899U">
+<meta property="og:type" content="website">
+<meta property="og:title" content="前端开发者说">
+<meta property="og:url" content="http://huixisheng.github.io/Todo/docs/xcodebuild.html">
+<meta property="og:site_name" content="前端开发者说">
+<meta property="og:description" content="xcodebuild123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899U">
+<meta property="og:updated_time" content="2017-05-27T16:58:57.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端开发者说">
+<meta name="twitter:description" content="xcodebuild123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899U">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '9599',
+      author: '悔惜晟'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://huixisheng.github.io/Todo/docs/xcodebuild.html"/>
+
+
+  <title>
+  
+
+  
+     | 前端开发者说
+  
+</title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left  ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">前端开发者说</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">记录开发的故事</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+    
+      <h2 id="xcodebuild"><a href="#xcodebuild" class="headerlink" title="xcodebuild"></a>xcodebuild</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div></pre></td><td class="code"><pre><div class="line">Usage: xcodebuild [-project &lt;projectname&gt;] [[-target &lt;targetname&gt;]...|-alltargets] [-configuration &lt;configurationname&gt;] [-arch &lt;architecture&gt;]... [-sdk [&lt;sdkname&gt;|&lt;sdkpath&gt;]] [-showBuildSettings] [&lt;buildsetting&gt;=&lt;value&gt;]... [&lt;buildaction&gt;]...</div><div class="line">       xcodebuild [-project &lt;projectname&gt;] -scheme &lt;schemeName&gt; [-destination &lt;destinationspecifier&gt;]... [-configuration &lt;configurationname&gt;] [-arch &lt;architecture&gt;]... [-sdk [&lt;sdkname&gt;|&lt;sdkpath&gt;]] [-showBuildSettings] [&lt;buildsetting&gt;=&lt;value&gt;]... [&lt;buildaction&gt;]...</div><div class="line">       xcodebuild -workspace &lt;workspacename&gt; -scheme &lt;schemeName&gt; [-destination &lt;destinationspecifier&gt;]... [-configuration &lt;configurationname&gt;] [-arch &lt;architecture&gt;]... [-sdk [&lt;sdkname&gt;|&lt;sdkpath&gt;]] [-showBuildSettings] [&lt;buildsetting&gt;=&lt;value&gt;]... [&lt;buildaction&gt;]...</div><div class="line">       xcodebuild -version [-sdk [&lt;sdkfullpath&gt;|&lt;sdkname&gt;] [&lt;infoitem&gt;] ]</div><div class="line">       xcodebuild -list [[-project &lt;projectname&gt;]|[-workspace &lt;workspacename&gt;]] [-json]</div><div class="line">       xcodebuild -showsdks</div><div class="line">       xcodebuild -exportArchive -archivePath &lt;xcarchivepath&gt; -exportPath &lt;destinationpath&gt; -exportOptionsPlist &lt;plistpath&gt;</div><div class="line">       xcodebuild -exportLocalizations -localizationPath &lt;path&gt; -project &lt;projectname&gt; [-exportLanguage &lt;targetlanguage&gt;...]</div><div class="line">       xcodebuild -importLocalizations -localizationPath &lt;path&gt; -project &lt;projectname&gt;</div><div class="line"></div><div class="line">Options:</div><div class="line">    -usage                              print brief usage</div><div class="line">    -help                               print complete usage</div><div class="line">    -verbose                            provide additional status output</div><div class="line">    -license                            show the Xcode and SDK license agreements</div><div class="line">    -checkFirstLaunchStatus             Check if any First Launch tasks need to be performed</div><div class="line">    -project NAME                       build the project NAME</div><div class="line">    -target NAME                        build the target NAME</div><div class="line">    -alltargets                         build all targets</div><div class="line">    -workspace NAME                     build the workspace NAME</div><div class="line">    -scheme NAME                        build the scheme NAME</div><div class="line">    -configuration NAME                 use the build configuration NAME for building each target</div><div class="line">    -xcconfig PATH                      apply the build settings defined in the file at PATH as overrides</div><div class="line">    -arch ARCH                          build each target for the architecture ARCH; this will override architectures defined in the project</div><div class="line">    -sdk SDK                            use SDK as the name or path of the base SDK when building the project</div><div class="line">    -toolchain NAME                     use the toolchain with identifier or name NAME</div><div class="line">    -destination DESTINATIONSPECIFIER   use the destination described by DESTINATIONSPECIFIER (a comma-separated set of key=value pairs describing the destination to use)</div><div class="line">    -destination-timeout TIMEOUT        wait for TIMEOUT seconds while searching for the destination device</div><div class="line">    -parallelizeTargets                 build independent targets in parallel</div><div class="line">    -jobs NUMBER                        specify the maximum number of concurrent build operations</div><div class="line">    -dry-run                            do everything except actually running the commands</div><div class="line">    -quiet                              do not print any output except for warnings and errors</div><div class="line">    -hideShellScriptEnvironment         don&apos;t show shell script environment variables in build log</div><div class="line">    -showsdks                           display a compact list of the installed SDKs</div><div class="line">    -showBuildSettings                  display a list of build settings and values</div><div class="line">    -list                               lists the targets and configurations in a project, or the schemes in a workspace</div><div class="line">    -find-executable NAME               display the full path to executable NAME in the provided SDK and toolchain</div><div class="line">    -find-library NAME                  display the full path to library NAME in the provided SDK and toolchain</div><div class="line">    -version                            display the version of Xcode; with -sdk will display info about one or all installed SDKs</div><div class="line">    -enableAddressSanitizer YES|NO      turn the address sanitizer on or off</div><div class="line">    -enableThreadSanitizer YES|NO       turn the thread sanitizer on or off</div><div class="line">    -resultBundlePath PATH              specifies the directory where a result bundle describing what occurred will be placed</div><div class="line">    -derivedDataPath PATH               specifies the directory where build products and other derived data will go</div><div class="line">    -archivePath PATH                   specifies the directory where any created archives will be placed, or the archive that should be exported</div><div class="line">    -exportArchive                      specifies that an archive should be exported</div><div class="line">    -exportOptionsPlist PATH            specifies a path to a plist file that configures archive exporting</div><div class="line">    -enableCodeCoverage YES|NO          turn code coverage on or off when testing</div><div class="line">    -exportPath PATH                    specifies the destination for the product exported from an archive</div><div class="line">    -skipUnavailableActions             specifies that scheme actions that cannot be performed should be skipped instead of causing a failure</div><div class="line">    -exportLocalizations                exports completed and outstanding project localizations</div><div class="line">    -importLocalizations                imports localizations for a project, assuming any necessary localized resources have been created in Xcode</div><div class="line">    -localizationPath                   specifies a path to XLIFF localization files</div><div class="line">    -exportLanguage                     specifies multiple optional ISO 639-1 languages included in a localization export</div><div class="line">    -xctestrun                          specifies a path to a test run specification</div><div class="line">    -only-testing:TEST-IDENTIFIER       constrains testing by specifying tests to include, and excluding other tests</div><div class="line">    -skip-testing:TEST-IDENTIFIER       constrains testing by specifying tests to exclude, but including other tests</div><div class="line">    -json                               output as JSON (note: -json implies -quiet)</div><div class="line"></div><div class="line">Available keys for -exportOptionsPlist:</div><div class="line"></div><div class="line">  compileBitcode : Bool</div><div class="line"></div><div class="line">    For non-App Store exports, should Xcode re-compile the app from bitcode? Defaults to YES.</div><div class="line"></div><div class="line">  embedOnDemandResourcesAssetPacksInBundle : Bool</div><div class="line"></div><div class="line">    For non-App Store exports, if the app uses On Demand Resources and this is YES, asset packs are embedded in the app bundle so that the app can be tested without a server to host asset packs. Defaults to YES unless onDemandResourcesAssetPacksBaseURL is specified.</div><div class="line"></div><div class="line">  iCloudContainerEnvironment</div><div class="line"></div><div class="line">    For non-App Store exports, if the app is using CloudKit, this configures the &quot;com.apple.developer.icloud-container-environment&quot; entitlement. Available options: Development and Production. Defaults to Development.</div><div class="line"></div><div class="line">  manifest : Dictionary</div><div class="line"></div><div class="line">    For non-App Store exports, users can download your app over the web by opening your distribution manifest file in a web browser. To generate a distribution manifest, the value of this key should be a dictionary with three sub-keys: appURL, displayImageURL, fullSizeImageURL. The additional sub-key assetPackManifestURL is required when using on demand resources.</div><div class="line"></div><div class="line">  method : String</div><div class="line"></div><div class="line">    Describes how Xcode should export the archive. Available options: app-store, package, ad-hoc, enterprise, development, and developer-id. The list of options varies based on the type of archive. Defaults to development.</div><div class="line"></div><div class="line">  onDemandResourcesAssetPacksBaseURL : String</div><div class="line"></div><div class="line">    For non-App Store exports, if the app uses On Demand Resources and embedOnDemandResourcesAssetPacksInBundle isn&apos;t YES, this should be a base URL specifying where asset packs are going to be hosted. This configures the app to download asset packs from the specified URL.</div><div class="line"></div><div class="line">  teamID : String</div><div class="line"></div><div class="line">    The Developer Portal team to use for this export. Defaults to the team used to build the archive.</div><div class="line"></div><div class="line">  thinning : String</div><div class="line"></div><div class="line">    For non-App Store exports, should Xcode thin the package for one or more device variants? Available options: &lt;none&gt; (Xcode produces a non-thinned universal app), &lt;thin-for-all-variants&gt; (Xcode produces a universal app and all available thinned variants), or a model identifier for a specific device (e.g. &quot;iPhone7,1&quot;). Defaults to &lt;none&gt;.</div><div class="line"></div><div class="line">  uploadBitcode : Bool</div><div class="line"></div><div class="line">    For App Store exports, should the package include bitcode? Defaults to YES.</div><div class="line"></div><div class="line">  uploadSymbols : Bool</div><div class="line"></div><div class="line">    For App Store exports, should the package include symbols? Defaults to YES.</div></pre></td></tr></table></figure>
+<p>man xcodebuild</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div><div class="line">209</div><div class="line">210</div><div class="line">211</div><div class="line">212</div><div class="line">213</div><div class="line">214</div><div class="line">215</div><div class="line">216</div><div class="line">217</div><div class="line">218</div><div class="line">219</div><div class="line">220</div><div class="line">221</div><div class="line">222</div><div class="line">223</div><div class="line">224</div><div class="line">225</div><div class="line">226</div><div class="line">227</div><div class="line">228</div><div class="line">229</div><div class="line">230</div><div class="line">231</div><div class="line">232</div><div class="line">233</div><div class="line">234</div><div class="line">235</div><div class="line">236</div><div class="line">237</div><div class="line">238</div><div class="line">239</div><div class="line">240</div><div class="line">241</div><div class="line">242</div><div class="line">243</div><div class="line">244</div><div class="line">245</div><div class="line">246</div><div class="line">247</div><div class="line">248</div><div class="line">249</div><div class="line">250</div><div class="line">251</div><div class="line">252</div><div class="line">253</div><div class="line">254</div><div class="line">255</div><div class="line">256</div><div class="line">257</div><div class="line">258</div><div class="line">259</div><div class="line">260</div><div class="line">261</div><div class="line">262</div><div class="line">263</div><div class="line">264</div><div class="line">265</div><div class="line">266</div><div class="line">267</div><div class="line">268</div><div class="line">269</div><div class="line">270</div><div class="line">271</div><div class="line">272</div><div class="line">273</div><div class="line">274</div><div class="line">275</div><div class="line">276</div><div class="line">277</div><div class="line">278</div><div class="line">279</div><div class="line">280</div><div class="line">281</div><div class="line">282</div><div class="line">283</div><div class="line">284</div><div class="line">285</div><div class="line">286</div><div class="line">287</div><div class="line">288</div><div class="line">289</div><div class="line">290</div><div class="line">291</div><div class="line">292</div><div class="line">293</div><div class="line">294</div><div class="line">295</div><div class="line">296</div><div class="line">297</div><div class="line">298</div><div class="line">299</div><div class="line">300</div><div class="line">301</div><div class="line">302</div><div class="line">303</div><div class="line">304</div><div class="line">305</div><div class="line">306</div><div class="line">307</div><div class="line">308</div><div class="line">309</div><div class="line">310</div><div class="line">311</div><div class="line">312</div><div class="line">313</div><div class="line">314</div><div class="line">315</div><div class="line">316</div><div class="line">317</div><div class="line">318</div></pre></td><td class="code"><pre><div class="line">XCODEBUILD(1)             BSD General Commands Manual            XCODEBUILD(1)</div><div class="line"></div><div class="line">NAME</div><div class="line">     xcodebuild -- build Xcode projects and workspaces</div><div class="line"></div><div class="line">SYNOPSIS</div><div class="line">     xcodebuild [-project name.xcodeproj] [[-target targetname] ... | -alltargets] [-configuration configurationname] [-sdk [sdkfullpath | sdkname]] [action ...] [buildsetting=value ...] [-userdefault=value ...]</div><div class="line"></div><div class="line">     xcodebuild [-project name.xcodeproj] -scheme schemename [[-destination destinationspecifier] ...] [-destination-timeout value] [-configuration configurationname] [-sdk [sdkfullpath | sdkname]] [action ...] [buildsetting=value ...]</div><div class="line">                [-userdefault=value ...]</div><div class="line"></div><div class="line">     xcodebuild -workspace name.xcworkspace -scheme schemename [[-destination destinationspecifier] ...] [-destination-timeout value] [-configuration configurationname] [-sdk [sdkfullpath | sdkname]] [action ...] [buildsetting=value ...]</div><div class="line">                [-userdefault=value ...]</div><div class="line"></div><div class="line">     xcodebuild -version [-sdk [sdkfullpath | sdkname]] [infoitem]</div><div class="line"></div><div class="line">     xcodebuild -showsdks</div><div class="line"></div><div class="line">     xcodebuild -showBuildSettings [-project name.xcodeproj | [-workspace name.xcworkspace -scheme schemename]]</div><div class="line"></div><div class="line">     xcodebuild -list [-project name.xcodeproj | -workspace name.xcworkspace]</div><div class="line"></div><div class="line">     xcodebuild -exportArchive -archivePath xcarchivepath -exportPath destinationpath -exportOptionsPlist path</div><div class="line"></div><div class="line">     xcodebuild -exportLocalizations -project name.xcodeproj -localizationPath path [[-exportLanguage language] ...]</div><div class="line">     xcodebuild -importLocalizations -project name.xcodeproj -localizationPath path</div><div class="line"></div><div class="line">DESCRIPTION</div><div class="line">     xcodebuild builds one or more targets contained in an Xcode project, or builds a scheme contained in an Xcode workspace or Xcode project.</div><div class="line"></div><div class="line">   Usage</div><div class="line">     To build an Xcode project, run xcodebuild from the directory containing your project (i.e. the directory containing the name.xcodeproj package). If you have multiple projects in the this directory you will need to use -project to indicate</div><div class="line">     which project should be built.  By default, xcodebuild builds the first target listed in the project, with the default build configuration. The order of the targets is a property of the project and is the same for all users of the project.</div><div class="line"></div><div class="line">     To build an Xcode workspace, you must pass both the -workspace and -scheme options to define the build.  The parameters of the scheme will control which targets are built and how they are built, although you may pass other options to</div><div class="line">     xcodebuild to override some parameters of the scheme.</div><div class="line"></div><div class="line">     There are also several options that display info about the installed version of Xcode or about projects or workspaces in the local directory, but which do not initiate an action.  These include -list, -showBuildSettings, -showsdks, -usage,</div><div class="line">     and -version.</div><div class="line"></div><div class="line">   Options</div><div class="line">     -project name.xcodeproj</div><div class="line">           Build the project name.xcodeproj.  Required if there are multiple project files in the same directory.</div><div class="line"></div><div class="line">     -target targetname</div><div class="line">           Build the target specified by targetname.</div><div class="line"></div><div class="line">     -alltargets</div><div class="line">           Build all the targets in the specified project.</div><div class="line"></div><div class="line">     -workspace name.xcworkspace</div><div class="line">           Build the workspace name.xcworkspace.</div><div class="line"></div><div class="line">     -scheme schemename</div><div class="line">           Build the scheme specified by schemename.  Required if building a workspace.</div><div class="line"></div><div class="line">     -destination destinationspecifier</div><div class="line">           Use the destination device described by destinationspecifier.  Defaults to a destination that is compatible with the selected scheme.  See the Destinations section below for more details.</div><div class="line"></div><div class="line">     -destination-timeout timeout</div><div class="line">           Use the specified timeout when searching for a destination device. The default is 30 seconds.</div><div class="line"></div><div class="line">     -configuration configurationname</div><div class="line">           Use the build configuration specified by configurationname when building each target.</div><div class="line"></div><div class="line">     -arch architecture</div><div class="line">           Use the architecture specified by architecture when building each target.</div><div class="line"></div><div class="line">     -sdk [sdkfullpath | sdkname]</div><div class="line">           Build an Xcode project or workspace against the specified SDK, using build tools appropriate for that SDK. The argument may be an absolute path to an SDK, or the canonical name of an SDK.</div><div class="line"></div><div class="line">     -showsdks</div><div class="line">           Lists all available SDKs that Xcode knows about, including their canonical names suitable for use with -sdk.  Does not initiate a build.</div><div class="line"></div><div class="line">     -showBuildSettings</div><div class="line">           Lists the build settings in a project or workspace and scheme. Does not initiate a build. Use with -project or -workspace and -scheme.</div><div class="line"></div><div class="line">     -list</div><div class="line">           Lists the targets and configurations in a project, or the schemes in a workspace. Does not initiate a build. Use with -project or -workspace.</div><div class="line"></div><div class="line">     -enableAddressSanitizer [YES | NO]</div><div class="line">           Turns the address sanitizer on or off. This overrides the setting for the launch action of a scheme in a workspace.</div><div class="line"></div><div class="line">     -enableThreadSanitizer [YES | NO]</div><div class="line">           Turns the thread sanitizer on or off. This overrides the setting for the launch action of a scheme in a workspace.</div><div class="line"></div><div class="line">     -enableCodeCoverage [YES | NO]</div><div class="line">           Turns code coverage on or off during testing. This overrides the setting for the test action of a scheme in a workspace.</div><div class="line"></div><div class="line">     -derivedDataPath path</div><div class="line">           Overrides the folder that should be used for derived data when performing an action on a scheme in a workspace.</div><div class="line"></div><div class="line">     -resultBundlePath path</div><div class="line">           Writes a bundle to the specified path with results from performing an action on a scheme in a workspace.</div><div class="line"></div><div class="line">     -exportArchive</div><div class="line">           Specifies that an archive should be exported. Requires -archivePath, -exportPath, and -exportOptionsPlist.  Cannot be passed along with an action.</div><div class="line"></div><div class="line">     -archivePath xcarchivepath</div><div class="line">           Specifies the path for the archive produced by the archive action, or specifies the archive that should be exported when -exportArchive is passed.</div><div class="line"></div><div class="line">     -exportPath destinationpath</div><div class="line">           Specifies the destination for the exported product, including the name of the exported file.</div><div class="line"></div><div class="line">     -exportOptionsPlist path</div><div class="line">           Specifies options for -exportArchive.  xcodebuild -help can print the full set of available options.</div><div class="line"></div><div class="line">     -exportLocalizations</div><div class="line">           Exports localizations to XLIFF files. Requires -project and -localizationPath. Cannot be passed along with an action.</div><div class="line"></div><div class="line">     -importLocalizations</div><div class="line">           Imports localizations from an XLIFF file. Requires -project and -localizationPath. Cannot be passed along with an action.</div><div class="line"></div><div class="line">     -localizationPath</div><div class="line">           Specifies a path to a directory or a single XLIFF localization file.</div><div class="line"></div><div class="line">     -exportLanguage language</div><div class="line">           Specifies optional ISO 639-1 languages included in a localization export. May be repeated to specify multiple languages. May be excluded to specify an export includes only development language strings.</div><div class="line"></div><div class="line">     action ...</div><div class="line">           Specify one or more actions to perform. Available actions are:</div><div class="line"></div><div class="line">           build                  Build the target in the build root (SYMROOT).  This is the default action, and is used if no action is given.</div><div class="line"></div><div class="line">           build-for-testing      Build the target and associated tests in the build root (SYMROOT).  This will also produce an xctestrun file in the build root. This requires specifying a scheme.</div><div class="line"></div><div class="line">           analyze                Build and analyze a target or scheme from the build root (SYMROOT).  This requires specifying a scheme.</div><div class="line"></div><div class="line">           archive                Archive a scheme from the build root (SYMROOT).  This requires specifying a scheme.</div><div class="line"></div><div class="line">           test                   Test a scheme from the build root (SYMROOT).  This requires specifying a scheme and optionally a destination.</div><div class="line"></div><div class="line">           test-without-building  Test compiled bundles. If a scheme is provided with -scheme then the command finds bundles in the build root (SRCROOT).  If an xctestrun file is provided with -xctestrun then the command finds bundles at paths</div><div class="line">                                  specified in the xctestrun file.</div><div class="line"></div><div class="line">           install-src            Copy the source of the project to the source root (SRCROOT).</div><div class="line"></div><div class="line">           install                Build the target and install it into the target&apos;s installation directory in the distribution root (DSTROOT).</div><div class="line"></div><div class="line">           clean                  Remove build products and intermediate files from the build root (SYMROOT).</div><div class="line"></div><div class="line">     -xcconfig filename</div><div class="line">           Load the build settings defined in filename when building all targets.  These settings will override all other settings, including settings passed individually on the command line.</div><div class="line"></div><div class="line">     -xctestrun xctestrunpath</div><div class="line">           Specifies test run parameters. Can only be used with the test-without-building action. Cannot be used with -workspace or -project.  See &lt;x-man-page://5/xcodebuild.xctestrun&gt; for file format details.</div><div class="line"></div><div class="line">     -skip-testing:test-identifier, -only-testing:test-identifier</div><div class="line">           Constrain test actions.  -only-testing: constrains a test action to only testing a specified identifier, and excluding all other identifiers.  -skip-testing: constrains a test action  to  skip  testing  a  specified  identifier,  but</div><div class="line">           including all other identifiers. Test identifiers have the form TestTarget[/TestClass[/TestMethod]]. An xcodebuild command can combine multiple constraint options, but -only-testing: has precedence over -skip-testing:.</div><div class="line"></div><div class="line">     -dry-run, -n</div><div class="line">           Print the commands that would be executed, but do not execute them.</div><div class="line"></div><div class="line">     -skipUnavailableActions</div><div class="line">           Skip actions that cannot be performed instead of failing. This option is only honored if -scheme is passed.</div><div class="line"></div><div class="line">     buildsetting=value</div><div class="line">           Set the build setting buildsetting to value.</div><div class="line"></div><div class="line">           A detailed reference of Xcode build settings can be found at: &lt;https://developer.apple.com/documentation/DeveloperTools/Reference/XcodeBuildSettingRef/&gt;</div><div class="line"></div><div class="line">     -userdefault=value</div><div class="line">           Set the user default userdefault to value.</div><div class="line"></div><div class="line">     -toolchain [identifier | name]</div><div class="line">           Use a given toolchain, specified with either an identifier or name.</div><div class="line"></div><div class="line">     -quiet</div><div class="line">           Do not print any output except for warnings and errors.</div><div class="line"></div><div class="line">     -verbose</div><div class="line">           Provide additional status output.</div><div class="line"></div><div class="line">     -version</div><div class="line">           Display  version  information  for this install of Xcode. Does not initiate a build. When used in conjunction with -sdk, the version of the specified SDK is displayed, or all SDKs if -sdk is given no argument.  Additionally, a single</div><div class="line">           line of the reported version information may be returned if infoitem is specified.</div><div class="line"></div><div class="line">     -license</div><div class="line">           Show the Xcode and SDK license agreements. Allows for accepting the license agreements without launching Xcode itself, which is useful for headless systems. Must be run as a privileged user.</div><div class="line"></div><div class="line">     -usage</div><div class="line">           Displays usage information for xcodebuild.</div><div class="line"></div><div class="line">   Destinations</div><div class="line">     The -destination option takes as its argument a destination specifier describing the device (or devices) to use as a destination.  A destination specifier is a single argument consisting of a set of comma-separated  key=value  pairs.   The</div><div class="line">     -destination option may be specified multiple times to cause xcodebuild to perform the specified action on multiple destinations.</div><div class="line"></div><div class="line">     Destination specifiers may include the platform key to specify one of the supported destination platforms.  There are additional keys which should be supplied depending on the platform of the device you are selecting.</div><div class="line"></div><div class="line">     Some devices may take time to look up. The -destination-timeout option can be used to specify the amount of time to wait before a device is considered unavailable.  If unspecified, the default timeout is 30 seconds.</div><div class="line"></div><div class="line">     Currently, xcodebuild supports these platforms:</div><div class="line"></div><div class="line">     macOS              The local Mac, referred to in the Xcode interface as My Mac, and which supports the following key:</div><div class="line"></div><div class="line">                        arch  The architecture to use, either x86_64 (the default) or i386.</div><div class="line"></div><div class="line">     iOS                An iOS device, which supports the following keys:</div><div class="line"></div><div class="line">                        id    The identifier of the device to use, as shown in the Devices window. A valid destination specifier must provide either id or name, but not both.</div><div class="line"></div><div class="line">                        name  The name of the device to use. A valid destination specifier must provide either id or name, but not both.</div><div class="line"></div><div class="line">     iOS Simulator      A simulated iOS device, which supports the following keys:</div><div class="line"></div><div class="line">                        id    The identifier of the simulated device to use, as shown in the Devices window. A valid destination specifier must provide either id or name, but not both.</div><div class="line"></div><div class="line">                        name  The name of the simulated device to use. A valid destination specifier must provide either id or name, but not both.</div><div class="line"></div><div class="line">                        OS    When  specifying  the  simulated  device  by  name, the iOS version for that simulated device, such as 6.0, or the string latest (the default) to indicate the most recent version of iOS supported by this version of</div><div class="line">                              Xcode.</div><div class="line"></div><div class="line">     watchOS            A watchOS app is always built and deployed nested inside of an iOS app. To use a watchOS device as your destination, specify a scheme which is configured to run a WatchKit app, and specify the  iOS  platform  destination</div><div class="line">                        that is paired with the watchOS device you want to use.</div><div class="line"></div><div class="line">     watchOS Simulator  A  watchOS  Simulator app is always built and deployed nested inside of an iOS Simulator app. To use a watchOS Simulator device as your destination, specify a scheme which is configured to run a WatchKit app, and specify</div><div class="line">                        the iOS Simulator platform destination that is paired with the watchOS Simulator device you want to use.</div><div class="line"></div><div class="line">     tvOS               A tvOS device, which supports the following keys:</div><div class="line"></div><div class="line">                        id    The identifier of the device to use, as shown in the Devices window. A valid destination specifier must provide either id or name, but not both.</div><div class="line"></div><div class="line">                        name  The name of the device to use. A valid destination specifier must provide either id or name, but not both.</div><div class="line"></div><div class="line">     tvOS Simulator     A simulated tvOS device, which supports the following keys:</div><div class="line"></div><div class="line">                        id    The identifier of the simulated device to use, as shown in the Devices window. A valid destination specifier must provide either id or name, but not both.</div><div class="line"></div><div class="line">                        name  The name of the simulated device to use. A valid destination specifier must provide either id or name, but not both.</div><div class="line"></div><div class="line">                        OS    When specifying the simulated device by name, the tvOS version for that simulated device, such as 9.0, or the string latest (the default) to indicate the most recent version of tvOS supported  by  this  version  of</div><div class="line">                              Xcode.</div><div class="line"></div><div class="line">     Some  actions (such as building) may be performed without an actual device present.  To build against a platform generically instead of a specific device, the destination specifier may be prefixed with the optional string &quot;generic/&quot;, indi-</div><div class="line">     cating that the platform should be targeted generically.  An example of a generic destination is the &quot;Generic iOS Device&quot; destination displayed in Xcode&apos;s UI when no physical iOS device is present.</div><div class="line"></div><div class="line">   Exporting Archives</div><div class="line">     The -exportArchive option specifies that xcodebuild should export the archive  specified  by  -archivePath  using  the  options  specified  by  -exportOptionsPlist.   xcodebuild  -help  can  print  the  full  set  of  available  inputs  to</div><div class="line">     -exportOptionsPlist.  The exported product will be placed at the path specified by -exportPath.</div><div class="line"></div><div class="line">   Environment Variables</div><div class="line">     The following environment variables affect the execution of xcodebuild:</div><div class="line"></div><div class="line">     XCODE_XCCONFIG_FILE</div><div class="line">                     Set to a path to a file, build settings in that file will be loaded and used when building all targets.  These settings will override all other settings, including settings passed individually on the command line, and those</div><div class="line">                     in the file passed with the -xcconfig option.</div><div class="line"></div><div class="line">   Exit Codes</div><div class="line">     xcodebuild exits with codes defined by sysexits(3).  It will exit with EX_OK on success.  On failure, it will commonly exit with EX_USAGE if any options appear malformed, EX_NOINPUT if any input files cannot be found, EX_IOERR if any files</div><div class="line">     cannot be read or written, and EX_SOFTWARE if the commands given to xcodebuild fail.  It may exit with other codes in less common scenarios.</div><div class="line"></div><div class="line">EXAMPLES</div><div class="line">     xcodebuild clean install</div><div class="line"></div><div class="line">              Cleans the build directory; then builds and installs the first target in the Xcode project in the directory from which xcodebuild was started.</div><div class="line"></div><div class="line">     xcodebuild -project MyProject.xcodeproj -target Target1 -target Target2 -configuration Debug</div><div class="line"></div><div class="line">              Builds the targets Target1 and Target2 in the project MyProject.xcodeproj using the Debug configuration.</div><div class="line"></div><div class="line">     xcodebuild -target MyTarget OBJROOT=/Build/MyProj/Obj.root SYMROOT=/Build/MyProj/Sym.root</div><div class="line"></div><div class="line">              Builds the target MyTarget in the Xcode project in the directory from which xcodebuild was started, putting intermediate files in the directory /Build/MyProj/Obj.root and the products of the build in the directory</div><div class="line">              /Build/MyProj/Sym.root.</div><div class="line"></div><div class="line">     xcodebuild -sdk macosx10.6</div><div class="line"></div><div class="line">              Builds the Xcode project in the directory from which xcodebuild was started against the macOS 10.6 SDK.  The canonical names of all available SDKs can be viewed using the -showsdks option.</div><div class="line"></div><div class="line">     xcodebuild -workspace MyWorkspace.xcworkspace -scheme MyScheme</div><div class="line"></div><div class="line">              Builds the scheme MyScheme in the Xcode workspace MyWorkspace.xcworkspace.</div><div class="line"></div><div class="line">     xcodebuild archive -workspace MyWorkspace.xcworkspace -scheme MyScheme</div><div class="line"></div><div class="line">              Archives the scheme MyScheme in the Xcode workspace MyWorkspace.xcworkspace.</div><div class="line"></div><div class="line">     xcodebuild build-for-testing -workspace MyWorkspace.xcworkspace -scheme MyScheme -destination generic/platform=iOS</div><div class="line"></div><div class="line">              Build tests and associated targets in the scheme MyScheme in the Xcode workspace MyWorkspace.xcworkspace using the generic iOS device destination. The command also writes test parameters from the scheme to an xctestrun file in the</div><div class="line">              built products directory.</div><div class="line"></div><div class="line">     xcodebuild test-without-building -workspace MyWorkspace.xcworkspace -scheme MyScheme -destination &apos;platform=iOS Simulator,name=iPhone 5s&apos; -destination &apos;platform=iOS,name=My iPad&apos;</div><div class="line"></div><div class="line">              Tests the scheme MyScheme in the Xcode workspace MyWorkspace.xcworkspace using both the iOS Simulator and the device named iPhone 5s for the latest version of iOS. The command assumes the test bundles are in the build root</div><div class="line">              (SYMROOT).  (Note that the shell requires arguments to be quoted or otherwise escaped if they contain spaces.)</div><div class="line"></div><div class="line">     xcodebuild test-without-building -xctestrun MyTestRun.xctestrun -destination &apos;platform=iOS Simulator,name=iPhone 5s&apos; -destination &apos;platform=iOS,name=My iPad&apos;</div><div class="line"></div><div class="line">              Tests using both the iOS Simulator and the device named iPhone 5s.  Test bundle paths and other test parameters are specified in MyTestRun.xctestrun.  The command requires project binaries and does not require project source code.</div><div class="line"></div><div class="line">     xcodebuild test -workspace MyWorkspace.xcworkspace -scheme MyScheme -destination &apos;platform=macOS,arch=x86_64&apos;</div><div class="line"></div><div class="line">              Tests the scheme MyScheme in the Xcode workspace MyWorkspace.xcworkspace using the destination described as My Mac 64-bit in Xcode.</div><div class="line"></div><div class="line">     xcodebuild -exportArchive -archivePath MyMobileApp.xcarchive -exportPath ExportDestination -exportOptionsPlist &apos;export.plist&apos;</div><div class="line"></div><div class="line">              Exports the archive MyMobileApp.xcarchive to the path ExportDestination using the options specified in export.plist.</div><div class="line"></div><div class="line">     xcodebuild -exportLocalizations -project MyProject.xcodeproj -localizationPath MyDirectory -exportLanguage zh-hans -exportLanguage es-MX</div><div class="line"></div><div class="line">              Exports two XLIFF files to MyDirectory from MyProject.xcodeproj containing development language strings and translations for Simplified Chinese and Mexican Spanish.</div><div class="line"></div><div class="line">     xcodebuild -exportLocalizations -project MyProject.xcodeproj -localizationPath MyDirectory</div><div class="line"></div><div class="line">              Export a single XLIFF file to MyDirectory from MyProject.xcodeproj containing only development language strings. (In this case, the -exportLanguage parameter has been excluded.)</div><div class="line"></div><div class="line">     xcodebuild -importLocalizations -project MyProject.xcodeproj -localizationPath MyLocalizations.xliff</div><div class="line"></div><div class="line">              Imports localizations from MyLocalizations.xliff into MyProject.xcodeproj.  Translations with issues will be reported but not imported.</div><div class="line"></div><div class="line">SEE ALSO</div><div class="line">     ibtool(1), sysexits(3), xcode-select(1), xcrun(1), xed(1)</div><div class="line"></div><div class="line">     Xcode Builds Settings Reference &lt;https://developer.apple.com/documentation/DeveloperTools/Reference/XcodeBuildSettingRef/&gt;</div><div class="line"></div><div class="line">macOS                            June 20, 2016                           macOS</div></pre></td></tr></table></figure>
+<ul>
+<li><a href="https://developer.apple.com/library/content/documentation/Xcode/Conceptual/WhatsNewXcode-Archive/Articles/Introduction.html" target="_blank" rel="external">https://developer.apple.com/library/content/documentation/Xcode/Conceptual/WhatsNewXcode-Archive/Articles/Introduction.html</a></li>
+<li><a href="http://help.apple.com/xcode/mac/8.3/" target="_blank" rel="external">http://help.apple.com/xcode/mac/8.3/</a></li>
+</ul>
+<p>buildClean=============</p>
+<p>xcodebuild clean</p>
+<p>buildArchive=============<br>xcodebuild archive -workspace /Users/huixisheng/Apps/BYBeautyTips/BYBeautyTips.xcworkspace -scheme BYBeautyTips -sdk iphoneos10.3 -configuration Debug  -archivePath /Users/huixisheng/Apps/BYBeautyTips/build/outputs/BYBeautyTips_Debug.xcarchive</p>
+<p>exportIPA=============<br>xcodebuild -exportArchive -archivePath /Users/huixisheng/Apps/BYBeautyTips/build/outputs/BYBeautyTips_Debug.xcarchive -exportPath /Users/huixisheng/Apps/BYBeautyTips/build/outputs/BYBeautyTips_Debug.ipa -exportOptionsPlist “/Users/huixisheng/Mzxd/jenkins-scripts/exportPlist.plist” -destination generic/platform=iOS</p>
+<h2 id="����"><a href="#����" class="headerlink" title="����"></a>����</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Error Domain=IDEDistributionErrorDomain Code=14 &quot;No applicable devices found.&quot; UserInfo=&#123;NSLocalizedDescription=No applicable devices found.&#125;</div></pre></td></tr></table></figure>
+<p>����<code>~/Library/MobileDevice/Provisioning\ Profiles</code>ɾ�������ļ�������xcode,�Զ�����</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xcodebuild[7021:2725881] [MT] IDEDistribution: -[IDEDistributionProvisioning _itemToSigningInfoMap:]: Can&apos;t find any applicable signing identities for items:</div></pre></td></tr></table></figure>
+<p>Provisioning Profile�ļ�·��<br>~/Library/MobileDevice/Provisioning\ Profiles</p>
+<ul>
+<li><a href="http://www.kimbs.cn/2015/04/ios-development-provisioning-profile/" target="_blank" rel="external">http://www.kimbs.cn/2015/04/ios-development-provisioning-profile/</a></li>
+<li><a href="http://blog.fir.im/zhengshu/" target="_blank" rel="external">http://blog.fir.im/zhengshu/</a></li>
+</ul>
+<p>rvm use system<br>env: ruby_executable_hooks: No such file or directory</p>
+<blockquote>
+<p>sudo gem install –user-install executable-hooks</p>
+<ul>
+<li><a href="http://stackoverflow.com/questions/26247926/how-to-solve-usr-bin-env-ruby-executable-hooks-no-such-file-or-directory" target="_blank" rel="external">http://stackoverflow.com/questions/26247926/how-to-solve-usr-bin-env-ruby-executable-hooks-no-such-file-or-directory</a></li>
+<li><a href="https://github.com/rvm/executable-hooks/issues/6" target="_blank" rel="external">https://github.com/rvm/executable-hooks/issues/6</a></li>
+</ul>
+</blockquote>
+<p>rvm list<br>rvm use ruby-2.3.0</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Error Domain=IDEDistributionErrorDomain Code=3 &quot;(null)&quot; UserInfo=&#123;IDEDistributionErrorSigningIdentityToItemToUnderlyingErrorKey=</div></pre></td></tr></table></figure>
+<ul>
+<li><a href="http://www.jianshu.com/p/f9d09b54eae4" target="_blank" rel="external">http://www.jianshu.com/p/f9d09b54eae4</a></li>
+<li><a href="http://www.jianshu.com/p/4eb789f586b5" target="_blank" rel="external">http://www.jianshu.com/p/4eb789f586b5</a></li>
+<li><p><a href="https://medium.com/@wuhsienyou/xcode-8-3-%E8%87%AA%E5%8B%95%E6%89%93%E5%8C%85%E5%95%8F%E9%A1%8C-66ae27e120c5" target="_blank" rel="external">https://medium.com/@wuhsienyou/xcode-8-3-%E8%87%AA%E5%8B%95%E6%89%93%E5%8C%85%E5%95%8F%E9%A1%8C-66ae27e120c5</a></p>
+</li>
+<li><p><a href="https://juejin.im/entry/5833b86bda2f600061cc2320" target="_blank" rel="external">������ǩ������Ǩ�Ƶ� Xcode 8</a></p>
+</li>
+<li><a href="http://www.szeju.com/index.php/other/3367319.html" target="_blank" rel="external">http://www.szeju.com/index.php/other/3367319.html</a></li>
+<li><a href="http://liumh.com/2015/11/25/ios-auto-archive-ipa/#script-build" target="_blank" rel="external">http://liumh.com/2015/11/25/ios-auto-archive-ipa/#script-build</a></li>
+<li><a href="http://www.jianshu.com/p/722adedaa3bf" target="_blank" rel="external">http://www.jianshu.com/p/722adedaa3bf</a></li>
+<li><a href="https://segmentfault.com/a/1190000004533963" target="_blank" rel="external">https://segmentfault.com/a/1190000004533963</a></li>
+<li><a href="http://zackzheng.info/2015/12/27/2015-12-27-an-automated-script-for-building-archiving-submission-sending-emails/" target="_blank" rel="external">http://zackzheng.info/2015/12/27/2015-12-27-an-automated-script-for-building-archiving-submission-sending-emails/</a></li>
+<li><a href="https://blog.nswebfrog.com/2015/10/31/xcodebuild/" target="_blank" rel="external">https://blog.nswebfrog.com/2015/10/31/xcodebuild/</a></li>
+<li><a href="http://www.jianshu.com/p/2d20fb33195d" target="_blank" rel="external">http://www.jianshu.com/p/2d20fb33195d</a></li>
+<li><a href="https://juejin.im/entry/586f4c118d6d81006c1baf33" target="_blank" rel="external">https://juejin.im/entry/586f4c118d6d81006c1baf33</a></li>
+<li><a href="http://www.developerq.com/article/1492387465" target="_blank" rel="external">http://www.developerq.com/article/1492387465</a></li>
+<li><a href="http://stackoverflow.com/questions/39500634/use-xcodebuild-xcode-8-and-automatic-signing-in-ci-travis-jenkins-environmen" target="_blank" rel="external">http://stackoverflow.com/questions/39500634/use-xcodebuild-xcode-8-and-automatic-signing-in-ci-travis-jenkins-environmen</a></li>
+</ul>
+<ul>
+<li><a href="https://circleci.com/" target="_blank" rel="external">https://circleci.com/</a></li>
+<li><a href="https://github.com/fastlane/fastlane" target="_blank" rel="external">https://github.com/fastlane/fastlane</a></li>
+<li><a href="http://old.robertvojta.com/2015/10/15/export-ipa-travis/" target="_blank" rel="external">http://old.robertvojta.com/2015/10/15/export-ipa-travis/</a></li>
+<li><a href="https://pewpewthespells.com/blog/xcconfig_guide.html" target="_blank" rel="external">https://pewpewthespells.com/blog/xcconfig_guide.html</a></li>
+<li>xctool</li>
+<li>xcbuild <a href="https://github.com/facebook/xcbuild" target="_blank" rel="external">https://github.com/facebook/xcbuild</a></li>
+<li><a href="http://blog.flow.ci/practices-ios-chi-xu-ji-cheng-chu-ti-yan-by-flowci/" target="_blank" rel="external">http://blog.flow.ci/practices-ios-chi-xu-ji-cheng-chu-ti-yan-by-flowci/</a></li>
+<li><a href="http://help.apple.com/xcode/mac/8.0/#/" target="_blank" rel="external">http://help.apple.com/xcode/mac/8.0/#/</a></li>
+</ul>
+<h2 id="����ruby"><a href="#����ruby" class="headerlink" title="����ruby"></a>����ruby</h2><ul>
+<li><a href="https://www.zhihu.com/question/19552911" target="_blank" rel="external">https://www.zhihu.com/question/19552911</a></li>
+<li><a href="https://www.ruby-lang.org/en/documentation/installation/" target="_blank" rel="external">https://www.ruby-lang.org/en/documentation/installation/</a></li>
+<li><a href="https://rvm.io/rubies/default" target="_blank" rel="external">https://rvm.io/rubies/default</a></li>
+<li><a href="https://gorails.com/setup/osx/10.12-sierra" target="_blank" rel="external">https://gorails.com/setup/osx/10.12-sierra</a></li>
+</ul>
+<h2 id="shell-�u�"><a href="#shell-�u�" class="headerlink" title="shell �ű�"></a>shell �ű�</h2><ul>
+<li><a href="https://github.com/seisman/how-to-write-makefile" target="_blank" rel="external">https://github.com/seisman/how-to-write-makefile</a></li>
+<li><a href="https://ghui.me/post/2016/06/shell-handbook/" target="_blank" rel="external">https://ghui.me/post/2016/06/shell-handbook/</a></li>
+<li><a href="https://github.com/qinjx/30min_guides/blob/master/shell.md" target="_blank" rel="external">https://github.com/qinjx/30min_guides/blob/master/shell.md</a></li>
+<li><a href="http://www.runoob.com/linux/linux-shell.html" target="_blank" rel="external">http://www.runoob.com/linux/linux-shell.html</a></li>
+<li><a href="https://github.com/heyuan110/BashShell" target="_blank" rel="external">https://github.com/heyuan110/BashShell</a></li>
+</ul>
+<h2 id="����-1"><a href="#����-1" class="headerlink" title="����"></a>����</h2><ul>
+<li><a href="https://juejin.im/entry/585ca36c128fe10069c8e79d" target="_blank" rel="external">iOS �������Զ����� (archive)</a></li>
+<li><a href="http://www.offbye.com/2016/05/28/jenkins-xcodebuild�����д���iOS��Ŀ��������/" target="_blank" rel="external">http://www.offbye.com/2016/05/28/jenkins-xcodebuild�����д���iOS��Ŀ��������/</a></li>
+<li><a href="http://www.jianshu.com/p/3f43370437d2" target="_blank" rel="external">http://www.jianshu.com/p/3f43370437d2</a></li>
+</ul>
+<h2 id="证书"><a href="#证书" class="headerlink" title="证书"></a>证书</h2><ul>
+<li><a href="http://blog.csdn.net/phunxm/article/details/42685597" target="_blank" rel="external">http://blog.csdn.net/phunxm/article/details/42685597</a></li>
+<li><a href="https://www.dexcoder.com/dexcoder/article/2137" target="_blank" rel="external">https://www.dexcoder.com/dexcoder/article/2137</a></li>
+<li><a href="http://www.wenghengcong.com/2016/07/iOS%E8%AF%81%E4%B9%A6%E4%B8%80%E8%A7%88/" target="_blank" rel="external">http://www.wenghengcong.com/2016/07/iOS%E8%AF%81%E4%B9%A6%E4%B8%80%E8%A7%88/</a></li>
+<li><a href="https://www.coder4.com/archives/4958" target="_blank" rel="external">https://www.coder4.com/archives/4958</a></li>
+<li><a href="http://blog.fir.im/ios-appyan-fa-de-zui-hou-chong-ci-nei-ce-yu-bu-shu/" target="_blank" rel="external">http://blog.fir.im/ios-appyan-fa-de-zui-hou-chong-ci-nei-ce-yu-bu-shu/</a></li>
+</ul>
+<h2 id="iOS开发证书与配置文件的使用"><a href="#iOS开发证书与配置文件的使用" class="headerlink" title="iOS开发证书与配置文件的使用"></a>iOS开发证书与配置文件的使用</h2><ul>
+<li><a href="https://zhuanlan.zhihu.com/p/21279798" target="_blank" rel="external">https://zhuanlan.zhihu.com/p/21279798</a></li>
+<li><a href="https://cnbin.github.io/blog/2015/08/18/guan-yu-certificate,-provisioning-profile,-app-idde-jie-shao-ji-qi-zhi-jian-de-guan-xi/" target="_blank" rel="external">https://cnbin.github.io/blog/2015/08/18/guan-yu-certificate,-provisioning-profile,-app-idde-jie-shao-ji-qi-zhi-jian-de-guan-xi/</a></li>
+<li><a href="https://cnbin.github.io/blog/2015/08/18/guan-yu-certificate,-provisioning-profile,-app-idde-jie-shao-ji-qi-zhi-jian-de-guan-xi/" target="_blank" rel="external">https://cnbin.github.io/blog/2015/08/18/guan-yu-certificate,-provisioning-profile,-app-idde-jie-shao-ji-qi-zhi-jian-de-guan-xi/</a></li>
+<li><a href="http://blog.csdn.net/phunxm/article/details/42685597" target="_blank" rel="external">http://blog.csdn.net/phunxm/article/details/42685597</a></li>
+<li><a href="https://juejin.im/entry/58f9730bb123db411954708a" target="_blank" rel="external">https://juejin.im/entry/58f9730bb123db411954708a</a></li>
+<li><a href="http://www.jianshu.com/p/71acb31eadd2" target="_blank" rel="external">http://www.jianshu.com/p/71acb31eadd2</a></li>
+<li><a href="http://www.jianshu.com/p/9d9e3699515e" target="_blank" rel="external">http://www.jianshu.com/p/9d9e3699515e</a></li>
+<li><a href="http://www.jianshu.com/p/c8e86f62687a" target="_blank" rel="external">http://www.jianshu.com/p/c8e86f62687a</a></li>
+<li><h2 id="安卓打包报名更换"><a href="#安卓打包报名更换" class="headerlink" title="安卓打包报名更换"></a>安卓打包报名更换</h2></li>
+<li><p><a href="https://www.google.com.hk/search?q=%E5%AE%89%E5%8D%93+gradle++%E6%89%93%E5%8C%85%E4%BF%AE%E6%94%B9%E5%8C%85%E5%90%8D&amp;safe=strict&amp;ei=EPQLWZ2-MYzP0gTn5obgBQ&amp;start=10&amp;sa=N&amp;biw=1882&amp;bih=1103" target="_blank" rel="external">https://www.google.com.hk/search?q=%E5%AE%89%E5%8D%93+gradle++%E6%89%93%E5%8C%85%E4%BF%AE%E6%94%B9%E5%8C%85%E5%90%8D&amp;safe=strict&amp;ei=EPQLWZ2-MYzP0gTn5obgBQ&amp;start=10&amp;sa=N&amp;biw=1882&amp;bih=1103</a></p>
+</li>
+<li><a href="http://www.cnblogs.com/soaringEveryday/p/4599770.html" target="_blank" rel="external">http://www.cnblogs.com/soaringEveryday/p/4599770.html</a></li>
+<li><a href="http://www.jianshu.com/p/3ee5d638f0a0" target="_blank" rel="external">http://www.jianshu.com/p/3ee5d638f0a0</a></li>
+<li><a href="http://yifeng.studio/2016/09/06/apk-environment-separate/" target="_blank" rel="external">http://yifeng.studio/2016/09/06/apk-environment-separate/</a></li>
+<li><a href="http://android.jobbole.com/84752/" target="_blank" rel="external">http://android.jobbole.com/84752/</a></li>
+<li><a href="https://github.com/mcxiaoke/gradle-packer-plugin" target="_blank" rel="external">https://github.com/mcxiaoke/gradle-packer-plugin</a></li>
+<li><a href="http://tech.meituan.com/mt-apk-adaptation.html" target="_blank" rel="external">http://tech.meituan.com/mt-apk-adaptation.html</a></li>
+</ul>
+<h2 id="上传大文件"><a href="#上传大文件" class="headerlink" title="上传大文件"></a>上传大文件</h2><ul>
+<li><a href="https://devhub.io/repos/swoole-node-agent" target="_blank" rel="external">https://devhub.io/repos/swoole-node-agent</a></li>
+<li><a href="https://cnodejs.org/topic/567ff40b435249f221f53ad4" target="_blank" rel="external">https://cnodejs.org/topic/567ff40b435249f221f53ad4</a></li>
+<li><a href="https://github.com/javanf/webUpload" target="_blank" rel="external">https://github.com/javanf/webUpload</a></li>
+<li><a href="https://github.com/berwin/aliyun-oss-upload-stream" target="_blank" rel="external">https://github.com/berwin/aliyun-oss-upload-stream</a></li>
+<li><a href="https://segmentfault.com/a/1190000000357044" target="_blank" rel="external">https://segmentfault.com/a/1190000000357044</a></li>
+</ul>
+<h2 id="fastlane"><a href="#fastlane" class="headerlink" title="fastlane"></a>fastlane</h2><ul>
+<li><a href="https://slarker.me/fastlane/" target="_blank" rel="external">https://slarker.me/fastlane/</a></li>
+<li><a href="http://moyunmo.com/2016/03/01/jenkins-fastlane/" target="_blank" rel="external">http://moyunmo.com/2016/03/01/jenkins-fastlane/</a></li>
+<li></li>
+</ul>
+
+    
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="huixisheng" />
+          <p class="site-author-name" itemprop="name">huixisheng</p>
+          <p class="site-description motion-element" itemprop="description">前端路漫漫兮，吾将上下而求索</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">30</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">37</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/huixisheng" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/huixisheng" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/huixisheng" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">huixisheng</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'huixisheng';
+      var disqus_identifier = 'Todo/docs/xcodebuild.html';
+      var disqus_title = "";
+      var disqus_url = 'http://huixisheng.github.io/Todo/docs/xcodebuild.html';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = false;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title >= 0 || index_content >= 0 ){
+                                isMatch = true;
+								if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            } 
+							
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>

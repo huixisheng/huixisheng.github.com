@@ -1,0 +1,908 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="前端开发者说" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="前端开发者说" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="gzip   http://a.cdn.cosmeapp.com/test.html https://www.nginx.com/resources/admin-guide/compression-and-decompression/ https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding https:/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="前端开发者说">
+<meta property="og:url" content="http://huixisheng.github.io/Todo/docs/admin ui.html">
+<meta property="og:site_name" content="前端开发者说">
+<meta property="og:description" content="gzip   http://a.cdn.cosmeapp.com/test.html https://www.nginx.com/resources/admin-guide/compression-and-decompression/ https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding https:/">
+<meta property="og:updated_time" content="2017-06-30T06:08:23.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端开发者说">
+<meta name="twitter:description" content="gzip   http://a.cdn.cosmeapp.com/test.html https://www.nginx.com/resources/admin-guide/compression-and-decompression/ https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding https:/">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '9599',
+      author: '悔惜晟'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://huixisheng.github.io/Todo/docs/admin ui.html"/>
+
+
+  <title>
+  
+
+  
+     | 前端开发者说
+  
+</title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left  ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">前端开发者说</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">记录开发的故事</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+    
+      <p>gzip </p>
+<ul>
+<li><a href="http://a.cdn.cosmeapp.com/test.html" target="_blank" rel="external">http://a.cdn.cosmeapp.com/test.html</a></li>
+<li><a href="https://www.nginx.com/resources/admin-guide/compression-and-decompression/" target="_blank" rel="external">https://www.nginx.com/resources/admin-guide/compression-and-decompression/</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding" target="_blank" rel="external">https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding</a></li>
+<li><a href="https://checkgzipcompression.com" target="_blank" rel="external">https://checkgzipcompression.com</a></li>
+<li><a href="https://www.mail-archive.com/search?l=nginx@nginx.org&amp;q=subject:%22Gzip+issue+with+Safari%22&amp;o=newest&amp;f=1" target="_blank" rel="external">https://www.mail-archive.com/search?l=nginx@nginx.org&amp;q=subject:%22Gzip+issue+with+Safari%22&amp;o=newest&amp;f=1</a></li>
+<li><a href="https://betterexplained.com/articles/how-to-optimize-your-site-with-gzip-compression/" target="_blank" rel="external">https://betterexplained.com/articles/how-to-optimize-your-site-with-gzip-compression/</a></li>
+<li><a href="https://stackoverflow.com/questions/34657153/gzip-compression-always-1-00x-on-ios-safari" target="_blank" rel="external">https://stackoverflow.com/questions/34657153/gzip-compression-always-1-00x-on-ios-safari</a></li>
+<li><a href="https://forum.nginx.org/read.php?2,266915,268856" target="_blank" rel="external">https://forum.nginx.org/read.php?2,266915,268856</a></li>
+<li><a href="https://forum.nginx.org/read.php?2,266915,268856" target="_blank" rel="external">https://forum.nginx.org/read.php?2,266915,268856</a></li>
+<li><a href="https://forum.nginx.org/read.php?2,266915,266988" target="_blank" rel="external">https://forum.nginx.org/read.php?2,266915,266988</a></li>
+<li><a href="https://www.ruby-forum.com/topic/6878472" target="_blank" rel="external">https://www.ruby-forum.com/topic/6878472</a></li>
+<li><a href="https://forum.nginx.org/read.php?2,266915" target="_blank" rel="external">https://forum.nginx.org/read.php?2,266915</a></li>
+<li><a href="https://segmentfault.com/a/1190000006105756" target="_blank" rel="external">https://segmentfault.com/a/1190000006105756</a></li>
+<li><a href="https://www.google.com.hk/search?q=safari++gzip++gzip_static&amp;safe=strict&amp;ei=ZOZVWenyN4fgjwTV_rzYBQ&amp;start=10&amp;sa=N&amp;biw=1479&amp;bih=1053" target="_blank" rel="external">https://www.google.com.hk/search?q=safari++gzip++gzip_static&amp;safe=strict&amp;ei=ZOZVWenyN4fgjwTV_rzYBQ&amp;start=10&amp;sa=N&amp;biw=1479&amp;bih=1053</a></li>
+<li><a href="http://techqa.info/programming/question/37309940/nginx-+-http/2-+-http-post-+-safari-=-error" target="_blank" rel="external">http://techqa.info/programming/question/37309940/nginx-+-http/2-+-http-post-+-safari-=-error</a></li>
+<li><a href="http://nginx.org/en/docs/http/ngx_http_gzip_module.html#example" target="_blank" rel="external">http://nginx.org/en/docs/http/ngx_http_gzip_module.html#example</a></li>
+<li><a href="https://github.com/zhongxia245/blog/issues/19" target="_blank" rel="external">https://github.com/zhongxia245/blog/issues/19</a></li>
+<li>检测 <a href="http://gzip.zzbaike.com/" target="_blank" rel="external">http://gzip.zzbaike.com/</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/24764131" target="_blank" rel="external">https://zhuanlan.zhihu.com/p/24764131</a></li>
+<li><a href="https://www.rails365.net/articles/nginx-de-gzip-static-mo-kuai-tan-suo" target="_blank" rel="external">https://www.rails365.net/articles/nginx-de-gzip-static-mo-kuai-tan-suo</a></li>
+<li><a href="http://www.cnblogs.com/dee0912/p/4731347.html" target="_blank" rel="external">http://www.cnblogs.com/dee0912/p/4731347.html</a></li>
+<li><a href="https://waylau.com/nginx-concise-tutorial/" target="_blank" rel="external">https://waylau.com/nginx-concise-tutorial/</a></li>
+<li><a href="https://www.linpx.com/p/replace-the-gzip-nginx-configuration-tutorial-brotli.html" target="_blank" rel="external">https://www.linpx.com/p/replace-the-gzip-nginx-configuration-tutorial-brotli.html</a></li>
+<li><a href="https://imququ.com/post/how-to-compress-http-request-body.html" target="_blank" rel="external">https://imququ.com/post/how-to-compress-http-request-body.html</a></li>
+<li><a href="http://xieyufei.com/2017/01/08/SERVER-OPEN-GZIP.html" target="_blank" rel="external">http://xieyufei.com/2017/01/08/SERVER-OPEN-GZIP.html</a></li>
+</ul>
+<p>lighttpd Squid  HHVM</p>
+<p>Difference between application/x-javascript and text/javascript content</p>
+<ul>
+<li><a href="https://stackoverflow.com/questions/9664282/difference-between-application-x-javascript-and-text-javascript-content-types" target="_blank" rel="external">https://stackoverflow.com/questions/9664282/difference-between-application-x-javascript-and-text-javascript-content-types</a></li>
+<li><a href="https://gxnotes.com/article/77154.html" target="_blank" rel="external">https://gxnotes.com/article/77154.html</a></li>
+</ul>
+<p>webpack externals</p>
+<ul>
+<li><a href="https://doc.webpack-china.org/configuration/externals/#externals" target="_blank" rel="external">https://doc.webpack-china.org/configuration/externals/#externals</a></li>
+<li><a href="https://www.google.com/search?q=webpack+externals+jquery+%E4%BC%98%E5%8C%96&amp;oq=webpack++externals++jquery+%E4%BC%98%E5%8C%96&amp;aqs=chrome..69i57.7079j0j4&amp;sourceid=chrome&amp;ie=UTF-8" target="_blank" rel="external">https://www.google.com/search?q=webpack+externals+jquery+%E4%BC%98%E5%8C%96&amp;oq=webpack++externals++jquery+%E4%BC%98%E5%8C%96&amp;aqs=chrome..69i57.7079j0j4&amp;sourceid=chrome&amp;ie=UTF-8</a></li>
+<li><a href="https://github.com/lcxfs1991/blog/issues/2" target="_blank" rel="external">https://github.com/lcxfs1991/blog/issues/2</a></li>
+<li><a href="http://blog.xhu.me/post/Webpack%E4%BC%98%E5%8C%96%E4%B9%8Bexternals" target="_blank" rel="external">http://blog.xhu.me/post/Webpack%E4%BC%98%E5%8C%96%E4%B9%8Bexternals</a></li>
+<li><a href="https://segmentfault.com/a/1190000006087638" target="_blank" rel="external">https://segmentfault.com/a/1190000006087638</a></li>
+</ul>
+<p>// <a href="http://browserhacks.com/" target="_blank" rel="external">http://browserhacks.com/</a><br>// <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=488725" target="_blank" rel="external">https://bugzilla.mozilla.org/show_bug.cgi?id=488725</a><br><a href="https://perishablepress.com/css-hacks-for-different-versions-of-firefox/" target="_blank" rel="external">https://perishablepress.com/css-hacks-for-different-versions-of-firefox/</a><br><a href="https://w3reign.com/firefox-css-hacks/" target="_blank" rel="external">https://w3reign.com/firefox-css-hacks/</a><br>// fixed #1224 #1143 #1127<br>@-moz-document url-prefix() {<br>   .@{item-class} {<br>       white-space: normal;<br>   }<br>}</p>
+<ul>
+<li><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=488725" target="_blank" rel="external">https://bugzilla.mozilla.org/show_bug.cgi?id=488725</a></li>
+<li><a href="https://stackoverflow.com/questions/15102575/firefox-unexpected-line-break-using-floats-overflow-hidden" target="_blank" rel="external">https://stackoverflow.com/questions/15102575/firefox-unexpected-line-break-using-floats-overflow-hidden</a></li>
+<li><a href="https://stackoverflow.com/questions/25556352/firefox-bug-with-float-and-nowrap" target="_blank" rel="external">https://stackoverflow.com/questions/25556352/firefox-bug-with-float-and-nowrap</a></li>
+<li><a href="https://stackoverflow.com/questions/12407541/white-space-nowrap-vs-white-space-normal-why-is-the-effect-on-floating-element" target="_blank" rel="external">https://stackoverflow.com/questions/12407541/white-space-nowrap-vs-white-space-normal-why-is-the-effect-on-floating-element</a></li>
+<li><a href="https://stackoverflow.com/questions/4617872/white-space-showing-up-on-right-side-of-page-when-background-image-should-extend" target="_blank" rel="external">https://stackoverflow.com/questions/4617872/white-space-showing-up-on-right-side-of-page-when-background-image-should-extend</a></li>
+<li><a href="https://github.com/ElemeFE/element/pull/4756" target="_blank" rel="external">https://github.com/ElemeFE/element/pull/4756</a></li>
+<li><a href="http://pandacafe.net/post/tag/firefox-bug" target="_blank" rel="external">http://pandacafe.net/post/tag/firefox-bug</a></li>
+<li><a href="https://www.google.com.hk/webhp?hl=zh-CN&amp;sourceid=cnhp&amp;gws_rd=ssl#q=firefox+float+right+bug+white-space&amp;safe=strict&amp;hl=zh-CN&amp;start=30" target="_blank" rel="external">https://www.google.com.hk/webhp?hl=zh-CN&amp;sourceid=cnhp&amp;gws_rd=ssl#q=firefox+float+right+bug+white-space&amp;safe=strict&amp;hl=zh-CN&amp;start=30</a></li>
+</ul>
+<p>Mac OS复制粘贴功能经常失效，问题出在哪里？有何解决办法？<br><a href="https://www.zhihu.com/question/35784714" target="_blank" rel="external">https://www.zhihu.com/question/35784714</a></p>
+<p>Mock<br><a href="http://www.jianshu.com/p/7094c477207d" target="_blank" rel="external">http://www.jianshu.com/p/7094c477207d</a></p>
+<p>es6 export 导出  object  module.exports</p>
+<ul>
+<li><a href="https://www.google.com/search?q=es6+export+%E5%AF%BC%E5%87%BA++object++module.exports&amp;ei=mw5TWeDsFuuF0wLBz7-wBA&amp;start=0&amp;sa=N&amp;biw=1920&amp;bih=1103" target="_blank" rel="external">https://www.google.com/search?q=es6+export+%E5%AF%BC%E5%87%BA++object++module.exports&amp;ei=mw5TWeDsFuuF0wLBz7-wBA&amp;start=0&amp;sa=N&amp;biw=1920&amp;bih=1103</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export" target="_blank" rel="external">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export</a></li>
+<li><a href="https://www.hacksparrow.com/node-js-exports-vs-module-exports.html" target="_blank" rel="external">https://www.hacksparrow.com/node-js-exports-vs-module-exports.html</a></li>
+<li><a href="https://stackoverflow.com/questions/12469723/exporting-objects-with-the-exports-object" target="_blank" rel="external">https://stackoverflow.com/questions/12469723/exporting-objects-with-the-exports-object</a></li>
+<li><a href="http://blog.h5min.cn/Real_Bird/article/details/54869066" target="_blank" rel="external">http://blog.h5min.cn/Real_Bird/article/details/54869066</a></li>
+</ul>
+<p>config</p>
+<ul>
+<li><a href="https://www.npmjs.com/package/dotenv" target="_blank" rel="external">https://www.npmjs.com/package/dotenv</a></li>
+<li><a href="https://www.npmjs.com/package/pkg-config" target="_blank" rel="external">https://www.npmjs.com/package/pkg-config</a></li>
+<li><a href="https://www.npmjs.com/package/config" target="_blank" rel="external">https://www.npmjs.com/package/config</a></li>
+<li><a href="https://www.npmjs.com/package/xconfigjs" target="_blank" rel="external">https://www.npmjs.com/package/xconfigjs</a></li>
+<li><a href="https://www.npmjs.com/package/xconfig" target="_blank" rel="external">https://www.npmjs.com/package/xconfig</a></li>
+<li></li>
+</ul>
+<p>oh-my-zsh配置</p>
+<ul>
+<li><a href="https://github.com/robbyrussell/oh-my-zsh" target="_blank" rel="external">https://github.com/robbyrussell/oh-my-zsh</a></li>
+<li><a href="https://github.com/robbyrussell/oh-my-zsh/wiki/themes" target="_blank" rel="external">https://github.com/robbyrussell/oh-my-zsh/wiki/themes</a></li>
+<li><a href="http://www.10tiao.com/html/357/201605/2247483784/1.html" target="_blank" rel="external">http://www.10tiao.com/html/357/201605/2247483784/1.html</a></li>
+<li><a href="https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins-Overview" target="_blank" rel="external">https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins-Overview</a></li>
+<li><a href="http://www.tuicool.com/articles/BVNvUrf" target="_blank" rel="external">http://www.tuicool.com/articles/BVNvUrf</a></li>
+<li><a href="http://www.zcfy.cc/article/become-a-command-line-power-user-with-oh-my-zsh-and-z-920.html#28" target="_blank" rel="external">http://www.zcfy.cc/article/become-a-command-line-power-user-with-oh-my-zsh-and-z-920.html#28</a></li>
+<li><a href="https://leohxj.gitbooks.io/a-programmer-prepares/software/mac/softwares/zsh.html" target="_blank" rel="external">https://leohxj.gitbooks.io/a-programmer-prepares/software/mac/softwares/zsh.html</a></li>
+</ul>
+<p>echo $SHELL</p>
+<p>node收发邮件</p>
+<ul>
+<li><a href="http://www.cnblogs.com/lyfn/p/5372265.html" target="_blank" rel="external">http://www.cnblogs.com/lyfn/p/5372265.html</a></li>
+<li><a href="http://www.developerq.com/article/1490009990" target="_blank" rel="external">http://www.developerq.com/article/1490009990</a></li>
+<li><a href="https://github.com/ProjectForLearnNodejs/sent-email" target="_blank" rel="external">https://github.com/ProjectForLearnNodejs/sent-email</a></li>
+<li><a href="https://github.com/nodemailer/nodemailer" target="_blank" rel="external">https://github.com/nodemailer/nodemailer</a></li>
+<li><a href="http://www.edwardesire.com/2015/06/25/node-email-trial/" target="_blank" rel="external">http://www.edwardesire.com/2015/06/25/node-email-trial/</a></li>
+</ul>
+<h1 id="后台ui"><a href="#后台ui" class="headerlink" title="后台ui"></a>后台ui</h1><ul>
+<li><a href="https://github.com/kahun/awesome-sysadmin" target="_blank" rel="external">https://github.com/kahun/awesome-sysadmin</a></li>
+<li><a href="https://github.com/originalankur/awesome-django-admin" target="_blank" rel="external">https://github.com/originalankur/awesome-django-admin</a></li>
+<li><a href="https://github.com/paladini/activeadmin-themes" target="_blank" rel="external">https://github.com/paladini/activeadmin-themes</a></li>
+<li><a href="http://awesome-django.com/" target="_blank" rel="external">http://awesome-django.com/</a></li>
+<li><a href="https://adminlte.io/themes/AdminLTE/index2.html" target="_blank" rel="external">https://adminlte.io/themes/AdminLTE/index2.html</a></li>
+<li><a href="http://coreui.io/demo/Vue_Demo/#/dashboard" target="_blank" rel="external">http://coreui.io/demo/Vue_Demo/#/dashboard</a></li>
+<li><a href="http://coreui.io/examples" target="_blank" rel="external">http://coreui.io/examples</a></li>
+<li><a href="https://themeforest.net/category/site-templates/admin-templates" target="_blank" rel="external">https://themeforest.net/category/site-templates/admin-templates</a></li>
+<li><a href="https://colorlib.com/wp/bootstrap-admin-templates/" target="_blank" rel="external">https://colorlib.com/wp/bootstrap-admin-templates/</a></li>
+<li><a href="http://ace.jeka.by/" target="_blank" rel="external">http://ace.jeka.by/</a></li>
+<li><a href="http://panjiachen.github.io/vue-element-admin/#/components/tinymce" target="_blank" rel="external">http://panjiachen.github.io/vue-element-admin/#/components/tinymce</a></li>
+<li><a href="https://github.com/bhnddowinf/vuejs-learn" target="_blank" rel="external">https://github.com/bhnddowinf/vuejs-learn</a></li>
+<li><a href="https://github.com/zzmhot/vue-admin" target="_blank" rel="external">https://github.com/zzmhot/vue-admin</a></li>
+<li><a href="https://vue-admin.fundon.me/#/charts" target="_blank" rel="external">https://vue-admin.fundon.me/#/charts</a></li>
+<li><a href="https://lanux.github.io/Vue-Admin/#/index" target="_blank" rel="external">https://lanux.github.io/Vue-Admin/#/index</a></li>
+<li><a href="http://vueadmin.hinplay.com/#/home" target="_blank" rel="external">http://vueadmin.hinplay.com/#/home</a></li>
+<li><a href="http://element.eleme.io/#/zh-CN/component/alert" target="_blank" rel="external">http://element.eleme.io/#/zh-CN/component/alert</a></li>
+<li><a href="https://admin.vuebulma.com/#/dashboard" target="_blank" rel="external">https://admin.vuebulma.com/#/dashboard</a></li>
+<li><a href="https://vue-admin.fundon.me/#/dashboard" target="_blank" rel="external">https://vue-admin.fundon.me/#/dashboard</a></li>
+<li><a href="http://ace.jeka.by/" target="_blank" rel="external">http://ace.jeka.by/</a></li>
+<li><a href="https://adminlte.io/themes/AdminLTE/index2.html" target="_blank" rel="external">https://adminlte.io/themes/AdminLTE/index2.html</a></li>
+<li><a href="http://coreui.io/examples" target="_blank" rel="external">http://coreui.io/examples</a></li>
+<li><a href="http://coreui.io/demo/Vue_Demo/#/dashboard" target="_blank" rel="external">http://coreui.io/demo/Vue_Demo/#/dashboard</a></li>
+<li><a href="http://awesome-django.com/" target="_blank" rel="external">http://awesome-django.com/</a></li>
+<li><a href="https://github.com/activeadmin-plugins/active_admin_theme" target="_blank" rel="external">https://github.com/activeadmin-plugins/active_admin_theme</a></li>
+</ul>
+<p>SVG</p>
+<ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Getting_started/SVG_and_CSS" target="_blank" rel="external">https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Getting_started/SVG_and_CSS</a></li>
+<li><a href="https://brucewar.gitbooks.io/svg-tutorial/27.SVG%E5%92%8CCSS-%E7%BA%A7%E8%81%94%E6%A0%B7%E5%BC%8F%E8%A1%A8.html" target="_blank" rel="external">https://brucewar.gitbooks.io/svg-tutorial/27.SVG%E5%92%8CCSS-%E7%BA%A7%E8%81%94%E6%A0%B7%E5%BC%8F%E8%A1%A8.html</a></li>
+<li><a href="https://juejin.im/entry/5770a6fa816dfa0055e7935b" target="_blank" rel="external">https://juejin.im/entry/5770a6fa816dfa0055e7935b</a></li>
+<li><a href="http://ued.ctrip.com/blog/translation-define-svg-with-css-styles-and-animation.html" target="_blank" rel="external">http://ued.ctrip.com/blog/translation-define-svg-with-css-styles-and-animation.html</a></li>
+<li><a href="https://www.w3.org/TR/SVG/propidx.html" target="_blank" rel="external">https://www.w3.org/TR/SVG/propidx.html</a></li>
+</ul>
+<p>SASS</p>
+<ul>
+<li><a href="http://sass.bootcss.com/" target="_blank" rel="external">http://sass.bootcss.com/</a></li>
+<li><a href="https://www.w3cplus.com/sassguide/index.html" target="_blank" rel="external">https://www.w3cplus.com/sassguide/index.html</a></li>
+<li><a href="https://sass-guidelin.es/zh/#section" target="_blank" rel="external">https://sass-guidelin.es/zh/#section</a></li>
+<li><a href="http://sass-lang.com/guide" target="_blank" rel="external">http://sass-lang.com/guide</a></li>
+<li><a href="http://www.css88.com/doc/sass/" target="_blank" rel="external">http://www.css88.com/doc/sass/</a></li>
+<li><a href="http://www.w3cplus.com/sasscore/index.html" target="_blank" rel="external">http://www.w3cplus.com/sasscore/index.html</a></li>
+<li><a href="http://caibaojian.com/sass-compass-tools.html" target="_blank" rel="external">http://caibaojian.com/sass-compass-tools.html</a></li>
+<li><a href="https://www.sass.hk/" target="_blank" rel="external">https://www.sass.hk/</a></li>
+<li><a href="http://www.cn-sass.com/" target="_blank" rel="external">http://www.cn-sass.com/</a> ?</li>
+</ul>
+<h2 id="问题汇总"><a href="#问题汇总" class="headerlink" title="问题汇总"></a>问题汇总</h2><ul>
+<li><a href="https://github.com/vuejs/vue/issues/5872" target="_blank" rel="external">https://github.com/vuejs/vue/issues/5872</a><br>页面跳转到login的时候我在beforeEnter里面判断了本地是否有token，如果有的话，就next到from.fullPath，但是这样做NProgress就卡住，一直转了</li>
+</ul>
+<p><a href="https://github.com/nuysoft/Mock/search?utf8=%E2%9C%93&amp;q=405&amp;type=" target="_blank" rel="external">https://github.com/nuysoft/Mock/search?utf8=%E2%9C%93&amp;q=405&amp;type=</a></p>
+<p>Syntax Error: ‘import’ and ‘export’ may only appear at the top level</p>
+<ul>
+<li><a href="https://doc.webpack-china.org/guides/code-splitting-async/" target="_blank" rel="external">https://doc.webpack-china.org/guides/code-splitting-async/</a></li>
+<li><a href="https://github.com/babel/babel/issues/976" target="_blank" rel="external">https://github.com/babel/babel/issues/976</a></li>
+<li><a href="https://xiaomiwujiecao.com/page/609.html" target="_blank" rel="external">https://xiaomiwujiecao.com/page/609.html</a></li>
+<li><a href="https://github.com/webpack/webpack/issues/3092" target="_blank" rel="external">https://github.com/webpack/webpack/issues/3092</a></li>
+<li><a href="https://github.com/ant-design/babel-plugin-import/issues/103" target="_blank" rel="external">https://github.com/ant-design/babel-plugin-import/issues/103</a></li>
+<li><a href="http://www.zcfy.cc/article/native-ecmascript-modules-dynamic-import-2572.html" target="_blank" rel="external">http://www.zcfy.cc/article/native-ecmascript-modules-dynamic-import-2572.html</a></li>
+<li><a href="https://www.google.com/search?biw=1920&amp;bih=1103&amp;q=import+require+%E5%8C%BA%E5%88%AB&amp;oq=import+require+&amp;gs_l=serp.3.0.0l8j0i30k1l2.13396.18146.0.23057.15.15.0.0.0.0.344.1852.0j4j3j1.8.0....0...1.1j4.64.serp..7.8.1851.1U7LWbSI43Y" target="_blank" rel="external">https://www.google.com/search?biw=1920&amp;bih=1103&amp;q=import+require+%E5%8C%BA%E5%88%AB&amp;oq=import+require+&amp;gs_l=serp.3.0.0l8j0i30k1l2.13396.18146.0.23057.15.15.0.0.0.0.344.1852.0j4j3j1.8.0....0...1.1j4.64.serp..7.8.1851.1U7LWbSI43Y</a></li>
+</ul>
+<p><a href="https://github.com/webpack/webpack/issues/2427" target="_blank" rel="external">https://github.com/webpack/webpack/issues/2427</a></p>
+<p>源码分析</p>
+<ul>
+<li><a href="https://www.google.com/search?q=vue+%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90&amp;oq=vue+%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90&amp;aqs=chrome..69i57.5654j0j1&amp;sourceid=chrome&amp;ie=UTF-8" target="_blank" rel="external">https://www.google.com/search?q=vue+%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90&amp;oq=vue+%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90&amp;aqs=chrome..69i57.5654j0j1&amp;sourceid=chrome&amp;ie=UTF-8</a></li>
+<li><a href="https://www.google.com/search?q=webpack+%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90&amp;oq=webpack+%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90&amp;gs_l=serp.3...13571.21169.0.21369.15.12.0.0.0.0.364.1424.2-3j2.5.0....0...1.1.64.serp..11.3.835...0i7i30k1j0i7i5i30k1.pluSOTq1F9A" target="_blank" rel="external">https://www.google.com/search?q=webpack+%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90&amp;oq=webpack+%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90&amp;gs_l=serp.3...13571.21169.0.21369.15.12.0.0.0.0.364.1424.2-3j2.5.0....0...1.1.64.serp..11.3.835...0i7i30k1j0i7i5i30k1.pluSOTq1F9A</a></li>
+<li><a href="http://www.jianshu.com/c/c71f9c127c71" target="_blank" rel="external">http://www.jianshu.com/c/c71f9c127c71</a></li>
+<li><a href="http://www.cnblogs.com/xxcanghai/p/Vue-kuang-jiaElement-de-shi-jian-chuan-dibroadcast.html" target="_blank" rel="external">http://www.cnblogs.com/xxcanghai/p/Vue-kuang-jiaElement-de-shi-jian-chuan-dibroadcast.html</a></li>
+<li><a href="https://github.com/youngwind/blog/issues/92" target="_blank" rel="external">https://github.com/youngwind/blog/issues/92</a></li>
+<li><a href="https://jingsam.github.io/2016/10/30/vue-components-naming.html" target="_blank" rel="external">https://jingsam.github.io/2016/10/30/vue-components-naming.html</a></li>
+<li><a href="http://div.io/topic/1697" target="_blank" rel="external">http://div.io/topic/1697</a></li>
+<li><a href="https://www.vue-js.com/getstart" target="_blank" rel="external">https://www.vue-js.com/getstart</a></li>
+</ul>
+<p>vuejs ui库优劣势分析和选择？ <a href="https://www.zhihu.com/question/53842719" target="_blank" rel="external">https://www.zhihu.com/question/53842719</a></p>
+<p>组件的name属性</p>
+<p>es6 object function  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Method_definitions" target="_blank" rel="external">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Method_definitions</a><br><a href="https://ariya.io/2013/03/es6-and-method-definitions" target="_blank" rel="external">https://ariya.io/2013/03/es6-and-method-definitions</a></p>
+<p>ui<br><a href="https://github.com/aliqin/atui" target="_blank" rel="external">https://github.com/aliqin/atui</a></p>
+<p>setTimeout bind 箭头函数</p>
+<ul>
+<li><a href="https://imququ.com/post/arrow-function-in-es6.html" target="_blank" rel="external">https://imququ.com/post/arrow-function-in-es6.html</a></li>
+</ul>
+<p><a href="http://www.jianshu.com/p/4ee4bc1ba067" target="_blank" rel="external">http://www.jianshu.com/p/4ee4bc1ba067</a><br><a href="https://defed.github.io/Vue%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB-watch%E7%9A%84%E5%86%85%E9%83%A8%E5%AE%9E%E7%8E%B0/" target="_blank" rel="external">https://defed.github.io/Vue%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB-watch%E7%9A%84%E5%86%85%E9%83%A8%E5%AE%9E%E7%8E%B0/</a></p>
+<p><a href="https://excaliburhan.com/post/babel-preset-and-plugins.html" target="_blank" rel="external">https://excaliburhan.com/post/babel-preset-and-plugins.html</a></p>
+<p>mockjs</p>
+<ul>
+<li><a href="https://github.com/sorrycc/roadhog" target="_blank" rel="external">https://github.com/sorrycc/roadhog</a></li>
+</ul>
+<p><a href="https://github.com/ant-design/babel-plugin-import/issues/103" target="_blank" rel="external">https://github.com/ant-design/babel-plugin-import/issues/103</a><br><a href="https://excaliburhan.com/post/babel-preset-and-plugins.html" target="_blank" rel="external">https://excaliburhan.com/post/babel-preset-and-plugins.html</a></p>
+<p>webstrom eslint 报错代码检测<br><a href="http://soledad.com.cn/2016/04/13/atom%E9%85%8D%E7%BD%AEeslint%E5%8F%8A%E5%AF%B9%E6%AF%94/" target="_blank" rel="external">http://soledad.com.cn/2016/04/13/atom%E9%85%8D%E7%BD%AEeslint%E5%8F%8A%E5%AF%B9%E6%AF%94/</a><br><a href="http://www.jianshu.com/p/9f4528b16a4e" target="_blank" rel="external">http://www.jianshu.com/p/9f4528b16a4e</a><br><a href="https://www.jetbrains.com/help/webstorm/2016.1/eslint.html" target="_blank" rel="external">https://www.jetbrains.com/help/webstorm/2016.1/eslint.html</a><br><a href="https://www.bbsmax.com/A/x9J2ZbGWJ6/" target="_blank" rel="external">https://www.bbsmax.com/A/x9J2ZbGWJ6/</a><br><a href="https://www.jetbrains.com/help/webstorm/2016.1/using-javascript-code-quality-tools.html#installESLint" target="_blank" rel="external">https://www.jetbrains.com/help/webstorm/2016.1/using-javascript-code-quality-tools.html#installESLint</a><br><a href="https://www.jetbrains.com/help/webstorm/2016.1/inspection-tool-window.html" target="_blank" rel="external">https://www.jetbrains.com/help/webstorm/2016.1/inspection-tool-window.html</a><br><a href="https://stackoverflow.com/questions/20136714/how-can-i-fix-webstorm-warning-unresolved-function-or-method-for-require-fi" target="_blank" rel="external">https://stackoverflow.com/questions/20136714/how-can-i-fix-webstorm-warning-unresolved-function-or-method-for-require-fi</a><br><a href="https://github.com/vuejs/vue-syntax-highlight/issues/3" target="_blank" rel="external">https://github.com/vuejs/vue-syntax-highlight/issues/3</a></p>
+<p>webstorm添加*.vue文件支持<br><a href="http://www.lred.me/2016/01/07/webstorm%E6%B7%BB%E5%8A%A0-vue%E6%96%87%E4%BB%B6%E6%94%AF%E6%8C%81/" target="_blank" rel="external">http://www.lred.me/2016/01/07/webstorm%E6%B7%BB%E5%8A%A0-vue%E6%96%87%E4%BB%B6%E6%94%AF%E6%8C%81/</a></p>
+<p>正则表达式</p>
+<ul>
+<li><a href="http://www.cnblogs.com/rubylouvre/archive/2010/03/09/1681222.html" target="_blank" rel="external">http://www.cnblogs.com/rubylouvre/archive/2010/03/09/1681222.html</a></li>
+<li><a href="http://imweb.io/topic/56e804ef1a5f05dc50643106" target="_blank" rel="external">http://imweb.io/topic/56e804ef1a5f05dc50643106</a></li>
+<li><a href="https://leohxj.gitbooks.io/front-end-database/javascript-regular-expressions/index.html" target="_blank" rel="external">https://leohxj.gitbooks.io/front-end-database/javascript-regular-expressions/index.html</a></li>
+<li><a href="http://javascript.ruanyifeng.com/stdlib/regexp.html" target="_blank" rel="external">http://javascript.ruanyifeng.com/stdlib/regexp.html</a></li>
+<li><a href="http://div.io/topic/764" target="_blank" rel="external">http://div.io/topic/764</a></li>
+</ul>
+<p>怎么在webstorm上利用babel实现自动编译es6文件？<br><a href="https://www.zhihu.com/question/43414079" target="_blank" rel="external">https://www.zhihu.com/question/43414079</a><br><a href="http://www.jianshu.com/p/b4390919a5b5" target="_blank" rel="external">http://www.jianshu.com/p/b4390919a5b5</a><br><a href="http://www.bijishequ.com/detail/387525?p=3" target="_blank" rel="external">http://www.bijishequ.com/detail/387525?p=3</a></p>
+<p>Uncaught TypeError: Cannot read property ‘installed’ of undefined</p>
+<p><a href="http://www.jianshu.com/p/b5248d441d9e" target="_blank" rel="external">http://www.jianshu.com/p/b5248d441d9e</a><br><a href="https://www.mmxiaowu.com/article/58482332d4352863efb55465" target="_blank" rel="external">https://www.mmxiaowu.com/article/58482332d4352863efb55465</a><br><a href="http://sugarball.me/yi-webpackru-men-zhi-nan/" target="_blank" rel="external">http://sugarball.me/yi-webpackru-men-zhi-nan/</a><br><a href="https://github.com/chemdemo/chemdemo.github.io/issues/13" target="_blank" rel="external">https://github.com/chemdemo/chemdemo.github.io/issues/13</a><br><a href="https://doc.webpack-china.org/configuration/" target="_blank" rel="external">https://doc.webpack-china.org/configuration/</a><br><a href="https://juejin.im/entry/57b3035f2e958a00546f8774" target="_blank" rel="external">https://juejin.im/entry/57b3035f2e958a00546f8774</a><br><a href="https://github.com/lcxfs1991/blog/issues/2" target="_blank" rel="external">https://github.com/lcxfs1991/blog/issues/2</a><br><a href="https://github.com/dwqs/blog/issues/21" target="_blank" rel="external">https://github.com/dwqs/blog/issues/21</a><br><a href="https://juejin.im/entry/58abe002128fe1006a50dbe7" target="_blank" rel="external">https://juejin.im/entry/58abe002128fe1006a50dbe7</a><br><a href="https://github.com/dwqs/blog/issues/46" target="_blank" rel="external">https://github.com/dwqs/blog/issues/46</a></p>
+<p>webpack3 </p>
+<ul>
+<li><a href="http://www.cnblogs.com/wmhuang/p/7065396.html" target="_blank" rel="external">http://www.cnblogs.com/wmhuang/p/7065396.html</a></li>
+<li><a href="https://medium.com/webpack/webpack-3-official-release-15fd2dd8f07b" target="_blank" rel="external">https://medium.com/webpack/webpack-3-official-release-15fd2dd8f07b</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/27474985" target="_blank" rel="external">https://zhuanlan.zhihu.com/p/27474985</a></li>
+<li><a href="https://github.com/webpack-contrib/awesome-webpack#loaders" target="_blank" rel="external">https://github.com/webpack-contrib/awesome-webpack#loaders</a></li>
+</ul>
+<p>rollup<br><a href="https://segmentfault.com/a/1190000004499989" target="_blank" rel="external">https://segmentfault.com/a/1190000004499989</a><br><a href="https://rollup.bootcss.com/" target="_blank" rel="external">https://rollup.bootcss.com/</a><br><a href="http://div.io/topic/1724" target="_blank" rel="external">http://div.io/topic/1724</a><br><a href="http://www.iamaddy.net/2014/10/inside-fis-kernel/" target="_blank" rel="external">http://www.iamaddy.net/2014/10/inside-fis-kernel/</a></p>
+<p>vue render</p>
+<ul>
+<li><a href="https://github.com/jkchao/blog/issues/7" target="_blank" rel="external">https://github.com/jkchao/blog/issues/7</a></li>
+<li><a href="http://www.jianshu.com/p/fc0084c97e05" target="_blank" rel="external">http://www.jianshu.com/p/fc0084c97e05</a></li>
+<li><a href="http://blog.cgsdream.org/2016/11/23/vue-source-analysis-3/" target="_blank" rel="external">http://blog.cgsdream.org/2016/11/23/vue-source-analysis-3/</a></li>
+<li><a href="https://www.google.com/search?q=site:juejin.im++vue+render%E5%87%BD%E6%95%B0&amp;ei=ZIlMWfi5OdOqjwOZj62gDA&amp;start=20&amp;sa=N&amp;biw=1920&amp;bih=1103" target="_blank" rel="external">https://www.google.com/search?q=site:juejin.im++vue+render%E5%87%BD%E6%95%B0&amp;ei=ZIlMWfi5OdOqjwOZj62gDA&amp;start=20&amp;sa=N&amp;biw=1920&amp;bih=1103</a></li>
+<li><a href="http://blog.cgsdream.org/2016/11/23/vue-source-analysis-3/" target="_blank" rel="external">http://blog.cgsdream.org/2016/11/23/vue-source-analysis-3/</a></li>
+<li><a href="https://cnodejs.org/topic/58c0ad17d282728c0ec4029a" target="_blank" rel="external">https://cnodejs.org/topic/58c0ad17d282728c0ec4029a</a></li>
+<li><a href="https://juejin.im/entry/5922ada8128fe1005c301ad6" target="_blank" rel="external">https://juejin.im/entry/5922ada8128fe1005c301ad6</a></li>
+<li><a href="https://juejin.im/entry/58df58fcac502e49578635ef" target="_blank" rel="external">https://juejin.im/entry/58df58fcac502e49578635ef</a></li>
+<li><a href="https://juejin.im/entry/590bec7fac502e006cdc99f1" target="_blank" rel="external">https://juejin.im/entry/590bec7fac502e006cdc99f1</a></li>
+<li><a href="https://juejin.im/entry/5899dc6b0ce463005615c2a6" target="_blank" rel="external">https://juejin.im/entry/5899dc6b0ce463005615c2a6</a></li>
+<li><a href="https://cnodejs.org/topic/58c0ad17d282728c0ec4029a" target="_blank" rel="external">https://cnodejs.org/topic/58c0ad17d282728c0ec4029a</a></li>
+<li><a href="https://www.talkingcoder.com/article/6404071820649628210" target="_blank" rel="external">https://www.talkingcoder.com/article/6404071820649628210</a></li>
+<li><a href="https://www.zybuluo.com/zhouweicsu/note/729712" target="_blank" rel="external">https://www.zybuluo.com/zhouweicsu/note/729712</a></li>
+</ul>
+<p>functional?</p>
+<p><a href="https://github.com/itemsets/Vue2.0/issues" target="_blank" rel="external">https://github.com/itemsets/Vue2.0/issues</a></p>
+<p>SSR</p>
+<ul>
+<li><a href="https://juejin.im/entry/590ca74b2f301e006c10465f" target="_blank" rel="external">https://juejin.im/entry/590ca74b2f301e006c10465f</a></li>
+<li><a href="https://songlairui.github.io/2017/06/22/vue-ssr-step-2/" target="_blank" rel="external">https://songlairui.github.io/2017/06/22/vue-ssr-step-2/</a></li>
+</ul>
+<p>vue响应</p>
+<ul>
+<li><a href="https://www.talkingcoder.com/article/6429606844334014570" target="_blank" rel="external">https://www.talkingcoder.com/article/6429606844334014570</a></li>
+</ul>
+<p>vue组件</p>
+<ul>
+<li><a href="https://www.zhihu.com/question/46551323" target="_blank" rel="external">https://www.zhihu.com/question/46551323</a></li>
+<li><a href="http://sagalbot.github.io/vue-sortable/" target="_blank" rel="external">http://sagalbot.github.io/vue-sortable/</a></li>
+<li><a href="http://sagalbot.github.io/vue-sortable/" target="_blank" rel="external">http://sagalbot.github.io/vue-sortable/</a></li>
+<li><a href="https://juejin.im/entry/582e67fa2e958a0069c33e83" target="_blank" rel="external">https://juejin.im/entry/582e67fa2e958a0069c33e83</a>  <a href="https://hilongjw.github.io/vue-dragging/" target="_blank" rel="external">https://hilongjw.github.io/vue-dragging/</a></li>
+<li><a href="https://github.com/lokyoung/vuejs-paginate" target="_blank" rel="external">https://github.com/lokyoung/vuejs-paginate</a></li>
+<li><a href="https://github.com/matfish2/vue-pagination-2" target="_blank" rel="external">https://github.com/matfish2/vue-pagination-2</a></li>
+<li>组件编码规范 <a href="https://juejin.im/entry/58c0c9cb44d9040068df193d" target="_blank" rel="external">https://juejin.im/entry/58c0c9cb44d9040068df193d</a>   <a href="https://juejin.im/entry/5816e606bf22ec0068980c4b" target="_blank" rel="external">https://juejin.im/entry/5816e606bf22ec0068980c4b</a></li>
+<li>前端重用组件 <a href="https://juejin.im/entry/57aaa21179bc440054e72aad" target="_blank" rel="external">https://juejin.im/entry/57aaa21179bc440054e72aad</a></li>
+<li><a href="https://github.com/Pines-Cheng/awesome-vue-cn" target="_blank" rel="external">https://github.com/Pines-Cheng/awesome-vue-cn</a></li>
+<li><a href="https://github.com/opendigg/awesome-github-vue" target="_blank" rel="external">https://github.com/opendigg/awesome-github-vue</a></li>
+<li><a href="https://github.com/brillout/awesome-vue-refactor" target="_blank" rel="external">https://github.com/brillout/awesome-vue-refactor</a></li>
+<li><a href="https://github.com/beauty-enjoy/beauty" target="_blank" rel="external">https://github.com/beauty-enjoy/beauty</a></li>
+<li><a href="https://github.com/vue-bulma/vue-admin" target="_blank" rel="external">https://github.com/vue-bulma/vue-admin</a></li>
+</ul>
+<p>less </p>
+<ul>
+<li><a href="http://lesscss.cn/" target="_blank" rel="external">http://lesscss.cn/</a></li>
+<li><a href="http://lesscss.org/features/#mixins-feature" target="_blank" rel="external">http://lesscss.org/features/#mixins-feature</a></li>
+</ul>
+<p>cssnext</p>
+<ul>
+<li><a href="https://github.com/css-modules/css-modules" target="_blank" rel="external">https://github.com/css-modules/css-modules</a></li>
+<li><a href="http://cssnext.io/" target="_blank" rel="external">http://cssnext.io/</a></li>
+</ul>
+<p>&lt;?php<br>date_default_timezone_set(‘PRC’);<br>//    echo date(‘Y-m-d H:i:s’, 1497592390);<br>//    echo ‘—‘;<br>//        echo date(‘Y-m-d H:i:s’, 1497621600);<br>//        echo ‘—‘;<br>//    echo  strtotime(“2017-06-26 14:00:00”);<br>//    echo ‘—‘;<br>//    echo  strtotime(“2017-06-16 14:00:00”);</p>
+<pre><code>echo strtotime(&quot;2017-06-16 14:00:00&quot;);
+echo &apos;---&apos;;
+echo date(&apos;Y-m-d H:i:s&apos;, strtotime(&quot;2017-06-15 14:00:00&quot;));
+</code></pre><p>?&gt;</p>
+
+    
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="huixisheng" />
+          <p class="site-author-name" itemprop="name">huixisheng</p>
+          <p class="site-description motion-element" itemprop="description">前端路漫漫兮，吾将上下而求索</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">30</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">37</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/huixisheng" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/huixisheng" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/huixisheng" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">huixisheng</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'huixisheng';
+      var disqus_identifier = 'Todo/docs/admin ui.html';
+      var disqus_title = "";
+      var disqus_url = 'http://huixisheng.github.io/Todo/docs/admin ui.html';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = false;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title >= 0 || index_content >= 0 ){
+                                isMatch = true;
+								if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            } 
+							
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>

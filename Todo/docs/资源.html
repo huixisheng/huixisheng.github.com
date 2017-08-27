@@ -1,0 +1,708 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="前端开发者说" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="前端开发者说" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="资源nodejs Excel node-xlsx: 基于Node.js解析excel文件数据及生成excel文件，仅支持xlsx格式文件；excel-parser: 基于Node.js解析excel文件数据，支持xls及xlsx格式文件；excel-export : 基于Node.js将数据生成导出excel文件，生成文件格式为xlsx；node-xlrd: 基于node.js从excel文件中提">
+<meta property="og:type" content="website">
+<meta property="og:title" content="前端开发者说">
+<meta property="og:url" content="http://huixisheng.github.io/Todo/docs/资源.html">
+<meta property="og:site_name" content="前端开发者说">
+<meta property="og:description" content="资源nodejs Excel node-xlsx: 基于Node.js解析excel文件数据及生成excel文件，仅支持xlsx格式文件；excel-parser: 基于Node.js解析excel文件数据，支持xls及xlsx格式文件；excel-export : 基于Node.js将数据生成导出excel文件，生成文件格式为xlsx；node-xlrd: 基于node.js从excel文件中提">
+<meta property="og:updated_time" content="2017-05-24T15:23:08.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端开发者说">
+<meta name="twitter:description" content="资源nodejs Excel node-xlsx: 基于Node.js解析excel文件数据及生成excel文件，仅支持xlsx格式文件；excel-parser: 基于Node.js解析excel文件数据，支持xls及xlsx格式文件；excel-export : 基于Node.js将数据生成导出excel文件，生成文件格式为xlsx；node-xlrd: 基于node.js从excel文件中提">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '9599',
+      author: '悔惜晟'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://huixisheng.github.io/Todo/docs/资源.html"/>
+
+
+  <title>
+  
+
+  
+     | 前端开发者说
+  
+</title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left  ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">前端开发者说</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">记录开发的故事</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+    
+      <h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><h2 id="nodejs-Excel"><a href="#nodejs-Excel" class="headerlink" title="nodejs Excel"></a>nodejs Excel</h2><blockquote>
+<p>node-xlsx: 基于Node.js解析excel文件数据及生成excel文件，仅支持xlsx格式文件；<br>excel-parser: 基于Node.js解析excel文件数据，支持xls及xlsx格式文件；<br>excel-export : 基于Node.js将数据生成导出excel文件，生成文件格式为xlsx；<br>node-xlrd: 基于node.js从excel文件中提取数据，仅支持xls格式文件。</p>
+</blockquote>
+<ul>
+<li><a href="https://segmentfault.com/a/1190000004062768" target="_blank" rel="external">https://segmentfault.com/a/1190000004062768</a></li>
+<li><a href="https://www.npmjs.com/package/xlsx" target="_blank" rel="external">https://www.npmjs.com/package/xlsx</a></li>
+<li><a href="https://aotu.io/notes/2016/04/07/node-excel/" target="_blank" rel="external">https://aotu.io/notes/2016/04/07/node-excel/</a></li>
+<li><a href="https://www.npmjs.com/search?q=excel" target="_blank" rel="external">https://www.npmjs.com/search?q=excel</a></li>
+<li><a href="http://www.fefork.com/fetool/" target="_blank" rel="external">http://www.fefork.com/fetool/</a></li>
+</ul>
+<h2 id="Vue-插件"><a href="#Vue-插件" class="headerlink" title="Vue 插件"></a>Vue 插件</h2><ul>
+<li><a href="https://juejin.im/entry/582e67fa2e958a0069c33e83" target="_blank" rel="external">https://juejin.im/entry/582e67fa2e958a0069c33e83</a></li>
+<li><a href="http://www.jianshu.com/p/7f195e58daa5" target="_blank" rel="external">http://www.jianshu.com/p/7f195e58daa5</a></li>
+<li><a href="https://juejin.im/entry/582e67fa2e958a0069c33e83" target="_blank" rel="external">一个轻量的 Vue 拖动排序插件</a></li>
+<li><a href="https://www.zhihu.com/question/46551323" target="_blank" rel="external">https://www.zhihu.com/question/46551323</a></li>
+<li><a href="https://libraries.io/github/opendigg/awesome-github-vue" target="_blank" rel="external">https://libraries.io/github/opendigg/awesome-github-vue</a></li>
+<li><a href="https://segmentfault.com/a/1190000008419229" target="_blank" rel="external">https://segmentfault.com/a/1190000008419229</a></li>
+<li><a href="https://github.com/SortableJS/Vue.Draggable" target="_blank" rel="external">https://github.com/SortableJS/Vue.Draggable</a></li>
+<li><a href="https://github.com/hilongjw/vue-dragging" target="_blank" rel="external">https://github.com/hilongjw/vue-dragging</a></li>
+<li><p><a href="https://github.com/hejianxian/vue-drag-and-drop-list" target="_blank" rel="external">https://github.com/hejianxian/vue-drag-and-drop-list</a></p>
+</li>
+<li><p><a href="https://github.com/jawil/blog/issues/11" target="_blank" rel="external">神器！解放你的双手——UI设计稿全自动切图和标注的工具推荐</a></p>
+</li>
+<li><a href="https://github.com/jawil/blog/issues/10" target="_blank" rel="external">https://github.com/jawil/blog/issues/10</a></li>
+<li><a href="https://github.com/jawil/blog/issues/13" target="_blank" rel="external">https://github.com/jawil/blog/issues/13</a></li>
+<li><a href="http://www.liuyidi.com/plugins/2015/11/11/fe-plugins.html" target="_blank" rel="external">http://www.liuyidi.com/plugins/2015/11/11/fe-plugins.html</a></li>
+<li><a href="http://www.cnblogs.com/PeunZhang/" target="_blank" rel="external">http://www.cnblogs.com/PeunZhang/</a></li>
+<li><a href="https://github.com/ecmadao/Coding-Guide" target="_blank" rel="external">https://github.com/ecmadao/Coding-Guide</a></li>
+<li><a href="https://juejin.im/entry/58ad2fc9b123db00672c965a" target="_blank" rel="external">https://juejin.im/entry/58ad2fc9b123db00672c965a</a></li>
+</ul>
+<p>[小程序] 终于可以愉快的使用 async/await 啦 <a href="https://www.idaima.com/article/3841" target="_blank" rel="external">https://www.idaima.com/article/3841</a><br><a href="https://github.com/iuap-design" target="_blank" rel="external">https://github.com/iuap-design</a></p>
+<h2 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h2><ul>
+<li><a href="https://isux.tencent.com/h5-drop-down-effect-slide.html" target="_blank" rel="external">https://isux.tencent.com/h5-drop-down-effect-slide.html</a></li>
+<li><a href="http://www.cnblogs.com/lhb25/p/page-scrolling-effects-plugins.html" target="_blank" rel="external">http://www.cnblogs.com/lhb25/p/page-scrolling-effects-plugins.html</a></li>
+<li><a href="http://www.dowebok.com/?" target="_blank" rel="external">http://www.dowebok.com/?</a></li>
+<li><a href="http://www.htmleaf.com/jQuery/Layout-Interface/201606093578.html" target="_blank" rel="external">http://www.htmleaf.com/jQuery/Layout-Interface/201606093578.html</a></li>
+<li><a href="http://www.mrfront.com/docs/velocity.js/command.html" target="_blank" rel="external">http://www.mrfront.com/docs/velocity.js/command.html</a></li>
+<li><a href="https://speckyboy.com/category/css/" target="_blank" rel="external">https://speckyboy.com/category/css/</a></li>
+<li><a href="http://h5bp.github.io/Effeckt.css/" target="_blank" rel="external">http://h5bp.github.io/Effeckt.css/</a></li>
+<li><a href="https://daneden.github.io/animate.css/" target="_blank" rel="external">https://daneden.github.io/animate.css/</a></li>
+<li><a href="https://www.awesomes.cn/search?q=%E5%8A%A8%E7%94%BB" target="_blank" rel="external">https://www.awesomes.cn/search?q=%E5%8A%A8%E7%94%BB</a></li>
+</ul>
+<h2 id="视差滚动"><a href="#视差滚动" class="headerlink" title="视差滚动"></a>视差滚动</h2><ul>
+<li><a href="https://www.qianduan.net/60-stunning-parallax-scrolling-effect-website-design/" target="_blank" rel="external">https://www.qianduan.net/60-stunning-parallax-scrolling-effect-website-design/</a></li>
+<li><a href="http://www.cnblogs.com/JoannaQ/archive/2013/02/08/2909111.html" target="_blank" rel="external">http://www.cnblogs.com/JoannaQ/archive/2013/02/08/2909111.html</a></li>
+<li><a href="https://isux.tencent.com/parallax-scrolling.html" target="_blank" rel="external">https://isux.tencent.com/parallax-scrolling.html</a></li>
+<li><a href="https://www.zhihu.com/question/20990029" target="_blank" rel="external">https://www.zhihu.com/question/20990029</a></li>
+<li><a href="https://www.w3cplus.com/source/10-best-Parallax-Scrolling-plugin.html" target="_blank" rel="external">https://www.w3cplus.com/source/10-best-Parallax-Scrolling-plugin.html</a></li>
+<li><a href="http://spritely.net/gallery/" target="_blank" rel="external">http://spritely.net/gallery/</a></li>
+</ul>
+<h2 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h2><ul>
+<li><a href="https://github.com/webpack-china/awesome-webpack-cn" target="_blank" rel="external">https://github.com/webpack-china/awesome-webpack-cn</a></li>
+<li><a href="https://devhub.io/zh/repos/hjzheng-awesome-webpack" target="_blank" rel="external">https://devhub.io/zh/repos/hjzheng-awesome-webpack</a></li>
+<li><a href="https://github.com/webpack-contrib/awesome-webpack#webpack-plugins" target="_blank" rel="external">https://github.com/webpack-contrib/awesome-webpack#webpack-plugins</a></li>
+<li><a href="http://www.jianshu.com/p/d507b2d804d0" target="_blank" rel="external">http://www.jianshu.com/p/d507b2d804d0</a></li>
+<li><a href="https://segmentfault.com/a/1190000004172052" target="_blank" rel="external">https://segmentfault.com/a/1190000004172052</a></li>
+<li></li>
+</ul>
+
+    
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="huixisheng" />
+          <p class="site-author-name" itemprop="name">huixisheng</p>
+          <p class="site-description motion-element" itemprop="description">前端路漫漫兮，吾将上下而求索</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">30</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">37</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/huixisheng" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/huixisheng" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/huixisheng" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">huixisheng</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'huixisheng';
+      var disqus_identifier = 'Todo/docs/资源.html';
+      var disqus_title = "";
+      var disqus_url = 'http://huixisheng.github.io/Todo/docs/资源.html';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = false;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title >= 0 || index_content >= 0 ){
+                                isMatch = true;
+								if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            } 
+							
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
