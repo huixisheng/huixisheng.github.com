@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://huixisheng.github.io/es6-destructuring-and-spread-operator/</loc>
+    
+    <lastmod>2017-09-20T16:12:47.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://huixisheng.github.io/Todo/docs/weex.html</loc>
+    
+    <lastmod>2017-08-31T02:34:41.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://huixisheng.github.io/git-rebase/</loc>
     
     <lastmod>2017-08-27T10:13:28.000Z</lastmod>
@@ -65,14 +79,14 @@
   </url>
   
   <url>
-    <loc>http://huixisheng.github.io/Todo/vendor/themes/dark.css</loc>
+    <loc>http://huixisheng.github.io/Todo/vendor/themes/vue.css</loc>
     
     <lastmod>2017-08-10T00:46:20.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://huixisheng.github.io/Todo/vendor/themes/vue.css</loc>
+    <loc>http://huixisheng.github.io/Todo/vendor/themes/dark.css</loc>
     
     <lastmod>2017-08-10T00:46:20.000Z</lastmod>
     
@@ -261,13 +275,6 @@
   </url>
   
   <url>
-    <loc>http://huixisheng.github.io/Todo/docs/weex.html</loc>
-    
-    <lastmod>2017-04-25T03:50:45.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://huixisheng.github.io/Todo/docs/%E9%A2%9D%E5%A4%96%E7%9A%84%E9%97%AE%E9%A2%98.html</loc>
     
     <lastmod>2017-04-24T07:27:06.000Z</lastmod>
@@ -429,21 +436,7 @@
   </url>
   
   <url>
-    <loc>http://huixisheng.github.io/MacOSX-powerboot/</loc>
-    
-    <lastmod>2016-10-22T09:40:39.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://huixisheng.github.io/some-problem-in-project-diary/</loc>
-    
-    <lastmod>2016-10-22T09:40:39.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://huixisheng.github.io/jquery-plugin-develop/</loc>
     
     <lastmod>2016-10-22T09:40:39.000Z</lastmod>
     
@@ -458,6 +451,20 @@
   
   <url>
     <loc>http://huixisheng.github.io/MacOSX-mysql/</loc>
+    
+    <lastmod>2016-10-22T09:40:39.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://huixisheng.github.io/MacOSX-powerboot/</loc>
+    
+    <lastmod>2016-10-22T09:40:39.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://huixisheng.github.io/jquery-plugin-develop/</loc>
     
     <lastmod>2016-10-22T09:40:39.000Z</lastmod>
     
