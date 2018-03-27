@@ -1,0 +1,704 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="前端开发者说" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="前端开发者说" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="9419  npm config set scope x-scaffold 9420  npm publish –access restricted 9421  npm login –scope @x-scaffold 9422  npm login –scope x-scaffold –registry=https://registry.npmjs.org 9423  npm publish">
+<meta property="og:type" content="website">
+<meta property="og:title" content="前端开发者说">
+<meta property="og:url" content="http://huixisheng.github.io/Todo/docs/todo-php.html">
+<meta property="og:site_name" content="前端开发者说">
+<meta property="og:description" content="9419  npm config set scope x-scaffold 9420  npm publish –access restricted 9421  npm login –scope @x-scaffold 9422  npm login –scope x-scaffold –registry=https://registry.npmjs.org 9423  npm publish">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-10-29T12:36:22.258Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端开发者说">
+<meta name="twitter:description" content="9419  npm config set scope x-scaffold 9420  npm publish –access restricted 9421  npm login –scope @x-scaffold 9422  npm login –scope x-scaffold –registry=https://registry.npmjs.org 9423  npm publish">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '9599',
+      author: '悔惜晟'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://huixisheng.github.io/Todo/docs/todo-php.html"/>
+
+
+  <title>
+  
+
+  
+     | 前端开发者说
+  
+</title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left  ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">前端开发者说</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">记录开发的故事</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+    
+      <p> 9419  npm config set scope x-scaffold<br> 9420  npm publish –access restricted<br> 9421  npm login –scope @x-scaffold<br> 9422  npm login –scope x-scaffold –registry=<a href="https://registry.npmjs.org" target="_blank" rel="noopener">https://registry.npmjs.org</a><br> 9423  npm publish –access=public –registry=<a href="https://registry.npmjs.org" target="_blank" rel="noopener">https://registry.npmjs.org</a></p>
+<p><a href="http://192.168.3.88:8080/f/login?redirect=http%3A%2F%2F192.168.3.88%3A8080%2Ff%2F" target="_blank" rel="noopener">http://192.168.3.88:8080/f/login?redirect=http%3A%2F%2F192.168.3.88%3A8080%2Ff%2F</a><br><a href="http://192.168.3.88:8080/f/login?redirect=http%3A%2F%2F192.168.3.88%3A8080%2Ff%2F" target="_blank" rel="noopener">http://192.168.3.88:8080/f/login?redirect=http%3A%2F%2F192.168.3.88%3A8080%2Ff%2F</a></p>
+<p><a href="http://a.ops.cosmeapp.net/group/write-thread" target="_blank" rel="noopener">http://a.ops.cosmeapp.net/group/write-thread</a></p>
+<p><a href="https://www.oschina.net/code/snippet_98890_27459" target="_blank" rel="noopener">https://www.oschina.net/code/snippet_98890_27459</a><br>PHP判断字符串str中是否存在某个值</p>
+<p>return redirect 作用</p>
+<p>empty ! 的区别</p>
+<p>array_get  <a href="https://laravel.com/docs/5.5/helpers" target="_blank" rel="noopener">https://laravel.com/docs/5.5/helpers</a></p>
+<p>api 接口 自动化测试</p>
+<p>php <strong>get()和</strong>set()作用<br><a href="http://www.cnblogs.com/glory-jzx/archive/2012/05/23/2514173.html" target="_blank" rel="noopener">http://www.cnblogs.com/glory-jzx/archive/2012/05/23/2514173.html</a></p>
+<p>➜  ~ gem update –system<br>Updating rubygems-update<br>Fetching: rubygems-update-2.6.14.gem (100%)<br>ERROR:  While executing gem … (Gem::FilePermissionError)<br>    You don’t have write permissions for the /Library/Ruby/Gems/2.0.0 directory.</p>
+<ul>
+<li><a href="https://segmentfault.com/q/1010000002926243" target="_blank" rel="noopener">https://segmentfault.com/q/1010000002926243</a></li>
+</ul>
+<p>pod update –verbose –no-repo-update<br>xctool -workspace BYBeautyTips.xcworkspace -scheme BYBeautyTips ONLY_ACTIVE_ARCH=NO archive -archivePath ./Build/${BUILD_NUMBER}/BYBeautyTips.xcarchive<br>xcodebuild  -exportArchive -exportFormat IPA -archivePath ./Build/${BUILD_NUMBER}/BYBeautyTips.xcarchive\<br>-exportPath ./Build/${BUILD_NUMBER}/BYBeautyTips-AdHoc.ipa -exportProvisioningProfile ‘XC Ad Hoc: *’</p>
+<p>xcodebuild  -exportArchive -exportFormat IPA -archivePath ./Build/${BUILD_NUMBER}/BYBeautyTips.xcarchive -exportPath ./Build/${BUILD_NUMBER}/BYBeautyTips-Release.ipa\<br>-exportProvisioningProfile ‘App Store: com.w1.pihao2’</p>
+<p>#python3 ${JENKINS_HOME}/../pgyer_upload.py</p>
+<p>curl -F “file=@Build/${BUILD_NUMBER}/BYBeautyTips-Release.ipa” -F “uKey=1ec70af78af9f55cd2081be27935bc99”\<br>-F “_api_key=4dba215da2d970c8680447f1bde1595c” <a href="https://www.pgyer.com/apiv1/app/upload" target="_blank" rel="noopener">https://www.pgyer.com/apiv1/app/upload</a></p>
+<h2 id="webpack-构建"><a href="#webpack-构建" class="headerlink" title="webpack 构建"></a>webpack 构建</h2><ul>
+<li><a href="https://github.com/gregnb/filemanager-webpack-plugin" target="_blank" rel="noopener">https://github.com/gregnb/filemanager-webpack-plugin</a></li>
+<li><a href="https://github.com/webpack-contrib/copy-webpack-plugin/issues/15" target="_blank" rel="noopener">https://github.com/webpack-contrib/copy-webpack-plugin/issues/15</a></li>
+<li><a href="https://github.com/webpack-contrib/copy-webpack-plugin" target="_blank" rel="noopener">https://github.com/webpack-contrib/copy-webpack-plugin</a></li>
+<li><a href="https://www.npmjs.com/package/deploy-webpack-plugin" target="_blank" rel="noopener">https://www.npmjs.com/package/deploy-webpack-plugin</a></li>
+<li><a href="https://github.com/gongruixue/deploy-webpack-plugin" target="_blank" rel="noopener">https://github.com/gongruixue/deploy-webpack-plugin</a></li>
+<li><a href="https://github.com/unadlib/ssh-webpack-plugin" target="_blank" rel="noopener">https://github.com/unadlib/ssh-webpack-plugin</a></li>
+<li><a href="https://github.com/ruslan-kurchenko/webpack-sfdc-deploy-plugin" target="_blank" rel="noopener">https://github.com/ruslan-kurchenko/webpack-sfdc-deploy-plugin</a></li>
+</ul>
+<p>html 含有query</p>
+<ul>
+<li><a href="https://github.com/chemdemo/chemdemo.github.io/issues/13" target="_blank" rel="noopener">https://github.com/chemdemo/chemdemo.github.io/issues/13</a></li>
+<li><a href="https://github.com/liangklfangl/webpack-dev-server" target="_blank" rel="noopener">https://github.com/liangklfangl/webpack-dev-server</a></li>
+</ul>
+<p>代码检查</p>
+<ul>
+<li><a href="http://tomasalabes.me/blog/web-development/2016/08/26/Webpack-Series-Part-3.html" target="_blank" rel="noopener">http://tomasalabes.me/blog/web-development/2016/08/26/Webpack-Series-Part-3.html</a></li>
+<li><a href="https://www.npmjs.com/package/felint" target="_blank" rel="noopener">https://www.npmjs.com/package/felint</a></li>
+<li><a href="http://www.infoq.com/cn/news/2016/06/Facebook-Stylelint-CSS" target="_blank" rel="noopener">http://www.infoq.com/cn/news/2016/06/Facebook-Stylelint-CSS</a></li>
+<li><a href="http://ckstyle.github.io/" target="_blank" rel="noopener">http://ckstyle.github.io/</a></li>
+<li><a href="https://ecomfe.github.io/edp/doc/lint/css-check/" target="_blank" rel="noopener">https://ecomfe.github.io/edp/doc/lint/css-check/</a></li>
+<li><a href="http://stylelint.cn/user-guide/rules/" target="_blank" rel="noopener">http://stylelint.cn/user-guide/rules/</a></li>
+<li><a href="https://github.com/vuejs/vue-loader/issues/303" target="_blank" rel="noopener">https://github.com/vuejs/vue-loader/issues/303</a>  <a href="https://github.com/stylelint/stylelint/pull/2975" target="_blank" rel="noopener">https://github.com/stylelint/stylelint/pull/2975</a></li>
+<li><a href="https://github.com/airbnb/javascript#arrays" target="_blank" rel="noopener">https://github.com/airbnb/javascript#arrays</a></li>
+<li><a href="https://github.com/longtian/qiniu-webpack-plugin" target="_blank" rel="noopener">https://github.com/longtian/qiniu-webpack-plugin</a> <a href="https://github.com/longtian/qshell-cli" target="_blank" rel="noopener">https://github.com/longtian/qshell-cli</a></li>
+<li><a href="https://github.com/productboard/webpack-deploy" target="_blank" rel="noopener">https://github.com/productboard/webpack-deploy</a></li>
+</ul>
+<p>mz-check-schema<br>x-check-schema</p>
+<p>aui-</p>
+<p>admin-ui</p>
+<p>mei-ui</p>
+<p>zui</p>
+<p>mui</p>
+<p>MeiAdminUI<br>美妆心得后台</p>
+<p>-&gt; mui-</p>
+<p>nodejs实现复制文本到剪切板 <a href="http://jo2.org/nodejs-copy-text-to-clipboard/" target="_blank" rel="noopener">http://jo2.org/nodejs-copy-text-to-clipboard/</a></p>
+
+    
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="huixisheng" />
+          <p class="site-author-name" itemprop="name">huixisheng</p>
+          <p class="site-description motion-element" itemprop="description">前端路漫漫兮，吾将上下而求索</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">37</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">48</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/huixisheng" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/huixisheng" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/huixisheng" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">huixisheng</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'huixisheng';
+      var disqus_identifier = 'Todo/docs/todo-php.html';
+      var disqus_title = "";
+      var disqus_url = 'http://huixisheng.github.io/Todo/docs/todo-php.html';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = false;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title >= 0 || index_content >= 0 ){
+                                isMatch = true;
+								if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            } 
+							
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>

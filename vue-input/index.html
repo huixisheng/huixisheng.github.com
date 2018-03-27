@@ -93,8 +93,9 @@
 <meta property="og:url" content="http://huixisheng.github.io/vue-input/index.html">
 <meta property="og:site_name" content="前端开发者说">
 <meta property="og:description" content="今天有同事过来问我，给el-input 加了@input参数$event变成了input变化后的值(v-model)。大致伪代码如下:  对于@input的印象是: Vue2.x去除了.sync,需要双向绑定就用到了@input .sync在2.3.0又回来了  所以要让组件的 v-model 生效，它必须：接受一个 value 属性在有新的 value 时触发 input 事件  于是去看下el">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://huixisheng.github.io/images/vue/@input1.jpeg">
-<meta property="og:updated_time" content="2017-05-27T16:40:10.000Z">
+<meta property="og:updated_time" content="2018-03-14T01:17:16.944Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue @input事件">
 <meta name="twitter:description" content="今天有同事过来问我，给el-input 加了@input参数$event变成了input变化后的值(v-model)。大致伪代码如下:  对于@input的印象是: Vue2.x去除了.sync,需要双向绑定就用到了@input .sync在2.3.0又回来了  所以要让组件的 v-model 生效，它必须：接受一个 value 属性在有新的 value 时触发 input 事件  于是去看下el">
@@ -307,28 +308,28 @@
         <p>今天有同事过来问我，给<code>el-input</code> 加了<code>@input</code>参数<code>$event</code>变成了<code>input</code>变化后的值(v-model)。大致伪代码如下:</p>
 <iframe scrolling="no" width="100%" height="300" src="//jsfiddle.net/k5uf5fa0/embedded/js,resources,html,css,result/light" frameborder="0" allowfullscreen></iframe>
 <p>对于<code>@input</code>的印象是:</p>
-<p>Vue2.x去除了<code>.sync</code>,需要双向绑定就用到了<code>@input</code> <code>.sync</code>在<a href="https://github.com/vuejs/vue/releases/tag/v2.3.0" target="_blank" rel="external">2.3.0又回来了</a></p>
+<p>Vue2.x去除了<code>.sync</code>,需要双向绑定就用到了<code>@input</code> <code>.sync</code>在<a href="https://github.com/vuejs/vue/releases/tag/v2.3.0" target="_blank" rel="noopener">2.3.0又回来了</a></p>
 <blockquote>
 <p>所以要让组件的 v-model 生效，它必须：<br>接受一个 value 属性<br>在有新的 value 时触发 input 事件</p>
 </blockquote>
-<p>于是去看下<code>el-input</code><a href="https://github.com/ElemeFE/element/blob/d3bf30b48c66649e659c29df80844daa7992f1d9/packages/input/src/input.vue#L35-L49" target="_blank" rel="external">源码</a>，截取的伪代码:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;input ref=&quot;input&quot; @input=&quot;handleInput&quot;&gt;</div><div class="line"></div><div class="line">methods: &#123;</div><div class="line">  handleInput(event) &#123;</div><div class="line">    const value = event.target.value;</div><div class="line">    this.$emit(&apos;input&apos;, value);</div><div class="line">    this.setCurrentValue(value);</div><div class="line">    this.$emit(&apos;change&apos;, value);</div><div class="line">  &#125;,</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>可以理解<code>$event</code>为<code>v-model</code>没有问题，可是<code>handlerInput($event, index) {</code> 第一反应index的值应该没有才对。于是去<a href="https://github.com/vuejs/vue/blob/dev/dist/vue.js" target="_blank" rel="external">Vue的源码</a>找答案，Vue的源码并不是晦涩难懂，相反而是通俗易懂，当然精髓的代码还没有完全参透。接下来要抽段时间好好品味一番。@TODO</p>
+<p>于是去看下<code>el-input</code><a href="https://github.com/ElemeFE/element/blob/d3bf30b48c66649e659c29df80844daa7992f1d9/packages/input/src/input.vue#L35-L49" target="_blank" rel="noopener">源码</a>，截取的伪代码:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;input ref=&quot;input&quot; @input=&quot;handleInput&quot;&gt;</span><br><span class="line"></span><br><span class="line">methods: &#123;</span><br><span class="line">  handleInput(event) &#123;</span><br><span class="line">    const value = event.target.value;</span><br><span class="line">    this.$emit(&apos;input&apos;, value);</span><br><span class="line">    this.setCurrentValue(value);</span><br><span class="line">    this.$emit(&apos;change&apos;, value);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以理解<code>$event</code>为<code>v-model</code>没有问题，可是<code>handlerInput($event, index) {</code> 第一反应index的值应该没有才对。于是去<a href="https://github.com/vuejs/vue/blob/dev/dist/vue.js" target="_blank" rel="noopener">Vue的源码</a>找答案，Vue的源码并不是晦涩难懂，相反而是通俗易懂，当然精髓的代码还没有完全参透。接下来要抽段时间好好品味一番。@TODO</p>
 <p>打了断点，大致明白了点，不会像一开始那么迷茫。</p>
 <p><img src="/images/vue/@input1.jpeg" alt=""></p>
 <h2 id="input事件"><a href="#input事件" class="headerlink" title="input事件"></a>input事件</h2><p>参阅了下资料:</p>
 <blockquote>
 <p>当 <code>&lt;input&gt;</code> 或 <code>&lt;textarea&gt;</code> 元素的值更改时，DOM input 事件会同步触发。(对于 type = checkbox 或 type = radio 的输入元素，当用户单击控件时，输入事件不会触发，因为value属性不会更改。) 此外，当内容更改时，它会在 contenteditable 的编辑器上触发。在这种情况下，事件目标是编辑主机元素。如果有两个或多个具有 contenteditable 的元素为真，“编辑主机”是其父级不可编辑的最近的祖先元素。同样，它也会在  designMode 编辑器的根元素上触发。</p>
 </blockquote>
-<p>来自: <a href="https://developer.mozilla.org/zh-CN/docs/Web/Events/input" target="_blank" rel="external">https://developer.mozilla.org/zh-CN/docs/Web/Events/input</a></p>
+<p>来自: <a href="https://developer.mozilla.org/zh-CN/docs/Web/Events/input" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/Events/input</a></p>
 <blockquote>
 <p>最后需要注意的是：oninput 和 onpropertychange 这两个事件在 IE9 中都有个小BUG，那就是通过右键菜单菜单中的剪切和删除命令删除内容的时候不会触发，而 IE 其他版本都是正常的，目前还没有很好的解决方案。不过 oninput &amp; onpropertychange 仍然是监听输入框值变化的最佳方案，如果大家有更好的方法，欢迎参与讨论。</p>
 </blockquote>
-<p>来自: <a href="http://www.cnblogs.com/lhb25/archive/2012/11/30/oninput-and-onpropertychange-event-for-input.html" target="_blank" rel="external">http://www.cnblogs.com/lhb25/archive/2012/11/30/oninput-and-onpropertychange-event-for-input.html</a></p>
+<p>来自: <a href="http://www.cnblogs.com/lhb25/archive/2012/11/30/oninput-and-onpropertychange-event-for-input.html" target="_blank" rel="noopener">http://www.cnblogs.com/lhb25/archive/2012/11/30/oninput-and-onpropertychange-event-for-input.html</a></p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><a href="https://github.com/ElemeFE/element/blob/d3bf30b48c66649e659c29df80844daa7992f1d9/packages/input/src/input.vue" target="_blank" rel="external">https://github.com/ElemeFE/element/blob/d3bf30b48c66649e659c29df80844daa7992f1d9/packages/input/src/input.vue</a></li>
-<li><a href="https://github.com/tiimgreen/github-cheat-sheet/blob/master/README.zh-cn.md#%E6%95%B4%E8%A1%8C%E9%AB%98%E4%BA%AE" target="_blank" rel="external">https://github.com/tiimgreen/github-cheat-sheet/blob/master/README.zh-cn.md#%E6%95%B4%E8%A1%8C%E9%AB%98%E4%BA%AE</a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/Events/input" target="_blank" rel="external">https://developer.mozilla.org/zh-CN/docs/Web/Events/input</a></li>
+<li><a href="https://github.com/ElemeFE/element/blob/d3bf30b48c66649e659c29df80844daa7992f1d9/packages/input/src/input.vue" target="_blank" rel="noopener">https://github.com/ElemeFE/element/blob/d3bf30b48c66649e659c29df80844daa7992f1d9/packages/input/src/input.vue</a></li>
+<li><a href="https://github.com/tiimgreen/github-cheat-sheet/blob/master/README.zh-cn.md#%E6%95%B4%E8%A1%8C%E9%AB%98%E4%BA%AE" target="_blank" rel="noopener">https://github.com/tiimgreen/github-cheat-sheet/blob/master/README.zh-cn.md#%E6%95%B4%E8%A1%8C%E9%AB%98%E4%BA%AE</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/Events/input" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/Events/input</a></li>
 </ul>
 
       
@@ -450,7 +451,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">31</span>
+              <span class="site-state-item-count">37</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -460,7 +461,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">39</span>
+                <span class="site-state-item-count">48</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -544,7 +545,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

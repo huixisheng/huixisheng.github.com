@@ -93,6 +93,7 @@
 <meta property="og:url" content="http://huixisheng.github.io/jquery-plugin-develop/index.html">
 <meta property="og:site_name" content="前端开发者说">
 <meta property="og:description" content="现在做的很多项目都是基于jQuery，很多时候jQuery插件就是一个模块。本文结合jQuery的源码对jQuery插件的写法做一个简单的介绍。">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2016-10-22T09:40:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jQuery 插件开发">
@@ -392,7 +393,7 @@ jQuery.fx.speeds = {
     _default: 400
 };
 </code></pre><h3 id="二、实例对象方法插件"><a href="#二、实例对象方法插件" class="headerlink" title="二、实例对象方法插件"></a>二、实例对象方法插件</h3><p>开发能让所有的 <code>jQuery</code> 实例对象都可以调用的方法。也就是说，只要通过 <code>$()</code> 工厂获得<br>的 <code>jQuery</code> 实例对象，都可以调用我们开发的方法。很多插件都是这种类型。</p>
-<p>实现方法：<a href="javascript:;" title="展开又是一篇很长的文章，请看下回" target="_blank" rel="external">自动执行的匿名函数</a>和类级别的插件开发的组合。</p>
+<p>实现方法：<a href="javascript:;" title="展开又是一篇很长的文章，请看下回" target="_blank" rel="noopener">自动执行的匿名函数</a>和类级别的插件开发的组合。</p>
 <pre><code>;(function($){
 
     $.fn.extend({
@@ -452,10 +453,10 @@ jQuery.fx.speeds = {
 </code></pre><p>]</p>
 <h2 id="如何将jQuery-plugin-封装成seajs模块"><a href="#如何将jQuery-plugin-封装成seajs模块" class="headerlink" title="如何将jQuery plugin 封装成seajs模块"></a>如何将jQuery plugin 封装成seajs模块</h2><p>Todo：</p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
-<li><a href="http://www.iteye.com/topic/545971" target="_blank" rel="external">jQuery插件开发全解析</a></li>
-<li><a href="http://plugins.jquery.com/" target="_blank" rel="external">jQuery Plugin 官网</a></li>
-<li><a href="http://hemin.cn/jq/" target="_blank" rel="external">jQuery 1.10.3 中文帮助手册</a></li>
-<li><a href="http://www.36ria.com/2822" target="_blank" rel="external">jquery插件开发规范—jquery插件开发进阶教程（1）</a></li>
+<li><a href="http://www.iteye.com/topic/545971" target="_blank" rel="noopener">jQuery插件开发全解析</a></li>
+<li><a href="http://plugins.jquery.com/" target="_blank" rel="noopener">jQuery Plugin 官网</a></li>
+<li><a href="http://hemin.cn/jq/" target="_blank" rel="noopener">jQuery 1.10.3 中文帮助手册</a></li>
+<li><a href="http://www.36ria.com/2822" target="_blank" rel="noopener">jquery插件开发规范—jquery插件开发进阶教程（1）</a></li>
 </ol>
 
       
@@ -498,8 +499,8 @@ jQuery.fx.speeds = {
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/cdn/" rel="prev" title="前端静态资源CDN公共库整理">
-                前端静态资源CDN公共库整理 <i class="fa fa-chevron-right"></i>
+              <a href="/markdown-test/" rel="prev" title="mardowm语法简单测试">
+                mardowm语法简单测试 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -575,7 +576,7 @@ jQuery.fx.speeds = {
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">31</span>
+              <span class="site-state-item-count">37</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -585,7 +586,7 @@ jQuery.fx.speeds = {
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">39</span>
+                <span class="site-state-item-count">48</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -669,7 +670,7 @@ jQuery.fx.speeds = {
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

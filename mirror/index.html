@@ -93,7 +93,8 @@
 <meta property="og:url" content="http://huixisheng.github.io/mirror/index.html">
 <meta property="og:site_name" content="前端开发者说">
 <meta property="og:description" content="本文对国内ruby、npm、brew、Composer等镜像源做整理，给前端开发这提供方便。">
-<meta property="og:updated_time" content="2016-11-26T02:15:59.000Z">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-11-02T01:27:36.156Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="国内镜像源整理">
 <meta name="twitter:description" content="本文对国内ruby、npm、brew、Composer等镜像源做整理，给前端开发这提供方便。">
@@ -307,27 +308,32 @@
 ERROR:  Could not find a valid gem &apos;cdnjs-command&apos; (&gt;= 0), here is why:
       Unable to download data from https://rubygems.org/ - Errno::EPIPE: Broken pipe - SSL_connect (https://rubygems.org/latest_specs.4.8.gz)
 </code></pre><h2 id="RubyGems-镜像"><a href="#RubyGems-镜像" class="headerlink" title="RubyGems 镜像"></a>RubyGems 镜像</h2><blockquote>
-<p>$ gem sources –add <a href="https://ruby.taobao.org/" target="_blank" rel="external">https://ruby.taobao.org/</a> –remove <a href="https://rubygems.org/" target="_blank" rel="external">https://rubygems.org/</a><br>  $ gem sources -l<br>   <strong><em> CURRENT SOURCES </em></strong><br><a href="https://ruby.taobao.org" target="_blank" rel="external">https://ruby.taobao.org</a></p>
-<h1 id="请确保只有-ruby-taobao-org"><a href="#请确保只有-ruby-taobao-org" class="headerlink" title="请确保只有 ruby.taobao.org"></a>请确保只有 ruby.taobao.org</h1><p>$ gem install rails</p>
+<p>$ gem sources –add <a href="https://ruby.taobao.org/" target="_blank" rel="noopener">https://ruby.taobao.org/</a> –remove <a href="https://rubygems.org/" target="_blank" rel="noopener">https://rubygems.org/</a><br>  $ gem sources -l<br>   <strong><em> CURRENT SOURCES </em></strong><br><a href="https://ruby.taobao.org" target="_blank" rel="noopener">https://ruby.taobao.org</a></p>
 </blockquote>
+<h1 id="请确保只有-ruby-taobao-org"><a href="#请确保只有-ruby-taobao-org" class="headerlink" title="请确保只有 ruby.taobao.org"></a>请确保只有 ruby.taobao.org</h1><p>$ gem install rails</p>
 <h2 id="NPM-镜像"><a href="#NPM-镜像" class="headerlink" title="NPM 镜像"></a>NPM 镜像</h2><p>每次安装都需要指明 <code>registry</code>，很麻烦</p>
 <blockquote>
-<p>$ npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="external">https://registry.npm.taobao.org</a></p>
+<p>$ npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a></p>
 </blockquote>
 <pre><code>vi ~/.npmrc
 </code></pre><p>添加。</p>
 <blockquote>
-<p>registry = <a href="http://registry.npm.taobao.org" target="_blank" rel="external">http://registry.npm.taobao.org</a></p>
+<p>registry = <a href="http://registry.npm.taobao.org" target="_blank" rel="noopener">http://registry.npm.taobao.org</a></p>
 </blockquote>
 <p>或者</p>
 <blockquote>
-<p> npm config set registry “<a href="http://registry.npm.taobao.org" target="_blank" rel="external">http://registry.npm.taobao.org</a>“</p>
+<p> npm config set registry “<a href="http://registry.npm.taobao.org&quot;" target="_blank" rel="noopener">http://registry.npm.taobao.org&quot;</a></p>
 </blockquote>
 <p>通过 <code>npm config ls</code> 可以查看相关配置情况</p>
-<h2 id="Brew镜像"><a href="#Brew镜像" class="headerlink" title="Brew镜像"></a>Brew镜像</h2><blockquote>
-<p>$ cd /usr/local &amp;&amp; git remote set-url origin <a href="https://git.coding.net/homebrew/homebrew.git" target="_blank" rel="external">https://git.coding.net/homebrew/homebrew.git</a><br>$ cd $home &amp;&amp; brew update</p>
+<h2 id="Yarn-镜像"><a href="#Yarn-镜像" class="headerlink" title="Yarn 镜像"></a>Yarn 镜像</h2><p><a href="https://yarnpkg.com/zh-Hans/" target="_blank" rel="noopener">yarn</a></p>
+<blockquote>
+<p>Yarn 对你的代码来说是一个包管理器， 它允许你使用并分享代码给全世界的开发者， Yarn 做这些快捷、安全、可靠，所以你不用担心什么。</p>
 </blockquote>
-<p><a href="https://coding.net/u/cocodingding/pp/84498" target="_blank" rel="external">Brew Brew Brew !</a></p>
+<p>设置国内镜像<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ yarn config set registry https://registry.npm.taobao.org --global</span><br><span class="line">$ yarn config set disturl https://npm.taobao.org/dist --global</span><br></pre></td></tr></table></figure></p>
+<h2 id="Brew镜像"><a href="#Brew镜像" class="headerlink" title="Brew镜像"></a>Brew镜像</h2><blockquote>
+<p>$ cd /usr/local &amp;&amp; git remote set-url origin <a href="https://git.coding.net/homebrew/homebrew.git" target="_blank" rel="noopener">https://git.coding.net/homebrew/homebrew.git</a><br>$ cd $home &amp;&amp; brew update</p>
+</blockquote>
+<p><a href="https://coding.net/u/cocodingding/pp/84498" target="_blank" rel="noopener">Brew Brew Brew !</a></p>
 <h2 id="Composer-镜像"><a href="#Composer-镜像" class="headerlink" title="Composer 镜像"></a>Composer 镜像</h2><p>方法1：</p>
 <pre><code>composer config -g repositories.packagist composer http://packagist.phpcomposer.com
 </code></pre><p>方法2：</p>
@@ -340,7 +346,7 @@ ERROR:  Could not find a valid gem &apos;cdnjs-command&apos; (&gt;= 0), here is 
         {&quot;packagist&quot;: false}
     ]
 }
-</code></pre><p><a href="http://pkg.phpcomposer.com/" target="_blank" rel="external">Packagist / Composer 中国全量镜像</a></p>
+</code></pre><p><a href="http://pkg.phpcomposer.com/" target="_blank" rel="noopener">Packagist / Composer 中国全量镜像</a></p>
 <p>全局安装</p>
 <pre><code>$ curl -sS https://getcomposer.org/installer | php
 $ mv composer.phar /usr/local/bin/composer
@@ -383,16 +389,16 @@ $ mv composer.phar /usr/local/bin/composer
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/compatibility-solution/" rel="next" title="兼容性解决方案整理">
-                <i class="fa fa-chevron-left"></i> 兼容性解决方案整理
+              <a href="/debugger-tool/" rel="next" title="调试工具整理">
+                <i class="fa fa-chevron-left"></i> 调试工具整理
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/npm-install/" rel="prev" title="npm直接安装github仓库代码">
-                npm直接安装github仓库代码 <i class="fa fa-chevron-right"></i>
+              <a href="/git-ssh-key-setting/" rel="prev" title="配置SSH公钥和git多账号配置">
+                配置SSH公钥和git多账号配置 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -468,7 +474,7 @@ $ mv composer.phar /usr/local/bin/composer
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">31</span>
+              <span class="site-state-item-count">37</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -478,7 +484,7 @@ $ mv composer.phar /usr/local/bin/composer
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">39</span>
+                <span class="site-state-item-count">48</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -543,7 +549,7 @@ $ mv composer.phar /usr/local/bin/composer
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#为何写这个文章"><span class="nav-number">1.</span> <span class="nav-text">为何写这个文章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RubyGems-镜像"><span class="nav-number">2.</span> <span class="nav-text">RubyGems 镜像</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#请确保只有-ruby-taobao-org"><span class="nav-number"></span> <span class="nav-text">请确保只有 ruby.taobao.org</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#NPM-镜像"><span class="nav-number">1.</span> <span class="nav-text">NPM 镜像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Brew镜像"><span class="nav-number">2.</span> <span class="nav-text">Brew镜像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Composer-镜像"><span class="nav-number">3.</span> <span class="nav-text">Composer 镜像</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#为何写这个文章"><span class="nav-number">1.</span> <span class="nav-text">为何写这个文章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RubyGems-镜像"><span class="nav-number">2.</span> <span class="nav-text">RubyGems 镜像</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#请确保只有-ruby-taobao-org"><span class="nav-number"></span> <span class="nav-text">请确保只有 ruby.taobao.org</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#NPM-镜像"><span class="nav-number">1.</span> <span class="nav-text">NPM 镜像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Yarn-镜像"><span class="nav-number">2.</span> <span class="nav-text">Yarn 镜像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Brew镜像"><span class="nav-number">3.</span> <span class="nav-text">Brew镜像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Composer-镜像"><span class="nav-number">4.</span> <span class="nav-text">Composer 镜像</span></a></li></ol></div>
             
           </div>
         </section>
@@ -562,7 +568,7 @@ $ mv composer.phar /usr/local/bin/composer
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

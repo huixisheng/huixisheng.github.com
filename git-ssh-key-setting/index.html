@@ -93,7 +93,8 @@
 <meta property="og:url" content="http://huixisheng.github.io/git-ssh-key-setting/index.html">
 <meta property="og:site_name" content="前端开发者说">
 <meta property="og:description" content="本文介绍如何配置ssh-key">
-<meta property="og:updated_time" content="2016-10-22T13:07:52.000Z">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-02-09T03:19:01.814Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="配置SSH公钥和git多账号配置">
 <meta name="twitter:description" content="本文介绍如何配置ssh-key">
@@ -304,9 +305,9 @@
       
         <p>本文介绍如何配置<code>ssh-key</code></p>
 <a id="more"></a>
-<h2 id="生成key"><a href="#生成key" class="headerlink" title="生成key"></a>生成key</h2><p>ssh-keygen -t rsa -f ~/.ssh/git.oschina.net -C “469184346@qq.com”</p>
+<h2 id="生成key"><a href="#生成key" class="headerlink" title="生成key"></a>生成key</h2><p>ssh-keygen -t rsa -f ~/.ssh/git.oschina.net -C “<a href="mailto:469184346@qq.com" target="_blank" rel="noopener">469184346@qq.com</a>“</p>
 <blockquote>
-<p>代码参数含义：<br>-t 指定密钥类型，默认是 rsa ，可以省略。<br>-C 设置注释文字，比如邮箱。<br>-f 指定密钥文件存储文件名。  -<a href="http://www.cnblogs.com/ayseeing/p/3572582.html" target="_blank" rel="external">来自github设置添加SSH</a></p>
+<p>代码参数含义：<br>-t 指定密钥类型，默认是 rsa ，可以省略。<br>-C 设置注释文字，比如邮箱。<br>-f 指定密钥文件存储文件名。  -<a href="http://www.cnblogs.com/ayseeing/p/3572582.html" target="_blank" rel="noopener">来自github设置添加SSH</a></p>
 </blockquote>
 <p>直接输入回车</p>
 <pre><code>Generating public/private rsa key pair.
@@ -315,18 +316,22 @@ Enter same passphrase again:
 </code></pre><p>如果输入了密码</p>
 <blockquote>
 <p>设置passphrase后，进行版本控制时，每次与GitHub通信都会要求输入passphrase，以避免某些“失误”</p>
-<p>将SSH 私钥增加到ssh-agent: ssh-add ~/.ssh/xyz_rsa， 这里会提示输入一次私钥的密码; -<a href="http://www.jianshu.com/p/ddd3122cb351#" target="_blank" rel="external">来自</a></p>
+</blockquote>
+<blockquote>
+<p>将SSH 私钥增加到ssh-agent: ssh-add ~/.ssh/xyz_rsa， 这里会提示输入一次私钥的密码; -<a href="http://www.jianshu.com/p/ddd3122cb351#" target="_blank" rel="noopener">来自</a></p>
 </blockquote>
 <h2 id="添加密匙"><a href="#添加密匙" class="headerlink" title="添加密匙"></a>添加密匙</h2><h3 id="拷贝公钥"><a href="#拷贝公钥" class="headerlink" title="拷贝公钥"></a>拷贝公钥</h3><pre><code>pbcopy &lt;  ~/.ssh/git.oschina.net.pub
-</code></pre><p>其他平台拷贝命令<a href="http://www.jianshu.com/p/31cbbbc5f9fa/" target="_blank" rel="external">参考如何生成SSH key</a></p>
+</code></pre><p>其他平台拷贝命令<a href="http://www.jianshu.com/p/31cbbbc5f9fa/" target="_blank" rel="noopener">参考如何生成SSH key</a></p>
 <blockquote>
 <p>window<br>    clip &lt; ~/.ssh/id_rsa.pub</p>
+</blockquote>
+<blockquote>
 <p>linux<br>    sudo apt-get install xclip<br>    xclip -sel clip &lt; ~/.ssh/id_rsa.pub</p>
 </blockquote>
 <h3 id="登录远程git平台添加ssh-key"><a href="#登录远程git平台添加ssh-key" class="headerlink" title="登录远程git平台添加ssh key"></a>登录远程git平台添加ssh key</h3><p>粘贴刚才拷贝的内容</p>
 <ul>
-<li><a href="http://git.oschina.net/profile/sshkeys" target="_blank" rel="external">oschinaSSH公钥</a></li>
-<li><a href="https://github.com/settings/keys" target="_blank" rel="external">github SSH and GPG keys</a>点击 <code>New SSH key</code></li>
+<li><a href="http://git.oschina.net/profile/sshkeys" target="_blank" rel="noopener">oschinaSSH公钥</a></li>
+<li><a href="https://github.com/settings/keys" target="_blank" rel="noopener">github SSH and GPG keys</a>点击 <code>New SSH key</code></li>
 </ul>
 <p>将新生成的key添加到ssh-agent中</p>
 <pre><code>$ eval &quot;$(ssh-agent -s)&quot;
@@ -352,16 +357,16 @@ Host git.oschina.net
     IdentityFile ~/.ssh/git.oschina.net
     User git
 </code></pre><blockquote>
-<p>Host，SSH 连接名<br>HostName，如上所示，可以是通配符，可以是 IP，也可以是域名等<br>User，登录的用户名<br>IdentifyFile，version 1 协议下默认是 ~/.ssh/identify，version 2 协议下，默认是依次匹配：~/.ssh/id_dsa，~/.ssh/id_ecdsa，~/.ssh/id_rsa，还有 version 2 兼容模式。<br>LocalForward 端口的内部跳转<br>Port，端口设置，默认 SSH 的端口是 22<br>Protocal，协议版本号，1 或者 2<br><a href="http://www.barretlee.com/blog/2016/03/09/config-in-ssh-after-troubling-git-connection/" target="_blank" rel="external">来自</a></p>
+<p>Host，SSH 连接名<br>HostName，如上所示，可以是通配符，可以是 IP，也可以是域名等<br>User，登录的用户名<br>IdentifyFile，version 1 协议下默认是 ~/.ssh/identify，version 2 协议下，默认是依次匹配：~/.ssh/id_dsa，~/.ssh/id_ecdsa，~/.ssh/id_rsa，还有 version 2 兼容模式。<br>LocalForward 端口的内部跳转<br>Port，端口设置，默认 SSH 的端口是 22<br>Protocal，协议版本号，1 或者 2<br><a href="http://www.barretlee.com/blog/2016/03/09/config-in-ssh-after-troubling-git-connection/" target="_blank" rel="noopener">来自</a></p>
 </blockquote>
 <ul>
-<li><a href="http://www.cnblogs.com/ayseeing/p/4445194.html" target="_blank" rel="external">参考生成多个git ssh密钥</a></li>
+<li><a href="http://www.cnblogs.com/ayseeing/p/4445194.html" target="_blank" rel="noopener">参考生成多个git ssh密钥</a></li>
 </ul>
 <h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>测试是否配置成功</p>
 <pre><code>$ ssh -T git@git.oschina.net
 Welcome to Git@OSC, huixisheng!
 </code></pre><blockquote>
-<p>-v会输出详情的信息 <a href="http://www.barretlee.com/blog/2016/03/09/config-in-ssh-after-troubling-git-connection/" target="_blank" rel="external">多SSH Key管理技巧与Git多账户登录问题</a></p>
+<p>-v会输出详情的信息 <a href="http://www.barretlee.com/blog/2016/03/09/config-in-ssh-after-troubling-git-connection/" target="_blank" rel="noopener">多SSH Key管理技巧与Git多账户登录问题</a></p>
 </blockquote>
 <h2 id="其他问题"><a href="#其他问题" class="headerlink" title="其他问题"></a>其他问题</h2><pre><code>$ ssh -T git@git.oschina.net
 The authenticity of host &apos;git.oschina.net (218.60.114.30)&apos; can&apos;t be established.
@@ -373,16 +378,16 @@ Permission denied (publickey).
 $ eval &quot;$(ssh-agent -s)&quot;
 $ ssh-add ~/.ssh/git.oschina.net
 </code></pre><blockquote>
-<p>   如果执行ssh-add时提示”Could not open a connection to your authentication agent”，可以现执行命令：<br>    $ ssh-agent bash <a href="http://my.oschina.net/stefanzhlg/blog/529403" target="_blank" rel="external">来自</a></p>
+<p>   如果执行ssh-add时提示”Could not open a connection to your authentication agent”，可以现执行命令：<br>    $ ssh-agent bash <a href="http://my.oschina.net/stefanzhlg/blog/529403" target="_blank" rel="noopener">来自</a></p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo git clone git@git.coding.net:huixisheng/layout.git</div><div class="line">Cloning into &apos;layout&apos;...</div><div class="line">Permission denied (publickey).</div><div class="line">fatal: Could not read from remote repository.</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo git clone git@git.coding.net:huixisheng/layout.git</span><br><span class="line">Cloning into &apos;layout&apos;...</span><br><span class="line">Permission denied (publickey).</span><br><span class="line">fatal: Could not read from remote repository.</span><br></pre></td></tr></table></figure>
 <p><code>ssh -vT git@git.coding.net</code> 是有结果返回的,看了debug信息都是正常的。</p>
-<p>执行如下（期间关闭了翻墙软件）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ssh-add ~/.ssh/gitcodingnet</div><div class="line">source ~/.ssh/config</div></pre></td></tr></table></figure></p>
+<p>执行如下（期间关闭了翻墙软件）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh-add ~/.ssh/gitcodingnet</span><br><span class="line">source ~/.ssh/config</span><br></pre></td></tr></table></figure></p>
 <p>再次clone又可以了。没找到为何不行的根本原因</p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><a href="http://my.oschina.net/stefanzhlg/blog/529403" target="_blank" rel="external">git 配置多个SSH-Key</a></li>
-<li><a href="https://help.github.com/articles/generating-ssh-keys" target="_blank" rel="external">https://help.github.com/articles/generating-ssh-keys</a></li>
-<li><a href="https://coding.net/help/doc/git/ssh-key.html" target="_blank" rel="external">coding配置SSH公钥</a></li>
+<li><a href="http://my.oschina.net/stefanzhlg/blog/529403" target="_blank" rel="noopener">git 配置多个SSH-Key</a></li>
+<li><a href="https://help.github.com/articles/generating-ssh-keys" target="_blank" rel="noopener">https://help.github.com/articles/generating-ssh-keys</a></li>
+<li><a href="https://coding.net/help/doc/git/ssh-key.html" target="_blank" rel="noopener">coding配置SSH公钥</a></li>
 </ul>
 
       
@@ -415,16 +420,16 @@ $ ssh-add ~/.ssh/git.oschina.net
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/nodejs-spawn-exec/" rel="next" title="spawn和exec简单介绍">
-                <i class="fa fa-chevron-left"></i> spawn和exec简单介绍
+              <a href="/mirror/" rel="next" title="国内镜像源整理">
+                <i class="fa fa-chevron-left"></i> 国内镜像源整理
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/git-problem/" rel="prev" title="git操作常见问题汇总">
-                git操作常见问题汇总 <i class="fa fa-chevron-right"></i>
+              <a href="/markdown-Table-of-Contents/" rel="prev" title="markdown文件生成目录">
+                markdown文件生成目录 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -500,7 +505,7 @@ $ ssh-add ~/.ssh/git.oschina.net
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">31</span>
+              <span class="site-state-item-count">37</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -510,7 +515,7 @@ $ ssh-add ~/.ssh/git.oschina.net
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">39</span>
+                <span class="site-state-item-count">48</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -594,7 +599,7 @@ $ ssh-add ~/.ssh/git.oschina.net
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

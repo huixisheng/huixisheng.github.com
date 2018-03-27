@@ -92,6 +92,7 @@
 <meta property="og:url" content="http://huixisheng.github.io/Todo/docs/babel.html">
 <meta property="og:site_name" content="前端开发者说">
 <meta property="og:description" content="babel https://github.com/creeperyang/blog/issues/25 https://babeljs.io/docs/plugins/#presets presets配置 https://babeljs.io/docs/plugins/preset-env/#options https://babeljs.io/docs/usage/api/ 如何写好.babel">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2017-06-04T15:45:17.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端开发者说">
@@ -243,24 +244,24 @@
     
     
       <h1 id="babel"><a href="#babel" class="headerlink" title="babel"></a>babel</h1><ul>
-<li><a href="https://github.com/creeperyang/blog/issues/25" target="_blank" rel="external">https://github.com/creeperyang/blog/issues/25</a></li>
-<li><a href="https://babeljs.io/docs/plugins/#presets" target="_blank" rel="external">https://babeljs.io/docs/plugins/#presets</a> presets配置</li>
-<li><a href="https://babeljs.io/docs/plugins/preset-env/#options" target="_blank" rel="external">https://babeljs.io/docs/plugins/preset-env/#options</a></li>
-<li><a href="https://babeljs.io/docs/usage/api/" target="_blank" rel="external">https://babeljs.io/docs/usage/api/</a></li>
-<li><a href="https://excaliburhan.com/post/babel-preset-and-plugins.html" target="_blank" rel="external">如何写好.babelrc？Babel的presets和plugins配置解析</a></li>
-<li><a href="https://github.com/lmk123/blog/issues/45" target="_blank" rel="external">transform-runtime 会自动应用 polyfill，即便没有使用 babel-polyfill</a></li>
-<li><a href="https://segmentfault.com/q/1010000005596587?from=singlemessage&amp;isappinstalled=1" target="_blank" rel="external">babel的polyfill和runtime的区别</a> </li>
-<li><a href="http://www.jianshu.com/p/41d3f7768095" target="_blank" rel="external">http://www.jianshu.com/p/41d3f7768095</a></li>
-<li><a href="http://coding.imooc.com/learn/questiondetail/8901.html" target="_blank" rel="external">http://coding.imooc.com/learn/questiondetail/8901.html</a></li>
-<li><a href="http://blog.ttionya.com/article-1695.html" target="_blank" rel="external">http://blog.ttionya.com/article-1695.html</a></li>
+<li><a href="https://github.com/creeperyang/blog/issues/25" target="_blank" rel="noopener">https://github.com/creeperyang/blog/issues/25</a></li>
+<li><a href="https://babeljs.io/docs/plugins/#presets" target="_blank" rel="noopener">https://babeljs.io/docs/plugins/#presets</a> presets配置</li>
+<li><a href="https://babeljs.io/docs/plugins/preset-env/#options" target="_blank" rel="noopener">https://babeljs.io/docs/plugins/preset-env/#options</a></li>
+<li><a href="https://babeljs.io/docs/usage/api/" target="_blank" rel="noopener">https://babeljs.io/docs/usage/api/</a></li>
+<li><a href="https://excaliburhan.com/post/babel-preset-and-plugins.html" target="_blank" rel="noopener">如何写好.babelrc？Babel的presets和plugins配置解析</a></li>
+<li><a href="https://github.com/lmk123/blog/issues/45" target="_blank" rel="noopener">transform-runtime 会自动应用 polyfill，即便没有使用 babel-polyfill</a></li>
+<li><a href="https://segmentfault.com/q/1010000005596587?from=singlemessage&amp;isappinstalled=1" target="_blank" rel="noopener">babel的polyfill和runtime的区别</a> </li>
+<li><a href="http://www.jianshu.com/p/41d3f7768095" target="_blank" rel="noopener">http://www.jianshu.com/p/41d3f7768095</a></li>
+<li><a href="http://coding.imooc.com/learn/questiondetail/8901.html" target="_blank" rel="noopener">http://coding.imooc.com/learn/questiondetail/8901.html</a></li>
+<li><a href="http://blog.ttionya.com/article-1695.html" target="_blank" rel="noopener">http://blog.ttionya.com/article-1695.html</a></li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">首先babel-preset-env 的功能是根据当前的运行环境来自动配置源码到当前环境可正常运行的代码的编译转换。当前环境是指执行编译后代码的环境，比如浏览器比如nodejs 等。babel-preset-env 中存储的是 各个浏览器和其它运行环境的核心版本号以及支持js的版本标识。然后自动生成一个配置给babel来做编译转换。babelrc里设置&#123;  &quot;presets&quot;: [&quot;env&quot;] &#125; 会自动转换那些环境不支持的代码。</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">首先babel-preset-env 的功能是根据当前的运行环境来自动配置源码到当前环境可正常运行的代码的编译转换。当前环境是指执行编译后代码的环境，比如浏览器比如nodejs 等。babel-preset-env 中存储的是 各个浏览器和其它运行环境的核心版本号以及支持js的版本标识。然后自动生成一个配置给babel来做编译转换。babelrc里设置&#123;  &quot;presets&quot;: [&quot;env&quot;] &#125; 会自动转换那些环境不支持的代码。</span><br></pre></td></tr></table></figure>
 <p>如何配置</p>
 <ul>
-<li><a href="https://www.vanadis.cn/2017/03/18/babel-stage-x/" target="_blank" rel="external">https://www.vanadis.cn/2017/03/18/babel-stage-x/</a></li>
-<li><a href="http://www.ruanyifeng.com/blog/2016/01/babel.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2016/01/babel.html</a></li>
-<li><a href="https://excaliburhan.com/post/babel-preset-and-plugins.html" target="_blank" rel="external">https://excaliburhan.com/post/babel-preset-and-plugins.html</a></li>
-<li><a href="https://juejin.im/entry/58d550d91b69e6006baa22bd" target="_blank" rel="external">https://juejin.im/entry/58d550d91b69e6006baa22bd</a></li>
+<li><a href="https://www.vanadis.cn/2017/03/18/babel-stage-x/" target="_blank" rel="noopener">https://www.vanadis.cn/2017/03/18/babel-stage-x/</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2016/01/babel.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2016/01/babel.html</a></li>
+<li><a href="https://excaliburhan.com/post/babel-preset-and-plugins.html" target="_blank" rel="noopener">https://excaliburhan.com/post/babel-preset-and-plugins.html</a></li>
+<li><a href="https://juejin.im/entry/58d550d91b69e6006baa22bd" target="_blank" rel="noopener">https://juejin.im/entry/58d550d91b69e6006baa22bd</a></li>
 </ul>
 
     
@@ -314,7 +315,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">31</span>
+              <span class="site-state-item-count">37</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -324,7 +325,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">39</span>
+                <span class="site-state-item-count">48</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -397,7 +398,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

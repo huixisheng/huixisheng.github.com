@@ -93,6 +93,7 @@
 <meta property="og:url" content="http://huixisheng.github.io/some-problem-in-project-diary/index.html">
 <meta property="og:site_name" content="前端开发者说">
 <meta property="og:description" content="很随便的记录项目中碰到的疑难杂症">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2016-10-22T09:40:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="项目中碰到的问题随笔">
@@ -311,8 +312,8 @@ for(var i = 0; i &lt; arr1.length; i++ ){
         arr2 = arr1.splice(i, 0, arr1[i]);
     }
 }
-</code></pre><p>一开始觉得不可思议，断定代码有死循环。数组、对象、函数都是引用。<a href="http://www.xiaoxiaozi.com/2009/05/22/588/" target="_blank" rel="external">参考-javascript 变量两种类型——基本类型和引用类型</a></p>
-<h2 id="自定义的Grunt插件调用异步的方法报错"><a href="#自定义的Grunt插件调用异步的方法报错" class="headerlink" title="自定义的Grunt插件调用异步的方法报错"></a>自定义的Grunt插件调用异步的方法报错</h2><p>解决办法：1. 报错的信息在谷歌中查找。PS:google 被墙，真是悲剧 2. 看grunt官网的说明文档 3. github 上找类似的插件怎么写。<a href="https://github.com/huixisheng/grunt-iAuto-upload" target="_blank" rel="external">插件地址</a></p>
+</code></pre><p>一开始觉得不可思议，断定代码有死循环。数组、对象、函数都是引用。<a href="http://www.xiaoxiaozi.com/2009/05/22/588/" target="_blank" rel="noopener">参考-javascript 变量两种类型——基本类型和引用类型</a></p>
+<h2 id="自定义的Grunt插件调用异步的方法报错"><a href="#自定义的Grunt插件调用异步的方法报错" class="headerlink" title="自定义的Grunt插件调用异步的方法报错"></a>自定义的Grunt插件调用异步的方法报错</h2><p>解决办法：1. 报错的信息在谷歌中查找。PS:google 被墙，真是悲剧 2. 看grunt官网的说明文档 3. github 上找类似的插件怎么写。<a href="https://github.com/huixisheng/grunt-iAuto-upload" target="_blank" rel="noopener">插件地址</a></p>
 <h2 id="论股堂项目碰到好几个重排一样的页面显示错位的bug"><a href="#论股堂项目碰到好几个重排一样的页面显示错位的bug" class="headerlink" title="论股堂项目碰到好几个重排一样的页面显示错位的bug"></a>论股堂项目碰到好几个重排一样的页面显示错位的bug</h2><p>这种问题出现时是让人很头痛的，页面开始显示正常的，js操作某些dom后引起本来布局正常的结构出现错位。</p>
 <h2 id="对前端的文件添加了md5的时间戳如何保证后期的前端构建上传资源服务器是最新的文件"><a href="#对前端的文件添加了md5的时间戳如何保证后期的前端构建上传资源服务器是最新的文件" class="headerlink" title="对前端的文件添加了md5的时间戳如何保证后期的前端构建上传资源服务器是最新的文件"></a>对前端的文件添加了md5的时间戳如何保证后期的前端构建上传资源服务器是最新的文件</h2><p>想到的解决办法：1. 通过同生成的文件对于MD5值的map文件对比，相同的文件不更新 2. 每次构建上传根据文件的生成的最新的文件 3. 通朱鹏讨论</p>
 <p>方法1是最理想的，但是当时就是担心怕实现起来很困难。其实后来才发现很简单。方法2 明显是有缺陷的。最终方法1的确定肯定是归功于方法3.</p>
@@ -322,14 +323,14 @@ for(var i = 0; i &lt; arr1.length; i++ ){
 <li>是否可以通过设置实现客户端的Debug调试</li>
 </ol>
 <p>原因是： 接口的php文件最前面加了一个空行，伤不起的前端</p>
-<h2 id="百度编辑器的展示慢"><a href="#百度编辑器的展示慢" class="headerlink" title="百度编辑器的展示慢"></a><a href="http://ueditor.baidu.com/" target="_blank" rel="external">百度编辑器</a>的展示慢</h2><p>经排查是百度分享的js对页面会阻塞；同时百度编辑器的需要的静态资源下载很慢。</p>
+<h2 id="百度编辑器的展示慢"><a href="#百度编辑器的展示慢" class="headerlink" title="百度编辑器的展示慢"></a><a href="http://ueditor.baidu.com/" target="_blank" rel="noopener">百度编辑器</a>的展示慢</h2><p>经排查是百度分享的js对页面会阻塞；同时百度编辑器的需要的静态资源下载很慢。</p>
 <p>目前解决方案：</p>
 <ol>
-<li>对百度分享的js后移动<a href="http://share.baidu.com/help/optimization" target="_blank" rel="external">参考这里</a></li>
+<li>对百度分享的js后移动<a href="http://share.baidu.com/help/optimization" target="_blank" rel="noopener">参考这里</a></li>
 <li>添加编辑器的伪展示，使得编辑器的展示不会有抖动的效果</li>
 </ol>
-<p>未来的方案：<br>使用<a href="http://ueditor.baidu.com/website/umeditor.html" target="_blank" rel="external">UMeditor</a></p>
-<h2 id="使用了带-bom-的-utf-8-的编码文件在-nginx服务器-doctype-声明失效。"><a href="#使用了带-bom-的-utf-8-的编码文件在-nginx服务器-doctype-声明失效。" class="headerlink" title="使用了带 bom 的 utf-8 的编码文件在 nginx服务器 doctype 声明失效。"></a>使用了带 <code>bom</code> 的 <code>utf-8</code> 的编码文件在 nginx服务器 <code>doctype</code> 声明失效。</h2><p><a href="http://www.zhihu.com/question/20167122" target="_blank" rel="external">参考「带 BOM 的 UTF-8」和「无 BOM 的 UTF-8」有什么区别？网页代码一般使用哪个？</a></p>
+<p>未来的方案：<br>使用<a href="http://ueditor.baidu.com/website/umeditor.html" target="_blank" rel="noopener">UMeditor</a></p>
+<h2 id="使用了带-bom-的-utf-8-的编码文件在-nginx服务器-doctype-声明失效。"><a href="#使用了带-bom-的-utf-8-的编码文件在-nginx服务器-doctype-声明失效。" class="headerlink" title="使用了带 bom 的 utf-8 的编码文件在 nginx服务器 doctype 声明失效。"></a>使用了带 <code>bom</code> 的 <code>utf-8</code> 的编码文件在 nginx服务器 <code>doctype</code> 声明失效。</h2><p><a href="http://www.zhihu.com/question/20167122" target="_blank" rel="noopener">参考「带 BOM 的 UTF-8」和「无 BOM 的 UTF-8」有什么区别？网页代码一般使用哪个？</a></p>
 <h2 id="内网缺少脚本生成的问题导致报错"><a href="#内网缺少脚本生成的问题导致报错" class="headerlink" title="内网缺少脚本生成的问题导致报错"></a>内网缺少脚本生成的问题导致报错</h2><p>很多时候一碰到问题不想马上问别人，希望尝试自己去解决先。现在后台的观念是问相关的开发人员来的快。通过解决报错，可以发现后台不少后台代码问题。比如一个函数明明返回的是<code>int</code>类型的，但却返回 <code>Array</code>。前端多懂点后台绝对是好事。</p>
 <h2 id="资讯评论的无法加载"><a href="#资讯评论的无法加载" class="headerlink" title="资讯评论的无法加载"></a>资讯评论的无法加载</h2><p>原因分析：<br>资讯对获取pid做了缓存，导致根据seq jsonp 获取pid 永远为0。<br>现在的方案：<br>如果第一次获取pid为0，第二获取添加时间戳。<br>教训：</p>
 <ol>
@@ -338,7 +339,7 @@ for(var i = 0; i &lt; arr1.length; i++ ){
 <li>学习更多的知识，开阔视野，跟容易定位问题</li>
 </ol>
 <h2 id="使用了-setInterval-在ajax的回调中导致火狐浏览器http请求并发数量达到最大值，页面不再发轮训请求"><a href="#使用了-setInterval-在ajax的回调中导致火狐浏览器http请求并发数量达到最大值，页面不再发轮训请求" class="headerlink" title="使用了 setInterval 在ajax的回调中导致火狐浏览器http请求并发数量达到最大值，页面不再发轮训请求"></a>使用了 <code>setInterval</code> 在ajax的回调中导致火狐浏览器http请求并发数量达到最大值，页面不再发轮训请求</h2><p>本问题是同事碰到的，去排查这个问题的时候觉得不可以思议</p>
-<h2 id="UC浏览器在文本框聚焦的时候修改了hash，导致弹出的键盘有收回去"><a href="#UC浏览器在文本框聚焦的时候修改了hash，导致弹出的键盘有收回去" class="headerlink" title="UC浏览器在文本框聚焦的时候修改了hash，导致弹出的键盘有收回去"></a>UC浏览器在文本框聚焦的时候修改了<code>hash</code>，导致弹出的键盘有收回去</h2><p>同王海波一直研究了搜狐的直播，同样的实现思路，为何他的就是在uc下有问题，后来他排查到问题是修改了hash引起的。<a href="http://testm.10jqka.com.cn/mobile/info/gsrd/ask_v2.html" target="_blank" rel="external">朱鹏提供了一个修改方案</a>，webapp的<code>fixed</code>有好多的坑</p>
+<h2 id="UC浏览器在文本框聚焦的时候修改了hash，导致弹出的键盘有收回去"><a href="#UC浏览器在文本框聚焦的时候修改了hash，导致弹出的键盘有收回去" class="headerlink" title="UC浏览器在文本框聚焦的时候修改了hash，导致弹出的键盘有收回去"></a>UC浏览器在文本框聚焦的时候修改了<code>hash</code>，导致弹出的键盘有收回去</h2><p>同王海波一直研究了搜狐的直播，同样的实现思路，为何他的就是在uc下有问题，后来他排查到问题是修改了hash引起的。<a href="http://testm.10jqka.com.cn/mobile/info/gsrd/ask_v2.html" target="_blank" rel="noopener">朱鹏提供了一个修改方案</a>，webapp的<code>fixed</code>有好多的坑</p>
 <h2 id="360安全卫士浏览器屏蔽了background-image的url中含有-ad、gg路径的背景图片。也太任性化了吧。"><a href="#360安全卫士浏览器屏蔽了background-image的url中含有-ad、gg路径的背景图片。也太任性化了吧。" class="headerlink" title="360安全卫士浏览器屏蔽了background-image的url中含有 ad、gg路径的背景图片。也太任性化了吧。"></a>360安全卫士浏览器屏蔽了<code>background-image</code>的url中含有 ad、gg路径的背景图片。也太任性化了吧。</h2><p>[/images/article/360-ad-block.jpg]</p>
 <h2 id="JSON2-js-同jquery冲突"><a href="#JSON2-js-同jquery冲突" class="headerlink" title="JSON2.js 同jquery冲突"></a>JSON2.js 同jquery冲突</h2><p><a href="http://huixisheng.github.io/lab/bug/json2-jquery-conflict.html">bug还原请在ie7下运行</a></p>
 <pre><code>// json2.js 对原型进行重写
@@ -376,7 +377,7 @@ for(var i in data){
 </code></pre><h2 id="JavaScript编码转换"><a href="#JavaScript编码转换" class="headerlink" title="JavaScript编码转换"></a>JavaScript编码转换</h2><p>常用的函数:使用<code>unescape()</code>对<code>escape()</code>编码的字符串进行解码<code>decodeURIComponent()</code>函数可对<code>encodeURIComponent()</code>函数编码的 URI 进行解码。<code>decodeURI()</code>函数可对 <code>encodeURI()</code>函数编码过的URI 进行解码。<code>encodeURIComponent</code>会对/也进行十六进制转义，而<code>encodeURI</code>不会。</p>
 <p><code>escape</code>的一个应用就是将中文转成<code>unicode</code>编码<br>    escape(“悔惜晟”).replace(/%/g, ‘\‘)</p>
 <h2 id="CSS强制英文、中文换行与不换行"><a href="#CSS强制英文、中文换行与不换行" class="headerlink" title="CSS强制英文、中文换行与不换行"></a>CSS强制英文、中文换行与不换行</h2><p><code>white-space:nowrap;</code> 强制不换行，都起作用<br><code>white-space:pre-wrap;</code> 只对中文起作用，强制换行<br>项目中用来打散成串的英文</p>
-<p><strong> 参考 </strong><br><a href="http://zmingcx.com/css-compulsory-english-chinese-and-non-wrapping-line.html#" target="_blank" rel="external">CSS强制英文、中文换行与不换行</a></p>
+<p><strong> 参考 </strong><br><a href="http://zmingcx.com/css-compulsory-english-chinese-and-non-wrapping-line.html#" target="_blank" rel="noopener">CSS强制英文、中文换行与不换行</a></p>
 <h2 id="jQuery-ajaxFileUpload-js-插件-ie9-下bug"><a href="#jQuery-ajaxFileUpload-js-插件-ie9-下bug" class="headerlink" title="jQuery ajaxFileUpload.js 插件 ie9 下bug"></a>jQuery ajaxFileUpload.js 插件 ie9 下bug</h2><pre><code>if(window.ActiveXObject) {
     if(jQuery.browser.version==&quot;9.0&quot;){
         var io = document.createElement(&apos;iframe&apos;);
@@ -393,7 +394,7 @@ for(var i in data){
          }
     }
 }
-</code></pre><h2 id="textarea用jQ的html方法取不到值"><a href="#textarea用jQ的html方法取不到值" class="headerlink" title="textarea用jQ的html方法取不到值"></a>textarea用jQ的html方法取不到值</h2><p>使用val();但是百度之后又发现另一个问题，只是我在项目还没有碰到。<a href="http://www.cnblogs.com/long_/archive/2010/07/28/1787124.html" target="_blank" rel="external">JQuery TextArea的取值与赋值问题</a></p>
+</code></pre><h2 id="textarea用jQ的html方法取不到值"><a href="#textarea用jQ的html方法取不到值" class="headerlink" title="textarea用jQ的html方法取不到值"></a>textarea用jQ的html方法取不到值</h2><p>使用val();但是百度之后又发现另一个问题，只是我在项目还没有碰到。<a href="http://www.cnblogs.com/long_/archive/2010/07/28/1787124.html" target="_blank" rel="noopener">JQuery TextArea的取值与赋值问题</a></p>
 
       
     </div>
@@ -514,7 +515,7 @@ for(var i in data){
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">31</span>
+              <span class="site-state-item-count">37</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -524,7 +525,7 @@ for(var i in data){
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">39</span>
+                <span class="site-state-item-count">48</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -608,7 +609,7 @@ for(var i in data){
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

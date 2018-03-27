@@ -93,6 +93,7 @@
 <meta property="og:url" content="http://huixisheng.github.io/git-problem/index.html">
 <meta property="og:site_name" content="前端开发者说">
 <meta property="og:description" content="平常工作中常用的git操作命令。">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2016-11-25T15:04:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git操作常见问题汇总">
@@ -304,22 +305,22 @@
       
         <p>平常工作中常用的<code>git</code>操作命令。</p>
 <a id="more"></a>
-<h2 id="git添加空目录"><a href="#git添加空目录" class="headerlink" title="git添加空目录"></a>git添加空目录</h2><p>在空目录下建<code>.gitignore</code><br>内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># 忽略所有文件</div><div class="line">*</div><div class="line"># 除了这个文件</div><div class="line">!.gitignore</div></pre></td></tr></table></figure></p>
+<h2 id="git添加空目录"><a href="#git添加空目录" class="headerlink" title="git添加空目录"></a>git添加空目录</h2><p>在空目录下建<code>.gitignore</code><br>内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 忽略所有文件</span><br><span class="line">*</span><br><span class="line"># 除了这个文件</span><br><span class="line">!.gitignore</span><br></pre></td></tr></table></figure></p>
 <h2 id="git忽略已经被提交的文件"><a href="#git忽略已经被提交的文件" class="headerlink" title="git忽略已经被提交的文件"></a>git忽略已经被提交的文件</h2><p>直接<code>rm</code> 然后 <code>git  add .</code>本地磁盘也会被删除。我们要的是删除版本库的文件，并忽略。使用如下方法处理:</p>
 <p>忽略文件夹 <code>git rm -r --cached cache/*</code> 然后在 <code>.gitignore</code>忽略删除的文件。注意<code>git rm --cached</code> 删除的是追踪状态</p>
 <h2 id="git-忽略已经提交的文件的修改"><a href="#git-忽略已经提交的文件的修改" class="headerlink" title="git 忽略已经提交的文件的修改"></a>git 忽略已经提交的文件的修改</h2><p><code>git update-index --assume-unchanged .env</code><br>重置之前添加的忽略<br><code>git update-index --no-assume-unchanged .env</code></p>
-<h2 id="同步github-fork原作者分支的修改"><a href="#同步github-fork原作者分支的修改" class="headerlink" title="同步github fork原作者分支的修改"></a>同步<code>github</code> fork原作者分支的修改</h2><p>假设当前在fork <code>hexo-theme-amazeui</code>并<code>clone</code> <code>fork</code>后的分支的终端上：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git remote add remote-hexo https://github.com/huixisheng/hexo-theme-amazeui.git</div><div class="line">git fetch remote-hexo</div><div class="line">git merge remote-hexo/master</div></pre></td></tr></table></figure></p>
+<h2 id="同步github-fork原作者分支的修改"><a href="#同步github-fork原作者分支的修改" class="headerlink" title="同步github fork原作者分支的修改"></a>同步<code>github</code> fork原作者分支的修改</h2><p>假设当前在fork <code>hexo-theme-amazeui</code>并<code>clone</code> <code>fork</code>后的分支的终端上：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git remote add remote-hexo https://github.com/huixisheng/hexo-theme-amazeui.git</span><br><span class="line">git fetch remote-hexo</span><br><span class="line">git merge remote-hexo/master</span><br></pre></td></tr></table></figure></p>
 <p>参考</p>
 <ul>
-<li><a href="http://jinlong.github.io/2015/10/12/syncing-a-fork/" target="_blank" rel="external">如何同步 Github fork 出来的分支</a></li>
-<li><a href="http://www.cnblogs.com/rubylouvre/archive/2013/01/24/2874694.html" target="_blank" rel="external">如何在github上fork一个项目来贡献代码以及同步原作者的修改</a></li>
+<li><a href="http://jinlong.github.io/2015/10/12/syncing-a-fork/" target="_blank" rel="noopener">如何同步 Github fork 出来的分支</a></li>
+<li><a href="http://www.cnblogs.com/rubylouvre/archive/2013/01/24/2874694.html" target="_blank" rel="noopener">如何在github上fork一个项目来贡献代码以及同步原作者的修改</a></li>
 </ul>
-<h2 id="同步远程删除的分支"><a href="#同步远程删除的分支" class="headerlink" title="同步远程删除的分支"></a>同步远程删除的分支</h2><p>执行<code>git push origin :test-branch</code>, 远程<code>test-branch</code>已经删除了，但本地还在，<code>git branch -a</code>还可以看到<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">error: unable to delete ‘test-branch’: remote ref does not exist</div><div class="line">error: failed to push some refs to ‘git@github.com:huixisheng/huixisheng.github.com.git’</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git remote update --prune</div></pre></td></tr></table></figure>
+<h2 id="同步远程删除的分支"><a href="#同步远程删除的分支" class="headerlink" title="同步远程删除的分支"></a>同步远程删除的分支</h2><p>执行<code>git push origin :test-branch</code>, 远程<code>test-branch</code>已经删除了，但本地还在，<code>git branch -a</code>还可以看到<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">error: unable to delete ‘test-branch’: remote ref does not exist</span><br><span class="line">error: failed to push some refs to ‘git@github.com:huixisheng/huixisheng.github.com.git’</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote update --prune</span><br></pre></td></tr></table></figure>
 <h2 id="git-恢复单个文件的历史版本"><a href="#git-恢复单个文件的历史版本" class="headerlink" title="git 恢复单个文件的历史版本"></a>git 恢复单个文件的历史版本</h2><blockquote>
-<p>首先查看该文件的历史版本信息：git log Default@2x.png<br>记录下需要恢复的commit版本号：如 9aa51d89799716aa68cff3f30c26f8815408e926<br>恢复该文件：git reset 9aa51d89799716aa68cff3f30c26f8815408e926 Default@2x.png<br>还需要执行git checkout Default@2x.png<br>提交git:git commit -m “回滚Default@2x.png的历史版本”</p>
+<p>首先查看该文件的历史版本信息：git log <a href="mailto:Default@2x.png" target="_blank" rel="noopener">Default@2x.png</a><br>记录下需要恢复的commit版本号：如 9aa51d89799716aa68cff3f30c26f8815408e926<br>恢复该文件：git reset 9aa51d89799716aa68cff3f30c26f8815408e926 <a href="mailto:Default@2x.png" target="_blank" rel="noopener">Default@2x.png</a><br>还需要执行git checkout <a href="mailto:Default@2x.png" target="_blank" rel="noopener">Default@2x.png</a><br>提交git:git commit -m “回滚<a href="mailto:Default@2x.png" target="_blank" rel="noopener">Default@2x.png</a>的历史版本”</p>
 </blockquote>
-<p><a href="https://segmentfault.com/q/1010000002464973" target="_blank" rel="external">git 如何还原某个文件</a>一文提到更加简单的方法</p>
+<p><a href="https://segmentfault.com/q/1010000002464973" target="_blank" rel="noopener">git 如何还原某个文件</a>一文提到更加简单的方法</p>
 <blockquote>
 <p>直接用 git-checkout 即可。理解起来稍微有点奇怪就是了。<br><code>$ git checkout ${commit} /path/to/file</code></p>
 </blockquote>
@@ -327,8 +328,8 @@
 <p>通过<code>git status</code>可以查看相关的操作</p>
 <p>参考</p>
 <ul>
-<li><a href="https://segmentfault.com/a/1190000006185954" target="_blank" rel="external">git的reset和checkout的区别</a></li>
-<li><a href="https://yhhwpp.github.io/2016/10/31/Git-%E4%B8%AD-Reset%E3%80%81Revert%E3%80%81Checkout%E7%9A%84%E5%8C%BA%E5%88%AB/" target="_blank" rel="external">Git 中 Reset、Revert、Checkout的区别</a></li>
+<li><a href="https://segmentfault.com/a/1190000006185954" target="_blank" rel="noopener">git的reset和checkout的区别</a></li>
+<li><a href="https://yhhwpp.github.io/2016/10/31/Git-%E4%B8%AD-Reset%E3%80%81Revert%E3%80%81Checkout%E7%9A%84%E5%8C%BA%E5%88%AB/" target="_blank" rel="noopener">Git 中 Reset、Revert、Checkout的区别</a></li>
 </ul>
 <p>结论:</p>
 <ol>
@@ -367,8 +368,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/git-ssh-key-setting/" rel="next" title="配置SSH公钥和git多账号配置">
-                <i class="fa fa-chevron-left"></i> 配置SSH公钥和git多账号配置
+              <a href="/markdown-Table-of-Contents/" rel="next" title="markdown文件生成目录">
+                <i class="fa fa-chevron-left"></i> markdown文件生成目录
               </a>
             
           </div>
@@ -452,7 +453,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">31</span>
+              <span class="site-state-item-count">37</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -462,7 +463,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">39</span>
+                <span class="site-state-item-count">48</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -546,7 +547,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

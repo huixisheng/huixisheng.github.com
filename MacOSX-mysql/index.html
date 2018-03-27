@@ -93,7 +93,8 @@
 <meta property="og:url" content="http://huixisheng.github.io/MacOSX-mysql/index.html">
 <meta property="og:site_name" content="前端开发者说">
 <meta property="og:description" content="本文记录在MacOSX下捣鼓Mysql,Yosemite 10.10 mysql 无法开机启动的解决办法.">
-<meta property="og:updated_time" content="2016-10-22T09:40:39.000Z">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-27T12:47:18.869Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MacOSX下Mysql折腾记">
 <meta name="twitter:description" content="本文记录在MacOSX下捣鼓Mysql,Yosemite 10.10 mysql 无法开机启动的解决办法.">
@@ -316,7 +317,7 @@
 <pre><code>mysqlstart=&apos;sudo /Library/StartupItems/MySQLCOM/MySQLCOM restart&apos;
 </code></pre><p>或者</p>
 <pre><code>mysql=&apos;sudo /usr/local/mysql/bin/mysql&apos;
-</code></pre><p>当然可以通过launchctl设置开机启动。可以参考<a href="http://my.oschina.net/huyuaning/blog/334584" target="_blank" rel="external">这里</a>。</p>
+</code></pre><p>当然可以通过launchctl设置开机启动。可以参考<a href="http://my.oschina.net/huyuaning/blog/334584" target="_blank" rel="noopener">这里</a>。</p>
 <pre><code>&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;
 &lt;plist version=&quot;1.0&quot;&gt;
 &lt;dict&gt;
@@ -333,29 +334,36 @@
 &lt;/dict&gt;
 &lt;/plist&gt;
 </code></pre><p>现在还没有弄明白 <code>/usr/local/mysql/bin/mysqld_safe</code> 和 <code>/usr/local/mysql/bin/mysql</code> 有什么区别？</p>
-<h2 id="MacOSX-1045-无法登录-MySQL-服务器；忘记-root密码"><a href="#MacOSX-1045-无法登录-MySQL-服务器；忘记-root密码" class="headerlink" title="MacOSX #1045 无法登录 MySQL 服务器；忘记 root密码"></a>MacOSX #1045 无法登录 MySQL 服务器；忘记 root密码</h2><p>报错：<br>    ERROR 1045 (28000): Access denied for user ‘root’@’localhost’ (using password: YES)</p>
+<h2 id="MacOSX-1045-无法登录-MySQL-服务器；忘记-root密码"><a href="#MacOSX-1045-无法登录-MySQL-服务器；忘记-root密码" class="headerlink" title="MacOSX #1045 无法登录 MySQL 服务器；忘记 root密码"></a>MacOSX #1045 无法登录 MySQL 服务器；忘记 root密码</h2><p>报错：<br>    ERROR 1045 (28000): Access denied for user ‘root‘@’localhost’ (using password: YES)</p>
 <p>1、先在系统偏好设置中关闭MySQL服务；<br>2、在终端中输入</p>
 <pre><code>sudo su
-./mysqld_safe --skip-grant-tables --skip-networking &amp;
-</code></pre><p>这时便能越过权限表，直接登陆MySQL了。<br>3、新建一个终端，输入</p>
+/usr/local/mysql/bin/mysqld_safe --skip-grant-tables --skip-networking &amp;
+</code></pre><p>这时便能越过权限表，直接登陆MySQL了。</p>
+<p>3、新建一个终端，输入</p>
 <pre><code>mysql -u root
 </code></pre><p>4、 在MySQL中修改root用户密码即可：</p>
 <pre><code>mysql&gt; UPDATE mysql.user SET password=PASSWORD(&apos;新密码&apos;) WHERE User=&apos;root&apos;;
 mysql&gt; FLUSH PRIVILEGES;
-</code></pre><h2 id="导入数据库"><a href="#导入数据库" class="headerlink" title="导入数据库"></a>导入数据库</h2><p>如果是很大的sql的备份文件，用 <a href="http://www.phpmyadmin.net/home_page/index.php" target="_blank" rel="external">phpmyadmin</a>导入的话是会有问题。可以使用 mysqldump。</p>
+</code></pre><p>出现如下报错:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ERROR 1820 (HY000): You must reset your password using ALTER USER statement before executing this statement.</span><br></pre></td></tr></table></figure></p>
+<p>解决: <code>ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;123456&#39;;</code></p>
 <ul>
-<li><a href="http://www.blogjava.net/alpha/archive/2007/08/10/135694.html" target="_blank" rel="external">MySQL的mysqldump工具的基本用法</a></li>
+<li><a href="https://stackoverflow.com/questions/33467337/reset-mysql-root-password-using-alter-user-statement-after-install-on-mac" target="_blank" rel="noopener">https://stackoverflow.com/questions/33467337/reset-mysql-root-password-using-alter-user-statement-after-install-on-mac</a></li>
 </ul>
+<h2 id="导入数据库"><a href="#导入数据库" class="headerlink" title="导入数据库"></a>导入数据库</h2><p>如果是很大的sql的备份文件，用 <a href="http://www.phpmyadmin.net/home_page/index.php" target="_blank" rel="noopener">phpmyadmin</a>导入的话是会有问题。可以使用 mysqldump。</p>
+<ul>
+<li><a href="http://www.blogjava.net/alpha/archive/2007/08/10/135694.html" target="_blank" rel="noopener">MySQL的mysqldump工具的基本用法</a></li>
+</ul>
+<h2 id="导出数据库"><a href="#导出数据库" class="headerlink" title="导出数据库"></a>导出数据库</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mysqldump -u root -p db &gt;db.bak</span><br></pre></td></tr></table></figure>
 <h2 id="推荐mysql相关的软件"><a href="#推荐mysql相关的软件" class="headerlink" title="推荐mysql相关的软件"></a>推荐mysql相关的软件</h2><ul>
-<li><a href="http://www.phpmyadmin.net/home_page/index.php" target="_blank" rel="external">phpmyadmin</a></li>
-<li><a href="http://www.navicat.com.cn/products/navicat-premium" target="_blank" rel="external">Navicat Premium</a></li>
+<li><a href="http://www.phpmyadmin.net/home_page/index.php" target="_blank" rel="noopener">phpmyadmin</a></li>
+<li><a href="http://www.navicat.com.cn/products/navicat-premium" target="_blank" rel="noopener">Navicat Premium</a></li>
 </ul>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><a href="http://blog.afantree.com/sql/the-mysql-root-password-forget-or-permissions-error-solution.html" target="_blank" rel="external">mysql root密码忘记或权限错误的解决办法</a></li>
-<li><a href="http://www.euryugasaki.com/archives/853" target="_blank" rel="external">Mac下新安装的MySQL无法登陆root用户解决方法</a></li>
-<li><a href="http://www.cnblogs.com/macro-cheng/archive/2011/10/25/mysql-001.html" target="_blank" rel="external">MAC下安装与配置MySQL</a></li>
-<li><a href="http://blog.csdn.net/loseleo/article/details/8703408" target="_blank" rel="external">~~Mac上MySQL root 密码忘记或权限错误的解决办法~</a> 找不到用户权限表</li>
-<li><a href="http://dev.mysql.com/downloads/file.php?id=454017" target="_blank" rel="external">Download mysql</a></li>
+<li><a href="http://blog.afantree.com/sql/the-mysql-root-password-forget-or-permissions-error-solution.html" target="_blank" rel="noopener">mysql root密码忘记或权限错误的解决办法</a></li>
+<li><a href="http://www.euryugasaki.com/archives/853" target="_blank" rel="noopener">Mac下新安装的MySQL无法登陆root用户解决方法</a></li>
+<li><a href="http://www.cnblogs.com/macro-cheng/archive/2011/10/25/mysql-001.html" target="_blank" rel="noopener">MAC下安装与配置MySQL</a></li>
+<li><a href="http://blog.csdn.net/loseleo/article/details/8703408" target="_blank" rel="noopener">~~Mac上MySQL root 密码忘记或权限错误的解决办法~</a> 找不到用户权限表</li>
+<li><a href="http://dev.mysql.com/downloads/file.php?id=454017" target="_blank" rel="noopener">Download mysql</a></li>
 </ul>
 
       
@@ -475,7 +483,7 @@ mysql&gt; FLUSH PRIVILEGES;
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">31</span>
+              <span class="site-state-item-count">37</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -485,7 +493,7 @@ mysql&gt; FLUSH PRIVILEGES;
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">39</span>
+                <span class="site-state-item-count">48</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -550,7 +558,7 @@ mysql&gt; FLUSH PRIVILEGES;
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#在MacOSX启动和停止MySQL服务的"><span class="nav-number">1.</span> <span class="nav-text">在MacOSX启动和停止MySQL服务的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MacOSX-1045-无法登录-MySQL-服务器；忘记-root密码"><span class="nav-number">2.</span> <span class="nav-text">MacOSX #1045 无法登录 MySQL 服务器；忘记 root密码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#导入数据库"><span class="nav-number">3.</span> <span class="nav-text">导入数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#推荐mysql相关的软件"><span class="nav-number">4.</span> <span class="nav-text">推荐mysql相关的软件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#在MacOSX启动和停止MySQL服务的"><span class="nav-number">1.</span> <span class="nav-text">在MacOSX启动和停止MySQL服务的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MacOSX-1045-无法登录-MySQL-服务器；忘记-root密码"><span class="nav-number">2.</span> <span class="nav-text">MacOSX #1045 无法登录 MySQL 服务器；忘记 root密码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#导入数据库"><span class="nav-number">3.</span> <span class="nav-text">导入数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#导出数据库"><span class="nav-number">4.</span> <span class="nav-text">导出数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#推荐mysql相关的软件"><span class="nav-number">5.</span> <span class="nav-text">推荐mysql相关的软件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">6.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
           </div>
         </section>
@@ -569,7 +577,7 @@ mysql&gt; FLUSH PRIVILEGES;
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

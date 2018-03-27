@@ -93,6 +93,7 @@
 <meta property="og:url" content="http://huixisheng.github.io/MacOSX-powerboot/index.html">
 <meta property="og:site_name" content="前端开发者说">
 <meta property="og:description" content="相比较Windows和linux，MacOSX的开机启动下略显麻烦，可是要经常捣鼓本地服务器的开发者而言，本地开发环境有php-fpm、nginx、mysql、Mongodb、nodejs、Memcache等，如果每次开机都要重启这些服务，会不会是要疯掉。只是不知服务开多了会不会影响系统的系能。本文简单介绍Yosemite 10.10开机启动Mysql，Tengine。">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2016-10-22T09:40:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MacOSX 开机启动">
@@ -302,7 +303,7 @@
       
 
       
-        <p>相比较<code>Windows</code>和<code>linux</code>，MacOSX的开机启动下略显麻烦，可是要经常捣鼓本地服务器的开发者而言，本地开发环境有<code>php-fpm</code>、<code>nginx</code>、<code>mysql</code>、<code>Mongodb</code>、<code>nodejs</code>、<code>Memcache</code>等，如果每次开机都要重启这些服务，会不会是要疯掉。只是不知服务开多了会不会影响系统的系能。本文简单介绍Yosemite 10.10开机启动<code>Mysql</code>，<a href="http://tengine.taobao.org/" target="_blank" rel="external"><code>Tengine</code></a>。</p>
+        <p>相比较<code>Windows</code>和<code>linux</code>，MacOSX的开机启动下略显麻烦，可是要经常捣鼓本地服务器的开发者而言，本地开发环境有<code>php-fpm</code>、<code>nginx</code>、<code>mysql</code>、<code>Mongodb</code>、<code>nodejs</code>、<code>Memcache</code>等，如果每次开机都要重启这些服务，会不会是要疯掉。只是不知服务开多了会不会影响系统的系能。本文简单介绍Yosemite 10.10开机启动<code>Mysql</code>，<a href="http://tengine.taobao.org/" target="_blank" rel="noopener"><code>Tengine</code></a>。</p>
 <a id="more"></a>
 <h2 id="MacOSX-开机启动"><a href="#MacOSX-开机启动" class="headerlink" title="MacOSX 开机启动"></a>MacOSX 开机启动</h2><h3 id="Unix系统级别的启动脚本"><a href="#Unix系统级别的启动脚本" class="headerlink" title="Unix系统级别的启动脚本"></a>Unix系统级别的启动脚本</h3><pre><code>/etc/mach_init.d/
 /etc/mach_init_per_user.d/
@@ -334,7 +335,7 @@ launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist
 &lt;/plist&gt;
 </code></pre><p>不知为何设置了<code>&lt;key&gt;ProgramArguments&lt;/key&gt;</code>就是无法开机启动。写好的<code>.plist</code>可以通过以下命令查看格式是否正确。</p>
 <pre><code>sudo plutil -lint com.tengine.plist
-</code></pre><p><a href="https://developer.apple.com/library/Mac/documentation/Darwin/Reference/ManPages/man5/launchd.plist.5.html#//apple_ref/doc/man/5/launchd.plist" target="_blank" rel="external">plist相关的参数配置</a></p>
+</code></pre><p><a href="https://developer.apple.com/library/Mac/documentation/Darwin/Reference/ManPages/man5/launchd.plist.5.html#//apple_ref/doc/man/5/launchd.plist" target="_blank" rel="noopener">plist相关的参数配置</a></p>
 <blockquote>
 <p>不过试了一下，不是超级用户登陆，而是普通用户登陆，并且监听的端口在1024以下的（例如把默认的8080端口改为了80端口），nginx 开机是启动不了。因此，要 nginx 开机启动的话，需要给予它管理员权限：</p>
 </blockquote>
@@ -350,13 +351,13 @@ sudo chmod u+s /usr/local/Cellar/nginx/1.2.6/sbin/nginx
 <pre><code>sudo launchctl unload -w /Library/LaunchDaemons/com.adobe.fpsaud.plist
 </code></pre><h2 id="用户级别启动程序"><a href="#用户级别启动程序" class="headerlink" title="用户级别启动程序"></a>用户级别启动程序</h2><p>系统偏好设置 -&gt; 帐户 -&gt; 登录项</p>
 <h2 id="Linux的开机启动"><a href="#Linux的开机启动" class="headerlink" title="Linux的开机启动"></a>Linux的开机启动</h2><pre><code>/etc/rc.local
-</code></pre><p><a href="http://www.zhihu.com/question/20126189" target="_blank" rel="external">Linux 中 rc.local、init.d、rc.x、init 这几个文件（夹）各有什么作用？启动执行的脚本应该均放在 rc.local 中吗？</a></p>
+</code></pre><p><a href="http://www.zhihu.com/question/20126189" target="_blank" rel="noopener">Linux 中 rc.local、init.d、rc.x、init 这几个文件（夹）各有什么作用？启动执行的脚本应该均放在 rc.local 中吗？</a></p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><a href="http://apple.group.iteye.com/group/wiki/1394-osx-boot-automatically-activated-control-procedures-script" target="_blank" rel="external">OSX开机自动启动程序的控制脚本</a></li>
-<li><a href="http://wiki.nginx.org/OSX_launchd" target="_blank" rel="external">OSX launchd</a></li>
-<li><a href="https://developer.apple.com/library/Mac/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLaunchdJobs.html" target="_blank" rel="external">Creating Launch Daemons and Agents</a></li>
-<li><a href="http://www.tanhao.me/talk/1287.html" target="_blank" rel="external">Mac OSX的开机启动配置</a></li>
-<li><a href="http://dhq.me/mac-install-nginx-mysql-php-fpm" target="_blank" rel="external">Mac 下 Nginx、MySQL、PHP-FPM 的安装配置</a></li>
+<li><a href="http://apple.group.iteye.com/group/wiki/1394-osx-boot-automatically-activated-control-procedures-script" target="_blank" rel="noopener">OSX开机自动启动程序的控制脚本</a></li>
+<li><a href="http://wiki.nginx.org/OSX_launchd" target="_blank" rel="noopener">OSX launchd</a></li>
+<li><a href="https://developer.apple.com/library/Mac/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLaunchdJobs.html" target="_blank" rel="noopener">Creating Launch Daemons and Agents</a></li>
+<li><a href="http://www.tanhao.me/talk/1287.html" target="_blank" rel="noopener">Mac OSX的开机启动配置</a></li>
+<li><a href="http://dhq.me/mac-install-nginx-mysql-php-fpm" target="_blank" rel="noopener">Mac 下 Nginx、MySQL、PHP-FPM 的安装配置</a></li>
 </ul>
 
       
@@ -474,7 +475,7 @@ sudo chmod u+s /usr/local/Cellar/nginx/1.2.6/sbin/nginx
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">31</span>
+              <span class="site-state-item-count">37</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -484,7 +485,7 @@ sudo chmod u+s /usr/local/Cellar/nginx/1.2.6/sbin/nginx
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">39</span>
+                <span class="site-state-item-count">48</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -568,7 +569,7 @@ sudo chmod u+s /usr/local/Cellar/nginx/1.2.6/sbin/nginx
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

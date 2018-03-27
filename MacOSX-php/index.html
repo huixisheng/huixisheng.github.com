@@ -93,7 +93,8 @@
 <meta property="og:url" content="http://huixisheng.github.io/MacOSX-php/index.html">
 <meta property="og:site_name" content="前端开发者说">
 <meta property="og:description" content="由于lavarel的环境homestead升级成了7.x,导致在外面跑composer update会报错，很麻烦，于是需要升级系统自带php的版本。1234➜  bin /usr/bin/php -vPHP 5.6.30 (cli) (built: Feb  7 2017 16:06:52)Copyright (c) 1997-2016 The PHP GroupZend Engine v2.6">
-<meta property="og:updated_time" content="2017-05-26T13:47:09.000Z">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-27T12:52:49.074Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MacOSX安装多版本php">
 <meta name="twitter:description" content="由于lavarel的环境homestead升级成了7.x,导致在外面跑composer update会报错，很麻烦，于是需要升级系统自带php的版本。1234➜  bin /usr/bin/php -vPHP 5.6.30 (cli) (built: Feb  7 2017 16:06:52)Copyright (c) 1997-2016 The PHP GroupZend Engine v2.6">
@@ -302,25 +303,30 @@
       
 
       
-        <p>由于lavarel的环境homestead升级成了7.x,导致在外面跑<code>composer update</code>会报错，很麻烦，于是需要升级系统自带php的版本。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">➜  bin /usr/bin/php -v</div><div class="line">PHP 5.6.30 (cli) (built: Feb  7 2017 16:06:52)</div><div class="line">Copyright (c) 1997-2016 The PHP Group</div><div class="line">Zend Engine v2.6.0, Copyright (c) 1998-2016 Zend Technologies</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># 添加brew的php源</div><div class="line">brew tap homebrew/php</div><div class="line">brew tap homebrew/dupes</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># 安装php71</div><div class="line">brew install php71</div><div class="line">brew link php71</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">➜  huixisheng.github.com git:(dev) ✗ php -v</div><div class="line">PHP 7.1.5 (cli) (built: May 13 2017 13:30:32) ( NTS )</div><div class="line">Copyright (c) 1997-2017 The PHP Group</div><div class="line">Zend Engine v3.1.0, Copyright (c) 1998-2017 Zend Technologies</div></pre></td></tr></table></figure>
-<h2 id="缺少mongodb的扩展报错"><a href="#缺少mongodb的扩展报错" class="headerlink" title="缺少mongodb的扩展报错"></a>缺少mongodb的扩展报错</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Problem 1</div><div class="line">  - jenssegers/mongodb v3.2.2 requires mongodb/mongodb ^1.0.0 -&gt; satisfiable by mongodb/mongodb[1.1.2, 1.0.0, 1.0.1, 1.0.2, 1.0.3, 1.0.4, 1.0.5, 1.1.0, 1.1.1].</div><div class="line">  - jenssegers/mongodb v3.2.0 requires mongodb/mongodb ^1.0.0 -&gt; satisfiable by mongodb/mongodb[1.1.2, 1.0.0, 1.0.1, 1.0.2, 1.0.3, 1.0.4, 1.0.5, 1.1.0, 1.1.1].</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">brew search mongodb</div><div class="line">brew install php71-mongodb</div></pre></td></tr></table></figure>
+        <p>由于lavarel的环境homestead升级成了7.x,导致在外面跑<code>composer update</code>会报错，很麻烦，于是需要升级系统自带php的版本。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">➜  bin /usr/bin/php -v</span><br><span class="line">PHP 5.6.30 (cli) (built: Feb  7 2017 16:06:52)</span><br><span class="line">Copyright (c) 1997-2016 The PHP Group</span><br><span class="line">Zend Engine v2.6.0, Copyright (c) 1998-2016 Zend Technologies</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 添加brew的php源</span><br><span class="line">brew tap homebrew/php</span><br><span class="line">brew tap homebrew/dupes</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 安装php71</span><br><span class="line">brew install php71</span><br><span class="line">brew link php71</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">➜  huixisheng.github.com git:(dev) ✗ php -v</span><br><span class="line">PHP 7.1.5 (cli) (built: May 13 2017 13:30:32) ( NTS )</span><br><span class="line">Copyright (c) 1997-2017 The PHP Group</span><br><span class="line">Zend Engine v3.1.0, Copyright (c) 1998-2017 Zend Technologies</span><br></pre></td></tr></table></figure>
+<h2 id="缺少mongodb的扩展报错"><a href="#缺少mongodb的扩展报错" class="headerlink" title="缺少mongodb的扩展报错"></a>缺少mongodb的扩展报错</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Problem 1</span><br><span class="line">  - jenssegers/mongodb v3.2.2 requires mongodb/mongodb ^1.0.0 -&gt; satisfiable by mongodb/mongodb[1.1.2, 1.0.0, 1.0.1, 1.0.2, 1.0.3, 1.0.4, 1.0.5, 1.1.0, 1.1.1].</span><br><span class="line">  - jenssegers/mongodb v3.2.0 requires mongodb/mongodb ^1.0.0 -&gt; satisfiable by mongodb/mongodb[1.1.2, 1.0.0, 1.0.1, 1.0.2, 1.0.3, 1.0.4, 1.0.5, 1.1.0, 1.1.1].</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew search mongodb</span><br><span class="line">brew install php71-mongodb</span><br></pre></td></tr></table></figure>
 <p>居然不用手动配置<code>php.ini</code></p>
 <h2 id="删除MaxOSX自带的php"><a href="#删除MaxOSX自带的php" class="headerlink" title="删除MaxOSX自带的php"></a>删除MaxOSX自带的php</h2><blockquote>
 <p>Mac默认安装了较低版本的php，删除之，统一使用brew管理</p>
+</blockquote>
 <h1 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h1><p>$ php -v<br>PHP 5.6.25 (cli) (built: Sep 19 2016 15:45:41)<br>Copyright (c) 1997-2016 The PHP Group<br>Zend Engine v2.6.0, Copyright (c) 1998-2016 Zend Technologies</p>
 <h1 id="删除之"><a href="#删除之" class="headerlink" title="删除之"></a>删除之</h1><p>$ sudo rm -rf /private/etc/php-fpm.conf.default /private/etc/php.ini php.ini.default<br>$ sudo rm -rf /usr/bin/php /usr/bin/php-config /usr/bin/phpdoc /usr/bin/phpize<br>$ sudo rm -rf /usr/include/php<br>$ sudo rm -rf /usr/lib/php<br>$ sudo rm -rf /usr/sbin/php-fpm<br>$ sudo rm -rf /usr/share/php<br>$ sudo rm -rf /usr/share/man/man1/php-config.1 /usr/share/man/man1/php.1 /usr/share/man/man1/phpize.1<br>$ sudo rm -rf /usr/share/man/man8/php-fpm.8</p>
-</blockquote>
 <ul>
-<li>来自<a href="http://www.jianshu.com/p/81a6d5253d48" target="_blank" rel="external">http://www.jianshu.com/p/81a6d5253d48</a></li>
+<li>来自<a href="http://www.jianshu.com/p/81a6d5253d48" target="_blank" rel="noopener">http://www.jianshu.com/p/81a6d5253d48</a></li>
 </ul>
-<h2 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h2><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><a href="http://www.jianshu.com/p/66d1d4ee172c" target="_blank" rel="external">http://www.jianshu.com/p/66d1d4ee172c</a></li>
-<li><a href="https://github.com/Homebrew/homebrew-php" target="_blank" rel="external">https://github.com/Homebrew/homebrew-php</a></li>
-<li><a href="http://nodejh.com/post/macos-sierra-apache-multiple-php-versions/" target="_blank" rel="external">http://nodejh.com/post/macos-sierra-apache-multiple-php-versions/</a></li>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ /usr/local/Cellar/nginx/1.10.3/html</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ sudo php-fpm -c /usr/local/etc/php/7.1/php.ini -y /usr/local/etc/php/7.1/php-fpm.conf</span><br><span class="line">Password:</span><br><span class="line">[27-Mar-2018 16:25:00] ERROR: failed to open error_log (/usr/var/log/php-fpm.log): No such file or directory (2)</span><br><span class="line">[27-Mar-2018 16:25:00] ERROR: failed to post process the configuration</span><br><span class="line">[27-Mar-2018 16:25:00] ERROR: FPM initialization failed</span><br></pre></td></tr></table></figure>
+<p>修改<code>php-fpm.conf</code> 的配置 <code>error_log</code>为绝对绝对地址</p>
+<h2 id="配置nginx解析php"><a href="#配置nginx解析php" class="headerlink" title="配置nginx解析php"></a>配置nginx解析php</h2><p>记得开启<code>php-fpm</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">location ~ \.php$ &#123;</span><br><span class="line">    root           html;</span><br><span class="line">    fastcgi_pass   127.0.0.1:9000;</span><br><span class="line">    fastcgi_index  index.php;</span><br><span class="line">    fastcgi_param  SCRIPT_FILENAME $document_root$fastcgi_script_name;</span><br><span class="line">    # 取消默认的配置无法解析</span><br><span class="line">    # fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;</span><br><span class="line">    include        fastcgi_params;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="http://www.jianshu.com/p/66d1d4ee172c" target="_blank" rel="noopener">http://www.jianshu.com/p/66d1d4ee172c</a></li>
+<li><a href="https://github.com/Homebrew/homebrew-php" target="_blank" rel="noopener">https://github.com/Homebrew/homebrew-php</a></li>
+<li><a href="http://nodejh.com/post/macos-sierra-apache-multiple-php-versions/" target="_blank" rel="noopener">http://nodejh.com/post/macos-sierra-apache-multiple-php-versions/</a></li>
 </ul>
 
       
@@ -440,7 +446,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">31</span>
+              <span class="site-state-item-count">37</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -450,7 +456,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">39</span>
+                <span class="site-state-item-count">48</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -515,7 +521,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#缺少mongodb的扩展报错"><span class="nav-number">1.</span> <span class="nav-text">缺少mongodb的扩展报错</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除MaxOSX自带的php"><span class="nav-number">2.</span> <span class="nav-text">删除MaxOSX自带的php</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查看"><span class="nav-number"></span> <span class="nav-text">查看</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#删除之"><span class="nav-number"></span> <span class="nav-text">删除之</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#更新日志"><span class="nav-number">1.</span> <span class="nav-text">更新日志</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">2.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#缺少mongodb的扩展报错"><span class="nav-number">1.</span> <span class="nav-text">缺少mongodb的扩展报错</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除MaxOSX自带的php"><span class="nav-number">2.</span> <span class="nav-text">删除MaxOSX自带的php</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查看"><span class="nav-number"></span> <span class="nav-text">查看</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#删除之"><span class="nav-number"></span> <span class="nav-text">删除之</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">1.</span> <span class="nav-text">其他</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置nginx解析php"><span class="nav-number">2.</span> <span class="nav-text">配置nginx解析php</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
           </div>
         </section>
@@ -534,7 +540,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

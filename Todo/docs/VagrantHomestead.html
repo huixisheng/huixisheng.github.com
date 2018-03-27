@@ -92,6 +92,7 @@
 <meta property="og:url" content="http://huixisheng.github.io/Todo/docs/VagrantHomestead.html">
 <meta property="og:site_name" content="前端开发者说">
 <meta property="og:description" content="Vagrant Homestead 安装 Vagrant 下载安装  https://www.vagrantup.com/downloads.html   Homestead github项目地址  https://github.com/laravel/homestead   打包好的Homestead资源地址：百度云共享盘里的Homestead（homestead git项目与box安装包）">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2017-03-10T09:29:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端开发者说">
@@ -245,19 +246,19 @@
       <h1 id="Vagrant-Homestead-安装"><a href="#Vagrant-Homestead-安装" class="headerlink" title="Vagrant Homestead 安装"></a>Vagrant Homestead 安装</h1><ul>
 <li><p>Vagrant 下载安装</p>
 <ul>
-<li><a href="https://www.vagrantup.com/downloads.html" target="_blank" rel="external">https://www.vagrantup.com/downloads.html</a></li>
+<li><a href="https://www.vagrantup.com/downloads.html" target="_blank" rel="noopener">https://www.vagrantup.com/downloads.html</a></li>
 </ul>
 </li>
 <li><p>Homestead github项目地址</p>
 <ul>
-<li><a href="https://github.com/laravel/homestead" target="_blank" rel="external">https://github.com/laravel/homestead</a></li>
+<li><a href="https://github.com/laravel/homestead" target="_blank" rel="noopener">https://github.com/laravel/homestead</a></li>
 </ul>
 </li>
 <li><p>打包好的Homestead资源地址：百度云共享盘里的Homestead（homestead git项目与box安装包）</p>
 </li>
 <li><p>homestead的安装配置文件   </p>
 <p>Homestead.json</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line"></div><div class="line">	&quot;name&quot;: &quot;laravel/homestead&quot;,</div><div class="line">	&quot;versions&quot;: [&#123;</div><div class="line">		&quot;version&quot;: &quot;2.0.0&quot;,</div><div class="line">		&quot;providers&quot;: [&#123;</div><div class="line">			&quot;name&quot;: &quot;virtualbox&quot;,</div><div class="line">			&quot;url&quot;: &quot;file://homestead.box&quot;</div><div class="line">		&#125;]</div><div class="line">	&#125;]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">	&quot;name&quot;: &quot;laravel/homestead&quot;,</span><br><span class="line">	&quot;versions&quot;: [&#123;</span><br><span class="line">		&quot;version&quot;: &quot;2.0.0&quot;,</span><br><span class="line">		&quot;providers&quot;: [&#123;</span><br><span class="line">			&quot;name&quot;: &quot;virtualbox&quot;,</span><br><span class="line">			&quot;url&quot;: &quot;file://homestead.box&quot;</span><br><span class="line">		&#125;]</span><br><span class="line">	&#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>homestead 虚拟机配置文件 </p>
 <p>Homestead.yaml  Sample</p>
@@ -265,15 +266,15 @@
 <li>folders: 配置共享目录</li>
 <li>sites: 配置站点</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">ip: &quot;192.168.10.10&quot;</div><div class="line">memory: 1024</div><div class="line">cpus: 1</div><div class="line">provider: virtualbox</div><div class="line"></div><div class="line">authorize: ~/.ssh/id_rsa.pub</div><div class="line"></div><div class="line">keys:</div><div class="line">    - ~/.ssh/id_rsa</div><div class="line"></div><div class="line">folders:</div><div class="line">    - map: ~/Develop/Vagrant/Code</div><div class="line">      to: /home/vagrant/Code</div><div class="line"></div><div class="line">sites:</div><div class="line">    - map: xwc.h5.cosmeapp.com</div><div class="line">      to: /home/vagrant/Code/cosmeapi/public</div><div class="line"></div><div class="line">sites:</div><div class="line">    - map: xwc.napi.mobile.cosmeapp.com</div><div class="line">      to: /home/vagrant/Code/cosmeapi/public</div><div class="line"></div><div class="line">sites:</div><div class="line">    - map: xwc.ops.cosmeapp.net</div><div class="line">      to: /home/vagrant/Code/cosmeapi/public</div><div class="line"></div><div class="line">sites:</div><div class="line">    - map: xwc.11.cosmeapp.net</div><div class="line">      to: /home/vagrant/Code/cosmeapi/public</div><div class="line"></div><div class="line">sites:</div><div class="line">    - map: xwc.purchase.cosmeapp.net</div><div class="line">      to: /home/vagrant/Code/cosmeapi/public</div><div class="line"></div><div class="line">sites:</div><div class="line">    - map: xwc.login.cosmeapp.net</div><div class="line">      to: /home/vagrant/Code/cosmeapi/public</div><div class="line"></div><div class="line">databases:</div><div class="line">    - homestead</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">ip: &quot;192.168.10.10&quot;</span><br><span class="line">memory: 1024</span><br><span class="line">cpus: 1</span><br><span class="line">provider: virtualbox</span><br><span class="line"></span><br><span class="line">authorize: ~/.ssh/id_rsa.pub</span><br><span class="line"></span><br><span class="line">keys:</span><br><span class="line">    - ~/.ssh/id_rsa</span><br><span class="line"></span><br><span class="line">folders:</span><br><span class="line">    - map: ~/Develop/Vagrant/Code</span><br><span class="line">      to: /home/vagrant/Code</span><br><span class="line"></span><br><span class="line">sites:</span><br><span class="line">    - map: xwc.h5.cosmeapp.com</span><br><span class="line">      to: /home/vagrant/Code/cosmeapi/public</span><br><span class="line"></span><br><span class="line">sites:</span><br><span class="line">    - map: xwc.napi.mobile.cosmeapp.com</span><br><span class="line">      to: /home/vagrant/Code/cosmeapi/public</span><br><span class="line"></span><br><span class="line">sites:</span><br><span class="line">    - map: xwc.ops.cosmeapp.net</span><br><span class="line">      to: /home/vagrant/Code/cosmeapi/public</span><br><span class="line"></span><br><span class="line">sites:</span><br><span class="line">    - map: xwc.11.cosmeapp.net</span><br><span class="line">      to: /home/vagrant/Code/cosmeapi/public</span><br><span class="line"></span><br><span class="line">sites:</span><br><span class="line">    - map: xwc.purchase.cosmeapp.net</span><br><span class="line">      to: /home/vagrant/Code/cosmeapi/public</span><br><span class="line"></span><br><span class="line">sites:</span><br><span class="line">    - map: xwc.login.cosmeapp.net</span><br><span class="line">      to: /home/vagrant/Code/cosmeapi/public</span><br><span class="line"></span><br><span class="line">databases:</span><br><span class="line">    - homestead</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>安装步骤：</p>
 <p>在Homestead git项目目录下执行如下命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ vagrant box add homestead.json //安装虚拟机</div><div class="line">$ vagrant up //启动虚拟机</div><div class="line">$ vagrant ssh//登录虚拟机</div><div class="line">$ cd /vagatnt/scripts/</div><div class="line">$ bash install-mongo.sh //安装mongodb</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ vagrant box add homestead.json //安装虚拟机</span><br><span class="line">$ vagrant up //启动虚拟机</span><br><span class="line">$ vagrant ssh//登录虚拟机</span><br><span class="line">$ cd /vagatnt/scripts/</span><br><span class="line">$ bash install-mongo.sh //安装mongodb</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>参考文章</p>
 <ul>
-<li><a href="http://www.jianshu.com/p/ae9d1261bbd8" target="_blank" rel="external">手把手教你Homestead安装，并填坑！！</a></li>
+<li><a href="http://www.jianshu.com/p/ae9d1261bbd8" target="_blank" rel="noopener">手把手教你Homestead安装，并填坑！！</a></li>
 </ul>
 </li>
 </ul>
@@ -329,7 +330,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">31</span>
+              <span class="site-state-item-count">37</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -339,7 +340,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">39</span>
+                <span class="site-state-item-count">48</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -412,7 +413,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

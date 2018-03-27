@@ -93,6 +93,7 @@
 <meta property="og:url" content="http://huixisheng.github.io/something-about-sublime/index.html">
 <meta property="og:site_name" content="前端开发者说">
 <meta property="og:description" content="记录Sublime Text使用过程中的点点滴滴，虽然网上关于Sublime Text介绍的文章很多，但是使用过程多少有点自己的看法或者想法。在使用IDE的路上还有漫长的故事，VS2020 - Eclipse － Dreamware - Aptana - EditPlus - Notepad++ - Sublime Text - …。中间的过程中体验过webstorm，用下来感觉最棒的还是Subl">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2016-10-22T09:40:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SublimeText插件介绍">
@@ -304,16 +305,16 @@
       
         <p>记录Sublime Text使用过程中的点点滴滴，虽然网上关于Sublime Text介绍的文章很多，但是使用过程多少有点自己的看法或者想法。在使用IDE的路上还有漫长的故事，VS2020 - Eclipse － Dreamware - Aptana - EditPlus - Notepad++ - Sublime Text - …。中间的过程中体验过webstorm，用下来感觉最棒的还是Sublime，高亮、缩进、插件、智能提示、代码片段等，Sublime顶呱呱，哗啦啦的。</p>
 <a id="more"></a>
-<p>目前<a href="http://www.sublimetext.com/3" target="_blank" rel="external">Sublime Text3</a>还是beta版本，打开的速度相对2有了很大的提升，但是不足的就是插件方面有很多不兼容。<a href="https://sublime.wbond.net/" target="_blank" rel="external">查看Subliem Text3兼容的插件</a>。感觉主要的那些插件ST3还是可以使用的。</p>
+<p>目前<a href="http://www.sublimetext.com/3" target="_blank" rel="noopener">Sublime Text3</a>还是beta版本，打开的速度相对2有了很大的提升，但是不足的就是插件方面有很多不兼容。<a href="https://sublime.wbond.net/" target="_blank" rel="noopener">查看Subliem Text3兼容的插件</a>。感觉主要的那些插件ST3还是可以使用的。</p>
 <p>还有一点就是从win系统过渡到mac系统，有很多的操作习惯和快捷键不一样，稍微有点小不适应。</p>
 <h1 id="我在使用的插件"><a href="#我在使用的插件" class="headerlink" title="我在使用的插件"></a>我在使用的插件</h1><h2 id="Package-Control-不解释，神器"><a href="#Package-Control-不解释，神器" class="headerlink" title="Package Control(不解释，神器)"></a>Package Control(不解释，神器)</h2><p>Sublime Text2安装Package Control<br>使用<code>ctrl＋～</code>调出控制台</p>
 <pre><code>import urllib2,os; pf=&apos;Package Control.sublime-package&apos;; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),&apos;wb&apos;).write(urllib2.urlopen(&apos;http://sublime.wbond.net/&apos;+pf.replace(&apos; &apos;,&apos;%20&apos;)).read()); print &apos;Please restart Sublime Text to finish installation&apos;
-</code></pre><p>Sublime Text3如何安装Package Control<br>1、先下载<a href="https://github.com/wbond/sublime_package_control" target="_blank" rel="external">https://github.com/wbond/sublime_package_control</a>中的zip文件，解压后将文件夹名更改为 Package Control <strong>PS:注意大小写</strong>。</p>
-<p>2、下载插件分支<a href="https://github.com/wbond/sublime_package_control/tree/python3" target="_blank" rel="external">https://github.com/wbond/sublime_package_control/tree/python3</a>中的zip文件，解压后覆盖到 Package Control 文件中，完成此插件API函数的更新。</p>
+</code></pre><p>Sublime Text3如何安装Package Control<br>1、先下载<a href="https://github.com/wbond/sublime_package_control" target="_blank" rel="noopener">https://github.com/wbond/sublime_package_control</a>中的zip文件，解压后将文件夹名更改为 Package Control <strong>PS:注意大小写</strong>。</p>
+<p>2、下载插件分支<a href="https://github.com/wbond/sublime_package_control/tree/python3" target="_blank" rel="noopener">https://github.com/wbond/sublime_package_control/tree/python3</a>中的zip文件，解压后覆盖到 Package Control 文件中，完成此插件API函数的更新。</p>
 <p>3、将Package Control文件夹放入Sublime Text 3\Packages中，重启sublime text 3即可生效。</p>
-<p>2013/08/22<br>今天有同事说Sublime Text3也是可以用命令的。<a href="https://sublime.wbond.net/installation" target="_blank" rel="external">猛戳这里</a></p>
+<p>2013/08/22<br>今天有同事说Sublime Text3也是可以用命令的。<a href="https://sublime.wbond.net/installation" target="_blank" rel="noopener">猛戳这里</a></p>
 <pre><code>import urllib.request,os; pf = &apos;Package Control.sublime-package&apos;; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), &apos;wb&apos;).write(urllib.request.urlopen( &apos;http://sublime.wbond.net/&apos; + pf.replace(&apos; &apos;,&apos;%20&apos;)).read())
-</code></pre><h2 id="Emment"><a href="#Emment" class="headerlink" title="Emment"></a>Emment</h2><p><a href="http://docs.emmet.io/" target="_blank" rel="external">Emment书写规则</a>。ZenCoding的升级版，提高开发效率。写HTML特别爽。</p>
+</code></pre><h2 id="Emment"><a href="#Emment" class="headerlink" title="Emment"></a>Emment</h2><p><a href="http://docs.emmet.io/" target="_blank" rel="noopener">Emment书写规则</a>。ZenCoding的升级版，提高开发效率。写HTML特别爽。</p>
 <h2 id="jsFormat"><a href="#jsFormat" class="headerlink" title="jsFormat"></a>jsFormat</h2><p>格式化JavaScript</p>
 <h2 id="Alignment"><a href="#Alignment" class="headerlink" title="Alignment"></a>Alignment</h2><p>可以根据 : 和 = 对齐，满足有代码洁癖同学的需求，快捷键是 <code>Command + Control + A</code></p>
 <h2 id="BracketHighlighter"><a href="#BracketHighlighter" class="headerlink" title="BracketHighlighter"></a>BracketHighlighter</h2><p>括号高亮</p>
@@ -322,8 +323,8 @@
 <h2 id="HtmlTidy"><a href="#HtmlTidy" class="headerlink" title="HtmlTidy"></a>HtmlTidy</h2><p>清理与排版你的HTML代码</p>
 <h2 id="ConvertToUTF8"><a href="#ConvertToUTF8" class="headerlink" title="ConvertToUTF8"></a>ConvertToUTF8</h2><p>ST2只支持utf8编码，该插件可以显示与编辑 GBK, BIG5, EUC-KR, EUC-JP, Shift_JIS 等编码的文件</p>
 <h2 id="HTML-CSS-JS-Prettify"><a href="#HTML-CSS-JS-Prettify" class="headerlink" title="HTML-CSS-JS Prettify"></a>HTML-CSS-JS Prettify</h2><p>格式化HTML、CSS、JS文件。这是我目前找到的最好的一个插件。推荐给同事，他们也说这个很不粗。</p>
-<h2 id="MarkdownEditing"><a href="#MarkdownEditing" class="headerlink" title="MarkdownEditing"></a><a href="https://github.com/SublimeText-Markdown/MarkdownEditing" target="_blank" rel="external">MarkdownEditing</a></h2><p>mardown 实时预览。</p>
-<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a><a href="https://github.com/kemayo/sublime-text-git" target="_blank" rel="external">Git</a></h2><h1 id="快捷键-CMD相当Win的Ctrl键"><a href="#快捷键-CMD相当Win的Ctrl键" class="headerlink" title="快捷键(CMD相当Win的Ctrl键)"></a>快捷键(CMD相当Win的Ctrl键)</h1><ol>
+<h2 id="MarkdownEditing"><a href="#MarkdownEditing" class="headerlink" title="MarkdownEditing"></a><a href="https://github.com/SublimeText-Markdown/MarkdownEditing" target="_blank" rel="noopener">MarkdownEditing</a></h2><p>mardown 实时预览。</p>
+<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a><a href="https://github.com/kemayo/sublime-text-git" target="_blank" rel="noopener">Git</a></h2><h1 id="快捷键-CMD相当Win的Ctrl键"><a href="#快捷键-CMD相当Win的Ctrl键" class="headerlink" title="快捷键(CMD相当Win的Ctrl键)"></a>快捷键(CMD相当Win的Ctrl键)</h1><ol>
 <li>同时编辑多行 CMD+Shift+L</li>
 <li>向下同时选中下一个相同的文本 反复按 CMD+D</li>
 <li>跳到指定行 CMD+G 或者 CMD+P后输入字符”:”</li>
@@ -334,23 +335,23 @@
 <h1 id="Sublime-配置"><a href="#Sublime-配置" class="headerlink" title="Sublime 配置"></a>Sublime 配置</h1><h2 id="创建可复用的代码片段"><a href="#创建可复用的代码片段" class="headerlink" title="创建可复用的代码片段"></a>创建可复用的代码片段</h2><p>菜单上点击Tools -&gt; New Snippet，会新建一个xml文件页<br>    content 里面就是代码模版：${序号：默认值} ，序号相同的地方光标会同时停在那可以多处同时编辑。序号大小就是tabindex。在实际使用代码的时候，可以使用tab切换光标位置。<br>    tabTrigger是指输入该字符串后tab就是在光标插入content中的内容。<br>    scope是指在何种文件类型中使用</p>
 <h2 id="鼠标双击选择－、-开头的变量名"><a href="#鼠标双击选择－、-开头的变量名" class="headerlink" title="鼠标双击选择－、$开头的变量名"></a>鼠标双击选择－、$开头的变量名</h2><p>添加用户自定义配置<br>    <code>&quot;word_separators&quot;: &quot;./\\()\&quot;&#39;:,.;&lt;&gt;~!@#%^&amp;*|+=[]{}</code>~?”`</p>
 <h2 id="怎样从直接Github的repository安装Sublime-Text插件"><a href="#怎样从直接Github的repository安装Sublime-Text插件" class="headerlink" title="怎样从直接Github的repository安装Sublime Text插件"></a>怎样从直接Github的repository安装Sublime Text插件</h2><blockquote>
-<p>首先，我们假设你在用Sublime Text和Package Control插件。 按Ctrl + Shift + P（Mac下是Shift + CMD + P）进命令选择窗口，搜索”repository”,选择”add repository” 直接输入一个Sublime Text的Github地址，如 <a href="https://github.com/ttscoff/MarkdownEditing" target="_blank" rel="external">https://github.com/ttscoff/MarkdownEditing</a> 载入完成后就可以安装了，再按Ctrl + Shift + P（Mac下是Shift + CMD + P）进命令选择窗口，选择”Install Package”,现在就可以安装刚刚添加的repository里面的插件了，按本文的例子是”MarkdownEditing”。<a href="http://www.macdrifter.com/2012/08/install-sublime-packages-from-github.html" target="_blank" rel="external">http://www.macdrifter.com/2012/08/install-sublime-packages-from-github.html</a></p>
+<p>首先，我们假设你在用Sublime Text和Package Control插件。 按Ctrl + Shift + P（Mac下是Shift + CMD + P）进命令选择窗口，搜索”repository”,选择”add repository” 直接输入一个Sublime Text的Github地址，如 <a href="https://github.com/ttscoff/MarkdownEditing" target="_blank" rel="noopener">https://github.com/ttscoff/MarkdownEditing</a> 载入完成后就可以安装了，再按Ctrl + Shift + P（Mac下是Shift + CMD + P）进命令选择窗口，选择”Install Package”,现在就可以安装刚刚添加的repository里面的插件了，按本文的例子是”MarkdownEditing”。<a href="http://www.macdrifter.com/2012/08/install-sublime-packages-from-github.html" target="_blank" rel="noopener">http://www.macdrifter.com/2012/08/install-sublime-packages-from-github.html</a></p>
 </blockquote>
 <p>2014-11-16 12:33:46 更新</p>
 <p>sublime.wbond.net无法访问</p>
-<p><a href="https://sublime.wbond.net/" target="_blank" rel="external">Sublime Text package manager</a>被强了。<a href="http://weibo.com/1219344334/BuJwqBH1H?type=comment" target="_blank" rel="external">详见</a></p>
+<p><a href="https://sublime.wbond.net/" target="_blank" rel="noopener">Sublime Text package manager</a>被强了。<a href="http://weibo.com/1219344334/BuJwqBH1H?type=comment" target="_blank" rel="noopener">详见</a></p>
 <pre><code>50.116.34.243 sublime.wbond.net
 </code></pre><h1 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h1><h2 id="感谢以下网站"><a href="#感谢以下网站" class="headerlink" title="感谢以下网站"></a>感谢以下网站</h2><ul>
-<li><a href="http://www.veryued.org/2012/11/sublime%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6%E6%94%B6%E9%9B%86%E8%B4%B4/" target="_blank" rel="external">Sublime常用插件收集贴</a></li>
-<li><a href="http://weibo.com/finscn" target="_blank" rel="external">@大城小胖</a><a href="http://v.youku.com/v_show/id_XMzU5NzQ5ODgw.html" target="_blank" rel="external">sublime text2 简介</a></li>
-<li><a href="http://www.iplaysoft.com/sublimetext.html/comment-page-1" target="_blank" rel="external">Sublime Text 2 - 性感无比的代码编辑器！程序员必备神器！跨平台支持Win/Mac/Linux</a></li>
-<li><a href="http://www.blogjava.net/Hafeyang/archive/2012/08/17/how_to_create_code_snippet_in_subline_text_2.html" target="_blank" rel="external">sublime text 2学习(二):创建可复用的代码片段</a></li>
-<li><a href="http://hi.baidu.com/l245319872/item/afbb9734304981f5de222197" target="_blank" rel="external">Preferences.sublime-settings设置</a></li>
-<li><a href="http://ux.etao.com/posts/541" target="_blank" rel="external">sublime插件开发</a></li>
-<li><a href="http://www.sublimetext.com/" target="_blank" rel="external">Sublime Text</a></li>
-<li><a href="http://timewilltell.me/post/manually-add-sublime-package-repository" target="_blank" rel="external">怎样从直接Github的repository安装Sublime Text插件</a></li>
-<li><a href="http://dengo.org/archives/594" target="_blank" rel="external">Sublime text 3如何安装package control办法</a></li>
-<li><a href="http://ipestov.com/the-best-plugins-for-sublime-text/" target="_blank" rel="external">很全面和实用的Sublime 插件列表</a></li>
+<li><a href="http://www.veryued.org/2012/11/sublime%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6%E6%94%B6%E9%9B%86%E8%B4%B4/" target="_blank" rel="noopener">Sublime常用插件收集贴</a></li>
+<li><a href="http://weibo.com/finscn" target="_blank" rel="noopener">@大城小胖</a><a href="http://v.youku.com/v_show/id_XMzU5NzQ5ODgw.html" target="_blank" rel="noopener">sublime text2 简介</a></li>
+<li><a href="http://www.iplaysoft.com/sublimetext.html/comment-page-1" target="_blank" rel="noopener">Sublime Text 2 - 性感无比的代码编辑器！程序员必备神器！跨平台支持Win/Mac/Linux</a></li>
+<li><a href="http://www.blogjava.net/Hafeyang/archive/2012/08/17/how_to_create_code_snippet_in_subline_text_2.html" target="_blank" rel="noopener">sublime text 2学习(二):创建可复用的代码片段</a></li>
+<li><a href="http://hi.baidu.com/l245319872/item/afbb9734304981f5de222197" target="_blank" rel="noopener">Preferences.sublime-settings设置</a></li>
+<li><a href="http://ux.etao.com/posts/541" target="_blank" rel="noopener">sublime插件开发</a></li>
+<li><a href="http://www.sublimetext.com/" target="_blank" rel="noopener">Sublime Text</a></li>
+<li><a href="http://timewilltell.me/post/manually-add-sublime-package-repository" target="_blank" rel="noopener">怎样从直接Github的repository安装Sublime Text插件</a></li>
+<li><a href="http://dengo.org/archives/594" target="_blank" rel="noopener">Sublime text 3如何安装package control办法</a></li>
+<li><a href="http://ipestov.com/the-best-plugins-for-sublime-text/" target="_blank" rel="noopener">很全面和实用的Sublime 插件列表</a></li>
 </ul>
 
       
@@ -468,7 +469,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">31</span>
+              <span class="site-state-item-count">37</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -478,7 +479,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">39</span>
+                <span class="site-state-item-count">48</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -562,7 +563,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

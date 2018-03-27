@@ -1,0 +1,872 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="npm,nodejs," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="前端开发者说" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="npm（全称Node Package Manager，即node包管理器）是Node.js默认的、以JavaScript编写的软件包管理系统。 - 来自wikipedia  本文首发在美妆心得技术博客，同步到前端开发者说博客。 npm镜像1$ npm config set registry &amp;quot;https://registry.npm.taobao.org&amp;quot; 其他镜像，用于提高">
+<meta name="keywords" content="npm,nodejs">
+<meta property="og:type" content="article">
+<meta property="og:title" content="npm相关资源整理">
+<meta property="og:url" content="http://huixisheng.github.io/npm-source/index.html">
+<meta property="og:site_name" content="前端开发者说">
+<meta property="og:description" content="npm（全称Node Package Manager，即node包管理器）是Node.js默认的、以JavaScript编写的软件包管理系统。 - 来自wikipedia  本文首发在美妆心得技术博客，同步到前端开发者说博客。 npm镜像1$ npm config set registry &amp;quot;https://registry.npm.taobao.org&amp;quot; 其他镜像，用于提高">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://huixisheng.github.io/images/npm/npm-check.jpeg">
+<meta property="og:image" content="https://raw.githubusercontent.com/siddharthkp/cost-of-modules/master/screenshot.jpg">
+<meta property="og:updated_time" content="2017-11-02T01:25:37.912Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="npm相关资源整理">
+<meta name="twitter:description" content="npm（全称Node Package Manager，即node包管理器）是Node.js默认的、以JavaScript编写的软件包管理系统。 - 来自wikipedia  本文首发在美妆心得技术博客，同步到前端开发者说博客。 npm镜像1$ npm config set registry &amp;quot;https://registry.npm.taobao.org&amp;quot; 其他镜像，用于提高">
+<meta name="twitter:image" content="http://huixisheng.github.io/images/npm/npm-check.jpeg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '9599',
+      author: '悔惜晟'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://huixisheng.github.io/npm-source/"/>
+
+
+  <title> npm相关资源整理 | 前端开发者说 </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">前端开发者说</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">记录开发的故事</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                npm相关资源整理
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-09-19T19:41:35+08:00" content="2017-09-19">
+              2017-09-19
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/npm-source/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="npm-source/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>npm（全称Node Package Manager，即node包管理器）是Node.js默认的、以JavaScript编写的软件包管理系统。 - <a href="https://zh.wikipedia.org/wiki/Npm" target="_blank" rel="noopener">来自wikipedia</a></p>
+</blockquote>
+<p>本文首发在<a href="https://cosmeapp.github.io/2017/09/19/npm-source/" target="_blank" rel="noopener">美妆心得技术博客</a>，同步到前端开发者说博客。</p>
+<h2 id="npm镜像"><a href="#npm镜像" class="headerlink" title="npm镜像"></a>npm镜像</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm config set registry &quot;https://registry.npm.taobao.org&quot;</span><br></pre></td></tr></table></figure>
+<p>其他镜像，用于提高安装速度，比如用<code>vue-cli</code>初始化项目。在<code>~/.npmrc</code>中添加如下配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">registry=https://registry.npm.taobao.org/</span><br><span class="line">// https://registry.npmjs.org=true</span><br><span class="line">// https://blog.niceue.com/front-end-development/using-domestic-npm-images.html=true</span><br><span class="line">// http://www.cnblogs.com/huang0925/archive/2013/05/17/3083207.html=true</span><br><span class="line">electron_mirror=https://npm.taobao.org/dist/electron/</span><br><span class="line">sass_binary_site=https://npm.taobao.org/dist/node-sass</span><br><span class="line">phantomjs_cdnurl=https://npm.taobao.org/dist/phantomjs</span><br><span class="line">// https://gist.github.com/52cik/c1de8926e20971f415dd=true</span><br><span class="line">chromedriver_cdnurl=https://npm.taobao.org/dist/chromedriver</span><br><span class="line">disturl=https://npm.taobao.org/dist</span><br><span class="line">operadriver_cdnurl=https://npm.taobao.org/mirrors/operadriver</span><br><span class="line">selenium_cdnurl=https://npm.taobao.org/mirrors/selenium</span><br><span class="line">node_inspector_cdnurl=https://npm.taobao.org/mirrors/node-inspector</span><br><span class="line">// 自定义的npm scope</span><br><span class="line">@x-scaffold:registry=https://registry.npmjs.org/</span><br></pre></td></tr></table></figure>
+<p>关于关于更多的镜像资料，可以参考我之前写的文章<a href="https://huixisheng.github.io/%2Fmirror%2F">国内镜像源整理</a></p>
+<h2 id="npm搜索"><a href="#npm搜索" class="headerlink" title="npm搜索"></a>npm搜索</h2><p><a href="https://libraries.io/npm" target="_blank" rel="noopener">https://libraries.io/npm</a> 相关资源的各种排行榜</p>
+<p><a href="https://npms.io/" target="_blank" rel="noopener">npms</a> A better and open source search for node packages</p>
+<p><a href="https://www.npmjs.com/browse/updated" target="_blank" rel="noopener">recently updated packages</a></p>
+<p><a href="https://unpkg.com/#/" target="_blank" rel="noopener">npm 资源的cdn</a></p>
+<p><a href="https://github.com/anvaka/npmrank/tree/master/sample" target="_blank" rel="noopener">整理的Top100</a></p>
+<p><a href="https://www.npmjs.com/browse/depended" target="_blank" rel="noopener">most depended-upon packages</a></p>
+<p><a href="https://colorlib.com/wp/npm-packages-node-js/" target="_blank" rel="noopener">Top 30 NPM Packages for Node.js Developers 2016</a></p>
+<p><a href="https://www.npmjs.com/browse/depended" target="_blank" rel="noopener">most depended-upon packages</a></p>
+<h2 id="包管理工具"><a href="#包管理工具" class="headerlink" title="包管理工具"></a>包管理工具</h2><p><a href="https://pnpm.js.org/" target="_blank" rel="noopener">pnpm</a> Fast, disk space efficient package manager</p>
+<p><a href="https://npm.taobao.org/" target="_blank" rel="noopener">cnpm</a> 淘宝 NPM 镜像</p>
+<p><a href="https://yarnpkg.com/zh-Hans/" target="_blank" rel="noopener">yarn</a></p>
+<blockquote>
+<p>Yarn 对你的代码来说是一个包管理器， 它允许你使用并分享代码给全世界的开发者， Yarn 做这些快捷、安全、可靠，所以你不用担心什么。</p>
+</blockquote>
+<p>设置国内镜像<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ yarn config set registry https://registry.npm.taobao.org --global</span><br><span class="line">$ yarn config set disturl https://npm.taobao.org/dist --global</span><br></pre></td></tr></table></figure></p>
+<p>这个facebook应该不会加类似React的协议吧？</p>
+<p>会生成一个<code>yarn.lock</code>锁定依赖。</p>
+<p>优点(摘自官网)</p>
+<ul>
+<li>离线模式</li>
+<li>确定性</li>
+<li>网络性能</li>
+<li>相同的软件包</li>
+<li>网络适应</li>
+<li>扁平模式</li>
+</ul>
+<p>例外有看到社区</p>
+<p><a href="https://cnodejs.org/topic/57ff0541487e1e4578afb48d" target="_blank" rel="noopener">「CYarn」使用 cnpm 源的 Yarn</a></p>
+<p><a href="https://github.com/qiu8310/smart-npm/" target="_blank" rel="noopener">smart-npm</a> 在各大社区发布后，就没看到更多了。</p>
+<p><a href="https://zhuanlan.zhihu.com/p/27832595" target="_blank" rel="noopener">npx: npm 5.2.0 内置的包执行器</a></p>
+<p>推荐阅读</p>
+<ul>
+<li><a href="http://geek.csdn.net/news/detail/197339" target="_blank" rel="noopener">一文看懂npm、yarn、pnpm之间的区别</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/23493436" target="_blank" rel="noopener">Yarn vs npm：你需要知道的一切</a></li>
+<li><a href="https://github.com/pnpm/node-package-manager-benchmark" target="_blank" rel="noopener">更多npm与yarn的性能对比</a></li>
+<li><a href="https://mp.weixin.qq.com/s/9BGiuO-clwe4AAlV9Puqng" target="_blank" rel="noopener">npm 5.0 新版功能特性解析及与 yarn 评测对比</a></li>
+<li><a href="https://www.zhihu.com/question/24414899" target="_blank" rel="noopener">npm、bower、jamjs 等包管理器，哪个比较好用？</a></li>
+<li><a href="https://www.zhihu.com/question/51502849" target="_blank" rel="noopener">如何评价Facebook推出的JavaScript模块管理器yarn？</a></li>
+<li><a href="">在中国，安装 &amp; 升级 npm 依赖的正确方法</a></li>
+</ul>
+<h2 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h2><ul>
+<li><a href="https://docs.npmjs.com/" target="_blank" rel="noopener">https://docs.npmjs.com/</a></li>
+<li><a href="http://semver.org/lang/zh-CN/" target="_blank" rel="noopener">semver语义化版本 2.0.0</a></li>
+<li><a href="http://www.cnblogs.com/huang0925/archive/2013/05/17/3083207.html" target="_blank" rel="noopener">Npm的配置管理及设置代理</a></li>
+</ul>
+<h2 id="依赖升级"><a href="#依赖升级" class="headerlink" title="依赖升级"></a>依赖升级</h2><p>见 <a href="https://docs.npmjs.com/cli/update" target="_blank" rel="noopener">npm update [-g] [<pkg>…]</pkg></a></p>
+<p><a href="https://www.npmjs.com/package/npm-check-updates" target="_blank" rel="noopener">npm-check-updates</a></p>
+<p><a href="https://github.com/dylang/npm-check" target="_blank" rel="noopener">npm-check</a></p>
+<blockquote>
+<p>Check for outdated, incorrect, and unused dependencies.</p>
+</blockquote>
+<p><img src="/images/npm/npm-check.jpeg" alt=""></p>
+<p>相关的介绍可以参考<a href="https://cnodejs.org/topic/5705cd70c5f5b4a959e9192a" target="_blank" rel="noopener">Node.js开源项目推荐：npm模块升级工具 npm-check</a></p>
+<h3 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h3><ul>
+<li><a href="https://gxnotes.com/article/12726.html" target="_blank" rel="noopener">如何将package.json中的每个依赖关系更新为最新版本？</a></li>
+</ul>
+<h2 id="Node升级"><a href="#Node升级" class="headerlink" title="Node升级"></a>Node升级</h2><h3 id="n"><a href="#n" class="headerlink" title="n"></a><a href="https://github.com/tj/n" target="_blank" rel="noopener">n</a></h3><blockquote>
+<p>Node.js version management: no subshells, no profile setup, no convoluted API, just simple.</p>
+</blockquote>
+<h3 id="nvm"><a href="#nvm" class="headerlink" title="nvm"></a><a href="https://github.com/creationix/nvm" target="_blank" rel="noopener">nvm</a></h3><blockquote>
+<p>Node Version Manager - Simple bash script to manage multiple active node.js versions</p>
+</blockquote>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p><a href="https://github.com/siddharthkp/cost-of-modules" target="_blank" rel="noopener">Cost of modules</a></p>
+<blockquote>
+<p>Find out which of your dependencies is slowing you down</p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/siddharthkp/cost-of-modules/master/screenshot.jpg" alt=""></p>
+<p><a href="https://github.com/sindresorhus/awesome-npm" target="_blank" rel="noopener">https://github.com/sindresorhus/awesome-npm</a></p>
+<p><a href="https://juejin.im/post/59256b6f8d6d810058045336" target="_blank" rel="noopener">【译】用8个 npm 技巧打动你的同事</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/npm/" rel="tag">#npm</a>
+          
+            <a href="/tags/nodejs/" rel="tag">#nodejs</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/git-rebase/" rel="next" title="git利用rebase修改历史提交记录">
+                <i class="fa fa-chevron-left"></i> git利用rebase修改历史提交记录
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/es6-destructuring-and-spread-operator/" rel="prev" title="变量的解构赋值和展开运算符">
+                变量的解构赋值和展开运算符 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="huixisheng" />
+          <p class="site-author-name" itemprop="name">huixisheng</p>
+          <p class="site-description motion-element" itemprop="description">前端路漫漫兮，吾将上下而求索</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">37</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">48</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/huixisheng" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/huixisheng" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/huixisheng" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#npm镜像"><span class="nav-number">1.</span> <span class="nav-text">npm镜像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm搜索"><span class="nav-number">2.</span> <span class="nav-text">npm搜索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#包管理工具"><span class="nav-number">3.</span> <span class="nav-text">包管理工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文档"><span class="nav-number">4.</span> <span class="nav-text">文档</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#依赖升级"><span class="nav-number">5.</span> <span class="nav-text">依赖升级</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#扩展阅读"><span class="nav-number">5.1.</span> <span class="nav-text">扩展阅读</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Node升级"><span class="nav-number">6.</span> <span class="nav-text">Node升级</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#n"><span class="nav-number">6.1.</span> <span class="nav-text">n</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nvm"><span class="nav-number">6.2.</span> <span class="nav-text">nvm</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">7.</span> <span class="nav-text">其他</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">huixisheng</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'huixisheng';
+      var disqus_identifier = 'npm-source/';
+      var disqus_title = "npm相关资源整理";
+      var disqus_url = 'http://huixisheng.github.io/npm-source/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = false;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title >= 0 || index_content >= 0 ){
+                                isMatch = true;
+								if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            } 
+							
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>

@@ -93,6 +93,7 @@
 <meta property="og:url" content="http://huixisheng.github.io/compatibility-solution/index.html">
 <meta property="og:site_name" content="前端开发者说">
 <meta property="og:description" content="移动互联网的今天，告别了ie6。 以下来自原先项目psc。psc已经删除，使用issues继续整理。相信这是一个更好的开始。整理到博客汇总。">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2016-12-23T03:08:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="兼容性解决方案整理">
@@ -305,8 +306,8 @@
         <p>移动互联网的今天，告别了ie6。</p>
 <p>以下来自原先项目<del>psc</del>。<del>psc</del>已经删除，<del>使用issues继续整理</del>。相信这是一个更好的开始。整理到博客汇总。</p>
 <a id="more"></a>
-<p>浏览器的兼容性问题是前端开发人员最头痛的，PCS 收集并整理完美兼容的解决方案。低版本浏览器添加过多的脚本或者更多的代码势必会带来性能，维护成本。其实PCS 并非是完美的解法办法，最完美的是浏览器本身符合<a href="http://baike.baidu.com/view/459077.htm?fr=wordsearch" target="_blank" rel="external">w3c标准</a>。当然这不现实，要不要所有浏览器都真的完全表现一样，其实还要视项目而定，或许我们可以选择<a href="http://baike.baidu.com/view/1172014.htm" target="_blank" rel="external">优雅降级</a>处理。凡是一切都在权衡。</p>
-<h2 id="CSS-CSS3"><a href="#CSS-CSS3" class="headerlink" title="CSS/CSS3"></a>CSS/CSS3</h2><h3 id="Respond"><a href="#Respond" class="headerlink" title="Respond"></a><a href="https://github.com/scottjehl/Respond" target="_blank" rel="external">Respond</a></h3><h2 id="inline-block"><a href="#inline-block" class="headerlink" title="inline-block"></a><a href="http://ued.taobao.org/blog/2012/08/inline-block/" target="_blank" rel="external">inline-block</a></h2><pre><code>.dib-wrap {
+<p>浏览器的兼容性问题是前端开发人员最头痛的，PCS 收集并整理完美兼容的解决方案。低版本浏览器添加过多的脚本或者更多的代码势必会带来性能，维护成本。其实PCS 并非是完美的解法办法，最完美的是浏览器本身符合<a href="http://baike.baidu.com/view/459077.htm?fr=wordsearch" target="_blank" rel="noopener">w3c标准</a>。当然这不现实，要不要所有浏览器都真的完全表现一样，其实还要视项目而定，或许我们可以选择<a href="http://baike.baidu.com/view/1172014.htm" target="_blank" rel="noopener">优雅降级</a>处理。凡是一切都在权衡。</p>
+<h2 id="CSS-CSS3"><a href="#CSS-CSS3" class="headerlink" title="CSS/CSS3"></a>CSS/CSS3</h2><h3 id="Respond"><a href="#Respond" class="headerlink" title="Respond"></a><a href="https://github.com/scottjehl/Respond" target="_blank" rel="noopener">Respond</a></h3><h2 id="inline-block"><a href="#inline-block" class="headerlink" title="inline-block"></a><a href="http://ued.taobao.org/blog/2012/08/inline-block/" target="_blank" rel="noopener">inline-block</a></h2><pre><code>.dib-wrap {
     font-size:0;/* 所有浏览器 */
     *word-spacing:-1px;/* IE6、7 */
 }
@@ -327,30 +328,30 @@
     *display:inline;
     *zoom:1;
 }
-</code></pre><h2 id="css3-gradient"><a href="#css3-gradient" class="headerlink" title="css3-gradient"></a><a href="http://www.w3cplus.com/content/css3-gradient" target="_blank" rel="external">css3-gradient</a></h2><ol>
-<li><a href="http://www.colorzilla.com/gradient-editor/" target="_blank" rel="external">css3 渐变在线生成工具Ultimate CSS Gradient Generator</a></li>
+</code></pre><h2 id="css3-gradient"><a href="#css3-gradient" class="headerlink" title="css3-gradient"></a><a href="http://www.w3cplus.com/content/css3-gradient" target="_blank" rel="noopener">css3-gradient</a></h2><ol>
+<li><a href="http://www.colorzilla.com/gradient-editor/" target="_blank" rel="noopener">css3 渐变在线生成工具Ultimate CSS Gradient Generator</a></li>
 </ol>
-<h2 id="HTML-HTML5"><a href="#HTML-HTML5" class="headerlink" title="HTML/HTML5"></a>HTML/HTML5</h2><h2 id="html5shiv"><a href="#html5shiv" class="headerlink" title="html5shiv"></a>html5shiv</h2><p>The <a href="https://github.com/aFarkas/html5shiv" target="_blank" rel="external">HTML5 Shiv</a> enables use of HTML5 sectioning elements in legacy Internet Explorer and provides basic HTML5 styling for Internet Explorer 6-9, Safari 4.x (and iPhone 3.x), and Firefox 3.x.</p>
-<h2 id="html5demos"><a href="#html5demos" class="headerlink" title="html5demos"></a><a href="https://github.com/remy/html5demos" target="_blank" rel="external">html5demos</a></h2><p>A collection of HTML5 experiments I’ve created, now open source and on GitHub, so please go ahead and help me hack this resource in to a wealth of demos that other authors can learn from.</p>
-<h2 id="HTML5-History-API"><a href="#HTML5-History-API" class="headerlink" title="HTML5-History-API"></a><a href="https://github.com/remy/html5demos" target="_blank" rel="external">HTML5-History-API</a></h2><h2 id="video-js"><a href="#video-js" class="headerlink" title="video.js"></a><a href="https://github.com/videojs/video.js" target="_blank" rel="external">video.js</a></h2><h2 id="jQuery-html5-placeholder"><a href="#jQuery-html5-placeholder" class="headerlink" title=" jQuery-html5-placeholder"></a><a href="https://github.com/Topener/jQuery-html5-placeholder" target="_blank" rel="external"> jQuery-html5-placeholder</a></h2><h2 id="HTML5-Desktop-Notifications"><a href="#HTML5-Desktop-Notifications" class="headerlink" title="HTML5 Desktop Notifications"></a><a href="https://github.com/ttsvetko/HTML5-Desktop-Notifications" target="_blank" rel="external">HTML5 Desktop Notifications</a></h2><h2 id="localstorage"><a href="#localstorage" class="headerlink" title="localstorage"></a>localstorage</h2><p><a href="https://github.com/marcuswestin/store.js" target="_blank" rel="external">store.js</a> exposes a simple API for cross browser local storage</p>
-<h2 id="JavaScritp-ECMAScript"><a href="#JavaScritp-ECMAScript" class="headerlink" title="JavaScritp/ECMAScript"></a>JavaScritp/ECMAScript</h2><h2 id="es5-shim"><a href="#es5-shim" class="headerlink" title="es5-shim"></a>es5-shim</h2><p><a href="https://github.com/es-shims/es5-shim" target="_blank" rel="external"><code>es5-shim.js</code></a> and <code>es5-shim.min.js</code> monkey-patch a JavaScript context to<br>contain all EcmaScript 5 methods that can be faithfully emulated with a<br>legacy JavaScript engine.</p>
-<h2 id="IE-IE6-IE7-IE8"><a href="#IE-IE6-IE7-IE8" class="headerlink" title="IE/IE6/IE7/IE8"></a>IE/IE6/IE7/IE8</h2><h3 id="PIE"><a href="#PIE" class="headerlink" title="PIE"></a>PIE</h3><p>(PIE)(<a href="http://css3pie.com/" target="_blank" rel="external">http://css3pie.com/</a>) makes Internet Explorer 6-9 capable of rendering several of the most useful CSS3 decoration features.</p>
+<h2 id="HTML-HTML5"><a href="#HTML-HTML5" class="headerlink" title="HTML/HTML5"></a>HTML/HTML5</h2><h2 id="html5shiv"><a href="#html5shiv" class="headerlink" title="html5shiv"></a>html5shiv</h2><p>The <a href="https://github.com/aFarkas/html5shiv" target="_blank" rel="noopener">HTML5 Shiv</a> enables use of HTML5 sectioning elements in legacy Internet Explorer and provides basic HTML5 styling for Internet Explorer 6-9, Safari 4.x (and iPhone 3.x), and Firefox 3.x.</p>
+<h2 id="html5demos"><a href="#html5demos" class="headerlink" title="html5demos"></a><a href="https://github.com/remy/html5demos" target="_blank" rel="noopener">html5demos</a></h2><p>A collection of HTML5 experiments I’ve created, now open source and on GitHub, so please go ahead and help me hack this resource in to a wealth of demos that other authors can learn from.</p>
+<h2 id="HTML5-History-API"><a href="#HTML5-History-API" class="headerlink" title="HTML5-History-API"></a><a href="https://github.com/remy/html5demos" target="_blank" rel="noopener">HTML5-History-API</a></h2><h2 id="video-js"><a href="#video-js" class="headerlink" title="video.js"></a><a href="https://github.com/videojs/video.js" target="_blank" rel="noopener">video.js</a></h2><h2 id="jQuery-html5-placeholder"><a href="#jQuery-html5-placeholder" class="headerlink" title=" jQuery-html5-placeholder"></a><a href="https://github.com/Topener/jQuery-html5-placeholder" target="_blank" rel="noopener"> jQuery-html5-placeholder</a></h2><h2 id="HTML5-Desktop-Notifications"><a href="#HTML5-Desktop-Notifications" class="headerlink" title="HTML5 Desktop Notifications"></a><a href="https://github.com/ttsvetko/HTML5-Desktop-Notifications" target="_blank" rel="noopener">HTML5 Desktop Notifications</a></h2><h2 id="localstorage"><a href="#localstorage" class="headerlink" title="localstorage"></a>localstorage</h2><p><a href="https://github.com/marcuswestin/store.js" target="_blank" rel="noopener">store.js</a> exposes a simple API for cross browser local storage</p>
+<h2 id="JavaScritp-ECMAScript"><a href="#JavaScritp-ECMAScript" class="headerlink" title="JavaScritp/ECMAScript"></a>JavaScritp/ECMAScript</h2><h2 id="es5-shim"><a href="#es5-shim" class="headerlink" title="es5-shim"></a>es5-shim</h2><p><a href="https://github.com/es-shims/es5-shim" target="_blank" rel="noopener"><code>es5-shim.js</code></a> and <code>es5-shim.min.js</code> monkey-patch a JavaScript context to<br>contain all EcmaScript 5 methods that can be faithfully emulated with a<br>legacy JavaScript engine.</p>
+<h2 id="IE-IE6-IE7-IE8"><a href="#IE-IE6-IE7-IE8" class="headerlink" title="IE/IE6/IE7/IE8"></a>IE/IE6/IE7/IE8</h2><h3 id="PIE"><a href="#PIE" class="headerlink" title="PIE"></a>PIE</h3><p>(PIE)(<a href="http://css3pie.com/" target="_blank" rel="noopener">http://css3pie.com/</a>) makes Internet Explorer 6-9 capable of rendering several of the most useful CSS3 decoration features.</p>
 <p>通过脚本可以使得ie6/7/8/9 支持css3 的 border-radius、box-shadow、linear-gradient。</p>
-<h3 id="DD-belatedPNG"><a href="#DD-belatedPNG" class="headerlink" title="DD_belatedPNG"></a><a href="http://www.dillerdesign.com/experiment/DD_belatedPNG/" target="_blank" rel="external">DD_belatedPNG</a></h3><p>This is a Javascript library that sandwiches PNG image support into IE6 without much fuss.</p>
+<h3 id="DD-belatedPNG"><a href="#DD-belatedPNG" class="headerlink" title="DD_belatedPNG"></a><a href="http://www.dillerdesign.com/experiment/DD_belatedPNG/" target="_blank" rel="noopener">DD_belatedPNG</a></h3><p>This is a Javascript library that sandwiches PNG image support into IE6 without much fuss.</p>
 <p>处理ie6不支持png24。</p>
 <pre><code>DD_belatedPNG.fix(&apos;.png_bg, .png24&apos;); // argument is a CSS selector
 DD_belatedPNG.fixPng( someNode ); // argument is an HTMLDomElement
 </code></pre><h4 id="更多solution"><a href="#更多solution" class="headerlink" title="更多solution"></a>更多solution</h4><ol>
-<li><a href="http://www.w3cfuns.com/thread-297-1-1.html" target="_blank" rel="external">IE6 PNG透明终极解决方案（打造W3Cfuns-IE6PNG最强帖）</a></li>
+<li><a href="http://www.w3cfuns.com/thread-297-1-1.html" target="_blank" rel="noopener">IE6 PNG透明终极解决方案（打造W3Cfuns-IE6PNG最强帖）</a></li>
 </ol>
 <h3 id="IE下-z-index的层级问题"><a href="#IE下-z-index的层级问题" class="headerlink" title="IE下 z-index的层级问题"></a>IE下 z-index的层级问题</h3><h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><ol>
-<li><a href="http://www.cnblogs.com/Darren_code/archive/2012/03/05/z-index.html" target="_blank" rel="external">IE下 z-index 的各种坑</a></li>
-<li><a href="http://www.zhangxinxu.com/wordpress/2009/12/ie6%E4%B8%8Bz-index%E7%8A%AF%E7%99%AB%E4%B8%8D%E8%B5%B7%E4%BD%9C%E7%94%A8bug%E7%9A%84%E5%88%9D%E6%AD%A5%E7%A0%94%E7%A9%B6/" target="_blank" rel="external">IE6下z-index犯癫不起作用bug的初步研究</a></li>
-<li><a href="http://www.w3help.org/zh-cn/causes/RM8015" target="_blank" rel="external">IE6 IE7 IE8(Q) 中定位元素 ‘z-index’ 为默认值在某些情况下会产生新的层叠上下文</a></li>
+<li><a href="http://www.cnblogs.com/Darren_code/archive/2012/03/05/z-index.html" target="_blank" rel="noopener">IE下 z-index 的各种坑</a></li>
+<li><a href="http://www.zhangxinxu.com/wordpress/2009/12/ie6%E4%B8%8Bz-index%E7%8A%AF%E7%99%AB%E4%B8%8D%E8%B5%B7%E4%BD%9C%E7%94%A8bug%E7%9A%84%E5%88%9D%E6%AD%A5%E7%A0%94%E7%A9%B6/" target="_blank" rel="noopener">IE6下z-index犯癫不起作用bug的初步研究</a></li>
+<li><a href="http://www.w3help.org/zh-cn/causes/RM8015" target="_blank" rel="noopener">IE6 IE7 IE8(Q) 中定位元素 ‘z-index’ 为默认值在某些情况下会产生新的层叠上下文</a></li>
 </ol>
 <h3 id="ie6-不支持positon-fixed"><a href="#ie6-不支持positon-fixed" class="headerlink" title="ie6 不支持positon: fixed"></a>ie6 不支持<code>positon: fixed</code></h3><h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><ol>
-<li><a href="http://www.w3help.org/zh-cn/causes/RM8013" target="_blank" rel="external">RM8013: IE6 IE7(Q) IE8(Q) 不支持固定定位（position:fixed）</a></li>
-<li><a href="http://www.cnblogs.com/hooray/archive/2011/05/20/2052269.html" target="_blank" rel="external">完美解决IE6不支持position:fixed的bug</a></li>
+<li><a href="http://www.w3help.org/zh-cn/causes/RM8013" target="_blank" rel="noopener">RM8013: IE6 IE7(Q) IE8(Q) 不支持固定定位（position:fixed）</a></li>
+<li><a href="http://www.cnblogs.com/hooray/archive/2011/05/20/2052269.html" target="_blank" rel="noopener">完美解决IE6不支持position:fixed的bug</a></li>
 </ol>
 <h3 id="透明度-opacity-rgba"><a href="#透明度-opacity-rgba" class="headerlink" title="透明度 opacity/rgba"></a>透明度 opacity/rgba</h3><p>opacity设置的透明度对子元素都有影响。ie可以使用 filter 处理</p>
 <pre><code>.opacity{
@@ -368,9 +369,9 @@ DD_belatedPNG.fixPng( someNode ); // argument is an HTMLDomElement
     background-color:rgba(0,0,0,0.5);
 }
 </code></pre><ol>
-<li><a href="http://www.w3help.org/zh-cn/causes/BT9011" target="_blank" rel="external">BT9011: 只有 IE 支持 CSS Filter</a></li>
-<li><a href="http://www.w3cplus.com/content/css3-rgba" target="_blank" rel="external">CSS3 RGBA</a></li>
-<li><a href="http://www.linxz.de/css_tool/hex_color.html" target="_blank" rel="external">css3-rgba ie下可透明的背景颜色转换工具</a></li>
+<li><a href="http://www.w3help.org/zh-cn/causes/BT9011" target="_blank" rel="noopener">BT9011: 只有 IE 支持 CSS Filter</a></li>
+<li><a href="http://www.w3cplus.com/content/css3-rgba" target="_blank" rel="noopener">CSS3 RGBA</a></li>
+<li><a href="http://www.linxz.de/css_tool/hex_color.html" target="_blank" rel="noopener">css3-rgba ie下可透明的背景颜色转换工具</a></li>
 </ol>
 <h3 id="ie6-max-width-max-height-min-height-min-width"><a href="#ie6-max-width-max-height-min-height-min-width" class="headerlink" title="ie6 max-width/max-height/min-height/min-width"></a>ie6 max-width/max-height/min-height/min-width</h3><pre><code>.maxh{ max-height:300px; _height: expression(this.scrollHeight &gt;= 300? &apos;300px&apos; : &apos;auto&apos;);  }
 
@@ -380,10 +381,10 @@ DD_belatedPNG.fixPng( someNode ); // argument is an HTMLDomElement
 
 .minw{ min-width: 300px; _width: expression(this.clientWidth &lt;= 300 ? &apos;300px&apos; : &apos;auto&apos;); }
 </code></pre><ol>
-<li><a href="http://ziren.org/html-css/ie6-support-min-width-and-max-width.html" target="_blank" rel="external">让IE6支持min-width和max-width的方法</a></li>
+<li><a href="http://ziren.org/html-css/ie6-support-min-width-and-max-width.html" target="_blank" rel="noopener">让IE6支持min-width和max-width的方法</a></li>
 </ol>
-<h2 id="css3-mediaqueries-js"><a href="#css3-mediaqueries-js" class="headerlink" title="css3-mediaqueries-js"></a>css3-mediaqueries-js</h2><p><a href="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js" target="_blank" rel="external">css3-mediaqueries-js</a></p>
-<h2 id="ieBetter"><a href="#ieBetter" class="headerlink" title="ieBetter"></a>ieBetter</h2><p><a href="http://www.zhangxinxu.com/wordpress/2013/12/iebetter-js-make-ie6-ie8-like-modern-browser-ie9-chrome/" target="_blank" rel="external">ieBetter.js-让IE6-IE8拥有IE9+,Chrome等浏览器特性</a></p>
+<h2 id="css3-mediaqueries-js"><a href="#css3-mediaqueries-js" class="headerlink" title="css3-mediaqueries-js"></a>css3-mediaqueries-js</h2><p><a href="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js" target="_blank" rel="noopener">css3-mediaqueries-js</a></p>
+<h2 id="ieBetter"><a href="#ieBetter" class="headerlink" title="ieBetter"></a>ieBetter</h2><p><a href="http://www.zhangxinxu.com/wordpress/2013/12/iebetter-js-make-ie6-ie8-like-modern-browser-ie9-chrome/" target="_blank" rel="noopener">ieBetter.js-让IE6-IE8拥有IE9+,Chrome等浏览器特性</a></p>
 
       
     </div>
@@ -425,8 +426,8 @@ DD_belatedPNG.fixPng( someNode ); // argument is an HTMLDomElement
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/mirror/" rel="prev" title="国内镜像源整理">
-                国内镜像源整理 <i class="fa fa-chevron-right"></i>
+              <a href="/nodejs-spawn-exec/" rel="prev" title="spawn和exec简单介绍">
+                spawn和exec简单介绍 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -502,7 +503,7 @@ DD_belatedPNG.fixPng( someNode ); // argument is an HTMLDomElement
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">31</span>
+              <span class="site-state-item-count">37</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -512,7 +513,7 @@ DD_belatedPNG.fixPng( someNode ); // argument is an HTMLDomElement
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">39</span>
+                <span class="site-state-item-count">48</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -596,7 +597,7 @@ DD_belatedPNG.fixPng( someNode ); // argument is an HTMLDomElement
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

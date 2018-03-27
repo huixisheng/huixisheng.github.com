@@ -93,6 +93,7 @@
 <meta property="og:url" content="http://huixisheng.github.io/markdown-test/index.html">
 <meta property="og:site_name" content="前端开发者说">
 <meta property="og:description" content="本文是学习markdown语法做的一些简单测试">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://huixisheng.github.com/assets/themes/twitter/bootstrap/img/glyphicons-halflings.png">
 <meta property="og:updated_time" content="2017-05-27T17:07:53.000Z">
 <meta name="twitter:card" content="summary">
@@ -347,16 +348,18 @@
 <p>链接和图片生成的方法</p>
 <pre><code>[链接名称](链接)
 ![图片名称](链接)
-</code></pre><p><a href="https://github.com/huixisheng/huixisheng.github.com/generated_pages/new" target="_blank" rel="external">链接测试</a></p>
+</code></pre><p><a href="https://github.com/huixisheng/huixisheng.github.com/generated_pages/new" target="_blank" rel="noopener">链接测试</a></p>
 <p><img src="http://huixisheng.github.com/assets/themes/twitter/bootstrap/img/glyphicons-halflings.png" alt="测试图片"></p>
 <p>我是code<code>code</code>,我是<strong>加粗</strong>，我是<strong>斜体</strong>,我是<del>删除</del></p>
 <p><code>***</code>可以生成hr</p>
 <hr>
-<p>单纯的链接根式<code>&lt;链接&gt;</code><br><a href="http://huixisheng.github.com/" target="_blank" rel="external">http://huixisheng.github.com/</a></p>
+<p>单纯的链接根式<code>&lt;链接&gt;</code><br><a href="http://huixisheng.github.com/" target="_blank" rel="noopener">http://huixisheng.github.com/</a></p>
 <p>特殊的字符需要转义， _ *</p>
 <hr>
-<h2 id="———"><a href="#———" class="headerlink" title="———-"></a>———-</h2><p>引用开始</p>
-<h1 id="MarkDown-团队统一书写规范-v1-0"><a href="#MarkDown-团队统一书写规范-v1-0" class="headerlink" title="MarkDown 团队统一书写规范 v1.0"></a>MarkDown 团队统一书写规范 v1.0</h1><p>由于 MarkDown 语法在细节的书写方式很多，为了让不同个体的文档传产出结构一致，提炼出此规范。<br>该规范遵循 <a href="http://daringfireball.net/projects/markdown/" target="_blank" rel="external">MarkDown 官方语法</a> 以及 <a href="https://github.com/mojombo/github-flavored-markdown/issues/1" target="_blank" rel="external">GitHub MakDown 语法</a>，旨在统一书写格式和代码风格，将多种写法统一。</p>
+<hr>
+<hr>
+<p>引用开始</p>
+<h1 id="MarkDown-团队统一书写规范-v1-0"><a href="#MarkDown-团队统一书写规范-v1-0" class="headerlink" title="MarkDown 团队统一书写规范 v1.0"></a>MarkDown 团队统一书写规范 v1.0</h1><p>由于 MarkDown 语法在细节的书写方式很多，为了让不同个体的文档传产出结构一致，提炼出此规范。<br>该规范遵循 <a href="http://daringfireball.net/projects/markdown/" target="_blank" rel="noopener">MarkDown 官方语法</a> 以及 <a href="https://github.com/mojombo/github-flavored-markdown/issues/1" target="_blank" rel="noopener">GitHub MakDown 语法</a>，旨在统一书写格式和代码风格，将多种写法统一。</p>
 <p><em>注：本文档符合自身规范，可视作demo，参看源码</em></p>
 <p>大家可以 <code>fork</code> 后形成自己团队的规范版本</p>
 <h2 id="1-1全局规范"><a href="#1-1全局规范" class="headerlink" title="1.1全局规范"></a>1.1全局规范</h2><p><a name="top"></a></p>
@@ -369,14 +372,14 @@
 <li><code>#</code>号和文字之间<code>1个空格</code>连接</li>
 <li>标题层级如下，最多6级</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"># 顶级标题 等价于 title 和 &lt;h1&gt;</div><div class="line">## 次级标题 等价于 &lt;h2&gt;</div><div class="line">### 3级标题 等价于 &lt;h3&gt;</div><div class="line">#### 4级标题 等价于 &lt;h4&gt;</div><div class="line">##### 5级标题 等价于 &lt;h5&gt;</div><div class="line">###### 6级标题 等价于 &lt;h6&gt;</div><div class="line">####### 注：此行错误，标题层级最多6级 没有&lt;h7&gt;标签</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 顶级标题 等价于 title 和 &lt;h1&gt;</span><br><span class="line">## 次级标题 等价于 &lt;h2&gt;</span><br><span class="line">### 3级标题 等价于 &lt;h3&gt;</span><br><span class="line">#### 4级标题 等价于 &lt;h4&gt;</span><br><span class="line">##### 5级标题 等价于 &lt;h5&gt;</span><br><span class="line">###### 6级标题 等价于 &lt;h6&gt;</span><br><span class="line">####### 注：此行错误，标题层级最多6级 没有&lt;h7&gt;标签</span><br></pre></td></tr></table></figure>
 <h3 id="加强和强调规范"><a href="#加强和强调规范" class="headerlink" title="加强和强调规范"></a>加强和强调规范</h3><p>以下两种写法都是正确的，请统一为<strong>第一种</strong>，即一律使用 <code>**加强</code> <code>*强调</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">*emphasize*   **strong** 相当于&lt;strong&gt;标签和&lt;em&gt;标签</div><div class="line">_emphasize_   __strong__</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">*emphasize*   **strong** 相当于&lt;strong&gt;标签和&lt;em&gt;标签</span><br><span class="line">_emphasize_   __strong__</span><br></pre></td></tr></table></figure>
 <h3 id="代码块规范"><a href="#代码块规范" class="headerlink" title="代码块规范"></a>代码块规范</h3><ul>
 <li>行内代码使用<code>1对波浪号</code> 如： `hello world!`</li>
 <li>块级代码使用<code>3个波浪号</code> 或 <code>整体4空格缩进</code>，且上下均用<code>整行隔开</code>，如下:  (<strong>占用7行</strong>)</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">   echo &apos;看我源码 - 3个波浪号&apos;;</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">   echo &apos;看我源码 - 3个波浪号&apos;;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;?php
     echo &apos;看我源码 - 4空格缩进&apos;;
 ?&gt;
@@ -384,7 +387,7 @@
 <li>列号<code>1.</code> 或者<code>*</code>后其后内容<code>空格</code>隔开</li>
 <li>列表块前后<code>整行隔开</code> 如下：</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">1. Windows</div><div class="line">2. Mac</div><div class="line">3. iOS</div><div class="line">    * iPhone</div><div class="line">    * iPad</div><div class="line">4. Android</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1. Windows</span><br><span class="line">2. Mac</span><br><span class="line">3. iOS</span><br><span class="line">    * iPhone</span><br><span class="line">    * iPad</span><br><span class="line">4. Android</span><br></pre></td></tr></table></figure>
 <p><strong>实际预览：</strong></p>
 <ol>
 <li>Windows</li>
@@ -396,7 +399,7 @@
 </li>
 <li>Android</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">* Windows</div><div class="line">*  Mac</div><div class="line">*  iOS</div><div class="line">*  Android</div><div class="line">    1. v3.2</div><div class="line">    2. v4.1</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">* Windows</span><br><span class="line">*  Mac</span><br><span class="line">*  iOS</span><br><span class="line">*  Android</span><br><span class="line">    1. v3.2</span><br><span class="line">    2. v4.1</span><br></pre></td></tr></table></figure>
 <p><strong>实际预览：</strong></p>
 <ul>
 <li>Windows</li>
@@ -409,16 +412,16 @@
 </li>
 </ul>
 <h3 id="其他标签规范"><a href="#其他标签规范" class="headerlink" title="其他标签规范"></a>其他标签规范</h3><p>链接和Email<br>Inline:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">An [example](http://url.com/ &quot;Title&quot;)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">An [example](http://url.com/ &quot;Title&quot;)</span><br></pre></td></tr></table></figure>
 <p>引用样式标签 (titles are optional):</p>
 <pre><code>An [example][id]. Then, anywhere
 else in the doc, define the link:
 
 [id]: http://example.com/  &quot;Title&quot;
 </code></pre><p>Email:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">An email &lt;example@example.com&gt; link.</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">An email &lt;example@example.com&gt; link.</span><br></pre></td></tr></table></figure>
 <p>插图<br>Inline (titles are optional):</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">![alt text](/path/img.jpg &quot;Title&quot;)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![alt text](/path/img.jpg &quot;Title&quot;)</span><br></pre></td></tr></table></figure>
 <p>引用式插图:</p>
 <pre><code>![alt text][id]
 
@@ -426,9 +429,13 @@ else in the doc, define the link:
 </code></pre><p>引用块及嵌套</p>
 <blockquote>
 <p>Email-style angle brackets<br>are used for blockquotes.</p>
+</blockquote>
+<blockquote>
 <blockquote>
 <p>And, they can be nested.</p>
 </blockquote>
+</blockquote>
+<blockquote>
 <h4 id="Headers-in-blockquotes"><a href="#Headers-in-blockquotes" class="headerlink" title="Headers in blockquotes"></a>Headers in blockquotes</h4><ul>
 <li>You can quote a list.</li>
 <li>Etc.</li>
@@ -436,7 +443,7 @@ else in the doc, define the link:
 </blockquote>
 <p>内联代码</p>
 <p><code>&lt;code&gt;</code> 段落中的用法</p>
-<p>也可以 <code>`代码中包含波浪号` </code>.<br>代码块</p>
+<p>也可以 <code>`代码中包含波浪号`</code>.<br>代码块</p>
 <p>Indent every line of a code block by at least 4 spaces or 1 tab.<br>代码的每行都最少用4个空格或者一个制表符(tab)</p>
 <p>我是普通文本块</p>
 <pre><code>我是一个预格式化的
@@ -493,13 +500,13 @@ else in the doc, define the link:
 </ul>
 <hr>
 <p>附：参考 Hello-World.md 源码，<em>注意换行的使用</em></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"># Hello-World</div><div class="line"></div><div class="line">这是一个范例文件格式</div><div class="line">我是普通换行</div><div class="line"></div><div class="line">## 我是&lt;h2&gt;标题</div><div class="line"></div><div class="line">我是`&lt;h2&gt;`的内容</div><div class="line"></div><div class="line">## 我是&lt;h3&gt;标题</div><div class="line"></div><div class="line">* Windows</div><div class="line">*  Mac</div><div class="line">*  iOS</div><div class="line">*  Android</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># Hello-World</span><br><span class="line"></span><br><span class="line">这是一个范例文件格式</span><br><span class="line">我是普通换行</span><br><span class="line"></span><br><span class="line">## 我是&lt;h2&gt;标题</span><br><span class="line"></span><br><span class="line">我是`&lt;h2&gt;`的内容</span><br><span class="line"></span><br><span class="line">## 我是&lt;h3&gt;标题</span><br><span class="line"></span><br><span class="line">* Windows</span><br><span class="line">*  Mac</span><br><span class="line">*  iOS</span><br><span class="line">*  Android</span><br></pre></td></tr></table></figure>
 <p>注：引用范例请参看源码底部</p>
-<h4 id="License"><a href="#License" class="headerlink" title="License"></a>License</h4><p>Released under <a href="http://rem.mit-license.org/" target="_blank" rel="external">MIT</a> LICENSE</p>
+<h4 id="License"><a href="#License" class="headerlink" title="License"></a>License</h4><p>Released under <a href="http://rem.mit-license.org/" target="_blank" rel="noopener">MIT</a> LICENSE</p>
 <h2 id="引用结束"><a href="#引用结束" class="headerlink" title="引用结束"></a>引用结束</h2><hr>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
-<li><a href="https://github.com/hzlzh/1MarkDown" target="_blank" rel="external">MarkDown 团队统一书写规范 v1.0</a></li>
-<li><a href="http://xianbai.me/learn-md/article/extension/table.html" target="_blank" rel="external">http://xianbai.me/learn-md/article/extension/table.html</a></li>
+<li><a href="https://github.com/hzlzh/1MarkDown" target="_blank" rel="noopener">MarkDown 团队统一书写规范 v1.0</a></li>
+<li><a href="http://xianbai.me/learn-md/article/extension/table.html" target="_blank" rel="noopener">http://xianbai.me/learn-md/article/extension/table.html</a></li>
 </ol>
 
       
@@ -532,8 +539,8 @@ else in the doc, define the link:
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/cdn/" rel="next" title="前端静态资源CDN公共库整理">
-                <i class="fa fa-chevron-left"></i> 前端静态资源CDN公共库整理
+              <a href="/jquery-plugin-develop/" rel="next" title="jQuery 插件开发">
+                <i class="fa fa-chevron-left"></i> jQuery 插件开发
               </a>
             
           </div>
@@ -617,7 +624,7 @@ else in the doc, define the link:
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">31</span>
+              <span class="site-state-item-count">37</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -627,7 +634,7 @@ else in the doc, define the link:
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">39</span>
+                <span class="site-state-item-count">48</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -692,7 +699,7 @@ else in the doc, define the link:
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1个-号可以生成h1"><span class="nav-number">1.</span> <span class="nav-text">1个#号可以生成h1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2个-号可以生成h2"><span class="nav-number">1.1.</span> <span class="nav-text">2个#号可以生成h2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3个-号可以生成h3"><span class="nav-number">1.1.1.</span> <span class="nav-text">3个#号可以生成h3</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#———"><span class="nav-number">1.2.</span> <span class="nav-text">———-</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MarkDown-团队统一书写规范-v1-0"><span class="nav-number">2.</span> <span class="nav-text">MarkDown 团队统一书写规范 v1.0</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1全局规范"><span class="nav-number">2.1.</span> <span class="nav-text">1.1全局规范</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#格式规范"><span class="nav-number">2.2.</span> <span class="nav-text">格式规范</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#标题结构格式"><span class="nav-number">2.2.1.</span> <span class="nav-text">标题结构格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加强和强调规范"><span class="nav-number">2.2.2.</span> <span class="nav-text">加强和强调规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码块规范"><span class="nav-number">2.2.3.</span> <span class="nav-text">代码块规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列表写法"><span class="nav-number">2.2.4.</span> <span class="nav-text">列表写法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他标签规范"><span class="nav-number">2.2.5.</span> <span class="nav-text">其他标签规范</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Headers-in-blockquotes"><span class="nav-number">2.2.5.1.</span> <span class="nav-text">Headers in blockquotes</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表格规范"><span class="nav-number">2.2.6.</span> <span class="nav-text">表格规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#页内锚标记"><span class="nav-number">2.2.7.</span> <span class="nav-text">页内锚标记</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#License"><span class="nav-number">2.2.7.1.</span> <span class="nav-text">License</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引用结束"><span class="nav-number">2.3.</span> <span class="nav-text">引用结束</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">2.4.</span> <span class="nav-text">参考</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1个-号可以生成h1"><span class="nav-number">1.</span> <span class="nav-text">1个#号可以生成h1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2个-号可以生成h2"><span class="nav-number">1.1.</span> <span class="nav-text">2个#号可以生成h2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3个-号可以生成h3"><span class="nav-number">1.1.1.</span> <span class="nav-text">3个#号可以生成h3</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MarkDown-团队统一书写规范-v1-0"><span class="nav-number">2.</span> <span class="nav-text">MarkDown 团队统一书写规范 v1.0</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1全局规范"><span class="nav-number">2.1.</span> <span class="nav-text">1.1全局规范</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#格式规范"><span class="nav-number">2.2.</span> <span class="nav-text">格式规范</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#标题结构格式"><span class="nav-number">2.2.1.</span> <span class="nav-text">标题结构格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加强和强调规范"><span class="nav-number">2.2.2.</span> <span class="nav-text">加强和强调规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码块规范"><span class="nav-number">2.2.3.</span> <span class="nav-text">代码块规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列表写法"><span class="nav-number">2.2.4.</span> <span class="nav-text">列表写法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他标签规范"><span class="nav-number">2.2.5.</span> <span class="nav-text">其他标签规范</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Headers-in-blockquotes"><span class="nav-number">2.2.5.1.</span> <span class="nav-text">Headers in blockquotes</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表格规范"><span class="nav-number">2.2.6.</span> <span class="nav-text">表格规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#页内锚标记"><span class="nav-number">2.2.7.</span> <span class="nav-text">页内锚标记</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#License"><span class="nav-number">2.2.7.1.</span> <span class="nav-text">License</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引用结束"><span class="nav-number">2.3.</span> <span class="nav-text">引用结束</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">2.4.</span> <span class="nav-text">参考</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
@@ -711,7 +718,7 @@ else in the doc, define the link:
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
