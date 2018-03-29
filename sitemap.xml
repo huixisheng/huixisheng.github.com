@@ -2,6 +2,48 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://huixisheng.github.io/object-assign/</loc>
+    
+    <lastmod>2018-03-29T14:35:04.590Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://huixisheng.github.io/ci-build-app/</loc>
+    
+    <lastmod>2018-03-28T16:11:39.361Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://huixisheng.github.io/mocha/</loc>
+    
+    <lastmod>2018-03-28T15:58:05.157Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://huixisheng.github.io/unit-test/</loc>
+    
+    <lastmod>2018-03-28T15:57:51.869Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://huixisheng.github.io/Todo/docs/xcodebuild.html</loc>
+    
+    <lastmod>2018-03-28T13:01:13.155Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://huixisheng.github.io/cnpmjs-install/</loc>
+    
+    <lastmod>2018-03-27T15:01:32.023Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://huixisheng.github.io/MacOSX-php/</loc>
     
     <lastmod>2018-03-27T12:52:49.074Z</lastmod>
@@ -324,13 +366,6 @@
   </url>
   
   <url>
-    <loc>http://huixisheng.github.io/Todo/docs/xcodebuild.html</loc>
-    
-    <lastmod>2017-05-27T16:58:57.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://huixisheng.github.io/Todo/docs/%E8%B5%84%E6%BA%90.html</loc>
     
     <lastmod>2017-05-24T15:23:08.000Z</lastmod>
@@ -520,14 +555,7 @@
   </url>
   
   <url>
-    <loc>http://huixisheng.github.io/jquery-plugin-develop/</loc>
-    
-    <lastmod>2016-10-22T09:40:39.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://huixisheng.github.io/MacOSX-powerboot/</loc>
+    <loc>http://huixisheng.github.io/something-about-sublime/</loc>
     
     <lastmod>2016-10-22T09:40:39.000Z</lastmod>
     
@@ -541,7 +569,14 @@
   </url>
   
   <url>
-    <loc>http://huixisheng.github.io/something-about-sublime/</loc>
+    <loc>http://huixisheng.github.io/MacOSX-powerboot/</loc>
+    
+    <lastmod>2016-10-22T09:40:39.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://huixisheng.github.io/jquery-plugin-develop/</loc>
     
     <lastmod>2016-10-22T09:40:39.000Z</lastmod>
     

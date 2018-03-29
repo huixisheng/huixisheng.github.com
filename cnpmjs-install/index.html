@@ -1,0 +1,817 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="nodejs,cnpmjs," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="前端开发者说" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="cnpmjs 可用于企业的前端私有包管理。淘宝NPM镜像就是用这个搭建的。 npmjs私有包是要收费的，对于公司而言更倾向于自己部署，一是省钱，二是一些含有敏感内容的包放到其他平时总是不放心。 本文将简单记录下实际安装过程中碰到的问题，基本的安装可以移步官方文档。 安装1234567891011121314151617181920212223242526272829$ yum install -y">
+<meta name="keywords" content="nodejs,cnpmjs">
+<meta property="og:type" content="article">
+<meta property="og:title" content="简单介绍cnpmjs安装和碰到的问题">
+<meta property="og:url" content="http://huixisheng.github.io/cnpmjs-install/index.html">
+<meta property="og:site_name" content="前端开发者说">
+<meta property="og:description" content="cnpmjs 可用于企业的前端私有包管理。淘宝NPM镜像就是用这个搭建的。 npmjs私有包是要收费的，对于公司而言更倾向于自己部署，一是省钱，二是一些含有敏感内容的包放到其他平时总是不放心。 本文将简单记录下实际安装过程中碰到的问题，基本的安装可以移步官方文档。 安装1234567891011121314151617181920212223242526272829$ yum install -y">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://huixisheng.github.io/images/cnpmjs/aliyun.jpeg">
+<meta property="og:image" content="http://huixisheng.github.io/images/cnpmjs/mac-permission-denied.jpeg">
+<meta property="og:updated_time" content="2018-03-27T15:01:32.023Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="简单介绍cnpmjs安装和碰到的问题">
+<meta name="twitter:description" content="cnpmjs 可用于企业的前端私有包管理。淘宝NPM镜像就是用这个搭建的。 npmjs私有包是要收费的，对于公司而言更倾向于自己部署，一是省钱，二是一些含有敏感内容的包放到其他平时总是不放心。 本文将简单记录下实际安装过程中碰到的问题，基本的安装可以移步官方文档。 安装1234567891011121314151617181920212223242526272829$ yum install -y">
+<meta name="twitter:image" content="http://huixisheng.github.io/images/cnpmjs/aliyun.jpeg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '9599',
+      author: '悔惜晟'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://huixisheng.github.io/cnpmjs-install/"/>
+
+
+  <title> 简单介绍cnpmjs安装和碰到的问题 | 前端开发者说 </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">前端开发者说</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">记录开发的故事</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                简单介绍cnpmjs安装和碰到的问题
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2018-03-27T21:37:18+08:00" content="2018-03-27">
+              2018-03-27
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/cnpmjs-install/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="cnpmjs-install/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="https://github.com/cnpm/cnpmjs.org" target="_blank" rel="noopener">cnpmjs</a> 可用于企业的前端私有包管理。淘宝<code>NPM</code>镜像就是用这个搭建的。</p>
+<p><a href="https://www.npmjs.org/" target="_blank" rel="noopener">npmjs</a>私有包是要收费的，对于公司而言更倾向于自己部署，一是省钱，二是一些含有敏感内容的包放到其他平时总是不放心。</p>
+<p>本文将简单记录下实际安装过程中碰到的问题，基本的安装可以移步<a href="https://github.com/cnpm/cnpmjs.org/wiki" target="_blank" rel="noopener">官方文档</a>。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">$ yum install -y nodejs</span><br><span class="line">$ yun install git</span><br><span class="line">$ git clone git://github.com/cnpm/cnpmjs.org.git $HOME/cnpmjs.org</span><br><span class="line"></span><br><span class="line"># centos7 安装失败</span><br><span class="line">$ yum install mysql mysql-server</span><br><span class="line"></span><br><span class="line">$ yum update</span><br><span class="line">$ yum localinstall mysql-community-release-el7-5.noarch.rpm</span><br><span class="line">$ yum repolist enabled | grep &quot;mysql.*-community.*&quot;</span><br><span class="line">$ yum repolist all | grep mysql</span><br><span class="line">$ yum-config-manager --disable mysql56-community</span><br><span class="line">$ sudo yum search yum-config-manager</span><br><span class="line">$ yum install yum-utils</span><br><span class="line">$ yum-config-manager --disable mysql56-community</span><br><span class="line">$ yum-config-manager --enable mysql57-community-dmr</span><br><span class="line">$ yum repolist all | grep mysql</span><br><span class="line">$ yum repolist enabled | grep mysql</span><br><span class="line">$ yum install mysql-serve</span><br><span class="line"></span><br><span class="line"># centos7 相关mysql命令</span><br><span class="line">$ service mysqld status</span><br><span class="line">$ service mysqld stop</span><br><span class="line">$ service mysqld start</span><br><span class="line"></span><br><span class="line"># centos7 关闭防火墙 #</span><br><span class="line">$ systemctl stop firewalld.service</span><br><span class="line">$ systemctl disable firewalld.service #禁止firewall开机启动</span><br><span class="line">$ systemctl stop firewall // centos7以下的版本命令</span><br></pre></td></tr></table></figure>
+<p>以上部分命令来源于网络，时隔太久，找不到相关的出处，😶。</p>
+<h2 id="发布的模块npm-install-报错"><a href="#发布的模块npm-install-报错" class="headerlink" title="发布的模块npm install 报错"></a>发布的模块npm install 报错</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[npminstall:get] retry GET http://xx.xx.xx.xx:7001xx-debug after 100ms, retry left 4, error: SyntaxError: Unexpected token l in JSON at position 0</span><br><span class="line">...</span><br><span class="line">SyntaxError: Unexpected token l in JSON at position 0</span><br><span class="line">    at JSON.parse (&lt;anonymous&gt;)</span><br><span class="line">    at _get (/usr/local/lib/node_modules/cnpm/node_modules/npminstall/lib/get.js:70:26)</span><br><span class="line">    at _get.next (&lt;anonymous&gt;)</span><br><span class="line">    at onFulfilled (/usr/local/lib/node_modules/cnpm/node_modules/co/index.js:65:19)</span><br><span class="line">    at &lt;anonymous&gt;</span><br><span class="line">    at process._tickCallback (internal/process/next_tick.js:188:7)</span><br><span class="line">npminstall version: 3.2.1</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>发现原因是<code>npm&gt;=5.6</code>的时候有这个问题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">➜  huixisheng.github.com git:(dev) ✗ npm -v</span><br><span class="line">5.4.1</span><br><span class="line">➜  huixisheng.github.com git:(dev) ✗ cnpm -v</span><br><span class="line">cnpm@5.1.1 (/usr/local/lib/node_modules/cnpm/lib/parse_argv.js)</span><br><span class="line">npm@5.6.0 (/usr/local/lib/node_modules/cnpm/node_modules/npm/lib/npm.js)</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><a href="https://github.com/cnpm/cnpmjs.org/issues/1110" target="_blank" rel="noopener">https://github.com/cnpm/cnpmjs.org/issues/1110</a></li>
+</ul>
+<h2 id="配置修改"><a href="#配置修改" class="headerlink" title="配置修改"></a>配置修改</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br></pre></td><td class="code"><pre><span class="line">   /**</span><br><span class="line">    * Cluster mode</span><br><span class="line">    */</span><br><span class="line">-  enableCluster: false,</span><br><span class="line">+  enableCluster: true,</span><br><span class="line">   numCPUs: os.cpus().length,</span><br><span class="line"></span><br><span class="line">   /*</span><br><span class="line">@@ -27,7 +27,7 @@ var config = &#123;</span><br><span class="line"></span><br><span class="line">   registryPort: 7001,</span><br><span class="line">   webPort: 7002,</span><br><span class="line">   // 用于外部ip访问</span><br><span class="line">-  bindingHost: &apos;127.0.0.1&apos;, // only binding on 127.0.0.1 for local access</span><br><span class="line">+  //bindingHost: &apos;127.0.0.1&apos;, // only binding on 127.0.0.1 for local access</span><br><span class="line"></span><br><span class="line">   // debug mode</span><br><span class="line">   // if in debug mode, some middleware like limit wont load</span><br><span class="line">@@ -62,10 +62,14 @@ var config = &#123;</span><br><span class="line"></span><br><span class="line">   // default system admins</span><br><span class="line">   admins: &#123;</span><br><span class="line">+    huixisheng: &apos;huixisheng@gmail.com&apos;</span><br><span class="line">   &#125;,</span><br><span class="line"></span><br><span class="line">   // email notification for errors</span><br><span class="line">@@ -98,13 +102,13 @@ var config = &#123;</span><br><span class="line">    */</span><br><span class="line"></span><br><span class="line">   database: &#123;</span><br><span class="line">-    db: &apos;cnpmjs_test&apos;,</span><br><span class="line">+    db: &apos;cnpm&apos;,</span><br><span class="line">     username: &apos;root&apos;,</span><br><span class="line">-    password: &apos;&apos;,</span><br><span class="line">+    password: &apos;mysqlpassword&apos;,</span><br><span class="line"></span><br><span class="line">     // the sql dialect of the database</span><br><span class="line">     // - currently supported: &apos;mysql&apos;, &apos;sqlite&apos;, &apos;postgres&apos;, &apos;mariadb&apos;</span><br><span class="line">-    dialect: &apos;sqlite&apos;,</span><br><span class="line">+    dialect: &apos;mysql&apos;,</span><br><span class="line"></span><br><span class="line">     // custom host; default: 127.0.0.1</span><br><span class="line">     host: &apos;127.0.0.1&apos;,</span><br><span class="line">@@ -135,7 +139,8 @@ var config = &#123;</span><br><span class="line">   downloadRedirectToNFS: false,</span><br><span class="line"></span><br><span class="line">   // registry url name</span><br><span class="line">-  registryHost: &apos;r.cnpmjs.org&apos;,</span><br><span class="line">+  registryHost: &apos;xx.xx.xx.xx:7001&apos;,</span><br><span class="line">+  // registryHost: &apos;r.cnpmjs.org&apos;,</span><br><span class="line"></span><br><span class="line">   /**</span><br><span class="line">    * registry mode config</span><br><span class="line">@@ -144,11 +149,11 @@ var config = &#123;</span><br><span class="line">   // enable private mode or not</span><br><span class="line">   // private mode: only admins can publish, other users just can sync package from source npm</span><br><span class="line">   // public mode: all users can publish</span><br><span class="line">-  enablePrivate: false,</span><br><span class="line">   // 注册用户才可以发布模块</span><br><span class="line">+  enablePrivate: true,</span><br><span class="line"></span><br><span class="line">   // registry scopes, if don&apos;t set, means do not support scopes</span><br><span class="line">-  scopes: [ &apos;@cnpm&apos;, &apos;@cnpmtest&apos;, &apos;@cnpm-test&apos; ],</span><br><span class="line">-</span><br><span class="line">+  // scopes: [ &apos;@cnpm&apos;, &apos;@cnpmtest&apos;, &apos;@cnpm-test&apos;, &apos;@cosme&apos; ],</span><br><span class="line">+  scopes: [],</span><br><span class="line">   // some registry already have some private packages in global scope</span><br><span class="line">   // but we want to treat them as scoped private packages,</span><br><span class="line">   // so you can use this white list.</span><br><span class="line">@@ -169,6 +174,7 @@ var config = &#123;</span><br><span class="line">   // If you want to directly sync from official npm&apos;s registry</span><br><span class="line">   // please drop them an email first</span><br><span class="line">   sourceNpmRegistry: &apos;https://registry.npm.taobao.org&apos;,</span><br><span class="line">+  // sourceNpmRegistry: &apos;http://xx.xx.xx.xx:7001&apos;,</span><br><span class="line"></span><br><span class="line">   // upstream registry is base on cnpm/cnpmjs.org or not</span><br><span class="line">   // if your upstream is official npm registry, please turn it off</span><br><span class="line">@@ -197,8 +203,6 @@ var config = &#123;</span><br><span class="line"></span><br><span class="line">   // sync devDependencies or not, default is false</span><br><span class="line">   syncDevDependencies: false,</span><br><span class="line">-  // try to remove all deleted versions from original registry</span><br><span class="line">-  syncDeletedVersions: true,</span><br><span class="line"></span><br><span class="line">   // changes streaming sync</span><br><span class="line">   syncChangesStream: false,</span><br><span class="line">@@ -215,7 +219,7 @@ var config = &#123;</span><br><span class="line"></span><br><span class="line">   // always-auth https://docs.npmjs.com/misc/config#always-auth</span><br><span class="line">   // Force npm to always require authentication when accessing the registry, even for GET requests.</span><br><span class="line">-  alwaysAuth: false,</span><br><span class="line">    // 命令安装的时候也要输入命名</span><br><span class="line">+  alwaysAuth: true,</span><br><span class="line"></span><br><span class="line">   // if you&apos;re behind firewall, need to request through http proxy, please set this</span><br><span class="line">   // e.g.: `httpProxy: &apos;http://proxy.mycompany.com:8080&apos;`</span><br><span class="line">diff --git a/cnpmjs.org/servers/registry.js b/cnpmjs.org/servers/registry.js</span><br><span class="line">index d2758e5..2d67184 100644</span><br><span class="line">--- a/cnpmjs.org/servers/registry.js</span><br><span class="line">+++ b/cnpmjs.org/servers/registry.js</span><br><span class="line">@@ -34,7 +34,7 @@ app.use(cors(&#123;</span><br><span class="line">   allowMethods: &apos;GET,HEAD&apos;,</span><br><span class="line"> &#125;));</span><br><span class="line"> // 关闭用户注册接口</span><br><span class="line"> app.use(auth());</span><br><span class="line">-app.use(proxyToNpm());</span><br><span class="line">+//app.use(proxyToNpm());</span><br><span class="line"> app.use(notFound);</span><br><span class="line"></span><br><span class="line"> if (config.enableCompress) &#123;</span><br><span class="line">diff --git a/cnpmjs.org/view/web/footer.html b/cnpmjs.org/view/web/footer.html</span><br><span class="line">index e7a0f04..d432a6d 100644</span><br><span class="line">--- a/cnpmjs.org/view/web/footer.html</span><br><span class="line">+++ b/cnpmjs.org/view/web/footer.html</span><br><span class="line">@@ -1,5 +1,4 @@</span><br><span class="line">-Copyright 2013 - 2016 &amp;copy; cnpmjs.org</span><br><span class="line">+Copyright 2013 - 2018 &amp;copy; cnpmjs.org</span><br><span class="line"> |</span><br><span class="line"> &lt;a href=&quot;/&quot;&gt;Home&lt;/a&gt;</span><br><span class="line"> |</span><br><span class="line">-&lt;script&gt;var cnzz_protocol = ((&quot;https:&quot; == document.location.protocol) ? &quot; https://&quot; : &quot; http://&quot;);document.write(unescape(&quot;%3Cspan id=&apos;cnzz_stat_icon_5757157&apos;%3E%3C/span%3E%3Cscript src=&apos;&quot; + cnzz_protocol + &quot;s17.cnzz.com/stat.php%3Fid%3D5757157%26online%3D1%26show%3Dline&apos; type=&apos;text/javascript&apos;%3E%3C/script%3E&quot;));&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="相关问题"><a href="#相关问题" class="headerlink" title="相关问题"></a>相关问题</h2><h3 id="阿里云无法通过ip-端口访问"><a href="#阿里云无法通过ip-端口访问" class="headerlink" title="阿里云无法通过ip:端口访问"></a>阿里云无法通过ip:端口访问</h3><p><img src="/images/cnpmjs/aliyun.jpeg" alt=""></p>
+<h3 id="ssh无法登录阿里云服务器"><a href="#ssh无法登录阿里云服务器" class="headerlink" title="ssh无法登录阿里云服务器"></a>ssh无法登录阿里云服务器</h3><p><img src="/images/cnpmjs/mac-permission-denied.jpeg" alt=""></p>
+<h3 id="cnpm同步文件的存储位置在哪里"><a href="#cnpm同步文件的存储位置在哪里" class="headerlink" title="cnpm同步文件的存储位置在哪里"></a>cnpm同步文件的存储位置在哪里</h3><p>默认是在 $HOME/.cnpmjs.org/nfs 下面。具体看config配置<br><a href="https://github.com/cnpm/cnpmjs.org/issues/635" target="_blank" rel="noopener">https://github.com/cnpm/cnpmjs.org/issues/635</a></p>
+<h3 id="失败-amp-如何加入权限验证"><a href="#失败-amp-如何加入权限验证" class="headerlink" title="失败 &amp; 如何加入权限验证"></a>失败 &amp; 如何加入权限验证</h3><p><a href="https://github.com/cnpm/cnpmjs.org/issues/925" target="_blank" rel="noopener">https://github.com/cnpm/cnpmjs.org/issues/925</a></p>
+<h3 id="如何修改admin的密码？"><a href="#如何修改admin的密码？" class="headerlink" title="如何修改admin的密码？"></a>如何修改admin的密码？</h3><ul>
+<li><a href="https://github.com/cnpm/cnpmjs.org/issues/1050" target="_blank" rel="noopener">https://github.com/cnpm/cnpmjs.org/issues/1050</a></li>
+<li><a href="https://github.com/cnpm/cnpmjs.org/issues/385" target="_blank" rel="noopener">https://github.com/cnpm/cnpmjs.org/issues/385</a></li>
+</ul>
+<h3 id="cnpm添加用户，以及admin用户如何publish"><a href="#cnpm添加用户，以及admin用户如何publish" class="headerlink" title="cnpm添加用户，以及admin用户如何publish"></a>cnpm添加用户，以及admin用户如何publish</h3><ul>
+<li><a href="https://github.com/cnpm/cnpmjs.org/issues/431" target="_blank" rel="noopener">https://github.com/cnpm/cnpmjs.org/issues/431</a></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/nodejs/" rel="tag">#nodejs</a>
+          
+            <a href="/tags/cnpmjs/" rel="tag">#cnpmjs</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/scaffold/" rel="next" title="项目脚手架">
+                <i class="fa fa-chevron-left"></i> 项目脚手架
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/mocha/" rel="prev" title="mocha">
+                mocha <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="huixisheng" />
+          <p class="site-author-name" itemprop="name">huixisheng</p>
+          <p class="site-description motion-element" itemprop="description">前端路漫漫兮，吾将上下而求索</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">42</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">53</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/huixisheng" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/huixisheng" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/huixisheng" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#发布的模块npm-install-报错"><span class="nav-number">2.</span> <span class="nav-text">发布的模块npm install 报错</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置修改"><span class="nav-number">3.</span> <span class="nav-text">配置修改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关问题"><span class="nav-number">4.</span> <span class="nav-text">相关问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#阿里云无法通过ip-端口访问"><span class="nav-number">4.1.</span> <span class="nav-text">阿里云无法通过ip:端口访问</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ssh无法登录阿里云服务器"><span class="nav-number">4.2.</span> <span class="nav-text">ssh无法登录阿里云服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cnpm同步文件的存储位置在哪里"><span class="nav-number">4.3.</span> <span class="nav-text">cnpm同步文件的存储位置在哪里</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#失败-amp-如何加入权限验证"><span class="nav-number">4.4.</span> <span class="nav-text">失败 &amp; 如何加入权限验证</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何修改admin的密码？"><span class="nav-number">4.5.</span> <span class="nav-text">如何修改admin的密码？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cnpm添加用户，以及admin用户如何publish"><span class="nav-number">4.6.</span> <span class="nav-text">cnpm添加用户，以及admin用户如何publish</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">huixisheng</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'huixisheng';
+      var disqus_identifier = 'cnpmjs-install/';
+      var disqus_title = "简单介绍cnpmjs安装和碰到的问题";
+      var disqus_url = 'http://huixisheng.github.io/cnpmjs-install/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = false;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title >= 0 || index_content >= 0 ){
+                                isMatch = true;
+								if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            } 
+							
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>

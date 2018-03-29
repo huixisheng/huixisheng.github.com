@@ -257,6 +257,652 @@
             
               
                 
+                <a class="post-title-link" href="/object-assign/" itemprop="url">
+                  Object.assign引起的页面显示空白
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2018-03-29T21:48:45+08:00" content="2018-03-29">
+              2018-03-29
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/object-assign/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="object-assign/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>线上的页面在华为的设备出现空白，通过真机调试发现报错如下:</p>
+<p><img src="/images/es6/object-assign/huawei-P7-L07.jpeg" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Uncaught TypeError: Object function Object() &#123; [native code] &#125; has no method &apos;assign&apos;</span><br></pre></td></tr></table></figure>
+<p><img src="/images/es6/object-assign/compatibility.jpeg" alt=""></p>
+<p>解决版本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import &apos;core-js/fn/object/assign&apos;;</span><br></pre></td></tr></table></figure></p>
+<h2 id="其他相关问题解决"><a href="#其他相关问题解决" class="headerlink" title="其他相关问题解决"></a>其他相关问题解决</h2><p>ant-design <a href="https://github.com/ant-design/ant-design-mobile/issues/87" target="_blank" rel="noopener">直接使用Object.assign 有兼容性问题（Android5，iOS8.4） #87</a></p>
+<blockquote>
+<p>统一使用 object-assign</p>
+</blockquote>
+<p><a href="https://stackoverflow.com/questions/28346115/how-do-i-get-object-assign-to-work-with-6to5-polyfill" target="_blank" rel="noopener">How do I get Object.assign to work with 6to5 polyfill?</a></p>
+<h2 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h2><ul>
+<li><a href="https://kangax.github.io/compat-table/es6/#test-Proxy,_internal_&#39;get&#39;_calls_Object.assign" target="_blank" rel="noopener">https://kangax.github.io/compat-table/es6/#test-Proxy,_internal_&#39;get&#39;_calls_Object.assign</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/assign" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/assign</a></li>
+<li><a href="http://ruanyf.github.io/es-checker/index.cn.html" target="_blank" rel="noopener">浏览器es支持检测</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/ci-build-app/" itemprop="url">
+                  自动化打包App
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2018-03-29T00:01:09+08:00" content="2018-03-29">
+              2018-03-29
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/ci-build-app/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="ci-build-app/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="jenkins安装"><a href="#jenkins安装" class="headerlink" title="jenkins安装"></a>jenkins安装</h2><h2 id="cocoapods"><a href="#cocoapods" class="headerlink" title="cocoapods"></a>cocoapods</h2><h2 id="xcodebuild"><a href="#xcodebuild" class="headerlink" title="xcodebuild"></a>xcodebuild</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pod update --verbose --no-repo-update</span><br></pre></td></tr></table></figure>
+<h2 id="推荐阅读"><a href="#推荐阅读" class="headerlink" title="推荐阅读"></a>推荐阅读</h2><h2 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h2>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/unit-test/" itemprop="url">
+                  unit-test
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2018-03-27T23:36:50+08:00" content="2018-03-27">
+              2018-03-27
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/unit-test/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="unit-test/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="测试框架"><a href="#测试框架" class="headerlink" title="测试框架"></a>测试框架</h2><ul>
+<li><a href="http://karma-runner.github.io/0.12/index.html" target="_blank" rel="noopener">karma</a></li>
+<li><a href="https://mochajs.org" target="_blank" rel="noopener">https://mochajs.org</a></li>
+<li>Jasmine</li>
+<li>Qunit</li>
+<li>JsTestDriver</li>
+<li>JSUnit</li>
+<li><a href="https://github.com/totorojs/totoro" target="_blank" rel="noopener">https://github.com/totorojs/totoro</a></li>
+</ul>
+<h3 id="测试框架对比"><a href="#测试框架对比" class="headerlink" title="测试框架对比"></a>测试框架对比</h3><ul>
+<li><a href="http://www.zuojj.com/archives/440.html" target="_blank" rel="noopener">Javascript单元测试框架Qunit和Jasmine的比较</a></li>
+</ul>
+<h2 id="断言库"><a href="#断言库" class="headerlink" title="断言库"></a>断言库</h2><ul>
+<li><a href="http://chaijs.com" target="_blank" rel="noopener">chai</a></li>
+</ul>
+<h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><ul>
+<li><a href="https://github.com/ruanyf/mocha-demos" target="_blank" rel="noopener">ruanyf/mocha-demos</a> <a href="http://www.ruanyifeng.com/blog/2015/12/a-mocha-tutorial-of-examples.html" target="_blank" rel="noopener">测试框架 Mocha 实例教程</a></li>
+<li><a href="http://wiki.jikexueyuan.com/project/node-lessons/mocha-chai-phantomjs.html" target="_blank" rel="noopener">http://wiki.jikexueyuan.com/project/node-lessons/mocha-chai-phantomjs.html</a></li>
+</ul>
+<h2 id="BDD-TDD区别"><a href="#BDD-TDD区别" class="headerlink" title="BDD / TDD区别"></a>BDD / TDD区别</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">// TDD</span><br><span class="line">suite(&apos;Array&apos;, function() &#123;</span><br><span class="line">  setup(function() &#123;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  test(&apos;equal -1 when index beyond array length&apos;, function() &#123;</span><br><span class="line">    assert.equal(-1, [1,2,3].indexOf(4));</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// BDD</span><br><span class="line">describe(&apos;Array&apos;, function() &#123;</span><br><span class="line">  before(function() &#123;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  it(&apos;should return -1 when no such index&apos;, function() &#123;</span><br><span class="line">    [1,2,3].indexOf(4).should.equal(-1);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>来自: <a href="http://taobaofed.org/blog/2015/12/10/nodejs-unit-tests/" target="_blank" rel="noopener">http://taobaofed.org/blog/2015/12/10/nodejs-unit-tests/</a></p>
+</blockquote>
+<ul>
+<li><a href="http://www.cnblogs.com/ustbwuyi/archive/2012/10/26/2741223.html" target="_blank" rel="noopener">关于TDD、BDD和DDD的一些看法</a></li>
+<li><a href="http://ilucas.me/2016/03/07/difference-between-tdd-and-bdd/" target="_blank" rel="noopener">TDD与BDD的差别</a></li>
+</ul>
+<h2 id="覆盖率"><a href="#覆盖率" class="headerlink" title="覆盖率"></a>覆盖率</h2><ul>
+<li>istanbul</li>
+</ul>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><pre><code>-- recursive执行子目录
+</code></pre><blockquote>
+<p>Mocha默认运行test子目录里面的测试脚本。所以，一般都会把测试脚本放在test目录里面，然后执行mocha就不需要参数了。</p>
+</blockquote>
+<p>mocha.opts</p>
+<h2 id="api-接口测试"><a href="#api-接口测试" class="headerlink" title="api 接口测试"></a>api 接口测试</h2><ul>
+<li><a href="https://testerhome.com/topics/5372" target="_blank" rel="noopener">接口测试 测试来带个节奏之 API 测试工具篇</a></li>
+<li><a href="http://pythonhackers.com/p/tsq/node-autotest" target="_blank" rel="noopener">http://pythonhackers.com/p/tsq/node-autotest</a></li>
+<li><a href="https://log.zvz.im/2016/06/07/Make-your-Nodejs-API-robust/" target="_blank" rel="noopener">让你的 Node.js 应用接口稳如狗：如何使用 Mocha, Chai 和 SuperTest 写测试代码</a></li>
+<li><a href="https://www.npmjs.com/package/moa-api" target="_blank" rel="noopener">https://www.npmjs.com/package/moa-api</a></li>
+<li><a href="http://www.bayescafe.com/tools/use-postman-to-test-api-automatically.html" target="_blank" rel="noopener">API自动化测试利器——Postman</a></li>
+<li><a href="http://blog.kazaff.me/2016/08/24/casperjs+mocha+chai搭建E2E测试环境/" target="_blank" rel="noopener">casperjs+mocha+chai搭建E2E测试环境</a></li>
+</ul>
+<h2 id="相关文档"><a href="#相关文档" class="headerlink" title="相关文档"></a>相关文档</h2><ul>
+<li><a href="http://www.jianshu.com/p/9c78548caffa" target="_blank" rel="noopener">Mocha.js官方文档翻译 —— 简单、灵活、有趣</a></li>
+<li><a href="https://www.zhihu.com/question/20075367" target="_blank" rel="noopener">在Node.js上用什么测试框架好？</a></li>
+<li><a href="http://www.infoq.com/cn/articles/virtual-panel-tdd-bdd" target="_blank" rel="noopener">虚拟座谈会：代码测试比率、测试驱动开发及行为驱动开发</a></li>
+<li><a href="https://www.zhihu.com/question/29922082" target="_blank" rel="noopener">如何进行前端自动化测试？</a></li>
+<li><a href="https://gold.xitu.io/entry/57dbc89c7db2a24eb1a99604" target="_blank" rel="noopener">前端单元测试探索</a></li>
+<li><a href="https://github.com/kuangwk/myblog/issues/1" target="_blank" rel="noopener">前端自动化测试工具总结 </a></li>
+<li><a href="https://testerhome.com/topics/5189" target="_blank" rel="noopener">前端测试工具集锦</a></li>
+</ul>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
+<li><a href="http://sinonjs.org/" target="_blank" rel="noopener">sinon</a></li>
+<li><a href="https://github.com/visionmedia/superagent/tree/master/test/node" target="_blank" rel="noopener">https://github.com/visionmedia/superagent/tree/master/test/node</a></li>
+<li>supertest</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/mocha/" itemprop="url">
+                  mocha
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2018-03-27T23:35:12+08:00" content="2018-03-27">
+              2018-03-27
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/mocha/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="mocha/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><ul>
+<li><a href="https://github.com/huixisheng/lab/tree/master/test" target="_blank" rel="noopener">https://github.com/huixisheng/lab/tree/master/test</a></li>
+<li><a href="https://github.com/ruanyf/mocha-demos" target="_blank" rel="noopener">https://github.com/ruanyf/mocha-demos</a></li>
+<li><a href="https://github.com/mochajs/mocha/tree/master/test" target="_blank" rel="noopener">https://github.com/mochajs/mocha/tree/master/test</a></li>
+<li><a href="https://github.com/vuejs/vue-test-utils-mocha-webpack-example" target="_blank" rel="noopener">https://github.com/vuejs/vue-test-utils-mocha-webpack-example</a></li>
+<li><a href="https://github.com/mochajs/mocha/tree/f24607e6b04d129610613592d19f5a5af9b65d51/docs/example" target="_blank" rel="noopener">https://github.com/mochajs/mocha/tree/f24607e6b04d129610613592d19f5a5af9b65d51/docs/example</a></li>
+<li><a href="https://github.com/airware/webdriver-mocha-async-await-example" target="_blank" rel="noopener">https://github.com/airware/webdriver-mocha-async-await-example</a></li>
+</ul>
+<h2 id="其他关键词"><a href="#其他关键词" class="headerlink" title="其他关键词"></a>其他关键词</h2><ul>
+<li>SuperTest</li>
+<li>Istanbul</li>
+<li>Magnum CI</li>
+<li>superagent <a href="http://visionmedia.github.io/superagent/" target="_blank" rel="noopener">http://visionmedia.github.io/superagent/</a></li>
+<li>karma</li>
+<li>casperjs</li>
+</ul>
+<h2 id="碰到的问题"><a href="#碰到的问题" class="headerlink" title="碰到的问题"></a>碰到的问题</h2><h3 id="如何测试es6的module"><a href="#如何测试es6的module" class="headerlink" title="如何测试es6的module"></a>如何测试es6的module</h3><p>出现如下报错<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SyntaxError: Unexpected token import</span><br><span class="line">    at createScript (vm.js:80:10)</span><br><span class="line">    at Object.runInThisContext (vm.js:139:10)</span><br><span class="line">    at Module._compile (module.js:607:28)</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ./node_modules/mocha/bin/mocha --require babel-register --require babel-polyfill</span><br></pre></td></tr></table></figure>
+<p><code>mocha --compilers js:babel-register</code> 已经废弃。具体见<a href="https://github.com/mochajs/mocha/wiki/compilers-deprecation" target="_blank" rel="noopener">compilers deprecation</a></p>
+<p>相关issue <a href="https://github.com/mochajs/mocha/issues/3228" target="_blank" rel="noopener">SyntaxError: Unexpected token import #3228</a>  <a href="https://github.com/mochajs/mocha/issues/2655" target="_blank" rel="noopener">ES6 import not working when using babel in Mocha. #2655</a>  <a href="https://stackoverflow.com/questions/35040978/babel-unexpected-token-import-when-running-mocha-tests" target="_blank" rel="noopener">Babel unexpected token import when running mocha tests
+</a></p>
+<p> Move the invocation into the parens that contain the function  wrap-iife</p>
+<h3 id="异步的回调没有添加done"><a href="#异步的回调没有添加done" class="headerlink" title="异步的回调没有添加done()"></a>异步的回调没有添加<code>done()</code></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure &quot;done()&quot; is called; if returning a Promise, ensure it resolves.</span><br></pre></td></tr></table></figure>
+<p>如果确实耗时过长的的设置<code>--timeout</code>，<code>this.timeout(3000);</code></p>
+<p>相关issue <a href="https://github.com/mochajs/mocha/issues/2025" target="_blank" rel="noopener">timeout of 2000ms exceeded. Ensure the done() callback is being called in this test. #2025</a></p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>ReferenceError: window is not defined</p>
+<ul>
+<li><a href="https://www.npmjs.com/package/mocha-jsdom" target="_blank" rel="noopener">https://www.npmjs.com/package/mocha-jsdom</a></li>
+</ul>
+<p> get request<br>(node:13054) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 63): [object Object]</p>
+<ul>
+<li><a href="https://objcer.com/2017/12/27/unhandled-promise-rejections-in-node-js/" target="_blank" rel="noopener">https://objcer.com/2017/12/27/unhandled-promise-rejections-in-node-js/</a></li>
+<li><a href="https://github.com/mochajs/mocha/issues/2797" target="_blank" rel="noopener">https://github.com/mochajs/mocha/issues/2797</a></li>
+<li><a href="https://github.com/mochajs/mocha/issues/3097" target="_blank" rel="noopener">https://github.com/mochajs/mocha/issues/3097</a></li>
+<li><a href="http://thecodebarbarian.com/unhandled-promise-rejections-in-node.js.html" target="_blank" rel="noopener">http://thecodebarbarian.com/unhandled-promise-rejections-in-node.js.html</a></li>
+</ul>
+<h2 id="推荐阅读"><a href="#推荐阅读" class="headerlink" title="推荐阅读"></a>推荐阅读</h2><ul>
+<li><a href="http://zhouqing86.github.io/2017/03/26/js-test4-mocha/#%E5%BC%95%E5%85%A5babel%E6%B5%8B%E8%AF%95es6" target="_blank" rel="noopener">http://zhouqing86.github.io/2017/03/26/js-test4-mocha/#%E5%BC%95%E5%85%A5babel%E6%B5%8B%E8%AF%95es6</a></li>
+<li><a href="http://www.dengzhr.com/node-js/1282" target="_blank" rel="noopener">http://www.dengzhr.com/node-js/1282</a></li>
+<li><a href="https://www.jianshu.com/p/073d25a3bba0" target="_blank" rel="noopener">Vue.js学习系列六 —— Vue单元测试Karma+Mocha学习笔记</a></li>
+<li><a href="http://www.jackpu.com/-da-jian-ji-yu-mocha-webpack2-chai-es6-qian-duan-dan-yuan-ce-shi/" target="_blank" rel="noopener">搭建 基于 Mocha + Webpack2 + Chai + ES6 前端单元测试</a></li>
+<li><a href="http://blog.kazaff.me/2016/08/24/casperjs+mocha+chai%E6%90%AD%E5%BB%BAE2E%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83/" target="_blank" rel="noopener">http://blog.kazaff.me/2016/08/24/casperjs+mocha+chai%E6%90%AD%E5%BB%BAE2E%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83/</a></li>
+<li><a href="http://zoucz.com/blog/2016/08/02/nodejs-unittest-mochajs/" target="_blank" rel="noopener">http://zoucz.com/blog/2016/08/02/nodejs-unittest-mochajs/</a></li>
+<li><a href="https://github.com/jin5354/404forest/issues/47" target="_blank" rel="noopener">https://github.com/jin5354/404forest/issues/47</a></li>
+</ul>
+<h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><ul>
+<li><a href="https://mochajs.org/" target="_blank" rel="noopener">https://mochajs.org/</a></li>
+<li><a href="http://www.chaijs.com/guide/styles/" target="_blank" rel="noopener">http://www.chaijs.com/guide/styles/</a></li>
+<li><a href="https://devhints.io/chai" target="_blank" rel="noopener">Chai.js cheatsheet</a></li>
+<li><a href="https://github.com/zhaosaisai/mocha-in-chinese" target="_blank" rel="noopener">Mocha中文文档(翻译)</a>  <a href="https://www.jianshu.com/p/9c78548caffa" target="_blank" rel="noopener">https://www.jianshu.com/p/9c78548caffa</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/cnpmjs-install/" itemprop="url">
+                  简单介绍cnpmjs安装和碰到的问题
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2018-03-27T21:37:18+08:00" content="2018-03-27">
+              2018-03-27
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/cnpmjs-install/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="cnpmjs-install/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="https://github.com/cnpm/cnpmjs.org" target="_blank" rel="noopener">cnpmjs</a> 可用于企业的前端私有包管理。淘宝<code>NPM</code>镜像就是用这个搭建的。</p>
+<p><a href="https://www.npmjs.org/" target="_blank" rel="noopener">npmjs</a>私有包是要收费的，对于公司而言更倾向于自己部署，一是省钱，二是一些含有敏感内容的包放到其他平时总是不放心。</p>
+<p>本文将简单记录下实际安装过程中碰到的问题，基本的安装可以移步<a href="https://github.com/cnpm/cnpmjs.org/wiki" target="_blank" rel="noopener">官方文档</a>。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">$ yum install -y nodejs</span><br><span class="line">$ yun install git</span><br><span class="line">$ git clone git://github.com/cnpm/cnpmjs.org.git $HOME/cnpmjs.org</span><br><span class="line"></span><br><span class="line"># centos7 安装失败</span><br><span class="line">$ yum install mysql mysql-server</span><br><span class="line"></span><br><span class="line">$ yum update</span><br><span class="line">$ yum localinstall mysql-community-release-el7-5.noarch.rpm</span><br><span class="line">$ yum repolist enabled | grep &quot;mysql.*-community.*&quot;</span><br><span class="line">$ yum repolist all | grep mysql</span><br><span class="line">$ yum-config-manager --disable mysql56-community</span><br><span class="line">$ sudo yum search yum-config-manager</span><br><span class="line">$ yum install yum-utils</span><br><span class="line">$ yum-config-manager --disable mysql56-community</span><br><span class="line">$ yum-config-manager --enable mysql57-community-dmr</span><br><span class="line">$ yum repolist all | grep mysql</span><br><span class="line">$ yum repolist enabled | grep mysql</span><br><span class="line">$ yum install mysql-serve</span><br><span class="line"></span><br><span class="line"># centos7 相关mysql命令</span><br><span class="line">$ service mysqld status</span><br><span class="line">$ service mysqld stop</span><br><span class="line">$ service mysqld start</span><br><span class="line"></span><br><span class="line"># centos7 关闭防火墙 #</span><br><span class="line">$ systemctl stop firewalld.service</span><br><span class="line">$ systemctl disable firewalld.service #禁止firewall开机启动</span><br><span class="line">$ systemctl stop firewall // centos7以下的版本命令</span><br></pre></td></tr></table></figure>
+<p>以上部分命令来源于网络，时隔太久，找不到相关的出处，😶。</p>
+<h2 id="发布的模块npm-install-报错"><a href="#发布的模块npm-install-报错" class="headerlink" title="发布的模块npm install 报错"></a>发布的模块npm install 报错</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[npminstall:get] retry GET http://xx.xx.xx.xx:7001xx-debug after 100ms, retry left 4, error: SyntaxError: Unexpected token l in JSON at position 0</span><br><span class="line">...</span><br><span class="line">SyntaxError: Unexpected token l in JSON at position 0</span><br><span class="line">    at JSON.parse (&lt;anonymous&gt;)</span><br><span class="line">    at _get (/usr/local/lib/node_modules/cnpm/node_modules/npminstall/lib/get.js:70:26)</span><br><span class="line">    at _get.next (&lt;anonymous&gt;)</span><br><span class="line">    at onFulfilled (/usr/local/lib/node_modules/cnpm/node_modules/co/index.js:65:19)</span><br><span class="line">    at &lt;anonymous&gt;</span><br><span class="line">    at process._tickCallback (internal/process/next_tick.js:188:7)</span><br><span class="line">npminstall version: 3.2.1</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>发现原因是<code>npm&gt;=5.6</code>的时候有这个问题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">➜  huixisheng.github.com git:(dev) ✗ npm -v</span><br><span class="line">5.4.1</span><br><span class="line">➜  huixisheng.github.com git:(dev) ✗ cnpm -v</span><br><span class="line">cnpm@5.1.1 (/usr/local/lib/node_modules/cnpm/lib/parse_argv.js)</span><br><span class="line">npm@5.6.0 (/usr/local/lib/node_modules/cnpm/node_modules/npm/lib/npm.js)</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><a href="https://github.com/cnpm/cnpmjs.org/issues/1110" target="_blank" rel="noopener">https://github.com/cnpm/cnpmjs.org/issues/1110</a></li>
+</ul>
+<h2 id="配置修改"><a href="#配置修改" class="headerlink" title="配置修改"></a>配置修改</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br></pre></td><td class="code"><pre><span class="line">   /**</span><br><span class="line">    * Cluster mode</span><br><span class="line">    */</span><br><span class="line">-  enableCluster: false,</span><br><span class="line">+  enableCluster: true,</span><br><span class="line">   numCPUs: os.cpus().length,</span><br><span class="line"></span><br><span class="line">   /*</span><br><span class="line">@@ -27,7 +27,7 @@ var config = &#123;</span><br><span class="line"></span><br><span class="line">   registryPort: 7001,</span><br><span class="line">   webPort: 7002,</span><br><span class="line">   // 用于外部ip访问</span><br><span class="line">-  bindingHost: &apos;127.0.0.1&apos;, // only binding on 127.0.0.1 for local access</span><br><span class="line">+  //bindingHost: &apos;127.0.0.1&apos;, // only binding on 127.0.0.1 for local access</span><br><span class="line"></span><br><span class="line">   // debug mode</span><br><span class="line">   // if in debug mode, some middleware like limit wont load</span><br><span class="line">@@ -62,10 +62,14 @@ var config = &#123;</span><br><span class="line"></span><br><span class="line">   // default system admins</span><br><span class="line">   admins: &#123;</span><br><span class="line">+    huixisheng: &apos;huixisheng@gmail.com&apos;</span><br><span class="line">   &#125;,</span><br><span class="line"></span><br><span class="line">   // email notification for errors</span><br><span class="line">@@ -98,13 +102,13 @@ var config = &#123;</span><br><span class="line">    */</span><br><span class="line"></span><br><span class="line">   database: &#123;</span><br><span class="line">-    db: &apos;cnpmjs_test&apos;,</span><br><span class="line">+    db: &apos;cnpm&apos;,</span><br><span class="line">     username: &apos;root&apos;,</span><br><span class="line">-    password: &apos;&apos;,</span><br><span class="line">+    password: &apos;mysqlpassword&apos;,</span><br><span class="line"></span><br><span class="line">     // the sql dialect of the database</span><br><span class="line">     // - currently supported: &apos;mysql&apos;, &apos;sqlite&apos;, &apos;postgres&apos;, &apos;mariadb&apos;</span><br><span class="line">-    dialect: &apos;sqlite&apos;,</span><br><span class="line">+    dialect: &apos;mysql&apos;,</span><br><span class="line"></span><br><span class="line">     // custom host; default: 127.0.0.1</span><br><span class="line">     host: &apos;127.0.0.1&apos;,</span><br><span class="line">@@ -135,7 +139,8 @@ var config = &#123;</span><br><span class="line">   downloadRedirectToNFS: false,</span><br><span class="line"></span><br><span class="line">   // registry url name</span><br><span class="line">-  registryHost: &apos;r.cnpmjs.org&apos;,</span><br><span class="line">+  registryHost: &apos;xx.xx.xx.xx:7001&apos;,</span><br><span class="line">+  // registryHost: &apos;r.cnpmjs.org&apos;,</span><br><span class="line"></span><br><span class="line">   /**</span><br><span class="line">    * registry mode config</span><br><span class="line">@@ -144,11 +149,11 @@ var config = &#123;</span><br><span class="line">   // enable private mode or not</span><br><span class="line">   // private mode: only admins can publish, other users just can sync package from source npm</span><br><span class="line">   // public mode: all users can publish</span><br><span class="line">-  enablePrivate: false,</span><br><span class="line">   // 注册用户才可以发布模块</span><br><span class="line">+  enablePrivate: true,</span><br><span class="line"></span><br><span class="line">   // registry scopes, if don&apos;t set, means do not support scopes</span><br><span class="line">-  scopes: [ &apos;@cnpm&apos;, &apos;@cnpmtest&apos;, &apos;@cnpm-test&apos; ],</span><br><span class="line">-</span><br><span class="line">+  // scopes: [ &apos;@cnpm&apos;, &apos;@cnpmtest&apos;, &apos;@cnpm-test&apos;, &apos;@cosme&apos; ],</span><br><span class="line">+  scopes: [],</span><br><span class="line">   // some registry already have some private packages in global scope</span><br><span class="line">   // but we want to treat them as scoped private packages,</span><br><span class="line">   // so you can use this white list.</span><br><span class="line">@@ -169,6 +174,7 @@ var config = &#123;</span><br><span class="line">   // If you want to directly sync from official npm&apos;s registry</span><br><span class="line">   // please drop them an email first</span><br><span class="line">   sourceNpmRegistry: &apos;https://registry.npm.taobao.org&apos;,</span><br><span class="line">+  // sourceNpmRegistry: &apos;http://xx.xx.xx.xx:7001&apos;,</span><br><span class="line"></span><br><span class="line">   // upstream registry is base on cnpm/cnpmjs.org or not</span><br><span class="line">   // if your upstream is official npm registry, please turn it off</span><br><span class="line">@@ -197,8 +203,6 @@ var config = &#123;</span><br><span class="line"></span><br><span class="line">   // sync devDependencies or not, default is false</span><br><span class="line">   syncDevDependencies: false,</span><br><span class="line">-  // try to remove all deleted versions from original registry</span><br><span class="line">-  syncDeletedVersions: true,</span><br><span class="line"></span><br><span class="line">   // changes streaming sync</span><br><span class="line">   syncChangesStream: false,</span><br><span class="line">@@ -215,7 +219,7 @@ var config = &#123;</span><br><span class="line"></span><br><span class="line">   // always-auth https://docs.npmjs.com/misc/config#always-auth</span><br><span class="line">   // Force npm to always require authentication when accessing the registry, even for GET requests.</span><br><span class="line">-  alwaysAuth: false,</span><br><span class="line">    // 命令安装的时候也要输入命名</span><br><span class="line">+  alwaysAuth: true,</span><br><span class="line"></span><br><span class="line">   // if you&apos;re behind firewall, need to request through http proxy, please set this</span><br><span class="line">   // e.g.: `httpProxy: &apos;http://proxy.mycompany.com:8080&apos;`</span><br><span class="line">diff --git a/cnpmjs.org/servers/registry.js b/cnpmjs.org/servers/registry.js</span><br><span class="line">index d2758e5..2d67184 100644</span><br><span class="line">--- a/cnpmjs.org/servers/registry.js</span><br><span class="line">+++ b/cnpmjs.org/servers/registry.js</span><br><span class="line">@@ -34,7 +34,7 @@ app.use(cors(&#123;</span><br><span class="line">   allowMethods: &apos;GET,HEAD&apos;,</span><br><span class="line"> &#125;));</span><br><span class="line"> // 关闭用户注册接口</span><br><span class="line"> app.use(auth());</span><br><span class="line">-app.use(proxyToNpm());</span><br><span class="line">+//app.use(proxyToNpm());</span><br><span class="line"> app.use(notFound);</span><br><span class="line"></span><br><span class="line"> if (config.enableCompress) &#123;</span><br><span class="line">diff --git a/cnpmjs.org/view/web/footer.html b/cnpmjs.org/view/web/footer.html</span><br><span class="line">index e7a0f04..d432a6d 100644</span><br><span class="line">--- a/cnpmjs.org/view/web/footer.html</span><br><span class="line">+++ b/cnpmjs.org/view/web/footer.html</span><br><span class="line">@@ -1,5 +1,4 @@</span><br><span class="line">-Copyright 2013 - 2016 &amp;copy; cnpmjs.org</span><br><span class="line">+Copyright 2013 - 2018 &amp;copy; cnpmjs.org</span><br><span class="line"> |</span><br><span class="line"> &lt;a href=&quot;/&quot;&gt;Home&lt;/a&gt;</span><br><span class="line"> |</span><br><span class="line">-&lt;script&gt;var cnzz_protocol = ((&quot;https:&quot; == document.location.protocol) ? &quot; https://&quot; : &quot; http://&quot;);document.write(unescape(&quot;%3Cspan id=&apos;cnzz_stat_icon_5757157&apos;%3E%3C/span%3E%3Cscript src=&apos;&quot; + cnzz_protocol + &quot;s17.cnzz.com/stat.php%3Fid%3D5757157%26online%3D1%26show%3Dline&apos; type=&apos;text/javascript&apos;%3E%3C/script%3E&quot;));&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="相关问题"><a href="#相关问题" class="headerlink" title="相关问题"></a>相关问题</h2><h3 id="阿里云无法通过ip-端口访问"><a href="#阿里云无法通过ip-端口访问" class="headerlink" title="阿里云无法通过ip:端口访问"></a>阿里云无法通过ip:端口访问</h3><p><img src="/images/cnpmjs/aliyun.jpeg" alt=""></p>
+<h3 id="ssh无法登录阿里云服务器"><a href="#ssh无法登录阿里云服务器" class="headerlink" title="ssh无法登录阿里云服务器"></a>ssh无法登录阿里云服务器</h3><p><img src="/images/cnpmjs/mac-permission-denied.jpeg" alt=""></p>
+<h3 id="cnpm同步文件的存储位置在哪里"><a href="#cnpm同步文件的存储位置在哪里" class="headerlink" title="cnpm同步文件的存储位置在哪里"></a>cnpm同步文件的存储位置在哪里</h3><p>默认是在 $HOME/.cnpmjs.org/nfs 下面。具体看config配置<br><a href="https://github.com/cnpm/cnpmjs.org/issues/635" target="_blank" rel="noopener">https://github.com/cnpm/cnpmjs.org/issues/635</a></p>
+<h3 id="失败-amp-如何加入权限验证"><a href="#失败-amp-如何加入权限验证" class="headerlink" title="失败 &amp; 如何加入权限验证"></a>失败 &amp; 如何加入权限验证</h3><p><a href="https://github.com/cnpm/cnpmjs.org/issues/925" target="_blank" rel="noopener">https://github.com/cnpm/cnpmjs.org/issues/925</a></p>
+<h3 id="如何修改admin的密码？"><a href="#如何修改admin的密码？" class="headerlink" title="如何修改admin的密码？"></a>如何修改admin的密码？</h3><ul>
+<li><a href="https://github.com/cnpm/cnpmjs.org/issues/1050" target="_blank" rel="noopener">https://github.com/cnpm/cnpmjs.org/issues/1050</a></li>
+<li><a href="https://github.com/cnpm/cnpmjs.org/issues/385" target="_blank" rel="noopener">https://github.com/cnpm/cnpmjs.org/issues/385</a></li>
+</ul>
+<h3 id="cnpm添加用户，以及admin用户如何publish"><a href="#cnpm添加用户，以及admin用户如何publish" class="headerlink" title="cnpm添加用户，以及admin用户如何publish"></a>cnpm添加用户，以及admin用户如何publish</h3><ul>
+<li><a href="https://github.com/cnpm/cnpmjs.org/issues/431" target="_blank" rel="noopener">https://github.com/cnpm/cnpmjs.org/issues/431</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/scaffold/" itemprop="url">
                   项目脚手架
                 </a>
@@ -2174,529 +2820,11 @@ http://www.html-js.com/article/2379
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/mac-iphone-screen-record/" itemprop="url">
-                  iphone屏幕录制导出gif
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-30T20:09:08+08:00" content="2016-11-30">
-              2016-11-30
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/mac-iphone-screen-record/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="mac-iphone-screen-record/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>gif图片可用于博客中文章demo的展示，聊天不发几个表情都不好意思去聊天。</p>
-<p>当你做app测试的时候发现了bug，用干巴巴的文字记录，不好描述，或许你的藐视开发人员有可能不懂你在说什么。所以有图有真相，这样方便开发人员重现问题，万一他们自己的设备就是没有问题呢。有图在就不好甩锅了。</p>
-<p>Mac系统自带的<code>QuickTime Player</code>可用于电脑和iphone手机的 屏幕录制导出视频，结合软件可以导出gif图片。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/mac-iphone-screen-record/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/jenkins-email/" itemprop="url">
-                  jenkins发送自定义内容邮件
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-26T00:43:05+08:00" content="2016-11-26">
-              2016-11-26
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/jenkins-email/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="jenkins-email/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>本文介绍了<code>groovy</code>脚本自定义构建完成后通知邮件的标题和内容。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/jenkins-email/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/npm-install/" itemprop="url">
-                  npm直接安装github仓库代码
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-23T14:35:01+08:00" content="2016-10-23">
-              2016-10-23
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/npm-install/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="npm-install/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>npm是nodejs的官方包管理，有成千上万的包，方便了前端模块化开发。但有些前端库并没有发布到npm,但有时候项目又需要它。本文介绍通过npm如何安装github仓库代码。从而达到模块化开发的目的。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/npm-install/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/nodejs-spawn-exec/" itemprop="url">
-                  spawn和exec简单介绍
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-22T21:02:45+08:00" content="2016-10-22">
-              2016-10-22
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/nodejs-spawn-exec/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="nodejs-spawn-exec/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>谷歌搜了下网上介绍spawn和exec区别的文章还是很详细的，引用相关主要的提到的点。同时结合项目中使用过的脚步了解相关的使用方法。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/nodejs-spawn-exec/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/compatibility-solution/" itemprop="url">
-                  兼容性解决方案整理
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-22T21:02:45+08:00" content="2016-10-22">
-              2016-10-22
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/compatibility-solution/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="compatibility-solution/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>移动互联网的今天，告别了ie6。</p>
-<p>以下来自原先项目<del>psc</del>。<del>psc</del>已经删除，<del>使用issues继续整理</del>。相信这是一个更好的开始。整理到博客汇总。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/compatibility-solution/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -2737,7 +2865,7 @@ http://www.html-js.com/article/2379
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">37</span>
+              <span class="site-state-item-count">42</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -2747,7 +2875,7 @@ http://www.html-js.com/article/2379
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">48</span>
+                <span class="site-state-item-count">53</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

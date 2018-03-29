@@ -4,6 +4,100 @@
 
     
   <url>
+    <loc>http://huixisheng.github.io/object-assign/</loc>
+    <lastmod>2018-03-29T14:35:04.590Z</lastmod>
+    <data>
+        <display>
+        <title>Object.assign引起的页面显示空白</title>
+        <pubTime>2018-03-29T13:48:45.000Z</pubTime>
+        
+        <tag>es6</tag>
+         
+        <tag>Object</tag>
+         
+        <tag>javascript</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://huixisheng.github.io/ci-build-app/</loc>
+    <lastmod>2018-03-28T16:11:39.361Z</lastmod>
+    <data>
+        <display>
+        <title>自动化打包App</title>
+        <pubTime>2018-03-28T16:01:09.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://huixisheng.github.io/mocha/</loc>
+    <lastmod>2018-03-28T15:58:05.157Z</lastmod>
+    <data>
+        <display>
+        <title>mocha</title>
+        <pubTime>2018-03-27T15:35:12.000Z</pubTime>
+        
+        <tag>mocha</tag>
+         
+        <tag>单元测试</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://huixisheng.github.io/unit-test/</loc>
+    <lastmod>2018-03-28T15:57:51.869Z</lastmod>
+    <data>
+        <display>
+        <title>unit-test</title>
+        <pubTime>2018-03-27T15:36:50.000Z</pubTime>
+        
+        <tag>单元测试</tag>
+         
+        <tag>资源</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>http://huixisheng.github.io/cnpmjs-install/</loc>
+    <lastmod>2018-03-27T15:01:32.023Z</lastmod>
+    <data>
+        <display>
+        <title>简单介绍cnpmjs安装和碰到的问题</title>
+        <pubTime>2018-03-27T13:37:18.000Z</pubTime>
+        
+        <tag>nodejs</tag>
+         
+        <tag>cnpmjs</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://huixisheng.github.io/MacOSX-php/</loc>
     <lastmod>2018-03-27T12:52:49.074Z</lastmod>
     <data>
@@ -255,9 +349,9 @@
         <title>npm相关资源整理</title>
         <pubTime>2017-09-19T11:41:35.000Z</pubTime>
         
-        <tag>npm</tag>
-         
         <tag>nodejs</tag>
+         
+        <tag>npm</tag>
          
          
            
@@ -412,7 +506,6 @@
     
     
     
-    
   <url>
     <loc>http://huixisheng.github.io/webapp-tips/</loc>
     <lastmod>2017-03-13T06:42:21.000Z</lastmod>
@@ -550,9 +643,9 @@
         <title>npm直接安装github仓库代码</title>
         <pubTime>2016-10-23T06:35:01.000Z</pubTime>
         
-        <tag>npm</tag>
-         
         <tag>nodejs</tag>
+         
+        <tag>npm</tag>
          
          
            
@@ -676,14 +769,18 @@
 
     
   <url>
-    <loc>http://huixisheng.github.io/something-about-sublime/</loc>
+    <loc>http://huixisheng.github.io/some-problem-in-project-diary/</loc>
     <lastmod>2016-10-22T09:40:39.000Z</lastmod>
     <data>
         <display>
-        <title>SublimeText插件介绍</title>
-        <pubTime>2013-08-10T14:32:38.000Z</pubTime>
+        <title>项目中碰到的问题随笔</title>
+        <pubTime>2013-04-03T14:32:38.000Z</pubTime>
         
-        <tag>SublimeText</tag>
+        <tag>css</tag>
+         
+        <tag>JavaScript</tag>
+         
+        <tag>总结</tag>
          
          
            
@@ -729,18 +826,14 @@
 
     
   <url>
-    <loc>http://huixisheng.github.io/some-problem-in-project-diary/</loc>
+    <loc>http://huixisheng.github.io/something-about-sublime/</loc>
     <lastmod>2016-10-22T09:40:39.000Z</lastmod>
     <data>
         <display>
-        <title>项目中碰到的问题随笔</title>
-        <pubTime>2013-04-03T14:32:38.000Z</pubTime>
+        <title>SublimeText插件介绍</title>
+        <pubTime>2013-08-10T14:32:38.000Z</pubTime>
         
-        <tag>css</tag>
-         
-        <tag>JavaScript</tag>
-         
-        <tag>总结</tag>
+        <tag>SublimeText</tag>
          
          
            

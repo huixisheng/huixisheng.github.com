@@ -1,0 +1,843 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="mocha,单元测试," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="前端开发者说" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="例子 https://github.com/huixisheng/lab/tree/master/test https://github.com/ruanyf/mocha-demos https://github.com/mochajs/mocha/tree/master/test https://github.com/vuejs/vue-test-utils-mocha-webpack-exam">
+<meta name="keywords" content="mocha,单元测试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mocha">
+<meta property="og:url" content="http://huixisheng.github.io/mocha/index.html">
+<meta property="og:site_name" content="前端开发者说">
+<meta property="og:description" content="例子 https://github.com/huixisheng/lab/tree/master/test https://github.com/ruanyf/mocha-demos https://github.com/mochajs/mocha/tree/master/test https://github.com/vuejs/vue-test-utils-mocha-webpack-exam">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-28T15:58:05.157Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="mocha">
+<meta name="twitter:description" content="例子 https://github.com/huixisheng/lab/tree/master/test https://github.com/ruanyf/mocha-demos https://github.com/mochajs/mocha/tree/master/test https://github.com/vuejs/vue-test-utils-mocha-webpack-exam">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '9599',
+      author: '悔惜晟'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://huixisheng.github.io/mocha/"/>
+
+
+  <title> mocha | 前端开发者说 </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">前端开发者说</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">记录开发的故事</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                mocha
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2018-03-27T23:35:12+08:00" content="2018-03-27">
+              2018-03-27
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/mocha/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="mocha/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><ul>
+<li><a href="https://github.com/huixisheng/lab/tree/master/test" target="_blank" rel="noopener">https://github.com/huixisheng/lab/tree/master/test</a></li>
+<li><a href="https://github.com/ruanyf/mocha-demos" target="_blank" rel="noopener">https://github.com/ruanyf/mocha-demos</a></li>
+<li><a href="https://github.com/mochajs/mocha/tree/master/test" target="_blank" rel="noopener">https://github.com/mochajs/mocha/tree/master/test</a></li>
+<li><a href="https://github.com/vuejs/vue-test-utils-mocha-webpack-example" target="_blank" rel="noopener">https://github.com/vuejs/vue-test-utils-mocha-webpack-example</a></li>
+<li><a href="https://github.com/mochajs/mocha/tree/f24607e6b04d129610613592d19f5a5af9b65d51/docs/example" target="_blank" rel="noopener">https://github.com/mochajs/mocha/tree/f24607e6b04d129610613592d19f5a5af9b65d51/docs/example</a></li>
+<li><a href="https://github.com/airware/webdriver-mocha-async-await-example" target="_blank" rel="noopener">https://github.com/airware/webdriver-mocha-async-await-example</a></li>
+</ul>
+<h2 id="其他关键词"><a href="#其他关键词" class="headerlink" title="其他关键词"></a>其他关键词</h2><ul>
+<li>SuperTest</li>
+<li>Istanbul</li>
+<li>Magnum CI</li>
+<li>superagent <a href="http://visionmedia.github.io/superagent/" target="_blank" rel="noopener">http://visionmedia.github.io/superagent/</a></li>
+<li>karma</li>
+<li>casperjs</li>
+</ul>
+<h2 id="碰到的问题"><a href="#碰到的问题" class="headerlink" title="碰到的问题"></a>碰到的问题</h2><h3 id="如何测试es6的module"><a href="#如何测试es6的module" class="headerlink" title="如何测试es6的module"></a>如何测试es6的module</h3><p>出现如下报错<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SyntaxError: Unexpected token import</span><br><span class="line">    at createScript (vm.js:80:10)</span><br><span class="line">    at Object.runInThisContext (vm.js:139:10)</span><br><span class="line">    at Module._compile (module.js:607:28)</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ./node_modules/mocha/bin/mocha --require babel-register --require babel-polyfill</span><br></pre></td></tr></table></figure>
+<p><code>mocha --compilers js:babel-register</code> 已经废弃。具体见<a href="https://github.com/mochajs/mocha/wiki/compilers-deprecation" target="_blank" rel="noopener">compilers deprecation</a></p>
+<p>相关issue <a href="https://github.com/mochajs/mocha/issues/3228" target="_blank" rel="noopener">SyntaxError: Unexpected token import #3228</a>  <a href="https://github.com/mochajs/mocha/issues/2655" target="_blank" rel="noopener">ES6 import not working when using babel in Mocha. #2655</a>  <a href="https://stackoverflow.com/questions/35040978/babel-unexpected-token-import-when-running-mocha-tests" target="_blank" rel="noopener">Babel unexpected token import when running mocha tests
+</a></p>
+<p> Move the invocation into the parens that contain the function  wrap-iife</p>
+<h3 id="异步的回调没有添加done"><a href="#异步的回调没有添加done" class="headerlink" title="异步的回调没有添加done()"></a>异步的回调没有添加<code>done()</code></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure &quot;done()&quot; is called; if returning a Promise, ensure it resolves.</span><br></pre></td></tr></table></figure>
+<p>如果确实耗时过长的的设置<code>--timeout</code>，<code>this.timeout(3000);</code></p>
+<p>相关issue <a href="https://github.com/mochajs/mocha/issues/2025" target="_blank" rel="noopener">timeout of 2000ms exceeded. Ensure the done() callback is being called in this test. #2025</a></p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>ReferenceError: window is not defined</p>
+<ul>
+<li><a href="https://www.npmjs.com/package/mocha-jsdom" target="_blank" rel="noopener">https://www.npmjs.com/package/mocha-jsdom</a></li>
+</ul>
+<p> get request<br>(node:13054) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 63): [object Object]</p>
+<ul>
+<li><a href="https://objcer.com/2017/12/27/unhandled-promise-rejections-in-node-js/" target="_blank" rel="noopener">https://objcer.com/2017/12/27/unhandled-promise-rejections-in-node-js/</a></li>
+<li><a href="https://github.com/mochajs/mocha/issues/2797" target="_blank" rel="noopener">https://github.com/mochajs/mocha/issues/2797</a></li>
+<li><a href="https://github.com/mochajs/mocha/issues/3097" target="_blank" rel="noopener">https://github.com/mochajs/mocha/issues/3097</a></li>
+<li><a href="http://thecodebarbarian.com/unhandled-promise-rejections-in-node.js.html" target="_blank" rel="noopener">http://thecodebarbarian.com/unhandled-promise-rejections-in-node.js.html</a></li>
+</ul>
+<h2 id="推荐阅读"><a href="#推荐阅读" class="headerlink" title="推荐阅读"></a>推荐阅读</h2><ul>
+<li><a href="http://zhouqing86.github.io/2017/03/26/js-test4-mocha/#%E5%BC%95%E5%85%A5babel%E6%B5%8B%E8%AF%95es6" target="_blank" rel="noopener">http://zhouqing86.github.io/2017/03/26/js-test4-mocha/#%E5%BC%95%E5%85%A5babel%E6%B5%8B%E8%AF%95es6</a></li>
+<li><a href="http://www.dengzhr.com/node-js/1282" target="_blank" rel="noopener">http://www.dengzhr.com/node-js/1282</a></li>
+<li><a href="https://www.jianshu.com/p/073d25a3bba0" target="_blank" rel="noopener">Vue.js学习系列六 —— Vue单元测试Karma+Mocha学习笔记</a></li>
+<li><a href="http://www.jackpu.com/-da-jian-ji-yu-mocha-webpack2-chai-es6-qian-duan-dan-yuan-ce-shi/" target="_blank" rel="noopener">搭建 基于 Mocha + Webpack2 + Chai + ES6 前端单元测试</a></li>
+<li><a href="http://blog.kazaff.me/2016/08/24/casperjs+mocha+chai%E6%90%AD%E5%BB%BAE2E%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83/" target="_blank" rel="noopener">http://blog.kazaff.me/2016/08/24/casperjs+mocha+chai%E6%90%AD%E5%BB%BAE2E%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83/</a></li>
+<li><a href="http://zoucz.com/blog/2016/08/02/nodejs-unittest-mochajs/" target="_blank" rel="noopener">http://zoucz.com/blog/2016/08/02/nodejs-unittest-mochajs/</a></li>
+<li><a href="https://github.com/jin5354/404forest/issues/47" target="_blank" rel="noopener">https://github.com/jin5354/404forest/issues/47</a></li>
+</ul>
+<h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><ul>
+<li><a href="https://mochajs.org/" target="_blank" rel="noopener">https://mochajs.org/</a></li>
+<li><a href="http://www.chaijs.com/guide/styles/" target="_blank" rel="noopener">http://www.chaijs.com/guide/styles/</a></li>
+<li><a href="https://devhints.io/chai" target="_blank" rel="noopener">Chai.js cheatsheet</a></li>
+<li><a href="https://github.com/zhaosaisai/mocha-in-chinese" target="_blank" rel="noopener">Mocha中文文档(翻译)</a>  <a href="https://www.jianshu.com/p/9c78548caffa" target="_blank" rel="noopener">https://www.jianshu.com/p/9c78548caffa</a></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/mocha/" rel="tag">#mocha</a>
+          
+            <a href="/tags/单元测试/" rel="tag">#单元测试</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/cnpmjs-install/" rel="next" title="简单介绍cnpmjs安装和碰到的问题">
+                <i class="fa fa-chevron-left"></i> 简单介绍cnpmjs安装和碰到的问题
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/unit-test/" rel="prev" title="unit-test">
+                unit-test <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="huixisheng" />
+          <p class="site-author-name" itemprop="name">huixisheng</p>
+          <p class="site-description motion-element" itemprop="description">前端路漫漫兮，吾将上下而求索</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">42</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">53</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/huixisheng" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/huixisheng" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/huixisheng" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#例子"><span class="nav-number">1.</span> <span class="nav-text">例子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他关键词"><span class="nav-number">2.</span> <span class="nav-text">其他关键词</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#碰到的问题"><span class="nav-number">3.</span> <span class="nav-text">碰到的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何测试es6的module"><span class="nav-number">3.1.</span> <span class="nav-text">如何测试es6的module</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异步的回调没有添加done"><span class="nav-number">3.2.</span> <span class="nav-text">异步的回调没有添加done()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">3.3.</span> <span class="nav-text">其他</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#推荐阅读"><span class="nav-number">4.</span> <span class="nav-text">推荐阅读</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文档"><span class="nav-number">5.</span> <span class="nav-text">参考文档</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">huixisheng</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'huixisheng';
+      var disqus_identifier = 'mocha/';
+      var disqus_title = "mocha";
+      var disqus_url = 'http://huixisheng.github.io/mocha/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = false;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title >= 0 || index_content >= 0 ){
+                                isMatch = true;
+								if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            } 
+							
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
