@@ -4,6 +4,175 @@
 
     
   <url>
+    <loc>http://huixisheng.github.io/travis-auto-publish-blog/</loc>
+    <lastmod>2018-04-06T08:19:43.861Z</lastmod>
+    <data>
+        <display>
+        <title>利用trivas自动部署hexo的blog</title>
+        <pubTime>2018-04-06T06:41:16.000Z</pubTime>
+        
+        <tag>trivas</tag>
+         
+        <tag>hexo</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://huixisheng.github.io/callapp-taobao-jd/</loc>
+    <lastmod>2018-04-06T06:04:58.283Z</lastmod>
+    <data>
+        <display>
+        <title>App呼起京东和淘宝指定的页面</title>
+        <pubTime>2018-04-01T15:45:06.000Z</pubTime>
+        
+        <tag>schema</tag>
+         
+        <tag>App</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://huixisheng.github.io/object-loop/</loc>
+    <lastmod>2018-04-06T04:07:32.249Z</lastmod>
+    <data>
+        <display>
+        <title>JavaScript如何遍历Object</title>
+        <pubTime>2017-06-03T13:50:56.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+        <tag>Object</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://huixisheng.github.io/awesome-es6/</loc>
+    <lastmod>2018-04-06T04:06:04.466Z</lastmod>
+    <data>
+        <display>
+        <title>es6相关资源记录</title>
+        <pubTime>2018-03-24T17:19:25.000Z</pubTime>
+        
+        <tag>es6</tag>
+         
+        <tag>文档</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://huixisheng.github.io/npm-source/</loc>
+    <lastmod>2018-04-06T03:54:50.686Z</lastmod>
+    <data>
+        <display>
+        <title>npm相关资源整理</title>
+        <pubTime>2017-09-19T11:41:35.000Z</pubTime>
+        
+        <tag>nodejs</tag>
+         
+        <tag>npm</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://huixisheng.github.io/mac-skill/</loc>
+    <lastmod>2018-04-06T03:28:53.418Z</lastmod>
+    <data>
+        <display>
+        <title>mac相关技巧整理</title>
+        <pubTime>2017-05-30T12:00:05.000Z</pubTime>
+        
+        <tag>MacOSX</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://huixisheng.github.io/front-end-articles-collected/</loc>
+    <lastmod>2018-04-01T15:42:38.813Z</lastmod>
+    <data>
+        <display>
+        <title>前端精彩文章收集</title>
+        <pubTime>2018-04-01T12:40:26.000Z</pubTime>
+        
+        <tag>前端资源</tag>
+         
+        <tag>收藏夹</tag>
+         
+        <tag>前端文档</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://huixisheng.github.io/debugger-tool/</loc>
+    <lastmod>2018-04-01T15:06:16.740Z</lastmod>
+    <data>
+        <display>
+        <title>调试工具整理</title>
+        <pubTime>2016-10-22T13:02:45.000Z</pubTime>
+        
+        <tag>前端工具</tag>
+         
+        <tag>前端资源</tag>
+         
+        <tag>调试</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://huixisheng.github.io/webapp-tips/</loc>
+    <lastmod>2018-04-01T12:42:38.554Z</lastmod>
+    <data>
+        <display>
+        <title>项目碰到的问题整理</title>
+        <pubTime>2016-12-04T01:33:15.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://huixisheng.github.io/object-assign/</loc>
     <lastmod>2018-03-29T14:35:04.590Z</lastmod>
     <data>
@@ -13,9 +182,9 @@
         
         <tag>es6</tag>
          
-        <tag>Object</tag>
-         
         <tag>javascript</tag>
+         
+        <tag>Object</tag>
          
          
            
@@ -161,25 +330,6 @@
 
     
   <url>
-    <loc>http://huixisheng.github.io/awesome-es6/</loc>
-    <lastmod>2018-03-24T17:32:00.909Z</lastmod>
-    <data>
-        <display>
-        <title>es6相关资源记录</title>
-        <pubTime>2018-03-24T17:19:25.000Z</pubTime>
-        
-        <tag>es6</tag>
-         
-        <tag>文档</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://huixisheng.github.io/some-problems/</loc>
     <lastmod>2018-03-14T03:33:03.398Z</lastmod>
     <data>
@@ -274,27 +424,6 @@
     
     
   <url>
-    <loc>http://huixisheng.github.io/debugger-tool/</loc>
-    <lastmod>2017-12-03T07:43:12.539Z</lastmod>
-    <data>
-        <display>
-        <title>调试工具整理</title>
-        <pubTime>2016-10-22T13:02:45.000Z</pubTime>
-        
-        <tag>前端工具</tag>
-         
-        <tag>前端资源</tag>
-         
-        <tag>调试</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://huixisheng.github.io/cdn/</loc>
     <lastmod>2017-12-03T07:33:03.512Z</lastmod>
     <data>
@@ -333,25 +462,6 @@
         <tag>Composer</tag>
          
         <tag>brew</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://huixisheng.github.io/npm-source/</loc>
-    <lastmod>2017-11-02T01:25:37.912Z</lastmod>
-    <data>
-        <display>
-        <title>npm相关资源整理</title>
-        <pubTime>2017-09-19T11:41:35.000Z</pubTime>
-        
-        <tag>nodejs</tag>
-         
-        <tag>npm</tag>
          
          
            
@@ -424,42 +534,6 @@
     
     
     
-  <url>
-    <loc>http://huixisheng.github.io/object-loop/</loc>
-    <lastmod>2017-06-04T05:36:01.000Z</lastmod>
-    <data>
-        <display>
-        <title>JavaScript如何遍历Object</title>
-        <pubTime>2017-06-03T13:50:56.000Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-        <tag>Object</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-    
-  <url>
-    <loc>http://huixisheng.github.io/mac-skill/</loc>
-    <lastmod>2017-05-30T14:21:51.000Z</lastmod>
-    <data>
-        <display>
-        <title>mac相关技巧整理</title>
-        <pubTime>2017-05-30T12:00:05.000Z</pubTime>
-        
-        <tag>MacOSX</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
     
   <url>
     <loc>http://huixisheng.github.io/phpstorm/</loc>
@@ -505,21 +579,6 @@
     
     
     
-    
-  <url>
-    <loc>http://huixisheng.github.io/webapp-tips/</loc>
-    <lastmod>2017-03-13T06:42:21.000Z</lastmod>
-    <data>
-        <display>
-        <title>项目碰到的问题整理</title>
-        <pubTime>2016-12-04T01:33:15.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
     
   <url>
     <loc>http://huixisheng.github.io/git/</loc>
@@ -733,25 +792,6 @@
 
     
   <url>
-    <loc>http://huixisheng.github.io/front-end-articles-collected/</loc>
-    <lastmod>2016-10-22T12:40:54.000Z</lastmod>
-    <data>
-        <display>
-        <title>前端精彩文章收集</title>
-        <pubTime>2015-01-21T08:42:53.000Z</pubTime>
-        
-        <tag>前端资源</tag>
-         
-        <tag>收藏夹</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://huixisheng.github.io/compatibility-collect/</loc>
     <lastmod>2016-10-22T12:33:19.000Z</lastmod>
     <data>
@@ -760,27 +800,6 @@
         <pubTime>2012-12-31T14:32:38.000Z</pubTime>
         
         <tag>兼容性</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://huixisheng.github.io/some-problem-in-project-diary/</loc>
-    <lastmod>2016-10-22T09:40:39.000Z</lastmod>
-    <data>
-        <display>
-        <title>项目中碰到的问题随笔</title>
-        <pubTime>2013-04-03T14:32:38.000Z</pubTime>
-        
-        <tag>css</tag>
-         
-        <tag>JavaScript</tag>
-         
-        <tag>总结</tag>
          
          
            
@@ -817,6 +836,27 @@
         <pubTime>2014-10-25T00:53:16.000Z</pubTime>
         
         <tag>MacOSX</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://huixisheng.github.io/some-problem-in-project-diary/</loc>
+    <lastmod>2016-10-22T09:40:39.000Z</lastmod>
+    <data>
+        <display>
+        <title>项目中碰到的问题随笔</title>
+        <pubTime>2013-04-03T14:32:38.000Z</pubTime>
+        
+        <tag>css</tag>
+         
+        <tag>JavaScript</tag>
+         
+        <tag>总结</tag>
          
          
            

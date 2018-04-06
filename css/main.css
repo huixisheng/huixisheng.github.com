@@ -1063,11 +1063,6 @@ pre .javascript .function {
     padding-right: 10px;
   }
 }
-@media (min-width: 992px) {
-  .posts-expand .post-body {
-    text-align: justify;
-  }
-}
 .posts-expand .post-body h2,
 .posts-expand .post-body h3,
 .posts-expand .post-body h4,
@@ -1564,7 +1559,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #aab08f;
+  background: #44ff49;
 }
 .links-of-blogroll {
   font-size: 13px;

@@ -1,0 +1,824 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="schema,App," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="前端开发者说" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="需求: 需要在自己的App直接打开京东和淘宝指定的页面。">
+<meta name="keywords" content="schema,App">
+<meta property="og:type" content="article">
+<meta property="og:title" content="App呼起京东和淘宝指定的页面">
+<meta property="og:url" content="http://huixisheng.github.io/callapp-taobao-jd/index.html">
+<meta property="og:site_name" content="前端开发者说">
+<meta property="og:description" content="需求: 需要在自己的App直接打开京东和淘宝指定的页面。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-04-06T06:04:58.283Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="App呼起京东和淘宝指定的页面">
+<meta name="twitter:description" content="需求: 需要在自己的App直接打开京东和淘宝指定的页面。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '9599',
+      author: '悔惜晟'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://huixisheng.github.io/callapp-taobao-jd/"/>
+
+
+  <title> App呼起京东和淘宝指定的页面 | 前端开发者说 </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">前端开发者说</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">记录开发的故事</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                App呼起京东和淘宝指定的页面
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2018-04-01T23:45:06+08:00" content="2018-04-01">
+              2018-04-01
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/callapp-taobao-jd/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="callapp-taobao-jd/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>需求: 需要在自己的App直接打开京东和淘宝指定的页面。<br><a id="more"></a></p>
+<p>对于ios，首先想到的是根据页面的js找到对应的universal link。ios9以下和安卓就用schema跳转。</p>
+<p>对于京东的链接 <a href="https://pro.m.jd.com/mall/active/3pR34myNmV7cXiR4DjzUSRuu5hqA/index.html?ad_od=1&amp;utm_source=kong&amp;utm_medium=zssc&amp;utm_campaign=t_1000210271_100854&amp;utm_term=ea62df13-dc13-44c8-ae00-59b5683ec8f2-p_1999-pr_1076-at_100854&amp;jd_pop=ea62df13-dc13-44c8-ae00-59b5683ec8f2&amp;abt=0" target="_blank" rel="noopener">https://pro.m.jd.com/mall/active/3pR34myNmV7cXiR4DjzUSRuu5hqA/index.html?ad_od=1&amp;utm_source=kong&amp;utm_medium=zssc&amp;utm_campaign=t_1000210271_100854&amp;utm_term=ea62df13-dc13-44c8-ae00-59b5683ec8f2-p_1999-pr_1076-at_100854&amp;jd_pop=ea62df13-dc13-44c8-ae00-59b5683ec8f2&amp;abt=0</a> 分析源码<a href="https://st.360buyimg.com/common/commonH_B/js/m_common_merge2.1.js" target="_blank" rel="noopener">https://st.360buyimg.com/common/commonH_B/js/m_common_merge2.1.js</a>  网上还找到这个<a href="http://st.360buyimg.com/m/js/2014/module/plugIn/downloadAppPlugIn_imk2.js?v=jd201612271841" target="_blank" rel="noopener">版本的js</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">aE(e.openAppBtnId, &quot;click&quot;, function() &#123;</span><br><span class="line">  aw(&quot;0&quot;);</span><br><span class="line">  var aU = this.getAttribute(&quot;id&quot;);</span><br><span class="line">  var aR = aI[aU];</span><br><span class="line">  // 添加断点，跟踪代码</span><br><span class="line">  if (!i) &#123;</span><br><span class="line">    var aT = document.createElement(&quot;iframe&quot;);</span><br><span class="line">    aT.id = aj;</span><br><span class="line">    document.body.appendChild(aT);</span><br><span class="line">    document.getElementById(aj).style.display = &quot;none&quot;;</span><br><span class="line">    document.getElementById(aj).style.width = &quot;0px&quot;;</span><br><span class="line">    document.getElementById(aj).style.height = &quot;0px&quot;;</span><br><span class="line">    i = true</span><br><span class="line">  &#125;</span><br><span class="line">  if (aR.openAppCallback) &#123;</span><br><span class="line">    var aS = aR.openAppCallbackSource ? aR.openAppCallbackSource : null;</span><br><span class="line">    aR.openAppCallback.call(this, aS)</span><br><span class="line">  &#125;</span><br><span class="line">  f(aR, &quot;appDownOpenIntervalTime&quot;);</span><br><span class="line">  aH(aR);</span><br><span class="line">  if (l.isUseUniversalLinks &amp;&amp; !aR.noJdApp) &#123;</span><br><span class="line">    az(aR)</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    af(aR)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">function az(aS) &#123;</span><br><span class="line">  var aV = aQ(aS, true);</span><br><span class="line">  var aT = aS.universalLinksUrl + &quot;/ul/ul.action?&quot; + aV;</span><br><span class="line">  // 可以判定aT应该就是universal links</span><br><span class="line">  if (navigator.userAgent.indexOf(&quot;baidubrowser&quot;) &gt;= 0) &#123;</span><br><span class="line">    window.location.href = aT</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    var aR = document.createElement(&quot;a&quot;);</span><br><span class="line">    aR.setAttribute(&quot;href&quot;, aT);</span><br><span class="line">    aR.style.display = &quot;none&quot;;</span><br><span class="line">    document.body.appendChild(aR);</span><br><span class="line">    var aU = document.createEvent(&quot;HTMLEvents&quot;);</span><br><span class="line">    aU.initEvent(&quot;click&quot;, !1, !1);</span><br><span class="line">    aR.dispatchEvent(aU)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>测试发现根据代码获得universal link只能打开京东的首页<code>https://linkst.m.jd.com/ul/ul.action?openApp.jdMobile://virtual?params={&quot;category&quot;:&quot;jump&quot;,&quot;des&quot;:&quot;m&quot;,&quot;sourceValue&quot;:&quot;babel-act&quot;,&quot;sourceType&quot;:&quot;babel&quot;,&quot;url&quot;:&quot;https%3A%2F%2Fpro.m.jd.com%2Fmall%2Factive%2F3pR34myNmV7cXiR4DjzUSRuu5hqA%2Findex.html%3Fad_od%3D1%26utm_source%3Dkong%26utm_medium%3Dzssc%26utm_campaign%3Dt_1000210271_100854%26utm_term%3Dea62df13-dc13-44c8-ae00-59b5683ec8f2-p_1999-pr_1076-at_100854%26jd_pop%3Dea62df13-dc13-44c8-ae00-59b5683ec8f2%26abt%3D0&quot;,&quot;M_sourceFrom&quot;:&quot;H5_UL&quot;,&quot;msf_type&quot;:&quot;click&quot;,&quot;NoJumpDownLoadPage&quot;:false,&quot;downAppIos&quot;:&quot;https%3A%2F%2Fst.360buyimg.com%2Fcommon%2FdownLoadCommon%2FdownLoadAppIOSMPage.html&quot;,&quot;locationHref&quot;:&quot;https%3A%2F%2Fpro.m.jd.com%2Fmall%2Factive%2F3pR34myNmV7cXiR4DjzUSRuu5hqA%2Findex.html%3Fad_od%3D1%26utm_source%3Dkong%26utm_medium%3Dzssc%26utm_campaign%3Dt_1000210271_100854%26utm_term%3Dea62df13-dc13-44c8-ae00-59b5683ec8f2-p_1999-pr_1076-at_100854%26jd_pop%3Dea62df13-dc13-44c8-ae00-59b5683ec8f2%26abt%3D0&quot;,&quot;m_param&quot;:{&quot;m_source&quot;:&quot;0&quot;,&quot;event_series&quot;:{},&quot;jda&quot;:&quot;122270672.2074471510.1521534916.1522766295.1522991099.5&quot;,&quot;usc&quot;:&quot;kong&quot;,&quot;ucp&quot;:&quot;t_1000210271_100854&quot;,&quot;umd&quot;:&quot;zssc&quot;,&quot;utr&quot;:&quot;ea62df13-dc13-44c8-ae00-59b5683ec8f2-p_1999-pr_1076-at_100854&quot;,&quot;jdv&quot;:&quot;122270672%7Ckong%7Ct_1000210271_100854%7Czssc%7Cea62df13-dc13-44c8-ae00-59b5683ec8f2-p_1999-pr_1076-at_100854%7C1522991529755&quot;,&quot;ref&quot;:&quot;https%3A%2F%2Fpro.m.jd.com%2Fmall%2Factive%2F3pR34myNmV7cXiR4DjzUSRuu5hqA%2Findex.html%3Fad_od%3D1%26utm_source%3Dkong%26utm_medium%3Dzssc%26utm_campaign%3Dt_1000210271_100854%26utm_term%3Dea62df13-dc13-44c8-ae00-59b5683ec8f2-p_1999-pr_1076-at_100854%26jd_pop%3Dea62df13-dc13-44c8-ae00-59b5683ec8f2%26abt%3D0&quot;,&quot;psn&quot;:&quot;2074471510|5&quot;,&quot;psq&quot;:14,&quot;unpl&quot;:&quot;V2_ZzNsbRBVFkAiXE9dZx5dVTUfFwlEUV9FdwFHSClNDgFkURpaF1MXQWlJKFRzEVQZJkB8XUNRRAklTShUehhVAWIzEVxCXl8UdxREVWoaXw5mBRldRGdDJXUJR1V4GV0GYQMibXJXQSV0OEVVfRxZA2cHElxyURNHdV1PBC8FCVJvAw5YRABBCSYIE1JnGQhWbwQRW0FQQ0ImOEBS&quot;,&quot;pc_source&quot;:&quot;&quot;,&quot;mba_muid&quot;:&quot;2074471510&quot;,&quot;mba_sid&quot;:&quot;15229910996761532999810513868&quot;,&quot;mt_xid&quot;:&quot;&quot;,&quot;mt_subsite&quot;:&quot;&quot;},&quot;SE&quot;:{&quot;mt_subsite&quot;:&quot;&quot;,&quot;__jdv&quot;:&quot;122270672%7Ckong%7Ct_1000210271_100854%7Czssc%7Cea62df13-dc13-44c8-ae00-59b5683ec8f2-p_1999-pr_1076-at_100854%7C1522991529755&quot;,&quot;unpl&quot;:&quot;V2_ZzNsbRBVFkAiXE9dZx5dVTUfFwlEUV9FdwFHSClNDgFkURpaF1MXQWlJKFRzEVQZJkB8XUNRRAklTShUehhVAWIzEVxCXl8UdxREVWoaXw5mBRldRGdDJXUJR1V4GV0GYQMibXJXQSV0OEVVfRxZA2cHElxyURNHdV1PBC8FCVJvAw5YRABBCSYIE1JnGQhWbwQRW0FQQ0ImOEBS&quot;,&quot;__jda&quot;:&quot;122270672.2074471510.1521534916.1522766295.1522991099.5&quot;}}</code></p>
+<p>初步怀疑:</p>
+<ul>
+<li>是不是参数没有encode</li>
+<li>schema的大小写是不是有问题</li>
+</ul>
+<p>猜测的结论</p>
+<ul>
+<li>京东和微信的关系，京东的schema是白名单，打开App没有限制，而对universal link 的测试不充分，导致相应的链接有问题</li>
+</ul>
+<p>通过测试其他的app打开京东的页面，首次有弹框是否打开京东的提示，确认后下次就没有，然而美妆心得的App就是无反应。</p>
+<blockquote>
+<p>近期苹果公司iOS 9系统策略更新，限制了http协议的访问，此外应用需要在“Info.plist”中将要使用的URL Schemes列为白名单，才可正常检查其他应用是否安装。 来自 <a href="https://www.jianshu.com/p/a8cce94d508e" target="_blank" rel="noopener">https://www.jianshu.com/p/a8cce94d508e</a></p>
+</blockquote>
+<p>对于淘宝的链接<a href="https://h5.m.taobao.com/awp/core/detail.htm?id=528294025825&amp;scm=1007.12144.81309.242610_242610&amp;pvid=2f68b234-58a1-47de-aa7b-266c7abe0b48&amp;spm=a217e.7680114.75b100109.d5n0" target="_blank" rel="noopener">https://h5.m.taobao.com/awp/core/detail.htm?id=528294025825&amp;scm=1007.12144.81309.242610_242610&amp;pvid=2f68b234-58a1-47de-aa7b-266c7abe0b48&amp;spm=a217e.7680114.75b100109.d5n0</a></p>
+<p>定位<a href="https://g.alicdn.com/mtb/lib-smb-wake/0.0.37/wake.js" target="_blank" rel="noopener">代码</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">e.exports = function(e) &#123;</span><br><span class="line">var t = arguments.length &gt; 1 &amp;&amp; void 0 !== arguments[1] ? arguments[1] : &#123;&#125;;</span><br><span class="line">if (&quot;TB&quot; != n.aliapp.appname &amp;&amp; &quot;TB-PD&quot; != n.aliapp.appname) &#123;</span><br><span class="line">  t.point = t.point || &#123;&#125;,</span><br><span class="line">  t.point.callType = t.callType;</span><br><span class="line">  var a = (0,</span><br><span class="line">  r.default)(e, t)</span><br><span class="line">    , s = &#123;</span><br><span class="line">    package: &quot;com.taobao.taobao&quot;</span><br><span class="line">  &#125;;</span><br><span class="line">  switch (t.callType) &#123;</span><br><span class="line">  case &quot;universalLink&quot;:</span><br><span class="line">    if (n.os.isIPhone &amp;&amp; n.os.version.gte(&quot;9.0&quot;)) &#123;</span><br><span class="line">      var l = (0,</span><br><span class="line">      o.appendParams)(t.universalLink || &quot;//b.mashort.cn/ulk/taobao&quot;, &#123;</span><br><span class="line">        smburl: encodeURIComponent(a)</span><br><span class="line">      &#125;);</span><br><span class="line">      t.redirectUrl &amp;&amp; (l = (0,</span><br><span class="line">      o.appendParams)(l, &#123;</span><br><span class="line">        redirectUrl: encodeURIComponent(t.redirectUrl)</span><br><span class="line">      &#125;)),</span><br><span class="line">      (0,</span><br><span class="line">      i.default)(l, &quot;universalLink&quot;)</span><br><span class="line">    &#125; else</span><br><span class="line">      (0,</span><br><span class="line">      i.default)(a, &quot;scheme&quot;, s);</span><br><span class="line">    break;</span><br></pre></td></tr></table></figure></p>
+<p>获得的<a href="//b.mashort.cn/ulk/taobao?smburl=tbopen%3A%2F%2Fm.taobao.com%2Ftbopen%2Findex.html%3Faction%3Dali.open.nav%26module%3Dh5%26bootImage%3D0%26source%3Dsb%26appkey%3D24585258%26smbSid%3DSCNgEI25%252FmcCAXAKKjvEkBJ5_1522993546044%26rbbt%3Dbc.mainDetail.6.2.7c9ce02c41d449c1b84a71b4eb8c2f63%26params%3D%257B%2522fingerCode%2522%253A%2522273be573e1389f93c81ec4a9a63c9a54%2522%252C%2522fingerCostTime%2522%253A%2522252%2522%252C%2522mtopCostTime%2522%253A%2522251%2522%252C%2522_t%2522%253A%25221522994027375%2522%257D%26point%3D%257B%2522from%2522%253A%2522h5%2522%252C%2522h5_uid%2522%253A%2522SCNgEI25%252FmcCAXAKKjvEkBJ5%2522%252C%2522ap_uri%2522%253A%2522sb_redirect_manual%2522%252C%2522page%2522%253A%2522mainDetail%2522%252C%2522callType%2522%253A%2522universalLink%2522%257D%26h5Url%3Dhttps%253A%252F%252Fh5.m.taobao.com%252Fawp%252Fcore%252Fdetail.htm%253Fid%253D528294025825%2526scm%253D1007.12144.81309.242610_242610%2526pvid%253D2f68b234-58a1-47de-aa7b-266c7abe0b48%2526spm%253Da217e.7680114.75b100109.d5n0%2526point%253D%25257B%252522from%252522%25253A%252522h5%252522%25252C%252522h5_uid%252522%25253A%252522SCNgEI25%25252FmcCAXAKKjvEkBJ5%252522%25252C%252522ap_uri%252522%25253A%252522sb_redirect_manual%252522%25252C%252522page%252522%25253A%252522mainDetail%252522%25252C%252522callType%252522%25253A%252522universalLink%252522%25257D">universal link</a>。测试发现其实<a href="http://m.tb.cn/h.WE82pie" target="_blank" rel="noopener">分享的淘宝口令http://m.tb.cn/h.WE82pie</a>本身就是universal link</p>
+<h2 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h2><ul>
+<li><a href="https://sdk.cn/news/7019" target="_blank" rel="noopener">MobLink网页跳转app指定界面技术简介之 URL Scheme</a></li>
+<li><a href="https://github.com/eleme/mobilists/blob/master/source/_posts/%E7%AA%81%E7%A0%B4%E5%BE%AE%E4%BF%A1%E8%B7%B3%E8%BD%AC%E9%99%90%E5%88%B6%EF%BC%8DUniversal-Links%E9%82%A3%E4%BA%9B%E5%9D%91.md" target="_blank" rel="noopener">突破微信跳转限制－Universal-Links那些坑</a></li>
+<li><a href="https://futu.im/posts/h5-callup-native/" target="_blank" rel="noopener">关于通过H5页面唤起Native客户端的介绍</a></li>
+<li><a href="http://www.magicwindow.cn/doc/universal-link-info.html" target="_blank" rel="noopener">Universal links 介绍</a></li>
+</ul>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://github.com/AlanZhang001/H5CallUpNative" target="_blank" rel="noopener">H5端唤醒移动客户端程序</a></li>
+<li><a href="https://segmentfault.com/a/1190000006929722" target="_blank" rel="noopener">京东在html5页面中打开本地app的解决方案</a></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/schema/" rel="tag">#schema</a>
+          
+            <a href="/tags/App/" rel="tag">#App</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/front-end-articles-collected/" rel="next" title="前端精彩文章收集">
+                <i class="fa fa-chevron-left"></i> 前端精彩文章收集
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/travis-auto-publish-blog/" rel="prev" title="利用trivas自动部署hexo的blog">
+                利用trivas自动部署hexo的blog <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="huixisheng" />
+          <p class="site-author-name" itemprop="name">huixisheng</p>
+          <p class="site-description motion-element" itemprop="description">前端路漫漫兮，吾将上下而求索</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">44</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">58</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/huixisheng" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/huixisheng" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/huixisheng" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#扩展阅读"><span class="nav-number">1.</span> <span class="nav-text">扩展阅读</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">2.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">huixisheng</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'huixisheng';
+      var disqus_identifier = 'callapp-taobao-jd/';
+      var disqus_title = "App呼起京东和淘宝指定的页面";
+      var disqus_url = 'http://huixisheng.github.io/callapp-taobao-jd/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = false;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title >= 0 || index_content >= 0 ){
+                                isMatch = true;
+								if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            } 
+							
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>

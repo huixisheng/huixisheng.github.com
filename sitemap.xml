@@ -2,6 +2,69 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://huixisheng.github.io/travis-auto-publish-blog/</loc>
+    
+    <lastmod>2018-04-06T08:19:43.861Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://huixisheng.github.io/callapp-taobao-jd/</loc>
+    
+    <lastmod>2018-04-06T06:04:58.283Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://huixisheng.github.io/object-loop/</loc>
+    
+    <lastmod>2018-04-06T04:07:32.249Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://huixisheng.github.io/awesome-es6/</loc>
+    
+    <lastmod>2018-04-06T04:06:04.466Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://huixisheng.github.io/npm-source/</loc>
+    
+    <lastmod>2018-04-06T03:54:50.686Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://huixisheng.github.io/mac-skill/</loc>
+    
+    <lastmod>2018-04-06T03:28:53.418Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://huixisheng.github.io/front-end-articles-collected/</loc>
+    
+    <lastmod>2018-04-01T15:42:38.813Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://huixisheng.github.io/debugger-tool/</loc>
+    
+    <lastmod>2018-04-01T15:06:16.740Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://huixisheng.github.io/webapp-tips/</loc>
+    
+    <lastmod>2018-04-01T12:42:38.554Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://huixisheng.github.io/object-assign/</loc>
     
     <lastmod>2018-03-29T14:35:04.590Z</lastmod>
@@ -65,13 +128,6 @@
   </url>
   
   <url>
-    <loc>http://huixisheng.github.io/awesome-es6/</loc>
-    
-    <lastmod>2018-03-24T17:32:00.909Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://huixisheng.github.io/some-problems/</loc>
     
     <lastmod>2018-03-14T03:33:03.398Z</lastmod>
@@ -121,13 +177,6 @@
   </url>
   
   <url>
-    <loc>http://huixisheng.github.io/debugger-tool/</loc>
-    
-    <lastmod>2017-12-03T07:43:12.539Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://huixisheng.github.io/cdn/</loc>
     
     <lastmod>2017-12-03T07:33:03.512Z</lastmod>
@@ -145,13 +194,6 @@
     <loc>http://huixisheng.github.io/mirror/</loc>
     
     <lastmod>2017-11-02T01:27:36.156Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://huixisheng.github.io/npm-source/</loc>
-    
-    <lastmod>2017-11-02T01:25:37.912Z</lastmod>
     
   </url>
   
@@ -331,23 +373,9 @@
   </url>
   
   <url>
-    <loc>http://huixisheng.github.io/object-loop/</loc>
-    
-    <lastmod>2017-06-04T05:36:01.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://huixisheng.github.io/Todo/docs/webpack.html</loc>
     
     <lastmod>2017-06-03T05:03:33.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://huixisheng.github.io/mac-skill/</loc>
-    
-    <lastmod>2017-05-30T14:21:51.000Z</lastmod>
     
   </url>
   
@@ -425,13 +453,6 @@
     <loc>http://huixisheng.github.io/Todo/README.html</loc>
     
     <lastmod>2017-03-14T00:28:58.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://huixisheng.github.io/webapp-tips/</loc>
-    
-    <lastmod>2017-03-13T06:42:21.000Z</lastmod>
     
   </url>
   
@@ -541,23 +562,9 @@
   </url>
   
   <url>
-    <loc>http://huixisheng.github.io/front-end-articles-collected/</loc>
-    
-    <lastmod>2016-10-22T12:40:54.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://huixisheng.github.io/compatibility-collect/</loc>
     
     <lastmod>2016-10-22T12:33:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://huixisheng.github.io/something-about-sublime/</loc>
-    
-    <lastmod>2016-10-22T09:40:39.000Z</lastmod>
     
   </url>
   
@@ -570,6 +577,13 @@
   
   <url>
     <loc>http://huixisheng.github.io/MacOSX-powerboot/</loc>
+    
+    <lastmod>2016-10-22T09:40:39.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://huixisheng.github.io/something-about-sublime/</loc>
     
     <lastmod>2016-10-22T09:40:39.000Z</lastmod>
     

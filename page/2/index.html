@@ -257,6 +257,422 @@
             
               
                 
+                <a class="post-title-link" href="/MacOSX-php/" itemprop="url">
+                  MacOSX安装多版本php
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-05-26T21:22:26+08:00" content="2017-05-26">
+              2017-05-26
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/MacOSX-php/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="MacOSX-php/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>由于lavarel的环境homestead升级成了7.x,导致在外面跑<code>composer update</code>会报错，很麻烦，于是需要升级系统自带php的版本。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">➜  bin /usr/bin/php -v</span><br><span class="line">PHP 5.6.30 (cli) (built: Feb  7 2017 16:06:52)</span><br><span class="line">Copyright (c) 1997-2016 The PHP Group</span><br><span class="line">Zend Engine v2.6.0, Copyright (c) 1998-2016 Zend Technologies</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 添加brew的php源</span><br><span class="line">brew tap homebrew/php</span><br><span class="line">brew tap homebrew/dupes</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 安装php71</span><br><span class="line">brew install php71</span><br><span class="line">brew link php71</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">➜  huixisheng.github.com git:(dev) ✗ php -v</span><br><span class="line">PHP 7.1.5 (cli) (built: May 13 2017 13:30:32) ( NTS )</span><br><span class="line">Copyright (c) 1997-2017 The PHP Group</span><br><span class="line">Zend Engine v3.1.0, Copyright (c) 1998-2017 Zend Technologies</span><br></pre></td></tr></table></figure>
+<h2 id="缺少mongodb的扩展报错"><a href="#缺少mongodb的扩展报错" class="headerlink" title="缺少mongodb的扩展报错"></a>缺少mongodb的扩展报错</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Problem 1</span><br><span class="line">  - jenssegers/mongodb v3.2.2 requires mongodb/mongodb ^1.0.0 -&gt; satisfiable by mongodb/mongodb[1.1.2, 1.0.0, 1.0.1, 1.0.2, 1.0.3, 1.0.4, 1.0.5, 1.1.0, 1.1.1].</span><br><span class="line">  - jenssegers/mongodb v3.2.0 requires mongodb/mongodb ^1.0.0 -&gt; satisfiable by mongodb/mongodb[1.1.2, 1.0.0, 1.0.1, 1.0.2, 1.0.3, 1.0.4, 1.0.5, 1.1.0, 1.1.1].</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew search mongodb</span><br><span class="line">brew install php71-mongodb</span><br></pre></td></tr></table></figure>
+<p>居然不用手动配置<code>php.ini</code></p>
+<h2 id="删除MaxOSX自带的php"><a href="#删除MaxOSX自带的php" class="headerlink" title="删除MaxOSX自带的php"></a>删除MaxOSX自带的php</h2><blockquote>
+<p>Mac默认安装了较低版本的php，删除之，统一使用brew管理</p>
+</blockquote>
+<h1 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h1><p>$ php -v<br>PHP 5.6.25 (cli) (built: Sep 19 2016 15:45:41)<br>Copyright (c) 1997-2016 The PHP Group<br>Zend Engine v2.6.0, Copyright (c) 1998-2016 Zend Technologies</p>
+<h1 id="删除之"><a href="#删除之" class="headerlink" title="删除之"></a>删除之</h1><p>$ sudo rm -rf /private/etc/php-fpm.conf.default /private/etc/php.ini php.ini.default<br>$ sudo rm -rf /usr/bin/php /usr/bin/php-config /usr/bin/phpdoc /usr/bin/phpize<br>$ sudo rm -rf /usr/include/php<br>$ sudo rm -rf /usr/lib/php<br>$ sudo rm -rf /usr/sbin/php-fpm<br>$ sudo rm -rf /usr/share/php<br>$ sudo rm -rf /usr/share/man/man1/php-config.1 /usr/share/man/man1/php.1 /usr/share/man/man1/phpize.1<br>$ sudo rm -rf /usr/share/man/man8/php-fpm.8</p>
+<ul>
+<li>来自<a href="http://www.jianshu.com/p/81a6d5253d48" target="_blank" rel="noopener">http://www.jianshu.com/p/81a6d5253d48</a></li>
+</ul>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ /usr/local/Cellar/nginx/1.10.3/html</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ sudo php-fpm -c /usr/local/etc/php/7.1/php.ini -y /usr/local/etc/php/7.1/php-fpm.conf</span><br><span class="line">Password:</span><br><span class="line">[27-Mar-2018 16:25:00] ERROR: failed to open error_log (/usr/var/log/php-fpm.log): No such file or directory (2)</span><br><span class="line">[27-Mar-2018 16:25:00] ERROR: failed to post process the configuration</span><br><span class="line">[27-Mar-2018 16:25:00] ERROR: FPM initialization failed</span><br></pre></td></tr></table></figure>
+<p>修改<code>php-fpm.conf</code> 的配置 <code>error_log</code>为绝对绝对地址</p>
+<h2 id="配置nginx解析php"><a href="#配置nginx解析php" class="headerlink" title="配置nginx解析php"></a>配置nginx解析php</h2><p>记得开启<code>php-fpm</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">location ~ \.php$ &#123;</span><br><span class="line">    root           html;</span><br><span class="line">    fastcgi_pass   127.0.0.1:9000;</span><br><span class="line">    fastcgi_index  index.php;</span><br><span class="line">    fastcgi_param  SCRIPT_FILENAME $document_root$fastcgi_script_name;</span><br><span class="line">    # 取消默认的配置无法解析</span><br><span class="line">    # fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;</span><br><span class="line">    include        fastcgi_params;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="http://www.jianshu.com/p/66d1d4ee172c" target="_blank" rel="noopener">http://www.jianshu.com/p/66d1d4ee172c</a></li>
+<li><a href="https://github.com/Homebrew/homebrew-php" target="_blank" rel="noopener">https://github.com/Homebrew/homebrew-php</a></li>
+<li><a href="http://nodejh.com/post/macos-sierra-apache-multiple-php-versions/" target="_blank" rel="noopener">http://nodejh.com/post/macos-sierra-apache-multiple-php-versions/</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/phpstorm/" itemprop="url">
+                  phpstorm相关配置
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-05-26T20:39:44+08:00" content="2017-05-26">
+              2017-05-26
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/phpstorm/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="phpstorm/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>值得开心的事: <a href="https://www.jetbrains.com/phpstorm/features/html_css_js_editor.html" target="_blank" rel="noopener">在最新的2017.1版本中，PhpStorm/WebStorm已经对Vue.js 进行了原生支持</a></p>
+<h2 id="相关问题"><a href="#相关问题" class="headerlink" title="相关问题"></a>相关问题</h2><h3 id="PhpStorm与WebStorm关系"><a href="#PhpStorm与WebStorm关系" class="headerlink" title="PhpStorm与WebStorm关系"></a>PhpStorm与WebStorm关系</h3><p>引用官网说明:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">PhpStorm = WebStorm + PHP + DB/SQL</span><br><span class="line"></span><br><span class="line">All the features of WebStorm are included into PhpStorm, and full-fledged support for PHP and Databases/SQL support are added on top.</span><br></pre></td></tr></table></figure>
+<h3 id="php文件的语法高亮设置"><a href="#php文件的语法高亮设置" class="headerlink" title=".php文件的语法高亮设置"></a>.php文件的语法高亮设置</h3><p>.php 文件不高亮 <code>Editor-&gt;file types</code> 里面可以设置相同的类的代码高亮。<br>php类，可以增加：<code>php4,php5,html,phtml</code>等</p>
+<h3 id="phpstorm注释的时候的斜线位置不在缩进的位置"><a href="#phpstorm注释的时候的斜线位置不在缩进的位置" class="headerlink" title="phpstorm注释的时候的斜线位置不在缩进的位置"></a>phpstorm注释的时候的斜线位置不在缩进的位置</h3><p>phpstorm注释的代码在Sublime中打开，收起代码的时候很不友好，估计有强迫症用户更是受不了吧。</p>
+<p><code>Preferences-&gt;Editor-&gt;Code Style-&gt;PHP-&gt;Other</code> 里面取消 <code>Line comment at first column</code>之前的勾选就行了！</p>
+<p><img src="/images/tools/phpstorm.jpeg" alt=""></p>
+<h3 id="如何修改phpstorm新建文件默认模版注释"><a href="#如何修改phpstorm新建文件默认模版注释" class="headerlink" title="如何修改phpstorm新建文件默认模版注释"></a>如何修改phpstorm新建文件默认模版注释</h3><p>默认注释:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">/**</span><br><span class="line"> * Created by PhpStorm.</span><br><span class="line"> * User: huixisheng</span><br><span class="line"> * Date: 2017/5/26</span><br><span class="line"> * Time: 21:00</span><br><span class="line"> */</span><br></pre></td></tr></table></figure></p>
+<p><img src="/images/tools/phpstorm-header.jpeg" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">/**</span><br><span class="line"> *</span><br><span class="line"> * @date 2017-05-26 21:06</span><br><span class="line"> * @author huixisheng &lt;huixisheng@gmail.com&gt;</span><br><span class="line"> */</span><br></pre></td></tr></table></figure>
+<h3 id="配置Laravel代码跳转"><a href="#配置Laravel代码跳转" class="headerlink" title="配置Laravel代码跳转"></a>配置Laravel代码跳转</h3><p>安装<code>Laravel Plugin</code>。执行<code>php artisan ide-helper:generate</code></p>
+<ul>
+<li><a href="https://github.com/barryvdh/laravel-ide-helper" target="_blank" rel="noopener">https://github.com/barryvdh/laravel-ide-helper</a></li>
+</ul>
+<h2 id="常用的快捷键"><a href="#常用的快捷键" class="headerlink" title="常用的快捷键"></a>常用的快捷键</h2><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>shift+command+↑</td>
+<td>代码行上移</td>
+</tr>
+<tr>
+<td>control+g</td>
+<td>选中相同单词</td>
+</tr>
+<tr>
+<td>Commond+d</td>
+<td>复制行到下一行</td>
+</tr>
+<tr>
+<td>Command+delete</td>
+<td>删除当前行</td>
+</tr>
+</tbody>
+</table>
+<p>苹果键盘修饰键</p>
+<blockquote>
+<p>Command ⌘<br>Shift ⇧<br>Option ⌥<br>Control ⌃<br>Caps Lock ⇪<br>Fn</p>
+</blockquote>
+<ul>
+<li><a href="https://support.apple.com/zh-cn/HT201236" target="_blank" rel="noopener">Mac 键盘快捷键</a></li>
+<li><a href="http://newping.cn/457" target="_blank" rel="noopener">认识Mac下的那些符号!</a></li>
+</ul>
+<h2 id="如何打特殊符号"><a href="#如何打特殊符号" class="headerlink" title="如何打特殊符号"></a>如何打特殊符号</h2><p>搜狗输入法-&gt;详情表情和符号</p>
+<h2 id="切换至ES6规范"><a href="#切换至ES6规范" class="headerlink" title="切换至ES6规范"></a>切换至ES6规范</h2><p>在项目中开启ES6 <code>Preferences-&gt;Languages &amp; Frameworks-&gt;JavaScript-&gt;JavaScript language version-&gt;ECMAScript 6</code>。 难找的话直接搜索<code>JavaScript</code></p>
+<h2 id="主题相关文章介绍"><a href="#主题相关文章介绍" class="headerlink" title="主题相关文章介绍"></a>主题相关文章介绍</h2><ul>
+<li><a href="http://chinagdg.org/2016/02/ttt2-seti-ui/" target="_blank" rel="noopener">http://chinagdg.org/2016/02/ttt2-seti-ui/</a></li>
+<li><a href="https://www.zhihu.com/question/37762479" target="_blank" rel="noopener">https://www.zhihu.com/question/37762479</a></li>
+<li><a href="https://www.zhihu.com/question/35413120" target="_blank" rel="noopener">https://www.zhihu.com/question/35413120</a></li>
+<li><a href="https://www.zhihu.com/question/35203203" target="_blank" rel="noopener">https://www.zhihu.com/question/35203203</a> mac下intellij idea 变得特别卡该如何解决？</li>
+<li><a href="http://www.webstormthemes.com/themes-list?title=&amp;field_tags_tid=All" target="_blank" rel="noopener">http://www.webstormthemes.com/themes-list?title=&amp;field_tags_tid=All</a></li>
+<li><a href="http://www.jianshu.com/p/10f5f0055715" target="_blank" rel="noopener">http://www.jianshu.com/p/10f5f0055715</a></li>
+<li><a href="https://blog.fazero.me/2015/07/25/WebStorm%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98%E5%92%8C%E4%BF%AE%E6%94%B9%E5%AD%97%E4%BD%93%E6%A0%B7%E5%BC%8F/" target="_blank" rel="noopener">https://blog.fazero.me/2015/07/25/WebStorm%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98%E5%92%8C%E4%BF%AE%E6%94%B9%E5%AD%97%E4%BD%93%E6%A0%B7%E5%BC%8F/</a></li>
+<li><a href="https://www.zhihu.com/question/35413120" target="_blank" rel="noopener">https://www.zhihu.com/question/35413120</a></li>
+<li><a href="https://plugins.jetbrains.com/plugin/8006-material-theme-ui" target="_blank" rel="noopener">https://plugins.jetbrains.com/plugin/8006-material-theme-ui</a></li>
+<li><a href="http://color-themes.com/?view=index&amp;layout=Generic&amp;order=popular&amp;search=&amp;page=2" target="_blank" rel="noopener">http://color-themes.com/?view=index&amp;layout=Generic&amp;order=popular&amp;search=&amp;page=2</a></li>
+</ul>
+<h2 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h2><ul>
+<li>新特性 <a href="https://www.jetbrains.com/webstorm/whatsnew/#v2017-1-completion-in-webpackconfigjs" target="_blank" rel="noopener">https://www.jetbrains.com/webstorm/whatsnew/#v2017-1-completion-in-webpackconfigjs</a></li>
+<li>jsdoc <a href="https://www.jetbrains.com/help/webstorm/2017.1/creating-jsdoc-comments.html" target="_blank" rel="noopener">https://www.jetbrains.com/help/webstorm/2017.1/creating-jsdoc-comments.html</a>  <a href="http://blog.lxjwlt.com/2016/09/11/jsdoc.html" target="_blank" rel="noopener">http://blog.lxjwlt.com/2016/09/11/jsdoc.html</a></li>
+<li><a href="http://xwartz.xyz/pupa/2016/05/my-workflow-in-sublime/" target="_blank" rel="noopener">http://xwartz.xyz/pupa/2016/05/my-workflow-in-sublime/</a></li>
+<li>WebStorm 有哪些过人之处？ <a href="https://www.zhihu.com/question/20936155" target="_blank" rel="noopener">https://www.zhihu.com/question/20936155</a></li>
+<li>eslint <a href="http://laichuanfeng.com/work/use-eslint-in-webstorm/" target="_blank" rel="noopener">http://laichuanfeng.com/work/use-eslint-in-webstorm/</a></li>
+<li><a href="https://plugins.jetbrains.com" target="_blank" rel="noopener">https://plugins.jetbrains.com</a></li>
+<li><a href="https://laravel-china.org/topics/1692/how-to-use-phpstorm-gracefully" target="_blank" rel="noopener">如何优雅的使用 phpStorm</a></li>
+</ul>
+<h2 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h2><p>2017-05-28 01:02:06</p>
+<ul>
+<li>添加主题和相关介绍文章</li>
+<li>添加碰到的问题</li>
+<li>添加常用的快捷键</li>
+</ul>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="http://lightcss.com/get-vuejs-support-in-webstorm-and-phpstorm/" target="_blank" rel="noopener">http://lightcss.com/get-vuejs-support-in-webstorm-and-phpstorm/</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/webapp-tips/" itemprop="url">
+                  项目碰到的问题整理
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-12-04T09:33:15+08:00" content="2016-12-04">
+              2016-12-04
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/webapp-tips/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="webapp-tips/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <ul>
+<li>兼容性</li>
+<li>项目总结</li>
+<li>webapck</li>
+<li>sticky</li>
+<li>Vue</li>
+</ul>
+<hr>
+<p>近期做的项目零零散散的问题的总结。主要是使用webpack,vue碰到的问题。</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/webapp-tips/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/mac-iphone-screen-record/" itemprop="url">
                   iphone屏幕录制导出gif
                 </a>
@@ -568,213 +984,6 @@
             
               
                 
-                <a class="post-title-link" href="/compatibility-solution/" itemprop="url">
-                  兼容性解决方案整理
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-22T21:02:45+08:00" content="2016-10-22">
-              2016-10-22
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/compatibility-solution/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="compatibility-solution/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>移动互联网的今天，告别了ie6。</p>
-<p>以下来自原先项目<del>psc</del>。<del>psc</del>已经删除，<del>使用issues继续整理</del>。相信这是一个更好的开始。整理到博客汇总。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/compatibility-solution/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/mirror/" itemprop="url">
-                  国内镜像源整理
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-22T21:02:45+08:00" content="2016-10-22">
-              2016-10-22
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/mirror/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="mirror/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>本文对国内<code>ruby</code>、<code>npm</code>、<code>brew</code>、<code>Composer</code>等镜像源做整理，给前端开发这提供方便。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/mirror/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
                 <a class="post-title-link" href="/markdown-Table-of-Contents/" itemprop="url">
                   markdown文件生成目录
                 </a>
@@ -843,217 +1052,6 @@
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
           <div class="post-more-link text-center">
             <a class="btn" href="/markdown-Table-of-Contents/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/debugger-tool/" itemprop="url">
-                  调试工具整理
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-22T21:02:45+08:00" content="2016-10-22">
-              2016-10-22
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/debugger-tool/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="debugger-tool/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h2><p>2016-12-22</p>
-<ul>
-<li>[*] 文章结构修改</li>
-<li>[+] 添加远程调试在线工具</li>
-</ul>
-<p>本文收集整理了浏览器调试工具介绍，手机调试方案，nodejs调试，无线抓包。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/debugger-tool/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/git-ssh-key-setting/" itemprop="url">
-                  配置SSH公钥和git多账号配置
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-22T21:02:45+08:00" content="2016-10-22">
-              2016-10-22
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/git-ssh-key-setting/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="git-ssh-key-setting/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>本文介绍如何配置<code>ssh-key</code></p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/git-ssh-key-setting/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1310,8 +1308,8 @@
             
               
                 
-                <a class="post-title-link" href="/front-end-articles-collected/" itemprop="url">
-                  前端精彩文章收集
+                <a class="post-title-link" href="/git-ssh-key-setting/" itemprop="url">
+                  配置SSH公钥和git多账号配置
                 </a>
               
             
@@ -1324,8 +1322,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-01-21T16:42:53+08:00" content="2015-01-21">
-              2015-01-21
+            <time itemprop="dateCreated" datetime="2016-10-22T21:02:45+08:00" content="2016-10-22">
+              2016-10-22
             </time>
           </span>
 
@@ -1335,8 +1333,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/front-end-articles-collected/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="front-end-articles-collected/" itemprop="commentsCount"></span>
+                <a href="/git-ssh-key-setting/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="git-ssh-key-setting/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -1360,9 +1358,324 @@
 
       
         
-          本文收集整理优秀的前端资源。
+          <p>本文介绍如何配置<code>ssh-key</code></p>
           <div class="post-more-link text-center">
-            <a class="btn" href="/front-end-articles-collected/">
+            <a class="btn" href="/git-ssh-key-setting/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/mirror/" itemprop="url">
+                  国内镜像源整理
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-22T21:02:45+08:00" content="2016-10-22">
+              2016-10-22
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/mirror/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="mirror/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>本文对国内<code>ruby</code>、<code>npm</code>、<code>brew</code>、<code>Composer</code>等镜像源做整理，给前端开发这提供方便。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/mirror/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/compatibility-solution/" itemprop="url">
+                  兼容性解决方案整理
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-22T21:02:45+08:00" content="2016-10-22">
+              2016-10-22
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/compatibility-solution/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="compatibility-solution/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>移动互联网的今天，告别了ie6。</p>
+<p>以下来自原先项目<del>psc</del>。<del>psc</del>已经删除，<del>使用issues继续整理</del>。相信这是一个更好的开始。整理到博客汇总。</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/compatibility-solution/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/debugger-tool/" itemprop="url">
+                  调试工具整理
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-22T21:02:45+08:00" content="2016-10-22">
+              2016-10-22
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/debugger-tool/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="debugger-tool/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h2><p>2016-12-22</p>
+<ul>
+<li>[*] 文章结构修改</li>
+<li>[+] 添加远程调试在线工具</li>
+</ul>
+<p>本文收集整理了浏览器调试工具介绍，手机调试方案，nodejs调试，无线抓包。</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/debugger-tool/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2113,212 +2426,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/something-about-sublime/" itemprop="url">
-                  SublimeText插件介绍
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2013-08-10T22:32:38+08:00" content="2013-08-10">
-              2013-08-10
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/something-about-sublime/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="something-about-sublime/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>记录Sublime Text使用过程中的点点滴滴，虽然网上关于Sublime Text介绍的文章很多，但是使用过程多少有点自己的看法或者想法。在使用IDE的路上还有漫长的故事，VS2020 - Eclipse － Dreamware - Aptana - EditPlus - Notepad++ - Sublime Text - …。中间的过程中体验过webstorm，用下来感觉最棒的还是Sublime，高亮、缩进、插件、智能提示、代码片段等，Sublime顶呱呱，哗啦啦的。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/something-about-sublime/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/negative-margin-application/" itemprop="url">
-                  负边距的应用的总结
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2013-04-13T22:32:38+08:00" content="2013-04-13">
-              2013-04-13
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/negative-margin-application/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="negative-margin-application/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          对项目中的负边距的应用的总结
-          <div class="post-more-link text-center">
-            <a class="btn" href="/negative-margin-application/">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -2364,7 +2471,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">42</span>
+              <span class="site-state-item-count">44</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -2374,7 +2481,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">53</span>
+                <span class="site-state-item-count">58</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

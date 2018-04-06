@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="前端开发者说">
 <meta property="og:description" content="整理工作中容易遗忘的小技巧和碰到的问题。 屏幕共享打开 系统偏好设置 -&amp;gt; 共享 -&amp;gt; 屏幕共享。在另外的电脑打开 Finder -&amp;gt; 前往 -&amp;gt; 连接服务器 -&amp;gt; 输入 vnc://ip 访问。或者⌘+K 相关的远程控制s软件splashtop，teamviewer 找回Sierra允许”任何来源”的应用sudo spctl --master-disable 屏幕截">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-05-30T14:21:51.000Z">
+<meta property="og:updated_time" content="2018-04-06T03:28:53.418Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mac相关技巧整理">
 <meta name="twitter:description" content="整理工作中容易遗忘的小技巧和碰到的问题。 屏幕共享打开 系统偏好设置 -&amp;gt; 共享 -&amp;gt; 屏幕共享。在另外的电脑打开 Finder -&amp;gt; 前往 -&amp;gt; 连接服务器 -&amp;gt; 输入 vnc://ip 访问。或者⌘+K 相关的远程控制s软件splashtop，teamviewer 找回Sierra允许”任何来源”的应用sudo spctl --master-disable 屏幕截">
@@ -336,6 +336,11 @@
 <p>不过试了一下，不是超级用户登陆，而是普通用户登陆，并且监听的端口在1024以下的（例如把默认的8080端口改为了80端口），nginx 开机是启动不了。因此，要 nginx 开机启动的话，需要给予它管理员权限：<br>sudo chown root:wheel /usr/local/Cellar/nginx/1.2.6/sbin/nginx<br>sudo chmod u+s /usr/local/Cellar/nginx/1.2.6/sbin/nginx</p>
 </blockquote>
 <p>来自: <a href="http://dhq.me/mac-install-nginx-mysql-php-fpm" target="_blank" rel="noopener">http://dhq.me/mac-install-nginx-mysql-php-fpm</a></p>
+<h2 id="vagrant-up-开启端口报错"><a href="#vagrant-up-开启端口报错" class="headerlink" title="vagrant up 开启端口报错"></a>vagrant up 开启端口报错</h2><p>==&gt; homestead-7: Checking if box ‘laravel/homestead’ is up to date…<br>Vagrant cannot forward the specified ports on this VM, since they<br>would collide with some other application that is already listening<br>on these ports. The forwarded port to 27017 is already in use<br>on the host machine.</p>
+<p>To fix this, modify your current project’s Vagrantfile to use another<br>port. Example, where ‘1234’ would be replaced by a unique host port:</p>
+<p>  config.vm.network :forwarded_port, guest: 27017, host: 1234</p>
+<p>Sometimes, Vagrant will attempt to auto-correct this for you. In this<br>case, Vagrant was unable to. This is usually because the guest machine<br>is in a state which doesn’t allow modifying port forwarding. You could<br>try ‘vagrant reload’ (equivalent of running a halt followed by an up)<br>so vagrant can attempt to auto-correct this upon booting. Be warned<br>that any unsaved work might be lost.<br>➜  Homestead git:(master) ✗ sudo lsof -n -i4TCP:27017 | grep LISTEN<br>mongod  526 huixisheng   11u  IPv4 0x40824e155718bce3      0t0  TCP 127.0.0.1:27017 (LISTEN)</p>
+<p>原因homestead和mongod的端口冲突了</p>
 <h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><ul>
 <li><a href="http://www.ifanr.com/481651" target="_blank" rel="noopener">让 Mac 变成神兵利器的软件清单</a></li>
 <li><a href="http://frankorz.com/2016/10/21/new-time-tracking-app-on-macOS/" target="_blank" rel="noopener">macOS 上的时间跟踪软件</a></li>
@@ -456,7 +461,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">42</span>
+              <span class="site-state-item-count">44</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -466,7 +471,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">53</span>
+                <span class="site-state-item-count">58</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -531,7 +536,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#屏幕共享"><span class="nav-number">1.</span> <span class="nav-text">屏幕共享</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#找回Sierra允许”任何来源”的应用"><span class="nav-number">2.</span> <span class="nav-text">找回Sierra允许”任何来源”的应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#屏幕截图"><span class="nav-number">3.</span> <span class="nav-text">屏幕截图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何重置-Mac-上的-NVRAM"><span class="nav-number">4.</span> <span class="nav-text">如何重置 Mac 上的 NVRAM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Apache"><span class="nav-number">5.</span> <span class="nav-text">Apache</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何查看对于窗口的程序"><span class="nav-number">6.</span> <span class="nav-text">如何查看对于窗口的程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装nginx"><span class="nav-number">7.</span> <span class="nav-text">安装nginx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关资源"><span class="nav-number">8.</span> <span class="nav-text">相关资源</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#屏幕共享"><span class="nav-number">1.</span> <span class="nav-text">屏幕共享</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#找回Sierra允许”任何来源”的应用"><span class="nav-number">2.</span> <span class="nav-text">找回Sierra允许”任何来源”的应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#屏幕截图"><span class="nav-number">3.</span> <span class="nav-text">屏幕截图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何重置-Mac-上的-NVRAM"><span class="nav-number">4.</span> <span class="nav-text">如何重置 Mac 上的 NVRAM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Apache"><span class="nav-number">5.</span> <span class="nav-text">Apache</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何查看对于窗口的程序"><span class="nav-number">6.</span> <span class="nav-text">如何查看对于窗口的程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装nginx"><span class="nav-number">7.</span> <span class="nav-text">安装nginx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vagrant-up-开启端口报错"><span class="nav-number">8.</span> <span class="nav-text">vagrant up 开启端口报错</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关资源"><span class="nav-number">9.</span> <span class="nav-text">相关资源</span></a></li></ol></div>
             
           </div>
         </section>
