@@ -257,6 +257,274 @@
             
               
                 
+                <a class="post-title-link" href="/mac-skill/" itemprop="url">
+                  mac相关技巧整理
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-05-30T20:00:05+08:00" content="2017-05-30">
+              2017-05-30
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/mac-skill/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="mac-skill/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>整理工作中容易遗忘的小技巧和碰到的问题。</p>
+<h2 id="屏幕共享"><a href="#屏幕共享" class="headerlink" title="屏幕共享"></a>屏幕共享</h2><p>打开 系统偏好设置 -&gt; 共享 -&gt; 屏幕共享。在另外的电脑打开 Finder -&gt; 前往 -&gt; 连接服务器 -&gt; 输入 <code>vnc://ip</code> 访问。或者<code>⌘+K</code></p>
+<p>相关的远程控制s软件<a href="https://www.splashtop.com/" target="_blank" rel="noopener">splashtop</a>，<a href="https://www.teamviewer.com/zhCN/?pid=google.tv.teamviewer_exact_tv12.s.cn&amp;gclid=CjwKEAjwsLTJBRCvibaW9bGLtUESJAC4wKw1SIUYoaX5pTKGqwkFSR1I9L_kaccieEqLupNb_WIQ-hoCFp_w_wcB" target="_blank" rel="noopener">teamviewer</a></p>
+<h2 id="找回Sierra允许”任何来源”的应用"><a href="#找回Sierra允许”任何来源”的应用" class="headerlink" title="找回Sierra允许”任何来源”的应用"></a>找回Sierra允许”任何来源”的应用</h2><p><code>sudo spctl --master-disable</code></p>
+<h2 id="屏幕截图"><a href="#屏幕截图" class="headerlink" title="屏幕截图"></a>屏幕截图</h2><p><code>Command＋shift＋3</code> 全屏截图，保存截图到桌面<br><code>Command＋shift＋4</code> 鼠标选定区域截图，保存截图到桌面</p>
+<p>相关的扩展阅读:</p>
+<ul>
+<li><a href="http://irising.me/2011/11/12135/" target="_blank" rel="noopener">你所不知道的Mac截图的强大</a></li>
+<li><a href="https://www.zhihu.com/question/19550327" target="_blank" rel="noopener">OS X 系统自带的截图快捷键有哪些？</a></li>
+</ul>
+<h2 id="如何重置-Mac-上的-NVRAM"><a href="#如何重置-Mac-上的-NVRAM" class="headerlink" title="如何重置 Mac 上的 NVRAM"></a>如何重置 Mac 上的 NVRAM</h2><p>Option + Command + P + R + Power</p>
+<ul>
+<li><a href="https://support.apple.com/zh-cn/HT204063" target="_blank" rel="noopener">https://support.apple.com/zh-cn/HT204063</a></li>
+<li><a href="https://www.zhihu.com/question/20401972" target="_blank" rel="noopener">https://www.zhihu.com/question/20401972</a></li>
+</ul>
+<h2 id="Apache"><a href="#Apache" class="headerlink" title="Apache"></a>Apache</h2><p>查看是否开启<code>apache</code>服务 <code>ps aux | grep httpd</code> 或者 <code>apachectl status</code></p>
+<p>开启Apache<code>sudo apachectl start</code></p>
+<p>相关的设置目录 <code>/etc/apache2/</code></p>
+<p>扩展阅读</p>
+<ul>
+<li><a href="https://www.zhihu.com/question/20916296" target="_blank" rel="noopener">Mac OS X Lion 如何删除自带的 apache php？</a></li>
+<li><a href="http://www.jianshu.com/p/d006a34a343f" target="_blank" rel="noopener">Mac OS X 启用 Web 服务器</a></li>
+</ul>
+<h2 id="如何查看对于窗口的程序"><a href="#如何查看对于窗口的程序" class="headerlink" title="如何查看对于窗口的程序"></a>如何查看对于窗口的程序</h2><p><code>sudo lsof -iTCP:80 | grep LISTEN</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">➜  apache2 sudo lsof -iTCP:80 | grep LISTEN</span><br><span class="line">httpd     48016       root    4u  IPv6 0x89923b92a98a82b9      0t0  TCP *:http (LISTEN)</span><br><span class="line">httpd     48040       _www    4u  IPv6 0x89923b92a98a82b9      0t0  TCP *:http (LISTEN)</span><br><span class="line">httpd     48506       _www    4u  IPv6 0x89923b92a98a82b9      0t0  TCP *:http (LISTEN)</span><br><span class="line">httpd     48507       _www    4u  IPv6 0x89923b92a98a82b9      0t0  TCP *:http (LISTEN)</span><br><span class="line">httpd     48508       _www    4u  IPv6 0x89923b92a98a82b9      0t0  TCP *:http (LISTEN)</span><br></pre></td></tr></table></figure>
+<p><code>sudo lsof -n -i4TCP:80 | grep LISTEN</code></p>
+<p>查看当前所有监听的端口以及对应的Command和PID</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">➜  apache2 sudo  lsof -nP -iTCP -sTCP:LISTEN</span><br><span class="line">COMMAND     PID       USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME</span><br><span class="line">java         76 huixisheng  160u  IPv6 0x89923b92a98a8d39      0t0  TCP *:9999 (LISTEN)</span><br><span class="line">java         76 huixisheng  431u  IPv6 0x89923b92b82f0d39      0t0  TCP *:49493 (LISTEN)</span><br><span class="line">Dash       5123 huixisheng   18u  IPv4 0x89923b92b1000c41      0t0  TCP *:50621 (LISTEN)</span><br><span class="line">Dash       5123 huixisheng   21u  IPv6 0x89923b92a98a87f9      0t0  TCP *:50621 (LISTEN)</span><br><span class="line">Shadowsoc  7093 huixisheng    4u  IPv4 0x89923b92aa812159      0t0  TCP *:8090 (LISTEN)</span><br><span class="line">Shadowsoc  7093 huixisheng    7u  IPv4 0x89923b92a3c75c41      0t0  TCP 127.0.0.1:1080 (LISTEN)</span><br><span class="line">phpstorm  10310 huixisheng  143u  IPv4 0x89923b92af530159      0t0  TCP 127.0.0.1:6942 (LISTEN)</span><br><span class="line">phpstorm  10310 huixisheng  336u  IPv4 0x89923b92a60cd349      0t0  TCP 127.0.0.1:63342 (LISTEN)</span><br><span class="line">plugin_ho 12471 huixisheng   37u  IPv4 0x89923b92aaa35a51      0t0  TCP 127.0.0.1:54000 (LISTEN)</span><br><span class="line">�\x9c\x89 24465 huixisheng   12u  IPv4 0x89923b92b5a30159      0t0  TCP *:32445 (LISTEN)</span><br><span class="line">httpd     48016       root    4u  IPv6 0x89923b92a98a82b9      0t0  TCP *:80 (LISTEN)</span><br><span class="line">httpd     48040       _www    4u  IPv6 0x89923b92a98a82b9      0t0  TCP *:80 (LISTEN)</span><br><span class="line">httpd     48506       _www    4u  IPv6 0x89923b92a98a82b9      0t0  TCP *:80 (LISTEN)</span><br><span class="line">httpd     48507       _www    4u  IPv6 0x89923b92a98a82b9      0t0  TCP *:80 (LISTEN)</span><br><span class="line">httpd     48508       _www    4u  IPv6 0x89923b92a98a82b9      0t0  TCP *:80 (LISTEN)</span><br></pre></td></tr></table></figure>
+<h2 id="安装nginx"><a href="#安装nginx" class="headerlink" title="安装nginx"></a>安装nginx</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">➜  desktop brew install nginx</span><br><span class="line">Docroot is: /usr/local/var/www</span><br><span class="line"></span><br><span class="line">The default port has been set in /usr/local/etc/nginx/nginx.conf to 8080 so that</span><br><span class="line">nginx can run without sudo.</span><br><span class="line"></span><br><span class="line">nginx will load all files in /usr/local/etc/nginx/servers/.</span><br><span class="line"></span><br><span class="line">To have launchd start nginx now and restart at login:</span><br><span class="line">  brew services start nginx</span><br><span class="line">Or, if you don&apos;t want/need a background service you can just run:</span><br><span class="line">  nginx</span><br><span class="line">==&gt; Summary</span><br><span class="line">🍺  /usr/local/Cellar/nginx/1.12.0_1: 23 files, 1MB</span><br><span class="line">➜  desktop which nginx</span><br><span class="line">/usr/local/bin/nginx</span><br><span class="line">➜  desktop sudo brew services start nginx</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>不过试了一下，不是超级用户登陆，而是普通用户登陆，并且监听的端口在1024以下的（例如把默认的8080端口改为了80端口），nginx 开机是启动不了。因此，要 nginx 开机启动的话，需要给予它管理员权限：<br>sudo chown root:wheel /usr/local/Cellar/nginx/1.2.6/sbin/nginx<br>sudo chmod u+s /usr/local/Cellar/nginx/1.2.6/sbin/nginx</p>
+</blockquote>
+<p>来自: <a href="http://dhq.me/mac-install-nginx-mysql-php-fpm" target="_blank" rel="noopener">http://dhq.me/mac-install-nginx-mysql-php-fpm</a></p>
+<h2 id="vagrant-up-开启端口报错"><a href="#vagrant-up-开启端口报错" class="headerlink" title="vagrant up 开启端口报错"></a>vagrant up 开启端口报错</h2><p>==&gt; homestead-7: Checking if box ‘laravel/homestead’ is up to date…<br>Vagrant cannot forward the specified ports on this VM, since they<br>would collide with some other application that is already listening<br>on these ports. The forwarded port to 27017 is already in use<br>on the host machine.</p>
+<p>To fix this, modify your current project’s Vagrantfile to use another<br>port. Example, where ‘1234’ would be replaced by a unique host port:</p>
+<p>  config.vm.network :forwarded_port, guest: 27017, host: 1234</p>
+<p>Sometimes, Vagrant will attempt to auto-correct this for you. In this<br>case, Vagrant was unable to. This is usually because the guest machine<br>is in a state which doesn’t allow modifying port forwarding. You could<br>try ‘vagrant reload’ (equivalent of running a halt followed by an up)<br>so vagrant can attempt to auto-correct this upon booting. Be warned<br>that any unsaved work might be lost.<br>➜  Homestead git:(master) ✗ sudo lsof -n -i4TCP:27017 | grep LISTEN<br>mongod  526 huixisheng   11u  IPv4 0x40824e155718bce3      0t0  TCP 127.0.0.1:27017 (LISTEN)</p>
+<p>原因homestead和mongod的端口冲突了</p>
+<h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><ul>
+<li><a href="http://www.ifanr.com/481651" target="_blank" rel="noopener">让 Mac 变成神兵利器的软件清单</a></li>
+<li><a href="http://frankorz.com/2016/10/21/new-time-tracking-app-on-macOS/" target="_blank" rel="noopener">macOS 上的时间跟踪软件</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/vue-input/" itemprop="url">
+                  vue @input事件
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-05-27T23:30:32+08:00" content="2017-05-27">
+              2017-05-27
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/vue-input/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="vue-input/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>今天有同事过来问我，给<code>el-input</code> 加了<code>@input</code>参数<code>$event</code>变成了<code>input</code>变化后的值(v-model)。大致伪代码如下:</p>
+<iframe scrolling="no" width="100%" height="300" src="//jsfiddle.net/k5uf5fa0/embedded/js,resources,html,css,result/light" frameborder="0" allowfullscreen></iframe>
+<p>对于<code>@input</code>的印象是:</p>
+<p>Vue2.x去除了<code>.sync</code>,需要双向绑定就用到了<code>@input</code> <code>.sync</code>在<a href="https://github.com/vuejs/vue/releases/tag/v2.3.0" target="_blank" rel="noopener">2.3.0又回来了</a></p>
+<blockquote>
+<p>所以要让组件的 v-model 生效，它必须：<br>接受一个 value 属性<br>在有新的 value 时触发 input 事件</p>
+</blockquote>
+<p>于是去看下<code>el-input</code><a href="https://github.com/ElemeFE/element/blob/d3bf30b48c66649e659c29df80844daa7992f1d9/packages/input/src/input.vue#L35-L49" target="_blank" rel="noopener">源码</a>，截取的伪代码:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;input ref=&quot;input&quot; @input=&quot;handleInput&quot;&gt;</span><br><span class="line"></span><br><span class="line">methods: &#123;</span><br><span class="line">  handleInput(event) &#123;</span><br><span class="line">    const value = event.target.value;</span><br><span class="line">    this.$emit(&apos;input&apos;, value);</span><br><span class="line">    this.setCurrentValue(value);</span><br><span class="line">    this.$emit(&apos;change&apos;, value);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以理解<code>$event</code>为<code>v-model</code>没有问题，可是<code>handlerInput($event, index) {</code> 第一反应index的值应该没有才对。于是去<a href="https://github.com/vuejs/vue/blob/dev/dist/vue.js" target="_blank" rel="noopener">Vue的源码</a>找答案，Vue的源码并不是晦涩难懂，相反而是通俗易懂，当然精髓的代码还没有完全参透。接下来要抽段时间好好品味一番。@TODO</p>
+<p>打了断点，大致明白了点，不会像一开始那么迷茫。</p>
+<p><img src="/images/vue/@input1.jpeg" alt=""></p>
+<h2 id="input事件"><a href="#input事件" class="headerlink" title="input事件"></a>input事件</h2><p>参阅了下资料:</p>
+<blockquote>
+<p>当 <code>&lt;input&gt;</code> 或 <code>&lt;textarea&gt;</code> 元素的值更改时，DOM input 事件会同步触发。(对于 type = checkbox 或 type = radio 的输入元素，当用户单击控件时，输入事件不会触发，因为value属性不会更改。) 此外，当内容更改时，它会在 contenteditable 的编辑器上触发。在这种情况下，事件目标是编辑主机元素。如果有两个或多个具有 contenteditable 的元素为真，“编辑主机”是其父级不可编辑的最近的祖先元素。同样，它也会在  designMode 编辑器的根元素上触发。</p>
+</blockquote>
+<p>来自: <a href="https://developer.mozilla.org/zh-CN/docs/Web/Events/input" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/Events/input</a></p>
+<blockquote>
+<p>最后需要注意的是：oninput 和 onpropertychange 这两个事件在 IE9 中都有个小BUG，那就是通过右键菜单菜单中的剪切和删除命令删除内容的时候不会触发，而 IE 其他版本都是正常的，目前还没有很好的解决方案。不过 oninput &amp; onpropertychange 仍然是监听输入框值变化的最佳方案，如果大家有更好的方法，欢迎参与讨论。</p>
+</blockquote>
+<p>来自: <a href="http://www.cnblogs.com/lhb25/archive/2012/11/30/oninput-and-onpropertychange-event-for-input.html" target="_blank" rel="noopener">http://www.cnblogs.com/lhb25/archive/2012/11/30/oninput-and-onpropertychange-event-for-input.html</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://github.com/ElemeFE/element/blob/d3bf30b48c66649e659c29df80844daa7992f1d9/packages/input/src/input.vue" target="_blank" rel="noopener">https://github.com/ElemeFE/element/blob/d3bf30b48c66649e659c29df80844daa7992f1d9/packages/input/src/input.vue</a></li>
+<li><a href="https://github.com/tiimgreen/github-cheat-sheet/blob/master/README.zh-cn.md#%E6%95%B4%E8%A1%8C%E9%AB%98%E4%BA%AE" target="_blank" rel="noopener">https://github.com/tiimgreen/github-cheat-sheet/blob/master/README.zh-cn.md#%E6%95%B4%E8%A1%8C%E9%AB%98%E4%BA%AE</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/Events/input" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/Events/input</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/MacOSX-php/" itemprop="url">
                   MacOSX安装多版本php
                 </a>
@@ -984,6 +1252,109 @@
             
               
                 
+                <a class="post-title-link" href="/nodejs-spawn-exec/" itemprop="url">
+                  spawn和exec简单介绍
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-22T21:02:45+08:00" content="2016-10-22">
+              2016-10-22
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/nodejs-spawn-exec/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="nodejs-spawn-exec/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>谷歌搜了下网上介绍spawn和exec区别的文章还是很详细的，引用相关主要的提到的点。同时结合项目中使用过的脚步了解相关的使用方法。</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/nodejs-spawn-exec/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/markdown-Table-of-Contents/" itemprop="url">
                   markdown文件生成目录
                 </a>
@@ -1102,8 +1473,8 @@
             
               
                 
-                <a class="post-title-link" href="/nodejs-spawn-exec/" itemprop="url">
-                  spawn和exec简单介绍
+                <a class="post-title-link" href="/git-ssh-key-setting/" itemprop="url">
+                  配置SSH公钥和git多账号配置
                 </a>
               
             
@@ -1127,8 +1498,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/nodejs-spawn-exec/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="nodejs-spawn-exec/" itemprop="commentsCount"></span>
+                <a href="/git-ssh-key-setting/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="git-ssh-key-setting/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -1152,9 +1523,9 @@
 
       
         
-          <p>谷歌搜了下网上介绍spawn和exec区别的文章还是很详细的，引用相关主要的提到的点。同时结合项目中使用过的脚步了解相关的使用方法。</p>
+          <p>本文介绍如何配置<code>ssh-key</code></p>
           <div class="post-more-link text-center">
-            <a class="btn" href="/nodejs-spawn-exec/#more" rel="contents">
+            <a class="btn" href="/git-ssh-key-setting/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1258,109 +1629,6 @@
           <p>平常工作中常用的<code>git</code>操作命令。</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/git-problem/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/git-ssh-key-setting/" itemprop="url">
-                  配置SSH公钥和git多账号配置
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-22T21:02:45+08:00" content="2016-10-22">
-              2016-10-22
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/git-ssh-key-setting/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="git-ssh-key-setting/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>本文介绍如何配置<code>ssh-key</code></p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/git-ssh-key-setting/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2220,212 +2488,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/markdown-test/" itemprop="url">
-                  mardowm语法简单测试
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2014-08-03T00:21:29+08:00" content="2014-08-03">
-              2014-08-03
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/markdown-test/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="markdown-test/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          本文是学习markdown语法做的一些简单测试
-          <div class="post-more-link text-center">
-            <a class="btn" href="/markdown-test/">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/jquery-plugin-develop/" itemprop="url">
-                  jQuery 插件开发
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2014-01-12T13:18:03+08:00" content="2014-01-12">
-              2014-01-12
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/jquery-plugin-develop/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="jquery-plugin-develop/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          现在做的很多项目都是基于jQuery，很多时候jQuery插件就是一个模块。本文结合jQuery的源码对jQuery插件的写法做一个简单的介绍。
-          <div class="post-more-link text-center">
-            <a class="btn" href="/jquery-plugin-develop/">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -2471,7 +2533,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">44</span>
+              <span class="site-state-item-count">46</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -2481,7 +2543,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">58</span>
+                <span class="site-state-item-count">62</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

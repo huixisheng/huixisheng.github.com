@@ -4,8 +4,50 @@
 
     
   <url>
+    <loc>http://huixisheng.github.io/terminal-proxy-ladder/</loc>
+    <lastmod>2018-06-24T02:54:09.467Z</lastmod>
+    <data>
+        <display>
+        <title>Mac配置终端梯子</title>
+        <pubTime>2018-06-23T11:57:53.000Z</pubTime>
+        
+        <tag>Mac</tag>
+         
+        <tag>工具</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>http://huixisheng.github.io/wepy-summary/</loc>
+    <lastmod>2018-04-17T08:47:11.267Z</lastmod>
+    <data>
+        <display>
+        <title>使用wepy开发小程序总结</title>
+        <pubTime>2018-04-07T02:55:35.000Z</pubTime>
+        
+        <tag>wepy</tag>
+         
+        <tag>小程序</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+    
+  <url>
     <loc>http://huixisheng.github.io/travis-auto-publish-blog/</loc>
-    <lastmod>2018-04-06T08:19:43.861Z</lastmod>
+    <lastmod>2018-04-06T09:21:12.292Z</lastmod>
     <data>
         <display>
         <title>利用trivas自动部署hexo的blog</title>
@@ -14,6 +56,23 @@
         <tag>trivas</tag>
          
         <tag>hexo</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://huixisheng.github.io/git-ssh-key-setting/</loc>
+    <lastmod>2018-04-06T09:15:57.467Z</lastmod>
+    <data>
+        <display>
+        <title>配置SSH公钥和git多账号配置</title>
+        <pubTime>2016-10-22T13:02:45.000Z</pubTime>
+        
+        <tag>git</tag>
          
          
            
@@ -403,24 +462,6 @@
     </url>
 
     
-  <url>
-    <loc>http://huixisheng.github.io/git-ssh-key-setting/</loc>
-    <lastmod>2018-02-09T03:19:01.814Z</lastmod>
-    <data>
-        <display>
-        <title>配置SSH公钥和git多账号配置</title>
-        <pubTime>2016-10-22T13:02:45.000Z</pubTime>
-        
-        <tag>git</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-    
     
     
   <url>
@@ -511,7 +552,6 @@
     </data>
     </url>
 
-    
     
     
     
@@ -809,33 +849,14 @@
 
     
   <url>
-    <loc>http://huixisheng.github.io/jquery-plugin-develop/</loc>
+    <loc>http://huixisheng.github.io/something-about-sublime/</loc>
     <lastmod>2016-10-22T09:40:39.000Z</lastmod>
     <data>
         <display>
-        <title>jQuery 插件开发</title>
-        <pubTime>2014-01-12T05:18:03.000Z</pubTime>
+        <title>SublimeText插件介绍</title>
+        <pubTime>2013-08-10T14:32:38.000Z</pubTime>
         
-        <tag>JavaScript</tag>
-         
-        <tag>jQuery</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://huixisheng.github.io/MacOSX-powerboot/</loc>
-    <lastmod>2016-10-22T09:40:39.000Z</lastmod>
-    <data>
-        <display>
-        <title>MacOSX 开机启动</title>
-        <pubTime>2014-10-25T00:53:16.000Z</pubTime>
-        
-        <tag>MacOSX</tag>
+        <tag>SublimeText</tag>
          
          
            
@@ -866,14 +887,33 @@
 
     
   <url>
-    <loc>http://huixisheng.github.io/something-about-sublime/</loc>
+    <loc>http://huixisheng.github.io/jquery-plugin-develop/</loc>
     <lastmod>2016-10-22T09:40:39.000Z</lastmod>
     <data>
         <display>
-        <title>SublimeText插件介绍</title>
-        <pubTime>2013-08-10T14:32:38.000Z</pubTime>
+        <title>jQuery 插件开发</title>
+        <pubTime>2014-01-12T05:18:03.000Z</pubTime>
         
-        <tag>SublimeText</tag>
+        <tag>JavaScript</tag>
+         
+        <tag>jQuery</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://huixisheng.github.io/MacOSX-powerboot/</loc>
+    <lastmod>2016-10-22T09:40:39.000Z</lastmod>
+    <data>
+        <display>
+        <title>MacOSX 开机启动</title>
+        <pubTime>2014-10-25T00:53:16.000Z</pubTime>
+        
+        <tag>MacOSX</tag>
          
          
            

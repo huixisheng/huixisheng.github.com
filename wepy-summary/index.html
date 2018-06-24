@@ -1,0 +1,839 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="wepy,小程序," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="前端开发者说" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="使用wepy开发小程序效率提升了很多，相比使用小程序原生框架开发，开发体验提升了好几个等级。如果是从Vue过来的，可能会对wepy部分语法不熟悉，导致自己掉进想当然(Vue习惯的写法)的坑里，所以还是要熟读wepy的文档，理解一些新的概念。我个人觉得wepy是类Vue。mpvue跟Vue更加亲一些。当然还是要感谢作者@Gcaufy提供这么好的框架，这也是为何个人项目会收入到公司项目的原因吧。">
+<meta name="keywords" content="wepy,小程序">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用wepy开发小程序总结">
+<meta property="og:url" content="http://huixisheng.github.io/wepy-summary/index.html">
+<meta property="og:site_name" content="前端开发者说">
+<meta property="og:description" content="使用wepy开发小程序效率提升了很多，相比使用小程序原生框架开发，开发体验提升了好几个等级。如果是从Vue过来的，可能会对wepy部分语法不熟悉，导致自己掉进想当然(Vue习惯的写法)的坑里，所以还是要熟读wepy的文档，理解一些新的概念。我个人觉得wepy是类Vue。mpvue跟Vue更加亲一些。当然还是要感谢作者@Gcaufy提供这么好的框架，这也是为何个人项目会收入到公司项目的原因吧。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-04-17T08:47:11.267Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用wepy开发小程序总结">
+<meta name="twitter:description" content="使用wepy开发小程序效率提升了很多，相比使用小程序原生框架开发，开发体验提升了好几个等级。如果是从Vue过来的，可能会对wepy部分语法不熟悉，导致自己掉进想当然(Vue习惯的写法)的坑里，所以还是要熟读wepy的文档，理解一些新的概念。我个人觉得wepy是类Vue。mpvue跟Vue更加亲一些。当然还是要感谢作者@Gcaufy提供这么好的框架，这也是为何个人项目会收入到公司项目的原因吧。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '9599',
+      author: '悔惜晟'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://huixisheng.github.io/wepy-summary/"/>
+
+
+  <title> 使用wepy开发小程序总结 | 前端开发者说 </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">前端开发者说</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">记录开发的故事</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                使用wepy开发小程序总结
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2018-04-07T10:55:35+08:00" content="2018-04-07">
+              2018-04-07
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/wepy-summary/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="wepy-summary/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>使用<a href="https://tencent.github.io/wepy/" target="_blank" rel="noopener">wepy</a>开发小程序效率提升了很多，相比使用小程序原生框架开发，开发体验提升了好几个等级。如果是从<a href="https://github.com/vuejs/vue" target="_blank" rel="noopener">Vue</a>过来的，可能会对<a href="https://tencent.github.io/wepy/" target="_blank" rel="noopener">wepy</a>部分语法不熟悉，导致自己掉进想当然(Vue习惯的写法)的坑里，所以还是要熟读<a href="https://tencent.github.io/wepy/" target="_blank" rel="noopener">wepy</a>的<a href="https://tencent.github.io/wepy/document.html#/" target="_blank" rel="noopener">文档</a>，理解一些新的概念。我个人觉得<a href="https://tencent.github.io/wepy/" target="_blank" rel="noopener">wepy</a>是类Vue。<a href="https://github.com/Meituan-Dianping/mpvue" target="_blank" rel="noopener">mpvue</a>跟Vue更加亲一些。当然还是要感谢作者<a href="https://github.com/Gcaufy" target="_blank" rel="noopener">@Gcaufy</a>提供这么好的框架，这也是为何个人项目会收入到公司项目的原因吧。</p>
+<a id="more"></a>
+<blockquote>
+<p>WePY 是一款让小程序支持组件化开发的框架，通过预编译的手段让开发者可以选择自己喜欢的开发风格去开发小程序。框架的细节优化，Promise，Async Functions的引入都是为了能让开发小程序项目变得更加简单，高效。</p>
+</blockquote>
+<h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ npm install wepy-cli -g</span><br><span class="line">$ wepy init standard</span><br><span class="line">$ npm install</span><br><span class="line">$ wepy build --watch</span><br></pre></td></tr></table></figure>
+<p>使用微信开发者工具导入项目，<strong>关闭ES6 转 ES5</strong></p>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>微信小程序 button 去除 border</p>
+<ul>
+<li><a href="https://blog.csdn.net/Wu_shuxuan/article/details/78209125" target="_blank" rel="noopener">https://blog.csdn.net/Wu_shuxuan/article/details/78209125</a></li>
+<li><a href="https://www.cnblogs.com/miu-key/p/7156070.html" target="_blank" rel="noopener">https://www.cnblogs.com/miu-key/p/7156070.html</a></li>
+<li><a href="https://www.jianshu.com/p/2e5ce95c213e" target="_blank" rel="noopener">https://www.jianshu.com/p/2e5ce95c213e</a></li>
+</ul>
+<p>wepy-plugin-image</p>
+<p>无法转换<br>  // function createDemoComponents(prefix, component, lenght) {<br>  //   const components = {}<br>  //   for (let i = 0; i &lt; lenght; i++) {<br>  //     const key = prefix + i<br>  //     components[key] = component<br>  //   }<br>  //   return components<br>  // }</p>
+<p>  // const demoComponents = createDemoComponents(‘btn’, DoButton, 10)<br>  // console.log(demoComponents)</p>
+<p>// 组件无效</p>
+<view class=""><slot></slot></view>
+
+
+<p> 1:1   error  Resolve error: plugins.forEach is not a function  import/no-unresolved<br>  1:1   error  Resolve error: plugins.forEach is not a function  import/no-extraneous-dependencies<br>  1:1   error  Resolve error: plugins.forEach is not a function  import/no-duplicates<br>  1:1   error  Resolve error: plugins.forEach is not a function  import/extensions<br>  1:1   error  Resolve error: plugins.forEach is not a function  import/no-named-as-default<br>  1:1   error  Resolve error: plugins.forEach is not a function  import/no-named-as-default-member<br>  1:19  error  Unable to resolve path to module ‘utils/service’  import/no-unresolved</p>
+<p>  repeat<br>  不支持添加 @tap</p>
+<p>  wepy input 数据绑定</p>
+<ul>
+<li><a href="https://github.com/Tencent/wepy/issues/321" target="_blank" rel="noopener">https://github.com/Tencent/wepy/issues/321</a></li>
+</ul>
+<p>less import  路径  alias<br><a href="https://www.google.com/search?q=wepy+less+import&amp;oq=wepy+less+import&amp;aqs=chrome..69i57.628j0j4&amp;sourceid=chrome&amp;ie=UTF-8" target="_blank" rel="noopener">https://www.google.com/search?q=wepy+less+import&amp;oq=wepy+less+import&amp;aqs=chrome..69i57.628j0j4&amp;sourceid=chrome&amp;ie=UTF-8</a></p>
+<ol>
+<li>小程序 media 支持</li>
+<li>image mode background-size</li>
+<li>wepy 图片上传资源服务器</li>
+<li>base64支持</li>
+<li>twoWay: true ？双向绑定？</li>
+</ol>
+<p>小程序 canvas如何隐藏  display: none; 可行</p>
+<h2 id="周边工具"><a href="#周边工具" class="headerlink" title="周边工具"></a>周边工具</h2><ul>
+<li><a href="https://github.com/wdfe/weweb" target="_blank" rel="noopener">https://github.com/wdfe/weweb</a></li>
+<li><a href="https://chemzqm.github.io/wept/#/home?id=%E7%AE%80%E4%BB%8B" target="_blank" rel="noopener">https://chemzqm.github.io/wept/#/home?id=%E7%AE%80%E4%BB%8B</a><h2 id="方案对比"><a href="#方案对比" class="headerlink" title="方案对比"></a>方案对比</h2></li>
+</ul>
+<h3 id="dowe"><a href="#dowe" class="headerlink" title="dowe"></a>dowe</h3><h3 id="vue2mina"><a href="#vue2mina" class="headerlink" title="vue2mina"></a>vue2mina</h3><h3 id="labrador"><a href="#labrador" class="headerlink" title="labrador"></a>labrador</h3><h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><ul>
+<li><a href="https://github.com/aben1188/awesome-wepy" target="_blank" rel="noopener">awesome-wepy</a></li>
+<li><a href="https://github.com/Meituan-Dianping/mpvue" target="_blank" rel="noopener">mpvue</a></li>
+</ul>
+<h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><ul>
+<li><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/MINA.html" target="_blank" rel="noopener">小程序官方文档</a></li>
+<li><a href="https://tencent.github.io/wepy/document.html#/" target="_blank" rel="noopener">微信小程序组件化开发框架WePY官方文档</a></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/wepy/" rel="tag">#wepy</a>
+          
+            <a href="/tags/小程序/" rel="tag">#小程序</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/travis-auto-publish-blog/" rel="next" title="利用trivas自动部署hexo的blog">
+                <i class="fa fa-chevron-left"></i> 利用trivas自动部署hexo的blog
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/terminal-proxy-ladder/" rel="prev" title="Mac配置终端梯子">
+                Mac配置终端梯子 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="huixisheng" />
+          <p class="site-author-name" itemprop="name">huixisheng</p>
+          <p class="site-description motion-element" itemprop="description">前端路漫漫兮，吾将上下而求索</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">46</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">62</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/huixisheng" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/huixisheng" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/huixisheng" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境配置"><span class="nav-number">1.</span> <span class="nav-text">环境配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题"><span class="nav-number">2.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#周边工具"><span class="nav-number">3.</span> <span class="nav-text">周边工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方案对比"><span class="nav-number">4.</span> <span class="nav-text">方案对比</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#dowe"><span class="nav-number">4.1.</span> <span class="nav-text">dowe</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vue2mina"><span class="nav-number">4.2.</span> <span class="nav-text">vue2mina</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#labrador"><span class="nav-number">4.3.</span> <span class="nav-text">labrador</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资源"><span class="nav-number">5.</span> <span class="nav-text">资源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文档"><span class="nav-number">6.</span> <span class="nav-text">参考文档</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">huixisheng</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'huixisheng';
+      var disqus_identifier = 'wepy-summary/';
+      var disqus_title = "使用wepy开发小程序总结";
+      var disqus_url = 'http://huixisheng.github.io/wepy-summary/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = false;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title >= 0 || index_content >= 0 ){
+                                isMatch = true;
+								if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            } 
+							
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
