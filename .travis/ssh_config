@@ -1,0 +1,6 @@
+Host github.com
+    Hostname github.com
+    StrictHostKeyChecking no
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/id_rsa
+    User huixisheng

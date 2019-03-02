@@ -1,0 +1,11 @@
+.DS_Store
+node_modules
+db.json
+public
+.deploy
+.idea
+debug.log
+themes
+.deploy_git
+*.plist
+package-lock.json

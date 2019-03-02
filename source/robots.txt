@@ -1,0 +1,15 @@
+# hexo robots.txt
+# http://www.arao.me/2015/hexo-next-theme-optimize-seo/
+User-agent: *
+Allow: /
+Allow: /archives/
+
+Disallow: /vendors/
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /vendors/
+Disallow: /fancybox/
+
+Sitemap: http://www.arao.me/sitemap.xml
+Sitemap: http://www.arao.me/baidusitemap.xml
