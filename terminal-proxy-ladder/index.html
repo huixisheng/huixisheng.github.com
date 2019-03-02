@@ -95,7 +95,7 @@
 <meta property="og:description" content="最初的起因是由于https://gist.github.com/作为submodule的时候无法更新，于是想到终端配置访问该网站。最初以为ShadowsocksX-NG配置全局代理就可以，然后并无软用。 首先你得有相关的ss账号，可以自己部署，也可以购买相关的服务。 ss服务1$ sublime ~/.zshrc 相关的配置信息可以从这里获取  方法1: 12export http_proxy=h">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://huixisheng.github.io/images/proxy/ShadowsocksX-NG-config.jpeg">
-<meta property="og:updated_time" content="2018-06-24T02:54:09.467Z">
+<meta property="og:updated_time" content="2019-02-15T07:14:14.827Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac配置终端梯子">
 <meta name="twitter:description" content="最初的起因是由于https://gist.github.com/作为submodule的时候无法更新，于是想到终端配置访问该网站。最初以为ShadowsocksX-NG配置全局代理就可以，然后并无软用。 首先你得有相关的ss账号，可以自己部署，也可以购买相关的服务。 ss服务1$ sublime ~/.zshrc 相关的配置信息可以从这里获取  方法1: 12export http_proxy=h">
@@ -307,28 +307,28 @@
       
         <p>最初的起因是由于<a href="https://gist.github.com/" target="_blank" rel="noopener">https://gist.github.com/</a>作为submodule的时候无法更新，于是想到终端配置访问该网站。最初以为<code>ShadowsocksX-NG</code>配置全局代理就可以，然后并无软用。</p>
 <p>首先你得有相关的ss账号，可以自己部署，也可以购买相关的服务。</p>
-<h2 id="ss服务"><a href="#ss服务" class="headerlink" title="ss服务"></a>ss服务</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sublime ~/.zshrc</span><br></pre></td></tr></table></figure>
+<h2 id="ss服务"><a href="#ss服务" class="headerlink" title="ss服务"></a>ss服务</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sublime ~/.zshrc</span></span><br></pre></td></tr></table></figure>
 <p>相关的配置信息可以从这里获取</p>
 <p><img src="/images/proxy/ShadowsocksX-NG-config.jpeg" alt=""></p>
 <p>方法1:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export http_proxy=http://127.0.0.1:1087</span><br><span class="line">export https_proxy=http://127.0.0.1:1087</span><br></pre></td></tr></table></figure>
 <p>方法2:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export ALL_PROXY=socks5://127.0.0.1:1086</span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> source ~/.zshrc</span><br><span class="line"><span class="meta">$</span> curl www.google.com</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">source</span> ~/.zshrc</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> curl www.google.com</span></span><br></pre></td></tr></table></figure>
 <p>另外推荐<a href="https://httpie.org/" target="_blank" rel="noopener"><code>httpie</code></a>。在终端使用http命令，调试api接口</p>
 <blockquote>
 <p>HTTPie—aitch-tee-tee-pie—is a command line HTTP client with an intuitive UI, JSON support, syntax highlighting, wget-like downloads, plugins, and more.</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew install httpie</span><br></pre></td></tr></table></figure>
 <h2 id="ss服务推荐"><a href="#ss服务推荐" class="headerlink" title="ss服务推荐"></a>ss服务推荐</h2><ul>
-<li>多态</li>
-<li>吾皇</li>
-<li>多态</li>
-<li>鱼摆摆</li>
-<li><a href="https://www.vultr.com" target="_blank" rel="noopener">https://www.vultr.com</a></li>
+<li>吾皇 <a href="http://kingfast.club/index.php/index/register/?yqi=6711" target="_blank" rel="noopener">http://kingfast.club/index.php/index/register/?yqi=6711</a> 可按月按年按流量付费，价格实惠，就光查阅资料够用</li>
+<li><a href="https://www.vultr.com/?ref=7872193-4F" target="_blank" rel="noopener">https://www.vultr.com/?ref=7872193-4F</a> 需要自己搭建。参考教程<a href="https://github.com/Alvin9999/new-pac/wiki/%E8%87%AA%E5%BB%BAss%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%95%99%E7%A8%8B" target="_blank" rel="noopener">自建ss服务器教程 · Alvin9999/new-pac Wiki</a>  <a href="https://www.diycode.cc/topics/738?from=groupmessage&amp;isappinstalled=0" target="_blank" rel="noopener">轻松在 VPS 搭建 Shadowsocks 翻墙 ($5/月 支付宝) - DiyCode</a></li>
 <li>linode</li>
 <li><a href="https://www.yunti.website/" target="_blank" rel="noopener">https://www.yunti.website/</a></li>
-<li><a href="https://monocloud.com.au/" target="_blank" rel="noopener">https://monocloud.com.au/</a></li>
+<li><a href="https://pandafan.im/" target="_blank" rel="noopener">https://pandafan.im/</a> 同事用过</li>
+<li><a href="https://duotai.love/" target="_blank" rel="noopener">多态</a> 体验过一个月，有多终端App</li>
+<li><a href="https://monocloud.me/" target="_blank" rel="noopener">https://monocloud.me/</a> 借同事的账号用过，速度还不错</li>
+<li>~鱼摆摆~</li>
 </ul>
 <h3 id="相关教程"><a href="#相关教程" class="headerlink" title="相关教程"></a>相关教程</h3><ul>
 <li><a href="https://github.com/Alvin9999/new-pac/wiki/自建ss服务器教程" target="_blank" rel="noopener">https://github.com/Alvin9999/new-pac/wiki/自建ss服务器教程</a></li>
@@ -387,6 +387,10 @@
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/docker-start/" rel="prev" title="docker-start">
+                docker-start <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -461,7 +465,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">46</span>
+              <span class="site-state-item-count">50</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -471,7 +475,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">62</span>
+                <span class="site-state-item-count">60</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -555,7 +559,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

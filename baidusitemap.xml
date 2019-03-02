@@ -4,8 +4,25 @@
 
     
   <url>
+    <loc>http://huixisheng.github.io/git-init-commit-log/</loc>
+    <lastmod>2019-03-02T16:55:53.615Z</lastmod>
+    <data>
+        <display>
+        <title>清空 git 的 commit 记录</title>
+        <pubTime>2019-03-02T16:29:23.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://huixisheng.github.io/terminal-proxy-ladder/</loc>
-    <lastmod>2018-06-24T02:54:09.467Z</lastmod>
+    <lastmod>2019-02-15T07:14:14.827Z</lastmod>
     <data>
         <display>
         <title>Mac配置终端梯子</title>
@@ -22,6 +39,115 @@
     </url>
 
     
+  <url>
+    <loc>http://huixisheng.github.io/phpstorm/</loc>
+    <lastmod>2018-12-15T16:43:52.957Z</lastmod>
+    <data>
+        <display>
+        <title>phpstorm相关配置</title>
+        <pubTime>2017-05-26T12:39:44.000Z</pubTime>
+        
+        <tag>开发工具</tag>
+         
+        <tag>phpstorm</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://huixisheng.github.io/debugger-tool/</loc>
+    <lastmod>2018-08-24T13:09:54.596Z</lastmod>
+    <data>
+        <display>
+        <title>调试工具整理</title>
+        <pubTime>2016-10-22T13:02:45.000Z</pubTime>
+        
+        <tag>前端工具</tag>
+         
+        <tag>前端资源</tag>
+         
+        <tag>调试</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://huixisheng.github.io/front-end-articles-collected/</loc>
+    <lastmod>2018-07-16T01:06:13.394Z</lastmod>
+    <data>
+        <display>
+        <title>前端精彩文章收集</title>
+        <pubTime>2018-04-01T12:40:26.000Z</pubTime>
+        
+        <tag>前端资源</tag>
+         
+        <tag>收藏夹</tag>
+         
+        <tag>前端文档</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://huixisheng.github.io/node-process-env/</loc>
+    <lastmod>2018-07-09T15:12:55.659Z</lastmod>
+    <data>
+        <display>
+        <title>node如何设置process.env</title>
+        <pubTime>2018-07-08T15:40:59.000Z</pubTime>
+        
+        <tag>nodejs</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://huixisheng.github.io/centos-update-nodejs/</loc>
+    <lastmod>2018-07-09T15:12:51.326Z</lastmod>
+    <data>
+        <display>
+        <title>centos如何升级nodejs</title>
+        <pubTime>2018-07-08T15:53:33.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://huixisheng.github.io/docker-start/</loc>
+    <lastmod>2018-06-26T06:29:39.427Z</lastmod>
+    <data>
+        <display>
+        <title>docker-start</title>
+        <pubTime>2018-06-24T04:30:28.000Z</pubTime>
+        
+        <tag>docker</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
     
   <url>
     <loc>http://huixisheng.github.io/wepy-summary/</loc>
@@ -41,9 +167,6 @@
     </data>
     </url>
 
-    
-    
-    
     
   <url>
     <loc>http://huixisheng.github.io/travis-auto-publish-blog/</loc>
@@ -175,48 +298,6 @@
 
     
   <url>
-    <loc>http://huixisheng.github.io/front-end-articles-collected/</loc>
-    <lastmod>2018-04-01T15:42:38.813Z</lastmod>
-    <data>
-        <display>
-        <title>前端精彩文章收集</title>
-        <pubTime>2018-04-01T12:40:26.000Z</pubTime>
-        
-        <tag>前端资源</tag>
-         
-        <tag>收藏夹</tag>
-         
-        <tag>前端文档</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://huixisheng.github.io/debugger-tool/</loc>
-    <lastmod>2018-04-01T15:06:16.740Z</lastmod>
-    <data>
-        <display>
-        <title>调试工具整理</title>
-        <pubTime>2016-10-22T13:02:45.000Z</pubTime>
-        
-        <tag>前端工具</tag>
-         
-        <tag>前端资源</tag>
-         
-        <tag>调试</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://huixisheng.github.io/webapp-tips/</loc>
     <lastmod>2018-04-01T12:42:38.554Z</lastmod>
     <data>
@@ -304,7 +385,6 @@
     </data>
     </url>
 
-    
     
   <url>
     <loc>http://huixisheng.github.io/cnpmjs-install/</loc>
@@ -462,8 +542,6 @@
     </url>
 
     
-    
-    
   <url>
     <loc>http://huixisheng.github.io/cdn/</loc>
     <lastmod>2017-12-03T07:33:03.512Z</lastmod>
@@ -484,7 +562,6 @@
     </data>
     </url>
 
-    
     
   <url>
     <loc>http://huixisheng.github.io/mirror/</loc>
@@ -511,7 +588,6 @@
     </url>
 
     
-    
   <url>
     <loc>http://huixisheng.github.io/es6-destructuring-and-spread-operator/</loc>
     <lastmod>2017-09-20T16:12:47.000Z</lastmod>
@@ -529,11 +605,6 @@
     </url>
 
     
-    
-    
-    
-    
-    
   <url>
     <loc>http://huixisheng.github.io/git-rebase/</loc>
     <lastmod>2017-08-27T10:13:28.000Z</lastmod>
@@ -545,47 +616,6 @@
         <tag>git</tag>
          
         <tag>rebase</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  <url>
-    <loc>http://huixisheng.github.io/phpstorm/</loc>
-    <lastmod>2017-05-29T15:37:53.000Z</lastmod>
-    <data>
-        <display>
-        <title>phpstorm相关配置</title>
-        <pubTime>2017-05-26T12:39:44.000Z</pubTime>
-        
-        <tag>开发工具</tag>
-         
-        <tag>phpstorm</tag>
          
          
            
@@ -611,15 +641,6 @@
     </url>
 
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
   <url>
     <loc>http://huixisheng.github.io/git/</loc>
     <lastmod>2017-03-13T06:40:34.000Z</lastmod>
@@ -636,8 +657,6 @@
     </data>
     </url>
 
-    
-    
     
   <url>
     <loc>http://huixisheng.github.io/compatibility-solution/</loc>
@@ -818,9 +837,9 @@
         <title>负边距的应用的总结</title>
         <pubTime>2013-04-13T14:32:38.000Z</pubTime>
         
-        <tag>css</tag>
-         
         <tag>JavaScript</tag>
+         
+        <tag>css</tag>
          
         <tag>负边距</tag>
          
@@ -873,11 +892,28 @@
         <title>项目中碰到的问题随笔</title>
         <pubTime>2013-04-03T14:32:38.000Z</pubTime>
         
-        <tag>css</tag>
-         
         <tag>JavaScript</tag>
          
+        <tag>css</tag>
+         
         <tag>总结</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://huixisheng.github.io/MacOSX-powerboot/</loc>
+    <lastmod>2016-10-22T09:40:39.000Z</lastmod>
+    <data>
+        <display>
+        <title>MacOSX 开机启动</title>
+        <pubTime>2014-10-25T00:53:16.000Z</pubTime>
+        
+        <tag>MacOSX</tag>
          
          
            
@@ -897,23 +933,6 @@
         <tag>JavaScript</tag>
          
         <tag>jQuery</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://huixisheng.github.io/MacOSX-powerboot/</loc>
-    <lastmod>2016-10-22T09:40:39.000Z</lastmod>
-    <data>
-        <display>
-        <title>MacOSX 开机启动</title>
-        <pubTime>2014-10-25T00:53:16.000Z</pubTime>
-        
-        <tag>MacOSX</tag>
          
          
            

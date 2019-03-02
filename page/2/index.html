@@ -257,6 +257,546 @@
             
               
                 
+                <a class="post-title-link" href="/es6-destructuring-and-spread-operator/" itemprop="url">
+                  变量的解构赋值和展开运算符
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-09-20T22:13:09+08:00" content="2017-09-20">
+              2017-09-20
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/es6-destructuring-and-spread-operator/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="es6-destructuring-and-spread-operator/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>本文对<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment" target="_blank" rel="noopener">变量的解构赋值(destructing)</a>和<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Spread_operator" target="_blank" rel="noopener">展开运算符(spread operator …)</a>做个简单的介绍。</p>
+<p>本文首发在<a href="https://huixisheng.github.io/es6-destructuring-and-spread-operator/">前端开发说</a></p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/es6-destructuring-and-spread-operator/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/npm-source/" itemprop="url">
+                  npm相关资源整理
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-09-19T19:41:35+08:00" content="2017-09-19">
+              2017-09-19
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/npm-source/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="npm-source/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>npm（全称Node Package Manager，即node包管理器）是Node.js默认的、以JavaScript编写的软件包管理系统。 - <a href="https://zh.wikipedia.org/wiki/Npm" target="_blank" rel="noopener">来自wikipedia</a></p>
+</blockquote>
+<p>本文首发在<a href="https://cosmeapp.github.io/2017/09/19/npm-source/" target="_blank" rel="noopener">美妆心得技术博客</a>，同步到前端开发者说博客。</p>
+<h2 id="npm镜像"><a href="#npm镜像" class="headerlink" title="npm镜像"></a>npm镜像</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm config set registry &quot;https://registry.npm.taobao.org&quot;</span><br></pre></td></tr></table></figure>
+<p>其他镜像，用于提高安装速度，比如用<code>vue-cli</code>初始化项目。在<code>~/.npmrc</code>中添加如下配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">registry=https://registry.npm.taobao.org/</span><br><span class="line">// https://registry.npmjs.org=true</span><br><span class="line">// https://blog.niceue.com/front-end-development/using-domestic-npm-images.html=true</span><br><span class="line">// http://www.cnblogs.com/huang0925/archive/2013/05/17/3083207.html=true</span><br><span class="line">electron_mirror=https://npm.taobao.org/dist/electron/</span><br><span class="line">sass_binary_site=https://npm.taobao.org/dist/node-sass</span><br><span class="line">phantomjs_cdnurl=https://npm.taobao.org/dist/phantomjs</span><br><span class="line">// https://gist.github.com/52cik/c1de8926e20971f415dd=true</span><br><span class="line">chromedriver_cdnurl=https://npm.taobao.org/dist/chromedriver</span><br><span class="line">disturl=https://npm.taobao.org/dist</span><br><span class="line">operadriver_cdnurl=https://npm.taobao.org/mirrors/operadriver</span><br><span class="line">selenium_cdnurl=https://npm.taobao.org/mirrors/selenium</span><br><span class="line">node_inspector_cdnurl=https://npm.taobao.org/mirrors/node-inspector</span><br><span class="line">// 自定义的npm scope</span><br><span class="line">@x-scaffold:registry=https://registry.npmjs.org/</span><br></pre></td></tr></table></figure>
+<p>关于关于更多的镜像资料，可以参考我之前写的文章<a href="https://huixisheng.github.io/%2Fmirror%2F">国内镜像源整理</a></p>
+<h2 id="npm包资源搜索"><a href="#npm包资源搜索" class="headerlink" title="npm包资源搜索"></a>npm包资源搜索</h2><p><a href="https://libraries.io/npm" target="_blank" rel="noopener">https://libraries.io/npm</a> 相关资源的各种排行榜</p>
+<p><a href="https://npms.io/" target="_blank" rel="noopener">npms</a> A better and open source search for node packages</p>
+<p><a href="https://www.npmjs.com/browse/updated" target="_blank" rel="noopener">recently updated packages</a></p>
+<p><a href="https://unpkg.com/#/" target="_blank" rel="noopener">npm 资源的cdn</a></p>
+<p><a href="https://github.com/anvaka/npmrank/tree/master/sample" target="_blank" rel="noopener">整理的Top100</a></p>
+<p><a href="https://www.npmjs.com/browse/depended" target="_blank" rel="noopener">most depended-upon packages</a></p>
+<p><a href="https://colorlib.com/wp/npm-packages-node-js/" target="_blank" rel="noopener">Top 30 NPM Packages for Node.js Developers 2016</a></p>
+<p><a href="https://www.npmjs.com/browse/depended" target="_blank" rel="noopener">most depended-upon packages</a></p>
+<h2 id="包管理工具"><a href="#包管理工具" class="headerlink" title="包管理工具"></a>包管理工具</h2><p><a href="https://pnpm.js.org/" target="_blank" rel="noopener">pnpm</a> Fast, disk space efficient package manager</p>
+<p><a href="https://npm.taobao.org/" target="_blank" rel="noopener">cnpm</a> 淘宝 NPM 镜像</p>
+<p><a href="https://yarnpkg.com/zh-Hans/" target="_blank" rel="noopener">yarn</a></p>
+<blockquote>
+<p>Yarn 对你的代码来说是一个包管理器， 它允许你使用并分享代码给全世界的开发者， Yarn 做这些快捷、安全、可靠，所以你不用担心什么。</p>
+</blockquote>
+<p>设置国内镜像<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ yarn config set registry https://registry.npm.taobao.org --global</span><br><span class="line">$ yarn config set disturl https://npm.taobao.org/dist --global</span><br></pre></td></tr></table></figure></p>
+<p>这个facebook应该不会加类似React的协议吧？</p>
+<p>会生成一个<code>yarn.lock</code>锁定依赖。</p>
+<p>优点(摘自官网)</p>
+<ul>
+<li>离线模式</li>
+<li>确定性</li>
+<li>网络性能</li>
+<li>相同的软件包</li>
+<li>网络适应</li>
+<li>扁平模式</li>
+</ul>
+<p>例外有看到社区</p>
+<p><a href="https://cnodejs.org/topic/57ff0541487e1e4578afb48d" target="_blank" rel="noopener">「CYarn」使用 cnpm 源的 Yarn</a></p>
+<p><a href="https://github.com/qiu8310/smart-npm/" target="_blank" rel="noopener">smart-npm</a> 在各大社区发布后，就没看到更多了。</p>
+<p><a href="https://zhuanlan.zhihu.com/p/27832595" target="_blank" rel="noopener">npx: npm 5.2.0 内置的包执行器</a></p>
+<p>推荐阅读</p>
+<ul>
+<li><a href="http://geek.csdn.net/news/detail/197339" target="_blank" rel="noopener">一文看懂npm、yarn、pnpm之间的区别</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/23493436" target="_blank" rel="noopener">Yarn vs npm：你需要知道的一切</a></li>
+<li><a href="https://github.com/pnpm/node-package-manager-benchmark" target="_blank" rel="noopener">更多npm与yarn的性能对比</a></li>
+<li><a href="https://mp.weixin.qq.com/s/9BGiuO-clwe4AAlV9Puqng" target="_blank" rel="noopener">npm 5.0 新版功能特性解析及与 yarn 评测对比</a></li>
+<li><a href="https://www.zhihu.com/question/24414899" target="_blank" rel="noopener">npm、bower、jamjs 等包管理器，哪个比较好用？</a></li>
+<li><a href="https://www.zhihu.com/question/51502849" target="_blank" rel="noopener">如何评价Facebook推出的JavaScript模块管理器yarn？</a></li>
+<li><a href="">在中国，安装 &amp; 升级 npm 依赖的正确方法</a></li>
+</ul>
+<h2 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h2><ul>
+<li><a href="https://docs.npmjs.com/" target="_blank" rel="noopener">https://docs.npmjs.com/</a></li>
+<li><a href="http://semver.org/lang/zh-CN/" target="_blank" rel="noopener">semver语义化版本 2.0.0</a></li>
+<li><a href="http://www.cnblogs.com/huang0925/archive/2013/05/17/3083207.html" target="_blank" rel="noopener">Npm的配置管理及设置代理</a></li>
+</ul>
+<h2 id="依赖升级"><a href="#依赖升级" class="headerlink" title="依赖升级"></a>依赖升级</h2><p>见 <a href="https://docs.npmjs.com/cli/update" target="_blank" rel="noopener">npm update [-g] [<pkg>…]</pkg></a></p>
+<p><a href="https://www.npmjs.com/package/npm-check-updates" target="_blank" rel="noopener">npm-check-updates</a></p>
+<p><a href="https://github.com/dylang/npm-check" target="_blank" rel="noopener">npm-check</a></p>
+<blockquote>
+<p>Check for outdated, incorrect, and unused dependencies.</p>
+</blockquote>
+<p><img src="/images/npm/npm-check.jpeg" alt=""></p>
+<p>相关的介绍可以参考<a href="https://cnodejs.org/topic/5705cd70c5f5b4a959e9192a" target="_blank" rel="noopener">Node.js开源项目推荐：npm模块升级工具 npm-check</a></p>
+<h3 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h3><ul>
+<li><a href="https://gxnotes.com/article/12726.html" target="_blank" rel="noopener">如何将package.json中的每个依赖关系更新为最新版本？</a></li>
+</ul>
+<h2 id="Node升级"><a href="#Node升级" class="headerlink" title="Node升级"></a>Node升级</h2><h3 id="n"><a href="#n" class="headerlink" title="n"></a><a href="https://github.com/tj/n" target="_blank" rel="noopener">n</a></h3><blockquote>
+<p>Node.js version management: no subshells, no profile setup, no convoluted API, just simple.</p>
+</blockquote>
+<h3 id="nvm"><a href="#nvm" class="headerlink" title="nvm"></a><a href="https://github.com/creationix/nvm" target="_blank" rel="noopener">nvm</a></h3><blockquote>
+<p>Node Version Manager - Simple bash script to manage multiple active node.js versions</p>
+</blockquote>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p><a href="https://github.com/siddharthkp/cost-of-modules" target="_blank" rel="noopener">Cost of modules</a></p>
+<blockquote>
+<p>Find out which of your dependencies is slowing you down</p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/siddharthkp/cost-of-modules/master/screenshot.jpg" alt=""></p>
+<p><a href="https://github.com/sindresorhus/awesome-npm" target="_blank" rel="noopener">https://github.com/sindresorhus/awesome-npm</a></p>
+<p><a href="https://juejin.im/post/59256b6f8d6d810058045336" target="_blank" rel="noopener">【译】用8个 npm 技巧打动你的同事</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/git-rebase/" itemprop="url">
+                  git利用rebase修改历史提交记录
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-08-27T16:45:15+08:00" content="2017-08-27">
+              2017-08-27
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/git-rebase/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="git-rebase/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>有时候在<code>git</code>的操作中相同的功能提交多次。相同<code>git log</code>看着很难受，特别是有代码洁癖的开发者。本文通过实例来说一说<code>rebase</code>命令如何修改<code>git</code>的<code>history</code>。</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/git-rebase/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/object-loop/" itemprop="url">
+                  JavaScript如何遍历Object
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-06-03T21:50:56+08:00" content="2017-06-03">
+              2017-06-03
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/object-loop/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="object-loop/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>遍历对象的方法:</p>
+<ol>
+<li>for … in</li>
+<li>Object.getOwnPropertyNames</li>
+<li>Object.keys</li>
+<li>for … of ES6</li>
+<li>Object.values ES7</li>
+<li>Object.entries ES7</li>
+</ol>
+<h2 id="for-…-in"><a href="#for-…-in" class="headerlink" title="for … in"></a><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/for...in" target="_blank" rel="noopener">for … in</a></h2><blockquote>
+<p>for…in 循环只遍历可枚举属性。像 Array 和 Object 使用内置构造函数所创建的对象都会继承自 Object.prototype 和 String.prototype 的不可枚举属性，例如 String 的 indexOf()  方法或者 Object 的 toString 方法。循环将迭代对象的所有可枚举属性和从它的构造函数的 prototype 继承而来的（包括被覆盖的内建属性）。<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/for...in#描述" target="_blank" rel="noopener">来自MDN</a></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">let  o = &#123;</span><br><span class="line">    &apos;name&apos;: &apos;huixisheng&apos;,</span><br><span class="line">    &apos;mail&apos;:  &apos;huixisheng@gmial.com&apos;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">for(let i in o) &#123;</span><br><span class="line">    console.log(&apos;%s: %s&apos;, i, o[i]);</span><br><span class="line">    // name: huixisheng</span><br><span class="line">    // mail: huixisheng@gmial.com</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>仅迭代自身的属性<br>如果你只要考虑对象本身的属性，而不是它的原型，那么使用 getOwnPropertyNames() 或执行  hasOwnProperty() 来确定某属性是否是对象本身的属性 (也能使用propertyIsEnumerable)。另外，如果你知道外部不存在任何的干扰代码，你可以扩展内置原型与检查方法。 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/for...in#仅迭代自身的属性" target="_blank" rel="noopener">来自MDN</a></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">let  o = &#123;</span><br><span class="line">  &apos;name&apos;: &apos;huixisheng&apos;,</span><br><span class="line">  &apos;mail&apos;: &apos;huixisheng@gmial.com&apos;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">function Person() &#123;</span><br><span class="line">  this.city = &apos;hangzhou&apos;;</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype = o;</span><br><span class="line"></span><br><span class="line">const objPerson = new Person();</span><br><span class="line"></span><br><span class="line">for (let prop in objPerson) &#123;</span><br><span class="line">  // propertyIsEnumerable 返回一个布尔值，表明指定的属性名是否是当前对象可枚举的自身属性。</span><br><span class="line">  if (objPerson.hasOwnProperty(prop)) &#123;</span><br><span class="line">    // objPerson.city: hangzhou</span><br><span class="line">    // 原型链上的属性不会显示</span><br><span class="line">    console.log(&apos;objPerson.%s: %s&apos;, prop, objPerson[prop]);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">for(let prop1 in objPerson)&#123;</span><br><span class="line">  console.log(&apos;objPerson.%s: %s&apos;, prop1, objPerson[prop1]);</span><br><span class="line">&#125;</span><br><span class="line">//objPerson.city: hangzhou</span><br><span class="line">//objPerson.name: huixisheng</span><br><span class="line">//objPerson.mail: huixisheng@gmial.com</span><br></pre></td></tr></table></figure>
+<h2 id="Object-getOwnPropertyNames"><a href="#Object-getOwnPropertyNames" class="headerlink" title="Object.getOwnPropertyNames()"></a><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyNames" target="_blank" rel="noopener">Object.getOwnPropertyNames()</a></h2><blockquote>
+<p>object.getOwnPropertyNames 返回一个数组，该数组对元素是 obj 自身拥有的枚举或不可枚举属性名称字符串。 数组中枚举属性的顺序与通过 for…in 循环（或 Object.keys）迭代该对象属性时一致。 数组中不可枚举属性的顺序未定义。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//不可枚举属性</span><br><span class="line">var my_obj = Object.create(&#123;&#125;, &#123;</span><br><span class="line">  getFoo: &#123;</span><br><span class="line">    value: function() &#123; return this.foo; &#125;,</span><br><span class="line">    enumerable: false</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line">my_obj.foo = 1;</span><br><span class="line"></span><br><span class="line">console.log(Object.getOwnPropertyNames(my_obj).sort()); // [&quot;foo&quot;, &quot;getFoo&quot;]</span><br><span class="line">console.log(Object.keys(my_obj)); // [ &apos;foo&apos; ]</span><br><span class="line">for (var i in my_obj) &#123;</span><br><span class="line">  console.log(i, my_obj[i]); // foo 1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">let  o = &#123;</span><br><span class="line">  &apos;name&apos;: &apos;huixisheng&apos;,</span><br><span class="line">  &apos;mail&apos;: &apos;huixisheng@gmial.com&apos;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(Object.getOwnPropertyNames(o)); // [ &apos;name&apos;, &apos;mail&apos; ]</span><br><span class="line">console.log(Object.getOwnPropertyNames(Object).join(&apos;,&apos;)); // length,name,arguments,caller,prototype,assign,create,freeze,getOwnPropertyDescriptor,getOwnPropertyNames,getOwnPropertySymbols,is,isExtensible,isFrozen,isSealed,keys,preventExtensions,seal,defineProperty,defineProperties,getPrototypeOf,setPrototypeOf</span><br><span class="line">console.log(Object.getOwnPropertyNames(Array).join(&apos;,&apos;)); // length,name,arguments,caller,prototype,isArray,from,of</span><br><span class="line">console.log(Object.getOwnPropertyNames(Function).join(&apos;,&apos;)); // length,name,arguments,caller,prototype</span><br><span class="line">console.log(Object.getOwnPropertyNames(Map).join(&apos;,&apos;)); // length,name,arguments,caller,prototype</span><br></pre></td></tr></table></figure>
+<h2 id="for-…-of"><a href="#for-…-of" class="headerlink" title="for … of"></a><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/for...of" target="_blank" rel="noopener">for … of</a></h2><blockquote>
+<p>for…of语句在<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/iterable" target="_blank" rel="noopener">可迭代对象</a>(包括 Array, Map, Set, String, TypedArray，arguments 对象等等)上创建一个迭代循环，对每个不同属性的属性值,调用一个自定义的有执行语句的迭代挂钩.</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">let iterable = new Map([[&quot;a&quot;, 1], [&quot;b&quot;, 2], [&quot;c&quot;, 3]]);</span><br><span class="line"></span><br><span class="line">for (let entry of iterable) &#123;</span><br><span class="line">  console.log(entry);</span><br><span class="line">&#125;</span><br><span class="line">// [a, 1]</span><br><span class="line">// [b, 2]</span><br><span class="line">// [c, 3]</span><br><span class="line"></span><br><span class="line">for (let [key, value] of iterable) &#123;</span><br><span class="line">  console.log(value);</span><br><span class="line">&#125;</span><br><span class="line">// 1</span><br><span class="line">// 2</span><br><span class="line">// 3</span><br></pre></td></tr></table></figure>
+<h2 id="Object-values-ES7"><a href="#Object-values-ES7" class="headerlink" title="Object.values() ES7"></a><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/values" target="_blank" rel="noopener">Object.values() ES7</a></h2><blockquote>
+<p>Object.values() 方法返回一个给定对象自己的所有可枚举属性值的数组，值的顺序与使用for…in循环的顺序相同 ( 区别在于for-in循环枚举原型链中的属性 )。<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/values#描述" target="_blank" rel="noopener">来自MDN</a></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let  o = &#123;</span><br><span class="line">  &apos;name&apos;: &apos;huixisheng&apos;,</span><br><span class="line">  &apos;mail&apos;: &apos;huixisheng@gmial.com&apos;</span><br><span class="line">&#125;;</span><br><span class="line">Object.values(o); // [&apos;huixisheng&apos;, &apos;huixisheng@gmial.com&apos;]</span><br></pre></td></tr></table></figure>
+<p>兼容性:</p>
+<ul>
+<li><a href="http://node.green/#ES2017-features-Object-static-methods-Object-values" target="_blank" rel="noopener">http://node.green/#ES2017-features-Object-static-methods-Object-values</a></li>
+<li><a href="http://kangax.github.io/compat-table/es2016plus/#test-Object_static_methods" target="_blank" rel="noopener">http://kangax.github.io/compat-table/es2016plus/#test-Object_static_methods</a></li>
+<li><a href="http://www.webbrowsercompatibility.com/" target="_blank" rel="noopener">http://www.webbrowsercompatibility.com/</a></li>
+</ul>
+<p>Polyfill :</p>
+<ul>
+<li><a href="https://github.com/es-shims/Object.values/blob/18562676e8aa606a47116753c323dd28619dea50/implementation.js" target="_blank" rel="noopener">shims/Object.values  </a></li>
+<li><a href="https://github.com/tc39/proposal-object-values-entries/blob/master/polyfill.js" target="_blank" rel="noopener">tc39/proposal-object-values-entries</a></li>
+</ul>
+<h2 id="Object-entries-ES7"><a href="#Object-entries-ES7" class="headerlink" title="Object.entries  ES7"></a><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/entries" target="_blank" rel="noopener">Object.entries  ES7</a></h2><p>兼容性</p>
+<ul>
+<li><a href="http://node.green/#ES2017-features-Object-static-methods-Object-entries" target="_blank" rel="noopener">http://node.green/#ES2017-features-Object-static-methods-Object-entries</a></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">let  o = &#123;</span><br><span class="line">  &apos;name&apos;: &apos;huixisheng&apos;,</span><br><span class="line">  &apos;mail&apos;: &apos;huixisheng@gmial.com&apos;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">for(let [key, value] of Object.entries(o)) &#123;</span><br><span class="line">  console.log(key, value);</span><br><span class="line">&#125;</span><br><span class="line">// name huixisheng</span><br><span class="line">// mail huixisheng@gmial.com</span><br></pre></td></tr></table></figure>
+<h2 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h2><ol>
+<li><a href="https://segmentfault.com/q/1010000004580095" target="_blank" rel="noopener">Object.keys()与 for…in 遍历对象，输出的结果为什么是顺序的</a></li>
+<li><a href="http://www.cnblogs.com/ZSG-DoBestMe/p/5279045.html" target="_blank" rel="noopener">ES6之6种遍历对象属性的方法</a></li>
+<li><a href="https://www.w3cplus.com/javascript/how-do-i-enumerate-the-properties-of-a-javascript-object.html" target="_blank" rel="noopener">JavaScript学习笔记：对象属性的枚举</a></li>
+<li><a href="http://huangtengfei.com/2015/03/the-standard-library-of-javascript/" target="_blank" rel="noopener">JavaScript 学习系列二：Object 对象</a></li>
+<li><a href="https://juejin.im/entry/586a418e61ff4b006bc6a0de" target="_blank" rel="noopener">Object 对象和 Array 对象</a></li>
+<li><a href="http://yanhaijing.com/javascript/2015/05/09/diff-between-keys-getOwnPropertyNames-forin/" target="_blank" rel="noopener">详解forin，Object.keys和Object.getOwnPropertyNames的区别</a></li>
+<li><a href="https://imququ.com/post/set-map-weakmap-in-es6.html" target="_blank" rel="noopener">ES6 中的 Set、Map 和 WeakMap</a></li>
+<li><a href="http://yanhaijing.com/javascript/2015/05/08/member-of-object/" target="_blank" rel="noopener">http://yanhaijing.com/javascript/2015/05/08/member-of-object/</a></li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/mac-skill/" itemprop="url">
                   mac相关技巧整理
                 </a>
@@ -715,6 +1255,8 @@
 <ul>
 <li><a href="https://github.com/barryvdh/laravel-ide-helper" target="_blank" rel="noopener">https://github.com/barryvdh/laravel-ide-helper</a></li>
 </ul>
+<h3 id="怎么设置tab为4个空格缩进"><a href="#怎么设置tab为4个空格缩进" class="headerlink" title="怎么设置tab为4个空格缩进"></a>怎么设置tab为4个空格缩进</h3><p><code>Editor -&gt; Code Style -&gt; PHP</code>，右侧不要勾选 <code>Use tab character</code></p>
+<h3 id="vue的代码缩进由4个空格改为2个空格"><a href="#vue的代码缩进由4个空格改为2个空格" class="headerlink" title="vue的代码缩进由4个空格改为2个空格"></a>vue的代码缩进由4个空格改为2个空格</h3><p><code>Editor &gt; Code Style &gt; JavaScript</code>的设置，Indent键值为4</p>
 <h2 id="常用的快捷键"><a href="#常用的快捷键" class="headerlink" title="常用的快捷键"></a>常用的快捷键</h2><table>
 <thead>
 <tr>
@@ -739,13 +1281,34 @@
 <td>Command+delete</td>
 <td>删除当前行</td>
 </tr>
+<tr>
+<td>double shift</td>
+<td>搜索文件</td>
+</tr>
+<tr>
+<td>⌘ + E</td>
+<td>历史文件</td>
+</tr>
+<tr>
+<td>⌘⌥O</td>
+<td>搜索函数。全项目范围</td>
+</tr>
+<tr>
+<td>⌥ + 回车</td>
+<td>导入包，自动修正</td>
+</tr>
+<tr>
+<td>⌘ + n</td>
+<td>快事为每个成员属性生成 getter 及 setter 方法</td>
+</tr>
 </tbody>
 </table>
 <p>苹果键盘修饰键</p>
 <blockquote>
-<p>Command ⌘<br>Shift ⇧<br>Option ⌥<br>Control ⌃<br>Caps Lock ⇪<br>Fn</p>
+<p>Command ⌘<br>Shift ⇧<br>Option Alt ⌥<br>Control ⌃<br>Caps Lock ⇪<br>Fn</p>
 </blockquote>
 <ul>
+<li><a href="https://laravel-china.org/topics/5420/your-keyboard-shortcuts-please" target="_blank" rel="noopener">PHPStorm 快捷键大全（Win/Linux/Mac）</a></li>
 <li><a href="https://support.apple.com/zh-cn/HT201236" target="_blank" rel="noopener">Mac 键盘快捷键</a></li>
 <li><a href="http://newping.cn/457" target="_blank" rel="noopener">认识Mac下的那些符号!</a></li>
 </ul>
@@ -771,6 +1334,10 @@
 <li>eslint <a href="http://laichuanfeng.com/work/use-eslint-in-webstorm/" target="_blank" rel="noopener">http://laichuanfeng.com/work/use-eslint-in-webstorm/</a></li>
 <li><a href="https://plugins.jetbrains.com" target="_blank" rel="noopener">https://plugins.jetbrains.com</a></li>
 <li><a href="https://laravel-china.org/topics/1692/how-to-use-phpstorm-gracefully" target="_blank" rel="noopener">如何优雅的使用 phpStorm</a></li>
+<li>使用phpstorm对代码做智能重构，适用所有JetBrains IDE工具 <a href="https://juejin.im/entry/5a2a6bd45188253d6817802b" target="_blank" rel="noopener">https://juejin.im/entry/5a2a6bd45188253d6817802b</a></li>
+<li><a href="https://juejin.im/post/5a61fe346fb9a01c9b660765" target="_blank" rel="noopener">https://juejin.im/post/5a61fe346fb9a01c9b660765</a></li>
+<li>WebStorm（前端）和 PhpStorm（后端 PHP）IDE 的统一设置。 <a href="https://github.com/zhaotoday/ide-settings" target="_blank" rel="noopener">https://github.com/zhaotoday/ide-settings</a></li>
+<li>在 WebStorm/PhpStorm 中开启对 Vue.js 的完美支持 <a href="http://lightcss.com/get-vuejs-support-in-webstorm-and-phpstorm/" target="_blank" rel="noopener">http://lightcss.com/get-vuejs-support-in-webstorm-and-phpstorm/</a></li>
 </ul>
 <h2 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h2><p>2017-05-28 01:02:06</p>
 <ul>
@@ -1252,8 +1819,8 @@
             
               
                 
-                <a class="post-title-link" href="/nodejs-spawn-exec/" itemprop="url">
-                  spawn和exec简单介绍
+                <a class="post-title-link" href="/git-problem/" itemprop="url">
+                  git操作常见问题汇总
                 </a>
               
             
@@ -1277,8 +1844,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/nodejs-spawn-exec/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="nodejs-spawn-exec/" itemprop="commentsCount"></span>
+                <a href="/git-problem/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="git-problem/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -1302,9 +1869,113 @@
 
       
         
-          <p>谷歌搜了下网上介绍spawn和exec区别的文章还是很详细的，引用相关主要的提到的点。同时结合项目中使用过的脚步了解相关的使用方法。</p>
+          <p>平常工作中常用的<code>git</code>操作命令。</p>
           <div class="post-more-link text-center">
-            <a class="btn" href="/nodejs-spawn-exec/#more" rel="contents">
+            <a class="btn" href="/git-problem/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/compatibility-solution/" itemprop="url">
+                  兼容性解决方案整理
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-22T21:02:45+08:00" content="2016-10-22">
+              2016-10-22
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/compatibility-solution/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="compatibility-solution/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>移动互联网的今天，告别了ie6。</p>
+<p>以下来自原先项目<del>psc</del>。<del>psc</del>已经删除，<del>使用issues继续整理</del>。相信这是一个更好的开始。整理到博客汇总。</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/compatibility-solution/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1576,109 +2247,6 @@
             
               
                 
-                <a class="post-title-link" href="/git-problem/" itemprop="url">
-                  git操作常见问题汇总
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-22T21:02:45+08:00" content="2016-10-22">
-              2016-10-22
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/git-problem/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="git-problem/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>平常工作中常用的<code>git</code>操作命令。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/git-problem/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
                 <a class="post-title-link" href="/mirror/" itemprop="url">
                   国内镜像源整理
                 </a>
@@ -1732,110 +2300,6 @@
           <p>本文对国内<code>ruby</code>、<code>npm</code>、<code>brew</code>、<code>Composer</code>等镜像源做整理，给前端开发这提供方便。<br>
           <div class="post-more-link text-center">
             <a class="btn" href="/mirror/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/compatibility-solution/" itemprop="url">
-                  兼容性解决方案整理
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-22T21:02:45+08:00" content="2016-10-22">
-              2016-10-22
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/compatibility-solution/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="compatibility-solution/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>移动互联网的今天，告别了ie6。</p>
-<p>以下来自原先项目<del>psc</del>。<del>psc</del>已经删除，<del>使用issues继续整理</del>。相信这是一个更好的开始。整理到博客汇总。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/compatibility-solution/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1994,6 +2458,109 @@
             
               
                 
+                <a class="post-title-link" href="/nodejs-spawn-exec/" itemprop="url">
+                  spawn和exec简单介绍
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-22T21:02:45+08:00" content="2016-10-22">
+              2016-10-22
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/nodejs-spawn-exec/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="nodejs-spawn-exec/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>谷歌搜了下网上介绍spawn和exec区别的文章还是很详细的，引用相关主要的提到的点。同时结合项目中使用过的脚步了解相关的使用方法。</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/nodejs-spawn-exec/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/git/" itemprop="url">
                   git命令简单介绍
                 </a>
@@ -2076,418 +2643,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/MacOSX-powerboot/" itemprop="url">
-                  MacOSX 开机启动
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2014-10-25T08:53:16+08:00" content="2014-10-25">
-              2014-10-25
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/MacOSX-powerboot/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="MacOSX-powerboot/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>相比较<code>Windows</code>和<code>linux</code>，MacOSX的开机启动下略显麻烦，可是要经常捣鼓本地服务器的开发者而言，本地开发环境有<code>php-fpm</code>、<code>nginx</code>、<code>mysql</code>、<code>Mongodb</code>、<code>nodejs</code>、<code>Memcache</code>等，如果每次开机都要重启这些服务，会不会是要疯掉。只是不知服务开多了会不会影响系统的系能。本文简单介绍Yosemite 10.10开机启动<code>Mysql</code>，<a href="http://tengine.taobao.org/" target="_blank" rel="noopener"><code>Tengine</code></a>。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/MacOSX-powerboot/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/MacOSX-mysql/" itemprop="url">
-                  MacOSX下Mysql折腾记
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2014-10-24T23:16:46+08:00" content="2014-10-24">
-              2014-10-24
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/MacOSX-mysql/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="MacOSX-mysql/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>本文记录在<code>MacOSX</code>下捣鼓<code>Mysql</code>,Yosemite 10.10 mysql 无法开机启动的解决办法.</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/MacOSX-mysql/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/web-front-end-tools/" itemprop="url">
-                  前端开发工具收集和整理
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2014-08-04T22:09:45+08:00" content="2014-08-04">
-              2014-08-04
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/web-front-end-tools/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="web-front-end-tools/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          对平时工作中使用过的工具总结，高效工作，持续学习
-          <div class="post-more-link text-center">
-            <a class="btn" href="/web-front-end-tools/">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/excellent-software-recommended/" itemprop="url">
-                  致那些我使用过的优秀软件
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2014-08-04T21:43:41+08:00" content="2014-08-04">
-              2014-08-04
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/excellent-software-recommended/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="excellent-software-recommended/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          工欲善必先利其器，好软件不仅会使你的开发效率提升，而且可以让你平时电脑的操作健步如飞。
-          <div class="post-more-link text-center">
-            <a class="btn" href="/excellent-software-recommended/">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -2533,7 +2688,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">46</span>
+              <span class="site-state-item-count">50</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -2543,7 +2698,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">62</span>
+                <span class="site-state-item-count">60</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -2616,7 +2771,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
