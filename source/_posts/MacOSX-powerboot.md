@@ -96,7 +96,9 @@ tags:
 
 [Linux 中 rc.local、init.d、rc.x、init 这几个文件（夹）各有什么作用？启动执行的脚本应该均放在 rc.local 中吗？](http://www.zhihu.com/question/20126189)
 
+## 取消 jenkins 的开启启动 
 
+现在发现电脑用用越来越卡，之前在电脑上折腾过 jenkins 、nginx 等安装。打开 `Activity Monitor`，果然发现有个 java 的进程一直在跑。杀掉还是就重启。通过 `ps -ef | grep java` 查看发现是 `jenkins` 。于是采用 `sudo launchctl unload -w /Library/LaunchDaemons/org.jenkins-ci.plist`。 结果报错 `sudo: unknown uid 501: who are you?` 。觉得很奇怪，去除 `sudo`，取消不掉 jenkins 的开机启动。结果发现是 iTerm2 捣的鬼。换成 Terminal 执行就正常了。
 
 ## 参考
 - [OSX开机自动启动程序的控制脚本](http://apple.group.iteye.com/group/wiki/1394-osx-boot-automatically-activated-control-procedures-script)
@@ -104,6 +106,7 @@ tags:
 - [Creating Launch Daemons and Agents](https://developer.apple.com/library/Mac/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLaunchdJobs.html)
 - [Mac OSX的开机启动配置](http://www.tanhao.me/talk/1287.html)
 - [Mac 下 Nginx、MySQL、PHP-FPM 的安装配置](http://dhq.me/mac-install-nginx-mysql-php-fpm)
+- [macos - Unable to use sudo on OSX, getting sudo: unknown uid 501: who are you? - Stack Overflow](https://stackoverflow.com/questions/41006166/unable-to-use-sudo-on-osx-getting-sudo-unknown-uid-501-who-are-you)
 
 
 
