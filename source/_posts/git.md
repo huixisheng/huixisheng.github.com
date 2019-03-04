@@ -197,19 +197,24 @@ error: failed to push some refs to 'git@github.com:huixisheng/huixisheng.github.
     rm .gitmodules // 如果是多个可以选择删除
 
 
-## 添加subtree ##
+## subtree ##
 
-    //添加subtree
 
-    git remote add umeditor git@github.com:fex-team/umeditor.git lib/umeditor
-    git subtree add —prefix=app/umeditor umeditor dev
-    git pull origin master
+``` bash
+$ git remote add fe-weekly git@github.com:huixisheng/FE-Weekly.git
+$ git subtree add --prefix=resources/FE-Weekly fe-weekly master
+$ git subtree pull --prefix=resources/FE-Weekly fe-weekly master --squash
+$ git subtree split --rejoin --prefix=resources/FE-Weekly --branch new-branch
+$ git push fe-weekly new-branch:master
+```
 
 - [Git Submodule使用完整教程](http://www.kafeitu.me/git/2012/03/27/git-submodule.html)
 - [git submoudle vs git subtree](http://efe.baidu.com/blog/git-submodule-vs-git-subtree/)
 - [Git submodule 还是 Git Subtree](http://blog.zlxstar.me/blog/2014/07/18/git-submodule-vs-git-subtree/)
 - [subtree split](https://gist.github.com/kvnsmth/4688345)
 - [用 Git Subtree 在多个 Git 项目间双向同步子项目，附简明使用手册](https://segmentfault.com/a/1190000003969060)
+- [git-subtree/git-subtree.txt at master · apenwarr/git-subtree](https://github.com/apenwarr/git-subtree/blob/master/git-subtree.txt)
+- [4.5. 子树合并 — GotGit](https://www.worldhello.net/gotgit/04-git-model/050-subtree-model.html)
 
 ## github提示 `You have no permission to access this repo`
 
